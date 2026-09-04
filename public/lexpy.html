@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>LexPY - Chat IA - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+<style>
+  .chat-caja { display:flex; flex-direction:column; height: 70vh; }
+  .chat-mensajes { flex:1; overflow-y:auto; padding:10px; display:flex; flex-direction:column; }
+  .chat-entrada { display:flex; gap:8px; margin-top:10px; }
+  .fuente-tag { font-size:.7rem; color: var(--texto-suave); margin-top:-4px; margin-bottom:8px; }
+</style>
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <h2>LexPY &mdash; Asistente Jurídico IA</h2>
+
+    <div class="tarjeta">
+      <h3 style="margin-top:0">Redacción de borradores</h3>
+      <div class="grid">
+        <div>
+          <label>Tipo de documento</label>
+          <select id="tipoDocumento">
+            <option value="contrato">Contrato</option>
+            <option value="escrito_judicial">Escrito judicial</option>
+            <option value="oficio">Oficio</option>
+          </select>
+        </div>
+        <div>
+          <label>Cliente (opcional)</label>
+          <input id="borradorCliente" placeholder="ID de cliente" />
+        </div>
+        <div>
+          <label>Expediente (opcional)</label>
+          <input id="borradorExpediente" placeholder="ID de expediente" />
+        </div>
+      </div>
+      <label style="margin-top:10px">Instrucciones adicionales</label>
+      <textarea id="borradorInstrucciones" rows="2"></textarea>
+      <button class="btn-primario" style="margin-top:10px" onclick="redactarBorrador()">Generar borrador</button>
+      <pre id="resultadoBorrador" class="oculto" style="white-space:pre-wrap; background:#f8fafc; padding:12px; border-radius:8px; margin-top:12px"></pre>
+    </div>
+
+    <div class="tarjeta chat-caja">
+      <h3 style="margin-top:0">Chat con LexPY</h3>
+      <div class="chat-mensajes" id="chatMensajes"></div>
+      <div class="chat-entrada">
+        <input id="entradaChat" placeholder="Escribe tu consulta jurídica..." style="flex:1" />
+        <button class="btn-primario" onclick="enviarPregunta()">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/lexpy.js"></script>
+</body>
+</html>

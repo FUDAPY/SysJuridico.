@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Clientes - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Clientes</h2>
+      <button class="btn-primario" onclick="abrirModalCliente()">+ Nuevo cliente</button>
+    </div>
+
+    <div class="tarjeta">
+      <input id="buscador" placeholder="Buscar por nombre, cédula o teléfono..." oninput="buscarClientes()" />
+    </div>
+
+    <div class="tarjeta">
+      <table>
+        <thead><tr><th>Nombre completo</th><th>Cédula</th><th>Teléfono</th><th>Dirección</th><th>Acciones</th></tr></thead>
+        <tbody id="tablaClientes"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalCliente">
+    <div class="modal">
+      <h3 id="tituloModalCliente">Nuevo cliente</h3>
+      <input type="hidden" id="clienteId" />
+      <label>Nombre completo</label>
+      <input id="fNombre" />
+      <label style="margin-top:10px">Cédula de identidad</label>
+      <input id="fCedula" />
+      <label style="margin-top:10px">Teléfono</label>
+      <input id="fTelefono" />
+      <label style="margin-top:10px">Dirección</label>
+      <input id="fDireccion" />
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarCliente()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalCliente()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/clientes.js"></script>
+</body>
+</html>

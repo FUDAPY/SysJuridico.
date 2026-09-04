@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Iniciar sesión - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+<style>
+  body { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e3a5f, #2f5d8a); }
+  .caja-login { background: #fff; border-radius: 16px; padding: 34px; width: 100%; max-width: 380px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  .caja-login h1 { color: var(--azul); font-size: 1.3rem; margin-bottom: 4px; }
+  .caja-login p { color: var(--texto-suave); font-size: .85rem; margin-top: 0; margin-bottom: 20px; }
+  .caja-login button { width: 100%; margin-top: 8px; }
+  .error { color: var(--rojo); font-size: .85rem; margin-top: 8px; display: none; }
+</style>
+</head>
+<body>
+  <div class="caja-login">
+    <h1>SysJuridico</h1>
+    <p>Ingrese sus credenciales para continuar</p>
+    <label>Email</label>
+    <input type="email" id="email" placeholder="usuario@estudio.com" />
+    <label style="margin-top:10px">Contraseña</label>
+    <input type="password" id="password" placeholder="••••••••" />
+    <p class="error" id="mensajeError"></p>
+    <button class="btn-primario" onclick="iniciarSesion()">Ingresar</button>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script>
+    async function iniciarSesion() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const mensajeError = document.getElementById('mensajeError');
+      mensajeError.style.display = 'none';
+
+      try {
+        const respuesta = await fetch(`${API_BASE}/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+        const json = await respuesta.json();
+        if (!respuesta.ok) throw new Error(json.message || 'Credenciales inválidas.');
+
+        localStorage.setItem('token', json.token);
+        localStorage.setItem('usuario', JSON.stringify(json.usuario));
+        window.location.href = '/index.html';
+      } catch (err) {
+        mensajeError.textContent = err.message;
+        mensajeError.style.display = 'block';
+      }
+    }
+
+    document.getElementById('password').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') iniciarSesion();
+    });
+  </script>
+</body>
+</html>

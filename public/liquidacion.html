@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Calculadora de Liquidación Laboral - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+<style>
+  :root { --azul:#1e3a5f; --azul-claro:#2f5d8a; --gris:#f4f6f8; --borde:#e0e4e8; }
+  .contenedor { max-width: 960px; margin: 0; padding: 24px; }
+  h1 { color: var(--azul); font-size: 1.5rem; }
+  .tarjeta { background:#fff; border:1px solid var(--borde); border-radius:14px; padding:20px; margin-bottom:18px; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
+  label { display:block; font-size:.85rem; font-weight:600; margin-bottom:4px; color:#374151; }
+  input, select { width:100%; padding:9px 10px; border:1px solid var(--borde); border-radius:8px; font-size:.9rem; }
+  .check { display:flex; align-items:center; gap:8px; margin-top:8px; }
+  .check input { width:auto; }
+  button { cursor:pointer; border:none; border-radius:8px; padding:11px 18px; font-weight:600; font-size:.9rem; }
+  .btn-primario { background: var(--azul); color:#fff; }
+  .btn-primario:hover { background: var(--azul-claro); }
+  .btn-secundario { background:#fff; border:1px solid var(--azul); color:var(--azul); }
+  .acciones { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  table { width:100%; border-collapse: collapse; margin-top:10px; }
+  th, td { text-align:left; padding:10px; border-bottom:1px solid var(--borde); font-size:.9rem; }
+  th { color:#6b7280; font-weight:600; }
+  .total { font-size:1.3rem; font-weight:800; color: var(--azul); text-align:right; }
+  .oculto { display:none; }
+  .btn-flotante { position:fixed; bottom:24px; right:24px; background:var(--azul); color:#fff; border-radius:50px; padding:14px 20px; box-shadow:0 4px 10px rgba(0,0,0,.2); }
+  .membrete { display:none; }
+
+  @media print {
+    body { background:#fff; }
+    .no-print { display:none !important; }
+    .contenedor { max-width:100%; padding:0; }
+    .tarjeta { border:none; box-shadow:none; padding:0; }
+    .membrete { display:block; text-align:center; border-bottom:3px solid var(--azul); padding-bottom:12px; margin-bottom:18px; }
+    .membrete h2 { margin:0; color:var(--azul); }
+    .membrete p { margin:2px 0; font-size:.85rem; color:#374151; }
+    .firma { margin-top:60px; display:flex; justify-content:space-between; }
+    .firma div { width:40%; border-top:1px solid #000; text-align:center; padding-top:6px; font-size:.85rem; }
+  }
+</style>
+</head>
+<body>
+<div class="barra-lateral no-print" id="barra-lateral"></div>
+<div class="contenedor">
+
+  <div class="membrete">
+    <h2>LIN GROUP &mdash; Estudio Jurídico</h2>
+    <p>Liquidación Laboral conforme al Código del Trabajo de la República del Paraguay (Ley N.º 213/1993)</p>
+    <p id="fechaEmision"></p>
+  </div>
+
+  <h1 class="no-print">Calculadora de Liquidación Laboral</h1>
+
+  <div class="tarjeta no-print">
+    <div class="grid">
+      <div>
+        <label>Tipo de Liquidación</label>
+        <select id="tipoLiquidacion">
+          <option value="despido_injustificado">Despido injustificado</option>
+          <option value="renuncia_voluntaria">Renuncia voluntaria</option>
+          <option value="despido_justificado">Despido justificado (Art. 81)</option>
+          <option value="fin_contrato_jubilacion">Fin de contrato / Jubilación</option>
+        </select>
+      </div>
+      <div>
+        <label>Fecha de Ingreso</label>
+        <input type="date" id="fechaIngreso" />
+      </div>
+      <div>
+        <label>Fecha de Salida</label>
+        <input type="date" id="fechaSalida" />
+      </div>
+      <div>
+        <label>Salario Mensual Actual (Gs.)</label>
+        <input type="number" id="salarioMensual" min="0" placeholder="Ej: 3000000" />
+      </div>
+      <div>
+        <label>Promedio últimos 6 meses (si hubo horas extras/comisiones)</label>
+        <input type="number" id="salarioPromedio6Meses" min="0" placeholder="Opcional" />
+      </div>
+      <div>
+        <label>Cliente (opcional)</label>
+        <input type="text" id="clienteId" placeholder="ID de cliente en el sistema" />
+      </div>
+      <div>
+        <label>Expediente (opcional)</label>
+        <input type="text" id="expedienteId" placeholder="ID de expediente en el sistema" />
+      </div>
+    </div>
+
+    <div class="check" id="filaPreaviso">
+      <input type="checkbox" id="preavisoOmitido" />
+      <label style="margin:0">¿El empleador omitió el preaviso?</label>
+    </div>
+
+    <div class="acciones">
+      <button class="btn-primario" onclick="calcular()">Calcular Liquidación</button>
+      <button class="btn-secundario" onclick="guardar()">Guardar en Sistema</button>
+    </div>
+  </div>
+
+  <div class="tarjeta oculto" id="resultado">
+    <h2 class="no-print">Desglose del Cálculo</h2>
+    <p id="resumenAntiguedad"></p>
+    <table>
+      <thead><tr><th>Concepto</th><th>Detalle</th><th>Monto (Gs.)</th></tr></thead>
+      <tbody id="cuerpoTabla"></tbody>
+    </table>
+    <p class="total" id="totalGeneral"></p>
+
+    <div class="firma no-print" style="display:none">
+      <div>Firma del Trabajador</div>
+      <div>Firma del Empleador</div>
+    </div>
+  </div>
+</div>
+
+<button class="btn-flotante no-print" onclick="window.print()">🖨️ Imprimir / Generar Reporte</button>
+
+<script src="/js/api.js"></script>
+<script>
+  requerirSesion();
+  renderBarraLateral('liquidacion');
+
+  document.getElementById('fechaEmision').textContent = 'Fecha de emisión: ' + new Date().toLocaleDateString('es-PY');
+
+  document.getElementById('tipoLiquidacion').addEventListener('change', (e) => {
+    document.getElementById('filaPreaviso').style.display = e.target.value === 'despido_injustificado' ? 'flex' : 'none';
+  });
+
+  function obtenerDatosFormulario() {
+    return {
+      tipoLiquidacion: document.getElementById('tipoLiquidacion').value,
+      fechaIngreso: document.getElementById('fechaIngreso').value,
+      fechaSalida: document.getElementById('fechaSalida').value,
+      salarioMensual: Number(document.getElementById('salarioMensual').value),
+      salarioPromedio6Meses: Number(document.getElementById('salarioPromedio6Meses').value) || 0,
+      preavisoOmitido: document.getElementById('preavisoOmitido').checked,
+      cliente: document.getElementById('clienteId').value || null,
+      expediente: document.getElementById('expedienteId').value || null,
+    };
+  }
+
+  function formatoGs(numero) {
+    return new Intl.NumberFormat('es-PY').format(numero) + ' Gs.';
+  }
+
+  function pintarResultado(data) {
+    document.getElementById('resultado').classList.remove('oculto');
+    const a = data.antiguedad;
+    document.getElementById('resumenAntiguedad').textContent =
+      `Antigüedad: ${a.anios} año(s), ${a.meses} mes(es), ${a.dias} día(s) — Salario diario: ${formatoGs(data.salarioDiario)}`;
+
+    const cuerpo = document.getElementById('cuerpoTabla');
+    cuerpo.innerHTML = '';
+    data.conceptos.forEach((c) => {
+      cuerpo.innerHTML += `<tr><td>${c.concepto}</td><td>${c.detalle}</td><td>${formatoGs(c.monto)}</td></tr>`;
+    });
+    document.getElementById('totalGeneral').textContent = 'TOTAL A PERCIBIR: ' + formatoGs(data.totalGeneral);
+  }
+
+  async function calcular() {
+    try {
+      const datos = await apiFetch('/liquidaciones/calcular', { method: 'POST', body: obtenerDatosFormulario() });
+      pintarResultado(datos);
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  async function guardar() {
+    try {
+      const datos = await apiFetch('/liquidaciones', { method: 'POST', body: obtenerDatosFormulario() });
+      pintarResultado(datos);
+      alert('Liquidación guardada correctamente en el sistema.');
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+</script>
+</body>
+</html>

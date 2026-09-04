@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Expedientes - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Expedientes</h2>
+      <button class="btn-primario" onclick="abrirModalExpediente()">+ Nuevo expediente</button>
+    </div>
+
+    <div class="tarjeta grid" id="filtros">
+      <div>
+        <label>Buscar por carátula</label>
+        <input id="fBuscar" oninput="cargarExpedientes()" />
+      </div>
+      <div id="contenedorFiltroAbogado">
+        <label>Filtrar por abogado</label>
+        <select id="fAbogado" onchange="cargarExpedientes()"><option value="">Todos</option></select>
+      </div>
+      <div>
+        <label>Filtrar por cliente</label>
+        <select id="fCliente" onchange="cargarExpedientes()"><option value="">Todos</option></select>
+      </div>
+      <div>
+        <label>Estado</label>
+        <select id="fEstado" onchange="cargarExpedientes()">
+          <option value="">Todos</option>
+          <option value="activo">Activo</option>
+          <option value="en_proceso">En proceso</option>
+          <option value="suspendido">Suspendido</option>
+          <option value="archivado">Archivado</option>
+          <option value="finalizado">Finalizado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <table>
+        <thead><tr><th>Carátula</th><th>Cliente</th><th>Abogado</th><th>Estado</th><th>Saldo pendiente</th><th>Acciones</th></tr></thead>
+        <tbody id="tablaExpedientes"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalExpediente">
+    <div class="modal" style="max-width:640px">
+      <h3>Nuevo expediente</h3>
+      <div class="grid">
+        <div>
+          <label>Cliente</label>
+          <select id="eCliente"></select>
+        </div>
+        <div id="contenedorAbogadoAsignado">
+          <label>Abogado asignado</label>
+          <select id="eAbogado"></select>
+        </div>
+        <div style="grid-column:1/-1">
+          <label>Carátula / Caso</label>
+          <input id="eCaratula" />
+        </div>
+        <div>
+          <label>Fuero</label>
+          <input id="eFuero" />
+        </div>
+        <div>
+          <label>Juzgado</label>
+          <input id="eJuzgado" />
+        </div>
+        <div style="grid-column:1/-1">
+          <label>Enlace a documento (Drive/Dropbox)</label>
+          <input id="eEnlace" placeholder="https://..." />
+        </div>
+        <div style="grid-column:1/-1">
+          <label>Descripción</label>
+          <textarea id="eDescripcion" rows="3"></textarea>
+        </div>
+        <div>
+          <label>Fecha inicio</label>
+          <input type="date" id="eFechaInicio" />
+        </div>
+        <div>
+          <label>Fecha fin (estimada)</label>
+          <input type="date" id="eFechaFin" />
+        </div>
+      </div>
+
+      <h4>Honorarios / Crédito</h4>
+      <div class="grid">
+        <div>
+          <label>Honorarios totales (Gs.)</label>
+          <input type="number" id="eHonorarios" min="0" />
+        </div>
+        <div>
+          <label>Entrega inicial (Gs.)</label>
+          <input type="number" id="eEntregaInicial" min="0" />
+        </div>
+        <div class="check" style="display:flex; align-items:center; gap:8px; margin-top:22px">
+          <input type="checkbox" id="eCreditoAutomatico" onchange="alternarCamposCredito()" style="width:auto" />
+          <label style="margin:0">¿Crédito Automático?</label>
+        </div>
+        <div id="fCantidadCuotas" class="oculto">
+          <label>Cantidad de cuotas</label>
+          <input type="number" id="eCantidadCuotas" min="1" />
+        </div>
+        <div id="fFrecuenciaCuotas" class="oculto">
+          <label>Frecuencia</label>
+          <select id="eFrecuenciaCuotas">
+            <option value="mensual">Mensual</option>
+            <option value="quincenal">Quincenal</option>
+            <option value="semanal">Semanal</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarExpediente()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalExpediente()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/expedientes.js"></script>
+</body>
+</html>

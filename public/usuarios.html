@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Usuarios - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Usuarios y Roles</h2>
+      <button class="btn-primario" onclick="abrirModalUsuario()">+ Nuevo usuario</button>
+    </div>
+
+    <div class="tarjeta">
+      <table>
+        <thead><tr><th>Nombre</th><th>Email</th><th>Rol</th><th>Estado</th><th>Acciones</th></tr></thead>
+        <tbody id="tablaUsuarios"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalUsuario">
+    <div class="modal">
+      <h3>Nuevo usuario</h3>
+      <label>Nombre</label>
+      <input id="uNombre" />
+      <label style="margin-top:10px">Email</label>
+      <input type="email" id="uEmail" />
+      <label style="margin-top:10px">Contraseña</label>
+      <input type="password" id="uPassword" placeholder="Mínimo 6 caracteres" />
+      <label style="margin-top:10px">Rol</label>
+      <select id="uRol">
+        <option value="abogado">Abogado</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarUsuario()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalUsuario()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/usuarios.js"></script>
+</body>
+</html>

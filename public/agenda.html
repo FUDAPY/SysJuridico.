@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Agenda - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+<style>
+  .calendario { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .dia-cal { background:#fff; border:1px solid var(--borde); border-radius:8px; min-height: 90px; padding:6px; font-size:.78rem; }
+  .dia-cal .numero { font-weight:700; color: var(--texto-suave); }
+  .dia-cal .evento { background: var(--azul); color:#fff; border-radius:5px; padding:2px 5px; margin-top:3px; font-size:.72rem; cursor:pointer; }
+  .cabecera-cal { text-align:center; font-weight:700; color: var(--texto-suave); font-size:.8rem; padding-bottom:4px; }
+  .nav-mes { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+</style>
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Agenda</h2>
+      <button class="btn-primario" onclick="abrirModalEvento()">+ Agendar evento</button>
+    </div>
+
+    <div class="tarjeta">
+      <div class="nav-mes">
+        <button class="btn-secundario" onclick="cambiarMes(-1)">&larr; Anterior</button>
+        <h3 id="tituloMes"></h3>
+        <button class="btn-secundario" onclick="cambiarMes(1)">Siguiente &rarr;</button>
+      </div>
+      <div class="calendario" id="calendario"></div>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalEvento">
+    <div class="modal">
+      <h3>Agendar evento</h3>
+      <label>Título</label>
+      <input id="evTitulo" />
+      <label style="margin-top:10px">Tipo</label>
+      <select id="evTipo">
+        <option value="audiencia">Audiencia</option>
+        <option value="reunion">Reunión</option>
+        <option value="vencimiento">Vencimiento</option>
+        <option value="compromiso">Compromiso</option>
+        <option value="otro">Otro</option>
+      </select>
+      <label style="margin-top:10px">Fecha y hora de inicio</label>
+      <input type="datetime-local" id="evFechaInicio" />
+      <label style="margin-top:10px">Lugar</label>
+      <input id="evLugar" />
+      <label style="margin-top:10px">Descripción</label>
+      <textarea id="evDescripcion" rows="3"></textarea>
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarEvento()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalEvento()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/agenda.js"></script>
+</body>
+</html>

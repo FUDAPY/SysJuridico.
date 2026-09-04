@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Resumen - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2 id="tituloResumen">Resumen</h2>
+      <button class="btn-primario" onclick="abrirModalIngreso()">+ Registrar Ingreso</button>
+    </div>
+
+    <!-- Vista ADMIN: métricas completas -->
+    <div id="vistaAdmin" class="oculto">
+      <div class="grid-metricas">
+        <div class="tarjeta metrica"><div class="valor" id="mExpedientes">-</div><div class="etiqueta">Expedientes activos</div></div>
+        <div class="tarjeta metrica"><div class="valor" id="mSaldo">-</div><div class="etiqueta">Saldo por cobrar</div></div>
+        <div class="tarjeta metrica"><div class="valor" id="mDiario">-</div><div class="etiqueta">Ingreso diario</div></div>
+        <div class="tarjeta metrica"><div class="valor" id="mMensual">-</div><div class="etiqueta">Ingreso mensual</div></div>
+        <div class="tarjeta metrica"><div class="valor" id="mAnual">-</div><div class="etiqueta">Ingreso anual</div></div>
+      </div>
+
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Acciones rápidas</h3>
+        <div class="acciones-rapidas">
+          <a class="boton btn-secundario" href="/clientes.html">Nuevo cliente</a>
+          <a class="boton btn-secundario" href="/expedientes.html">Nuevo expediente</a>
+          <a class="boton btn-secundario" href="/agenda.html">Agendar evento</a>
+          <button class="btn-secundario" onclick="abrirModalIngreso()">Registrar ingreso</button>
+          <a class="boton btn-secundario" href="/lexpy.html">Abrir chat de IA (LexPY)</a>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Registro de Movimientos</h3>
+        <table>
+          <thead><tr><th>Fecha</th><th>Concepto</th><th>Cliente</th><th>Expediente</th><th>Tipo</th><th>Monto</th></tr></thead>
+          <tbody id="tablaMovimientos"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vista ABOGADO: resumen del día -->
+    <div id="vistaAbogado" class="oculto">
+      <div class="grid-metricas">
+        <div class="tarjeta metrica"><div class="valor" id="aExpedientes">-</div><div class="etiqueta">Mis expedientes activos</div></div>
+        <div class="tarjeta metrica"><div class="valor" id="aIngreso">-</div><div class="etiqueta">Ingreso registrado hoy</div></div>
+      </div>
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Acciones rápidas</h3>
+        <div class="acciones-rapidas">
+          <a class="boton btn-secundario" href="/expedientes.html">Mis expedientes</a>
+          <button class="btn-secundario" onclick="abrirModalIngreso()">Registrar ingreso</button>
+          <a class="boton btn-secundario" href="/lexpy.html">Abrir chat de IA (LexPY)</a>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Eventos de hoy</h3>
+        <table>
+          <thead><tr><th>Hora</th><th>Título</th><th>Tipo</th><th>Lugar</th></tr></thead>
+          <tbody id="tablaEventosHoy"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal registrar ingreso rápido -->
+  <div class="modal-fondo oculto" id="modalIngreso">
+    <div class="modal">
+      <h3>Registrar Ingreso</h3>
+      <label>Concepto</label>
+      <input id="fConcepto" placeholder="Ej: Pago de honorarios" />
+      <label style="margin-top:10px">Monto (Gs.)</label>
+      <input id="fMonto" type="number" min="1" />
+      <label style="margin-top:10px">Método de pago</label>
+      <select id="fMetodoPago">
+        <option value="efectivo">Efectivo</option>
+        <option value="transferencia">Transferencia</option>
+        <option value="tarjeta">Tarjeta</option>
+        <option value="cheque">Cheque</option>
+        <option value="otro">Otro</option>
+      </select>
+      <label style="margin-top:10px">Cliente (opcional)</label>
+      <input id="fCliente" placeholder="ID de cliente (opcional)" />
+      <label style="margin-top:10px">Expediente (opcional)</label>
+      <input id="fExpediente" placeholder="ID de expediente (opcional)" />
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarIngreso()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalIngreso()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

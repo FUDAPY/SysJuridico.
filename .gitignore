@@ -1,0 +1,25 @@
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Firebase / credenciales sensibles - NUNCA subir a git
+*firebase-adminsdk*.json
+firebase-key.json
+serviceAccountKey.json
+
+# Logs
+npm-debug.log*
+logs/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+
+# Build
+dist/
+build/
+coverage/
