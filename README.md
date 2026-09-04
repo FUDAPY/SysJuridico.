@@ -91,4 +91,6 @@ El proyecto incluye `Dockerfile` y `.dockerignore` listos para un despliegue tip
 
 ## Licencia
 
-Este proyecto se distribuye bajo la **OTELAX DEV PRIVATE SOFTWARE LICENSE**. Ver el archivo [LICENSE](LICENSE) para el detalle completo. En resumen: todos los derechos reservados, uso restringido y prohibida su copia, modificación, distribución o comercialización sin autorización expresa y por escrito del titular.
+Este proyecto se distribuye bajo la **OTELAX DEV PRIVATE SOFTWARE LICENSE**. Ver el archivo [LICENSE](LICENSE) para el detalle completo. En resumen: todos los derechos reservados, Se concede permiso para usar y copiar el código fuente de este software,
+siempre y cuando se mantenga la mención clara y visible de sus autores
+originales: Otelax Dev y Giuliano Emanuel Maria Catella Riveros.
