@@ -38,7 +38,21 @@ app.use('/api/liquidaciones', liquidacionRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/api/health', (req, res) => res.json({ success: true, status: 'ok' }));
+// Estado de la conexión a MongoDB: readyState 1 = conectado (mongoose.STATES)
+app.get('/api/health', (req, res) => {
+  const mongoose = require('mongoose');
+  const estados = ['desconectado', 'conectado', 'conectando', 'desconectando'];
+  const readyState = mongoose.connection.readyState;
+  res.json({
+    success: true,
+    status: 'ok',
+    baseDeDatos: {
+      conectado: readyState === 1,
+      estado: estados[readyState] || 'desconocido',
+      nombreDB: mongoose.connection.name || null,
+    },
+  });
+});
 
 app.use(notFound);
 app.use(errorHandler);
