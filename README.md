@@ -42,7 +42,7 @@ SysJuridico resuelve la operación diaria de un estudio jurídico:
 ## Instalación
 
 ### Requisitos previos
-- Node.js 18 o superior.
+- Node.js 20 o superior.
 - Una instancia de MongoDB accesible (local, Atlas o interna en Dokploy).
 
 ### Pasos
