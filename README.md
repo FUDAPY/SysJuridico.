@@ -205,6 +205,10 @@ Se permite el uso, copia, modificación, distribución y uso comercial del softw
 
 It centralizes clients, case files (expedientes), fees and credit plans, scheduling, severance calculations (Act 213/93) and the **LexPY** AI assistant (RAG over MongoDB + public sources). The backend exposes a **JWT-protected REST API** (Node.js + Express + Mongoose) and also serves a framework-free static frontend (HTML/CSS/JS); it ships an official migration script for legacy data from **Firebase Firestore**.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f4a10fc913e3ad30e65147718b2096300eab3801
 ## EN: Key features
 
 - **Dashboard**: daily, monthly and yearly income metrics, outstanding balances and recent transactions in Guaraníes (Gs.).
