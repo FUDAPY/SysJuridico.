@@ -83,11 +83,32 @@ El sistema queda disponible en `http://localhost:4000` (o el puerto definido en 
 | `LEXPY_AI_MODEL` | Modelo a usar (con OpenRouter, usar solo modelos con sufijo `:free`). |
 | `FIREBASE_SERVICE_ACCOUNT_PATH` | Ruta local al JSON de credenciales de Firebase, solo para la migración. |
 
-> **Seguridad:** el archivo `.env` y cualquier credencial de Firebase (`*firebase-adminsdk*.json`) están excluidos vía `.gitignore` y no deben subirse al repositorio.
+> **Seguridad:** el archivo `.env` y cualquier credencial de Firebase (`*firebase-adminsdk*.json`) están excluidos vía `.gitignore`/`.dockerignore` y no deben subirse al repositorio.
 
 ### Despliegue en Dokploy
 
-El proyecto incluye `Dockerfile` y `.dockerignore` listos para un despliegue tipo Docker en Dokploy. Configurar las variables de entorno del apartado anterior directamente en el panel de Dokploy (no en el repositorio) y desplegar.
+El proyecto incluye `Dockerfile`, `.dockerignore` y (opcional) `docker-compose.yml` para desplegar en tu VPS con Dokploy. El `.env` **NO** se sube al repositorio: todas las variables se definen en el panel de Dokploy.
+
+**Pasos (opción rápida, Application tipo Dockerfile):**
+
+1. En Dokploy crea un **Project → Services → Application** de tipo **Dockerfile** que apunte a tu repositorio `FUDAPY/SysJuridico.` (rama `main`). Dokploy construirá el `Dockerfile` automáticamente.
+2. Crea una base de datos **MongoDB** en el mismo proyecto (o usa una instancia externa/Atlas).
+3. En **Variables de entorno** de la aplicación define al menos:
+   - `PORT=4000`
+   - `DATABASE_URL=mongodb://usuario:contrasena@<nombre-servicio-mongodb>:27017/sysjuridico?authSource=admin`
+   - `JWT_SECRET=<una clave larga y aleatoria>`
+   - `ADMIN_SEED_EMAIL=tu@email.com` y `ADMIN_SEED_PASSWORD=...` (crea el admin automáticamente en el primer arranque)
+   - Opcional: `LEXPY_AI_PROVIDER`, `LEXPY_AI_API_KEY`, `LEXPY_AI_MODEL` (ver tabla anterior).
+4. En **Domains** agrega tu dominio y asigna el **puerto 4000** (el mismo puerto interno del contenedor). El servidor escucha en `0.0.0.0`, como exige el proxy de Dokploy.
+5. Despliega. Verifica con:
+   - `https://tudominio/api/health` → debe responder `{"success":true, ...}` con `baseDeDatos.conectado: true`.
+   - `https://tudominio/` → debe cargar el login.
+
+> **⚠️ Truco nº 1 del "Bad Gateway":** el puerto del **dominio** en Dokploy debe ser **idéntico** al `PORT` de las variables de entorno. Si en variables dejas `PORT=3000` pero el dominio apunta a `4000` (o al revés), Traefik reenvía a un puerto donde **no hay nada escuchando** → 502, aunque el contenedor esté perfectamente vivo. Decide UNO (recomendado: `4000`) y úsalo en ambos sitios.
+
+**Si ves "Bad Gateway (502)":** casi siempre es porque el puerto del dominio y el `PORT` de la app no coinciden, o porque el contenedor se cae al arrancar. Revisa los **Logs** de la aplicación en Dokploy: las causas típicas son `DATABASE_URL` con un host que el VPS no puede resolver (por ejemplo `localhost`, un host de tu red local o un hostname inexistente) o variables de entorno sin definir. Un contenedor que muere con `process.exit(1)` deja al proxy sin "upstream" → 502.
+
+**Alternativa con MongoDB incluido (opcional):** despliega un servicio de tipo **Docker Compose** apuntando al archivo `docker-compose.yml` de la raíz: levanta la app y MongoDB juntos en la misma red. El dominio se asigna al servicio `app`, puerto `4000`. Ajusta las variables en el panel; los valores por defecto del compose sirven para la primera prueba.
 
 ## Licencia
 

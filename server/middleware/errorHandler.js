@@ -30,7 +30,10 @@ function errorHandler(err, req, res, next) {
 }
 
 function notFound(req, res) {
-  res.status(404).json({ success: false, message: `Ruta no encontrada: ${req.originalUrl}` });
+  res.status(404).json({
+    success: false,
+    message: `Ruta no encontrada: ${req.originalUrl || req.url}`,
+  });
 }
 
 module.exports = { errorHandler, notFound };

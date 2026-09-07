@@ -1,0 +1,51 @@
+# App + MongoDB (Dokploy: tipo Docker Compose)
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: "0.0.0.0"
+      PORT: "4000"
+      # Default: mongo del mismo compose
+      DATABASE_URL: ${DATABASE_URL:-mongodb://sysjuridico:sysjuridico_secret@mongo:27017/sysjuridico?authSource=admin}
+      JWT_SECRET: ${JWT_SECRET:-cambia_esta_clave_por_un_secreto_largo_y_aleatorio}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-8h}
+      ADMIN_SEED_EMAIL: ${ADMIN_SEED_EMAIL:-admin@sysjuridico.local}
+      ADMIN_SEED_PASSWORD: ${ADMIN_SEED_PASSWORD:-CambiarPassword123!}
+      LEXPY_AI_PROVIDER: ${LEXPY_AI_PROVIDER:-none}
+      LEXPY_AI_API_KEY: ${LEXPY_AI_API_KEY:-}
+      LEXPY_AI_MODEL: ${LEXPY_AI_MODEL:-meta-llama/llama-3.3-70b-instruct:free}
+      LEXPY_APP_URL: ${LEXPY_APP_URL:-https://sysjuridico.local}
+      LEXPY_CSJ_URL: ${LEXPY_CSJ_URL:-https://www.csj.gov.py}
+      LEXPY_BASELEGAL_URL: ${LEXPY_BASELEGAL_URL:-https://www.baselegal.com.py}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    expose:
+      - "4000"
+    # ports:
+    #   - "4000:4000"
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: sysjur
+      MONGO_INITDB_ROOT_PASSWORD: sysjuridico_secret
+      MONGO_INITDB_DATABASE: sysjuridico
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 10s
+    expose:
+      - "27017"
+    # ports:
+    #   - "27017:27017"
+
+volumes:
+  mongo_data:

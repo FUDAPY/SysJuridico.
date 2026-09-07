@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const connectDB = require('./config/db');
 const { errorHandler, notFound } = require('./middleware/errorHandler');
@@ -40,7 +41,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Estado de la conexión a MongoDB: readyState 1 = conectado (mongoose.STATES)
 app.get('/api/health', (req, res) => {
-  const mongoose = require('mongoose');
   const estados = ['desconectado', 'conectado', 'conectando', 'desconectando'];
   const readyState = mongoose.connection.readyState;
   res.json({
@@ -57,12 +57,41 @@ app.get('/api/health', (req, res) => {
 app.use(notFound);
 app.use(errorHandler);
 
-async function iniciar() {
-  await connectDB();
-  const PORT = process.env.PORT || 4000;
-  app.listen(PORT, () => console.log(`[SERVER] SysJuridico escuchando en el puerto ${PORT}`));
+// Seed admin inicial: crea al usuario si ADMIN_SEED_EMAIL/PASSWORD están definidos.
+async function seedAdminSiConfigurado() {
+  const email = (process.env.ADMIN_SEED_EMAIL || '').toLowerCase();
+  const password = process.env.ADMIN_SEED_PASSWORD;
+
+  if (!email || !password) {
+    console.log('[SEED] ADMIN_SEED_EMAIL/ADMIN_SEED_PASSWORD no definidos: se omite la creación del admin.');
+    return;
+  }
+
+  const Usuario = require('./models/Usuario');
+  const existente = await Usuario.findOne({ email });
+  if (existente) {
+    console.log(`[SEED] Ya existe un usuario admin con el email ${email}.`);
+    return;
+  }
+
+  await Usuario.create({ nombre: 'Administrador', email, password, rol: 'admin' });
+  console.log(`[SEED] Usuario administrador creado: ${email}`);
 }
 
-iniciar();
+async function iniciar() {
+  await connectDB();
+  await seedAdminSiConfigurado();
+
+  const PORT = Number(process.env.PORT || 4000);
+  // 0.0.0.0: accesible desde Traefik/Dokploy (no 127.0.0.1)
+  const HOST = process.env.HOST || '0.0.0.0';
+
+  app.listen(PORT, HOST, () => console.log(`[SERVER] SysJuridico escuchando en http://${HOST}:${PORT}`));
+}
+
+iniciar().catch((err) => {
+  console.error('[SERVER] Error fatal al iniciar:', err.message);
+  process.exit(1);
+});
 
 module.exports = app;
