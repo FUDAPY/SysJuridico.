@@ -23,17 +23,6 @@
 
 Centraliza clientes, expedientes, honorarios y créditos, agenda, liquidaciones laborales (Ley 213/93) y el asistente **LexPY** (RAG sobre MongoDB + fuentes públicas). El backend expone una **API REST protegida con JWT** (Node.js + Express + Mongoose) y sirve, además, un frontend estático sin frameworks (HTML/CSS/JS); incluye un script oficial para migrar los datos históricos desde **Firebase Firestore**.
 
-## ES: Capturas de pantalla
-
-> Las imágenes son ilustrativas. Agrega las capturas reales en `docs/screenshots/`.
-
-<p align="center">
-  <img src="docs/screenshots/login.png" alt="Login" width="45%" />
-  <img src="docs/screenshots/dashboard.png" alt="Panel de resumen" width="45%" />
-  <br />
-  <img src="docs/screenshots/expedientes.png" alt="Expedientes y plan de pagos" width="45%" />
-  <img src="docs/screenshots/liquidacion.png" alt="Calculadora de liquidación MTESS" width="45%" />
-</p>
 
 ## ES: Características principales
 
@@ -216,17 +205,6 @@ Se permite el uso, copia, modificación, distribución y uso comercial del softw
 
 It centralizes clients, case files (expedientes), fees and credit plans, scheduling, severance calculations (Act 213/93) and the **LexPY** AI assistant (RAG over MongoDB + public sources). The backend exposes a **JWT-protected REST API** (Node.js + Express + Mongoose) and also serves a framework-free static frontend (HTML/CSS/JS); it ships an official migration script for legacy data from **Firebase Firestore**.
 
-## EN: Screenshots
-
-> Images are placeholders. Add real captures under `docs/screenshots/`.
-
-<p align="center">
-  <img src="docs/screenshots/login.png" alt="Login" width="45%" />
-  <img src="docs/screenshots/dashboard.png" alt="Dashboard" width="45%" />
-  <br />
-  <img src="docs/screenshots/expedientes.png" alt="Cases and payment plan" width="45%" />
-  <img src="docs/screenshots/liquidacion.png" alt="MTESS severance calculator" width="45%" />
-</p>
 
 ## EN: Key features
 
