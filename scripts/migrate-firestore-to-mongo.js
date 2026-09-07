@@ -1,8 +1,12 @@
 /**
- * Migración masiva de colecciones Firestore -> MongoDB.
+ * Migración Firestore -> MongoDB.
+ * Migra datos de negocio (clientes, expedientes, movimientos, agenda, liquidaciones),
+ * usuarios y colecciones de IA, reescribiendo referencias Firestore -> ObjectId de Mongo.
  *
- * Requiere la variable de entorno FIREBASE_SERVICE_ACCOUNT_PATH apuntando al archivo
- * de credenciales de servicio (NUNCA subir ese archivo a git, ya está en .gitignore).
+ * Configuración (variables de entorno):
+ *  - FIREBASE_SERVICE_ACCOUNT_PATH  -> ruta al JSON de credenciales (uso local).
+ *  - FIREBASE_SERVICE_ACCOUNT_JSON  -> contenido del JSON en base64 (uso en Dokploy/jobs).
+ *  - DATABASE_URL                   -> cadena de conexión a MongoDB (destino).
  *
  * Uso: npm run migrate:firestore
  */
@@ -13,32 +17,47 @@ const mongoose = require('mongoose');
 const admin = require('firebase-admin');
 const connectDB = require('../server/config/db');
 
-// Colecciones a migrar: mismo nombre en Firestore y en MongoDB
-const COLECCIONES = [
-  'aprendizajes_sistema',
-  'base_legal',
-  'estudio_juridico',
-  'lexpy_fuentes_cache',
-  'sesiones_chat',
-  'users',
+// Colecciones en orden de dependencia. Las que tienen 'refs' reescriben referencias.
+const GRUPOS = [
+  // 1º: entidades base (usuarios/clientes) para construir el mapa de ids.
+  { refs: true, nombres: ['users', 'clientes'] },
+  // 2º: entidades que referencian a las anteriores.
+  { refs: true, nombres: ['expedientes', 'movimientos_financieros', 'movimientos', 'agenda', 'eventos_agenda', 'liquidaciones_laborales', 'liquidaciones'] },
+  // 3º: colecciones auxiliares/IA.
+  { refs: true, nombres: ['aprendizajes_sistema', 'base_legal', 'estudio_juridico', 'lexpy_fuentes_cache', 'sesiones_chat'] },
 ];
 
-function inicializarFirebase() {
-  const rutaCredenciales = path.resolve(
-    process.env.FIREBASE_SERVICE_ACCOUNT_PATH || './sys-juridico-firebase-adminsdk-fbsvc-436ade3197.json'
-  );
+// Campos documento que guardan un id de Firestore (se reescriben a ObjectId de Mongo).
+const CAMPOS_REFERENCIA = [
+  'cliente', 'expediente', 'abogadoAsignado', 'responsable', 'creadoPor',
+  'registradoPor', 'calculadoPor', 'usuario', 'usuarioId', 'sesionId',
+];
 
-  if (!fs.existsSync(rutaCredenciales)) {
-    console.error(`[MIGRACIÓN] No se encontró el archivo de credenciales en: ${rutaCredenciales}`);
-    process.exit(1);
+// Mapa firestoreId -> ObjectId de Mongo (se completa durante la migración).
+const mapaIds = {};
+
+function inicializarFirebase() {
+  const jsonBase64 = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  let serviceAccount;
+
+  if (jsonBase64) {
+    serviceAccount = JSON.parse(Buffer.from(jsonBase64, 'base64').toString('utf8'));
+  } else {
+    const ruta = path.resolve(
+      process.env.FIREBASE_SERVICE_ACCOUNT_PATH || './sys-juridico-firebase-adminsdk-fbsvc-436ade3197.json'
+    );
+    if (!fs.existsSync(ruta)) {
+      console.error(`[MIGRACIÓN] No se encontró el archivo de credenciales en: ${ruta}`);
+      process.exit(1);
+    }
+    serviceAccount = JSON.parse(fs.readFileSync(ruta, 'utf8'));
   }
 
-  const serviceAccount = JSON.parse(fs.readFileSync(rutaCredenciales, 'utf8'));
   admin.initializeApp({ credential: admin.credential.cert(serviceAccount) });
   return admin.firestore();
 }
 
-// Convierte Timestamps/referencias de Firestore a tipos nativos serializables por Mongo
+// Convierte Timestamps / DocumentReference / arreglos de Firestore a tipos de Mongo.
 function normalizarDocumento(data) {
   const resultado = {};
   Object.entries(data).forEach(([clave, valor]) => {
@@ -46,6 +65,8 @@ function normalizarDocumento(data) {
       resultado[clave] = valor.toDate();
     } else if (valor && typeof valor === 'object' && valor.constructor?.name === 'DocumentReference') {
       resultado[clave] = valor.path;
+    } else if (Array.isArray(valor)) {
+      resultado[clave] = valor.map((v) => (v && typeof v.toDate === 'function') ? v.toDate() : v);
     } else {
       resultado[clave] = valor;
     }
@@ -53,46 +74,83 @@ function normalizarDocumento(data) {
   return resultado;
 }
 
-async function migrarColeccion(db, nombreColeccion) {
+// Reescribe referencias Firestore -> ObjectId de Mongo con el mapa construido.
+function reescribirReferencias(datos) {
+  Object.entries(datos).forEach(([clave, valor]) => {
+    if (!valor || typeof valor !== 'string') return;
+    if (CAMPOS_REFERENCIA.includes(clave) && mapaIds[valor]) {
+      datos[clave] = mapaIds[valor];
+      return;
+    }
+    // Referencias con formato { id: '...' } (patrón común en Firestore)
+    if (typeof valor === 'object' && typeof valor.id === 'string' && mapaIds[valor.id]) {
+      valor.id = mapaIds[valor.id];
+    }
+  });
+  return datos;
+}
+
+async function existeColeccion(db, nombre) {
+  const ref = db.collection(nombre);
+  const snapshot = await ref.limit(1).get();
+  return !snapshot.empty;
+}
+
+async function migrarColeccion(db, nombreColeccion, conReferencias) {
   const snapshot = await db.collection(nombreColeccion).get();
   if (snapshot.empty) {
-    console.log(`[MIGRACIÓN] "${nombreColeccion}": no hay documentos, se omite.`);
-    return { total: 0 };
+    console.log(`[MIGRACIÓN] "${nombreColeccion}": vacía, se omite.`);
+    return 0;
   }
 
   const coleccionMongo = mongoose.connection.collection(nombreColeccion);
-  const operaciones = snapshot.docs.map((doc) => {
+  const operaciones = [];
+
+  snapshot.docs.forEach((doc) => {
+    const firestoreId = doc.id;
     const datos = normalizarDocumento(doc.data());
-    return {
-      updateOne: {
-        filter: { firestoreId: doc.id },
-        update: { $set: { ...datos, firestoreId: doc.id } },
+
+    // Crea/unifica un ObjectId de Mongo por documento de Firestore.
+    const mongoId = mapaIds[firestoreId] || new mongoose.Types.ObjectId();
+    mapaIds[firestoreId] = mongoId;
+
+    reescribirReferencias(datos);
+
+    operaciones.push({
+      replaceOne: {
+        filter: { firestoreId },
+        replacement: { ...datos, firestoreId, _id: mongoId },
         upsert: true,
       },
-    };
+    });
   });
 
   const resultado = await coleccionMongo.bulkWrite(operaciones, { ordered: false });
   console.log(
-    `[MIGRACIÓN] "${nombreColeccion}": ${snapshot.size} documento(s) procesados ` +
-      `(insertados: ${resultado.upsertedCount}, actualizados: ${resultado.modifiedCount}).`
+    `[MIGRACIÓN] "${nombreColeccion}": ${snapshot.size} documento(s) ` +
+      `(insertados: ${resultado.upsertedCount + resultado.modifiedCount}).`
   );
-  return { total: snapshot.size };
+  return snapshot.size;
 }
 
 async function migrar() {
   const db = inicializarFirebase();
   await connectDB();
+  console.log('[MIGRACIÓN] Iniciando Firestore -> MongoDB...');
 
-  console.log('[MIGRACIÓN] Iniciando migración Firestore -> MongoDB...');
-  for (const coleccion of COLECCIONES) {
-    // eslint-disable-next-line no-await-in-loop
-    await migrarColeccion(db, coleccion).catch((err) =>
-      console.error(`[MIGRACIÓN] Error migrando "${coleccion}":`, err.message)
-    );
+  let total = 0;
+  for (const grupo of GRUPOS) {
+    for (const nombre of grupo.nombres) {
+      try {
+        if (!(await existeColeccion(db, nombre))) continue;
+        total += await migrarColeccion(db, nombre, grupo.refs);
+      } catch (err) {
+        console.error(`[MIGRACIÓN] Error en "${nombre}":`, err.message);
+      }
+    }
   }
 
-  console.log('[MIGRACIÓN] Proceso finalizado.');
+  console.log(`[MIGRACIÓN] Finalizado. Total documentos migrados: ${total}`);
   await mongoose.disconnect();
   process.exit(0);
 }

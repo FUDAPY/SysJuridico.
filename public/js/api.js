@@ -59,20 +59,20 @@ function renderBarraLateral(paginaActiva) {
   if (!usuario) return;
 
   const enlacesAdmin = [
-    { href: '/index.html', texto: 'Resumen', id: 'resumen' },
-    { href: '/clientes.html', texto: 'Clientes', id: 'clientes' },
-    { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes' },
-    { href: '/agenda.html', texto: 'Agenda', id: 'agenda' },
-    { href: '/usuarios.html', texto: 'Usuarios', id: 'usuarios' },
-    { href: '/lexpy.html', texto: 'LexPY (Chat IA)', id: 'lexpy' },
-    { href: '/liquidacion.html', texto: 'Liquidación Laboral', id: 'liquidacion' },
+    { href: '/index.html', texto: 'Resumen', id: 'resumen', icono: '📊' },
+    { href: '/clientes.html', texto: 'Clientes', id: 'clientes', icono: '👥' },
+    { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes', icono: '📁' },
+    { href: '/agenda.html', texto: 'Agenda', id: 'agenda', icono: '📅' },
+    { href: '/usuarios.html', texto: 'Usuarios', id: 'usuarios', icono: '⚙️' },
+    { href: '/liquidacion.html', texto: 'Liquidación Laboral', id: 'liquidacion', icono: '🧮' },
+    { href: '/lexpy.html', texto: 'LexPY (Chat IA)', id: 'lexpy', icono: '🤖' },
   ];
 
   const enlacesAbogado = [
-    { href: '/index.html', texto: 'Resumen del día', id: 'resumen' },
-    { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes' },
-    { href: '/liquidacion.html', texto: 'Créditos / Liquidación', id: 'liquidacion' },
-    { href: '/lexpy.html', texto: 'LexPY (Chat IA)', id: 'lexpy' },
+    { href: '/index.html', texto: 'Resumen del día', id: 'resumen', icono: '📊' },
+    { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes', icono: '📁' },
+    { href: '/liquidacion.html', texto: 'Créditos / Liquidación', id: 'liquidacion', icono: '🧮' },
+    { href: '/lexpy.html', texto: 'LexPY (Chat IA)', id: 'lexpy', icono: '🤖' },
   ];
 
   const enlaces = usuario.rol === 'admin' ? enlacesAdmin : enlacesAbogado;
@@ -81,14 +81,17 @@ function renderBarraLateral(paginaActiva) {
   if (!contenedor) return;
 
   contenedor.innerHTML = `
-    <h1>SysJuridico</h1>
+    <div class="logo-marca">
+      <img src="/img/logo.jpg" alt="Logo LIN GROUP & Asociados" />
+      <div class="marca-nombre">LIN GROUP<small>Asociados</small></div>
+    </div>
     <nav>
       ${enlaces
-        .map((e) => `<a href="${e.href}" class="${e.id === paginaActiva ? 'activo' : ''}">${e.texto}</a>`)
+        .map((e) => `<a href="${e.href}" class="${e.id === paginaActiva ? 'activo' : ''}"><span>${e.icono}</span>${e.texto}</a>`)
         .join('')}
     </nav>
     <div class="usuario-actual">
-      ${usuario.nombre}<br />
+      <strong>${usuario.nombre}</strong><br />
       <span style="text-transform:capitalize">${usuario.rol}</span>
       <button class="salir" onclick="cerrarSesion()">Cerrar sesión</button>
     </div>

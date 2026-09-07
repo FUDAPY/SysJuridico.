@@ -2,28 +2,97 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Iniciar sesión - SysJuridico</title>
+<title>Ingreso - LIN GROUP &amp; Asociados</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
-  body { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1e3a5f, #2f5d8a); }
-  .caja-login { background: #fff; border-radius: 16px; padding: 34px; width: 100%; max-width: 380px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
-  .caja-login h1 { color: var(--azul); font-size: 1.3rem; margin-bottom: 4px; }
-  .caja-login p { color: var(--texto-suave); font-size: .85rem; margin-top: 0; margin-bottom: 20px; }
-  .caja-login button { width: 100%; margin-top: 8px; }
-  .error { color: var(--rojo); font-size: .85rem; margin-top: 8px; display: none; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Inter', system-ui, Roboto, Arial, sans-serif;
+  }
+  /* Fondo a pantalla completa con opacidad */
+  .fondo-login {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: url('/img/fondo.jpg') center/cover no-repeat;
+  }
+  .fondo-oscuro {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(10, 18, 32, .55);
+  }
+  .caja-login {
+    background: rgba(255, 255, 255, .94);
+    border-radius: 20px;
+    padding: 38px 34px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+    border-top: 4px solid var(--dorado);
+    backdrop-filter: blur(2px);
+  }
+  .caja-login .logo {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+  }
+  .caja-login h1 {
+    color: var(--azul);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 4px 0 2px;
+    letter-spacing: .4px;
+  }
+  .caja-login .sub {
+    text-align: center;
+    color: #8a6d1a;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+  }
+  .caja-login p {
+    color: var(--texto-suave);
+    font-size: .85rem;
+    text-align: center;
+    margin: 0 0 20px;
+  }
+  .caja-login label { display: block; margin-bottom: 6px; }
+  .caja-login input { margin-bottom: 14px; }
+  .caja-login button { width: 100%; margin-top: 10px; }
+  .error { color: var(--rojo); font-size: .85rem; margin-top: 8px; display: none; text-align: center; }
+  .pie { text-align: center; margin-top: 16px; font-size: .72rem; color: var(--texto-suave); }
 </style>
 </head>
 <body>
+  <div class="fondo-login"></div>
+  <div class="fondo-oscuro"></div>
+
   <div class="caja-login">
-    <h1>SysJuridico</h1>
+    <img class="logo" src="/img/logo.jpg" alt="LIN GROUP & Asociados" />
+    <h1>LIN GROUP</h1>
+    <div class="sub">Asociados &mdash; Estudio Jurídico</div>
     <p>Ingrese sus credenciales para continuar</p>
     <label>Email</label>
     <input type="email" id="email" placeholder="usuario@estudio.com" />
-    <label style="margin-top:10px">Contraseña</label>
+    <label>Contraseña</label>
     <input type="password" id="password" placeholder="••••••••" />
     <p class="error" id="mensajeError"></p>
     <button class="btn-primario" onclick="iniciarSesion()">Ingresar</button>
+    <div class="pie">Sistema de Gestión Jurídica &copy; 2026</div>
   </div>
 
   <script src="/js/api.js"></script>

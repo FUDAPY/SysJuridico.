@@ -53,14 +53,107 @@ async function cargarExpedientes() {
     : '<tr><td colspan="6">No hay expedientes para los filtros seleccionados.</td></tr>';
 }
 
-// Detalle simplificado del expediente (plan de pagos, descripción, enlace). Vista completa: pendiente.
+// Detalle del expediente en modal con plan de pagos y tickets 80mm.
+let expedienteActual = null;
+
+function badgeCuota(c) {
+  return c.pagada
+    ? `<span class="badge badge-verde">Pagada</span>`
+    : `<span class="badge badge-rojo">Pendiente</span>`;
+}
+
 function verDetalleExpediente(expediente) {
-  const cuotas = (expediente.planPagos || [])
-    .map((c) => `Cuota ${c.numero}: ${formatoGs(c.montoEsperado)} - vence ${formatoFecha(c.fechaVencimiento)} - ${c.pagada ? 'Pagada' : 'Pendiente'}`)
-    .join('\n');
-  alert(
-    `${expediente.caratula}\nDescripción: ${expediente.descripcion || 'N/D'}\nDocumento: ${expediente.enlaceDocumento || 'N/D'}\n\nPlan de pagos:\n${cuotas || 'Sin plan de pagos asociado.'}`
-  );
+  expedienteActual = expediente;
+  document.getElementById('modalDetalle').classList.remove('oculto');
+  document.getElementById('detTitulo').textContent = expediente.caratula;
+  document.getElementById('detSub').textContent = `Creado: ${formatoFecha(expediente.createdAt)}`;
+
+  document.getElementById('detDatos').innerHTML = `
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Cliente</div>${expediente.cliente?.nombreCompleto || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">C.I.</div>${expediente.cliente?.cedula || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Fuero</div>${expediente.fuero || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Juzgado</div>${expediente.juzgado || '-'}</div>
+  `;
+
+  const cuotas = expediente.planPagos || [];
+  document.getElementById('detPlan').innerHTML = cuotas.length
+    ? `<table>
+        <thead><tr><th>N.º</th><th>Monto</th><th>Vencimiento</th><th>Estado</th><th>Ticket</th></tr></thead>
+        <tbody>
+          ${cuotas.map((c) => `
+            <tr>
+              <td>${c.numero}</td>
+              <td>${formatoGs(c.montoEsperado)}</td>
+              <td>${formatoFecha(c.fechaVencimiento)}</td>
+              <td>${badgeCuota(c)}</td>
+              <td><button class="btn-secundario" onclick='imprimirTicketCuota(${JSON.stringify(c)})'>🖨️ 80mm</button></td>
+            </tr>`).join('')}
+        </tbody>
+      </table>`
+    : '<p style="color:var(--texto-suave)">Sin plan de pagos asociado.</p>';
+
+  document.getElementById('detSaldo').textContent = `Saldo pendiente: ${formatoGs(expediente.saldoPendiente)}`;
+}
+
+function cerrarModalDetalle() {
+  document.getElementById('modalDetalle').classList.add('oculto');
+}
+
+// ---------- Impresión de ticket 80mm ----------
+function HTMLTicket(contenidoCuota) {
+  const e = expedienteActual;
+  return `<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8" />
+<title>Ticket - LIN GROUP</title>
+<style>
+  @page { size: 80mm auto; margin: 3mm; }
+  body { font-family: 'Courier New', monospace; width: 80mm; font-size: 11px; color: #000; margin:0; }
+  .centro { text-align: center; }
+  .linea { border-bottom: 1px dashed #000; }
+  .borde { border: 1px dashed #000; padding: 6px; margin-top: 5px; }
+  b { font-size: 13px; }
+</style></head><body>
+  <div class="centro"><img src="/img/logo.jpg" style="width:40mm; object-fit:contain" /></div>
+  <div class="centro"><b>LIN GROUP &amp; ASOCIADOS</b><br>ESTUDIO JURÍDICO - PARAGUAY<br><span class="linea">&nbsp;</span></div>
+  <div class="centro" style="font-size:12px; font-weight:bold; margin-top:4px">
+    ${e.planPagos?.find(c => c.numero === 1)?.pagada ? 'RECIBO' : 'AVISO DE COBRO - CUOTA'}</div>
+  <div class="borde">
+    <b>EXPEDIENTE:</b> ${e.caratula}<br>
+    <b>CLIENTE:</b> ${e.cliente?.nombreCompleto || '-'}<br>
+    <b>C.I.:</b> ${e.cliente?.cedula || '-'}<br>
+    <b>FUERO:</b> ${e.fuero || '-'} &nbsp; <b>JUZGADO:</b> ${e.juzgado || '-'}
+  </div>
+  <div class="borde">${contenidoCuota || ''}</div>
+  <div class="centro" style="margin-top:6px">Gracias por su preferencia<br>LIN GROUP &amp; ASOCIADOS</div>
+</body></html>`;
+}
+
+function imprimirTicketCuota(cuota) {
+  const contenido = `
+    <b>N.º DE CUOTA:</b> ${cuota.numero}<br>
+    <b>MONTO:</b> ${formatoGs(cuota.montoEsperado)}<br>
+    <b>VENCIMIENTO:</b> ${formatoFecha(cuota.fechaVencimiento)}<br>
+    <b>ESTADO:</b> ${cuota.pagada ? 'PAGADA' : 'PENDIENTE'}`;
+  abrirVentanaTicket(HTMLTicket(contenido));
+}
+
+function imprimirPlanCompleto() {
+  const e = expedienteActual;
+  const filas = (e.planPagos || [])
+    .map((c) => `${String(c.numero).padStart(2, '0')} | ${formatoGs(c.montoEsperado)} | ${formatoFecha(c.fechaVencimiento)} | ${c.pagada ? 'PAG' : 'PEND'}`)
+    .join('<br>');
+  const contenido = `<b>HONORARIOS:</b> ${formatoGs(e.honorariosTotales)}<br><b>ENTREGA:</b> ${formatoGs(e.entregaInicial)}<br><b>SALDO:</b> ${formatoGs(e.saldoPendiente)}<br><br>${filas}`;
+  abrirVentanaTicket(HTMLTicket(contenido));
+}
+
+// Abre ventana de impresión y dispara el diálogo de impresión de forma segura.
+function abrirVentanaTicket(html) {
+  const ventana = window.open('', '_blank', 'width=420,height=560');
+  if (!ventana) { alert('Permite las ventanas emergentes para imprimir tickets.'); return; }
+  ventana.document.write(html);
+  ventana.document.close();
+  ventana.focus();
+  setTimeout(() => { ventana.print(); }, 400);
 }
 
 function alternarCamposCredito() {

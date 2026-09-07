@@ -2,42 +2,64 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Calculadora de Liquidación Laboral - SysJuridico</title>
+<title>Liquidación Laboral - LIN GROUP &amp; Asociados</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
-  :root { --azul:#1e3a5f; --azul-claro:#2f5d8a; --gris:#f4f6f8; --borde:#e0e4e8; }
-  .contenedor { max-width: 960px; margin: 0; padding: 24px; }
-  h1 { color: var(--azul); font-size: 1.5rem; }
-  .tarjeta { background:#fff; border:1px solid var(--borde); border-radius:14px; padding:20px; margin-bottom:18px; box-shadow:0 1px 3px rgba(0,0,0,.04); }
-  .grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
-  label { display:block; font-size:.85rem; font-weight:600; margin-bottom:4px; color:#374151; }
-  input, select { width:100%; padding:9px 10px; border:1px solid var(--borde); border-radius:8px; font-size:.9rem; }
-  .check { display:flex; align-items:center; gap:8px; margin-top:8px; }
-  .check input { width:auto; }
-  button { cursor:pointer; border:none; border-radius:8px; padding:11px 18px; font-weight:600; font-size:.9rem; }
-  .btn-primario { background: var(--azul); color:#fff; }
-  .btn-primario:hover { background: var(--azul-claro); }
-  .btn-secundario { background:#fff; border:1px solid var(--azul); color:var(--azul); }
-  .acciones { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
-  table { width:100%; border-collapse: collapse; margin-top:10px; }
-  th, td { text-align:left; padding:10px; border-bottom:1px solid var(--borde); font-size:.9rem; }
-  th { color:#6b7280; font-weight:600; }
-  .total { font-size:1.3rem; font-weight:800; color: var(--azul); text-align:right; }
-  .oculto { display:none; }
-  .btn-flotante { position:fixed; bottom:24px; right:24px; background:var(--azul); color:#fff; border-radius:50px; padding:14px 20px; box-shadow:0 4px 10px rgba(0,0,0,.2); }
-  .membrete { display:none; }
+  .contenedor { max-width: 1040px; margin: 0; padding: 24px; }
+
+  .encabezado-pagina {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--dorado);
+  }
+  .encabezado-pagina img { width: 58px; height: 58px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.18); }
+  .encabezado-pagina .titulos { flex: 1; }
+  .encabezado-pagina h1 { font-size: 1.5rem; margin: 0; }
+  .encabezado-pagina p { margin: 2px 0 0; color: var(--texto-suave); font-size: .85rem; }
+
+  .tarjeta-calc { background: #fff; border: 1px solid var(--borde); border-radius: 16px; padding: 22px; margin-bottom: 18px; box-shadow: var(--sombra); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .check { display: flex; align-items: center; gap: 8px; margin-top: 12px; }
+  .check input { width: auto; }
+  .acciones { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+  .resumen-resultado { font-size: .95rem; font-weight: 600; color: var(--azul); margin: 6px 0 12px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 11px 10px; border-bottom: 1px solid var(--borde); font-size: .9rem; }
+  th { color: var(--texto-suave); font-weight: 700; background: #f8fafc; }
+  .total { font-size: 1.35rem; font-weight: 800; color: var(--azul); text-align: right; margin-top: 6px; padding: 14px 16px; background: #eef3fa; border-radius: 10px; }
+  .oculto { display: none; }
+
+  .btn-flotante { position: fixed; bottom: 24px; right: 24px; background: linear-gradient(135deg, var(--azul), var(--azul-claro)); color: #fff; border-radius: 50px; padding: 14px 22px; box-shadow: 0 8px 20px rgba(0,0,0,.25); z-index: 40; }
+  .btn-flotante:hover { filter: brightness(1.08); }
+
+  /* ===== Zona de impresión (membrete corporativo) ===== */
+  .membrete { display: none; }
+  .firma { display: none; }
 
   @media print {
-    body { background:#fff; }
-    .no-print { display:none !important; }
-    .contenedor { max-width:100%; padding:0; }
-    .tarjeta { border:none; box-shadow:none; padding:0; }
-    .membrete { display:block; text-align:center; border-bottom:3px solid var(--azul); padding-bottom:12px; margin-bottom:18px; }
-    .membrete h2 { margin:0; color:var(--azul); }
-    .membrete p { margin:2px 0; font-size:.85rem; color:#374151; }
-    .firma { margin-top:60px; display:flex; justify-content:space-between; }
-    .firma div { width:40%; border-top:1px solid #000; text-align:center; padding-top:6px; font-size:.85rem; }
+    body { background: #fff; }
+    .no-print { display: none !important; }
+    .contenedor { max-width: 100%; padding: 10px; }
+    .tarjeta-calc, .tarjeta { border: none; box-shadow: none; padding: 0; }
+    .membrete { display: block; }
+    .firma { display: flex; }
+    .membrete {
+      text-align: center;
+      border-bottom: 3px solid var(--azul);
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .membrete .logo-print { width: 64px; height: 64px; object-fit: contain; margin: 0 auto 6px; }
+    .membrete h2 { margin: 0; color: var(--azul); font-size: 1.35rem; }
+    .membrete .sub { font-size: .82rem; color: #374151; margin: 2px 0; }
+    .membrete .datos { font-size: .88rem; margin-top: 8px; color: #1f2937; text-align: left; width: 100%; }
+    .firma { margin-top: 52px; justify-content: space-between; }
+    .firma div { width: 42%; border-top: 1px solid #000; text-align: center; padding-top: 6px; font-size: .85rem; }
   }
 </style>
 </head>
@@ -46,14 +68,24 @@
 <div class="contenedor">
 
   <div class="membrete">
-    <h2>LIN GROUP &mdash; Estudio Jurídico</h2>
-    <p>Liquidación Laboral conforme al Código del Trabajo de la República del Paraguay (Ley N.º 213/1993)</p>
-    <p id="fechaEmision"></p>
+    <img class="logo-print" src="/img/logo.jpg" alt="Logo" />
+    <h2>LIN GROUP &amp; ASOCIADOS</h2>
+    <p class="sub">Estudio Jurídico &mdash; República del Paraguay</p>
+    <p class="sub">Liquidación Laboral conforme al Código del Trabajo de la República del Paraguay (Ley N.º 213/1993)</p>
+    <div class="datos" id="datosImpresion"></div>
+    <p class="sub" id="fechaEmision"></p>
   </div>
 
-  <h1 class="no-print">Calculadora de Liquidación Laboral</h1>
+  <div class="encabezado-pagina no-print">
+    <img src="/img/logo.jpg" alt="Logo LIN GROUP" />
+    <div class="titulos">
+      <h1>Calculadora de Liquidación Laboral</h1>
+      <p>LIN GROUP &amp; Asociados &mdash; Estudio Jurídico</p>
+    </div>
+  </div>
 
-  <div class="tarjeta no-print">
+  <div class="tarjeta-calc no-print" id="formulario">
+    <h3>Datos de la liquidación</h3>
     <div class="grid">
       <div>
         <label>Tipo de Liquidación</label>
@@ -65,6 +97,14 @@
         </select>
       </div>
       <div>
+        <label>Trabajador / Cliente</label>
+        <input type="text" id="trabajadorNombre" placeholder="Nombre y apellido" />
+      </div>
+      <div>
+        <label>C.I. del trabajador</label>
+        <input type="text" id="trabajadorCedula" placeholder="N.º de cédula" />
+      </div>
+      <div>
         <label>Fecha de Ingreso</label>
         <input type="date" id="fechaIngreso" />
       </div>
@@ -74,19 +114,19 @@
       </div>
       <div>
         <label>Salario Mensual Actual (Gs.)</label>
-        <input type="number" id="salarioMensual" min="0" placeholder="Ej: 3000000" />
+        <input type="number" id="salarioMensual" min="0" placeholder="Ej: 3.000.000" />
       </div>
       <div>
-        <label>Promedio últimos 6 meses (si hubo horas extras/comisiones)</label>
-        <input type="number" id="salarioPromedio6Meses" min="0" placeholder="Opcional" />
+        <label>Promedio últimos 6 meses (opcional)</label>
+        <input type="number" id="salarioPromedio6Meses" min="0" placeholder="Si hubo extras/comisiones" />
       </div>
-      <div>
-        <label>Cliente (opcional)</label>
-        <input type="text" id="clienteId" placeholder="ID de cliente en el sistema" />
+      <div class="oculto">
+        <label>Cliente (ID sistema)</label>
+        <input type="text" id="clienteId" placeholder="(opcional)" />
       </div>
-      <div>
-        <label>Expediente (opcional)</label>
-        <input type="text" id="expedienteId" placeholder="ID de expediente en el sistema" />
+      <div class="oculto">
+        <label>Expediente (ID sistema)</label>
+        <input type="text" id="expedienteId" placeholder="(opcional)" />
       </div>
     </div>
 
@@ -96,21 +136,21 @@
     </div>
 
     <div class="acciones">
-      <button class="btn-primario" onclick="calcular()">Calcular Liquidación</button>
-      <button class="btn-secundario" onclick="guardar()">Guardar en Sistema</button>
+      <button class="btn-primario" onclick="calcular()">🧮 Calcular Liquidación</button>
+      <button class="btn-secundario" onclick="guardar()">💾 Guardar en Sistema</button>
     </div>
   </div>
 
   <div class="tarjeta oculto" id="resultado">
     <h2 class="no-print">Desglose del Cálculo</h2>
-    <p id="resumenAntiguedad"></p>
+    <p class="resumen-resultado" id="resumenAntiguedad"></p>
     <table>
       <thead><tr><th>Concepto</th><th>Detalle</th><th>Monto (Gs.)</th></tr></thead>
       <tbody id="cuerpoTabla"></tbody>
     </table>
     <p class="total" id="totalGeneral"></p>
 
-    <div class="firma no-print" style="display:none">
+    <div class="firma">
       <div>Firma del Trabajador</div>
       <div>Firma del Empleador</div>
     </div>
@@ -123,6 +163,13 @@
 <script>
   requerirSesion();
   renderBarraLateral('liquidacion');
+
+  const NOMBRE_LIQUIDACION = {
+    despido_injustificado: 'Despido injustificado',
+    renuncia_voluntaria: 'Renuncia voluntaria',
+    despido_justificado: 'Despido justificado (Art. 81)',
+    fin_contrato_jubilacion: 'Fin de contrato / Jubilación',
+  };
 
   document.getElementById('fechaEmision').textContent = 'Fecha de emisión: ' + new Date().toLocaleDateString('es-PY');
 
@@ -144,10 +191,26 @@
   }
 
   function formatoGs(numero) {
-    return new Intl.NumberFormat('es-PY').format(numero) + ' Gs.';
+    return new Intl.NumberFormat('es-PY').format(Math.round(numero || 0)) + ' Gs.';
+  }
+
+  // Incluye los datos identificatorios en el reporte impreso
+  function rellenarDatosImpresion() {
+    const nombre = document.getElementById('trabajadorNombre').value.trim();
+    const cedula = document.getElementById('trabajadorCedula').value.trim();
+    const tipo = NOMBRE_LIQUIDACION[document.getElementById('tipoLiquidacion').value] || '';
+    const ingreso = document.getElementById('fechaIngreso').value
+      ? new Date(document.getElementById('fechaIngreso').value).toLocaleDateString('es-PY') : '';
+    const salida = document.getElementById('fechaSalida').value
+      ? new Date(document.getElementById('fechaSalida').value).toLocaleDateString('es-PY') : '';
+    document.getElementById('datosImpresion').innerHTML =
+      `Trabajador: <strong>${nombre || '..........................................'}</strong><br>` +
+      `C.I. N.º: <strong>${cedula || '.....................'}</strong><br>` +
+      `Motivo: ${tipo} &nbsp;|&nbsp; Período: ${ingreso || '........'} al ${salida || '........'}`;
   }
 
   function pintarResultado(data) {
+    rellenarDatosImpresion();
     document.getElementById('resultado').classList.remove('oculto');
     const a = data.antiguedad;
     document.getElementById('resumenAntiguedad').textContent =

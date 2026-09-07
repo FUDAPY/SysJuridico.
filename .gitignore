@@ -23,3 +23,7 @@ Thumbs.db
 dist/
 build/
 coverage/
+
+# Imágenes originales de la raíz (se sirven desde public/img/)
+/877114.jpg
+/poder.jpg

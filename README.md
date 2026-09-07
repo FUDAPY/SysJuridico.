@@ -110,6 +110,39 @@ El proyecto incluye `Dockerfile`, `.dockerignore` y (opcional) `docker-compose.y
 
 **Alternativa con MongoDB incluido (opcional):** despliega un servicio de tipo **Docker Compose** apuntando al archivo `docker-compose.yml` de la raíz: levanta la app y MongoDB juntos en la misma red. El dominio se asigna al servicio `app`, puerto `4000`. Ajusta las variables en el panel; los valores por defecto del compose sirven para la primera prueba.
 
+---
+
+## Migración de Firebase Firestore a MongoDB
+
+El script `scripts/migrate-firestore-to-mongo.js` trae los datos de Firestore al MongoDB del VPS, reescribiendo las referencias (`cliente`, `expediente`, `registradoPor`, etc.) para que las relaciones del sistema sigan funcionando.
+
+**Datos que migra:** `users`, `clientes`, `expedientes`, `movimientos(_financieros)`, `agenda`/`eventos_agenda`, `liquidaciones(_laborales)` y las colecciones de LexPY (`base_legal`, `aprendizajes_sistema`, `sesiones_chat`, `lexpy_fuentes_cache`, `estudio_juridico`). Solo procesa las colecciones que existan en Firestore.
+
+### Paso a paso
+
+1. **Genera el base64 de tu archivo de credenciales** (el JSON `sys-juridico-firebase-adminsdk-*.json` de la carpeta raíz — **nunca** se sube a git):
+   ```powershell
+   # Opción Windows (PowerShell)
+   [System.IO.File]::ReadAllBytes("sys-juridico-firebase-adminsdk-fbsvc-436ade3197.json") | [Base64]::EncodeBytes
+   ```
+   (En Linux: `base64 -w0 sys-juridico-firebase-adminsdk-*.json`)
+
+2. **En Dokploy**, en la Aplicación (o en un **Job**), añade al Environment:
+   - `FIREBASE_SERVICE_ACCOUNT_JSON` = (el base64 del paso 1)
+   - `DATABASE_URL` = la cadena MongoDB de tu VPS (la que ya usas)
+   - `JWT_SECRET` y demás variables que ya tenga la aplicación.
+
+3. **Ejecuta la migración** con una de estas opciones:
+   - **Opción A (recomendada, vía Job en Dokploy):** crea un *Job* que ejecute `npm run migrate:firestore` dentro del proyecto. Como la credencial viaja en la variable de entorno, no hace falta copiar archivos al contenedor.
+   - **Opción B (local contra el VPS):** si expones MongoDB con IP+público (External Credentials en Dokploy) y el puerto 27017 está abierto, edita `DATABASE_URL` en tu `.env` local apuntando a esa IP y ejecuta `npm run migrate:firestore`.
+   - **Opción C (dentro del contenedor de la app):** en Dokploy ve a la pestaña **Terminal** de la aplicación (si el contenedor está vivo) y ejecuta `npm run migrate:firestore`, con la variable `FIREBASE_SERVICE_ACCOUNT_JSON` definida en el environment.
+
+4. **Verifica** que llegaron los datos:
+   - Entra a la app → Clientes, Expedientes y Agenda deben mostrar los registros migrados.
+   - Al abrir un expediente, su plan de pagos/crédito debe aparecer intacto.
+
+> ⚠️ La migración es **idempotente** (puedes repetirla; actualiza por `firestoreId`). Si es tu primera migración con este script y ya habías migrado antes con la versión anterior, simplemente vuelve a ejecutarlo.
+
 ## Licencia
 
 Este proyecto se distribuye bajo la **OTELAX DEV PRIVATE SOFTWARE LICENSE**. Ver el archivo [LICENSE](LICENSE) para el detalle completo. En resumen: todos los derechos reservados, Se concede permiso para usar y copiar el código fuente de este software,
