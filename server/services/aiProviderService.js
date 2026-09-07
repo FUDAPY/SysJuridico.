@@ -88,6 +88,29 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
       return respuesta.data?.choices?.[0]?.message?.content || null;
     }
 
+    // NVIDIA (API compatible con OpenAI: integrate.api.nvidia.com)
+    if (proveedor === 'nvidia') {
+      const modelo = process.env.LEXPY_AI_MODEL || 'deepseek-ai/deepseek-v4-flash-0731';
+      const respuesta = await axios.post(
+        'https://integrate.api.nvidia.com/v1/chat/completions',
+        {
+          model: modelo,
+          messages: [
+            {
+              role: 'system',
+              content: contenidoSistema,
+            },
+            { role: 'user', content: promptCompleto },
+          ],
+          temperature: 0.3,
+          top_p: 0.95,
+          max_tokens: 4096,
+        },
+        { headers: { Authorization: `Bearer ${apiKey}` }, timeout: 150000 }
+      );
+      return respuesta.data?.choices?.[0]?.message?.content || null;
+    }
+
     if (proveedor === 'gemini') {
       const modelo = process.env.LEXPY_AI_MODEL || 'gemini-1.5-flash';
       const respuesta = await axios.post(

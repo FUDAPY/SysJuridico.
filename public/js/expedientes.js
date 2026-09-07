@@ -93,6 +93,7 @@ function verDetalleExpediente(expediente) {
     : '<p style="color:var(--texto-suave)">Sin plan de pagos asociado.</p>';
 
   document.getElementById('detSaldo').textContent = `Saldo pendiente: ${formatoGs(expediente.saldoPendiente)}`;
+  cargarDocumentosExpediente(expediente._id);
 }
 
 function cerrarModalDetalle() {
@@ -218,6 +219,99 @@ async function guardarExpediente() {
     await apiFetch('/expedientes', { method: 'POST', body: datos });
     cerrarModalExpediente();
     cargarExpedientes();
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+/* ---------- Documentos adjuntos del expediente ---------- */
+function tamanoArchivo(bytes) {
+  if (!bytes) return '0 B';
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
+}
+
+function iconoDocumento(nombre) {
+  const ext = (nombre.split('.').pop() || '').toUpperCase();
+  return ext === 'PDF' ? '📕' : '📘';
+}
+
+async function cargarDocumentosExpediente(id) {
+  const contenedor = document.getElementById('listaDocs');
+  if (!contenedor) return;
+  contenedor.innerHTML = 'Cargando documentos…';
+  try {
+    const docs = await apiFetch(`/expedientes/${id}/documentos`);
+    contenedor.innerHTML = docs.length
+      ? docs
+          .map(
+            (d) => `<div style="display:flex; align-items:center; gap:8px; padding:6px 8px; border:1px solid var(--borde); border-radius:8px; margin-bottom:6px; flex-wrap:wrap">
+              <span style="font-size:1.1rem">${iconoDocumento(d.nombre)}</span>
+              <span style="flex:1; min-width:120px"><strong>${d.nombre}</strong><br /><small style="color:var(--texto-suave)">${tamanoArchivo(d.tamano)} · ${formatoFecha(d.createdAt)}</small></span>
+              <button class="btn-secundario" style="padding:5px 8px;font-size:.75rem" onclick="descargarDocumentoExpediente('${d._id}')">⬇ Descargar</button>
+              <button class="btn-peligro" style="padding:5px 8px;font-size:.75rem" onclick="eliminarDocumentoExpediente('${d._id}')">🗑 Eliminar</button>
+            </div>`
+          )
+          .join('')
+      : '<p style="color:var(--texto-suave)">Aún no hay documentos adjuntos.</p>';
+  } catch (err) {
+    contenedor.innerHTML = `<p style="color:var(--rojo)">Error: ${err.message}</p>`;
+  }
+}
+
+async function subirDocumentoExpediente() {
+  if (!expedienteActual) return;
+  const input = document.getElementById('inputDocumento');
+  const archivo = input.files && input.files[0];
+  if (!archivo) return alert('Seleccione un archivo .doc, .docx o .pdf.');
+  if (!/\.(doc|docx|pdf)$/i.test(archivo.name)) return alert('Solo se permiten archivos .doc, .docx o .pdf.');
+  if (archivo.size > 15 * 1024 * 1024) return alert('El archivo supera el tamaño máximo de 15 MB.');
+
+  const lector = new FileReader();
+  lector.onload = async () => {
+    try {
+      const base64 = String(lector.result).split(',')[1];
+      await apiFetch(`/expedientes/${expedienteActual._id}/documentos`, {
+        method: 'POST',
+        body: { nombre: archivo.name, tipo: archivo.type || '', datos: base64 },
+      });
+      input.value = '';
+      cargarDocumentosExpediente(expedienteActual._id);
+    } catch (err) {
+      alert(err.message);
+    }
+  };
+  lector.onerror = () => alert('No se pudo leer el archivo.');
+  lector.readAsDataURL(archivo);
+}
+
+async function descargarDocumentoExpediente(docId) {
+  if (!expedienteActual) return;
+  try {
+    const data = await apiFetch(`/expedientes/${expedienteActual._id}/documentos/${docId}/descargar`);
+    const binario = atob(data.base64);
+    const arreglo = new Uint8Array(binario.length);
+    for (let i = 0; i < binario.length; i += 1) arreglo[i] = binario.charCodeAt(i);
+    const blob = new Blob([arreglo], { type: data.tipo || 'application/octet-stream' });
+    const enlace = document.createElement('a');
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = data.nombre;
+    document.body.appendChild(enlace);
+    enlace.click();
+    enlace.remove();
+    setTimeout(() => URL.revokeObjectURL(enlace.href), 4000);
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+async function eliminarDocumentoExpediente(docId) {
+  if (!expedienteActual) return;
+  if (!confirm('¿Eliminar este documento?')) return;
+  try {
+    await apiFetch(`/expedientes/${expedienteActual._id}/documentos/${docId}`, { method: 'DELETE' });
+    cargarDocumentosExpediente(expedienteActual._id);
   } catch (err) {
     alert(err.message);
   }

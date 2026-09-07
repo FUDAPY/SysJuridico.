@@ -63,6 +63,13 @@
       <div id="detPlan"></div>
       <p id="detSaldo" style="font-weight:700; color:var(--azul); margin-top:10px"></p>
 
+      <h4 style="margin-top:18px">Documentos (.doc / .docx / .pdf)</h4>
+      <div id="listaDocs" style="margin:8px 0; font-size:.85rem"></div>
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:6px">
+        <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf" style="max-width:280px; flex:1" />
+        <button class="btn-secundario" onclick="subirDocumentoExpediente()">+ Agregar documento</button>
+      </div>
+
       <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
         <button class="btn-primario" onclick="imprimirPlanCompleto()">🖨️ Comprobante / Plan de pagos 80mm</button>
         <button class="btn-secundario" onclick="cerrarModalDetalle()">Cerrar</button>

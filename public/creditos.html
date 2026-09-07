@@ -50,6 +50,31 @@
     </div>
   </div>
 
+  <div class="modal-fondo oculto" id="modalCobro">
+    <div class="modal" style="max-width:440px">
+      <h3>Registrar cobro</h3>
+      <p id="cobroInfo" style="background:#eef3fa; border-radius:8px; padding:10px; font-size:.85rem; margin:0 0 12px"></p>
+      <label>Monto a cobrar (Gs.)</label>
+      <input type="number" id="cbMonto" min="0" />
+      <label style="margin-top:10px">Fecha del cobro</label>
+      <input type="date" id="cbFecha" />
+      <label style="margin-top:10px">Método de pago</label>
+      <select id="cbMetodo">
+        <option value="efectivo">Efectivo</option>
+        <option value="transferencia">Transferencia</option>
+        <option value="tarjeta">Tarjeta</option>
+        <option value="cheque">Cheque</option>
+        <option value="otro">Otro</option>
+      </select>
+      <label style="margin-top:10px">Nota (opcional)</label>
+      <input id="cbNota" placeholder="Observaciones del cobro" />
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="confirmarCobro()">Confirmar cobro</button>
+        <button class="btn-secundario" onclick="cerrarModalCobro()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
   <script src="/js/api.js"></script>
   <script src="/js/creditos.js"></script>
 </body>

@@ -29,6 +29,9 @@ function pintarTabla() {
               ? '<span class="badge badge-rojo">Pendiente</span>'
               : '<span class="badge badge-verde">Cancelado</span>'}</td>
             <td>
+              ${Number(c.saldoPendiente) > 0
+                ? `<button class="btn-primario" style="padding:6px 10px;font-size:.8rem" onclick='abrirCobro(${JSON.stringify(c)})'>💰 Cobrar</button>`
+                : ''}
               <button class="btn-secundario" onclick='editarCredito(${JSON.stringify(c)})'>Editar</button>
               <button class="btn-peligro" onclick="eliminarCredito('${c._id}')">Eliminar</button>
             </td>
@@ -105,6 +108,52 @@ async function eliminarCredito(id) {
   if (!confirm('¿Eliminar este crédito?')) return;
   try {
     await apiFetch(`/creditos/${id}`, { method: 'DELETE' });
+    cargarCreditos();
+  } catch (err) {
+    alert(err.message);
+  }
+}
+
+let creditoCobro = null;
+
+function abrirCobro(credito) {
+  creditoCobro = credito;
+  const saldo = Number(credito.saldoPendiente) || 0;
+  document.getElementById('cobroInfo').innerHTML =
+    `Cliente: <strong>${nombreClienteCredito(credito)}</strong><br />` +
+    `Concepto: ${credito.concepto || '—'}<br />` +
+    `Saldo pendiente: <strong>${formatoGs(saldo)}</strong>`;
+  document.getElementById('cbMonto').value = saldo;
+  document.getElementById('cbFecha').value = new Date().toISOString().slice(0, 10);
+  document.getElementById('cbMetodo').value = 'efectivo';
+  document.getElementById('cbNota').value = '';
+  document.getElementById('modalCobro').classList.remove('oculto');
+}
+
+function cerrarModalCobro() {
+  document.getElementById('modalCobro').classList.add('oculto');
+}
+
+async function confirmarCobro() {
+  if (!creditoCobro) return;
+  const monto = Number(document.getElementById('cbMonto').value) || 0;
+  const saldo = Number(creditoCobro.saldoPendiente) || 0;
+  if (monto <= 0) return alert('Indique el monto a cobrar.');
+  if (monto > saldo) return alert(`El monto supera el saldo pendiente (${formatoGs(saldo)}).`);
+
+  try {
+    const data = await apiFetch(`/creditos/${creditoCobro._id}/cobrar`, {
+      method: 'POST',
+      body: {
+        monto,
+        metodoPago: document.getElementById('cbMetodo').value,
+        fecha: document.getElementById('cbFecha').value || undefined,
+        notas: document.getElementById('cbNota').value,
+      },
+    });
+    alert(`Cobro registrado. Nuevo saldo: ${formatoGs(data.saldoActualizado)}`);
+    cerrarModalCobro();
+    creditoCobro = null;
     cargarCreditos();
   } catch (err) {
     alert(err.message);
