@@ -86,7 +86,7 @@ function verDetalleExpediente(expediente) {
               <td>${formatoGs(c.montoEsperado)}</td>
               <td>${formatoFecha(c.fechaVencimiento)}</td>
               <td>${badgeCuota(c)}</td>
-              <td><button class="btn-secundario" onclick='imprimirTicketCuota(${JSON.stringify(c)})'>🖨️ 80mm</button></td>
+              <td><button class="btn-secundario" onclick='imprimirTicketCuota(${JSON.stringify(c)})'>🖨️ Comprobante</button></td>
             </tr>`).join('')}
         </tbody>
       </table>`
@@ -99,24 +99,48 @@ function cerrarModalDetalle() {
   document.getElementById('modalDetalle').classList.add('oculto');
 }
 
-// ---------- Impresión de ticket 80mm ----------
-function HTMLTicket(contenidoCuota) {
+// ---------- Impresión de ticket 80mm (comprobante de pago) ----------
+const EMPRESA = {
+  nombre: 'LIN GROUP & ASOCIADOS',
+  slogan: 'ESTUDIO JURÍDICO - PARAGUAY',
+  direccion: 'Av. Camilo Recalde c/ Av. Pioneros del Este',
+  email: 'asesoria@lingroupsapy.com',
+  telefono: '0982 210777',
+};
+
+function HTMLTicket(contenidoCuota, documentoEtiqueta = '') {
   const e = expedienteActual;
+  const ahora = new Date();
+  const pad = (n) => String(n).padStart(2, '0');
+  const folio = `${ahora.getFullYear()}${pad(ahora.getMonth() + 1)}${pad(ahora.getDate())}-${pad(ahora.getHours())}${pad(ahora.getMinutes())}${pad(ahora.getSeconds())}`;
+  const etiquetaDoc =
+    documentoEtiqueta ||
+    (e.planPagos?.find((c) => c.numero === 1)?.pagada ? 'RECIBO DE PAGO' : 'AVISO DE COBRO');
   return `<!DOCTYPE html>
 <html lang="es"><head><meta charset="UTF-8" />
-<title>Ticket - LIN GROUP</title>
+<title>${etiquetaDoc} - LIN GROUP</title>
 <style>
   @page { size: 80mm auto; margin: 3mm; }
-  body { font-family: 'Courier New', monospace; width: 80mm; font-size: 11px; color: #000; margin:0; }
+  body { font-family: 'Courier New', monospace; width: 80mm; font-size: 11px; color: #000; margin: 0; }
   .centro { text-align: center; }
-  .linea { border-bottom: 1px dashed #000; }
-  .borde { border: 1px dashed #000; padding: 6px; margin-top: 5px; }
-  b { font-size: 13px; }
+  .linea { border-top: 1px dashed #000; margin: 4px 0; }
+  .borde { border: 1px dashed #000; padding: 6px; margin-top: 5px; border-radius: 2px; }
+  .empresa { font-size: 13px; font-weight: bold; }
+  .slogan { letter-spacing: 1px; font-size: 10px; }
+  .contacto { font-size: 9px; margin-top: 3px; line-height: 1.35; }
+  .titulo-doc { font-size: 13px; font-weight: bold; letter-spacing: 2px; margin-top: 4px; background: #000; color: #fff; padding: 3px 0; }
+  .fila { display: flex; justify-content: space-between; }
+  b { font-size: 12px; }
+  .pie { font-size: 9px; margin-top: 6px; text-align: center; }
 </style></head><body>
-  <div class="centro"><img src="/img/logo.jpg" style="width:40mm; object-fit:contain" /></div>
-  <div class="centro"><b>LIN GROUP &amp; ASOCIADOS</b><br>ESTUDIO JURÍDICO - PARAGUAY<br><span class="linea">&nbsp;</span></div>
-  <div class="centro" style="font-size:12px; font-weight:bold; margin-top:4px">
-    ${e.planPagos?.find(c => c.numero === 1)?.pagada ? 'RECIBO' : 'AVISO DE COBRO - CUOTA'}</div>
+  <div class="centro"><img src="/img/logo.jpg" style="width:38mm; object-fit:contain" alt="Logo" /></div>
+  <div class="centro empresa">LIN GROUP &amp; ASOCIADOS</div>
+  <div class="centro slogan">ESTUDIO JURÍDICO - PARAGUAY</div>
+  <div class="centro contacto">${EMPRESA.direccion}<br>${EMPRESA.email} - Tel. ${EMPRESA.telefono}</div>
+  <div class="linea"></div>
+  <div class="centro titulo-doc">${etiquetaDoc}</div>
+  <div class="fila" style="margin-top:4px"><span>FOLIO: ${folio}</span><span>${ahora.toLocaleDateString('es-PY')} ${pad(ahora.getHours())}:${pad(ahora.getMinutes())}</span></div>
+  <div class="linea"></div>
   <div class="borde">
     <b>EXPEDIENTE:</b> ${e.caratula}<br>
     <b>CLIENTE:</b> ${e.cliente?.nombreCompleto || '-'}<br>
@@ -124,7 +148,10 @@ function HTMLTicket(contenidoCuota) {
     <b>FUERO:</b> ${e.fuero || '-'} &nbsp; <b>JUZGADO:</b> ${e.juzgado || '-'}
   </div>
   <div class="borde">${contenidoCuota || ''}</div>
-  <div class="centro" style="margin-top:6px">Gracias por su preferencia<br>LIN GROUP &amp; ASOCIADOS</div>
+  <div class="linea"></div>
+  <div class="pie">
+    Gracias por su preferencia<br><b>LIN GROUP &amp; ASOCIADOS</b><br>${EMPRESA.email} - ${EMPRESA.telefono}<br><i>Documento de control, no es factura.</i>
+  </div>
 </body></html>`;
 }
 

@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <title>Liquidación Laboral - LIN GROUP &amp; Asociados</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
@@ -38,28 +39,32 @@
   .btn-flotante:hover { filter: brightness(1.08); }
 
   /* ===== Zona de impresión (membrete corporativo) ===== */
+  @page { size: A4; margin: 12mm; }
   .membrete { display: none; }
   .firma { display: none; }
 
   @media print {
     body { background: #fff; }
     .no-print { display: none !important; }
-    .contenedor { max-width: 100%; padding: 10px; }
+    .contenedor { max-width: 100%; padding: 0; }
     .tarjeta-calc, .tarjeta { border: none; box-shadow: none; padding: 0; }
     .membrete { display: block; }
     .firma { display: flex; }
     .membrete {
       text-align: center;
-      border-bottom: 3px solid var(--azul);
+      border-bottom: 3px double var(--azul);
       padding-bottom: 10px;
       margin-bottom: 14px;
     }
-    .membrete .logo-print { width: 64px; height: 64px; object-fit: contain; margin: 0 auto 6px; }
-    .membrete h2 { margin: 0; color: var(--azul); font-size: 1.35rem; }
-    .membrete .sub { font-size: .82rem; color: #374151; margin: 2px 0; }
-    .membrete .datos { font-size: .88rem; margin-top: 8px; color: #1f2937; text-align: left; width: 100%; }
+    .membrete .logo-print { width: 62px; height: 62px; object-fit: contain; }
+    .membrete h2 { margin: 0; color: var(--azul); font-size: 1.4rem; letter-spacing: .3px; }
+    .membrete .sub { font-size: .78rem; color: #374151; margin: 2px 0; }
+    .membrete .contacto { font-size: .78rem; color: #1f2937; margin-top: 5px; border-top: 1px dashed #94a3b8; padding-top: 5px; }
+    .membrete .datos { font-size: .88rem; margin-top: 8px; color: #1f2937; text-align: left; }
     .firma { margin-top: 52px; justify-content: space-between; }
     .firma div { width: 42%; border-top: 1px solid #000; text-align: center; padding-top: 6px; font-size: .85rem; }
+    table { border: 1px solid #cbd5e1; }
+    th { background: #eef3fa !important; }
   }
 </style>
 </head>
@@ -68,12 +73,17 @@
 <div class="contenedor">
 
   <div class="membrete">
-    <img class="logo-print" src="/img/logo.jpg" alt="Logo" />
-    <h2>LIN GROUP &amp; ASOCIADOS</h2>
-    <p class="sub">Estudio Jurídico &mdash; República del Paraguay</p>
-    <p class="sub">Liquidación Laboral conforme al Código del Trabajo de la República del Paraguay (Ley N.º 213/1993)</p>
+    <div style="display:flex; align-items:center; gap:14px; justify-content:center">
+      <img class="logo-print" src="/img/logo.jpg" alt="Logo LIN GROUP & Asociados" />
+      <div style="text-align:left">
+        <h2>LIN GROUP &amp; ASOCIADOS</h2>
+        <p class="sub" style="margin:0">Estudio Jurídico &mdash; República del Paraguay</p>
+      </div>
+    </div>
+    <p class="sub contacto">Av. Camilo Recalde c/ Av. Pioneros del Este &nbsp;•&nbsp; asesoria@lingroupsapy.com &nbsp;•&nbsp; 0982 210777</p>
+    <p class="sub" style="margin-top:6px">Liquidación Laboral conforme al Código del Trabajo de la República del Paraguay (Ley N.º 213/1993)</p>
     <div class="datos" id="datosImpresion"></div>
-    <p class="sub" id="fechaEmision"></p>
+    <p class="sub" id="fechaEmision" style="margin-top:6px"></p>
   </div>
 
   <div class="encabezado-pagina no-print">

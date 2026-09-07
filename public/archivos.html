@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ubicación de Archivos - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon" href="/img/logo.ico" />
+<link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Ubicación de Archivos</h2>
+      <button class="btn-primario" onclick="abrirModalArchivo()">+ Registrar archivo</button>
+    </div>
+
+    <div class="tarjeta">
+      <input id="buscador" placeholder="Buscar por nombre o ubicación (Tomo, estante, caja)..." oninput="pintarTabla()" />
+    </div>
+
+    <div class="tarjeta">
+      <table>
+        <thead><tr><th>Nombre / Caso</th><th>Ubicación</th><th>Registrado</th><th>Acciones</th></tr></thead>
+        <tbody id="tablaArchivos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalArchivo">
+    <div class="modal" style="max-width:480px">
+      <h3 id="tituloModalArchivo">Registrar archivo</h3>
+      <input type="hidden" id="archivoId" />
+      <label>Nombre / Caso</label>
+      <input id="afNombre" placeholder="Ej: Antonio Riveros Martínez" />
+      <label style="margin-top:10px">Ubicación</label>
+      <input id="afUbicacion" placeholder="Ej: Tomo I / Estante 3" />
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarArchivo()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalArchivo()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/archivos.js"></script>
+</body>
+</html>

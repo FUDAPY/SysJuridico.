@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Créditos / Cobranzas - SysJuridico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon" href="/img/logo.ico" />
+<link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="barra-lateral" id="barra-lateral"></div>
+
+  <div class="contenido">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+      <h2>Créditos / Cobranzas</h2>
+      <button class="btn-primario" onclick="abrirModalCredito()">+ Nuevo crédito</button>
+    </div>
+
+    <div class="tarjeta">
+      <input id="buscador" placeholder="Buscar por cliente, expediente o concepto..." oninput="pintarTabla()" />
+    </div>
+
+    <div class="tarjeta">
+      <table>
+        <thead><tr><th>Cliente</th><th>Expediente</th><th>Concepto</th><th>Monto total</th><th>Saldo</th><th>Estado</th><th>Acciones</th></tr></thead>
+        <tbody id="tablaCreditos"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="modal-fondo oculto" id="modalCredito">
+    <div class="modal">
+      <h3 id="tituloModalCredito">Nuevo crédito</h3>
+      <input type="hidden" id="creditoId" />
+      <label>Cliente</label>
+      <select id="crCliente"></select>
+      <label style="margin-top:10px">Expediente</label>
+      <select id="crExpediente"><option value="">— Sin expediente —</option></select>
+      <label style="margin-top:10px">Concepto</label>
+      <input id="crConcepto" placeholder="Ej: Saldo honorarios / Informconf" />
+      <label style="margin-top:10px">Monto total (Gs.)</label>
+      <input type="number" id="crMontoTotal" min="0" />
+      <label style="margin-top:10px">Saldo pendiente (Gs.)</label>
+      <input type="number" id="crSaldoPendiente" min="0" />
+      <div style="display:flex; gap:10px; margin-top:16px">
+        <button class="btn-primario" onclick="guardarCredito()">Guardar</button>
+        <button class="btn-secundario" onclick="cerrarModalCredito()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/creditos.js"></script>
+</body>
+</html>

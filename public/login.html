@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
 <title>Ingreso - LIN GROUP &amp; Asociados</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
@@ -40,20 +41,22 @@
     backdrop-filter: blur(2px);
   }
   .caja-login .logo {
-    width: 84px;
-    height: 84px;
+    width: 92px;
+    height: 92px;
     object-fit: cover;
-    border-radius: 18px;
+    border-radius: 22px;
     display: block;
     margin: 0 auto 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
+    border: 2px solid rgba(255, 215, 0, .55);
   }
   .caja-login h1 {
     color: var(--azul);
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     text-align: center;
     margin: 4px 0 2px;
-    letter-spacing: .4px;
+    letter-spacing: .6px;
+    font-weight: 900;
   }
   .caja-login .sub {
     text-align: center;
@@ -74,7 +77,15 @@
   .caja-login input { margin-bottom: 14px; }
   .caja-login button { width: 100%; margin-top: 10px; }
   .error { color: var(--rojo); font-size: .85rem; margin-top: 8px; display: none; text-align: center; }
-  .pie { text-align: center; margin-top: 16px; font-size: .72rem; color: var(--texto-suave); }
+  .pie {
+    text-align: center;
+    margin-top: 16px;
+    font-size: .7rem;
+    color: var(--texto-suave);
+    line-height: 1.6;
+    border-top: 1px dashed rgba(0, 0, 0, .12);
+    padding-top: 10px;
+  }
 </style>
 </head>
 <body>
@@ -92,7 +103,11 @@
     <input type="password" id="password" placeholder="••••••••" />
     <p class="error" id="mensajeError"></p>
     <button class="btn-primario" onclick="iniciarSesion()">Ingresar</button>
-    <div class="pie">Sistema de Gestión Jurídica &copy; 2026</div>
+    <div class="pie">
+      LIN GROUP &amp; Asociados &mdash; Av. Camilo Recalde c/ Av. Pioneros del Este<br />
+      asesoria@lingroupsapy.com &middot; 0982 210777<br />
+      Sistema de Gestión Jurídica &copy; 2026
+    </div>
   </div>
 
   <script src="/js/api.js"></script>

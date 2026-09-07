@@ -2,7 +2,7 @@ const axios = require('axios');
 
 /**
  * Cliente genérico para el proveedor de IA generativa configurado mediante variables de entorno.
- * Soporta 'openai', 'gemini' y 'openrouter'. Si LEXPY_AI_PROVIDER=none, no se realiza ninguna llamada externa.
+ * Soporta 'openai', 'gemini', 'openrouter' y 'groq'. Si LEXPY_AI_PROVIDER=none, no se realiza ninguna llamada externa.
  */
 async function generarRespuestaIA({ prompt, contexto }) {
   const proveedor = (process.env.LEXPY_AI_PROVIDER || 'none').toLowerCase();
@@ -60,6 +60,29 @@ async function generarRespuestaIA({ prompt, contexto }) {
           },
           timeout: 20000,
         }
+      );
+      return respuesta.data?.choices?.[0]?.message?.content || null;
+    }
+
+    // Groq: API compatible con OpenAI (chat completions)
+    if (proveedor === 'groq') {
+      const modelo = process.env.LEXPY_AI_MODEL || 'llama-3.3-70b-versatile';
+      const respuesta = await axios.post(
+        'https://api.groq.com/openai/v1/chat/completions',
+        {
+          model: modelo,
+          messages: [
+            {
+              role: 'system',
+              content:
+                'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión, en español, y cita fuentes cuando sea posible.',
+            },
+            { role: 'user', content: promptCompleto },
+          ],
+          temperature: 0.3,
+          max_tokens: 2048,
+        },
+        { headers: { Authorization: `Bearer ${apiKey}` }, timeout: 30000 }
       );
       return respuesta.data?.choices?.[0]?.message?.content || null;
     }
