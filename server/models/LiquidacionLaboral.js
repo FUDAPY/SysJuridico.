@@ -37,7 +37,7 @@ const liquidacionLaboralSchema = new mongoose.Schema(
     expediente: { type: mongoose.Schema.Types.ObjectId, ref: 'Expediente', default: null },
     calculadoPor: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario' },
   },
-  { timestamps: true }
+  { timestamps: true, strict: false }
 );
 
 module.exports = mongoose.model('LiquidacionLaboral', liquidacionLaboralSchema);

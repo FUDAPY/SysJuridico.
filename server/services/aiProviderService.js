@@ -4,13 +4,17 @@ const axios = require('axios');
  * Cliente genérico para el proveedor de IA generativa configurado mediante variables de entorno.
  * Soporta 'openai', 'gemini', 'openrouter' y 'groq'. Si LEXPY_AI_PROVIDER=none, no se realiza ninguna llamada externa.
  */
-async function generarRespuestaIA({ prompt, contexto }) {
+async function generarRespuestaIA({ prompt, contexto, system }) {
   const proveedor = (process.env.LEXPY_AI_PROVIDER || 'none').toLowerCase();
   const apiKey = process.env.LEXPY_AI_API_KEY;
 
   if (proveedor === 'none' || !apiKey) {
     return null;
   }
+
+  const contenidoSistema =
+    system ||
+    'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.';
 
   const promptCompleto = contexto
     ? `Contexto legal disponible:\n${contexto}\n\nConsulta del usuario:\n${prompt}`
@@ -25,8 +29,7 @@ async function generarRespuestaIA({ prompt, contexto }) {
           messages: [
             {
               role: 'system',
-              content:
-                'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.',
+              content: contenidoSistema,
             },
             { role: 'user', content: promptCompleto },
           ],
@@ -46,8 +49,7 @@ async function generarRespuestaIA({ prompt, contexto }) {
           messages: [
             {
               role: 'system',
-              content:
-                'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.',
+              content: contenidoSistema,
             },
             { role: 'user', content: promptCompleto },
           ],
@@ -66,7 +68,7 @@ async function generarRespuestaIA({ prompt, contexto }) {
 
     // Groq: API compatible con OpenAI (chat completions)
     if (proveedor === 'groq') {
-      const modelo = process.env.LEXPY_AI_MODEL || 'llama-3.3-70b-versatile';
+      const modelo = process.env.LEXPY_AI_MODEL || 'openai/gpt-oss-120b';
       const respuesta = await axios.post(
         'https://api.groq.com/openai/v1/chat/completions',
         {
@@ -74,8 +76,7 @@ async function generarRespuestaIA({ prompt, contexto }) {
           messages: [
             {
               role: 'system',
-              content:
-                'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión, en español, y cita fuentes cuando sea posible.',
+              content: contenidoSistema,
             },
             { role: 'user', content: promptCompleto },
           ],
@@ -91,7 +92,7 @@ async function generarRespuestaIA({ prompt, contexto }) {
       const modelo = process.env.LEXPY_AI_MODEL || 'gemini-1.5-flash';
       const respuesta = await axios.post(
         `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${apiKey}`,
-        { contents: [{ parts: [{ text: promptCompleto }] }] },
+        { contents: [{ role: 'user', parts: [{ text: `${contenidoSistema}\n\n${promptCompleto}` }] }] },
         { timeout: 20000 }
       );
       return respuesta.data?.candidates?.[0]?.content?.parts?.[0]?.text || null;

@@ -1,33 +1,21 @@
-OTELAX DEV PRIVATE SOFTWARE LICENSE
-Version 1.0
+MIT License
 
-Copyright (c) 2026
-Otelax Dev
-Giuliano Emanuel Maria Catella Riveros
+Copyright (c) 2026 Otelax Dev y Giuliano Emanuel Maria Catella Riveros
 
-Todos los derechos reservados.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Este software, código fuente, documentación, archivos asociados y cualquier
-material relacionado son propiedad exclusiva de Otelax Dev y de Giuliano Emanuel
-Maria Catella Riveros.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Se concede permiso para usar y copiar el código fuente de este software,
-siempre y cuando se mantenga la mención clara y visible de sus autores
-originales: Otelax Dev y Giuliano Emanuel Maria Catella Riveros.
-
-NO se concede ningún permiso para:
-
-- Usar este software sin mencionar a sus autores originales.
-- Modificar el software.
-- Crear trabajos derivados.
-- Distribuir el software.
-- Publicar el código fuente.
-- Comercializar el software.
-- Revender el software.
-- Compartir el software con terceros.
-
-Salvo autorización expresa y por escrito del titular de los derechos,
-ninguna persona física o jurídica podrá utilizar este software para
-ningún fin.
-
-EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍAS DE NINGÚN TIPO.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

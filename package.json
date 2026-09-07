@@ -1,7 +1,8 @@
 {
   "name": "sysjuridico",
   "version": "1.0.0",
-  "description": "Sistema Juridico - Gestion de clientes, expedientes, honorarios, agenda y chat de IA (LexPY) con MongoDB",
+  "license": "MIT",
+  "description": "Sistema de gestion juridica, control financiero y asistencia legal impulsado por Inteligencia Artificial con la Legislacion Paraguaya, disenado bajo una arquitectura de microservicios e infraestructura optimizada para VPS (Dokploy y MongoDB)",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

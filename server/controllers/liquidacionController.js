@@ -5,7 +5,7 @@ const { calcularLiquidacion } = require('../services/liquidacionLaboralService')
 
 const TIPOS_VALIDOS = ['despido_injustificado', 'renuncia_voluntaria', 'despido_justificado', 'fin_contrato_jubilacion'];
 
-function validarDatos({ tipoLiquidacion, fechaIngreso, fechaSalida, salarioMensual }) {
+function validarDatos({ tipoLiquidacion, fechaIngreso, fechaSalida, salarioMensual, salarioDiario, tipoTrabajador }) {
   if (!TIPOS_VALIDOS.includes(tipoLiquidacion)) {
     throw new ApiError(400, 'Tipo de liquidación inválido.');
   }
@@ -15,8 +15,12 @@ function validarDatos({ tipoLiquidacion, fechaIngreso, fechaSalida, salarioMensu
   if (new Date(fechaSalida) <= new Date(fechaIngreso)) {
     throw new ApiError(400, 'La fecha de salida debe ser posterior a la fecha de ingreso.');
   }
-  if (!salarioMensual || Number(salarioMensual) <= 0) {
-    throw new ApiError(400, 'El salario mensual debe ser mayor a cero.');
+  const esJornal = String(tipoTrabajador || 'MENSUAL').toUpperCase() === 'JORNAL';
+  const montoValido = esJornal
+    ? Number(salarioDiario) > 0 || Number(salarioMensual) > 0
+    : Number(salarioMensual) > 0 || Number(salarioDiario) > 0;
+  if (!montoValido) {
+    throw new ApiError(400, 'Debe indicar el salario mensual (o el salario diario si es jornal).');
   }
 }
 
