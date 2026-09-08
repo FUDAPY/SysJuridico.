@@ -1,3 +1,7 @@
+if (!esAdministrador()) {
+  window.location.href = '/index.html';
+  throw new Error('Acceso restringido a administradores.');
+}
 requerirSesion();
 renderBarraLateral('usuarios');
 

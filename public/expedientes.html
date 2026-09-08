@@ -14,7 +14,7 @@
   <div class="contenido">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
       <h2>Expedientes</h2>
-      <button class="btn-primario" onclick="abrirModalExpediente()">+ Nuevo expediente</button>
+      <button class="btn-primario" id="btnNuevoExpediente" data-admin onclick="abrirModalExpediente()">+ Nuevo expediente</button>
     </div>
 
     <div class="tarjeta grid" id="filtros">
@@ -65,7 +65,7 @@
 
       <h4 style="margin-top:18px">Documentos (.doc / .docx / .pdf)</h4>
       <div id="listaDocs" style="margin:8px 0; font-size:.85rem"></div>
-      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:6px">
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:6px" id="zonaSubirDoc">
         <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf" style="max-width:280px; flex:1" />
         <button class="btn-secundario" onclick="subirDocumentoExpediente()">+ Agregar documento</button>
       </div>
@@ -125,25 +125,29 @@
           <label>Honorarios totales (Gs.)</label>
           <input type="number" id="eHonorarios" min="0" />
         </div>
-        <div>
-          <label>Entrega inicial (Gs.)</label>
-          <input type="number" id="eEntregaInicial" min="0" />
-        </div>
         <div class="check" style="display:flex; align-items:center; gap:8px; margin-top:22px">
           <input type="checkbox" id="eCreditoAutomatico" onchange="alternarCamposCredito()" style="width:auto" />
           <label style="margin:0">¿Crédito Automático?</label>
         </div>
-        <div id="fCantidadCuotas" class="oculto">
-          <label>Cantidad de cuotas</label>
-          <input type="number" id="eCantidadCuotas" min="1" />
-        </div>
-        <div id="fFrecuenciaCuotas" class="oculto">
-          <label>Frecuencia</label>
-          <select id="eFrecuenciaCuotas">
-            <option value="mensual">Mensual</option>
-            <option value="quincenal">Quincenal</option>
-            <option value="semanal">Semanal</option>
-          </select>
+      </div>
+      <div id="grupoCredito" class="oculto" style="margin-top:8px">
+        <div class="grid">
+          <div>
+            <label>Entrega inicial (Gs.)</label>
+            <input type="number" id="eEntregaInicial" min="0" />
+          </div>
+          <div>
+            <label>Cantidad de cuotas</label>
+            <input type="number" id="eCantidadCuotas" min="1" />
+          </div>
+          <div>
+            <label>Frecuencia</label>
+            <select id="eFrecuenciaCuotas">
+              <option value="mensual">Mensual</option>
+              <option value="quincenal">Quincenal</option>
+              <option value="semanal">Semanal</option>
+            </select>
+          </div>
         </div>
       </div>
 

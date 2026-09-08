@@ -1,5 +1,5 @@
 const express = require('express');
-const { protect } = require('../middleware/auth');
+const { protect, authorize } = require('../middleware/auth');
 const { listarEventos, crearEvento, actualizarEvento, eliminarEvento } = require('../controllers/agendaController');
 
 const router = express.Router();
@@ -7,7 +7,8 @@ const router = express.Router();
 router.use(protect);
 router.get('/', listarEventos);
 router.post('/', crearEvento);
-router.put('/:id', actualizarEvento);
-router.delete('/:id', eliminarEvento);
+// Editar/eliminar eventos: exclusivo de 'admin'
+router.put('/:id', authorize('admin'), actualizarEvento);
+router.delete('/:id', authorize('admin'), eliminarEvento);
 
 module.exports = router;

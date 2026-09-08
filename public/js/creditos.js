@@ -1,5 +1,6 @@
 requerirSesion();
 renderBarraLateral('creditos');
+const esAdmin = ocultarAccionesAdmin();
 
 let creditos = [];
 
@@ -29,11 +30,13 @@ function pintarTabla() {
               ? '<span class="badge badge-rojo">Pendiente</span>'
               : '<span class="badge badge-verde">Cancelado</span>'}</td>
             <td>
-              ${Number(c.saldoPendiente) > 0
-                ? `<button class="btn-primario" style="padding:6px 10px;font-size:.8rem" onclick='abrirCobro(${JSON.stringify(c)})'>💰 Cobrar</button>`
-                : ''}
-              <button class="btn-secundario" onclick='editarCredito(${JSON.stringify(c)})'>Editar</button>
-              <button class="btn-peligro" onclick="eliminarCredito('${c._id}')">Eliminar</button>
+              ${esAdmin
+                ? `${Number(c.saldoPendiente) > 0
+                    ? `<button class="btn-primario" style="padding:6px 10px;font-size:.8rem" onclick='abrirCobro(${JSON.stringify(c)})'>💰 Cobrar</button>`
+                    : ''}
+                  <button class="btn-secundario" onclick='editarCredito(${JSON.stringify(c)})'>Editar</button>
+                  <button class="btn-peligro" onclick="eliminarCredito('${c._id}')">Eliminar</button>`
+                : '—'}
             </td>
           </tr>`
         )

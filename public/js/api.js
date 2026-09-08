@@ -16,6 +16,20 @@ function requerirSesion() {
   return { token, usuario };
 }
 
+function esAdministrador() {
+  const { usuario } = obtenerSesion();
+  return !!(usuario && usuario.rol === 'admin');
+}
+
+// Oculta los elementos marcados con [data-admin] cuando el usuario no es admin.
+function ocultarAccionesAdmin() {
+  const admin = esAdministrador();
+  document.querySelectorAll('[data-admin]').forEach((el) => {
+    el.style.display = admin ? '' : 'none';
+  });
+  return admin;
+}
+
 function cerrarSesion() {
   localStorage.removeItem('token');
   localStorage.removeItem('usuario');
@@ -73,8 +87,13 @@ function renderBarraLateral(paginaActiva) {
 
   const enlacesAbogado = [
     { href: '/index.html', texto: 'Resumen del día', id: 'resumen', icono: '📊' },
+    { href: '/clientes.html', texto: 'Clientes', id: 'clientes', icono: '👥' },
     { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes', icono: '📁' },
-    { href: '/liquidacion.html', texto: 'Créditos / Liquidación', id: 'liquidacion', icono: '🧮' },
+    { href: '/creditos.html', texto: 'Créditos / Cobranzas', id: 'creditos', icono: '💰' },
+    { href: '/agenda.html', texto: 'Agenda', id: 'agenda', icono: '📅' },
+    { href: '/requisitos.html', texto: 'Requisitos y Trámites', id: 'requisitos', icono: '🧾' },
+    { href: '/archivos.html', texto: 'Ubicación de Archivos', id: 'archivos', icono: '🗂️' },
+    { href: '/liquidacion.html', texto: 'Liquidación Laboral', id: 'liquidacion', icono: '🧮' },
     { href: '/lexpy.html', texto: 'LexPY (Chat IA)', id: 'lexpy', icono: '🤖' },
   ];
 

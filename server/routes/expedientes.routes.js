@@ -1,5 +1,5 @@
 const express = require('express');
-const { protect } = require('../middleware/auth');
+const { protect, authorize } = require('../middleware/auth');
 const {
   listarExpedientes,
   obtenerExpediente,
@@ -20,13 +20,14 @@ router.use(protect);
 router.get('/', listarExpedientes);
 router.post('/', crearExpediente);
 router.get('/:id', obtenerExpediente);
-router.put('/:id', actualizarExpediente);
-router.delete('/:id', eliminarExpediente);
+// Editar/eliminar expedientes: exclusivo de 'admin'
+router.put('/:id', authorize('admin'), actualizarExpediente);
+router.delete('/:id', authorize('admin'), eliminarExpediente);
 
-// Documentos adjuntos del expediente
+// Documentos adjuntos del expediente (ver/descargar: todos; subir/eliminar: solo admin)
 router.get('/:id/documentos', listarDocumentos);
-router.post('/:id/documentos', subirDocumento);
+router.post('/:id/documentos', authorize('admin'), subirDocumento);
 router.get('/:id/documentos/:docId/descargar', descargarDocumento);
-router.delete('/:id/documentos/:docId', eliminarDocumento);
+router.delete('/:id/documentos/:docId', authorize('admin'), eliminarDocumento);
 
 module.exports = router;

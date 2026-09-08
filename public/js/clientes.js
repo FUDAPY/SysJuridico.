@@ -1,5 +1,6 @@
 requerirSesion();
 renderBarraLateral('clientes');
+const esAdmin = ocultarAccionesAdmin();
 
 let temporizadorBusqueda = null;
 
@@ -14,8 +15,10 @@ async function cargarClientes(buscar = '') {
             <td>${c.telefono}</td>
             <td>${c.direccion || '-'}</td>
             <td>
-              <button class="btn-secundario" onclick='editarCliente(${JSON.stringify(c)})'>Editar</button>
-              <button class="btn-peligro" onclick="eliminarCliente('${c._id}')">Eliminar</button>
+              ${esAdmin
+                ? `<button class="btn-secundario" onclick='editarCliente(${JSON.stringify(c)})'>Editar</button>
+                   <button class="btn-peligro" onclick="eliminarCliente('${c._id}')">Eliminar</button>`
+                : '—'}
             </td>
           </tr>`
         )

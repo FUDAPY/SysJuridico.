@@ -4,6 +4,13 @@ renderBarraLateral('expedientes');
 const esAdmin = usuario.rol === 'admin';
 document.getElementById('contenedorFiltroAbogado').classList.toggle('oculto', !esAdmin);
 document.getElementById('contenedorAbogadoAsignado').classList.toggle('oculto', !esAdmin);
+// Solo el admin puede crear expedientes o subir documentos
+if (!esAdmin) {
+  const btnNuevo = document.getElementById('btnNuevoExpediente');
+  const zonaDocs = document.getElementById('zonaSubirDoc');
+  if (btnNuevo) btnNuevo.style.display = 'none';
+  if (zonaDocs) zonaDocs.style.display = 'none';
+}
 
 async function cargarSelects() {
   const clientes = await apiFetch('/clientes');
@@ -186,11 +193,15 @@ function abrirVentanaTicket(html) {
 
 function alternarCamposCredito() {
   const marcado = document.getElementById('eCreditoAutomatico').checked;
-  document.getElementById('fCantidadCuotas').classList.toggle('oculto', !marcado);
-  document.getElementById('fFrecuenciaCuotas').classList.toggle('oculto', !marcado);
+  document.getElementById('grupoCredito').classList.toggle('oculto', !marcado);
 }
 
 function abrirModalExpediente() {
+  document.getElementById('eCreditoAutomatico').checked = false;
+  alternarCamposCredito();
+  document.getElementById('eHonorarios').value = '';
+  document.getElementById('eEntregaInicial').value = '';
+  document.getElementById('eCantidadCuotas').value = '';
   document.getElementById('modalExpediente').classList.remove('oculto');
 }
 function cerrarModalExpediente() {
@@ -250,7 +261,7 @@ async function cargarDocumentosExpediente(id) {
               <span style="font-size:1.1rem">${iconoDocumento(d.nombre)}</span>
               <span style="flex:1; min-width:120px"><strong>${d.nombre}</strong><br /><small style="color:var(--texto-suave)">${tamanoArchivo(d.tamano)} · ${formatoFecha(d.createdAt)}</small></span>
               <button class="btn-secundario" style="padding:5px 8px;font-size:.75rem" onclick="descargarDocumentoExpediente('${d._id}')">⬇ Descargar</button>
-              <button class="btn-peligro" style="padding:5px 8px;font-size:.75rem" onclick="eliminarDocumentoExpediente('${d._id}')">🗑 Eliminar</button>
+              ${esAdmin ? `<button class="btn-peligro" style="padding:5px 8px;font-size:.75rem" onclick="eliminarDocumentoExpediente('${d._id}')">🗑 Eliminar</button>` : ''}
             </div>`
           )
           .join('')

@@ -1,5 +1,6 @@
 requerirSesion();
 renderBarraLateral('requisitos');
+const esAdmin = ocultarAccionesAdmin();
 
 let requisitos = [];
 
@@ -18,8 +19,10 @@ function pintarTabla() {
             <td>${formatoGs(r.costo)}</td>
             <td style="white-space:pre-line; font-size:.85rem; max-width:420px">${r.requisitos || '—'}</td>
             <td>
-              <button class="btn-secundario" onclick='editarRequisito(${JSON.stringify(r)})'>Editar</button>
-              <button class="btn-peligro" onclick="eliminarRequisito('${r._id}')">Eliminar</button>
+              ${esAdmin
+                ? `<button class="btn-secundario" onclick='editarRequisito(${JSON.stringify(r)})'>Editar</button>
+                   <button class="btn-peligro" onclick="eliminarRequisito('${r._id}')">Eliminar</button>`
+                : '—'}
             </td>
           </tr>`
         )

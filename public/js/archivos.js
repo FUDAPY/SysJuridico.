@@ -1,5 +1,6 @@
 requerirSesion();
 renderBarraLateral('archivos');
+const esAdmin = ocultarAccionesAdmin();
 
 let archivos = [];
 
@@ -17,8 +18,10 @@ function pintarTabla() {
             <td>${a.ubicacion || '—'}</td>
             <td>${formatoFecha(a.createdAt)}</td>
             <td>
-              <button class="btn-secundario" onclick='editarArchivo(${JSON.stringify(a)})'>Editar</button>
-              <button class="btn-peligro" onclick="eliminarArchivo('${a._id}')">Eliminar</button>
+              ${esAdmin
+                ? `<button class="btn-secundario" onclick='editarArchivo(${JSON.stringify(a)})'>Editar</button>
+                   <button class="btn-peligro" onclick="eliminarArchivo('${a._id}')">Eliminar</button>`
+                : '—'}
             </td>
           </tr>`
         )

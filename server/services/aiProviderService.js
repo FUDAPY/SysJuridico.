@@ -112,11 +112,11 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
     }
 
     if (proveedor === 'gemini') {
-      const modelo = process.env.LEXPY_AI_MODEL || 'gemini-1.5-flash';
+      const modelo = process.env.LEXPY_AI_MODEL || 'gemini-flash-latest';
       const respuesta = await axios.post(
         `https://generativelanguage.googleapis.com/v1beta/models/${modelo}:generateContent?key=${apiKey}`,
         { contents: [{ role: 'user', parts: [{ text: `${contenidoSistema}\n\n${promptCompleto}` }] }] },
-        { timeout: 20000 }
+        { timeout: 60000 }
       );
       return respuesta.data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
     }
@@ -124,7 +124,8 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
     console.warn(`[LexPY] Proveedor de IA desconocido: ${proveedor}`);
     return null;
   } catch (error) {
-    console.error('[LexPY] Error al consultar el proveedor de IA:', error.message);
+    const detalle = error.response?.data?.error?.message || error.message;
+    console.error(`[LexPY] Error al consultar el proveedor de IA (${proveedor}):`, detalle);
     return null;
   }
 }

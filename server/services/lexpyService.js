@@ -125,7 +125,7 @@ async function procesarConsultaTecnica(pregunta) {
 
   if (contexto) {
     return {
-      respuesta: `No hay un modelo de IA generativa configurado (LEXPY_AI_PROVIDER). Contexto relevante encontrado:\n\n${contexto}`,
+      respuesta: `El proveedor de IA no respondió (revisá la clave/API y los créditos del servicio). Contexto relevante encontrado:\n\n${contexto}`,
       fuente: fuenteRespuesta,
     };
   }

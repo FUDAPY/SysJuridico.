@@ -1,5 +1,6 @@
 requerirSesion();
 renderBarraLateral('agenda');
+const esAdmin = ocultarAccionesAdmin();
 
 let fechaActual = new Date();
 let eventosDelMes = [];
