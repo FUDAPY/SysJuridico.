@@ -95,6 +95,12 @@ const asistenteEditor = asyncHandler(async (req, res) => {
   res.json({ success: true, data: resultado });
 });
 
+// GET /api/lexpy/grafo -> Devuelve la red de conocimiento tipo Obsidian (nodos y aristas)
+const obtenerGrafo = asyncHandler(async (req, res) => {
+  const red = await obtenerRedDeConocimiento({ usuarioId: req.usuario._id });
+  res.json({ success: true, data: red });
+});
+
 module.exports = {
   chat,
   listarSesiones,
