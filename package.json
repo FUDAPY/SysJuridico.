@@ -8,7 +8,8 @@
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
     "migrate:firestore": "node scripts/migrate-firestore-to-mongo.js",
-    "seed:admin": "node scripts/seed-admin.js"
+    "seed:admin": "node scripts/seed-admin.js",
+    "seed:wisdom": "node scripts/seed-otelax-wisdom.js"
   },
   "engines": {
     "node": ">=20.0.0"

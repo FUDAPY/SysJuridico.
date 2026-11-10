@@ -2,9 +2,16 @@ const { usuario } = requerirSesion();
 renderBarraLateral('expedientes');
 
 const esAdmin = usuario.rol === 'admin';
-document.getElementById('contenedorFiltroAbogado').classList.toggle('oculto', !esAdmin);
-document.getElementById('contenedorAbogadoAsignado').classList.toggle('oculto', !esAdmin);
-// Solo el admin puede crear expedientes o subir documentos
+let pestanaEstadoActual = 'todos';
+let listaExpedientesMemoria = [];
+let filtroEspecialURL = null;
+
+// Inicialización segura de elementos condicionales de admin
+const contFiltro = document.getElementById('contenedorFiltroAbogado');
+if (contFiltro) contFiltro.classList.toggle('oculto', !esAdmin);
+const contAsignado = document.getElementById('contenedorAbogadoAsignado');
+if (contAsignado) contAsignado.classList.toggle('oculto', !esAdmin);
+
 if (!esAdmin) {
   const btnNuevo = document.getElementById('btnNuevoExpediente');
   const zonaDocs = document.getElementById('zonaSubirDoc');
@@ -13,17 +20,25 @@ if (!esAdmin) {
 }
 
 async function cargarSelects() {
-  const clientes = await apiFetch('/clientes');
-  const opcionesClientes = clientes.map((c) => `<option value="${c._id}">${c.nombreCompleto} (${c.cedula})</option>`).join('');
-  document.getElementById('eCliente').innerHTML = opcionesClientes;
-  document.getElementById('fCliente').innerHTML = '<option value="">Todos</option>' + opcionesClientes;
+  try {
+    const clientes = await apiFetch('/clientes').catch(() => []);
+    const opcionesClientes = (clientes || []).map((c) => `<option value="${c._id}">${c.nombreCompleto} (${c.cedula})</option>`).join('');
+    const eCliente = document.getElementById('eCliente');
+    if (eCliente) eCliente.innerHTML = opcionesClientes;
+    const fCliente = document.getElementById('fCliente');
+    if (fCliente) fCliente.innerHTML = '<option value="">Todos</option>' + opcionesClientes;
 
-  if (esAdmin) {
-    const usuarios = await apiFetch('/usuarios');
-    const abogados = usuarios.filter((u) => u.rol === 'abogado' || u.rol === 'admin');
-    const opcionesAbogados = abogados.map((u) => `<option value="${u._id}">${u.nombre}</option>`).join('');
-    document.getElementById('eAbogado').innerHTML = opcionesAbogados;
-    document.getElementById('fAbogado').innerHTML = '<option value="">Todos</option>' + opcionesAbogados;
+    if (esAdmin) {
+      const usuarios = await apiFetch('/usuarios').catch(() => []);
+      const abogados = (usuarios || []).filter((u) => u.rol === 'abogado' || u.rol === 'admin');
+      const opcionesAbogados = abogados.map((u) => `<option value="${u._id}">${u.nombre}</option>`).join('');
+      const eAbogado = document.getElementById('eAbogado');
+      if (eAbogado) eAbogado.innerHTML = opcionesAbogados;
+      const fAbogado = document.getElementById('fAbogado');
+      if (fAbogado) fAbogado.innerHTML = '<option value="">Todos</option>' + opcionesAbogados;
+    }
+  } catch (err) {
+    console.warn('[Expedientes] Error al cargar selects:', err);
   }
 }
 
@@ -32,25 +47,29 @@ function badgeEstado(estado) {
   return `<span class="badge ${clases[estado] || 'badge-azul'}">${estado}</span>`;
 }
 
-let pestanaEstadoActual = 'todos';
-let listaExpedientesMemoria = [];
-
 function filtrarPorPestanaEstado(tab) {
   pestanaEstadoActual = tab;
-  document.getElementById('tabEstadoTodos').classList.toggle('activo', tab === 'todos');
-  document.getElementById('tabEstadoArchivado').classList.toggle('activo', tab === 'archivado');
+  filtroEspecialURL = null;
+  const tabTodos = document.getElementById('tabEstadoTodos');
+  const tabArch = document.getElementById('tabEstadoArchivado');
+  if (tabTodos) tabTodos.classList.toggle('activo', tab === 'todos');
+  if (tabArch) tabArch.classList.toggle('activo', tab === 'archivado');
   
   if (tab === 'todos') {
-    document.getElementById('tabEstadoTodos').style.background = '#fff';
-    document.getElementById('tabEstadoTodos').style.color = '#0f172a';
-    document.getElementById('tabEstadoArchivado').style.background = 'transparent';
-    document.getElementById('tabEstadoArchivado').style.color = 'var(--texto-muted)';
+    if (tabTodos) { tabTodos.style.background = '#fff'; tabTodos.style.color = '#0f172a'; }
+    if (tabArch) { tabArch.style.background = 'transparent'; tabArch.style.color = 'var(--texto-muted)'; }
   } else {
-    document.getElementById('tabEstadoArchivado').style.background = '#fff';
-    document.getElementById('tabEstadoArchivado').style.color = '#0f172a';
-    document.getElementById('tabEstadoTodos').style.background = 'transparent';
-    document.getElementById('tabEstadoTodos').style.color = 'var(--texto-muted)';
+    if (tabArch) { tabArch.style.background = '#fff'; tabArch.style.color = '#0f172a'; }
+    if (tabTodos) { tabTodos.style.background = 'transparent'; tabTodos.style.color = 'var(--texto-muted)'; }
   }
+  cargarExpedientes();
+}
+
+function quitarFiltroEspecial() {
+  filtroEspecialURL = null;
+  window.history.replaceState({}, document.title, window.location.pathname);
+  const banner = document.getElementById('bannerFiltroActivo');
+  if (banner) banner.style.display = 'none';
   cargarExpedientes();
 }
 
@@ -63,9 +82,43 @@ async function cargarExpedientes() {
   if (juzgado) params.set('juzgado', juzgado);
   if (pestanaEstadoActual === 'archivado') params.set('estado', 'archivado');
 
+  // Lectura de parámetro especial de filtro desde la URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const filtroParam = filtroEspecialURL || urlParams.get('filtro');
+
   try {
-    const expedientes = await apiFetch(`/expedientes?${params.toString()}`);
+    let expedientes = await apiFetch(`/expedientes?${params.toString()}`);
     listaExpedientesMemoria = expedientes;
+
+    // Aplicar filtro especial si viene desde los botones del inicio
+    const banner = document.getElementById('bannerFiltroActivo');
+    const txtBanner = document.getElementById('txtFiltroActivo');
+
+    if (filtroParam === 'caducidad') {
+      expedientes = expedientes.filter((e) => {
+        const dias = (Date.now() - new Date(e.updatedAt || e.createdAt).getTime()) / (1000 * 60 * 60 * 24);
+        return dias > 90 && e.estado !== 'archivado' && e.estado !== 'finalizado';
+      });
+      if (banner && txtBanner) {
+        txtBanner.innerHTML = `⚠️ <strong>Causas en riesgo de Caducidad (Art. 172 CPC):</strong> Mostrando ${expedientes.length} expedientes sin actuación hace más de 90 días.`;
+        banner.style.display = 'flex';
+      }
+    } else if (filtroParam === 'novedades') {
+      const hoyStr = new Date().toDateString();
+      expedientes = expedientes.filter((e) => new Date(e.updatedAt || e.createdAt).toDateString() === hoyStr);
+      if (banner && txtBanner) {
+        txtBanner.innerHTML = `✨ <strong>Novedades del Día:</strong> Mostrando ${expedientes.length} causas con actuaciones en la jornada.`;
+        banner.style.display = 'flex';
+      }
+    } else if (filtroParam === 'impulsar') {
+      expedientes = expedientes.filter((e) => e.estado === 'activo' || e.estado === 'en_proceso');
+      if (banner && txtBanner) {
+        txtBanner.innerHTML = `⚡ <strong>Causas para Impulsar:</strong> Mostrando ${expedientes.length} causas activas en trámite.`;
+        banner.style.display = 'flex';
+      }
+    } else {
+      if (banner) banner.style.display = 'none';
+    }
 
     // Actualizar contador en header de columna
     const badgeCant = document.getElementById('cantExpedientes');
@@ -74,7 +127,7 @@ async function cargarExpedientes() {
     // Población dinámica de juzgados únicos si está vacío
     const selectJuzgado = document.getElementById('fJuzgado');
     if (selectJuzgado && selectJuzgado.options.length <= 1) {
-      const juzgadosUnicos = [...new Set(expedientes.map((e) => e.juzgado).filter(Boolean))];
+      const juzgadosUnicos = [...new Set(listaExpedientesMemoria.map((e) => e.juzgado).filter(Boolean))];
       juzgadosUnicos.forEach((j) => {
         const opt = document.createElement('option');
         opt.value = j;
@@ -85,7 +138,7 @@ async function cargarExpedientes() {
 
     const tabla = document.getElementById('tablaExpedientes');
     if (!expedientes.length) {
-      tabla.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:48px 20px; color:var(--texto-muted); font-size:0.95rem;">No hay expedientes para mostrar.</td></tr>`;
+      tabla.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:48px 20px; color:var(--texto-muted); font-size:0.95rem;">No hay expedientes para mostrar con los filtros aplicados.</td></tr>`;
       return;
     }
 

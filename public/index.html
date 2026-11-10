@@ -416,79 +416,75 @@
 
     <!-- VISTA PRINCIPAL: ASISTENTE JURÍDICO (Images 2 & 3) -->
     <div id="vistaAsistenteJuridico">
-      <!-- Briefing Matutino del Litigio -->
-      <div class="briefing-card">
-        <div class="briefing-header">
-          <span style="font-size:1.1rem;">⚖️</span>
-          <h3>Briefing Matutino del Litigio</h3>
-        </div>
-        <p class="briefing-texto" id="txtBriefingMatutino">
-          Doctor, para la jornada de hoy no se registran nuevos movimientos procesales, riesgos de caducidad ni plazos fatales en su despacho. Todo se encuentra al día.
-        </p>
-
-        <!-- Jurisprudencia de Interés -->
-        <div class="jurisprudencia-box" id="boxJurisprudencia">
-          <div class="juris-header">
-            <span>⚖️ JURISPRUDENCIA DE INTERÉS PARA TU DESPACHO</span>
-            <div style="display:flex; align-items:center; gap:8px;">
-              <a href="https://www.csj.gov.py" target="_blank" rel="noopener noreferrer" style="color:#10b981; text-decoration:none;">Consultar fallo oficial &nearr;</a>
-              <span style="color:#64748b; font-size:0.75rem;" id="pagerJuris">&lang; 1/2 &rang;</span>
+      <!-- Widget: Pensamiento Forense & Motivación del Abogado -->
+      <div class="briefing-card" style="border: 1px solid #1e3a5f; background: linear-gradient(135deg, #0b1526 0%, #10213d 100%); margin-bottom: 20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #1d4ed8, #3b82f6); display:flex; align-items:center; justify-content:center; font-size:1.15rem; color:#fff;">
+              ⚖️
+            </div>
+            <div>
+              <h3 style="margin:0; font-size:1.05rem; font-weight:700; color:#fff;">Pensamiento Jurídico &amp; Motivación Forense</h3>
+              <small style="color:#93c5fd; font-size:0.75rem;">Inspiración doctrinaria, ética profesional y vocación de justicia</small>
             </div>
           </div>
-          <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:8px;">
-            Consultá criterios de la CSJ para contrastar argumentos, explorar fundamentos y orientar el análisis de tus causas.
-          </div>
-          <div style="font-weight:700; color:#fff; font-size:0.88rem; margin-bottom:6px;" id="jurisCaratula">
-            ACCIÓN DE INCONSTITUCIONALIDAD EN EL JUICIO: "S. B. DE CORONEL C/ O. D. V. C. S/ NULIDAD DE ACTO JURÍDICO Y CANCELACIÓN DE INSCRIPCIÓN". AÑO: 2001 - Nº 1750.
-          </div>
-          <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.45; margin:0 0 10px;" id="jurisCriterio">
-            <strong>RECURSO DE APELACIÓN - Facultades del Tribunal de Apelación:</strong> El hecho de que el Tribunal haya arribado por otros términos a la confirmación de la resolución no vulnera el principio de congruencia procesal cuando las pretensiones de fondo han sido respetadas.
-          </p>
-          <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:10px;">
-            <strong>Cómo aprovecharlo:</strong> Revisá los fundamentos y las circunstancias del fallo para valorar su utilidad en tu expediente.
-          </div>
-          <button class="boton btn-sm" onclick="leerCriterioJurisprudencia()" style="background:#059669; color:#fff; border:none; padding:6px 14px; border-radius:6px; font-weight:600; cursor:pointer;">
-            📖 Leer el criterio
+          <button class="boton btn-sm" onclick="siguienteFraseMotivacional()" style="background:#1e293b; color:#60a5fa; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+            <span>🎲</span> Otra reflexión
           </button>
+        </div>
+
+        <div style="background:rgba(15, 23, 42, 0.7); border:1px solid rgba(59, 130, 246, 0.2); border-radius:10px; padding:18px 22px; position:relative; overflow:hidden;">
+          <div style="position:absolute; right:15px; bottom:-10px; font-size:5rem; color:rgba(59,130,246,0.06); font-family:serif; pointer-events:none; user-select:none;">“</div>
+          <p id="citaTexto" style="font-size:0.96rem; line-height:1.6; color:#e2e8f0; font-style:italic; margin:0 0 10px; font-family:'Inter', sans-serif;">
+            "Estudia: el derecho se transforma constantemente. Si no sigues sus pasos, serás cada día un poco menos abogado. Piensa: el derecho se aprende estudiando, pero se ejerce pensando. Lucha: tu deber es luchar por el derecho; pero el día en que encuentres en conflicto el derecho con la justicia, lucha por la justicia."
+          </p>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span id="citaAutor" style="font-weight:700; color:#fbbf24; font-size:0.85rem; letter-spacing:0.02em;">
+              &mdash; Eduardo J. Couture, Los Mandamientos del Abogado
+            </span>
+            <span id="citaTema" class="badge" style="background:#1e3a5f; color:#93c5fd; padding:3px 10px; border-radius:12px; font-size:0.72rem; font-weight:600;">
+              Ética &amp; Ejercicio Profesional
+            </span>
+          </div>
         </div>
       </div>
 
-      <!-- 4 KPI Cards (Images 2 & 3) -->
+      <!-- 4 KPI Cards Interactivos (Image 1) -->
       <div class="kpi-cards-grid">
-        <div class="kpi-card novedades">
+        <div class="kpi-card novedades" onclick="window.location.href='/expedientes.html?filtro=novedades'" style="cursor:pointer;" title="Haga clic para ver las actuaciones de hoy en Expedientes">
           <div class="kpi-titulo">
             <span>NOVEDADES</span>
             <span style="color:#3b82f6;">&bull;</span>
           </div>
           <div class="kpi-valor" id="kpiNovedades">0</div>
-          <div class="kpi-sub">actuaciones de hoy</div>
+          <div class="kpi-sub">actuaciones de hoy &rarr;</div>
         </div>
 
-        <div class="kpi-card caducidad">
+        <div class="kpi-card caducidad" onclick="window.location.href='/expedientes.html?filtro=caducidad'" style="cursor:pointer;" title="Haga clic para ver los expedientes en riesgo de caducidad (Art. 172 CPC)">
           <div class="kpi-titulo">
             <span style="color:#f87171;">CADUCIDAD</span>
             <span>⚠️</span>
           </div>
           <div class="kpi-valor" id="kpiCaducidad" style="color:#f87171;">0</div>
-          <div class="kpi-sub" style="color:#fca5a5;">en riesgo Art. 172</div>
+          <div class="kpi-sub" style="color:#fca5a5;">en riesgo Art. 172 &rarr;</div>
         </div>
 
-        <div class="kpi-card plazos">
+        <div class="kpi-card plazos" onclick="window.location.href='/agenda.html'" style="cursor:pointer;" title="Haga clic para ir a la Agenda y Plazos Judiciales">
           <div class="kpi-titulo">
             <span style="color:#34d399;">PLAZOS</span>
             <span>⏰</span>
           </div>
           <div class="kpi-valor" id="kpiPlazos" style="color:#34d399;">0</div>
-          <div class="kpi-sub">plazos por vencer</div>
+          <div class="kpi-sub">ver calendario judicial &rarr;</div>
         </div>
 
-        <div class="kpi-card impulsar">
+        <div class="kpi-card impulsar" onclick="window.location.href='/expedientes.html?filtro=impulsar'" style="cursor:pointer;" title="Haga clic para ver los procesos para impulsar en Expedientes">
           <div class="kpi-titulo">
             <span style="color:#c084fc;">PARA IMPULSAR</span>
             <span>🔄</span>
           </div>
           <div class="kpi-valor" id="kpiImpulsar" style="color:#c084fc;">0</div>
-          <div class="kpi-sub">para impulsar</div>
+          <div class="kpi-sub">para impulsar &rarr;</div>
         </div>
       </div>
 
@@ -541,18 +537,18 @@
 
         <!-- Columna Derecha -->
         <div>
-          <!-- Tarjeta Últimas Actuaciones -->
-          <div class="prioridad-card">
+          <!-- Tarjeta Últimas Actuaciones (Lleva directo al Calendario) -->
+          <div class="prioridad-card" onclick="window.location.href='/agenda.html'" style="cursor:pointer;" title="Haga clic para ver el Calendario Forense y Actuaciones">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
               <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#fff; display:flex; align-items:center; gap:6px;">
                 <span style="color:#3b82f6;">&bull;</span> Últimas actuaciones (<span id="cantUltActuaciones">0</span>)
               </h4>
-              <a href="/expedientes.html" style="font-size:0.75rem; color:#60a5fa; text-decoration:none;">Ver todo</a>
+              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="font-size:0.75rem; color:#60a5fa; text-decoration:none; font-weight:600;">📅 Ver Calendario &rarr;</a>
             </div>
             <div style="text-align:center; padding:24px 0; color:#94a3b8; font-size:0.85rem;" id="zonaUltimasActuaciones">
               No hay actuaciones nuevas de hoy.<br />
-              <a href="/expedientes.html" style="color:#60a5fa; text-decoration:none; display:inline-block; margin-top:8px; font-size:0.82rem;">
-                ↻ Ver actuaciones de los últimos 10 días &gt;
+              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="color:#60a5fa; text-decoration:none; display:inline-block; margin-top:8px; font-size:0.82rem; font-weight:600;">
+                📅 Abrir Calendario de Audiencias y Vencimientos &gt;
               </a>
             </div>
           </div>

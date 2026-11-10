@@ -30,17 +30,19 @@ async function buscarEnBaseLocal(consulta) {
   const numLeyMatch = q.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
   let baseLegal = [];
 
+  const filtroVigencia = { estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] } };
+
   if (numLeyMatch) {
     const num = numLeyMatch[1];
     const regexLey = new RegExp(`\\b${num}\\b`, 'i');
-    baseLegal = await BaseLegal.find({ titulo: { $regex: regexLey } }).limit(2);
+    baseLegal = await BaseLegal.find({ titulo: { $regex: regexLey }, ...filtroVigencia }).limit(2);
   }
 
   // Si no hubo match específico o no se encontraron, búsqueda por texto completo
   if (!baseLegal.length) {
     try {
       baseLegal = await BaseLegal.find(
-        { $text: { $search: consulta } },
+        { $text: { $search: consulta }, ...filtroVigencia },
         { score: { $meta: 'textScore' } }
       )
         .sort({ score: { $meta: 'textScore' } })
@@ -48,6 +50,7 @@ async function buscarEnBaseLocal(consulta) {
     } catch {
       // Fallback si no hay índice de texto activo
       baseLegal = await BaseLegal.find({
+        ...filtroVigencia,
         $or: [
           { titulo: { $regex: consulta.slice(0, 30), $options: 'i' } },
           { contenido: { $regex: consulta.slice(0, 30), $options: 'i' } },
@@ -168,12 +171,14 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   }
 
   const system =
-    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación de la República del Paraguay.\n' +
+    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados impulsado por el motor de sabiduría jurídica paraguaya OtelaxWisdom.\n' +
     'DIRECTRICES OBLIGATORIAS:\n' +
     '1. Responde ÚNICA Y EXCLUSIVAMENTE a la consulta o norma jurídica que el usuario solicita. No agregues leyes no pertinentes ni temas fuera de la consulta.\n' +
     '2. Estructura TODA tu respuesta en Markdown limpio y profesional (# Títulos, ## Secciones, viñetas, tablas y citas textuales en bloque cuando sea oportuno).\n' +
     '3. Cita textualmente los artículos o disposiciones normativas pertinentes con su número y denominación oficial (ej: Ley 1462/1935, Ley 6715/2021, Código Civil Paraguayo, Constitución Nacional).\n' +
-    '4. Si la consulta pide solo los artículos o el extracto, responde directamente con dicha normativa sin rodeos ni preámbulos innecesarios.';
+    '4. Si la consulta pide solo los artículos o el extracto, responde directamente con dicha normativa sin rodeos ni preámbulos innecesarios.\n' +
+    '5. REGLA DE VIGENCIA ESTRICTA: Queda terminantemente prohibido fundamentar respuestas en normas o leyes derogadas o históricas. Utiliza única y exclusivamente legislación paraguaya positiva y vigente. Si una norma fue derogada, adviértelo expresamente y cita la norma vigente que la reemplaza.\n' +
+    '6. En caso de requerir información no disponible en la base local, recurre a fuentes oficiales paraguayas vigentes (BACN, CSJ, Gaceta Oficial) y no cites fuentes derogadas.';
 
   const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: contexto || null, system });
 

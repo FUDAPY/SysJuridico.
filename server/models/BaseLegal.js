@@ -10,8 +10,21 @@ const baseLegalSchema = new mongoose.Schema(
       default: 'otro',
     },
     contenido: { type: String, required: true },
-    fuente: { type: String, default: '' }, // ej: csj.gov.py, baselegal.com.py
+    fuente: { type: String, default: '' }, // ej: csj.gov.py, baselegal.com.py, bacn.gov.py
     url: { type: String, default: '' },
+    fuero: {
+      type: String,
+      enum: ['Civil y Comercial', 'Penal', 'Laboral', 'Niñez y Adolescencia', 'Contencioso Administrativo', 'Constitucional', 'Tributario', 'Organización Judicial', 'General'],
+      default: 'General',
+      index: true,
+    },
+    estadoNormativo: {
+      type: String,
+      enum: ['Vigente', 'Derogada', 'Histórica', 'Modificada'],
+      default: 'Vigente',
+      index: true,
+    },
+    numeroLey: { type: String, default: '', index: true },
     tags: { type: [String], default: [] },
     firestoreId: { type: String, default: null, index: true }, // referencia al doc original migrado
   },

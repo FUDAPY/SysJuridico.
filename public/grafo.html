@@ -126,8 +126,8 @@
     <!-- Topbar estilo expedientes.click -->
     <div class="topbar-operativa">
       <div class="topbar-titulo">
-        <h1 style="font-size:1.55rem; margin:0; font-weight:700;">🕸️ Red de Conocimiento Jurídico (Obsidian Graph)</h1>
-        <div class="topbar-subtitulo">Visualización interactiva de leyes paraguayas, enseñanzas del RAG, causas y memoria del estudio</div>
+        <h1 style="font-size:1.55rem; margin:0; font-weight:700;">🕸️ OtelaxWisdom &mdash; Red de Conocimiento Jurídico (Obsidian Graph)</h1>
+        <div class="topbar-subtitulo">Ecosistema forense inteligente: Códigos, Leyes vigentes, Instituciones del Estado, Causas y Criterios Doctrinales RAG del Paraguay</div>
       </div>
       <div class="topbar-acciones">
         <button class="boton btn-outline" id="btnGuiaObsidian" style="gap: 0.5rem;">
@@ -149,17 +149,17 @@
       <div class="tarjeta metrica">
         <div class="etiqueta">Relaciones / Enlaces</div>
         <div class="valor" id="statEnlaces">-</div>
-        <div class="subtexto">Backlinks semánticos</div>
+        <div class="subtexto">Conexiones semánticas</div>
       </div>
       <div class="tarjeta metrica dorada">
-        <div class="etiqueta">Leyes & Decretos</div>
+        <div class="etiqueta">Leyes & Códigos Vigentes</div>
         <div class="valor" id="statLeyes">-</div>
-        <div class="subtexto">Legislación Paraguaya</div>
+        <div class="subtexto">Legislación Positiva PY</div>
       </div>
       <div class="tarjeta metrica verde">
         <div class="etiqueta">Enseñanzas RAG</div>
         <div class="valor" id="statMemorias">-</div>
-        <div class="subtexto">Conocimiento semántico</div>
+        <div class="subtexto">Doctrina validada</div>
       </div>
     </div>
 
@@ -168,16 +168,17 @@
       <!-- Toolbar superior -->
       <div class="grafo-toolbar">
         <div style="flex: 1; max-width: 320px;">
-          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, enseñanza o causa..." style="width: 100%; padding: 8px 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); border: 1px solid #1e293b; border-radius: 8px; color: #fff; font-size: 0.88rem;" />
+          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, institución o causa..." style="width: 100%; padding: 8px 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); border: 1px solid #1e293b; border-radius: 8px; color: #fff; font-size: 0.88rem;" />
         </div>
 
         <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
           <button class="btn-chip active" data-filtro="todos">Todos</button>
+          <button class="btn-chip" data-filtro="hub">🏛️ Fueros</button>
           <button class="btn-chip" data-filtro="ley">📜 Leyes & Códigos</button>
+          <button class="btn-chip" data-filtro="institucion">🇵🇾 Instituciones</button>
           <button class="btn-chip" data-filtro="ensenanza">🧠 Enseñanzas RAG</button>
           <button class="btn-chip" data-filtro="expediente">📁 Expedientes</button>
           <button class="btn-chip" data-filtro="cliente">👥 Clientes</button>
-          <button class="btn-chip" data-filtro="memoria">💡 Memorias</button>
         </div>
       </div>
 
@@ -186,12 +187,12 @@
 
       <!-- Leyenda de colores -->
       <div class="grafo-legend">
-        <div class="legend-item"><div class="legend-dot" style="background: #f59e0b;"></div> Leyes y Códigos</div>
-        <div class="legend-item"><div class="legend-dot" style="background: #06b6d4;"></div> Decretos & Acordadas</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #f59e0b;"></div> Fueros Centrales</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #3b82f6;"></div> Leyes y Códigos</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #6366f1;"></div> Instituciones Públicas</div>
         <div class="legend-item"><div class="legend-dot" style="background: #10b981;"></div> Enseñanzas RAG</div>
-        <div class="legend-item"><div class="legend-dot" style="background: #3b82f6;"></div> Expedientes</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #f97316;"></div> Expedientes</div>
         <div class="legend-item"><div class="legend-dot" style="background: #a855f7;"></div> Clientes</div>
-        <div class="legend-item"><div class="legend-dot" style="background: #ec4899;"></div> Memorias</div>
       </div>
 
       <!-- Controles de zoom -->

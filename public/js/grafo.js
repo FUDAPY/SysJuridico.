@@ -76,13 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(resizeCanvas, 50);
 
   const COLORES = {
-    ley: '#f59e0b',
-    codigo: '#f59e0b',
+    hub: '#f59e0b',
     constitucion: '#eab308',
+    codigo: '#3b82f6',
+    ley: '#0ea5e9',
     decreto: '#06b6d4',
-    acordada: '#06b6d4',
+    acordada: '#14b8a6',
+    institucion: '#6366f1',
     ensenanza: '#10b981',
-    expediente: '#3b82f6',
+    expediente: '#f97316',
     cliente: '#a855f7',
     memoria: '#ec4899',
     concepto: '#ec4899',
@@ -115,11 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
           y: Math.sin(phi) * r,
           vx: 0,
           vy: 0,
-          radio: ['constitucion', 'codigo'].includes(n.tipo)
-            ? 16
-            : n.tipo === 'ley' || n.tipo === 'expediente'
+          radio: n.tipo === 'hub'
+            ? 22
+            : n.tipo === 'constitucion'
+            ? 18
+            : n.tipo === 'codigo' || n.tipo === 'institucion'
+            ? 15
+            : n.tipo === 'expediente'
             ? 13
-            : n.tipo === 'ensenanza'
+            : n.tipo === 'ensenanza' || n.tipo === 'ley'
             ? 12
             : 10,
         };
@@ -174,6 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let matchTipo = true;
       if (filtroActivo === 'ley') {
         matchTipo = ['ley', 'codigo', 'constitucion', 'decreto', 'acordada'].includes(n.tipo);
+      } else if (filtroActivo === 'institucion') {
+        matchTipo = n.tipo === 'institucion';
+      } else if (filtroActivo === 'hub') {
+        matchTipo = n.tipo === 'hub';
       } else if (filtroActivo !== 'todos') {
         matchTipo = n.tipo === filtroActivo;
       }
@@ -314,11 +324,24 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.stroke();
 
       // Etiqueta de texto
-      if (zoom > 0.55 || esHover || esSel || ['constitucion', 'codigo', 'expediente'].includes(n.tipo)) {
-        ctx.font = esSel ? 'bold 11px Inter, sans-serif' : '10px Inter, sans-serif';
-        ctx.fillStyle = esSel ? '#ffffff' : esHover ? '#93c5fd' : '#cbd5e1';
+      const esDestacado = ['hub', 'institucion', 'constitucion', 'codigo', 'expediente'].includes(n.tipo);
+      if (zoom > 0.45 || esHover || esSel || esDestacado) {
+        if (n.tipo === 'hub') {
+          ctx.font = 'bold 12px Inter, sans-serif';
+          ctx.fillStyle = '#fbbf24';
+        } else if (esSel) {
+          ctx.font = 'bold 11px Inter, sans-serif';
+          ctx.fillStyle = '#ffffff';
+        } else if (esHover) {
+          ctx.font = 'bold 11px Inter, sans-serif';
+          ctx.fillStyle = '#93c5fd';
+        } else {
+          ctx.font = '10px Inter, sans-serif';
+          ctx.fillStyle = '#cbd5e1';
+        }
         ctx.textAlign = 'center';
-        const label = n.etiqueta.length > 22 ? n.etiqueta.slice(0, 20) + '…' : n.etiqueta;
+        const maxLen = n.tipo === 'hub' ? 32 : 24;
+        const label = n.etiqueta.length > maxLen ? n.etiqueta.slice(0, maxLen - 2) + '…' : n.etiqueta;
         ctx.fillText(label, n.x, n.y + n.radio + 13);
       }
     }

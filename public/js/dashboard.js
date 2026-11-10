@@ -37,19 +37,20 @@ async function inicializarInicio() {
     const novedadesHoy = todosLosExpedientes.filter((e) => new Date(e.updatedAt || e.createdAt).toDateString() === hoy).length;
     const enCaducidad = todosLosExpedientes.filter((e) => {
       const diasInactivo = (Date.now() - new Date(e.updatedAt || e.createdAt).getTime()) / (1000 * 60 * 60 * 24);
-      return diasInactivo > 90; // Art. 172 CPC
+      return diasInactivo > 90 && e.estado !== 'archivado' && e.estado !== 'finalizado';
     }).length;
+    const paraImpulsar = todosLosExpedientes.filter((e) => e.estado === 'activo' || e.estado === 'en_proceso').length;
 
     const elKpiNov = document.getElementById('kpiNovedades');
     if (elKpiNov) elKpiNov.textContent = novedadesHoy;
     const elKpiCad = document.getElementById('kpiCaducidad');
     if (elKpiCad) elKpiCad.textContent = enCaducidad;
     const elKpiPlazos = document.getElementById('kpiPlazos');
-    if (elKpiPlazos) elKpiPlazos.textContent = 0;
+    if (elKpiPlazos) elKpiPlazos.textContent = dashData?.plazosPorVencer || 0;
     const elKpiImp = document.getElementById('kpiImpulsar');
-    if (elKpiImp) elKpiImp.textContent = 0;
+    if (elKpiImp) elKpiImp.textContent = paraImpulsar;
 
-    // Actualizaciones recientes
+    // Actualizaciones recientes (Llevan directo a la Agenda/Calendario al pulsar)
     const zonaAct = document.getElementById('zonaUltimasActuaciones');
     const cantUlt = document.getElementById('cantUltActuaciones');
     if (cantUlt) cantUlt.textContent = novedadesHoy;
@@ -58,9 +59,12 @@ async function inicializarInicio() {
       zonaAct.innerHTML = recientes
         .map(
           (e) => `
-          <div style="background:#0f172a; padding:8px 12px; border-radius:6px; margin-bottom:6px; text-align:left; border:1px solid #1e293b;">
-            <div style="font-weight:600; font-size:0.85rem; color:#fff;">${e.caratula}</div>
-            <div style="font-size:0.75rem; color:var(--texto-muted);">${e.ultimaActuacionTexto || 'Actuación'} &bull; ${formatoFecha(e.updatedAt)}</div>
+          <div onclick="window.location.href='/agenda.html'" style="background:#0f172a; padding:10px 14px; border-radius:8px; margin-bottom:8px; text-align:left; border:1px solid #1e293b; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'" title="Haga clic para ver en el Calendario Judicial">
+            <div style="font-weight:600; font-size:0.86rem; color:#fff; display:flex; justify-content:space-between; align-items:center;">
+              <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:80%;">${e.caratula}</span>
+              <span style="font-size:0.75rem; color:#60a5fa; font-weight:600;">📅 Ver &rarr;</span>
+            </div>
+            <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:3px;">${e.ultimaActuacionTexto || 'Actuación procesal'} &bull; ${formatoFecha(e.updatedAt || e.createdAt)}</div>
           </div>
         `
         )
@@ -155,25 +159,68 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Jurisprudencia de Interés Carousel
-const JURISPRUDENCIAS = [
+// Pensamiento Jurídico & Motivación Forense para Abogados
+const FRASES_MOTIVACIONALES = [
   {
-    caratula: 'ACCIÓN DE INCONSTITUCIONALIDAD EN EL JUICIO: "S. B. DE CORONEL C/ O. D. V. C. S/ NULIDAD DE ACTO JURÍDICO Y CANCELACIÓN DE INSCRIPCIÓN". AÑO: 2001 - Nº 1750.',
-    criterio: 'RECURSO DE APELACIÓN - Facultades del Tribunal de Apelación: El hecho de que el Tribunal haya arribado por otros términos a la confirmación de la resolución no vulnera el principio de congruencia procesal cuando las pretensiones de fondo han sido respetadas.',
-    fuente: 'Corte Suprema de Justicia - Sala Constitucional',
+    texto: 'Estudia: el derecho se transforma constantemente. Si no sigues sus pasos, serás cada día un poco menos abogado. Piensa: el derecho se aprende estudiando, pero se ejerce pensando. Lucha: tu deber es luchar por el derecho; pero el día en que encuentres en conflicto el derecho con la justicia, lucha por la justicia.',
+    autor: 'Eduardo J. Couture, Los Mandamientos del Abogado',
+    tema: 'Ética & Ejercicio Profesional',
   },
   {
-    caratula: 'ACCIÓN DE INCONSTITUCIONALIDAD: "A. G. C/ MINISTERIO DE HACIENDA S/ COBRO DE HABERES". AÑO: 2022 - N° 890.',
-    criterio: 'PRESCRIPCIÓN LIBERATORIA Y PLAZOS FATALES: Los plazos perentorios procesales no admiten interrupción tácita sin acto formal idóneo de impulso de parte.',
-    fuente: 'Corte Suprema de Justicia - Sala Civil y Comercial',
+    texto: 'El abogado debe ser un sembrador de paz y claridad procesal. Quien defiende con verdad ilumina la balanza de la justicia antes de que caiga la espada del juez.',
+    autor: 'Piero Calamandrei, Elogio de los Jueces',
+    tema: 'Función Social de la Abogacía',
+  },
+  {
+    texto: 'Iustitia est constans et perpetua voluntas ius suum cuique tribuendi: La justicia es la constante y perpetua voluntad de dar a cada uno su derecho.',
+    autor: 'Ulpiano, Digesto Romano',
+    tema: 'Fundamento Clásico del Derecho',
+  },
+  {
+    texto: 'En el abogado, la rectitud de la conciencia es mil veces más importante que el tesoro de los conocimientos. Primero ser bueno; luego, ser firme; después, ser prudente; la ilustración viene en cuarto lugar; la pericia, en el último.',
+    autor: 'Ángel Ossorio y Gallardo, El Alma de la Toga',
+    tema: 'Moral Forense',
+  },
+  {
+    texto: 'Ten fe en el derecho como el mejor instrumento para la convivencia humana; en la justicia, como destino normal del derecho; en la paz, como sustitutivo bondadoso de la justicia; y sobre todo, ten fe en la libertad, sin la cual no hay derecho, ni justicia, ni paz.',
+    autor: 'Eduardo J. Couture',
+    tema: 'Fe en la Justicia & Libertad',
+  },
+  {
+    texto: 'Para ser verdaderamente libres, debemos ser servidores fieles de la ley.',
+    autor: 'Marco Tulio Cicerón, Pro Cluentio',
+    tema: 'Estado de Derecho',
+  },
+  {
+    texto: 'Pon la moral por encima de las leyes; la justicia, por encima del éxito; la verdad, por encima de los aplausos.',
+    autor: 'Máxima Forense de Deontología Jurídica',
+    tema: 'Integridad Profesional',
+  },
+  {
+    texto: 'Tolera la verdad ajena en la misma medida en que quieres que sea tolerada la tuya. Ten paciencia: el tiempo se venga de las cosas que se hacen sin su colaboración.',
+    autor: 'Eduardo J. Couture',
+    tema: 'Paciencia Procesal & Tolerancia',
   },
 ];
-let jurisIndex = 0;
+let fraseActualIndex = Math.floor(Math.random() * FRASES_MOTIVACIONALES.length);
 
-function leerCriterioJurisprudencia() {
-  const actual = JURISPRUDENCIAS[jurisIndex];
-  window.location.href = `/lexpy.html?consulta=${encodeURIComponent('Analizar criterio de jurisprudencia CSJ: ' + actual.caratula + ' - Criterio: ' + actual.criterio)}`;
+function siguienteFraseMotivacional() {
+  fraseActualIndex = (fraseActualIndex + 1) % FRASES_MOTIVACIONALES.length;
+  renderFraseMotivacional();
 }
+
+function renderFraseMotivacional() {
+  const f = FRASES_MOTIVACIONALES[fraseActualIndex];
+  const elTexto = document.getElementById('citaTexto');
+  const elAutor = document.getElementById('citaAutor');
+  const elTema = document.getElementById('citaTema');
+  if (elTexto) elTexto.textContent = `"${f.texto}"`;
+  if (elAutor) elAutor.textContent = `— ${f.autor}`;
+  if (elTema) elTema.textContent = f.tema;
+}
+
+// Inicializar la primera frase al cargar
+setTimeout(renderFraseMotivacional, 100);
 
 // Acción de click en prioridades para enfocar en el prompt
 function enfocarPromptEnAccion(tema) {
