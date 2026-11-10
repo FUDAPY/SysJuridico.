@@ -436,11 +436,13 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
     nodosMap.set(id, {
       id,
       tipo: 'ensenanza',
-      etiqueta: a.pregunta ? (a.pregunta.length > 50 ? a.pregunta.slice(0, 50) + '...' : a.pregunta) : 'Criterio Doctrinal RAG',
-      detalle: a.respuesta ? a.respuesta.slice(0, 240) + '...' : '',
+      etiqueta: a.pregunta || 'Criterio Doctrinal RAG',
+      detalle: a.respuesta || '',
+      contenido: a.respuesta || '',
+      pregunta: a.pregunta || '',
       origen: a.origen || 'RAG Local',
       validado: a.validado,
-      peso: 5,
+      peso: 6,
     });
 
     const textoCompleto = `${a.pregunta} ${a.respuesta}`.toLowerCase();

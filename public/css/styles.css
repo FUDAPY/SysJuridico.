@@ -462,6 +462,24 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
+select option {
+  background-color: var(--bg-card, #ffffff);
+  color: var(--texto, #0f172a);
+  padding: 8px 12px;
+}
+
+[data-theme="dark"] select option,
+html.dark select option {
+  background-color: #111e2e !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="light"] select option,
+html:not(.dark) select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
 textarea {
   resize: vertical;
 }

@@ -244,5 +244,137 @@ async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam,
   return resultado;
 }
 
-module.exports = { procesarConsultaLexPY };
+/**
+ * Asistente IA especializado para el Editor Judicial (LibreOffice / Google Docs style)
+ * Optimizado para bajo consumo de tokens y respuesta ultrarrápida (<3s).
+ */
+async function procesarAsistenteEditor({
+  accion = 'redactar',
+  textoSeleccionado = '',
+  instrucciones = '',
+  expedienteId = null,
+  incluirCSJ = true,
+  usuarioId = null,
+}) {
+  const Expediente = require('../models/Expediente');
+  let datosCausa = '';
+  let expedienteData = null;
+
+  if (expedienteId) {
+    try {
+      const exp = await Expediente.findById(expedienteId).populate('cliente').lean();
+      if (exp) {
+        expedienteData = exp;
+        const nombreCliente = exp.cliente?.nombreCompleto || 'Cliente';
+        const docCliente = exp.cliente?.cedula || exp.cliente?.ruc || 'S/D';
+        datosCausa =
+          `DATOS DE LA CAUSA:\n` +
+          `- Carátula: "${exp.caratula}" (N° ${exp.numero || 'S/N'}/${exp.ano || '2026'})\n` +
+          `- Juzgado/Despacho: ${exp.juzgado || 'Juzgado de 1ra Instancia'}\n` +
+          `- Fuero/Materia: ${exp.fuero || 'Civil y Comercial'} / ${exp.materia || 'General'}\n` +
+          `- Cliente Titular: ${nombreCliente} (C.I./RUC: ${docCliente})\n`;
+
+        // Contexto de documentos oficiales adjuntos (si existen)
+        const { obtenerContextoDocumentosExpediente } = require('./documentProcessorService');
+        const docsContexto = await obtenerContextoDocumentosExpediente(expedienteId);
+        if (docsContexto) {
+          datosCausa += `\nDOCUMENTOS DEL CASO:\n${docsContexto.slice(0, 800)}\n`;
+        }
+      }
+    } catch (e) {
+      console.warn('[EditorAI] Error obteniendo expediente:', e.message);
+    }
+  }
+
+  // Búsqueda quirúrgica de jurisprudencia CSJ si se solicita
+  let jurisprudenciaCSJ = '';
+  if (incluirCSJ || /csj|jurisprudencia|corte|acordada/i.test(instrucciones)) {
+    try {
+      const acordadas = await BaseLegal.find({
+        $or: [
+          { fuero: 'Organización Judicial' },
+          { titulo: /acordada|corte suprema|jurisprudencia/i },
+          { tags: { $in: ['csj', 'jurisprudencia', 'acordada'] } },
+        ],
+        estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] },
+      })
+        .select('titulo contenido')
+        .limit(2)
+        .lean();
+
+      if (acordadas.length) {
+        jurisprudenciaCSJ =
+          `\nJURISPRUDENCIA / ACORDADAS CSJ APLICABLES:\n` +
+          acordadas.map((a) => `- ${a.titulo}: ${a.contenido.slice(0, 350)}...`).join('\n');
+      }
+    } catch (e) {
+      console.warn('[EditorAI] Error obteniendo jurisprudencia CSJ:', e.message);
+    }
+  }
+
+  // Ensamblado de prompt quirúrgico (bajo en tokens, directo al punto)
+  let instruccionForense = '';
+  switch (accion) {
+    case 'mejorar':
+      instruccionForense =
+        `MEJORA Y PERFECCIONA el siguiente texto judicial manteniendo el sentido sustantivo pero elevando el rigor forense, la claridad y la elegancia estilística según la práctica de los tribunales paraguayos:\n\n"${textoSeleccionado}"`;
+      break;
+    case 'fundamentar_csj':
+      instruccionForense =
+        `INCORPORA FUNDAMENTOS DE DERECHO Y CRITERIOS DE LA CSJ DE PARAGUAY al siguiente fragmento, citando artículos específicos de la legislación paraguaya vigente:\n\n"${textoSeleccionado || instrucciones}"`;
+      break;
+    case 'polir':
+      instruccionForense =
+        `CORRIGE Y PULE la ortografía, puntuación, conectores lógicos y estilo formal forense del siguiente texto sin alterar su pretensión:\n\n"${textoSeleccionado}"`;
+      break;
+    case 'hechos':
+      instruccionForense =
+        `REDACTA LA SECCIÓN DE HECHOS (Capítulo II) de forma cronológica, ordenada y probatoriamente sólida según los antecedentes disponibles: ${instrucciones}`;
+      break;
+    case 'derecho':
+      instruccionForense =
+        `REDACTA LA SECCIÓN DE DERECHO (Capítulo III) fundamentando con leyes paraguayas positivas (Códigos sustantivos y procesales pertinentes) y doctrina aplicable: ${instrucciones}`;
+      break;
+    case 'petitorio':
+      instruccionForense =
+        `REDACTA EL PETITORIO JUDICIAL (Capítulo IV) con enumeración rigurosa de pretensiones procesales claras, cerrando con la fórmula de estilo "SERÁ JUSTICIA": ${instrucciones}`;
+      break;
+    case 'excepcion':
+      instruccionForense =
+        `REDACTA EL PLANTEO DE UNA EXCEPCIÓN PREVIA O DE FONDO (ej. prescripción, incompetencia, defecto legal, falta de acción) conforme al CPC o norma procesal aplicable: ${instrucciones}`;
+      break;
+    default:
+      instruccionForense =
+        textoSeleccionado
+          ? `MODIFICA O COMPLEMENTA el siguiente fragmento judicial según estas instrucciones: "${instrucciones}"\n\nTexto original:\n"${textoSeleccionado}"`
+          : `REDACTA un fragmento o escrito judicial formal según las siguientes instrucciones: "${instrucciones}"`;
+  }
+
+  const promptFinal =
+    `${datosCausa}${jurisprudenciaCSJ}\n\n` +
+    `INSTRUCCIÓN DE REDACCIÓN:\n${instruccionForense}\n\n` +
+    `IMPORTANTE: Devuelve ÚNICAMENTE el texto redactado en formato listo para insertar en la hoja de trabajo judicial. No incluyas preámbulos como "Aquí tienes", ni despedidas. Solo el contenido forense.`;
+
+  const system =
+    'Sos Techapyrã IA, copiloto de redacción judicial forense para la República del Paraguay (LIN GROUP & Asociados). ' +
+    'Escribe con el más alto estándar de los tribunales de la CSJ: precisión técnica, lenguaje procesal riguroso, citas normativas paraguayas exactas y vigentes. ' +
+    'Responde directamente con el texto judicial solicitado sin introducciones conversacionales.';
+
+  const textoGenerado = await generarRespuestaIA({ prompt: promptFinal, contexto: null, system });
+
+  return {
+    textoGenerado: textoGenerado || 'No se pudo generar la redacción solicitada con el motor de IA.',
+    accion,
+    expediente: expedienteData
+      ? {
+          id: expedienteData._id,
+          caratula: expedienteData.caratula,
+          juzgado: expedienteData.juzgado,
+          cliente: expedienteData.cliente?.nombreCompleto,
+        }
+      : null,
+  };
+}
+
+module.exports = { procesarConsultaLexPY, procesarAsistenteEditor };
 

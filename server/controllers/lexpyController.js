@@ -2,7 +2,7 @@ const asyncHandler = require('../utils/asyncHandler');
 const ApiError = require('../utils/ApiError');
 const SesionChat = require('../models/SesionChat');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
-const { procesarConsultaLexPY } = require('../services/lexpyService');
+const { procesarConsultaLexPY, procesarAsistenteEditor } = require('../services/lexpyService');
 const { redactarBorrador } = require('../services/draftService');
 const { destilarYGuardarMemoria, obtenerRedDeConocimiento } = require('../services/agentMemoryService');
 
@@ -81,11 +81,27 @@ const redactar = asyncHandler(async (req, res) => {
   res.json({ success: true, data: resultado });
 });
 
-// GET /api/lexpy/grafo -> Devuelve la red de conocimiento tipo Obsidian (nodos y aristas)
-const obtenerGrafo = asyncHandler(async (req, res) => {
-  const red = await obtenerRedDeConocimiento({ usuarioId: req.usuario._id });
-  res.json({ success: true, data: red });
+// POST /api/lexpy/editor-ai -> Asistente de redacción rápida para el Editor Judicial
+const asistenteEditor = asyncHandler(async (req, res) => {
+  const { accion, textoSeleccionado, instrucciones, expedienteId, incluirCSJ } = req.body;
+  const resultado = await procesarAsistenteEditor({
+    accion,
+    textoSeleccionado,
+    instrucciones,
+    expedienteId,
+    incluirCSJ,
+    usuarioId: req.usuario._id,
+  });
+  res.json({ success: true, data: resultado });
 });
 
-module.exports = { chat, listarSesiones, obtenerSesion, validarAprendizaje, redactar, obtenerGrafo };
+module.exports = {
+  chat,
+  listarSesiones,
+  obtenerSesion,
+  validarAprendizaje,
+  redactar,
+  obtenerGrafo,
+  asistenteEditor,
+};
 

@@ -59,18 +59,18 @@
       position: absolute;
       bottom: 1.25rem;
       left: 1.25rem;
-      background: rgba(15, 23, 42, 0.85);
+      background: var(--bg-card);
       backdrop-filter: blur(12px);
-      border: 1px solid #1e293b;
+      border: 1px solid var(--borde);
       border-radius: 10px;
       padding: 0.75rem 1.2rem;
       display: flex;
       gap: 1.2rem;
       font-size: 0.78rem;
-      color: #94a3b8;
+      color: var(--texto-secundario);
       z-index: 10;
       flex-wrap: wrap;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
     .legend-item {
       display: flex;
@@ -88,30 +88,30 @@
       right: -560px;
       width: min(520px, 92vw);
       height: 100%;
-      background: #0f172a;
-      border-left: 1px solid #1e293b;
-      box-shadow: -8px 0 35px rgba(0, 0, 0, 0.6);
+      background: var(--bg-card);
+      border-left: 1px solid var(--borde);
+      box-shadow: -8px 0 35px rgba(0, 0, 0, 0.4);
       transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       z-index: 20;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       overflow-y: auto;
-      color: #fff;
+      color: var(--texto);
     }
     .grafo-drawer.active {
       right: 0;
     }
     .articulo-card {
-      background: #1e293b;
-      border: 1px solid #334155;
+      background: var(--bg-subtle);
+      border: 1px solid var(--borde);
       border-radius: 8px;
       padding: 10px 12px;
       transition: border-color 0.2s, background 0.2s;
     }
     .articulo-card:hover {
-      border-color: #3b82f6;
-      background: #24324d;
+      border-color: var(--azul-accent);
+      background: var(--bg-card-hover);
     }
     .articulo-card-header {
       display: flex;
@@ -122,18 +122,18 @@
     .articulo-card-num {
       font-weight: 700;
       font-size: 0.82rem;
-      color: #60a5fa;
+      color: var(--azul-accent);
     }
     .articulo-card-body {
       font-size: 0.82rem;
       line-height: 1.5;
-      color: #e2e8f0;
+      color: var(--texto);
       white-space: pre-wrap;
     }
     .btn-copiar-art {
       background: transparent;
-      border: 1px solid #475569;
-      color: #94a3b8;
+      border: 1px solid var(--borde);
+      color: var(--texto-muted);
       border-radius: 4px;
       padding: 2px 7px;
       font-size: 0.72rem;
@@ -144,14 +144,14 @@
       transition: all 0.15s;
     }
     .btn-copiar-art:hover {
-      background: #334155;
-      color: #fff;
-      border-color: #64748b;
+      background: var(--bg-card-hover);
+      color: var(--texto);
+      border-color: var(--borde-focus);
     }
     .btn-chip {
-      background: #1e293b;
-      color: #cbd5e1;
-      border: 1px solid #334155;
+      background: var(--bg-card);
+      color: var(--texto-secundario);
+      border: 1px solid var(--borde);
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.82rem;
@@ -159,9 +159,9 @@
       transition: all 0.2s;
     }
     .btn-chip:hover, .btn-chip.active {
-      background: #2563eb;
+      background: var(--azul-accent);
       color: #fff;
-      border-color: #3b82f6;
+      border-color: var(--azul-accent);
     }
   </style>
 </head>
@@ -214,7 +214,7 @@
       <!-- Toolbar superior -->
       <div class="grafo-toolbar">
         <div style="flex: 1; max-width: 320px;">
-          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, institución o causa..." style="width: 100%; padding: 8px 14px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); border: 1px solid #1e293b; border-radius: 8px; color: #fff; font-size: 0.88rem;" />
+          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, institución o causa..." style="width: 100%; padding: 8px 14px; background: var(--bg-card); backdrop-filter: blur(10px); border: 1px solid var(--borde); border-radius: 8px; color: var(--texto); font-size: 0.88rem;" />
         </div>
 
         <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
@@ -253,13 +253,13 @@
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
           <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
             <span class="badge" id="drawerBadge" style="background:#2563eb; color:#fff; text-transform:uppercase;">Tipo</span>
-            <span class="badge" id="drawerCantArticulos" style="background:#1e293b; color:#94a3b8; border:1px solid #334155;">0 Artículos</span>
+            <span class="badge" id="drawerCantArticulos" style="background:var(--bg-subtle); color:var(--texto-muted); border:1px solid var(--borde);">0 Artículos</span>
           </div>
           <button id="btnCloseDrawer" style="background:transparent; border:none; color:var(--texto-muted); font-size:1.4rem; cursor:pointer;" title="Cerrar panel">&times;</button>
         </div>
 
-        <h3 id="drawerTitulo" style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; color: #fff;">Título</h3>
-        <div id="drawerMeta" style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.75rem;"></div>
+        <h3 id="drawerTitulo" style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--texto);">Título</h3>
+        <div id="drawerMeta" style="font-size: 0.78rem; color: var(--texto-muted); margin-bottom: 0.75rem;"></div>
 
         <!-- Acciones rápidas del Drawer -->
         <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
@@ -273,7 +273,7 @@
 
         <!-- Buscador de artículos dentro de la ley -->
         <div style="margin-bottom: 0.75rem;">
-          <input type="text" id="filtroArticulosDrawer" placeholder="🔍 Filtrar artículos por número o término..." style="width: 100%; padding: 7px 12px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #fff; font-size: 0.82rem;" />
+          <input type="text" id="filtroArticulosDrawer" placeholder="🔍 Filtrar artículos por número o término..." style="width: 100%; padding: 7px 12px; background: var(--bg-input); border: 1px solid var(--borde); border-radius: 6px; color: var(--texto); font-size: 0.82rem;" />
         </div>
 
         <!-- Lista scrolleable de artículos individuales -->
@@ -281,7 +281,7 @@
           <!-- Inyectado por JS -->
         </div>
 
-        <div style="border-top: 1px solid #1e293b; padding-top: 0.75rem;">
+        <div style="border-top: 1px solid var(--borde); padding-top: 0.75rem;">
           <h4 style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--texto-muted); margin-bottom: 0.5rem;">Conexiones Directas en OtelaxWisdom</h4>
           <div id="drawerConexiones" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 120px; overflow-y: auto;"></div>
         </div>
@@ -304,13 +304,13 @@
             <span class="badge" id="modalArticuladoBadge" style="background:#2563eb; color:#fff;">LEY</span>
             <span class="badge" id="modalArticuladoContador" style="background:var(--bg-subtle); color:var(--texto-muted);">0 Artículos</span>
           </div>
-          <h2 id="modalArticuladoTitulo" style="margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--texto-principal);">Norma Legal</h2>
+          <h2 id="modalArticuladoTitulo" style="margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--texto);">Norma Legal</h2>
         </div>
         <button id="btnCerrarModalArticulado" style="background:transparent; border:none; font-size:1.6rem; cursor:pointer; color:var(--texto-muted); line-height: 1;">&times;</button>
       </div>
 
       <div style="display: flex; gap: 10px; margin-bottom: 14px; align-items: center;">
-        <input type="text" id="busquedaArticuloModal" placeholder="🔍 Buscar dentro de los artículos (ej: 172, indemnización, prescripción, fianza)..." style="flex: 1; padding: 9px 14px; font-size: 0.88rem; border-radius: 8px; border: 1px solid var(--borde); background: var(--bg-card); color: var(--texto-principal);">
+        <input type="text" id="busquedaArticuloModal" placeholder="🔍 Buscar dentro de los artículos (ej: 172, indemnización, prescripción, fianza)..." style="flex: 1; padding: 9px 14px; font-size: 0.88rem; border-radius: 8px; border: 1px solid var(--borde); background: var(--bg-card); color: var(--texto);">
         <button class="boton btn-secundario btn-sm" id="btnCopiarTodoModal" style="gap: 5px; white-space: nowrap;">
           <span>📋</span> Copiar Todo
         </button>
@@ -330,7 +330,7 @@
         <button id="btnCerrarModalObsidian" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
       </div>
 
-      <div style="font-size: 0.88rem; line-height: 1.6; color: var(--texto-principal);">
+      <div style="font-size: 0.88rem; line-height: 1.6; color: var(--texto);">
         <p style="margin-bottom: 1rem;">
           Podés usar la IA de <strong>Techapyrã IA</strong> y todo el contexto de la legislación paraguaya directamente dentro de tus notas de <strong>Obsidian</strong> mediante plugins comunitarios oficiales:
         </p>

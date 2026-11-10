@@ -333,21 +333,23 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.strokeStyle = '#fff';
       ctx.stroke();
 
-      // Etiqueta de texto
+      // Etiqueta de texto adaptativa (modo claro / modo oscuro)
+      const esDark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
       const esDestacado = ['hub', 'institucion', 'constitucion', 'codigo', 'expediente'].includes(n.tipo);
+
       if (zoom > 0.45 || esHover || esSel || esDestacado) {
         if (n.tipo === 'hub') {
           ctx.font = 'bold 12px Inter, sans-serif';
-          ctx.fillStyle = '#fbbf24';
+          ctx.fillStyle = esDark ? '#fbbf24' : '#b45309';
         } else if (esSel) {
           ctx.font = 'bold 11px Inter, sans-serif';
-          ctx.fillStyle = '#ffffff';
+          ctx.fillStyle = esDark ? '#ffffff' : '#1e3a8a';
         } else if (esHover) {
           ctx.font = 'bold 11px Inter, sans-serif';
-          ctx.fillStyle = '#93c5fd';
+          ctx.fillStyle = esDark ? '#93c5fd' : '#2563eb';
         } else {
           ctx.font = '10px Inter, sans-serif';
-          ctx.fillStyle = '#cbd5e1';
+          ctx.fillStyle = esDark ? '#cbd5e1' : '#0f172a';
         }
         ctx.textAlign = 'center';
         const maxLen = n.tipo === 'hub' ? 32 : 24;
@@ -473,16 +475,52 @@ document.addEventListener('DOMContentLoaded', () => {
   let articulosActuales = [];
   let nodoInspectorActivo = null;
 
-  function parsearArticulosDeTexto(texto, titulo) {
+  function parsearArticulosDeTexto(texto, titulo, nodo) {
     if (!texto || typeof texto !== 'string') return [];
     const limpio = texto.trim();
 
-    // Regex para detectar inicios de artículos, disposiciones, libros o títulos
-    const regexSeparador = /(?:^|\n)(?=(?:Artículo|Art\.|Disposición|LIBRO|TÍTULO)\s+[0-9A-Za-zº°\/-]+)/gi;
+    // Caso Especial: Enseñanza / Doctrina RAG OtelaxWisdom
+    if (nodo && nodo.tipo === 'ensenanza') {
+      const tarjetas = [];
+      if (nodo.pregunta) {
+        tarjetas.push({
+          id: 'ens_pregunta',
+          numero: '📌 Criterio & Consulta Planteada',
+          titulo: nodo.pregunta,
+          cuerpo: nodo.pregunta,
+        });
+      }
+
+      // Dividir la respuesta por secciones si contiene títulos o Markdown
+      const parrafos = limpio.split(/\n\s*\n/).filter(Boolean);
+      if (parrafos.length > 1) {
+        parrafos.forEach((p, idx) => {
+          const primerLinea = p.split('\n')[0].replace(/^[#\-*\s]+/, '').trim();
+          tarjetas.push({
+            id: `ens_seccion_${idx + 1}`,
+            numero: `⚖️ Dictamen ${idx + 1}`,
+            titulo: primerLinea.slice(0, 60),
+            cuerpo: p,
+          });
+        });
+      } else {
+        tarjetas.push({
+          id: 'ens_doctrina',
+          numero: '⚖️ Fundamentación Doctrinal & Solución Procesal',
+          titulo: titulo || 'Doctrina Jurídica',
+          cuerpo: limpio,
+        });
+      }
+
+      return tarjetas;
+    }
+
+    // Regex forense para detectar inicios de artículos, disposiciones, libros o títulos
+    const regexSeparador = /(?:^|\n+)(?=(?:Artículo|Art\.|Disposición|LIBRO|TÍTULO|CAPÍTULO)\s+[0-9A-Za-zº°\/-]+)/gi;
     const bloques = limpio.split(regexSeparador).map((b) => b.trim()).filter(Boolean);
 
     if (bloques.length <= 1 && !limpio.match(/^(?:Artículo|Art\.|Disposición)/i)) {
-      // Intentar dividir por numeración estándar (1. , 2. , etc.)
+      // Intentar dividir por numeración estándar (1. , 2. , etc.) o párrafos dobles
       const regexNumerados = /(?:^|\n)(?=[0-9]+\.\s+)/g;
       const partesNumeradas = limpio.split(regexNumerados).map((p) => p.trim()).filter(Boolean);
       if (partesNumeradas.length > 1) {
@@ -498,6 +536,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
 
+      const parrafosDobles = limpio.split(/\n\s*\n/).filter(Boolean);
+      if (parrafosDobles.length > 1) {
+        return parrafosDobles.map((p, idx) => ({
+          id: `disp_${idx + 1}`,
+          numero: `Disposición ${idx + 1}`,
+          titulo: p.split('\n')[0].slice(0, 60),
+          cuerpo: p,
+        }));
+      }
+
       return [
         {
           id: 'art_1',
@@ -511,7 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return bloques.map((bloque, idx) => {
       const lineas = bloque.split('\n');
       const primera = lineas[0].trim();
-      const matchNum = primera.match(/^((?:Artículo|Art\.|Disposición|LIBRO|TÍTULO)\s+[0-9A-Za-zº°\/-]+)(?:\s*[-–—:]\s*(.*))?$/i);
+      const matchNum = primera.match(/^((?:Artículo|Art\.|Disposición|LIBRO|TÍTULO|CAPÍTULO)\s+[0-9A-Za-zº°\/-]+)(?:\s*[-–—:]\s*(.*))?$/i);
 
       let numero = `Art. ${idx + 1}`;
       let tituloArt = primera;
@@ -636,16 +684,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drawerTitulo) drawerTitulo.textContent = n.etiqueta;
 
     if (drawerMeta) {
+      const tagFuero = n.fuero ? `<span class="badge" style="background:rgba(37,99,235,0.15); color:var(--azul-accent); font-size:0.75rem;">${escapeHtml(n.fuero)}</span>` : '';
+      const badgeVigencia = `<span class="badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-size:0.75rem;">Legislación Vigente PY</span>`;
+      const linkOficial = n.url ? `<a href="${n.url}" target="_blank" rel="noopener noreferrer" style="color:var(--azul-accent); text-decoration:none; font-size:0.75rem; display:inline-flex; align-items:center; gap:4px; margin-left:auto;"><span>🏛️ BACN Oficial</span> ↗</a>` : '';
+
       drawerMeta.innerHTML = `
-        ${n.fuente ? `<span><strong>Fuente:</strong> ${escapeHtml(n.fuente)}</span>` : ''}
-        ${n.fuero ? `<span style="margin-left:8px;"><strong>Fuero:</strong> ${escapeHtml(n.fuero)}</span>` : ''}
-        ${n.url ? `<div style="margin-top:4px;"><a href="${n.url}" target="_blank" rel="noopener noreferrer" style="color:#60a5fa; text-decoration:none;">🔗 Ver Documento Oficial en Línea &rarr;</a></div>` : ''}
+        <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+          ${tagFuero}
+          ${badgeVigencia}
+          ${linkOficial}
+        </div>
       `;
     }
 
     // Parsear artículos completos de contenido o detalle
     const textoCompleto = n.contenido || n.detalle || '';
-    articulosActuales = parsearArticulosDeTexto(textoCompleto, n.etiqueta);
+    articulosActuales = parsearArticulosDeTexto(textoCompleto, n.etiqueta, n);
 
     // Resetear filtro del drawer y renderizar
     if (filtroArticulosDrawer) filtroArticulosDrawer.value = '';
@@ -654,21 +708,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Conexiones del nodo
     if (drawerConexiones) {
       const conectados = enlaces
-        .filter((e) => e.sourceNode.id === n.id || e.targetNode.id === n.id)
+        .filter((e) => e.sourceNode && e.targetNode && (e.sourceNode.id === n.id || e.targetNode.id === n.id))
         .map((e) => (e.sourceNode.id === n.id ? e.targetNode : e.sourceNode));
 
       drawerConexiones.innerHTML = conectados.length
         ? conectados
             .map(
               (c) => `
-              <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.8rem; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="enfocarNodo('${c.id}')">
+              <div style="background:var(--bg-subtle); border:1px solid var(--borde); padding:6px 10px; border-radius:6px; font-size:0.8rem; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="enfocarNodo('${c.id}')">
                 <span>${escapeHtml(c.etiqueta.slice(0, 32))}</span>
                 <span class="badge" style="background:${COLORES[c.tipo] || '#64748b'}; font-size:0.7rem; padding:1px 6px;">${c.tipo}</span>
               </div>
             `
             )
             .join('')
-        : '<span style="color:#94a3b8; font-size:0.8rem;">Sin conexiones directas registradas.</span>';
+        : '<span style="color:var(--texto-muted); font-size:0.8rem;">Sin conexiones directas registradas.</span>';
     }
 
     if (btnAccionNodo) {

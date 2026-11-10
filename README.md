@@ -142,19 +142,21 @@ SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas 
 - **Cálculo Exacto:** Preaviso, indemnización legal tarifada, aguinaldo proporcional, vacaciones causadas/fraccionadas y retención obrera IPS (9%).
 - **Exportación A4:** Documento imprimible listo para homologación en el MTESS.
 
-### 6. Editor Judicial Integrado con Márgenes Oficiales CSJ
-- **Lienzo A4 Forense Centrado:** Procesador de texto judicial optimizado para redacción forense en hojas A4 con centrado automático en el escritorio de trabajo.
-- **Márgenes Procesales Configurables:**
-  - *Margen Judicial CSJ (Predeterminado):* Izquierdo 4.0 cm (para cosido de expediente), Superior 3.5 cm (para sellos judiciales y cargos), Derecho 2.0 cm, Inferior 2.5 cm.
-  - *Margen Estándar (2.5 cm uniforme).*
-  - *Margen Estrecho (1.5 cm uniforme).*
-  - *Margen Amplio Forense (4.5 cm Izquierdo).*
-- **Guías Visuales de Margen:** Visualización de líneas delimitadoras punteadas en la hoja para verificación previa a impresión.
-- **Fórmulas Judiciales CSJ:** Menú desplegable para inserción rápida de fórmulas clásicas (OBJETO, SEÑOR JUEZ, COMPARECENCIA, DERECHO, PETITORIO, SERÁ JUSTICIA, OTROSÍ DIGO).
-- **Controles de Zoom y Ajuste:** Niveles de escala (75% a 100%) y ajuste automático al ancho disponible sin desbordamientos horizontales.
-- **Métricas de Texto en Tiempo Real:** Contador en vivo de palabras, caracteres y fojas judiciales estimadas (~250 palabras por carilla).
-- **Inserción Asistida con Techapyrã:** Generación de cláusulas o fundamentos en la posición del cursor.
-- **Exportación:** Descarga en formatos editables `.docx`, `.pdf` e impresión directa con ocultamiento de barras de herramientas.
+### 6. Editor Forense Judicial Estilo LibreOffice Writer
+- **Entorno de Redacción Forense Profesional:** Procesador de texto avanzado diseñado bajo la ergonomía de LibreOffice Writer y la fluidez de escritura de Google Docs, con soporte nativo de clic inmediato en foja y atajos de teclado (`Ctrl+B`, `Ctrl+I`, `Ctrl+U`, `Ctrl+S`, `Ctrl+F`, `Ctrl+Enter`).
+- **Barra de Menús y Doble Barra de Herramientas:**
+  - *Menú Superior:* Archivo, Editar, Ver, Insertar, Formato y Techapyrã IA.
+  - *Barra Estándar:* Nuevo escrito, Guardar en causa judicial, Descargar .DOCX/Word, Imprimir/PDF, Cortar, Copiar, Pegar, Deshacer/Rehacer, Búsqueda, Fórmulas CSJ y Márgenes.
+  - *Barra de Formato:* Selector de estilos de párrafo (Cuerpo, Títulos 1-3), tipografía forense (`Liberation Serif`, `Times New Roman CSJ`, `Arial`, etc.), tamaño en pt, negrita, cursiva, subrayado, tachado, alineaciones (izquierda, centro, derecha y justificado forense), viñetas, numeración, sangrías e interlineado procesal (1.5 líneas CSJ).
+- **Regla Horizontal Graduada Forense (0 a 18 cm):** Delimita visualmente en escala real la zona sombreada del margen izquierdo para cosido de expediente (4.0 cm), el área central útil de escritura y el margen derecho (2.0 cm).
+- **Marcas de Corte y Salto de Foja:** Marcas de esquina judiciales (`┌ ┐ └ ┘`) y soporte de saltos de página con cálculo dinámico de fojas (~250 palabras por carilla).
+- **Copiloto Techapyrã IA Optimizado (`/api/lexpy/editor-ai`):**
+  - Motor de baja latencia (<3s) y mínimo consumo de tokens enfocado en redacción quirúrgica.
+  - *Acciones rápidas con 1 clic:* Mejorar selección, Fundamentar con CSJ, Hechos cronológicos, Articulado de derecho, Petitorio formal, Excepción procesal previa y Polido de estilo.
+  - *Integración con Expediente y Documentos:* Inyecta automáticamente los antecedentes de la causa, carátula, demandante, demandado y resúmenes de documentos adjuntos (PDFs/escaneados).
+  - *Jurisprudencia CSJ:* Consulta e inserción directa de acordadas y fallos de la Corte Suprema de Justicia del Paraguay.
+- **Barra de Búsqueda y Reemplazo Integrada (Ctrl+F):** Navegación ágil y reemplazo unitario o masivo de términos.
+- **Contraste de Alta Legibilidad en Modos Claro y Oscuro:** Soporte universal garantizado en todas las listas desplegables, opciones `<select>`, lienzos y paletas de interfaz.
 
 ---
 

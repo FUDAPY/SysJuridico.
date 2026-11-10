@@ -1,6 +1,6 @@
 const express = require('express');
 const { protect } = require('../middleware/auth');
-const { chat, listarSesiones, obtenerSesion, validarAprendizaje, redactar, obtenerGrafo } = require('../controllers/lexpyController');
+const { chat, listarSesiones, obtenerSesion, validarAprendizaje, redactar, obtenerGrafo, asistenteEditor } = require('../controllers/lexpyController');
 
 const router = express.Router();
 
@@ -8,6 +8,7 @@ const router = express.Router();
 router.use(protect);
 
 router.post('/chat', chat);
+router.post('/editor-ai', asistenteEditor);
 router.get('/sesiones', listarSesiones);
 router.get('/sesiones/:id', obtenerSesion);
 router.post('/validar', validarAprendizaje);
