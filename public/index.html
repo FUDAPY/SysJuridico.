@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Resumen - SysJuridico</title>
+<title>Centro Operativo - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -12,88 +12,173 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2 id="tituloResumen">Resumen</h2>
-      <button class="btn-primario" onclick="abrirModalIngreso()">+ Registrar Ingreso</button>
+    <!-- Topbar estilo expedientes.click -->
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h1 id="tituloResumen">Centro Operativo</h1>
+        <div class="topbar-subtitulo" id="fechaHoy">Gestión legal inteligente • LIN GROUP & Asociados</div>
+      </div>
+      <div class="topbar-acciones">
+        <a href="/lexpy.html" class="boton btn-dorado" title="Asistencia y redacción con Techapyrã IA (DeepSeek)">
+          <span>✨</span> Techapyrã IA
+        </a>
+        <button class="btn-primario" onclick="abrirModalIngreso()">
+          <span>+</span> Registrar Ingreso
+        </button>
+      </div>
     </div>
 
-    <!-- Vista ADMIN: métricas completas -->
+    <!-- Vista ADMIN: métricas completas Bento Grid -->
     <div id="vistaAdmin" class="oculto">
       <div class="grid-metricas">
-        <div class="tarjeta metrica"><div class="valor" id="mExpedientes">-</div><div class="etiqueta">Expedientes activos</div></div>
-        <div class="tarjeta metrica"><div class="valor" id="mSaldo">-</div><div class="etiqueta">Saldo por cobrar</div></div>
-        <div class="tarjeta metrica"><div class="valor" id="mDiario">-</div><div class="etiqueta">Ingreso diario</div></div>
-        <div class="tarjeta metrica"><div class="valor" id="mMensual">-</div><div class="etiqueta">Ingreso mensual</div></div>
-        <div class="tarjeta metrica"><div class="valor" id="mAnual">-</div><div class="etiqueta">Ingreso anual</div></div>
-      </div>
-
-      <div class="tarjeta">
-        <h3 style="margin-top:0">Acciones rápidas</h3>
-        <div class="acciones-rapidas">
-          <a class="boton btn-secundario" href="/clientes.html">Nuevo cliente</a>
-          <a class="boton btn-secundario" href="/expedientes.html">Nuevo expediente</a>
-          <a class="boton btn-secundario" href="/agenda.html">Agendar evento</a>
-          <button class="btn-secundario" onclick="abrirModalIngreso()">Registrar ingreso</button>
-          <a class="boton btn-secundario" href="/lexpy.html">Abrir chat de IA (LexPY)</a>
+        <div class="tarjeta metrica">
+          <div class="etiqueta">Expedientes Activos</div>
+          <div class="valor" id="mExpedientes">-</div>
+          <div class="subtexto">Causas en trámite judicial</div>
+        </div>
+        <div class="tarjeta metrica dorada">
+          <div class="etiqueta">Saldo por Cobrar</div>
+          <div class="valor" id="mSaldo">-</div>
+          <div class="subtexto">Honorarios y créditos pendientes</div>
+        </div>
+        <div class="tarjeta metrica verde">
+          <div class="etiqueta">Ingreso Diario</div>
+          <div class="valor" id="mDiario">-</div>
+          <div class="subtexto">Cobros registrados hoy</div>
+        </div>
+        <div class="tarjeta metrica">
+          <div class="etiqueta">Ingreso Mensual</div>
+          <div class="valor" id="mMensual">-</div>
+          <div class="subtexto">Acumulado mes en curso</div>
+        </div>
+        <div class="tarjeta metrica dorada">
+          <div class="etiqueta">Ingreso Anual</div>
+          <div class="valor" id="mAnual">-</div>
+          <div class="subtexto">Ejercicio anual vigente</div>
         </div>
       </div>
 
+      <!-- Acciones rápidas tipo expedientes.click -->
       <div class="tarjeta">
-        <h3 style="margin-top:0">Registro de Movimientos</h3>
-        <table>
-          <thead><tr><th>Fecha</th><th>Concepto</th><th>Cliente</th><th>Expediente</th><th>Tipo</th><th>Monto</th></tr></thead>
-          <tbody id="tablaMovimientos"></tbody>
-        </table>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px">
+          <h3 style="margin:0">Acciones y Accesos Directos</h3>
+          <span style="font-size:0.8rem; color:var(--texto-muted)">Flujos rápidos de trabajo</span>
+        </div>
+        <div class="acciones-rapidas">
+          <a class="boton btn-secundario" href="/expedientes.html"><span>📁</span> Nuevo Expediente</a>
+          <a class="boton btn-secundario" href="/clientes.html"><span>👥</span> Nuevo Cliente</a>
+          <a class="boton btn-secundario" href="/agenda.html"><span>📅</span> Agendar Plazo / Audiencia</a>
+          <a class="boton btn-secundario" href="/liquidacion.html"><span>🧮</span> Calcular Liquidación MTESS</a>
+          <a class="boton btn-secundario" href="/creditos.html"><span>💰</span> Registrar Cobranza</a>
+          <a class="boton btn-secundario" href="/lexpy.html"><span>🤖</span> Redactor Legal DeepSeek</a>
+        </div>
+      </div>
+
+      <!-- Tabla de Movimientos Financieros -->
+      <div class="tarjeta">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+          <div>
+            <h3 style="margin:0">Registro de Movimientos Financieros</h3>
+            <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">Últimos ingresos y egresos registrados en el estudio</p>
+          </div>
+          <button class="boton btn-secundario btn-sm" onclick="abrirModalIngreso()">+ Nuevo Cobro</button>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Concepto</th>
+                <th>Cliente</th>
+                <th>Expediente</th>
+                <th>Tipo</th>
+                <th>Monto</th>
+              </tr>
+            </thead>
+            <tbody id="tablaMovimientos"></tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <!-- Vista ABOGADO: resumen del día -->
     <div id="vistaAbogado" class="oculto">
       <div class="grid-metricas">
-        <div class="tarjeta metrica"><div class="valor" id="aExpedientes">-</div><div class="etiqueta">Mis expedientes activos</div></div>
-        <div class="tarjeta metrica"><div class="valor" id="aIngreso">-</div><div class="etiqueta">Ingreso registrado hoy</div></div>
-      </div>
-      <div class="tarjeta">
-        <h3 style="margin-top:0">Acciones rápidas</h3>
-        <div class="acciones-rapidas">
-          <a class="boton btn-secundario" href="/expedientes.html">Mis expedientes</a>
-          <button class="btn-secundario" onclick="abrirModalIngreso()">Registrar ingreso</button>
-          <a class="boton btn-secundario" href="/lexpy.html">Abrir chat de IA (LexPY)</a>
+        <div class="tarjeta metrica">
+          <div class="etiqueta">Mis Expedientes Asignados</div>
+          <div class="valor" id="aExpedientes">-</div>
+          <div class="subtexto">Causas bajo tu patrocinio</div>
+        </div>
+        <div class="tarjeta metrica verde">
+          <div class="etiqueta">Ingresos Registrados Hoy</div>
+          <div class="valor" id="aIngreso">-</div>
+          <div class="subtexto">Recaudado en tu despacho</div>
         </div>
       </div>
       <div class="tarjeta">
-        <h3 style="margin-top:0">Eventos de hoy</h3>
-        <table>
-          <thead><tr><th>Hora</th><th>Título</th><th>Tipo</th><th>Lugar</th></tr></thead>
-          <tbody id="tablaEventosHoy"></tbody>
-        </table>
+        <h3 style="margin-top:0">Acciones de Despacho</h3>
+        <div class="acciones-rapidas">
+          <a class="boton btn-secundario" href="/expedientes.html"><span>📁</span> Ver Mis Expedientes</a>
+          <a class="boton btn-secundario" href="/agenda.html"><span>📅</span> Mi Agenda de Audiencias</a>
+          <button class="btn-secundario" onclick="abrirModalIngreso()"><span>💵</span> Registrar Cobro</button>
+          <a class="boton btn-dorado" href="/lexpy.html"><span>🤖</span> Redactar Escrito con DeepSeek</a>
+        </div>
+      </div>
+      <div class="tarjeta">
+        <h3 style="margin-top:0">Eventos y Audiencias de Hoy</h3>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Título / Objeto</th>
+                <th>Tipo</th>
+                <th>Juzgado / Lugar</th>
+              </tr>
+            </thead>
+            <tbody id="tablaEventosHoy"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal registrar ingreso rápido -->
+  <!-- Modal registrar ingreso rápido moderno -->
   <div class="modal-fondo oculto" id="modalIngreso">
     <div class="modal">
-      <h3>Registrar Ingreso</h3>
-      <label>Concepto</label>
-      <input id="fConcepto" placeholder="Ej: Pago de honorarios" />
-      <label style="margin-top:10px">Monto (Gs.)</label>
-      <input id="fMonto" type="number" min="1" />
-      <label style="margin-top:10px">Método de pago</label>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 style="margin:0">Registrar Ingreso de Honorarios</h3>
+        <button onclick="cerrarModalIngreso()" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
+      <label>Concepto del cobro</label>
+      <input id="fConcepto" placeholder="Ej: Pago de cuota de honorarios, consulta, etc." />
+      
+      <label style="margin-top:12px">Monto (Gs.)</label>
+      <input id="fMonto" type="number" min="1" placeholder="Ej: 500000" />
+      
+      <label style="margin-top:12px">Método de pago</label>
       <select id="fMetodoPago">
         <option value="efectivo">Efectivo</option>
-        <option value="transferencia">Transferencia</option>
-        <option value="tarjeta">Tarjeta</option>
+        <option value="transferencia">Transferencia Bancaria (SIPAP)</option>
+        <option value="tarjeta">Tarjeta de Débito / Crédito</option>
         <option value="cheque">Cheque</option>
         <option value="otro">Otro</option>
       </select>
-      <label style="margin-top:10px">Cliente (opcional)</label>
-      <input id="fCliente" placeholder="ID de cliente (opcional)" />
-      <label style="margin-top:10px">Expediente (opcional)</label>
-      <input id="fExpediente" placeholder="ID de expediente (opcional)" />
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarIngreso()">Guardar</button>
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px">
+        <div>
+          <label>ID Cliente (opcional)</label>
+          <input id="fCliente" placeholder="ID de cliente" />
+        </div>
+        <div>
+          <label>ID Expediente (opcional)</label>
+          <input id="fExpediente" placeholder="ID de expediente" />
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalIngreso()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarIngreso()">Guardar Comprobante</button>
       </div>
     </div>
   </div>

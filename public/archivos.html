@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Ubicación de Archivos - SysJuridico</title>
+<title>Ubicación de Archivos - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -12,34 +12,60 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2>Ubicación de Archivos</h2>
-      <button class="btn-primario" data-admin onclick="abrirModalArchivo()">+ Registrar archivo</button>
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h2>Archivo Físico y Expedientes en Papel</h2>
+        <div class="topbar-subtitulo">Inventario y localización física de carpetas, tomos, legajos y estantes</div>
+      </div>
+      <div class="topbar-acciones">
+        <button class="btn-primario" data-admin onclick="abrirModalArchivo()">
+          <span>+</span> Registrar Ubicación
+        </button>
+      </div>
+    </div>
+
+    <div class="tarjeta" style="padding:14px 20px">
+      <input id="buscador" placeholder="🔍 Buscar por nombre del caso, carátula, tomo o estante..." oninput="pintarTabla()" />
     </div>
 
     <div class="tarjeta">
-      <input id="buscador" placeholder="Buscar por nombre o ubicación (Tomo, estante, caja)..." oninput="pintarTabla()" />
-    </div>
-
-    <div class="tarjeta">
-      <table>
-        <thead><tr><th>Nombre / Caso</th><th>Ubicación</th><th>Registrado</th><th>Acciones</th></tr></thead>
-        <tbody id="tablaArchivos"></tbody>
-      </table>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+        <h3 style="margin:0">Inventario de Archivos Físicos</h3>
+        <span style="font-size:0.82rem; color:var(--texto-muted)">Registro de legajos en estantería</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre de la Carpeta / Caso</th>
+              <th>Ubicación Física (Tomo / Estante / Caja)</th>
+              <th>Fecha de Registro</th>
+              <th style="text-align:right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaArchivos"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <div class="modal-fondo oculto" id="modalArchivo">
-    <div class="modal" style="max-width:480px">
-      <h3 id="tituloModalArchivo">Registrar archivo</h3>
+    <div class="modal" style="max-width:520px">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 id="tituloModalArchivo" style="margin:0">Registrar Ubicación de Archivo</h3>
+        <button onclick="cerrarModalArchivo()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
       <input type="hidden" id="archivoId" />
-      <label>Nombre / Caso</label>
-      <input id="afNombre" placeholder="Ej: Antonio Riveros Martínez" />
-      <label style="margin-top:10px">Ubicación</label>
-      <input id="afUbicacion" placeholder="Ej: Tomo I / Estante 3" />
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarArchivo()">Guardar</button>
+      
+      <label>Nombre de la Carpeta / Caso Judicial</label>
+      <input id="afNombre" placeholder="Ej: Perez c/ Banco Itaú / Sucesión Gonzalez" />
+      
+      <label style="margin-top:12px">Ubicación Física Específica</label>
+      <input id="afUbicacion" placeholder="Ej: Estante 4, Tomo II, Caja Archivera 12" />
+      
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalArchivo()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarArchivo()">Guardar Ubicación</button>
       </div>
     </div>
   </div>

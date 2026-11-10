@@ -4,6 +4,7 @@ const SesionChat = require('../models/SesionChat');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { procesarConsultaLexPY } = require('../services/lexpyService');
 const { redactarBorrador } = require('../services/draftService');
+const { destilarYGuardarMemoria, obtenerRedDeConocimiento } = require('../services/agentMemoryService');
 
 // POST /api/lexpy/chat  { pregunta, sesionId?, cliente?, expediente? }
 const chat = asyncHandler(async (req, res) => {
@@ -12,7 +13,12 @@ const chat = asyncHandler(async (req, res) => {
     throw new ApiError(400, 'La pregunta es obligatoria.');
   }
 
-  const { respuesta, fuente } = await procesarConsultaLexPY({ pregunta, usuarioId: req.usuario._id });
+  const { respuesta, fuente } = await procesarConsultaLexPY({
+    pregunta,
+    usuarioId: req.usuario._id,
+    clienteId: cliente || null,
+    expedienteId: expediente || null,
+  });
 
   let sesion = sesionId ? await SesionChat.findById(sesionId) : null;
   if (!sesion) {
@@ -28,6 +34,15 @@ const chat = asyncHandler(async (req, res) => {
   sesion.mensajes.push({ rol: 'usuario', contenido: pregunta });
   sesion.mensajes.push({ rol: 'asistente', contenido: respuesta, fuenteRespuesta: fuente });
   await sesion.save();
+
+  // Destilación asíncrona de memoria agéntica (no bloquea el response)
+  destilarYGuardarMemoria({
+    usuarioId: req.usuario._id,
+    expedienteId: expediente || sesion.expediente || null,
+    clienteId: cliente || sesion.cliente || null,
+    pregunta,
+    respuesta,
+  }).catch((err) => console.warn('[LexPY] Error destilando memoria:', err.message));
 
   res.json({ success: true, data: { respuesta, fuente, sesionId: sesion._id } });
 });
@@ -66,4 +81,11 @@ const redactar = asyncHandler(async (req, res) => {
   res.json({ success: true, data: resultado });
 });
 
-module.exports = { chat, listarSesiones, obtenerSesion, validarAprendizaje, redactar };
+// GET /api/lexpy/grafo -> Devuelve la red de conocimiento tipo Obsidian (nodos y aristas)
+const obtenerGrafo = asyncHandler(async (req, res) => {
+  const red = await obtenerRedDeConocimiento({ usuarioId: req.usuario._id });
+  res.json({ success: true, data: red });
+});
+
+module.exports = { chat, listarSesiones, obtenerSesion, validarAprendizaje, redactar, obtenerGrafo };
+

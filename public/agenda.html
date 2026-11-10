@@ -1,62 +1,140 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Agenda - SysJuridico</title>
+<title>Agenda & Plazos - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
-  .calendario { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
-  .dia-cal { background:#fff; border:1px solid var(--borde); border-radius:8px; min-height: 90px; padding:6px; font-size:.78rem; }
-  .dia-cal .numero { font-weight:700; color: var(--texto-suave); }
-  .dia-cal .evento { background: var(--azul); color:#fff; border-radius:5px; padding:2px 5px; margin-top:3px; font-size:.72rem; cursor:pointer; }
-  .cabecera-cal { text-align:center; font-weight:700; color: var(--texto-suave); font-size:.8rem; padding-bottom:4px; }
-  .nav-mes { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+  .calendario { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 14px; }
+  .dia-cal {
+    background: var(--bg-card);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    min-height: 105px;
+    padding: 8px;
+    font-size: 0.8rem;
+    transition: var(--trans);
+  }
+  .dia-cal:hover {
+    box-shadow: var(--sombra);
+    border-color: var(--azul-accent);
+  }
+  .dia-cal .numero {
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--texto-muted);
+    font-size: 0.85rem;
+  }
+  .dia-cal .evento {
+    background: linear-gradient(135deg, var(--azul-primary), var(--azul-accent));
+    color: #fff;
+    border-radius: 8px;
+    padding: 4px 7px;
+    margin-top: 4px;
+    font-size: 0.74rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--sombra-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: var(--trans);
+  }
+  .dia-cal .evento:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+  .dia-cal .evento.tipo-vencimiento { background: linear-gradient(135deg, #ef4444, #dc2626); }
+  .dia-cal .evento.tipo-audiencia { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+  .dia-cal .evento.tipo-reunion { background: linear-gradient(135deg, #10b981, #059669); }
+  .dia-cal .evento.tipo-compromiso { background: linear-gradient(135deg, #d97706, #b45309); }
+
+  .cabecera-cal {
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    font-weight: 700;
+    color: var(--texto-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 8px 0;
+  }
+  .nav-mes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--borde);
+  }
+  .nav-mes h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--texto);
+  }
 </style>
 </head>
 <body>
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2>Agenda</h2>
-      <button class="btn-primario" data-admin onclick="abrirModalEvento()">+ Agendar evento</button>
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h2>Agenda Procesal y Plazos</h2>
+        <div class="topbar-subtitulo">Control de audiencias judiciales, vencimientos perentorios y reuniones</div>
+      </div>
+      <div class="topbar-acciones">
+        <button class="btn-primario" data-admin onclick="abrirModalEvento()">
+          <span>+</span> Agendar Evento / Audiencia
+        </button>
+      </div>
     </div>
 
     <div class="tarjeta">
       <div class="nav-mes">
-        <button class="btn-secundario" onclick="cambiarMes(-1)">&larr; Anterior</button>
+        <button class="btn-secundario btn-sm" onclick="cambiarMes(-1)">&larr; Mes Anterior</button>
         <h3 id="tituloMes"></h3>
-        <button class="btn-secundario" onclick="cambiarMes(1)">Siguiente &rarr;</button>
+        <button class="btn-secundario btn-sm" onclick="cambiarMes(1)">Mes Siguiente &rarr;</button>
       </div>
       <div class="calendario" id="calendario"></div>
     </div>
   </div>
 
+  <!-- Modal Agendar Evento -->
   <div class="modal-fondo oculto" id="modalEvento">
     <div class="modal">
-      <h3>Agendar evento</h3>
-      <label>Título</label>
-      <input id="evTitulo" />
-      <label style="margin-top:10px">Tipo</label>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 style="margin:0">Agendar Evento / Plazo Procesal</h3>
+        <button onclick="cerrarModalEvento()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
+      
+      <label>Título / Objeto de la Audiencia o Plazo</label>
+      <input id="evTitulo" placeholder="Ej: Audiencia preliminar / Vencimiento de plazo para contestar" />
+      
+      <label style="margin-top:12px">Tipo de Evento</label>
       <select id="evTipo">
-        <option value="audiencia">Audiencia</option>
-        <option value="reunion">Reunión</option>
-        <option value="vencimiento">Vencimiento</option>
-        <option value="compromiso">Compromiso</option>
+        <option value="audiencia">Audiencia Judicial</option>
+        <option value="vencimiento">Vencimiento Procesal / Plazo Perentorio</option>
+        <option value="reunion">Reunión con Cliente / Partes</option>
+        <option value="compromiso">Compromiso / Trámite en Secretaría</option>
         <option value="otro">Otro</option>
       </select>
-      <label style="margin-top:10px">Fecha y hora de inicio</label>
+      
+      <label style="margin-top:12px">Fecha y Hora de Inicio</label>
       <input type="datetime-local" id="evFechaInicio" />
-      <label style="margin-top:10px">Lugar</label>
-      <input id="evLugar" />
-      <label style="margin-top:10px">Descripción</label>
-      <textarea id="evDescripcion" rows="3"></textarea>
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarEvento()">Guardar</button>
+      
+      <label style="margin-top:12px">Lugar / Juzgado / Enlace Virtual</label>
+      <input id="evLugar" placeholder="Ej: Juzgado 1a Instancia Civil 3er Turno / Google Meet" />
+      
+      <label style="margin-top:12px">Detalles y Observaciones</label>
+      <textarea id="evDescripcion" rows="3" placeholder="Anotaciones clave, documentos a llevar, testigos convocados..."></textarea>
+      
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalEvento()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarEvento()">Agendar en Calendario</button>
       </div>
     </div>
   </div>

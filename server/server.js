@@ -20,6 +20,7 @@ const dashboardRoutes = require('./routes/dashboard.routes');
 const lexpyRoutes = require('./routes/lexpy.routes');
 const liquidacionRoutes = require('./routes/liquidacion.routes');
 const { creditosRouter, requisitosRouter, archivosRouter } = require('./routes/legados.routes');
+const obsidianRoutes = require('./routes/obsidian.routes');
 
 const app = express();
 
@@ -40,6 +41,8 @@ app.use('/api/liquidaciones', liquidacionRoutes);
 app.use('/api/creditos', creditosRouter);
 app.use('/api/requisitos', requisitosRouter);
 app.use('/api/archivos', archivosRouter);
+app.use('/api/v1', obsidianRoutes);
+app.use('/api/obsidian', obsidianRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 

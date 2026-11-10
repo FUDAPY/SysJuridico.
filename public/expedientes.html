@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Expedientes - SysJuridico</title>
+<title>Expedientes - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -12,28 +12,46 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2>Expedientes</h2>
-      <button class="btn-primario" id="btnNuevoExpediente" data-admin onclick="abrirModalExpediente()">+ Nuevo expediente</button>
+    <!-- Topbar estilo expedientes.click -->
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h2>Expedientes Judiciales</h2>
+        <div class="topbar-subtitulo">Control de causas procesales, juzgados, cuotas y documentación</div>
+      </div>
+      <div class="topbar-acciones">
+        <button class="boton btn-outline" id="btnSyncCSJ" onclick="abrirModalCSJ()" title="Vincular y sincronizar causas del Portal CSJ" style="gap: 0.4rem;">
+          <span>⚖️</span> <span id="txtEstadoCSJ">Portal CSJ</span>
+        </button>
+        <a href="/editor.html" class="boton btn-secundario" title="Abrir Editor de Escritos Jurídicos">
+          <span>📝</span> Editor Judicial
+        </a>
+        <a href="/lexpy.html" class="boton btn-dorado" title="Redactar escrito con Techapyrã IA">
+          <span>✨</span> Techapyrã IA
+        </a>
+        <button class="btn-primario" id="btnNuevoExpediente" data-admin onclick="abrirModalExpediente()">
+          <span>+</span> Nuevo Expediente
+        </button>
+      </div>
     </div>
 
+    <!-- Filtros y Búsqueda -->
     <div class="tarjeta grid" id="filtros">
-      <div>
-        <label>Buscar por carátula</label>
-        <input id="fBuscar" oninput="cargarExpedientes()" />
+      <div style="grid-column: span 1">
+        <label>Buscar por carátula o caso</label>
+        <input id="fBuscar" placeholder="Ej: Perez c/ Gonzalez s/ Cobro..." oninput="cargarExpedientes()" />
       </div>
       <div id="contenedorFiltroAbogado">
         <label>Filtrar por abogado</label>
-        <select id="fAbogado" onchange="cargarExpedientes()"><option value="">Todos</option></select>
+        <select id="fAbogado" onchange="cargarExpedientes()"><option value="">Todos los abogados</option></select>
       </div>
       <div>
         <label>Filtrar por cliente</label>
-        <select id="fCliente" onchange="cargarExpedientes()"><option value="">Todos</option></select>
+        <select id="fCliente" onchange="cargarExpedientes()"><option value="">Todos los clientes</option></select>
       </div>
       <div>
-        <label>Estado</label>
+        <label>Estado procesal</label>
         <select id="fEstado" onchange="cargarExpedientes()">
-          <option value="">Todos</option>
+          <option value="">Todos los estados</option>
           <option value="activo">Activo</option>
           <option value="en_proceso">En proceso</option>
           <option value="suspendido">Suspendido</option>
@@ -43,117 +61,148 @@
       </div>
     </div>
 
+    <!-- Listado de expedientes -->
     <div class="tarjeta">
-      <table>
-        <thead><tr><th>Carátula</th><th>Cliente</th><th>Abogado</th><th>Estado</th><th>Saldo pendiente</th><th>Acciones</th></tr></thead>
-        <tbody id="tablaExpedientes"></tbody>
-      </table>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+        <h3 style="margin:0">Causas en Cartera</h3>
+        <span style="font-size:0.82rem; color:var(--texto-muted)">Sincronización activa</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Carátula / Causa</th>
+              <th>Cliente</th>
+              <th>Abogado Asignado</th>
+              <th>Estado</th>
+              <th>Saldo Pendiente</th>
+              <th style="text-align:right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaExpedientes"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
-  <!-- Detalle del expediente: plan de pagos + impresión de ticket por cuota -->
+  <!-- Modal Detalle del expediente: plan de pagos + impresión ticket 80mm -->
   <div class="modal-fondo oculto" id="modalDetalle">
-    <div class="modal" style="max-width:680px">
-      <h3 id="detTitulo">Detalle del expediente</h3>
-      <p id="detSub" style="color:var(--texto-suave); font-size:.85rem; margin:2px 0 14px"></p>
-
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px" id="detDatos"></div>
-
-      <h4 style="margin-top:16px">Plan de pagos / Crédito</h4>
-      <div id="detPlan"></div>
-      <p id="detSaldo" style="font-weight:700; color:var(--azul); margin-top:10px"></p>
-
-      <h4 style="margin-top:18px">Documentos (.doc / .docx / .pdf)</h4>
-      <div id="listaDocs" style="margin:8px 0; font-size:.85rem"></div>
-      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:6px" id="zonaSubirDoc">
-        <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf" style="max-width:280px; flex:1" />
-        <button class="btn-secundario" onclick="subirDocumentoExpediente()">+ Agregar documento</button>
+    <div class="modal" style="max-width:760px">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px">
+        <div>
+          <h3 id="detTitulo" style="margin:0; font-size:1.25rem">Detalle del expediente</h3>
+          <p id="detSub" style="color:var(--texto-muted); font-size:0.85rem; margin:4px 0 0"></p>
+        </div>
+        <button onclick="cerrarModalDetalle()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
       </div>
 
-      <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
-        <button class="btn-primario" onclick="imprimirPlanCompleto()">🖨️ Comprobante / Plan de pagos 80mm</button>
-        <button class="btn-secundario" onclick="cerrarModalDetalle()">Cerrar</button>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:20px" id="detDatos"></div>
+
+      <div class="tarjeta" style="background:var(--bg-subtle); padding:16px; margin-bottom:18px">
+        <div style="display:flex; justify-content:space-between; align-items:center">
+          <h4 style="margin:0; font-size:1rem">Plan de Pagos / Honorarios</h4>
+          <span id="detSaldo" style="font-weight:700; color:var(--azul-accent); font-size:0.95rem"></span>
+        </div>
+        <div id="detPlan" style="margin-top:10px; overflow-x:auto"></div>
+      </div>
+
+      <div class="tarjeta" style="background:var(--bg-subtle); padding:16px; margin-bottom:18px">
+        <h4 style="margin:0; font-size:1rem">Documentos Procesales (.doc / .docx / .pdf)</h4>
+        <div id="listaDocs" style="margin:10px 0; font-size:0.85rem"></div>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px" id="zonaSubirDoc">
+          <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf" style="max-width:320px; flex:1" />
+          <button class="btn-secundario btn-sm" onclick="subirDocumentoExpediente()">+ Adjuntar Documento</button>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:16px">
+        <button class="btn-dorado" onclick="imprimirPlanCompleto()">
+          <span>🖨️</span> Imprimir Ticket 80mm
+        </button>
+        <button class="btn-secundario" onclick="cerrarModalDetalle()">Cerrar Ventana</button>
       </div>
     </div>
   </div>
 
+  <!-- Modal Nuevo Expediente -->
   <div class="modal-fondo oculto" id="modalExpediente">
-    <div class="modal" style="max-width:640px">
-      <h3>Nuevo expediente</h3>
+    <div class="modal" style="max-width:680px">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 style="margin:0">Crear Nuevo Expediente</h3>
+        <button onclick="cerrarModalExpediente()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
       <div class="grid">
         <div>
-          <label>Cliente</label>
+          <label>Cliente Titular</label>
           <select id="eCliente"></select>
         </div>
         <div id="contenedorAbogadoAsignado">
-          <label>Abogado asignado</label>
+          <label>Abogado Asignado</label>
           <select id="eAbogado"></select>
         </div>
         <div style="grid-column:1/-1">
-          <label>Carátula / Caso</label>
-          <input id="eCaratula" />
+          <label>Carátula Judicial del Caso</label>
+          <input id="eCaratula" placeholder="Ej: Rodriguez c/ Aseguradora s/ Indemnización..." />
         </div>
         <div>
           <label>Fuero</label>
-          <input id="eFuero" />
+          <input id="eFuero" placeholder="Ej: Civil y Comercial, Laboral..." />
         </div>
         <div>
-          <label>Juzgado</label>
-          <input id="eJuzgado" />
-        </div>
-        <div style="grid-column:1/-1">
-          <label>Enlace a documento (Drive/Dropbox)</label>
-          <input id="eEnlace" placeholder="https://..." />
-        </div>
-        <div style="grid-column:1/-1">
-          <label>Descripción</label>
-          <textarea id="eDescripcion" rows="3"></textarea>
+          <label>Juzgado / Secretaría</label>
+          <input id="eJuzgado" placeholder="Ej: 3er Turno, Sec. 5" />
         </div>
         <div>
-          <label>Fecha inicio</label>
-          <input type="date" id="eFechaInicio" />
+          <label>Monto Total de Honorarios (Gs.)</label>
+          <input id="eMonto" type="number" min="0" placeholder="Ej: 4500000" />
         </div>
         <div>
-          <label>Fecha fin (estimada)</label>
-          <input type="date" id="eFechaFin" />
+          <label>Cantidad de Cuotas</label>
+          <input id="eCuotas" type="number" min="1" value="1" />
         </div>
       </div>
-
-      <h4>Honorarios / Crédito</h4>
-      <div class="grid">
-        <div>
-          <label>Honorarios totales (Gs.)</label>
-          <input type="number" id="eHonorarios" min="0" />
-        </div>
-        <div class="check" style="display:flex; align-items:center; gap:8px; margin-top:22px">
-          <input type="checkbox" id="eCreditoAutomatico" onchange="alternarCamposCredito()" style="width:auto" />
-          <label style="margin:0">¿Crédito Automático?</label>
-        </div>
-      </div>
-      <div id="grupoCredito" class="oculto" style="margin-top:8px">
-        <div class="grid">
-          <div>
-            <label>Entrega inicial (Gs.)</label>
-            <input type="number" id="eEntregaInicial" min="0" />
-          </div>
-          <div>
-            <label>Cantidad de cuotas</label>
-            <input type="number" id="eCantidadCuotas" min="1" />
-          </div>
-          <div>
-            <label>Frecuencia</label>
-            <select id="eFrecuenciaCuotas">
-              <option value="mensual">Mensual</option>
-              <option value="quincenal">Quincenal</option>
-              <option value="semanal">Semanal</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarExpediente()">Guardar</button>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalExpediente()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarExpediente()">Guardar Expediente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Vinculación y Sincronización CSJ -->
+  <div class="modal-fondo oculto" id="modalCSJ">
+    <div class="modal" style="max-width:540px">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 style="margin:0">⚖️ Portal de Gestión Jurisdiccional (CSJ)</h3>
+        <button onclick="cerrarModalCSJ()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
+      <p style="font-size:0.85rem; color:var(--texto-muted); margin-bottom:14px; line-height:1.5;">
+        Vincula tu usuario de la <strong>Corte Suprema de Justicia</strong> (Judisoft / Portal Jurisdiccional) para sincronizar automáticamente tus expedientes, juzgados y notificaciones de actuaciones en tiempo real.
+      </p>
+      <div id="csjStatusAlert" style="padding:10px 14px; border-radius:var(--radius-md); background:var(--bg-hover); margin-bottom:14px; font-size:0.85rem;">
+        Estado: <span id="csjBadgeEstado" class="badge">Consultando...</span>
+      </div>
+      <div class="grid" style="grid-template-columns:1fr; gap:12px;">
+        <div>
+          <label>Usuario del Portal CSJ</label>
+          <input id="csjUsuario" placeholder="Ej: maria.gonzalez o tu CI" />
+        </div>
+        <div>
+          <label>Contraseña CSJ (Cifrada con AES-256)</label>
+          <input id="csjPassword" type="password" placeholder="Tu contraseña de acceso judicial" />
+        </div>
+        <div>
+          <label>N° de Matrícula de Abogado (Opcional)</label>
+          <input id="csjMatricula" placeholder="Ej: 14.890" />
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+        <button class="boton btn-primario" id="btnSincronizarAhora" onclick="ejecutarSincronizacionCSJ()">
+          ⚡ Sincronizar Ahora
+        </button>
+        <div style="display:flex; gap:8px;">
+          <button class="btn-secundario" onclick="cerrarModalCSJ()">Cerrar</button>
+          <button class="boton btn-dorado" onclick="guardarCredencialesCSJ()">Guardar Credenciales</button>
+        </div>
       </div>
     </div>
   </div>

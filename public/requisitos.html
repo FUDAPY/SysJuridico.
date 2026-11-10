@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Requisitos y Trámites - SysJuridico</title>
+<title>Requisitos & Trámites - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -12,38 +12,72 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2>Requisitos y Trámites</h2>
-      <button class="btn-primario" data-admin onclick="abrirModalRequisito()">+ Nuevo requisito</button>
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h2>Catálogo de Requisitos y Trámites</h2>
+        <div class="topbar-subtitulo">Guía arancelaria y documentación requerida para gestiones legales y administrativas</div>
+      </div>
+      <div class="topbar-acciones">
+        <button class="btn-primario" data-admin onclick="abrirModalRequisito()">
+          <span>+</span> Nuevo Trámite
+        </button>
+      </div>
+    </div>
+
+    <div class="tarjeta" style="padding:14px 20px">
+      <input id="buscador" placeholder="🔍 Buscar por trámite, categoría (Notarial, Judicial, Migraciones) o palabra clave..." oninput="pintarTabla()" />
     </div>
 
     <div class="tarjeta">
-      <input id="buscador" placeholder="Buscar por título o categoría..." oninput="pintarTabla()" />
-    </div>
-
-    <div class="tarjeta">
-      <table>
-        <thead><tr><th>Título</th><th>Categoría</th><th>Costo</th><th>Requisitos</th><th>Acciones</th></tr></thead>
-        <tbody id="tablaRequisitos"></tbody>
-      </table>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+        <h3 style="margin:0">Trámites Catologados</h3>
+        <span style="font-size:0.82rem; color:var(--texto-muted)">Aranceles de referencia</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Título / Trámite</th>
+              <th>Categoría</th>
+              <th>Costo Estimado</th>
+              <th>Requisitos Documentales</th>
+              <th style="text-align:right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaRequisitos"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <div class="modal-fondo oculto" id="modalRequisito">
-    <div class="modal" style="max-width:560px">
-      <h3 id="tituloModalRequisito">Nuevo requisito</h3>
+    <div class="modal" style="max-width:600px">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 id="tituloModalRequisito" style="margin:0">Nuevo Trámite</h3>
+        <button onclick="cerrarModalRequisito()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
       <input type="hidden" id="requisitoId" />
-      <label>Título</label>
-      <input id="rqTitulo" placeholder="Ej: Apostillado, Poder, Visa..." />
-      <label style="margin-top:10px">Categoría</label>
-      <input id="rqCategoria" placeholder="Ej: Legal, Migración..." />
-      <label style="margin-top:10px">Costo (Gs.)</label>
-      <input type="number" id="rqCosto" min="0" />
-      <label style="margin-top:10px">Requisitos / Detalle</label>
-      <textarea id="rqRequisitos" rows="6" placeholder="Detallar los requisitos necesarios..."></textarea>
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarRequisito()">Guardar</button>
+      
+      <label>Título del Trámite</label>
+      <input id="rqTitulo" placeholder="Ej: Apostillado de La Haya, Poder Especial, Radicación..." />
+      
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px">
+        <div>
+          <label>Categoría</label>
+          <input id="rqCategoria" placeholder="Ej: Migraciones, Civil, Notarial..." />
+        </div>
+        <div>
+          <label>Costo Estimado (Gs.)</label>
+          <input type="number" id="rqCosto" min="0" placeholder="Ej: 350000" />
+        </div>
+      </div>
+      
+      <label style="margin-top:12px">Requisitos y Documentación Necesaria</label>
+      <textarea id="rqRequisitos" rows="6" placeholder="Detalle paso a paso: 1. Certificado original, 2. Fotocopia autenticada..."></textarea>
+      
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalRequisito()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarRequisito()">Guardar Trámite</button>
       </div>
     </div>
   </div>

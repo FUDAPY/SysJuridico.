@@ -136,25 +136,36 @@ const eliminarExpediente = asyncHandler(async (req, res) => {
   res.json({ success: true, message: 'Expediente eliminado correctamente.' });
 });
 
-// POST /api/expedientes/:id/documentos  { nombre, tipo, datos(base64) }
+// POST /api/expedientes/:id/documentos  { nombre, tipo, datos/base64 }
 const subirDocumento = asyncHandler(async (req, res) => {
   const expediente = await Expediente.findById(req.params.id);
   if (!expediente) throw new ApiError(404, 'Expediente no encontrado.');
 
-  const { nombre, tipo, datos } = req.body;
-  if (!nombre || !datos) throw new ApiError(400, 'El nombre del archivo y su contenido son obligatorios.');
+  const { nombre, tipo } = req.body;
+  const contenidoBase64 = req.body.datos || req.body.base64;
+  if (!nombre || !contenidoBase64) throw new ApiError(400, 'El nombre del archivo y su contenido son obligatorios.');
 
   const nombreLimpio = String(nombre).split(/[\\/]/).pop();
   const ext = nombreLimpio.split('.').pop().toLowerCase();
-  const permitidas = ['doc', 'docx', 'pdf'];
+  const permitidas = ['doc', 'docx', 'pdf', 'txt', 'html', 'png', 'jpg', 'jpeg'];
   if (!permitidas.includes(ext)) {
-    throw new ApiError(400, 'Solo se permiten archivos .doc, .docx o .pdf.');
+    throw new ApiError(400, 'Solo se permiten archivos .doc, .docx, .pdf, .txt, .html o imágenes .jpg, .png.');
   }
 
-  const buffer = Buffer.from(String(datos), 'base64');
-  if (buffer.length > 15 * 1024 * 1024) {
-    throw new ApiError(400, 'El archivo supera el tamaño máximo de 15 MB.');
+  const buffer = Buffer.from(String(contenidoBase64), 'base64');
+  if (buffer.length > 25 * 1024 * 1024) {
+    throw new ApiError(400, 'El archivo supera el tamaño máximo de 25 MB.');
   }
+
+  // Extracción inteligente de texto y resumen forense
+  const { extraerTextoDeBuffer, analizarYResumirDocumento } = require('../services/documentProcessorService');
+  const { texto, esEscaneado, paginas } = await extraerTextoDeBuffer({ buffer, tipo, nombre: nombreLimpio });
+
+  const { resumenIA, entidadesClave } = await analizarYResumirDocumento({
+    texto,
+    nombre: nombreLimpio,
+    caratulaExpediente: expediente.caratula,
+  });
 
   const documento = await DocumentoExpediente.create({
     expediente: expediente._id,
@@ -163,6 +174,11 @@ const subirDocumento = asyncHandler(async (req, res) => {
     tamano: buffer.length,
     datos: buffer,
     subidoPor: req.usuario._id,
+    textoExtraido: texto,
+    resumenIA,
+    entidadesClave,
+    esEscaneado,
+    paginas,
   });
 
   const datosRespuesta = documento.toObject();

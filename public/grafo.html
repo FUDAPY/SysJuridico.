@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red de Conocimiento Jurídico | SysJuridico</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .grafo-container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 230px);
+      min-height: 550px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    #grafoCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #grafoCanvas:active {
+      cursor: grabbing;
+    }
+    .grafo-toolbar {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 10;
+      pointer-events: none;
+      flex-wrap: wrap;
+    }
+    .grafo-toolbar > * {
+      pointer-events: auto;
+    }
+    .grafo-controls {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+    .grafo-legend {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 1rem;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .grafo-drawer {
+      position: absolute;
+      top: 0;
+      right: -380px;
+      width: 360px;
+      height: 100%;
+      background: var(--bg-card);
+      border-left: 1px solid var(--border-color);
+      box-shadow: -4px 0 25px rgba(0, 0, 0, 0.15);
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 20;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .grafo-drawer.active {
+      right: 0;
+    }
+  </style>
+</head>
+<body class="app-body">
+  <div class="app-layout">
+    <aside class="app-sidebar" id="sidebar"></aside>
+
+    <div class="app-main">
+      <header class="app-header">
+        <div class="header-left">
+          <button class="btn-icon mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú">☰</button>
+          <div>
+            <h1 class="page-title">🕸️ Red de Conocimiento Jurídico</h1>
+            <p class="page-subtitle">Grafo interactivo de leyes, jurisprudencia, expedientes y memoria semántica del estudio</p>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="btn btn-outline" id="btnGuiaObsidian" style="gap: 0.5rem;">
+            <span>🔮</span> Integrar con Obsidian
+          </button>
+          <button class="btn-icon theme-toggle" id="btnToggleTema" title="Cambiar tema">🌙</button>
+          <div class="user-card" id="userCard"></div>
+        </div>
+      </header>
+
+      <main class="app-content">
+        <!-- Métricas Rápidas -->
+        <div class="bento-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 1.25rem;">
+          <div class="metric-card">
+            <span class="metric-label">Total Nodos Conectados</span>
+            <div class="metric-value" id="statNodos">-</div>
+            <span class="metric-trend trend-up">Ecosistema interactivo</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Relaciones / Enlaces</span>
+            <div class="metric-value" id="statEnlaces">-</div>
+            <span class="metric-trend trend-up">Backlinks semánticos</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Leyes & Artículos</span>
+            <div class="metric-value" id="statLeyes">-</div>
+            <span class="metric-trend">Legislación Paraguaya</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-label">Memorias Atómicas</span>
+            <div class="metric-value" id="statMemorias">-</div>
+            <span class="metric-trend trend-up">Ahorro de tokens activo</span>
+          </div>
+        </div>
+
+        <!-- Contenedor del Grafo -->
+        <div class="grafo-container">
+          <!-- Barra superior de búsqueda y filtros -->
+          <div class="grafo-toolbar">
+            <div style="display: flex; gap: 0.5rem; flex: 1; max-width: 320px;">
+              <input type="text" id="busquedaGrafo" class="form-input" placeholder="🔍 Buscar ley, causa o cliente..." style="background: var(--bg-glass); backdrop-filter: blur(10px);">
+            </div>
+
+            <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+              <button class="btn-chip active" data-filtro="todos">Todos</button>
+              <button class="btn-chip" data-filtro="ley">📜 Leyes</button>
+              <button class="btn-chip" data-filtro="expediente">📁 Expedientes</button>
+              <button class="btn-chip" data-filtro="cliente">👥 Clientes</button>
+              <button class="btn-chip" data-filtro="concepto">💡 Memorias</button>
+            </div>
+          </div>
+
+          <!-- Canvas interactivo -->
+          <canvas id="grafoCanvas"></canvas>
+
+          <!-- Leyenda de colores -->
+          <div class="grafo-legend">
+            <div class="legend-item"><div class="legend-dot" style="background: #eab308;"></div> Leyes y Artículos</div>
+            <div class="legend-item"><div class="legend-dot" style="background: #3b82f6;"></div> Expedientes</div>
+            <div class="legend-item"><div class="legend-dot" style="background: #10b981;"></div> Clientes</div>
+            <div class="legend-item"><div class="legend-dot" style="background: #8b5cf6;"></div> Memorias / Conceptos</div>
+          </div>
+
+          <!-- Controles de zoom -->
+          <div class="grafo-controls">
+            <button class="btn btn-icon" id="btnZoomIn" title="Acercar">+</button>
+            <button class="btn btn-icon" id="btnZoomOut" title="Alejar">-</button>
+            <button class="btn btn-icon" id="btnResetView" title="Restablecer vista">⟲</button>
+          </div>
+
+          <!-- Panel Lateral de Detalle del Nodo (Inspector) -->
+          <div class="grafo-drawer" id="grafoDrawer">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <span class="badge" id="drawerBadge">Tipo</span>
+              <button class="btn-icon" id="btnCloseDrawer" style="font-size: 1.25rem;">✕</button>
+            </div>
+
+            <h3 id="drawerTitulo" style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-primary);">Título</h3>
+            <p id="drawerDetalle" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.25rem;">Detalle</p>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto;">
+              <h4 style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.75rem;">Conexiones Directas</h4>
+              <div id="drawerConexiones" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 200px; overflow-y: auto;"></div>
+            </div>
+
+            <div style="margin-top: 1.25rem; display: flex; gap: 0.5rem;">
+              <button class="btn btn-primary" id="btnAccionNodo" style="flex: 1;">Consultar en Techapyrã IA</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal: Guía de Conexión con Obsidian -->
+  <div class="modal-overlay" id="modalObsidian" style="display: none;">
+    <div class="modal-card" style="max-width: 650px;">
+      <div class="modal-header">
+        <h3 class="modal-title">🔮 Conectar SysJuridico con Obsidian</h3>
+        <button class="btn-icon" id="btnCerrarModalObsidian">✕</button>
+      </div>
+
+      <div class="modal-body" style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary);">
+        <p style="margin-bottom: 1rem;">
+          Podés usar la IA de <strong>Techapyrã IA</strong> y todo el contexto de la legislación paraguaya directamente dentro de tus notas de <strong>Obsidian</strong> mediante plugins comunitarios oficiales:
+        </p>
+
+        <div style="background: var(--bg-hover); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: 1rem;">
+          <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">1. Plugin recomendado: <em>Text Generator</em></h4>
+          <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.25rem;">
+            <li>En Obsidian ve a <strong>Ajustes → Plugins de la comunidad → Buscar "Text Generator"</strong> e instálalo.</li>
+            <li>En los ajustes de Text Generator, selecciona proveedor <strong>Custom / OpenAI Compatible</strong>.</li>
+            <li>Configura la URL base del endpoint:</li>
+          </ol>
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <input type="text" class="form-input" id="endpointUrl" readonly value="" style="font-family: monospace; font-size: 0.8rem;">
+            <button class="btn btn-outline" id="btnCopiarEndpoint" style="white-space: nowrap;">Copiar URL</button>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-hover); padding: 1rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--text-primary); font-weight: 600; margin-bottom: 0.5rem;">2. Parámetros del Modelo</h4>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.25rem;">
+            <li><strong>Model Name:</strong> <code>deepseek-chat</code> o <code>lexpy-paraguay</code></li>
+            <li><strong>API Key:</strong> Tu token de sesión o cualquier texto (el sistema autentica tu estudio).</li>
+            <li><strong>Ventaja:</strong> Cada consulta se enriquece automáticamente con leyes vigentes y memoria histórica sin gastar tokens de más.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btnEntendidoObsidian">Listo, ¡entendido!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/grafo.js"></script>
+</body>
+</html>

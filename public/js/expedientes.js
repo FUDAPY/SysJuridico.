@@ -328,4 +328,93 @@ async function eliminarDocumentoExpediente(docId) {
   }
 }
 
-cargarSelects().then(cargarExpedientes).catch((err) => alert(err.message));
+/* ---------- Sincronización con Portal CSJ (Judisoft) ---------- */
+async function verificarEstadoCSJ() {
+  try {
+    const res = await apiFetch('/expedientes/csj/estado');
+    if (!res.success) return;
+    const est = res.data;
+    const badge = document.getElementById('csjBadgeEstado');
+    const txt = document.getElementById('txtEstadoCSJ');
+
+    if (est.conectado) {
+      if (badge) {
+        badge.textContent = `Conectado (${est.usuarioCSJ})`;
+        badge.className = 'badge badge-success';
+      }
+      if (txt) txt.textContent = `CSJ Conectado (${est.totalExpedientesCSJ})`;
+      const u = document.getElementById('csjUsuario');
+      const m = document.getElementById('csjMatricula');
+      if (u) u.value = est.usuarioCSJ;
+      if (m) m.value = est.matriculaCSJ || '';
+    } else {
+      if (badge) {
+        badge.textContent = 'No vinculado';
+        badge.className = 'badge badge-warning';
+      }
+      if (txt) txt.textContent = 'Vincular CSJ';
+    }
+  } catch (err) {
+    console.warn('[CSJ] Error consultando estado:', err.message);
+  }
+}
+
+function abrirModalCSJ() {
+  verificarEstadoCSJ();
+  document.getElementById('modalCSJ')?.classList.remove('oculto');
+}
+
+function cerrarModalCSJ() {
+  document.getElementById('modalCSJ')?.classList.add('oculto');
+}
+
+async function guardarCredencialesCSJ() {
+  const usuarioCSJ = document.getElementById('csjUsuario')?.value;
+  const passwordCSJ = document.getElementById('csjPassword')?.value;
+  const matriculaCSJ = document.getElementById('csjMatricula')?.value;
+
+  if (!usuarioCSJ || !passwordCSJ) {
+    alert('Ingresa el usuario y la contraseña del portal CSJ.');
+    return;
+  }
+
+  try {
+    await apiFetch('/expedientes/csj/vincular', {
+      method: 'POST',
+      body: { usuarioCSJ, passwordCSJ, matriculaCSJ },
+    });
+    alert('¡Credenciales de la CSJ vinculadas exitosamente con cifrado AES-256!');
+    verificarEstadoCSJ();
+  } catch (err) {
+    alert(`Error: ${err.message}`);
+  }
+}
+
+async function ejecutarSincronizacionCSJ() {
+  const btn = document.getElementById('btnSincronizarAhora');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = '⏳ Sincronizando causas...';
+  }
+
+  try {
+    const res = await apiFetch('/expedientes/csj/sincronizar', { method: 'POST' });
+    alert(`¡Sincronización completada! ${res.data.total} causas procesadas (${res.data.sincronizados} actualizadas, ${res.data.creados} nuevas).`);
+    cerrarModalCSJ();
+    cargarExpedientes();
+    verificarEstadoCSJ();
+  } catch (err) {
+    alert(`Error al sincronizar: ${err.message}`);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = '⚡ Sincronizar Ahora';
+    }
+  }
+}
+
+cargarSelects().then(() => {
+  cargarExpedientes();
+  verificarEstadoCSJ();
+}).catch((err) => alert(err.message));
+

@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Ingreso - LIN GROUP &amp; Asociados</title>
+<title>Acceso Seguro - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -15,98 +15,127 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    font-family: 'Segoe UI', 'Inter', system-ui, Roboto, Arial, sans-serif;
+    font-family: var(--fuente-cuerpo);
+    background: radial-gradient(circle at top right, #16283f 0%, #0d1b2a 100%);
+    position: relative;
+    overflow: hidden;
   }
-  /* Fondo a pantalla completa con opacidad */
-  .fondo-login {
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    background: url('/img/fondo.jpg') center/cover no-repeat;
+  .circulo-fondo {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
   }
-  .fondo-oscuro {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background: rgba(10, 18, 32, .55);
+  .circulo-fondo-2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
+    bottom: -150px;
+    left: -150px;
+    pointer-events: none;
   }
   .caja-login {
-    background: rgba(255, 255, 255, .94);
-    border-radius: 20px;
-    padding: 38px 34px;
+    background: var(--bg-card);
+    border: 1px solid var(--borde);
+    border-radius: 24px;
+    padding: 42px 36px;
     width: 100%;
-    max-width: 400px;
-    box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
-    border-top: 4px solid var(--dorado);
-    backdrop-filter: blur(2px);
+    max-width: 420px;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.65);
+    position: relative;
+    z-index: 10;
   }
   .caja-login .logo {
-    width: 92px;
-    height: 92px;
+    width: 82px;
+    height: 82px;
     object-fit: cover;
-    border-radius: 22px;
+    border-radius: 20px;
     display: block;
-    margin: 0 auto 12px;
-    box-shadow: 0 8px 22px rgba(0, 0, 0, .28);
-    border: 2px solid rgba(255, 215, 0, .55);
+    margin: 0 auto 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    border: 2px solid var(--dorado);
   }
   .caja-login h1 {
-    color: var(--azul);
-    font-size: 1.55rem;
+    font-family: var(--fuente-titulos);
+    color: var(--texto);
+    font-size: 1.6rem;
     text-align: center;
-    margin: 4px 0 2px;
-    letter-spacing: .6px;
-    font-weight: 900;
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
   }
   .caja-login .sub {
     text-align: center;
-    color: #8a6d1a;
-    font-size: .8rem;
+    color: var(--dorado);
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    margin: 0 0 18px;
-  }
-  .caja-login p {
-    color: var(--texto-suave);
-    font-size: .85rem;
-    text-align: center;
     margin: 0 0 20px;
   }
+  .caja-login p.intro {
+    color: var(--texto-muted);
+    font-size: 0.88rem;
+    text-align: center;
+    margin: 0 0 24px;
+  }
   .caja-login label { display: block; margin-bottom: 6px; }
-  .caja-login input { margin-bottom: 14px; }
-  .caja-login button { width: 100%; margin-top: 10px; }
-  .error { color: var(--rojo); font-size: .85rem; margin-top: 8px; display: none; text-align: center; }
+  .caja-login input { margin-bottom: 16px; }
+  .caja-login button { width: 100%; margin-top: 8px; }
+  .error {
+    background: var(--rojo-bg);
+    color: var(--rojo-texto);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+    display: none;
+    text-align: center;
+  }
   .pie {
     text-align: center;
-    margin-top: 16px;
-    font-size: .7rem;
-    color: var(--texto-suave);
+    margin-top: 24px;
+    font-size: 0.74rem;
+    color: var(--texto-muted);
     line-height: 1.6;
-    border-top: 1px dashed rgba(0, 0, 0, .12);
-    padding-top: 10px;
+    border-top: 1px solid var(--borde);
+    padding-top: 14px;
   }
 </style>
 </head>
 <body>
-  <div class="fondo-login"></div>
-  <div class="fondo-oscuro"></div>
+  <div class="circulo-fondo"></div>
+  <div class="circulo-fondo-2"></div>
 
   <div class="caja-login">
-    <img class="logo" src="/img/logo.jpg" alt="LIN GROUP & Asociados" />
+    <img class="logo" src="/img/logo.jpg" alt="LIN GROUP & Asociados" onerror="this.src='/877114.jpg'" />
     <h1>LIN GROUP</h1>
-    <div class="sub">Asociados &mdash; Estudio Jurídico</div>
-    <p>Ingrese sus credenciales para continuar</p>
-    <label>Email</label>
-    <input type="email" id="email" placeholder="usuario@estudio.com" />
+    <div class="sub">Asociados &bull; SysJurídico</div>
+    <p class="intro">Ingrese sus credenciales corporativas para acceder al despacho digital</p>
+    
+    <div class="error" id="mensajeError"></div>
+
+    <label>Correo Electrónico</label>
+    <input type="email" id="email" placeholder="abogado@lingroup.com" />
+    
     <label>Contraseña</label>
     <input type="password" id="password" placeholder="••••••••" />
-    <p class="error" id="mensajeError"></p>
-    <button class="btn-primario" onclick="iniciarSesion()">Ingresar</button>
+    
+    <button class="btn-primario" onclick="iniciarSesion()">
+      <span>🔐</span> Ingresar al Despacho
+    </button>
+    
     <div class="pie">
-      LIN GROUP &amp; Asociados &mdash; Av. Camilo Recalde c/ Av. Pioneros del Este<br />
-      asesoria@lingroupsapy.com &middot; 0982 210777<br />
-      Sistema de Gestión Jurídica &copy; 2026
+      LIN GROUP &amp; Asociados &bull; Asunción &bull; CDE<br />
+      Todos los derechos reservados &bull; Sistema creado e impulsado por <a href="https://www.dev.grupooh.online" target="_blank" rel="noopener noreferrer" style="color:var(--azul-claro); font-weight:600; text-decoration:none;">Otelax Dev</a> (<a href="https://www.dev.grupooh.online" target="_blank" rel="noopener noreferrer" style="color:var(--dorado); text-decoration:none;">www.dev.grupooh.online</a>)<br />
+      Potenciado por <strong>Techapyrã IA</strong> (DeepSeek Engine)
     </div>
   </div>
 

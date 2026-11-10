@@ -14,13 +14,40 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
 
   const contenidoSistema =
     system ||
-    'Eres LexPY, un asistente jurídico especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.';
+    'Eres Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.';
 
   const promptCompleto = contexto
     ? `Contexto legal disponible:\n${contexto}\n\nConsulta del usuario:\n${prompt}`
     : prompt;
 
   try {
+    if (proveedor === 'deepseek') {
+      const modelo = process.env.LEXPY_AI_MODEL || 'deepseek-chat';
+      const respuesta = await axios.post(
+        'https://api.deepseek.com/v1/chat/completions',
+        {
+          model: modelo,
+          messages: [
+            {
+              role: 'system',
+              content: contenidoSistema,
+            },
+            { role: 'user', content: promptCompleto },
+          ],
+          temperature: 0.3,
+          max_tokens: 4096,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${apiKey}`,
+            'Content-Type': 'application/json',
+          },
+          timeout: 60000,
+        }
+      );
+      return respuesta.data?.choices?.[0]?.message?.content || null;
+    }
+
     if (proveedor === 'openai') {
       const respuesta = await axios.post(
         'https://api.openai.com/v1/chat/completions',

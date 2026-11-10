@@ -61,6 +61,21 @@ const expedienteSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Usuario',
     },
+
+    // ---- Campos de Sincronización CSJ (Portal Jurisdiccional) ----
+    numeroCSJ: { type: String, trim: true, default: '' },
+    anoCSJ: { type: Number, default: null },
+    secretaria: { type: String, trim: true, default: '' },
+    origenCSJ: { type: Boolean, default: false },
+    ultimaSincronizacionCSJ: { type: Date, default: null },
+    actuacionesCSJ: [
+      {
+        fecha: { type: Date, default: Date.now },
+        actuacion: { type: String, required: true },
+        resolucion: { type: String, default: '' },
+        foja: { type: String, default: '' },
+      },
+    ],
   },
   { timestamps: true }
 );

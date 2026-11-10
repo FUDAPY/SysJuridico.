@@ -3,6 +3,52 @@ renderBarraLateral('lexpy');
 
 let sesionId = null;
 
+function seleccionarTab(tab) {
+  document.getElementById('tabChat').classList.toggle('activo', tab === 'chat');
+  document.getElementById('tabRedactor').classList.toggle('activo', tab === 'redactor');
+  document.getElementById('panelChat').classList.toggle('activo', tab === 'chat');
+  document.getElementById('panelRedactor').classList.toggle('activo', tab === 'redactor');
+}
+
+function usarSugerencia(texto) {
+  document.getElementById('entradaChat').value = texto;
+  enviarPregunta();
+}
+
+function limpiarChat() {
+  sesionId = null;
+  const contenedor = document.getElementById('chatMensajes');
+  contenedor.innerHTML = `
+    <div class="chat-burbuja chat-asistente">
+      <strong>¡Nueva conversación iniciada!</strong>
+      <p style="margin-top:4px">¿En qué asunto legal o trámite procesal puedo ayudarte?</p>
+    </div>
+  `;
+}
+
+async function cargarSelectsRedactor() {
+  try {
+    const [clientes, expedientes] = await Promise.all([
+      apiFetch('/clientes').catch(() => []),
+      apiFetch('/expedientes').catch(() => []),
+    ]);
+
+    const elCli = document.getElementById('borradorCliente');
+    if (elCli && clientes.length) {
+      elCli.innerHTML = '<option value="">— Sin cliente asociado —</option>' +
+        clientes.map((c) => `<option value="${c._id}">${c.nombreCompleto} (${c.cedula || 'S/D'})</option>`).join('');
+    }
+
+    const elExp = document.getElementById('borradorExpediente');
+    if (elExp && expedientes.length) {
+      elExp.innerHTML = '<option value="">— Sin expediente vinculado —</option>' +
+        expedientes.map((e) => `<option value="${e._id}">${e.caratula}</option>`).join('');
+    }
+  } catch (err) {
+    console.warn('Error cargando selects del redactor:', err.message);
+  }
+}
+
 function escaparHtml(texto) {
   return String(texto)
     .replace(/&/g, '&amp;')
@@ -13,9 +59,9 @@ function escaparHtml(texto) {
 
 function formatoEnLinea(texto) {
   return texto
-    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener" style="color:var(--azul-accent)">$1</a>')
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/`([^`]+)`/g, '<code style="background:rgba(0,0,0,0.06); padding:2px 4px; border-radius:4px">$1</code>')
     .replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
@@ -39,18 +85,18 @@ function renderMarkdown(md) {
 
     if (hr) {
       cerrarLista();
-      html += '<hr/>';
+      html += '<hr style="border:none; border-top:1px dashed var(--borde); margin:10px 0"/>';
       return;
     }
     if (heading) {
       cerrarLista();
-      html += `<div class="md-h">${formatoEnLinea(heading[2])}</div>`;
+      html += `<div style="font-family:var(--fuente-titulos); font-weight:700; margin-top:10px; color:var(--azul-accent)">${formatoEnLinea(heading[2])}</div>`;
       return;
     }
     if (tipoLista) {
       if (listaAbierta !== tipoLista) {
         cerrarLista();
-        html += `<${tipoLista}>`;
+        html += `<${tipoLista} style="margin:4px 0 4px 18px">`;
         listaAbierta = tipoLista;
       }
       html += `<li>${formatoEnLinea((bullet || numerada)[1])}</li>`;
@@ -62,17 +108,17 @@ function renderMarkdown(md) {
       html += '<br/>';
       return;
     }
-    html += `<p>${formatoEnLinea(linea)}</p>`;
+    html += `<p style="margin:4px 0">${formatoEnLinea(linea)}</p>`;
   });
   cerrarLista();
   return html;
 }
 
 const NOMBRES_FUENTE = {
-  base_local: 'Base de conocimiento (RAG)',
-  externo_csj: 'CSJ - scraping',
-  externo_baselegal: 'BaseLegal - scraping',
-  ia_generativa: 'IA generativa',
+  base_local: 'Base de conocimiento (RAG local)',
+  externo_csj: 'CSJ Paraguay (Scraping oficial)',
+  externo_baselegal: 'BaseLegal Paraguay (Scraping)',
+  ia_generativa: 'DeepSeek AI Generativo',
 };
 
 function agregarBurbuja(texto, esUsuario, fuente) {
@@ -89,7 +135,7 @@ function agregarBurbuja(texto, esUsuario, fuente) {
   if (!esUsuario && fuente) {
     const etiqueta = document.createElement('div');
     etiqueta.className = 'fuente-tag';
-    etiqueta.textContent = `Fuente: ${NOMBRES_FUENTE[fuente] || fuente}`;
+    etiqueta.innerHTML = `<span>📌</span> Fuente: ${NOMBRES_FUENTE[fuente] || fuente}`;
     contenedor.appendChild(etiqueta);
   }
   contenedor.scrollTop = contenedor.scrollHeight;
@@ -103,12 +149,23 @@ async function enviarPregunta() {
   agregarBurbuja(pregunta, true);
   campo.value = '';
 
+  // Mensaje temporal de pensamiento
+  const contenedor = document.getElementById('chatMensajes');
+  const tempMsg = document.createElement('div');
+  tempMsg.className = 'chat-burbuja chat-asistente';
+  tempMsg.id = 'tempThinking';
+  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando legislación y analizando con DeepSeek...</span>';
+  contenedor.appendChild(tempMsg);
+  contenedor.scrollTop = contenedor.scrollHeight;
+
   try {
     const data = await apiFetch('/lexpy/chat', { method: 'POST', body: { pregunta, sesionId } });
+    tempMsg.remove();
     sesionId = data.sesionId;
     agregarBurbuja(data.respuesta, false, data.fuente);
   } catch (err) {
-    agregarBurbuja(`Error: ${err.message}`, false);
+    tempMsg.remove();
+    agregarBurbuja(`Error al consultar: ${err.message}`, false);
   }
 }
 
@@ -117,9 +174,13 @@ document.getElementById('entradaChat').addEventListener('keydown', (e) => {
 });
 
 async function redactarBorrador() {
+  const btn = document.getElementById('btnGenerarEscrito');
+  const caja = document.getElementById('cajaBorrador');
   const resultado = document.getElementById('resultadoBorrador');
-  resultado.classList.remove('oculto');
-  resultado.textContent = 'Generando borrador...';
+
+  caja.classList.remove('oculto');
+  resultado.textContent = '⚡ Analizando hechos y redactando documento con DeepSeek...';
+  btn.disabled = true;
 
   try {
     const data = await apiFetch('/lexpy/redactar', {
@@ -134,5 +195,31 @@ async function redactarBorrador() {
     resultado.textContent = data.borrador;
   } catch (err) {
     resultado.textContent = `Error: ${err.message}`;
+  } finally {
+    btn.disabled = false;
   }
 }
+
+function copiarBorrador() {
+  const texto = document.getElementById('resultadoBorrador').textContent;
+  if (!texto) return;
+  navigator.clipboard.writeText(texto).then(() => {
+    alert('¡Escrito copiado al portapapeles!');
+  });
+}
+
+cargarSelectsRedactor();
+
+// Si viene un parámetro ?q= en la URL (por ejemplo desde la Red de Conocimiento), ejecutar automáticamente
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q && q.trim()) {
+    const input = document.getElementById('entradaChat');
+    if (input) {
+      input.value = q;
+      setTimeout(() => enviarPregunta(), 300);
+    }
+  }
+})();
+

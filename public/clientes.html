@@ -1,8 +1,8 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Clientes - SysJuridico</title>
+<title>Clientes - SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
@@ -12,38 +12,69 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-      <h2>Clientes</h2>
-      <button class="btn-primario" data-admin onclick="abrirModalCliente()">+ Nuevo cliente</button>
+    <div class="topbar-operativa">
+      <div class="topbar-titulo">
+        <h2>Directorio de Clientes</h2>
+        <div class="topbar-subtitulo">Registro general de representados, personas físicas y jurídicas</div>
+      </div>
+      <div class="topbar-acciones">
+        <button class="btn-primario" data-admin onclick="abrirModalCliente()">
+          <span>+</span> Nuevo Cliente
+        </button>
+      </div>
+    </div>
+
+    <div class="tarjeta" style="padding:14px 20px">
+      <div style="position:relative">
+        <input id="buscador" placeholder="🔍 Buscar por nombre, cédula de identidad, RUC o teléfono..." oninput="buscarClientes()" />
+      </div>
     </div>
 
     <div class="tarjeta">
-      <input id="buscador" placeholder="Buscar por nombre, cédula o teléfono..." oninput="buscarClientes()" />
-    </div>
-
-    <div class="tarjeta">
-      <table>
-        <thead><tr><th>Nombre completo</th><th>Cédula</th><th>Teléfono</th><th>Dirección</th><th>Acciones</th></tr></thead>
-        <tbody id="tablaClientes"></tbody>
-      </table>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+        <h3 style="margin:0">Clientes Activos</h3>
+        <span style="font-size:0.82rem; color:var(--texto-muted)">Padrón general del estudio</span>
+      </div>
+      <div style="overflow-x:auto">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente / Razón Social</th>
+              <th>Cédula / Documento</th>
+              <th>Teléfono de Contacto</th>
+              <th>Domicilio Legal</th>
+              <th style="text-align:right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaClientes"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <div class="modal-fondo oculto" id="modalCliente">
     <div class="modal">
-      <h3 id="tituloModalCliente">Nuevo cliente</h3>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
+        <h3 id="tituloModalCliente" style="margin:0">Nuevo Cliente</h3>
+        <button onclick="cerrarModalCliente()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
       <input type="hidden" id="clienteId" />
-      <label>Nombre completo</label>
-      <input id="fNombre" />
-      <label style="margin-top:10px">Cédula de identidad</label>
-      <input id="fCedula" />
-      <label style="margin-top:10px">Teléfono</label>
-      <input id="fTelefono" />
-      <label style="margin-top:10px">Dirección</label>
-      <input id="fDireccion" />
-      <div style="display:flex; gap:10px; margin-top:16px">
-        <button class="btn-primario" onclick="guardarCliente()">Guardar</button>
+      
+      <label>Nombre Completo / Razón Social</label>
+      <input id="fNombre" placeholder="Ej: Juan Perez / Inversiones S.A." />
+      
+      <label style="margin-top:12px">Cédula de Identidad o RUC</label>
+      <input id="fCedula" placeholder="Ej: 3.456.789 / 80012345-6" />
+      
+      <label style="margin-top:12px">Teléfono de Contacto</label>
+      <input id="fTelefono" placeholder="Ej: 0981 123456" />
+      
+      <label style="margin-top:12px">Dirección / Domicilio</label>
+      <input id="fDireccion" placeholder="Ej: Avda. Mcal. López c/ Perú, Asunción" />
+      
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
         <button class="btn-secundario" onclick="cerrarModalCliente()">Cancelar</button>
+        <button class="btn-primario" onclick="guardarCliente()">Guardar Ficha</button>
       </div>
     </div>
   </div>

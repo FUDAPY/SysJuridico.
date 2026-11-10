@@ -1,10 +1,18 @@
 const { usuario } = requerirSesion();
 renderBarraLateral('resumen');
 
+const elFecha = document.getElementById('fechaHoy');
+if (elFecha) {
+  const ahora = new Date();
+  const opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const fechaStr = ahora.toLocaleDateString('es-PY', opciones);
+  elFecha.textContent = fechaStr.charAt(0).toUpperCase() + fechaStr.slice(1) + ' • LIN GROUP & Asociados';
+}
+
 async function cargarResumen() {
   if (usuario.rol === 'admin') {
     document.getElementById('vistaAdmin').classList.remove('oculto');
-    document.getElementById('tituloResumen').textContent = 'Resumen general';
+    document.getElementById('tituloResumen').textContent = 'Centro Operativo';
     const data = await apiFetch('/dashboard');
     document.getElementById('mExpedientes').textContent = data.expedientesActivos;
     document.getElementById('mSaldo').textContent = formatoGs(data.saldoPorCobrar);

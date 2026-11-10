@@ -34,6 +34,13 @@ const usuarioSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    csjConfig: {
+      usuarioCSJ: { type: String, default: '', trim: true },
+      passwordCSJ: { type: String, default: '', select: false },
+      matriculaCSJ: { type: String, default: '', trim: true },
+      conectado: { type: Boolean, default: false },
+      ultimaSincronizacion: { type: Date, default: null },
+    },
   },
   { timestamps: true }
 );

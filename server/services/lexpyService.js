@@ -2,6 +2,7 @@ const BaseLegal = require('../models/BaseLegal');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { buscarEnFuentesExternas } = require('./scraperService');
 const { generarRespuestaIA } = require('./aiProviderService');
+const { recuperarMemoriaContextual } = require('./agentMemoryService');
 
 const UMBRAL_RESULTADOS_LOCALES = 1;
 
@@ -70,9 +71,13 @@ function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
   });
 
   if (externa) {
-    const nombre =
-      externa.fuente === 'csj' ? 'CSJ - Corte Suprema de Justicia (csj.gov.py)' : 'BaseLegal Paraguay (baselegal.com.py)';
-    items.push(`- ${nombre}${externa.urlConsultada ? ` - [resultado de búsqueda](${externa.urlConsultada})` : ''}`);
+    if (externa.fuente === 'ecosistema_oficial_py') {
+      items.push(`- Red Oficial de Justicia y Legislación de la República del Paraguay (CSJ Jurisprudencia, BACN Leyes, SILpy Congreso, Gaceta Oficial)`);
+    } else {
+      const nombre =
+        externa.fuente === 'csj' ? 'CSJ - Corte Suprema de Justicia (csj.gov.py)' : 'BaseLegal Paraguay (baselegal.com.py)';
+      items.push(`- ${nombre}${externa.urlConsultada ? ` - [resultado de búsqueda](${externa.urlConsultada})` : ''}`);
+    }
   }
 
   if (!items.length) return '';
@@ -81,23 +86,48 @@ function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
 
 async function responderSaludo(pregunta) {
   const system =
-    'Sos LexPY, el asistente jurídico del estudio LIN GROUP & Asociados (Paraguay). ' +
+    'Sos Techapyrã IA, el asistente jurídico del estudio LIN GROUP & Asociados (Paraguay). ' +
     'Respondé los saludos y mensajes de cortesía de forma breve, amable y profesional en español. ' +
     'No inventes información legal. Si piden una consulta jurídica concreta, invitá a realizarla directamente.';
   const respuesta = await generarRespuestaIA({ prompt: pregunta, contexto: null, system });
   return (
     respuesta ||
-    '¡Hola! Soy LexPY, el asistente jurídico del estudio. ¿En qué puedo ayudarte hoy? ' +
-      'Podés consultarme sobre leyes, códigos o trámites en Paraguay.'
+    '¡Hola! Soy Techapyrã IA, el asistente jurídico del estudio. ¿En qué puedo ayudarte hoy? ' +
+    'Podés consultarme sobre leyes, códigos o trámites en Paraguay.'
   );
 }
 
-async function procesarConsultaTecnica(pregunta) {
+async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId }) {
   const { aprendizajes, baseLegal } = await buscarEnBaseLocal(pregunta);
   const totalLocal = aprendizajes.length + baseLegal.length;
 
   let contexto = construirContexto({ aprendizajes, baseLegal });
   let fuenteRespuesta = totalLocal > 0 ? 'base_local' : null;
+
+  // Inyección de memoria agéntica de largo plazo (evita re-enviar historial completo)
+  if (usuarioId) {
+    const memoriaContextual = await recuperarMemoriaContextual({
+      usuarioId,
+      expedienteId,
+      clienteId,
+      consulta: pregunta,
+    });
+    if (memoriaContextual) {
+      contexto = contexto ? `${memoriaContextual}\n---\n${contexto}` : memoriaContextual;
+      if (!fuenteRespuesta) fuenteRespuesta = 'memoria_agente';
+    }
+  }
+
+  // Inyección de Documentos Oficiales del Expediente (RAG de causa: PDFs, escaneados, contratos)
+  if (expedienteId) {
+    const { obtenerContextoDocumentosExpediente } = require('./documentProcessorService');
+    const docsContexto = await obtenerContextoDocumentosExpediente(expedienteId);
+    if (docsContexto) {
+      contexto = contexto ? `${docsContexto}\n---\n${contexto}` : docsContexto;
+      if (!fuenteRespuesta) fuenteRespuesta = 'documentos_expediente';
+    }
+  }
+
   let externa = null;
 
   if (totalLocal < UMBRAL_RESULTADOS_LOCALES) {
@@ -110,10 +140,10 @@ async function procesarConsultaTecnica(pregunta) {
   }
 
   const system =
-    'Sos LexPY, un asistente jurídico especializado en legislación paraguaya. ' +
-    'Respondé en español usando markdown simple (negritas, listas y encabezados cuando ayude). ' +
-    'Basa tu respuesta en el contexto proporcionado y no inventes normas ni jurisprudencia. ' +
-    'Si el contexto contiene fuentes, úsalas y dejá que el sistema agregue la lista final de fuentes consultadas.';
+    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación de la República del Paraguay. ' +
+    'Respondé en español usando markdown profesional (negritas, viñetas y citas precisas a artículos y leyes). ' +
+    'Basa tu respuesta en el contexto normativo y en la memoria del expediente proporcionada sin inventar hechos. ' +
+    'Si existen artículos o leyes relevantes, citalos con su número oficial (ej: Ley 213/93, Ley 1183/85, Constitución de 1992).';
 
   const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: contexto || null, system });
 
@@ -136,13 +166,13 @@ async function procesarConsultaTecnica(pregunta) {
   };
 }
 
-async function procesarConsultaLexPY({ pregunta, usuarioId }) {
+async function procesarConsultaLexPY({ pregunta, usuarioId, expedienteId, clienteId }) {
   if (esSaludo(pregunta)) {
     const respuesta = await responderSaludo(pregunta);
     return { respuesta, fuente: 'ia_generativa', aprendizaje: false };
   }
 
-  const resultado = await procesarConsultaTecnica(pregunta);
+  const resultado = await procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId });
 
   // Auto-aprendizaje para retroalimentar el RAG local (pendiente de validación humana).
   if (resultado.respuesta && resultado.fuente) {
@@ -159,3 +189,4 @@ async function procesarConsultaLexPY({ pregunta, usuarioId }) {
 }
 
 module.exports = { procesarConsultaLexPY };
+

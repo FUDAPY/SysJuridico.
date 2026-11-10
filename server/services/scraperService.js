@@ -1,14 +1,27 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const LexpyFuenteCache = require('../models/LexpyFuenteCache');
+const { consultarEcosistemaJuridico } = require('./paraguayConnectorsService');
 
 const CACHE_TTL_HORAS = 24;
 
 /**
- * Consulta fuentes públicas externas (CSJ Paraguay / BaseLegal) como respaldo cuando
- * la base de conocimiento local no tiene respuesta suficiente. Cachea el resultado en Mongo.
+ * Consulta fuentes públicas oficiales paraguayas (CSJ, BACN, SILpy, Gaceta Oficial y BaseLegal)
+ * como respaldo en tiempo real cuando la base de conocimiento local no tiene respuesta suficiente.
+ * Cachea los resultados en MongoDB para alta velocidad y resiliencia.
  */
 async function buscarEnFuentesExternas(consulta) {
+  // 1. Probar primero el ecosistema oficial conectado (CSJ, BACN, SILpy, Gaceta)
+  try {
+    const ecoOficial = await consultarEcosistemaJuridico(consulta);
+    if (ecoOficial && ecoOficial.resultado) {
+      return ecoOficial;
+    }
+  } catch (err) {
+    console.warn('[LexPY] Ecosistema oficial PY advertencia:', err.message);
+  }
+
+  // 2. Fallback a portales generales con caché
   const cacheExistente = await LexpyFuenteCache.findOne({
     consulta: consulta.trim().toLowerCase(),
     expiraEn: { $gt: new Date() },
@@ -31,7 +44,7 @@ async function buscarEnFuentesExternas(consulta) {
   for (const fuente of fuentes) {
     try {
       const urlBusqueda = `${fuente.baseUrl}/buscar?q=${encodeURIComponent(consulta)}`;
-      const { data } = await axios.get(urlBusqueda, { timeout: 8000 });
+      const { data } = await axios.get(urlBusqueda, { timeout: 6000 });
       const $ = cheerio.load(data);
       const textoResumen = $('body').text().replace(/\s+/g, ' ').trim().slice(0, 1500);
 
@@ -61,3 +74,4 @@ async function buscarEnFuentesExternas(consulta) {
 }
 
 module.exports = { buscarEnFuentesExternas };
+
