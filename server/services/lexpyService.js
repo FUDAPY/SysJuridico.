@@ -25,8 +25,9 @@ function esSaludo(pregunta) {
 }
 
 async function buscarEnBaseLocal(consulta) {
+  const q = String(consulta || '').trim();
   // Detección de número de ley específica (ej: 1462, 6715, 213, 1183, 1626, 834)
-  const numLeyMatch = consulta.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
+  const numLeyMatch = q.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
   let baseLegal = [];
 
   if (numLeyMatch) {
@@ -211,7 +212,12 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   };
 }
 
-async function procesarConsultaLexPY({ pregunta, usuarioId, expedienteId, clienteId }) {
+async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam, clienteIdParam) {
+  const pregunta = typeof payload === 'object' && payload !== null ? payload.pregunta : String(payload || '');
+  const usuarioId = typeof payload === 'object' && payload !== null ? payload.usuarioId : usuarioIdParam;
+  const expedienteId = typeof payload === 'object' && payload !== null ? payload.expedienteId : expedienteIdParam;
+  const clienteId = typeof payload === 'object' && payload !== null ? payload.clienteId : clienteIdParam;
+
   if (esSaludo(pregunta)) {
     const respuesta = await responderSaludo(pregunta);
     return { respuesta, fuente: 'ia_generativa', aprendizaje: false };

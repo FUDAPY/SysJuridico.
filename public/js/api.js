@@ -134,7 +134,7 @@ function renderBarraLateral(paginaActiva) {
       titulo: 'Inteligencia & Red',
       enlaces: [
         { href: '/editor.html', texto: 'Editor Judicial', id: 'editor', icono: '📝' },
-        { href: '/lexpy.html', texto: 'Techapyrã IA (DeepSeek)', id: 'lexpy', icono: '🤖' },
+        { href: '/lexpy.html', texto: 'Techapyrã IA', id: 'lexpy', icono: '🤖' },
         { href: '/grafo.html', texto: 'Red de Conocimiento', id: 'grafo', icono: '🕸️' },
         ...(usuario.rol === 'admin' ? [{ href: '/usuarios.html', texto: 'Usuarios & Equipo', id: 'usuarios', icono: '⚙️' }] : []),
       ],
@@ -201,7 +201,7 @@ function renderBarraLateral(paginaActiva) {
   inyectarPieDePaginaGlobal();
 }
 
-// Inyecta el botón de acceso rápido de Techapyrã IA si no estamos en la página del chat
+// Inyecta el botón de acceso rápido de Techapyrã si no estamos en la página del chat
 function inyectarWidgetLexpyFlotante(paginaActiva) {
   if (paginaActiva === 'lexpy') return;
   if (document.getElementById('btnWidgetLexpy')) return;
@@ -210,7 +210,7 @@ function inyectarWidgetLexpyFlotante(paginaActiva) {
   btn.id = 'btnWidgetLexpy';
   btn.href = '/lexpy.html';
   btn.className = 'widget-lexpy-btn';
-  btn.title = 'Consultar a Techapyrã IA (DeepSeek AI)';
+  btn.title = 'Consultar a Techapyrã IA';
   btn.innerHTML = '🤖';
   document.body.appendChild(btn);
 }

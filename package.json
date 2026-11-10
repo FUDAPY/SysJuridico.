@@ -2,7 +2,7 @@
   "name": "sysjuridico",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Sistema de gestion juridica, control financiero y asistencia legal impulsado por Inteligencia Artificial con la Legislacion Paraguaya, disenado bajo una arquitectura de microservicios e infraestructura optimizada para VPS (Dokploy y MongoDB)",
+  "description": "Sistema integral de gestion judicial, control financiero, calculo laboral y asistencia legal con Inteligencia Artificial y RAG adaptada a la Legislacion Paraguaya",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",

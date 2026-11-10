@@ -39,15 +39,16 @@ function extraerNormasDeTexto(texto) {
  * Devuelve un resumen ultra-eficiente en tokens (< 250 tokens).
  */
 async function recuperarMemoriaContextual({ usuarioId, expedienteId, clienteId, consulta }) {
-  if (!usuarioId) return null;
+  const mongoose = require('mongoose');
+  if (!usuarioId || !mongoose.Types.ObjectId.isValid(usuarioId)) return null;
 
   try {
     const filtros = [];
 
-    if (expedienteId) {
+    if (expedienteId && mongoose.Types.ObjectId.isValid(expedienteId)) {
       filtros.push({ expediente: expedienteId });
     }
-    if (clienteId) {
+    if (clienteId && mongoose.Types.ObjectId.isValid(clienteId)) {
       filtros.push({ cliente: clienteId });
     }
 

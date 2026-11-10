@@ -1,370 +1,302 @@
 <div align="center">
 
-# ⚖️ Sistema Juridico SysJuridico
+# ⚖️ SysJurídico &mdash; Legal Management & AI Intelligence Suite
 
-**Sistema de gestión jurídica, control financiero y asistencia legal impulsado por Inteligencia Artificial con la Legislación Paraguaya, diseñado bajo una arquitectura de microservicios e infraestructura optimizada para VPS (Dokploy y MongoDB).**
+**Sistema integral de gestión judicial, control financiero, cálculo laboral y asistencia jurídica inteligente adaptada a la Legislación de la República del Paraguay.**
 
-![Version](https://img.shields.io/badge/version-1.0.0-0a3d62?style=flat-square)
-![Node](https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white&style=flat-square)
-![Express](https://img.shields.io/badge/Express-4.x-000000?logo=express&style=flat-square)
-![MongoDB](https://img.shields.io/badge/MongoDB-8.x-47A248?logo=mongodb&logoColor=white&style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)
+Diseñado bajo una arquitectura modular de alto rendimiento, optimizada para despliegues en VPS con Dokploy, Traefik y MongoDB.
+
+[![Version](https://img.shields.io/badge/versión-2.5.0-0a3d62?style=for-the-badge)](https://dev.grupooh.online/)
+[![Node](https://img.shields.io/badge/node.js-%3E%3D20.0-339933?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/express-4.21-000000?logo=express&logoColor=white&style=for-the-badge)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/mongodb-8.0-47A248?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
+[![Dokploy](https://img.shields.io/badge/deployment-Dokploy%20%7C%20Traefik-0284c7?style=for-the-badge)](https://dokploy.com/)
+[![License](https://img.shields.io/badge/licencia-MIT-f59e0b?style=for-the-badge)](LICENSE)
 
 </div>
 
 ---
 
-# ES: Documentación (Español)
+## 📑 Tabla de Contenidos
 
-## ES: Descripción
-
-**SysJuridico** es un sistema de gestión jurídica, control financiero y asistencia legal impulsado por Inteligencia Artificial con la Legislación Paraguaya, diseñado bajo una arquitectura de microservicios e infraestructura optimizada para VPS (Dokploy y MongoDB).
-
-Centraliza clientes, expedientes, honorarios y créditos, agenda, liquidaciones laborales (Ley 213/93) y el asistente **LexPY** (RAG sobre MongoDB + fuentes públicas). El backend expone una **API REST protegida con JWT** (Node.js + Express + Mongoose) y sirve, además, un frontend estático sin frameworks (HTML/CSS/JS); incluye un script oficial para migrar los datos históricos desde **Firebase Firestore**.
-
-
-## ES: Características principales
-
-- **Panel de resumen**: métricas de ingresos (diario, mensual, anual), saldo por cobrar y movimientos recientes, en Guaraníes (Gs.).
-- **Gestión de clientes**: CRUD completo con búsqueda por nombre, cédula o teléfono.
-- **Expedientes y honorarios**: carátula, abogado asignado, estado del caso, plan de pagos/cuotas automático y **comprobantes de pago en tickets de 80 mm**.
-- **Créditos / Cobranzas**: control de montos totales, saldos pendientes y estado por cliente/expediente.
-- **Agenda**: calendario mensual de audiencias, reuniones y vencimientos por abogado.
-- **Calculadora de Liquidación Laboral (MTESS)**: asistente de 4 pasos con reglas de la Ley 213/93 (indemnización por tramos, preaviso, vacaciones, aguinaldo, descuento IPS 9%, trabajadores mensuales y jornales) y reporte imprimible en A4 con membrete corporativo.
-- **LexPY (IA + RAG)**: responde saludos y consultas; para consultas técnicas busca primero en la base legal local (MongoDB) y, si hace falta, consulta fuentes públicas (CSJ Paraguay, BaseLegal), citando siempre sus fuentes en formato Markdown. Soporta proveedores OpenAI, Gemini, OpenRouter y **Groq**.
-- **Roles y permisos**: perfiles `admin` y `abogado` con menús y alcance diferenciados.
-- **Requisitos y trámites + Ubicación de archivos**: catálogo de trámites con costos y registro físico (tomo/estante) de carpetas.
-- **Migración Firebase → MongoDB**: script idempotente que reescribe referencias para conservar las relaciones del sistema.
-- **Seguridad**: contraseñas con `bcrypt`, tokens JWT, `helmet`, `cors`, límite de payload y auditoría de claves (el `.env` y las credenciales de Firebase **nunca** se versionan).
-
-## ES: Tecnologías y stack
-
-| Capa | Tecnología |
-|---|---|
-| Backend | Node.js ≥ 20, Express 4, Mongoose 8 |
-| Base de datos | MongoDB (colecciones Mongoose + texto completo) |
-| Autenticación | JWT (`jsonwebtoken`) + `bcryptjs` |
-| Seguridad / HTTP | `helmet`, `cors`, `express-rate-limit`, `morgan`, `express-validator` |
-| Frontend | HTML5, CSS3 y JavaScript vanilla (sin frameworks) en `public/` |
-| IA (LexPY) | RAG local + scraping (axios + cheerio) + proveedores IA (OpenAI / Gemini / OpenRouter / Groq) |
-| Migración | `firebase-admin` (Firestore → MongoDB) |
-| Despliegue | Docker / Docker Compose / Dokploy (Traefik) |
-
-**Estructura del repositorio**
-
-```
-├── server/          # API REST (controllers, models, routes, services, middleware)
-├── public/          # Frontend estático (html, css, js, img)
-├── scripts/         # migración Firestore → MongoDB, seed de admin
-├── docker-compose.yml
-├── Dockerfile
-├── .env.example     # Plantilla de variables de entorno (sin secretos)
-└── LICENSE
-```
-
-## ES: Instalación y configuración
-
-### ES: Requisitos previos
-
-- Node.js **20 o superior**.
-- Instancia de **MongoDB** accesible (local, Atlas o un servicio de Dokploy).
-
-### ES: Pasos rápidos
-
-```bash
-# 1. Instalar dependencias
-npm install
-
-# 2. Configurar variables de entorno (copiar la plantilla y editarla)
-cp .env.example .env
-#    Completar como mínimo: DATABASE_URL, JWT_SECRET, ADMIN_SEED_EMAIL y ADMIN_SEED_PASSWORD
-
-# 3. Crear el usuario administrador inicial
-npm run seed:admin
-
-# 4. (Opcional) Migrar datos desde Firebase Firestore
-#    Requiere FIREBASE_SERVICE_ACCOUNT_PATH apuntando al JSON de credenciales.
-#    Ese archivo contiene secretos y NUNCA debe subirse al repositorio.
-npm run migrate:firestore
-
-# 5. Iniciar en desarrollo (recarga automática) o producción
-npm run dev        # o: npm start
-```
-
-> En Windows PowerShell usa `copy .env.example .env` en lugar de `cp`.
-
-### ES: Variables de entorno principales
-
-| Variable | Descripción |
-|---|---|
-| `DATABASE_URL` | Cadena de conexión a MongoDB (p. ej. `mongodb://usuario:clave@host:27017/sysjuridico?authSource=admin`) |
-| `JWT_SECRET` | Secreto largo y aleatorio para firmar tokens |
-| `JWT_EXPIRES_IN` | Vigencia del token (por defecto `8h`) |
-| `ADMIN_SEED_EMAIL` / `ADMIN_SEED_PASSWORD` | Crea el admin automáticamente en el primer arranque |
-| `LEXPY_AI_PROVIDER` | `openai` \| `gemini` \| `openrouter` \| `groq` \| `none` |
-| `LEXPY_AI_API_KEY` | Clave del proveedor de IA elegido |
-| `LEXPY_AI_MODEL` | Modelo (p. ej. `openai/gpt-oss-120b` en Groq) |
-| `FIREBASE_SERVICE_ACCOUNT_PATH` | Ruta al JSON de credenciales de Firebase (solo migración) |
-
-## ES: Ejemplos de uso
-
-### ES: Iniciar sesión y consumir la API
-
-```bash
-# 1. Obtener token
-TOKEN=$(curl -s -X POST http://localhost:4000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@estudio.com","password":"tu-clave"}' | jq -r .token)
-
-# 2. Listar clientes (requiere el token)
-curl -s http://localhost:4000/api/clientes -H "Authorization: Bearer $TOKEN"
-```
-
-### ES: Chatear con LexPY (saludo y consulta técnica)
-
-```bash
-curl -s -X POST http://localhost:4000/api/lexpy/chat \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"pregunta":"hola, ¿quién sos?"}'
-
-curl -s -X POST http://localhost:4000/api/lexpy/chat \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"pregunta":"¿Qué regula la Ley 213/93 en Paraguay?"}'
-```
-
-### ES: Calcular una liquidación laboral
-
-```bash
-curl -s -X POST http://localhost:4000/api/liquidaciones/calcular \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{
-    "tipoLiquidacion": "despido_injustificado",
-    "fechaIngreso": "2020-01-10",
-    "fechaSalida": "2026-02-28",
-    "tipoTrabajador": "MENSUAL",
-    "salarioMensual": 4000000,
-    "diasTrabajadosNoCobrados": 10,
-    "tieneIps": true,
-    "persona": { "cedula": "3.456.789", "nombre": "Juan", "apellido": "Pérez" }
-  }'
-```
-
-### ES: Endpoints principales
-
-| Método | Ruta | Descripción |
-|---|---|---|
-| `POST` | `/api/auth/login` | Inicia sesión y devuelve el JWT |
-| `GET/POST/PUT/DELETE` | `/api/clientes`, `/api/expedientes`, `/api/agenda`, `/api/creditos`, `/api/requisitos`, `/api/archivos` | CRUD de cada módulo |
-| `GET` | `/api/dashboard`, `/api/dashboard/mi-dia` | Resúmenes por rol |
-| `POST` | `/api/liquidaciones/calcular` | Calcula liquidación (no persiste) |
-| `POST` | `/api/liquidaciones` | Calcula y guarda |
-| `POST` | `/api/lexpy/chat` | Consulta al asistente LexPY |
-| `GET` | `/api/health` | Estado de conexión a MongoDB |
-
-## ES: Guía de contribución
-
-¡Gracias por tu interés en colaborar! Para mantener el proyecto ordenado:
-
-1. **Haz un fork** del repositorio y crea una rama descriptiva:
-   ```bash
-   git checkout -b feat/mi-mejora
-   ```
-2. **Desarrolla** con cambios pequeños y verificables. Respeta el estilo existente (JavaScript vanilla en el frontend, `async/await` en el backend, comentarios técnicos breves).
-3. **No subas secretos**: `.env`, claves API ni el JSON de Firebase deben permanecer fuera del control de versiones.
-4. **Prueba** localmente antes de enviar el cambio:
-   ```bash
-   npm run dev
-   ```
-5. **Abre un Pull Request** describiendo qué resuelve tu cambio y cómo se prueba.
-
-### ES: Buenas prácticas
-
-- Usa commits atómicos y mensajes claros en español o inglés.
-- Mantén la compatibilidad hacia atrás de la API REST.
-- Cuando agregues una dependencia, justifícala en la descripción del PR.
-- Documenta en este README cualquier variable de entorno nueva.
-
-## ES: Licencia
-
-Distribuido bajo la licencia **MIT** (libre uso con mención de autores). Ver el archivo [LICENSE](LICENSE).
-
-Copyright © 2026 · **Otelax Dev** · **Giuliano Emanuel Maria Catella Riveros**
-
-Se permite el uso, copia, modificación, distribución y uso comercial del software, siempre que se mantenga el aviso de copyright y esta nota de licencia en todas las copias o partes sustanciales.
+1. [Descripción General](#-descripción-general)
+2. [Stack Tecnológico y Herramientas](#-stack-tecnológico-y-herramientas)
+3. [Módulos y Capacidades del Sistema](#-módulos-y-capacidades-del-sistema)
+4. [Arquitectura de Inteligencia Artificial & RAG Local](#-arquitectura-de-inteligencia-artificial--rag-local)
+5. [Estructura del Proyecto](#-estructura-del-proyecto)
+6. [Instalación y Configuración](#-instalación-y-configuración)
+7. [Variables de Entorno](#-variables-de-entorno)
+8. [API REST & Endpoints Clave](#-api-rest--endpoints-clave)
+9. [Seguridad y Políticas de Despliegue](#-seguridad-y-políticas-de-despliegue)
+10. [Licencia y Créditos Institucionales](#-licencia-y-créditos-institucionales)
 
 ---
 
+## 📖 Descripción General
+
+**SysJurídico** es una plataforma profesional para despachos forenses y estudios jurídicos que consolida en un solo entorno el seguimiento de litigios, la facturación de honorarios mediante créditos y cobranzas, la agenda de vencimientos procesales, el cálculo automatizado de liquidaciones laborales y la asistencia legal en tiempo real mediante **Techapyrã IA**.
+
+El sistema combina la velocidad de una API REST moderna en Node.js con un frontend estático ultra liviano en JavaScript vanilla (sin sobrecarga de frameworks), integrando un motor RAG (*Retrieval-Augmented Generation*) local que consulta tanto bases normativas indexadas en MongoDB como fuentes públicas oficiales paraguayas (CSJ, BACN, SILpy y Digesto Jurídico).
+
 ---
 
-# EN: Documentation (English)
+## 🛠️ Stack Tecnológico y Herramientas
 
-## EN: Overview
+SysJurídico implementa tecnologías probadas y de alta eficiencia para garantizar disponibilidad 24/7 y tiempos de respuesta inferiores a 100 ms:
 
-**SysJuridico** is a legal management, financial control and AI-powered legal assistance system built on Paraguayan legislation, architected as microservices and optimized for VPS infrastructure (Dokploy and MongoDB).
-
-It centralizes clients, case files (expedientes), fees and credit plans, scheduling, severance calculations (Act 213/93) and the **LexPY** AI assistant (RAG over MongoDB + public sources). The backend exposes a **JWT-protected REST API** (Node.js + Express + Mongoose) and also serves a framework-free static frontend (HTML/CSS/JS); it ships an official migration script for legacy data from **Firebase Firestore**.
-
-<<<<<<< HEAD
-=======
-
->>>>>>> f4a10fc913e3ad30e65147718b2096300eab3801
-## EN: Key features
-
-- **Dashboard**: daily, monthly and yearly income metrics, outstanding balances and recent transactions in Guaraníes (Gs.).
-- **Client management**: full CRUD with search by name, ID or phone.
-- **Cases & fees**: case title, assigned attorney, status, automatic installment plan and **80 mm payment receipts**.
-- **Credits / collections**: total amounts, outstanding balances and status per client or case.
-- **Legal agenda**: monthly calendar for hearings, meetings and deadlines per attorney.
-- **MTESS severance calculator**: 4-step wizard implementing Paraguay's Labor Code (Act 213/93) rules — tiered severance, notice, vacations, bonus (aguinaldo), 9% IPS deduction, monthly and daily-wage workers — with a printable A4 report using the firm's letterhead.
-- **LexPY (AI + RAG)**: handles greetings; for technical questions it searches the local legal knowledge base (MongoDB) first and falls back to public sources (CSJ Paraguay, BaseLegal), always citing sources in Markdown. Supports OpenAI, Gemini, OpenRouter and **Groq**.
-- **Roles & permissions**: `admin` and `attorney` profiles with different menus and scope.
-- **Requirements & file locations**: services catalog with costs and physical folder tracking.
-- **Firebase → MongoDB migration**: idempotent script that rewrites references to keep relationships intact.
-- **Security**: bcrypt password hashing, JWT tokens, helmet, CORS and secret hygiene — `.env` and Firebase credentials are never committed.
-
-## EN: Tech stack
-
-| Layer | Technology |
-|---|---|
-| Backend | Node.js ≥ 20, Express 4, Mongoose 8 |
-| Database | MongoDB (Mongoose collections + full-text indexes) |
-| Auth | JWT (`jsonwebtoken`) + `bcryptjs` |
-| Security / HTTP | `helmet`, `cors`, `express-rate-limit`, `morgan`, `express-validator` |
-| Frontend | HTML5, CSS3 and vanilla JavaScript (no frameworks) in `public/` |
-| AI (LexPY) | Local RAG + scraping (axios + cheerio) + AI providers (OpenAI / Gemini / OpenRouter / Groq) |
-| Migration | `firebase-admin` (Firestore → MongoDB) |
-| Deployment | Docker / Docker Compose / Dokploy (Traefik) |
-
-## EN: Installation & setup
-
-### EN: Prerequisites
-
-- Node.js **20 or newer**.
-- A reachable **MongoDB** instance (local, Atlas or a Dokploy service).
-
-### EN: Quick start
-
-```bash
-# 1. Install dependencies
-npm install
-
-# 2. Create your environment file from the template and edit it
-cp .env.example .env
-#    Fill at least: DATABASE_URL, JWT_SECRET, ADMIN_SEED_EMAIL and ADMIN_SEED_PASSWORD
-
-# 3. Create the initial administrator user
-npm run seed:admin
-
-# 4. (Optional) Migrate existing data from Firebase Firestore
-#    Requires FIREBASE_SERVICE_ACCOUNT_PATH pointing to the credentials JSON.
-#    That file holds secrets and must NEVER be committed to the repository.
-npm run migrate:firestore
-
-# 5. Run in development (auto-reload) or production
-npm run dev        # or: npm start
-```
-
-> On Windows PowerShell use `copy .env.example .env` instead of `cp`.
-
-### EN: Main environment variables
-
-| Variable | Description |
-|---|---|
-| `DATABASE_URL` | MongoDB connection string (e.g. `mongodb://user:pass@host:27017/sysjuridico?authSource=admin`) |
-| `JWT_SECRET` | Long, random secret used to sign tokens |
-| `JWT_EXPIRES_IN` | Token lifetime (default `8h`) |
-| `ADMIN_SEED_EMAIL` / `ADMIN_SEED_PASSWORD` | Auto-creates the admin on first boot |
-| `LEXPY_AI_PROVIDER` | `openai` \| `gemini` \| `openrouter` \| `groq` \| `none` |
-| `LEXPY_AI_API_KEY` | API key of the selected AI provider |
-| `LEXPY_AI_MODEL` | Model name (e.g. `openai/gpt-oss-120b` on Groq) |
-| `FIREBASE_SERVICE_ACCOUNT_PATH` | Path to the Firebase credentials JSON (migration only) |
-
-## EN: Usage examples
-
-### EN: Authenticate and consume the API
-
-```bash
-# 1. Get a token
-TOKEN=$(curl -s -X POST http://localhost:4000/api/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@estudio.com","password":"your-password"}' | jq -r .token)
-
-# 2. List clients (requires the token)
-curl -s http://localhost:4000/api/clientes -H "Authorization: Bearer $TOKEN"
-```
-
-### EN: Chat with LexPY (greeting and technical question)
-
-```bash
-curl -s -X POST http://localhost:4000/api/lexpy/chat \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"pregunta":"hi, who are you?"}'
-
-curl -s -X POST http://localhost:4000/api/lexpy/chat \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{"pregunta":"What does Paraguayan Act 213/93 regulate?"}'
-```
-
-### EN: Calculate a labor severance
-
-```bash
-curl -s -X POST http://localhost:4000/api/liquidaciones/calcular \
-  -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
-  -d '{
-    "tipoLiquidacion": "despido_injustificado",
-    "fechaIngreso": "2020-01-10",
-    "fechaSalida": "2026-02-28",
-    "tipoTrabajador": "MENSUAL",
-    "salarioMensual": 4000000,
-    "diasTrabajadosNoCobrados": 10,
-    "tieneIps": true,
-    "persona": { "cedula": "3.456.789", "nombre": "John", "apellido": "Doe" }
-  }'
-```
-
-### EN: Main endpoints
-
-| Method | Route | Description |
+| Capa | Componente | Descripción y Uso |
 |---|---|---|
-| `POST` | `/api/auth/login` | Authenticates and returns a JWT |
-| `GET/POST/PUT/DELETE` | `/api/clientes`, `/api/expedientes`, `/api/agenda`, `/api/creditos`, `/api/requisitos`, `/api/archivos` | CRUD per module |
-| `GET` | `/api/dashboard`, `/api/dashboard/mi-dia` | Role-based summaries |
-| `POST` | `/api/liquidaciones/calcular` | Computes severance (no persistence) |
-| `POST` | `/api/liquidaciones` | Computes and stores |
-| `POST` | `/api/lexpy/chat` | Asks the LexPY assistant |
-| `GET` | `/api/health` | MongoDB connection status |
+| **Backend Core** | Node.js (≥ v20 LTS) + Express 4.x | Servidor HTTP RESTful, middlewares de validación, compresión y enrutamiento modular. |
+| **Persistencia** | MongoDB 8.x + Mongoose 8.x | Esquemas estructurados, índices de texto compuesto para RAG y transacciones ACID. |
+| **Autenticación** | JWT (`jsonwebtoken`) + `bcryptjs` | Tokens con caducidad configurable, cifrado robusto de contraseñas y control de acceso por roles (`admin`, `abogado`). |
+| **Seguridad HTTP** | `helmet`, `cors`, `express-rate-limit` | Protección contra XSS, sanitización de cabeceras, limitador de peticiones contra ataques DDoS. |
+| **Frontend** | HTML5 Semántico + CSS3 Variables + JS Vanilla | Interfaz responsiva inspirada en plataformas SaaS de alta gama, con modo oscuro/claro nativo, Bento cards y componentes modales. |
+| **Visualización** | D3.js v7 (Data-Driven Documents) | Renderizado de la Red de Conocimiento en canvas interactivo tipo Obsidian Graph View. |
+| **Motor de IA (Techapyrã IA)** | DeepSeek V3 (`deepseek-chat`) / OpenAI / Gemini | Motor analítico jurídico para dictámenes, síntesis de doctrina CSJ y redacción forense. |
+| **RAG & Procesamiento** | RAG Híbrido (MongoDB + Text Index) + `pdf-parse` | Extracción de texto de fojas y documentos procesales, búsqueda por similitud y coincidencia exacta de normas. |
+| **Web Scraping Forense** | `axios` + `cheerio` | Conectores HTTP para extracción en tiempo real de resoluciones, acuerdos y leyes desde portales oficiales. |
+| **Impresión Térmica** | CSS Paged Media `@media print` (80mm) | Formateo e impresión directa de tickets de pago para impresoras térmicas de punto de venta. |
+| **Infraestructura** | Docker + Docker Compose + Traefik + Dokploy | Contenedorización, certificados SSL automáticos vía Let's Encrypt y despliegue continuo en VPS. |
 
-## EN: Contributing
+---
 
-Thanks for your interest in helping! To keep the project tidy:
+## 🚀 Módulos y Capacidades del Sistema
 
-1. **Fork** the repository and create a descriptive branch:
+### 1. Centro Operativo / Asistente Jurídico (Inicio)
+- **Briefing Matutino:** Resumen diario de prioridades, plazos perentorios y caducidades procesales conforme al Art. 172 del Código Procesal Civil Paraguayo.
+- **Jurisprudencia CSJ Destacada:** Carrusel interactivo con fallos y doctrinas de la Corte Suprema de Justicia clasificados por fuero.
+- **KPIs Estratégicos:** Métricas en tiempo real de novedades procesales, plazos fatales, causas para impulsar y cobranzas pendientes.
+- **Buscador Multimodal:** Búsqueda unificada en causas internas y jurisprudencia externa con autocompletado y mención `@expediente`.
+
+### 2. Gestión de Expedientes Judiciales & Honorarios
+- **Ficha Integral de Causa:** Carátula, número, año, juzgado/despacho, circunscripción judicial, materia, tipo de proceso y fase procesal.
+- **Generación Automática de Créditos:** Vinculación directa con el plan de pagos y cuotas de honorarios al momento de crear el expediente.
+- **Auditoría Procesal:** Registro de última actuación, fechas de visto y botón de eliminación segura con confirmación.
+- **Filtros Avanzados y Exportación:** Filtrado por despacho, estado (activo/archivado), modo focus para concentración forense y exportación a formato CSV.
+
+### 3. Créditos, Cobranzas & Comprobantes POS de 80 mm
+- **Control Financiero:** Seguimiento de capital pactado, saldo restante y estado de cuotas por cliente y causa judicial.
+- **Emisión de Tickets Térmicos:** Generación instantánea de tickets de 80 mm adaptados para impresoras de recibos térmicos con membrete formal, detalle de cuota y firma del estudio.
+- **Reimpresión Directa:** Historial de comprobantes con botón de reimpresión rápida.
+
+### 4. Agenda Jurídica & Audiencias
+- **Calendario Forense:** Visualización mensual y semanal de audiencias preliminares, juicios orales, traslados y reuniones.
+- **Alertas Procesales:** Código de colores por urgencia y asignación de abogado responsable.
+
+### 5. Calculadora Laboral MTESS (Ley 213/93)
+- **Asistente de 4 Pasos:** Liquidación precisa por despido injustificado, retiro justificado o renuncia conforme al Código Laboral Paraguayo.
+- **Cálculo Exacto de Rubros:** Preaviso, indemnización legal por antigüedad escalonada, aguinaldo proporcional, vacaciones causadas y proporcionales, y retención de aporte obrero IPS (9%).
+- **Exportación A4 Oficial:** Generación de informe imprimible en formato A4 listo para presentación ante el Ministerio de Trabajo, Empleo y Seguridad Social (MTESS).
+
+### 6. Editor Judicial Integrado
+- **Lienzo Judicial A4:** Procesador de texto forense enriquecido con formato de fojas, márgenes judiciales reglamentarios y plantillas estándar.
+- **Inserción Inteligente:** Botón de consulta al asistente Techapyrã para insertar cláusulas contractuales o argumentos de contestación en la posición del cursor.
+- **Exportación Versátil:** Descarga en documentos editables `.docx`, formato `.pdf` e impresión formal.
+
+### 7. Red de Conocimiento Obsidian (Graph View Local)
+- **Visualización Topológica:** Renderizado con simulación de fuerzas D3.js de todas las leyes de `BaseLegal`, acuerdos CSJ, causas judiciales, clientes y conceptos doctrinarios.
+- **Ejecución Local en Dokploy:** Opera de manera autónoma en el servidor VPS sin requerir software de terceros ni servicios externos de pago.
+- **Panel Inspector:** Drawer lateral con detalle de articulados, metadatos y enlaces directos a la fuente original de la norma.
+
+---
+
+## 🧠 Arquitectura de Inteligencia Artificial & RAG Local
+
+SysJurídico implementa una arquitectura híbrida de tres niveles para garantizar respuestas jurídicamente fundadas y verificables:
+
+```
+                  ┌──────────────────────────────────────────────┐
+                  │              Usuario / Abogado               │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                                         ▼
+                  ┌──────────────────────────────────────────────┐
+                  │            Techapyrã IA Engine               │
+                  │   (Orquestador Semántico / aiProviderService) │
+                  └──────────────────────┬───────────────────────┘
+                                         │
+                    ┌────────────────────┴────────────────────┐
+                    ▼                                         ▼
+     ┌─────────────────────────────┐           ┌─────────────────────────────┐
+     │      NIVEL 1: RAG LOCAL     │           │ NIVEL 2: CONECTORES EN VIVO │
+     ├─────────────────────────────┤           ├─────────────────────────────┤
+     │ • BaseLegal (Leyes/Códigos) │           │ • CSJ Jurisprudencia        │
+     │ • AprendizajeSistema        │           │ • BACN (Congreso Nacional)  │
+     │ • DocumentoExpediente (OCR) │           │ • SILpy / Digesto Jurídico  │
+     │ • MemoriaAgente (Contexto)  │           │ • Scraping determinista     │
+     └──────────────┬──────────────┘           └──────────────┬──────────────┘
+                    │                                         │
+                    └────────────────────┬────────────────────┘
+                                         │
+                                         ▼
+                  ┌──────────────────────────────────────────────┐
+                  │             SÍNTESIS Y PROVEEDOR             │
+                  │   DeepSeek V3 / OpenAI / Gemini / Groq       │
+                  │   Formateo estricto en Markdown forense      │
+                  └──────────────────────────────────────────────┘
+```
+
+1. **Recuperación Local Determinista:** Cuando el usuario consulta sobre una ley específica (p. ej., Ley 1462/1935 o Ley 6715/2021), el motor localiza el registro exacto en MongoDB mediante coincidencia de número normativo antes de aplicar búsqueda textual, evitando falsos positivos y contexto irrelevante.
+2. **Scraping Oficial de Respaldo:** Si la norma o fallo no se encuentra indexada, los conectores extraen la información oficial directamente desde portales públicos del Estado Paraguayo.
+3. **Respuesta Estructurada:** La IA sintetiza el fundamento legal citando ley, artículo, estado de vigencia y URL oficial, entregando el resultado en Markdown limpio y sin divagaciones.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```
+SysJuridico/
+├── .env.example              # Plantilla de variables de entorno (sin secretos)
+├── .gitignore                # Reglas estrictas de exclusión de credenciales y planes
+├── docker-compose.yml        # Configuración de servicios (App + Traefik)
+├── Dockerfile                # Imagen optimizada en Node.js 20 Alpine
+├── package.json              # Dependencias y scripts de ejecución
+├── LICENSE                   # Licencia MIT de libre distribución
+├── public/                   # Frontend estático servido por Express
+│   ├── css/
+│   │   └── styles.css        # Sistema de diseño, temas dark/light y estilos de impresión
+│   ├── js/
+│   │   ├── api.js            # Cliente HTTP, navegación lateral y pie de página
+│   │   ├── dashboard.js      # Lógica del Centro Operativo y briefing matutino
+│   │   ├── expedientes.js    # CRUD de causas, modal de carga y exportación
+│   │   ├── creditos.js       # Cobranzas y generación de tickets 80mm
+│   │   ├── editor.js         # Procesador de texto judicial y exportador
+│   │   ├── grafo.js          # Simulación D3.js para la Red de Conocimiento
+│   │   ├── lexpy.js          # Chat forense y redactor de escritos con Techapyrã
+│   │   └── liquidacion.js    # Motor de cálculo laboral MTESS
+│   ├── index.html            # Vista principal (Inicio / Asistente Jurídico)
+│   ├── expedientes.html      # Módulo de causas judiciales
+│   ├── creditos.html         # Módulo de créditos y cobranzas
+│   ├── editor.html           # Módulo de redacción forense
+│   ├── grafo.html            # Módulo de grafo Obsidian
+│   ├── lexpy.html            # Módulo de chat y redactor legal
+│   ├── liquidacion.html      # Módulo de liquidación laboral
+│   ├── agenda.html           # Calendario judicial
+│   └── login.html            # Portal de autenticación
+├── scripts/
+│   ├── seed-admin.js         # Creación del usuario administrador inicial
+│   ├── migrate-firestore.js  # Migración histórica desde Firebase Firestore
+│   └── inspect-firestore.js  # Diagnóstico de colecciones legadas
+└── server/
+    ├── server.js             # Punto de entrada de la aplicación Express
+    ├── config/
+    │   └── db.js             # Conexión persistente a MongoDB con Mongoose
+    ├── controllers/          # Controladores de negocio por módulo
+    ├── middleware/           # Autenticación JWT y manejador global de errores
+    ├── models/               # Modelos de datos (Expediente, Credito, BaseLegal, etc.)
+    ├── routes/               # Enrutadores RESTful versionados
+    ├── services/             # Lógica pesada (IA, Scraping, RAG, Liquidación, CSJ Sync)
+    └── utils/                # Utilidades de respuesta HTTP y errores tipados
+```
+
+---
+
+## ⚡ Instalación y Configuración
+
+### Requisitos del Sistema
+- **Node.js**: v20.x o superior
+- **MongoDB**: v7.0 o v8.0 (instancia local, réplica o servicio gestionado)
+- **Gestor de paquetes**: `npm` v10+
+
+### Paso a Paso
+
+1. **Clonar el repositorio:**
    ```bash
-   git checkout -b feat/my-improvement
+   git clone https://github.com/FUDAPY/SysJuridico.git
+   cd SysJuridico
    ```
-2. **Develop** in small, verifiable steps. Follow the existing style (vanilla JS frontend, `async/await` backend, short technical comments).
-3. **Never commit secrets**: `.env`, API keys or the Firebase JSON must stay out of version control.
-4. **Test locally** before opening a change:
+
+2. **Instalar dependencias de producción:**
    ```bash
+   npm install
+   ```
+
+3. **Configurar variables de entorno:**
+   ```bash
+   cp .env.example .env
+   # Editar .env con tus credenciales seguras
+   ```
+
+4. **Inicializar la cuenta administradora:**
+   ```bash
+   npm run seed:admin
+   ```
+
+5. **(Opcional) Migración de datos legados de Firebase:**
+   ```bash
+   # Requiere configurar FIREBASE_SERVICE_ACCOUNT_PATH en el .env
+   npm run migrate:firestore
+   ```
+
+6. **Iniciar el servidor:**
+   ```bash
+   # Modo desarrollo con recarga en caliente:
    npm run dev
+
+   # Modo producción:
+   npm start
    ```
-5. **Open a Pull Request** explaining what the change fixes and how it was tested.
 
-### EN: Best practices
+---
 
-- Use atomic commits with clear messages in English or Spanish.
-- Keep backwards compatibility of the REST API.
-- Justify any new dependency in the PR description.
-- Document every new environment variable in this README.
+## 🔐 Variables de Entorno
 
-## EN: License
+Configuradas mediante el archivo `.env` en la raíz (nunca versionado en git):
 
-Released under the **MIT** license (free to use with attribution). See [LICENSE](LICENSE).
+| Clave | Obligatoria | Valor por Defecto | Descripción |
+|---|---|---|---|
+| `PORT` | No | `4000` | Puerto en el que escucha el servidor Express. |
+| `DATABASE_URL` | **Sí** | &mdash; | Cadena de conexión MongoDB (`mongodb://user:pass@host:27017/db?authSource=admin`). |
+| `JWT_SECRET` | **Sí** | &mdash; | Cadena criptográfica de alta entropía para firmar tokens de sesión. |
+| `JWT_EXPIRES_IN` | No | `8h` | Período de vigencia del token de autenticación. |
+| `ADMIN_SEED_EMAIL` | **Sí** | &mdash; | Correo electrónico para el administrador creado por `seed-admin`. |
+| `ADMIN_SEED_PASSWORD` | **Sí** | &mdash; | Contraseña segura para el administrador inicial. |
+| `LEXPY_AI_PROVIDER` | No | `deepseek` | Proveedor del motor inteligente: `deepseek`, `openai`, `gemini`, `openrouter`, `groq` o `none`. |
+| `LEXPY_AI_API_KEY` | Condicional | &mdash; | Clave de API del proveedor seleccionado. |
+| `LEXPY_AI_MODEL` | No | `deepseek-chat` | Modelo específico a consumir por Techapyrã IA. |
+| `FIREBASE_SERVICE_ACCOUNT_PATH`| No | &mdash; | Ruta absoluta al archivo JSON de credenciales de Firebase (solo para migración). |
 
-Copyright © 2026 · **Otelax Dev** · **Giuliano Emanuel Maria Catella Riveros**
+---
 
-Permission is granted to use, copy, modify, merge, publish, distribute, sublicense and sell copies of the software, as long as this copyright notice and the permission notice are included in all copies or substantial portions.
+## 📡 API REST & Endpoints Clave
 
+Todos los endpoints (excepto login y health) requieren la cabecera `Authorization: Bearer <TOKEN_JWT>`.
 
+| Método | Endpoint | Descripción |
+|---|---|---|
+| `POST` | `/api/auth/login` | Autentica credenciales y entrega el token JWT. |
+| `GET` | `/api/dashboard` | Retorna métricas de ingresos, causas y saldos pendientes. |
+| `GET` | `/api/dashboard/mi-dia` | Entrega el briefing de plazos, vencimientos y caducidades. |
+| `GET/POST` | `/api/expedientes` | Lista causas judiciales con filtros o registra una nueva con crédito opcional. |
+| `GET/PUT/DELETE`| `/api/expedientes/:id` | Consulta, actualiza o elimina un expediente del sistema. |
+| `POST` | `/api/expedientes/csj/sincronizar` | Sincroniza actuaciones directamente desde el portal de la CSJ. |
+| `GET/POST` | `/api/creditos` | Lista créditos o registra cobros con cálculo de saldo remanente. |
+| `POST` | `/api/liquidaciones/calcular` | Ejecuta el cálculo laboral bajo Ley 213/93 (sin persistir). |
+| `POST` | `/api/liquidaciones` | Calcula y almacena el registro formal de liquidación. |
+| `POST` | `/api/lexpy/chat` | Consulta al motor Techapyrã IA con resolución RAG local y oficial. |
+| `GET` | `/api/obsidian/grafo` | Entrega los nodos y enlaces para el visor interactivo de relaciones. |
+| `GET` | `/api/health` | Verificación de estado del servidor y conexión a base de datos. |
 
+---
+
+## 🛡️ Seguridad y Políticas de Despliegue
+
+1. **Zero Secrets Policy:** Ninguna clave de API, contraseña ni archivo de credenciales (`.env`, `firebase-key.json`) se almacena en el control de versiones. Las variables se inyectan a nivel de entorno en Dokploy.
+2. **Cabeceras Seguras:** Integración de `helmet` para aplicar *Content Security Policy*, prevenir *clickjacking* (`X-Frame-Options`) y mitigar ataques MIME-sniffing.
+3. **Control de Flujo:** `express-rate-limit` restringe ráfagas de solicitudes en rutas de autenticación y endpoints de análisis.
+4. **Validación Estricta:** Todas las entradas se procesan mediante `express-validator` sanitizando entradas para prevenir inyecciones NoSQL y XSS.
+
+---
+
+## ⚖️ Licencia y Créditos Institucionales
+
+Distribuido bajo la Licencia **MIT**. Consulte el archivo [LICENSE](LICENSE) para más detalles.
+
+```
+Todos los derechos reservados.
+Sistema creado e impulsado por Otelax Dev (www.dev.grupooh.online)
+Autor: Giuliano Emanuel Maria Catella Riveros
+```
+
+- **Sitio Web Oficial:** [https://dev.grupooh.online/](https://dev.grupooh.online/)
+- **Repositorio Oficial:** [https://github.com/FUDAPY/SysJuridico](https://github.com/FUDAPY/SysJuridico)

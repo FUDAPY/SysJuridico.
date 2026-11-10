@@ -104,7 +104,8 @@ async function analizarYResumirDocumento({ texto, nombre, caratulaExpediente = '
  * Obtiene el contexto consolidado de todos los documentos adjuntos a un expediente para el RAG.
  */
 async function obtenerContextoDocumentosExpediente(expedienteId) {
-  if (!expedienteId) return null;
+  const mongoose = require('mongoose');
+  if (!expedienteId || !mongoose.Types.ObjectId.isValid(expedienteId)) return null;
 
   const DocumentoExpediente = require('../models/DocumentoExpediente');
   const docs = await DocumentoExpediente.find({ expediente: expedienteId })
