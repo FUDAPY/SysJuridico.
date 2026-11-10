@@ -115,7 +115,7 @@ function renderBarraLateral(paginaActiva) {
     {
       titulo: 'Operaciones',
       enlaces: [
-        { href: '/index.html', texto: usuario.rol === 'admin' ? 'Centro Operativo' : 'Mi Día', id: 'resumen', icono: '📊' },
+        { href: '/index.html', texto: 'Inicio / Asistente', id: 'resumen', icono: '🏠' },
         { href: '/expedientes.html', texto: 'Expedientes', id: 'expedientes', icono: '📁' },
         { href: '/clientes.html', texto: 'Clientes', id: 'clientes', icono: '👥' },
         { href: '/agenda.html', texto: 'Agenda & Plazos', id: 'agenda', icono: '📅' },
@@ -193,7 +193,7 @@ function renderBarraLateral(paginaActiva) {
     </div>
     <div style="padding: 12px 14px 16px; font-size: 0.7rem; color: var(--texto-muted); text-align: center; border-top: 1px solid var(--borde); line-height: 1.4;">
       Todos los derechos reservados.<br>
-      Sistema creado e impulsado por <a href="https://www.dev.grupooh.online" target="_blank" rel="noopener noreferrer" style="color: var(--azul-claro); font-weight: 600; text-decoration: none;">Otelax Dev</a>
+      Sistema creado e impulsado por <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="color: var(--azul-claro); font-weight: 600; text-decoration: none;">Otelax Dev</a>
     </div>
   `;
 
@@ -228,8 +228,8 @@ function inyectarPieDePaginaGlobal() {
     <div>© ${new Date().getFullYear()} Todos los derechos reservados.</div>
     <div style="margin-top: 4px;">
       Sistema creado e impulsado por 
-      <a href="https://www.dev.grupooh.online" target="_blank" rel="noopener noreferrer">Otelax Dev</a> 
-      (<em><a href="https://www.dev.grupooh.online" target="_blank" rel="noopener noreferrer">www.dev.grupooh.online</a></em>)
+      <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer">Otelax Dev</a> 
+      (<em><a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer">www.dev.grupooh.online</a></em>)
     </div>
   `;
   target.appendChild(footer);

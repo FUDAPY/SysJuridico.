@@ -25,20 +25,47 @@ function esSaludo(pregunta) {
 }
 
 async function buscarEnBaseLocal(consulta) {
-  const [aprendizajes, baseLegal] = await Promise.all([
-    AprendizajeSistema.find(
+  // Detección de número de ley específica (ej: 1462, 6715, 213, 1183, 1626, 834)
+  const numLeyMatch = consulta.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
+  let baseLegal = [];
+
+  if (numLeyMatch) {
+    const num = numLeyMatch[1];
+    const regexLey = new RegExp(`\\b${num}\\b`, 'i');
+    baseLegal = await BaseLegal.find({ titulo: { $regex: regexLey } }).limit(2);
+  }
+
+  // Si no hubo match específico o no se encontraron, búsqueda por texto completo
+  if (!baseLegal.length) {
+    try {
+      baseLegal = await BaseLegal.find(
+        { $text: { $search: consulta } },
+        { score: { $meta: 'textScore' } }
+      )
+        .sort({ score: { $meta: 'textScore' } })
+        .limit(3);
+    } catch {
+      // Fallback si no hay índice de texto activo
+      baseLegal = await BaseLegal.find({
+        $or: [
+          { titulo: { $regex: consulta.slice(0, 30), $options: 'i' } },
+          { contenido: { $regex: consulta.slice(0, 30), $options: 'i' } },
+        ],
+      }).limit(2);
+    }
+  }
+
+  let aprendizajes = [];
+  try {
+    aprendizajes = await AprendizajeSistema.find(
       { $text: { $search: consulta }, validado: true },
       { score: { $meta: 'textScore' } }
     )
       .sort({ score: { $meta: 'textScore' } })
-      .limit(3),
-    BaseLegal.find(
-      { $text: { $search: consulta } },
-      { score: { $meta: 'textScore' } }
-    )
-      .sort({ score: { $meta: 'textScore' } })
-      .limit(3),
-  ]);
+      .limit(2);
+  } catch {
+    aprendizajes = [];
+  }
 
   return { aprendizajes, baseLegal };
 }
@@ -46,16 +73,16 @@ async function buscarEnBaseLocal(consulta) {
 function construirContexto({ aprendizajes, baseLegal }) {
   const partes = [];
 
-  aprendizajes.forEach((a) => {
-    partes.push(`P: ${a.pregunta}\nR: ${a.respuesta}`);
-  });
-
   baseLegal.forEach((b) => {
     const ref = b.url ? ` (${b.url})` : '';
-    partes.push(`[${b.titulo}${ref}]\n${b.contenido.slice(0, 800)}`);
+    partes.push(`[${b.titulo}${ref}]\nFUENTE: ${b.fuente || 'Oficial Paraguay'}\n${b.contenido.slice(0, 1200)}`);
   });
 
-  return partes.join('\n---\n');
+  aprendizajes.forEach((a) => {
+    partes.push(`ENSEÑANZA PREVIA: ${a.pregunta}\nDOCTRINA/APLICACIÓN: ${a.respuesta}`);
+  });
+
+  return partes.join('\n\n---\n\n');
 }
 
 function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
@@ -140,10 +167,12 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   }
 
   const system =
-    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación de la República del Paraguay. ' +
-    'Respondé en español usando markdown profesional (negritas, viñetas y citas precisas a artículos y leyes). ' +
-    'Basa tu respuesta en el contexto normativo y en la memoria del expediente proporcionada sin inventar hechos. ' +
-    'Si existen artículos o leyes relevantes, citalos con su número oficial (ej: Ley 213/93, Ley 1183/85, Constitución de 1992).';
+    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación de la República del Paraguay.\n' +
+    'DIRECTRICES OBLIGATORIAS:\n' +
+    '1. Responde ÚNICA Y EXCLUSIVAMENTE a la consulta o norma jurídica que el usuario solicita. No agregues leyes no pertinentes ni temas fuera de la consulta.\n' +
+    '2. Estructura TODA tu respuesta en Markdown limpio y profesional (# Títulos, ## Secciones, viñetas, tablas y citas textuales en bloque cuando sea oportuno).\n' +
+    '3. Cita textualmente los artículos o disposiciones normativas pertinentes con su número y denominación oficial (ej: Ley 1462/1935, Ley 6715/2021, Código Civil Paraguayo, Constitución Nacional).\n' +
+    '4. Si la consulta pide solo los artículos o el extracto, responde directamente con dicha normativa sin rodeos ni preámbulos innecesarios.';
 
   const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: contexto || null, system });
 
@@ -153,10 +182,26 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     return { respuesta, fuente: fuenteRespuesta || 'ia_generativa' };
   }
 
-  if (contexto) {
+  if (baseLegal.length || aprendizajes.length || contexto) {
+    let salidaMarkdown = '';
+    if (baseLegal.length) {
+      salidaMarkdown = baseLegal
+        .map(
+          (b) =>
+            `# ${b.titulo}\n\n` +
+            `- **Fuente Oficial:** ${b.fuente || 'Biblioteca y Archivo Central del Congreso de la Nación (BACN)'}\n` +
+            (b.url ? `- **URL Oficial:** [${b.url}](${b.url})\n` : '') +
+            `- **Estado:** Vigente en la República del Paraguay\n\n` +
+            `### Disposiciones y Artículos:\n\n${b.contenido}\n`
+        )
+        .join('\n---\n\n');
+    } else {
+      salidaMarkdown = contexto;
+    }
+    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
     return {
-      respuesta: `El proveedor de IA no respondió (revisá la clave/API y los créditos del servicio). Contexto relevante encontrado:\n\n${contexto}`,
-      fuente: fuenteRespuesta,
+      respuesta: salidaMarkdown + (nota || ''),
+      fuente: fuenteRespuesta || 'base_local',
     };
   }
 

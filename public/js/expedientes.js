@@ -32,32 +32,153 @@ function badgeEstado(estado) {
   return `<span class="badge ${clases[estado] || 'badge-azul'}">${estado}</span>`;
 }
 
+let pestanaEstadoActual = 'todos';
+let listaExpedientesMemoria = [];
+
+function filtrarPorPestanaEstado(tab) {
+  pestanaEstadoActual = tab;
+  document.getElementById('tabEstadoTodos').classList.toggle('activo', tab === 'todos');
+  document.getElementById('tabEstadoArchivado').classList.toggle('activo', tab === 'archivado');
+  
+  if (tab === 'todos') {
+    document.getElementById('tabEstadoTodos').style.background = '#fff';
+    document.getElementById('tabEstadoTodos').style.color = '#0f172a';
+    document.getElementById('tabEstadoArchivado').style.background = 'transparent';
+    document.getElementById('tabEstadoArchivado').style.color = 'var(--texto-muted)';
+  } else {
+    document.getElementById('tabEstadoArchivado').style.background = '#fff';
+    document.getElementById('tabEstadoArchivado').style.color = '#0f172a';
+    document.getElementById('tabEstadoTodos').style.background = 'transparent';
+    document.getElementById('tabEstadoTodos').style.color = 'var(--texto-muted)';
+  }
+  cargarExpedientes();
+}
+
 async function cargarExpedientes() {
   const params = new URLSearchParams();
-  const buscar = document.getElementById('fBuscar').value;
-  const abogado = document.getElementById('fAbogado')?.value;
-  const cliente = document.getElementById('fCliente').value;
-  const estado = document.getElementById('fEstado').value;
+  const buscar = document.getElementById('fBuscar')?.value;
+  const juzgado = document.getElementById('fJuzgado')?.value;
+  
   if (buscar) params.set('buscar', buscar);
-  if (abogado) params.set('abogado', abogado);
-  if (cliente) params.set('cliente', cliente);
-  if (estado) params.set('estado', estado);
+  if (juzgado) params.set('juzgado', juzgado);
+  if (pestanaEstadoActual === 'archivado') params.set('estado', 'archivado');
 
-  const expedientes = await apiFetch(`/expedientes?${params.toString()}`);
-  document.getElementById('tablaExpedientes').innerHTML = expedientes.length
-    ? expedientes
-        .map(
-          (e) => `<tr>
-            <td>${e.caratula}</td>
-            <td>${e.cliente?.nombreCompleto || '-'}</td>
-            <td>${e.abogadoAsignado?.nombre || '-'}</td>
-            <td>${badgeEstado(e.estado)}</td>
-            <td>${formatoGs(e.saldoPendiente)}</td>
-            <td><button class="btn-secundario" onclick='verDetalleExpediente(${JSON.stringify(e)})'>Ver</button></td>
-          </tr>`
-        )
-        .join('')
-    : '<tr><td colspan="6">No hay expedientes para los filtros seleccionados.</td></tr>';
+  try {
+    const expedientes = await apiFetch(`/expedientes?${params.toString()}`);
+    listaExpedientesMemoria = expedientes;
+
+    // Actualizar contador en header de columna
+    const badgeCant = document.getElementById('cantExpedientes');
+    if (badgeCant) badgeCant.textContent = `(${expedientes.length})`;
+
+    // Población dinámica de juzgados únicos si está vacío
+    const selectJuzgado = document.getElementById('fJuzgado');
+    if (selectJuzgado && selectJuzgado.options.length <= 1) {
+      const juzgadosUnicos = [...new Set(expedientes.map((e) => e.juzgado).filter(Boolean))];
+      juzgadosUnicos.forEach((j) => {
+        const opt = document.createElement('option');
+        opt.value = j;
+        opt.textContent = j;
+        selectJuzgado.appendChild(opt);
+      });
+    }
+
+    const tabla = document.getElementById('tablaExpedientes');
+    if (!expedientes.length) {
+      tabla.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:48px 20px; color:var(--texto-muted); font-size:0.95rem;">No hay expedientes para mostrar.</td></tr>`;
+      return;
+    }
+
+    tabla.innerHTML = expedientes
+      .map(
+        (e) => `
+        <tr style="border-bottom:1px solid #1e293b; transition:background 0.2s;" onmouseover="this.style.background='#131f33'" onmouseout="this.style.background='transparent'">
+          <td style="padding:16px 18px; font-weight:700; color:#60a5fa; font-size:0.9rem;">
+            ${e.numero || 'S/N'}/${e.ano || '2026'}
+          </td>
+          <td style="padding:16px 18px;">
+            <div style="font-weight:600; color:#fff; font-size:0.92rem; margin-bottom:4px;">${e.caratula}</div>
+            <div style="font-size:0.78rem; color:var(--texto-muted); display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+              <span class="badge" style="background:#1e293b; color:#93c5fd; padding:2px 8px; border-radius:4px; font-size:0.75rem;">${e.materia || e.fuero || 'Civil y Comercial'}</span>
+              <span>🏛️ ${e.juzgado || 'Juzgado s/d'}</span>
+              <span>👤 ${e.cliente?.nombreCompleto || 'Cliente s/d'}</span>
+            </div>
+          </td>
+          <td style="padding:16px 18px;">
+            <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.82rem; color:${e.visto ? '#34d399' : '#94a3b8'};">
+              <span>${e.visto ? '👁️' : '⚪'}</span> ${e.visto ? 'Visto' : 'Sin ver'}
+            </span>
+          </td>
+          <td style="padding:16px 18px;">
+            <div style="font-size:0.85rem; color:#cbd5e1;">${e.ultimaActuacionTexto || 'Actuación en trámite'}</div>
+            <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:2px;">${formatoFecha(e.updatedAt || e.createdAt)}</div>
+          </td>
+          <td style="padding:16px 18px; text-align:right;">
+            <div style="display:inline-flex; gap:6px; align-items:center;">
+              <button class="boton btn-secundario btn-sm" onclick='verDetalleExpediente(${JSON.stringify(e)})' title="Ver detalles y documentación">
+                👁️ Ver
+              </button>
+              ${Number(e.saldoPendiente) > 0 ? `<a href="/creditos.html" class="boton btn-primario btn-sm" title="Registrar cobranza">💰 Cobro</a>` : ''}
+              <button class="boton btn-sm" style="background:#dc2626; color:#fff; border:none; padding:5px 9px; border-radius:6px; cursor:pointer;" onclick="eliminarExpediente('${e._id}', '${(e.caratula || '').replace(/'/g, "\\'")}')" title="Eliminar expediente">
+                🗑️ Eliminar
+              </button>
+            </div>
+          </td>
+        </tr>
+      `
+      )
+      .join('');
+  } catch (err) {
+    document.getElementById('tablaExpedientes').innerHTML = `<tr><td colspan="5" style="padding:20px; color:#f87171; text-align:center;">Error cargando causas: ${err.message}</td></tr>`;
+  }
+}
+
+async function eliminarExpediente(id, caratula) {
+  if (!confirm(`¿Estás seguro de que deseas eliminar permanentemente el expediente:\n"${caratula}"?\n\nEsta acción no se puede deshacer.`)) {
+    return;
+  }
+  try {
+    await apiFetch(`/expedientes/${id}`, { method: 'DELETE' });
+    alert('Expediente eliminado correctamente.');
+    cargarExpedientes();
+  } catch (err) {
+    alert('Error al eliminar expediente: ' + err.message);
+  }
+}
+
+function alternarModoFocus() {
+  const lateral = document.getElementById('barra-lateral');
+  const contenido = document.querySelector('.contenido');
+  if (lateral) lateral.classList.toggle('oculto');
+  if (contenido) contenido.classList.toggle('modo-focus-activo');
+  const btn = document.getElementById('btnModoFocus');
+  if (btn) {
+    btn.innerHTML = lateral?.classList.contains('oculto') ? '<span>🔙</span> Salir Focus' : '<span>⚡</span> Modo Focus 🚀';
+  }
+}
+
+function exportarExpedientesCSV() {
+  if (!listaExpedientesMemoria.length) return alert('No hay expedientes para exportar.');
+  const encabezados = ['Nro', 'Ano', 'Caratula', 'Juzgado', 'Materia', 'TipoProceso', 'Fase', 'Cliente', 'SaldoPendiente'];
+  const filas = listaExpedientesMemoria.map((e) => [
+    `"${e.numero || ''}"`,
+    `"${e.ano || ''}"`,
+    `"${(e.caratula || '').replace(/"/g, '""')}"`,
+    `"${(e.juzgado || '').replace(/"/g, '""')}"`,
+    `"${(e.materia || e.fuero || '').replace(/"/g, '""')}"`,
+    `"${(e.tipoProceso || '').replace(/"/g, '""')}"`,
+    `"${(e.fase || '').replace(/"/g, '""')}"`,
+    `"${(e.cliente?.nombreCompleto || '').replace(/"/g, '""')}"`,
+    e.saldoPendiente || 0,
+  ]);
+
+  const csvContenido = 'data:text/csv;charset=utf-8,' + [encabezados.join(','), ...filas.map((f) => f.join(','))].join('\n');
+  const link = document.createElement('a');
+  link.setAttribute('href', encodeURI(csvContenido));
+  link.setAttribute('download', `Expedientes_SysJuridico_${new Date().toISOString().slice(0, 10)}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 // Detalle del expediente en modal con plan de pagos y tickets 80mm.
@@ -78,8 +199,10 @@ function verDetalleExpediente(expediente) {
   document.getElementById('detDatos').innerHTML = `
     <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Cliente</div>${expediente.cliente?.nombreCompleto || '-'}</div>
     <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">C.I.</div>${expediente.cliente?.cedula || '-'}</div>
-    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Fuero</div>${expediente.fuero || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Materia / Fuero</div>${expediente.materia || expediente.fuero || '-'}</div>
     <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Juzgado</div>${expediente.juzgado || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Nro / Año</div>${expediente.numero || 'S/N'} / ${expediente.ano || '-'}</div>
+    <div class="tarjeta" style="padding:10px"><div class="etiqueta" style="text-transform:uppercase">Tipo Proceso</div>${expediente.tipoProceso || '-'}</div>
   `;
 
   const cuotas = expediente.planPagos || [];
@@ -153,7 +276,7 @@ function HTMLTicket(contenidoCuota, documentoEtiqueta = '') {
     <b>EXPEDIENTE:</b> ${e.caratula}<br>
     <b>CLIENTE:</b> ${e.cliente?.nombreCompleto || '-'}<br>
     <b>C.I.:</b> ${e.cliente?.cedula || '-'}<br>
-    <b>FUERO:</b> ${e.fuero || '-'} &nbsp; <b>JUZGADO:</b> ${e.juzgado || '-'}
+    <b>FUERO:</b> ${e.materia || e.fuero || '-'} &nbsp; <b>JUZGADO:</b> ${e.juzgado || '-'}
   </div>
   <div class="borde">${contenidoCuota || ''}</div>
   <div class="linea"></div>
@@ -181,7 +304,6 @@ function imprimirPlanCompleto() {
   abrirVentanaTicket(HTMLTicket(contenido));
 }
 
-// Abre ventana de impresión y dispara el diálogo de impresión de forma segura.
 function abrirVentanaTicket(html) {
   const ventana = window.open('', '_blank', 'width=420,height=560');
   if (!ventana) { alert('Permite las ventanas emergentes para imprimir tickets.'); return; }
@@ -192,46 +314,70 @@ function abrirVentanaTicket(html) {
 }
 
 function alternarCamposCredito() {
-  const marcado = document.getElementById('eCreditoAutomatico').checked;
-  document.getElementById('grupoCredito').classList.toggle('oculto', !marcado);
+  const chk = document.getElementById('eCreditoAutomatico');
+  const grupo = document.getElementById('grupoCredito');
+  if (chk && grupo) {
+    grupo.style.display = chk.checked ? 'grid' : 'none';
+  }
 }
 
 function abrirModalExpediente() {
-  document.getElementById('eCreditoAutomatico').checked = false;
+  const chk = document.getElementById('eCreditoAutomatico');
+  if (chk) chk.checked = true; // Activo por defecto como solicitado
   alternarCamposCredito();
-  document.getElementById('eHonorarios').value = '';
-  document.getElementById('eEntregaInicial').value = '';
-  document.getElementById('eCantidadCuotas').value = '';
+
+  if (document.getElementById('eCaratula')) document.getElementById('eCaratula').value = '';
+  if (document.getElementById('eNumero')) document.getElementById('eNumero').value = '';
+  if (document.getElementById('eAno')) document.getElementById('eAno').value = '2026';
+  if (document.getElementById('eJuzgado')) document.getElementById('eJuzgado').value = '';
+  if (document.getElementById('eCircunscripcion')) document.getElementById('eCircunscripcion').value = 'Capital';
+  if (document.getElementById('eMateria')) document.getElementById('eMateria').value = 'Civil y Comercial';
+  if (document.getElementById('eTipoProceso')) document.getElementById('eTipoProceso').value = '';
+  if (document.getElementById('eFase')) document.getElementById('eFase').value = 'Inicio';
+  if (document.getElementById('eMontoCuantia')) document.getElementById('eMontoCuantia').value = '';
+  if (document.getElementById('eCantidadCuotas')) document.getElementById('eCantidadCuotas').value = '3';
+  if (document.getElementById('eFrecuenciaCuotas')) document.getElementById('eFrecuenciaCuotas').value = 'mensual';
+  if (document.getElementById('eEntregaInicial')) document.getElementById('eEntregaInicial').value = '0';
+
   document.getElementById('modalExpediente').classList.remove('oculto');
 }
+
 function cerrarModalExpediente() {
   document.getElementById('modalExpediente').classList.add('oculto');
 }
 
 async function guardarExpediente() {
+  const caratula = document.getElementById('eCaratula')?.value.trim();
+  if (!caratula) {
+    return alert('Por favor, ingresá la Carátula del Expediente.');
+  }
+
   const datos = {
-    caratula: document.getElementById('eCaratula').value,
-    cliente: document.getElementById('eCliente').value,
-    abogadoAsignado: esAdmin ? document.getElementById('eAbogado').value : usuario.id,
-    fuero: document.getElementById('eFuero').value,
-    juzgado: document.getElementById('eJuzgado').value,
-    enlaceDocumento: document.getElementById('eEnlace').value,
-    descripcion: document.getElementById('eDescripcion').value,
-    fechaInicio: document.getElementById('eFechaInicio').value || undefined,
-    fechaFin: document.getElementById('eFechaFin').value || undefined,
-    honorariosTotales: Number(document.getElementById('eHonorarios').value) || 0,
-    entregaInicial: Number(document.getElementById('eEntregaInicial').value) || 0,
-    creditoAutomatico: document.getElementById('eCreditoAutomatico').checked,
-    cantidadCuotas: Number(document.getElementById('eCantidadCuotas').value) || 0,
-    frecuenciaCuotas: document.getElementById('eFrecuenciaCuotas').value,
+    caratula,
+    numero: document.getElementById('eNumero')?.value.trim() || '',
+    ano: Number(document.getElementById('eAno')?.value) || 2026,
+    juzgado: document.getElementById('eJuzgado')?.value.trim() || '',
+    circunscripcion: document.getElementById('eCircunscripcion')?.value.trim() || 'Capital',
+    materia: document.getElementById('eMateria')?.value || 'Civil y Comercial',
+    tipoProceso: document.getElementById('eTipoProceso')?.value.trim() || '',
+    fase: document.getElementById('eFase')?.value.trim() || 'Inicio',
+    montoCuantia: Number(document.getElementById('eMontoCuantia')?.value) || 0,
+    honorariosTotales: Number(document.getElementById('eMontoCuantia')?.value) || 0,
+    cliente: document.getElementById('eCliente')?.value || null,
+    abogadoAsignado: document.getElementById('eAbogado')?.value || usuario.id,
+    creditoAutomatico: document.getElementById('eCreditoAutomatico')?.checked !== false,
+    cantidadCuotas: Number(document.getElementById('eCantidadCuotas')?.value) || 3,
+    frecuenciaCuotas: document.getElementById('eFrecuenciaCuotas')?.value || 'mensual',
+    entregaInicial: Number(document.getElementById('eEntregaInicial')?.value) || 0,
   };
 
   try {
     await apiFetch('/expedientes', { method: 'POST', body: datos });
+    alert('Expediente y plan de crédito creados exitosamente.');
     cerrarModalExpediente();
     cargarExpedientes();
   } catch (err) {
-    alert(err.message);
+    alert('Error al guardar expediente: ' + err.message);
   }
 }
 

@@ -34,7 +34,7 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
             },
             { role: 'user', content: promptCompleto },
           ],
-          temperature: 0.3,
+          temperature: 0.2,
           max_tokens: 4096,
         },
         {
@@ -42,7 +42,8 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
             Authorization: `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
           },
-          timeout: 60000,
+          timeout: 90000,
+          proxy: false,
         }
       );
       return respuesta.data?.choices?.[0]?.message?.content || null;

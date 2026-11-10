@@ -12,71 +12,56 @@
   <div class="barra-lateral" id="barra-lateral"></div>
 
   <div class="contenido">
-    <!-- Topbar estilo expedientes.click -->
-    <div class="topbar-operativa">
+    <!-- Topbar estilo expedientes.click (Image 5) -->
+    <div class="topbar-operativa" style="align-items:center; margin-bottom:18px;">
       <div class="topbar-titulo">
-        <h2>Expedientes Judiciales</h2>
-        <div class="topbar-subtitulo">Control de causas procesales, juzgados, cuotas y documentación</div>
+        <h1 style="font-size:1.6rem; margin:0; font-weight:700;">Listado de Expedientes</h1>
       </div>
-      <div class="topbar-acciones">
-        <button class="boton btn-outline" id="btnSyncCSJ" onclick="abrirModalCSJ()" title="Vincular y sincronizar causas del Portal CSJ" style="gap: 0.4rem;">
-          <span>⚖️</span> <span id="txtEstadoCSJ">Portal CSJ</span>
+      <div class="topbar-acciones" style="display:flex; gap:10px; align-items:center;">
+        <button class="boton" id="btnModoFocus" onclick="alternarModoFocus()" style="background:#f59e0b; color:#fff; font-weight:600; border:none; padding:8px 16px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;">
+          <span>⚡</span> Modo Focus 🚀
         </button>
-        <a href="/editor.html" class="boton btn-secundario" title="Abrir Editor de Escritos Jurídicos">
-          <span>📝</span> Editor Judicial
-        </a>
-        <a href="/lexpy.html" class="boton btn-dorado" title="Redactar escrito con Techapyrã IA">
-          <span>✨</span> Techapyrã IA
-        </a>
-        <button class="btn-primario" id="btnNuevoExpediente" data-admin onclick="abrirModalExpediente()">
+        <button class="boton btn-secundario" onclick="exportarExpedientesCSV()" style="padding:8px 16px; border-radius:8px;">
+          <span>📥</span> Exportar
+        </button>
+        <button class="boton btn-primario" id="btnNuevoExpediente" onclick="abrirModalExpediente()" style="background:#2563eb; color:#fff; font-weight:600; padding:8px 18px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;">
           <span>+</span> Nuevo Expediente
         </button>
       </div>
     </div>
 
-    <!-- Filtros y Búsqueda -->
-    <div class="tarjeta grid" id="filtros">
-      <div style="grid-column: span 1">
-        <label>Buscar por carátula o caso</label>
-        <input id="fBuscar" placeholder="Ej: Perez c/ Gonzalez s/ Cobro..." oninput="cargarExpedientes()" />
+    <!-- Barra de Filtros estilo expedientes.click (Image 5) -->
+    <div class="tarjeta" style="background:#111927; border:1px solid #1e293b; border-radius:10px; padding:12px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+      <div style="flex:1; min-width:260px; position:relative;">
+        <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--texto-muted); font-size:1rem;">🔍</span>
+        <input id="fBuscar" placeholder="Buscar expediente..." oninput="cargarExpedientes()" style="width:100%; padding:10px 14px 10px 38px; background:#0f172a; border:1px solid #1e293b; border-radius:8px; color:#fff; font-size:0.9rem;" />
       </div>
-      <div id="contenedorFiltroAbogado">
-        <label>Filtrar por abogado</label>
-        <select id="fAbogado" onchange="cargarExpedientes()"><option value="">Todos los abogados</option></select>
-      </div>
-      <div>
-        <label>Filtrar por cliente</label>
-        <select id="fCliente" onchange="cargarExpedientes()"><option value="">Todos los clientes</option></select>
-      </div>
-      <div>
-        <label>Estado procesal</label>
-        <select id="fEstado" onchange="cargarExpedientes()">
-          <option value="">Todos los estados</option>
-          <option value="activo">Activo</option>
-          <option value="en_proceso">En proceso</option>
-          <option value="suspendido">Suspendido</option>
-          <option value="archivado">Archivado</option>
-          <option value="finalizado">Finalizado</option>
+      <div style="min-width:220px;">
+        <select id="fJuzgado" onchange="cargarExpedientes()" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #1e293b; border-radius:8px; color:#fff; font-size:0.9rem;">
+          <option value="">Todos los Juzgados</option>
         </select>
+      </div>
+      <div style="display:flex; background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:3px;">
+        <button id="tabEstadoTodos" class="btn-tab-estado activo" onclick="filtrarPorPestanaEstado('todos')" style="padding:6px 16px; border-radius:6px; border:none; font-size:0.85rem; font-weight:600; cursor:pointer; background:#fff; color:#0f172a;">
+          Todos
+        </button>
+        <button id="tabEstadoArchivado" class="btn-tab-estado" onclick="filtrarPorPestanaEstado('archivado')" style="padding:6px 16px; border-radius:6px; border:none; font-size:0.85rem; font-weight:600; cursor:pointer; background:transparent; color:var(--texto-muted);">
+          Archivado
+        </button>
       </div>
     </div>
 
-    <!-- Listado de expedientes -->
-    <div class="tarjeta">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
-        <h3 style="margin:0">Causas en Cartera</h3>
-        <span style="font-size:0.82rem; color:var(--texto-muted)">Sincronización activa</span>
-      </div>
+    <!-- Tabla estilo expedientes.click (Image 5) -->
+    <div class="tarjeta" style="background:#111927; border:1px solid #1e293b; border-radius:10px; padding:0; overflow:hidden;">
       <div style="overflow-x:auto">
-        <table>
-          <thead>
+        <table style="width:100%; border-collapse:collapse; text-align:left;">
+          <thead style="background:#0b1120; border-bottom:1px solid #1e293b;">
             <tr>
-              <th>Carátula / Causa</th>
-              <th>Cliente</th>
-              <th>Abogado Asignado</th>
-              <th>Estado</th>
-              <th>Saldo Pendiente</th>
-              <th style="text-align:right">Acciones</th>
+              <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">NRO/AÑO ⇅</th>
+              <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">CARÁTULA DEL EXPEDIENTE <span id="cantExpedientes">(0)</span> ⇅</th>
+              <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">VISTO ⇅</th>
+              <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">ULT. ACTUACIÓN ⇅</th>
+              <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600; text-align:right;">ACCIONES</th>
             </tr>
           </thead>
           <tbody id="tablaExpedientes"></tbody>
@@ -124,46 +109,124 @@
     </div>
   </div>
 
-  <!-- Modal Nuevo Expediente -->
+  <!-- Modal Crear Nuevo Expediente (Exacto a Image 4) -->
   <div class="modal-fondo oculto" id="modalExpediente">
-    <div class="modal" style="max-width:680px">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-        <h3 style="margin:0">Crear Nuevo Expediente</h3>
-        <button onclick="cerrarModalExpediente()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+    <div class="modal" style="max-width:620px; background:#162032; border:1px solid #22324b; border-radius:14px; padding:24px; color:#fff;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h3 style="margin:0; font-size:1.25rem; font-weight:700;">Crear Nuevo Expediente</h3>
+        <button onclick="cerrarModalExpediente()" style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
       </div>
-      <div class="grid">
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <!-- Carátula del Expediente -->
         <div>
-          <label>Cliente Titular</label>
-          <select id="eCliente"></select>
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Carátula del Expediente</label>
+          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
         </div>
-        <div id="contenedorAbogadoAsignado">
-          <label>Abogado Asignado</label>
-          <select id="eAbogado"></select>
+
+        <!-- Número y Año -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Número</label>
+            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Año</label>
+            <input id="eAno" type="number" value="2026" placeholder="2026" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
         </div>
-        <div style="grid-column:1/-1">
-          <label>Carátula Judicial del Caso</label>
-          <input id="eCaratula" placeholder="Ej: Rodriguez c/ Aseguradora s/ Indemnización..." />
-        </div>
+
+        <!-- Juzgado / Despacho -->
         <div>
-          <label>Fuero</label>
-          <input id="eFuero" placeholder="Ej: Civil y Comercial, Laboral..." />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Juzgado / Despacho</label>
+          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
         </div>
-        <div>
-          <label>Juzgado / Secretaría</label>
-          <input id="eJuzgado" placeholder="Ej: 3er Turno, Sec. 5" />
+
+        <!-- Circunscripción y Materia -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Circunscripción</label>
+            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Materia</label>
+            <select id="eMateria" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;">
+              <option value="">Seleccionar...</option>
+              <option value="Civil y Comercial" selected>Civil y Comercial</option>
+              <option value="Laboral">Laboral</option>
+              <option value="Penal">Penal</option>
+              <option value="Niñez y Adolescencia">Niñez y Adolescencia</option>
+              <option value="Contencioso Administrativo">Contencioso Administrativo</option>
+              <option value="Justicia de Paz">Justicia de Paz</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label>Monto Total de Honorarios (Gs.)</label>
-          <input id="eMonto" type="number" min="0" placeholder="Ej: 4500000" />
+
+        <!-- Tipo de Proceso y Fase -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Tipo de Proceso</label>
+            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Fase</label>
+            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
         </div>
+
+        <!-- Monto / Cuantía -->
         <div>
-          <label>Cantidad de Cuotas</label>
-          <input id="eCuotas" type="number" min="1" value="1" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Monto / Cuantía (Gs.)</label>
+          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+        </div>
+
+        <!-- Cliente Titular y Abogado Asignado -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Cliente Titular</label>
+            <select id="eCliente" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;"></select>
+          </div>
+          <div id="contenedorAbogadoAsignado">
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Abogado Asignado</label>
+            <select id="eAbogado" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;"></select>
+          </div>
+        </div>
+
+        <!-- Sección de Crédito Automático Normal -->
+        <div style="background:#0f172a; border:1px solid #22324b; border-radius:8px; padding:12px; margin-top:4px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:#60a5fa; font-weight:600;">
+            <input type="checkbox" id="eCreditoAutomatico" checked onchange="alternarCamposCredito()" style="width:16px; height:16px;" />
+            <span>Generar crédito y plan de cuotas automático</span>
+          </label>
+          
+          <div id="grupoCredito" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:10px;">
+            <div>
+              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Cuotas</label>
+              <input id="eCantidadCuotas" type="number" min="1" value="3" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;" />
+            </div>
+            <div>
+              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Frecuencia</label>
+              <select id="eFrecuenciaCuotas" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;">
+                <option value="mensual" selected>Mensual</option>
+                <option value="quincenal">Quincenal</option>
+                <option value="semanal">Semanal</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Entrega inicial</label>
+              <input id="eEntregaInicial" type="number" min="0" value="0" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;" />
+            </div>
+          </div>
         </div>
       </div>
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
-        <button class="btn-secundario" onclick="cerrarModalExpediente()">Cancelar</button>
-        <button class="btn-primario" onclick="guardarExpediente()">Guardar Expediente</button>
+
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:22px;">
+        <button class="btn-secundario" onclick="cerrarModalExpediente()" style="padding:10px 20px; border-radius:8px; background:transparent; border:1px solid #22324b; color:#cbd5e1;">
+          Cancelar
+        </button>
+        <button class="btn-primario" onclick="guardarExpediente()" style="padding:10px 24px; border-radius:8px; background:#2563eb; color:#fff; font-weight:600; border:none;">
+          Crear Expediente
+        </button>
       </div>
     </div>
   </div>

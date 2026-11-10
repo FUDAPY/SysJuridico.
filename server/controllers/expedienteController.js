@@ -1,17 +1,27 @@
 const asyncHandler = require('../utils/asyncHandler');
 const ApiError = require('../utils/ApiError');
 const Expediente = require('../models/Expediente');
+const Cliente = require('../models/Cliente');
+const Credito = require('../models/Credito');
 const DocumentoExpediente = require('../models/DocumentoExpediente');
 const { generarPlanPagos } = require('../services/creditoService');
 
-// GET /api/expedientes?abogado=&cliente=&estado=&buscar=
+// GET /api/expedientes?abogado=&cliente=&estado=&buscar=&juzgado=
 const listarExpedientes = asyncHandler(async (req, res) => {
-  const { abogado, cliente, estado, buscar } = req.query;
+  const { abogado, cliente, estado, buscar, juzgado } = req.query;
   const filtro = {};
   if (abogado) filtro.abogadoAsignado = abogado;
   if (cliente) filtro.cliente = cliente;
-  if (estado) filtro.estado = estado;
-  if (buscar) filtro.caratula = { $regex: buscar, $options: 'i' };
+  if (estado && estado !== 'todos') filtro.estado = estado;
+  if (juzgado) filtro.juzgado = { $regex: juzgado, $options: 'i' };
+  if (buscar) {
+    filtro.$or = [
+      { caratula: { $regex: buscar, $options: 'i' } },
+      { numero: { $regex: buscar, $options: 'i' } },
+      { juzgado: { $regex: buscar, $options: 'i' } },
+      { materia: { $regex: buscar, $options: 'i' } },
+    ];
+  }
 
   // El rol 'abogado' solo puede ver los expedientes que tiene asignados
   if (req.usuario.rol === 'abogado') {
@@ -42,62 +52,117 @@ const obtenerExpediente = asyncHandler(async (req, res) => {
 
 // POST /api/expedientes
 const crearExpediente = asyncHandler(async (req, res) => {
-  const {
+  let {
     caratula,
     cliente,
     abogadoAsignado,
     fuero,
     juzgado,
+    numero,
+    ano,
+    circunscripcion,
+    materia,
+    tipoProceso,
+    fase,
+    montoCuantia,
     descripcion,
     enlaceDocumento,
     fechaInicio,
     fechaFin,
-    estado,
+    estado = 'activo',
     honorariosTotales = 0,
-    creditoAutomatico = false,
+    creditoAutomatico = true,
     entregaInicial = 0,
-    cantidadCuotas = 0,
+    cantidadCuotas = 3,
     frecuenciaCuotas = 'mensual',
   } = req.body;
 
-  if (!caratula || !cliente || !abogadoAsignado) {
-    throw new ApiError(400, 'Carátula, cliente y abogado asignado son obligatorios.');
+  if (!caratula) {
+    throw new ApiError(400, 'La carátula del expediente es obligatoria.');
+  }
+
+  // Si no se asignó abogado, asignamos al usuario en sesión
+  if (!abogadoAsignado) {
+    abogadoAsignado = req.usuario?._id;
+  }
+
+  // Si no se seleccionó cliente, asignamos el primer cliente existente o creamos uno de cortesía
+  if (!cliente) {
+    let clienteExiste = await Cliente.findOne();
+    if (!clienteExiste) {
+      clienteExiste = await Cliente.create({
+        nombreCompleto: 'Cliente Titular / Causa Judicial',
+        cedula: `S/C-${Date.now().toString().slice(-6)}`,
+        telefono: '0981000000',
+        creadoPor: req.usuario?._id,
+      });
+    }
+    cliente = clienteExiste._id;
+  }
+
+  // Normalizar honorarios y cuantía
+  const montoNumerico = Number(montoCuantia) || Number(honorariosTotales) || 0;
+  if (montoNumerico > 0 && !honorariosTotales) {
+    honorariosTotales = montoNumerico;
   }
 
   const datosExpediente = {
     caratula,
     cliente,
     abogadoAsignado,
-    fuero,
-    juzgado,
-    descripcion,
-    enlaceDocumento,
-    fechaInicio,
+    fuero: fuero || materia || '',
+    juzgado: juzgado || '',
+    numero: numero || '',
+    ano: Number(ano) || new Date().getFullYear(),
+    circunscripcion: circunscripcion || 'Capital',
+    materia: materia || fuero || 'Civil y Comercial',
+    tipoProceso: tipoProceso || '',
+    fase: fase || 'Inicio',
+    montoCuantia: montoNumerico,
+    descripcion: descripcion || '',
+    enlaceDocumento: enlaceDocumento || '',
+    fechaInicio: fechaInicio || new Date(),
     fechaFin,
     estado,
     honorariosTotales,
-    creditoAutomatico,
-    entregaInicial,
-    cantidadCuotas,
-    frecuenciaCuotas,
+    creditoAutomatico: Boolean(creditoAutomatico),
+    entregaInicial: Number(entregaInicial) || 0,
+    cantidadCuotas: Number(cantidadCuotas) || 1,
+    frecuenciaCuotas: frecuenciaCuotas || 'mensual',
+    visto: false,
+    ultimaActuacionTexto: 'Causa iniciada en el sistema',
     creadoPor: req.usuario?._id,
   };
 
   if (creditoAutomatico && honorariosTotales > 0) {
     const { planPagos, saldoPendiente } = generarPlanPagos({
       honorariosTotales,
-      entregaInicial,
-      cantidadCuotas,
-      frecuenciaCuotas,
-      fechaInicio,
+      entregaInicial: datosExpediente.entregaInicial,
+      cantidadCuotas: datosExpediente.cantidadCuotas,
+      frecuenciaCuotas: datosExpediente.frecuenciaCuotas,
+      fechaInicio: datosExpediente.fechaInicio,
     });
     datosExpediente.planPagos = planPagos;
     datosExpediente.saldoPendiente = saldoPendiente;
   } else {
-    datosExpediente.saldoPendiente = Math.max(0, honorariosTotales - entregaInicial);
+    datosExpediente.saldoPendiente = Math.max(0, honorariosTotales - (Number(entregaInicial) || 0));
   }
 
   const expediente = await Expediente.create(datosExpediente);
+
+  // Crear crédito automático en la cartera de cobranzas si corresponde
+  if (creditoAutomatico && honorariosTotales > 0) {
+    const clienteDoc = await Cliente.findById(cliente);
+    await Credito.create({
+      cliente,
+      clienteNombre: clienteDoc ? clienteDoc.nombreCompleto : 'Cliente Titular',
+      expediente: expediente._id,
+      concepto: `Honorarios s/ ${caratula.slice(0, 50)}`,
+      montoTotal: honorariosTotales,
+      saldoPendiente: expediente.saldoPendiente,
+    }).catch((err) => console.warn('[Expedientes] Error al registrar crédito automático:', err.message));
+  }
+
   res.status(201).json({ success: true, data: expediente });
 });
 

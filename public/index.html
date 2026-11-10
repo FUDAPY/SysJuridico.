@@ -2,34 +2,586 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
-<title>Centro Operativo - SysJurídico</title>
+<title>Inicio - Asistente Jurídico | SysJurídico</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
+<style>
+  /* Estilos específicos de la vista Inicio (Images 2 & 3 de expedientes.click) */
+  .banner-csj-azul {
+    background: linear-gradient(90deg, #1e3a8a 0%, #1d4ed8 100%);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 16px rgba(29, 78, 216, 0.25);
+    color: #fff;
+    flex-wrap: wrap;
+  }
+  .banner-csj-azul .paso-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .banner-csj-azul h3 {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .banner-csj-azul p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #dbeafe;
+    line-height: 1.4;
+  }
+  .banner-csj-azul button {
+    background: #2563eb;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .banner-csj-azul button:hover {
+    background: #1d4ed8;
+  }
+
+  .header-busqueda-ai {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .search-container-ai {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+  }
+  .search-container-ai input {
+    width: 100%;
+    padding: 10px 14px 10px 38px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .search-container-ai .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+  }
+  .search-results-dropdown {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    right: 0;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 50;
+    max-height: 320px;
+    overflow-y: auto;
+    display: none;
+  }
+  .search-result-item {
+    padding: 10px 14px;
+    border-bottom: 1px solid #1e293b;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  .search-result-item:hover {
+    background: #1e293b;
+  }
+
+  .badges-grupo-superior {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .badge-pill-csj {
+    background: #7f1d1d;
+    color: #fecaca;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .badge-pill-ai {
+    background: #4c1d95;
+    color: #ddd6fe;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  .badge-pill-hora {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    color: #94a3b8;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .subtitulo-asistente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .subtitulo-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .subtitulo-icono {
+    width: 38px;
+    height: 38px;
+    background: #1e3a8a;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+
+  .briefing-card {
+    background: #111927;
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  .briefing-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .briefing-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .briefing-texto {
+    font-size: 0.92rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .jurisprudencia-box {
+    background: #0b1324;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 16px;
+    border-left: 4px solid #10b981;
+  }
+  .juris-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+    color: #10b981;
+    font-weight: 700;
+  }
+
+  .kpi-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .kpi-card {
+    background: #111927;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 16px;
+    color: #fff;
+    transition: transform 0.2s;
+  }
+  .kpi-card:hover {
+    transform: translateY(-2px);
+  }
+  .kpi-card.novedades { border-top: 3px solid #3b82f6; }
+  .kpi-card.caducidad { border-top: 3px solid #ef4444; background: #1c141a; }
+  .kpi-card.plazos { border-top: 3px solid #10b981; }
+  .kpi-card.impulsar { border-top: 3px solid #a855f7; background: #191428; }
+  .kpi-titulo {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #94a3b8;
+  }
+  .kpi-valor {
+    font-size: 2.1rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .kpi-sub {
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
+
+  .prioridades-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 90px;
+  }
+  @media (max-width: 860px) {
+    .prioridades-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .prioridad-card {
+    background: #111927;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+    color: #fff;
+  }
+  .prioridad-card.alerta-novedad {
+    background: #1e1914;
+    border: 1px solid #78350f;
+  }
+  .prioridad-card.alerta-inactivo {
+    background: #181615;
+    border: 1px solid #451a03;
+  }
+
+  /* Barra inferior persistente de consulta IA con @ expediente */
+  .prompt-bar-flotante {
+    position: fixed;
+    bottom: 14px;
+    left: calc(260px + 20px);
+    right: 24px;
+    background: #111927;
+    border: 1px solid #22324b;
+    border-radius: 12px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    backdrop-filter: blur(14px);
+  }
+  @media (max-width: 768px) {
+    .prompt-bar-flotante {
+      left: 14px;
+      right: 14px;
+      bottom: 8px;
+    }
+  }
+  .prompt-bar-flotante input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.92rem;
+    outline: none;
+    padding: 6px 0;
+  }
+  .prompt-bar-flotante .btn-adjuntar {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .prompt-bar-flotante .btn-enviar-ai {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.2s;
+  }
+  .prompt-bar-flotante .btn-enviar-ai:hover {
+    background: #1d4ed8;
+  }
+</style>
 </head>
 <body>
   <div class="barra-lateral" id="barra-lateral"></div>
 
-  <div class="contenido">
-    <!-- Topbar estilo expedientes.click -->
-    <div class="topbar-operativa">
-      <div class="topbar-titulo">
-        <h1 id="tituloResumen">Centro Operativo</h1>
-        <div class="topbar-subtitulo" id="fechaHoy">Gestión legal inteligente • LIN GROUP & Asociados</div>
+  <div class="contenido" style="padding-bottom: 70px;">
+    <!-- Banner de Configuración CSJ (Images 2 & 3) -->
+    <div class="banner-csj-azul" id="bannerCSJ">
+      <div style="display:flex; align-items:flex-start; gap:14px; flex:1;">
+        <div style="font-size:1.8rem; background:rgba(255,255,255,0.15); width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center;">
+          🛡️
+        </div>
+        <div>
+          <div class="paso-badge">CONFIGURACIÓN INICIAL &bull; PASO 1 DE 1</div>
+          <h3>Vinculá tus credenciales de la CSJ</h3>
+          <p>Guardaremos tu acceso de forma segura e iniciaremos la primera sincronización de tus expedientes.</p>
+        </div>
       </div>
-      <div class="topbar-acciones">
-        <a href="/lexpy.html" class="boton btn-dorado" title="Asistencia y redacción con Techapyrã IA (DeepSeek)">
-          <span>✨</span> Techapyrã IA
-        </a>
-        <button class="btn-primario" onclick="abrirModalIngreso()">
-          <span>+</span> Registrar Ingreso
+      <div>
+        <button onclick="abrirModalCSJ()">Conectar CSJ &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Barra de Búsqueda con IA y Controles Superiores (Images 2 & 3) -->
+    <div class="header-busqueda-ai">
+      <div class="search-container-ai">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="buscadorExpedientesAI" placeholder="Buscar expedientes..." oninput="manejarBusquedaAI(this.value)" />
+        <div class="search-results-dropdown" id="dropdownResultadosAI"></div>
+      </div>
+
+      <div class="badges-grupo-superior">
+        <button class="boton btn-primario" onclick="abrirModalNuevoExpediente()" style="background:#2563eb; color:#fff; font-weight:600; padding:8px 16px; border-radius:8px; border:none; display:flex; align-items:center; gap:6px;">
+          <span>+</span> Nuevo expediente
+        </button>
+        <span class="badge-pill-ai">AI</span>
+        <span class="badge-pill-csj">CSJ</span>
+        <span class="badge-pill-hora" id="txtHoraActualizada">
+          <span style="color:#10b981;">&bull;</span> Actualizado <span id="valHora">12:47 a. m.</span>
+        </span>
+        <button class="boton btn-secundario" id="btnHerramientas" onclick="alternarMenuHerramientas()" style="padding:7px 12px; border-radius:8px; font-size:0.85rem; display:flex; align-items:center; gap:6px;">
+          <span>🧊</span> Herramientas &blacktriangledown;
         </button>
       </div>
     </div>
 
-    <!-- Vista ADMIN: métricas completas Bento Grid -->
-    <div id="vistaAdmin" class="oculto">
+    <!-- Subtítulo Asistente Jurídico / Centro Operativo -->
+    <div class="subtitulo-asistente">
+      <div class="subtitulo-left">
+        <div class="subtitulo-icono">📂</div>
+        <div>
+          <h2 style="font-size:1.25rem; margin:0; font-weight:700; color:#fff;">
+            Centro operativo / <span style="color:#60a5fa;">Asistente Juridico</span>
+          </h2>
+          <div style="font-size:0.82rem; color:var(--texto-muted);" id="subtituloConexionCSJ">
+            Conectado a <span id="cantCausasActivas">0</span> causas y doctrina CSJ
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span class="badge" style="background:#1e293b; color:#cbd5e1; padding:6px 12px; border-radius:20px; font-size:0.82rem;">
+          Seguimiento (<span id="cantSeguimiento">0</span>)
+        </span>
+        <button class="boton btn-secundario btn-sm" onclick="alternarVistaFinanciera()" title="Ver métricas de recaudación y movimientos financieros">
+          📊 Centro Financiero
+        </button>
+      </div>
+    </div>
+
+    <!-- VISTA PRINCIPAL: ASISTENTE JURÍDICO (Images 2 & 3) -->
+    <div id="vistaAsistenteJuridico">
+      <!-- Briefing Matutino del Litigio -->
+      <div class="briefing-card">
+        <div class="briefing-header">
+          <span style="font-size:1.1rem;">⚖️</span>
+          <h3>Briefing Matutino del Litigio</h3>
+        </div>
+        <p class="briefing-texto" id="txtBriefingMatutino">
+          Doctor, para la jornada de hoy no se registran nuevos movimientos procesales, riesgos de caducidad ni plazos fatales en su despacho. Todo se encuentra al día.
+        </p>
+
+        <!-- Jurisprudencia de Interés -->
+        <div class="jurisprudencia-box" id="boxJurisprudencia">
+          <div class="juris-header">
+            <span>⚖️ JURISPRUDENCIA DE INTERÉS PARA TU DESPACHO</span>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <a href="https://www.csj.gov.py" target="_blank" rel="noopener noreferrer" style="color:#10b981; text-decoration:none;">Consultar fallo oficial &nearr;</a>
+              <span style="color:#64748b; font-size:0.75rem;" id="pagerJuris">&lang; 1/2 &rang;</span>
+            </div>
+          </div>
+          <div style="font-size:0.82rem; color:#94a3b8; margin-bottom:8px;">
+            Consultá criterios de la CSJ para contrastar argumentos, explorar fundamentos y orientar el análisis de tus causas.
+          </div>
+          <div style="font-weight:700; color:#fff; font-size:0.88rem; margin-bottom:6px;" id="jurisCaratula">
+            ACCIÓN DE INCONSTITUCIONALIDAD EN EL JUICIO: "S. B. DE CORONEL C/ O. D. V. C. S/ NULIDAD DE ACTO JURÍDICO Y CANCELACIÓN DE INSCRIPCIÓN". AÑO: 2001 - Nº 1750.
+          </div>
+          <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.45; margin:0 0 10px;" id="jurisCriterio">
+            <strong>RECURSO DE APELACIÓN - Facultades del Tribunal de Apelación:</strong> El hecho de que el Tribunal haya arribado por otros términos a la confirmación de la resolución no vulnera el principio de congruencia procesal cuando las pretensiones de fondo han sido respetadas.
+          </p>
+          <div style="font-size:0.8rem; color:#94a3b8; margin-bottom:10px;">
+            <strong>Cómo aprovecharlo:</strong> Revisá los fundamentos y las circunstancias del fallo para valorar su utilidad en tu expediente.
+          </div>
+          <button class="boton btn-sm" onclick="leerCriterioJurisprudencia()" style="background:#059669; color:#fff; border:none; padding:6px 14px; border-radius:6px; font-weight:600; cursor:pointer;">
+            📖 Leer el criterio
+          </button>
+        </div>
+      </div>
+
+      <!-- 4 KPI Cards (Images 2 & 3) -->
+      <div class="kpi-cards-grid">
+        <div class="kpi-card novedades">
+          <div class="kpi-titulo">
+            <span>NOVEDADES</span>
+            <span style="color:#3b82f6;">&bull;</span>
+          </div>
+          <div class="kpi-valor" id="kpiNovedades">0</div>
+          <div class="kpi-sub">actuaciones de hoy</div>
+        </div>
+
+        <div class="kpi-card caducidad">
+          <div class="kpi-titulo">
+            <span style="color:#f87171;">CADUCIDAD</span>
+            <span>⚠️</span>
+          </div>
+          <div class="kpi-valor" id="kpiCaducidad" style="color:#f87171;">0</div>
+          <div class="kpi-sub" style="color:#fca5a5;">en riesgo Art. 172</div>
+        </div>
+
+        <div class="kpi-card plazos">
+          <div class="kpi-titulo">
+            <span style="color:#34d399;">PLAZOS</span>
+            <span>⏰</span>
+          </div>
+          <div class="kpi-valor" id="kpiPlazos" style="color:#34d399;">0</div>
+          <div class="kpi-sub">plazos por vencer</div>
+        </div>
+
+        <div class="kpi-card impulsar">
+          <div class="kpi-titulo">
+            <span style="color:#c084fc;">PARA IMPULSAR</span>
+            <span>🔄</span>
+          </div>
+          <div class="kpi-valor" id="kpiImpulsar" style="color:#c084fc;">0</div>
+          <div class="kpi-sub">para impulsar</div>
+        </div>
+      </div>
+
+      <!-- Sección de Prioridades del Día (2 Columnas - Images 2 & 3) -->
+      <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; margin-bottom:12px;">
+        PRIORIDADES DEL DÍA (HAGA CLIC PARA ENFOCAR Y REDACTAR EN EL CHAT):
+      </div>
+
+      <div class="prioridades-layout">
+        <!-- Columna Izquierda -->
+        <div>
+          <!-- Tarjeta Novedad CSJ -->
+          <div class="prioridad-card alerta-novedad">
+            <div style="display:inline-block; background:#b45309; color:#fef3c7; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; margin-bottom:8px;">
+              NOVEDAD CSJ
+            </div>
+            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#fff;">Actuaciones Procesales del Día</h4>
+            <p style="margin:0 0 10px; font-size:0.82rem; color:#fde68a; line-height:1.4;">
+              Se registraron providencias notificadas para su examen y eventual deducción de recursos o incidentes.
+            </p>
+            <a href="javascript:void(0)" onclick="enfocarPromptEnAccion('Analizar Providencias Notificadas del Día')" style="color:#fbbf24; font-weight:600; font-size:0.82rem; text-decoration:none;">
+              Analizar Providencia &rarr;
+            </a>
+          </div>
+
+          <!-- Tarjeta Vencimientos y Caducidad -->
+          <div class="prioridad-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#fff;">Vencimientos y caducidad</h4>
+              <span style="font-size:0.75rem; color:#94a3b8;">Ver todo (0)</span>
+            </div>
+            <div style="font-size:0.82rem; color:#f87171; margin-bottom:6px;">
+              &bull; Sin alertas de caducidad
+            </div>
+            <div style="font-size:0.82rem; color:#34d399;">
+              &bull; Sin plazos registrados próximos
+            </div>
+          </div>
+
+          <!-- Tarjeta Inactivo + Tiempo -->
+          <div class="prioridad-card alerta-inactivo">
+            <div style="display:flex; align-items:center; gap:6px; font-size:0.8rem; font-weight:700; color:#fbbf24; margin-bottom:6px;">
+              <span>&bull;</span> INACTIVO (+ TIEMPO)
+            </div>
+            <div style="font-size:0.82rem; color:#cbd5e1; text-align:center; padding:10px 0;">
+              No hay causas con inactividad prolongada.
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div>
+          <!-- Tarjeta Últimas Actuaciones -->
+          <div class="prioridad-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#fff; display:flex; align-items:center; gap:6px;">
+                <span style="color:#3b82f6;">&bull;</span> Últimas actuaciones (<span id="cantUltActuaciones">0</span>)
+              </h4>
+              <a href="/expedientes.html" style="font-size:0.75rem; color:#60a5fa; text-decoration:none;">Ver todo</a>
+            </div>
+            <div style="text-align:center; padding:24px 0; color:#94a3b8; font-size:0.85rem;" id="zonaUltimasActuaciones">
+              No hay actuaciones nuevas de hoy.<br />
+              <a href="/expedientes.html" style="color:#60a5fa; text-decoration:none; display:inline-block; margin-top:8px; font-size:0.82rem;">
+                ↻ Ver actuaciones de los últimos 10 días &gt;
+              </a>
+            </div>
+          </div>
+
+          <!-- Tarjeta Procesos para Impulsar -->
+          <div class="prioridad-card" style="background:#191428; border:1px solid #4c1d95;">
+            <div style="display:inline-block; background:#6b21a8; color:#f3e8ff; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; margin-bottom:8px;">
+              PROCESOS PARA IMPULSAR
+            </div>
+            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#fff;">Sin presentaciones pendientes para urgir</h4>
+            <p style="margin:0 0 10px; font-size:0.82rem; color:#e9d5ff; line-height:1.4;">
+              No hay presentaciones electrónicas con 11 días completos transcurridos sin providencia judicial.
+            </p>
+            <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+              <span style="color:#c084fc;">Sin pendientes &rarr;</span>
+              <span style="color:#94a3b8; font-size:0.75rem;">Ver todo (0)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISTA SECUNDARIA: CENTRO FINANCIERO (Preservado del sistema original) -->
+    <div id="vistaCentroFinanciero" class="oculto">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="margin:0; color:#fff;">Control de Caja y Honorarios</h3>
+        <button class="boton btn-secundario btn-sm" onclick="alternarVistaFinanciera()">&larr; Volver al Asistente Jurídico</button>
+      </div>
+
       <div class="grid-metricas">
         <div class="tarjeta metrica">
           <div class="etiqueta">Expedientes Activos</div>
@@ -51,134 +603,154 @@
           <div class="valor" id="mMensual">-</div>
           <div class="subtexto">Acumulado mes en curso</div>
         </div>
-        <div class="tarjeta metrica dorada">
-          <div class="etiqueta">Ingreso Anual</div>
-          <div class="valor" id="mAnual">-</div>
-          <div class="subtexto">Ejercicio anual vigente</div>
-        </div>
       </div>
 
-      <!-- Acciones rápidas tipo expedientes.click -->
-      <div class="tarjeta">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px">
-          <h3 style="margin:0">Acciones y Accesos Directos</h3>
-          <span style="font-size:0.8rem; color:var(--texto-muted)">Flujos rápidos de trabajo</span>
+      <div class="tarjeta" style="margin-top:16px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h3 style="margin:0;">Movimientos de Caja Recientes</h3>
+          <button class="boton btn-primario btn-sm" onclick="abrirModalIngreso()">+ Registrar Cobro</button>
         </div>
-        <div class="acciones-rapidas">
-          <a class="boton btn-secundario" href="/expedientes.html"><span>📁</span> Nuevo Expediente</a>
-          <a class="boton btn-secundario" href="/clientes.html"><span>👥</span> Nuevo Cliente</a>
-          <a class="boton btn-secundario" href="/agenda.html"><span>📅</span> Agendar Plazo / Audiencia</a>
-          <a class="boton btn-secundario" href="/liquidacion.html"><span>🧮</span> Calcular Liquidación MTESS</a>
-          <a class="boton btn-secundario" href="/creditos.html"><span>💰</span> Registrar Cobranza</a>
-          <a class="boton btn-secundario" href="/lexpy.html"><span>🤖</span> Redactor Legal DeepSeek</a>
-        </div>
-      </div>
-
-      <!-- Tabla de Movimientos Financieros -->
-      <div class="tarjeta">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
-          <div>
-            <h3 style="margin:0">Registro de Movimientos Financieros</h3>
-            <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">Últimos ingresos y egresos registrados en el estudio</p>
-          </div>
-          <button class="boton btn-secundario btn-sm" onclick="abrirModalIngreso()">+ Nuevo Cobro</button>
-        </div>
-        <div style="overflow-x:auto">
+        <div style="overflow-x:auto;">
           <table>
             <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Concepto</th>
-                <th>Cliente</th>
-                <th>Expediente</th>
-                <th>Tipo</th>
-                <th>Monto</th>
-              </tr>
+              <tr><th>Fecha</th><th>Concepto</th><th>Cliente</th><th>Expediente</th><th>Tipo</th><th>Monto</th></tr>
             </thead>
             <tbody id="tablaMovimientos"></tbody>
           </table>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Vista ABOGADO: resumen del día -->
-    <div id="vistaAbogado" class="oculto">
-      <div class="grid-metricas">
-        <div class="tarjeta metrica">
-          <div class="etiqueta">Mis Expedientes Asignados</div>
-          <div class="valor" id="aExpedientes">-</div>
-          <div class="subtexto">Causas bajo tu patrocinio</div>
+  <!-- Barra Inferior Persistente de Consulta IA (Images 2 & 3) -->
+  <div class="prompt-bar-flotante">
+    <button class="btn-adjuntar" title="Adjuntar documento o expediente" onclick="alert('Selecciona un expediente usando @ en el texto o adjunta desde la causa.')">📎</button>
+    <input type="text" id="inputPromptInicio" placeholder="Escribí tu consulta. Usá @ para mencionar un expediente..." onkeydown="if(event.key==='Enter') enviarConsultaPromptInicio()" />
+    <button class="btn-enviar-ai" onclick="enviarConsultaPromptInicio()">
+      <span>Enviar</span> ✈
+    </button>
+  </div>
+
+  <!-- Modal Modal Crear Nuevo Expediente (Image 4) -->
+  <div class="modal-fondo oculto" id="modalExpediente">
+    <div class="modal" style="max-width:620px; background:#162032; border:1px solid #22324b; border-radius:14px; padding:24px; color:#fff;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h3 style="margin:0; font-size:1.25rem; font-weight:700;">Crear Nuevo Expediente</h3>
+        <button onclick="cerrarModalNuevoExpediente()" style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div>
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Carátula del Expediente</label>
+          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
         </div>
-        <div class="tarjeta metrica verde">
-          <div class="etiqueta">Ingresos Registrados Hoy</div>
-          <div class="valor" id="aIngreso">-</div>
-          <div class="subtexto">Recaudado en tu despacho</div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Número</label>
+            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Año</label>
+            <input id="eAno" type="number" value="2026" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+        </div>
+
+        <div>
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Juzgado / Despacho</label>
+          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Circunscripción</label>
+            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Materia</label>
+            <select id="eMateria" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;">
+              <option value="Civil y Comercial" selected>Civil y Comercial</option>
+              <option value="Laboral">Laboral</option>
+              <option value="Penal">Penal</option>
+              <option value="Niñez y Adolescencia">Niñez y Adolescencia</option>
+              <option value="Contencioso Administrativo">Contencioso Administrativo</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Tipo de Proceso</label>
+            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+          <div>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Fase</label>
+            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          </div>
+        </div>
+
+        <div>
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Monto / Cuantía (Gs.)</label>
+          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+        </div>
+
+        <!-- Crédito automático activo por defecto -->
+        <div style="background:#0f172a; border:1px solid #22324b; border-radius:8px; padding:12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:#60a5fa; font-weight:600;">
+            <input type="checkbox" id="eCreditoAutomatico" checked style="width:16px; height:16px;" />
+            <span>Generar crédito y plan de cuotas automático</span>
+          </label>
         </div>
       </div>
-      <div class="tarjeta">
-        <h3 style="margin-top:0">Acciones de Despacho</h3>
-        <div class="acciones-rapidas">
-          <a class="boton btn-secundario" href="/expedientes.html"><span>📁</span> Ver Mis Expedientes</a>
-          <a class="boton btn-secundario" href="/agenda.html"><span>📅</span> Mi Agenda de Audiencias</a>
-          <button class="btn-secundario" onclick="abrirModalIngreso()"><span>💵</span> Registrar Cobro</button>
-          <a class="boton btn-dorado" href="/lexpy.html"><span>🤖</span> Redactar Escrito con DeepSeek</a>
-        </div>
-      </div>
-      <div class="tarjeta">
-        <h3 style="margin-top:0">Eventos y Audiencias de Hoy</h3>
-        <div style="overflow-x:auto">
-          <table>
-            <thead>
-              <tr>
-                <th>Hora</th>
-                <th>Título / Objeto</th>
-                <th>Tipo</th>
-                <th>Juzgado / Lugar</th>
-              </tr>
-            </thead>
-            <tbody id="tablaEventosHoy"></tbody>
-          </table>
-        </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:22px;">
+        <button class="btn-secundario" onclick="cerrarModalNuevoExpediente()" style="padding:10px 20px; border-radius:8px;">Cancelar</button>
+        <button class="btn-primario" onclick="guardarExpedienteDesdeInicio()" style="padding:10px 24px; border-radius:8px; background:#2563eb; color:#fff; font-weight:600; border:none;">Crear Expediente</button>
       </div>
     </div>
   </div>
 
-  <!-- Modal registrar ingreso rápido moderno -->
+  <!-- Modal Portal CSJ -->
+  <div class="modal-fondo oculto" id="modalCSJ">
+    <div class="modal" style="max-width:520px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="margin:0;">⚖️ Portal de Gestión Jurisdiccional (CSJ)</h3>
+        <button onclick="cerrarModalCSJ()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
+      </div>
+      <p style="font-size:0.85rem; color:var(--texto-muted); margin-bottom:12px;">
+        Vincula tu cuenta del Portal CSJ (Judisoft) para sincronización automática de causas, actuaciones y plazos procesales.
+      </p>
+      <div class="grid" style="grid-template-columns:1fr; gap:12px;">
+        <div>
+          <label>Usuario Portal CSJ (Cédula o usuario)</label>
+          <input id="csjUsuario" placeholder="Ej: 4123456" />
+        </div>
+        <div>
+          <label>Contraseña CSJ (Cifrado seguro AES-256)</label>
+          <input id="csjPassword" type="password" placeholder="Tu clave judicial" />
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:18px;">
+        <button class="boton btn-primario" onclick="sincronizarCSJInicio()">⚡ Sincronizar Ahora</button>
+        <button class="boton btn-secundario" onclick="cerrarModalCSJ()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Registrar Ingreso Financiero -->
   <div class="modal-fondo oculto" id="modalIngreso">
     <div class="modal">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px">
-        <h3 style="margin:0">Registrar Ingreso de Honorarios</h3>
-        <button onclick="cerrarModalIngreso()" style="background:transparent; border:none; font-size:1.2rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+        <h3 style="margin:0;">Registrar Movimiento Financiero</h3>
+        <button onclick="cerrarModalIngreso()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
       </div>
-      <label>Concepto del cobro</label>
-      <input id="fConcepto" placeholder="Ej: Pago de cuota de honorarios, consulta, etc." />
-      
-      <label style="margin-top:12px">Monto (Gs.)</label>
-      <input id="fMonto" type="number" min="1" placeholder="Ej: 500000" />
-      
-      <label style="margin-top:12px">Método de pago</label>
-      <select id="fMetodoPago">
-        <option value="efectivo">Efectivo</option>
-        <option value="transferencia">Transferencia Bancaria (SIPAP)</option>
-        <option value="tarjeta">Tarjeta de Débito / Crédito</option>
-        <option value="cheque">Cheque</option>
-        <option value="otro">Otro</option>
-      </select>
-      
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px">
-        <div>
-          <label>ID Cliente (opcional)</label>
-          <input id="fCliente" placeholder="ID de cliente" />
-        </div>
-        <div>
-          <label>ID Expediente (opcional)</label>
-          <input id="fExpediente" placeholder="ID de expediente" />
-        </div>
-      </div>
-
-      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:20px">
+      <label>Concepto</label>
+      <input id="movConcepto" placeholder="Ej: Anticipo de honorarios" />
+      <label style="margin-top:10px;">Monto (Gs.)</label>
+      <input type="number" id="movMonto" min="0" placeholder="Ej: 1500000" />
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
         <button class="btn-secundario" onclick="cerrarModalIngreso()">Cancelar</button>
-        <button class="btn-primario" onclick="guardarIngreso()">Guardar Comprobante</button>
+        <button class="btn-primario" onclick="guardarMovimiento()">Guardar</button>
       </div>
     </div>
   </div>

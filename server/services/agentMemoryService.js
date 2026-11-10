@@ -1,6 +1,8 @@
 const MemoriaAgente = require('../models/MemoriaAgente');
 const Expediente = require('../models/Expediente');
 const Cliente = require('../models/Cliente');
+const BaseLegal = require('../models/BaseLegal');
+const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { generarRespuestaIA } = require('./aiProviderService');
 
 /**
@@ -221,39 +223,98 @@ async function destilarYGuardarMemoria({ usuarioId, expedienteId, clienteId, pre
 }
 
 /**
- * Obtiene todas las memorias del usuario en formato de nodos y aristas (Obsidian Graph).
+ * Obtiene todas las leyes, enseñanzas del RAG, causas y memorias en formato de nodos y aristas (Obsidian Graph).
  */
 async function obtenerRedDeConocimiento({ usuarioId }) {
-  const memorias = await MemoriaAgente.find({ usuario: usuarioId }).lean();
-  const expedientes = await Expediente.find({}).select('caratula numero juzgado estado cliente').lean();
-  const clientes = await Cliente.find({}).select('nombre apellido ci ruc').lean();
+  const [memorias, expedientes, clientes, baseLegal, aprendizajes] = await Promise.all([
+    MemoriaAgente.find(usuarioId ? { usuario: usuarioId } : {}).lean(),
+    Expediente.find({}).select('caratula numero ano juzgado estado cliente materia fuero').lean(),
+    Cliente.find({}).select('nombreCompleto cedula telefono').lean(),
+    BaseLegal.find({}).select('titulo url fuente contenido').lean(),
+    AprendizajeSistema.find({}).select('pregunta respuesta origen validado').lean(),
+  ]);
 
   const nodosMap = new Map();
   const enlaces = [];
 
-  // Agregar clientes
+  // 1. Agregar Base Legal (Leyes, Códigos, Decretos, Acordadas CSJ)
+  baseLegal.forEach((b) => {
+    const id = `ley_${b._id}`;
+    let tipo = 'ley';
+    const tituloLower = (b.titulo || '').toLowerCase();
+    if (tituloLower.includes('decreto')) tipo = 'decreto';
+    else if (tituloLower.includes('acordada')) tipo = 'acordada';
+    else if (tituloLower.includes('constituc')) tipo = 'constitucion';
+    else if (tituloLower.includes('código') || tituloLower.includes('codigo')) tipo = 'codigo';
+
+    nodosMap.set(id, {
+      id,
+      tipo,
+      etiqueta: b.titulo || 'Norma Paraguaya',
+      detalle: (b.contenido || '').slice(0, 240) + '...',
+      url: b.url || '',
+      fuente: b.fuente || 'BACN / CSJ',
+      peso: tipo === 'constitucion' || tipo === 'codigo' ? 8 : 6,
+    });
+  });
+
+  // 2. Agregar Enseñanzas ya guardadas en el RAG (AprendizajeSistema)
+  aprendizajes.forEach((a) => {
+    const id = `ensenanza_${a._id}`;
+    nodosMap.set(id, {
+      id,
+      tipo: 'ensenanza',
+      etiqueta: a.pregunta ? a.pregunta.slice(0, 48) : 'Enseñanza RAG',
+      detalle: a.respuesta ? a.respuesta.slice(0, 220) + '...' : '',
+      origen: a.origen || 'RAG Local',
+      validado: a.validado,
+      peso: 5,
+    });
+
+    // Enlace semántico: si la enseñanza cita alguna ley, creamos arista
+    const textoCompleto = `${a.pregunta} ${a.respuesta}`.toLowerCase();
+    baseLegal.forEach((b) => {
+      const numMatch = (b.titulo || '').match(/\b\d+\b/);
+      if (numMatch && textoCompleto.includes(numMatch[0])) {
+        enlaces.push({
+          source: id,
+          target: `ley_${b._id}`,
+          relacion: 'interpreta_norma',
+        });
+      } else if (b.titulo && textoCompleto.includes(b.titulo.toLowerCase().slice(0, 20))) {
+        enlaces.push({
+          source: id,
+          target: `ley_${b._id}`,
+          relacion: 'fundamentada_en',
+        });
+      }
+    });
+  });
+
+  // 3. Agregar Clientes
   clientes.forEach((c) => {
     const id = `cliente_${c._id}`;
     nodosMap.set(id, {
       id,
       tipo: 'cliente',
-      etiqueta: `${c.nombre} ${c.apellido || ''}`.trim(),
-      detalle: `CI/RUC: ${c.ci || c.ruc || 'S/D'}`,
-      peso: 3,
+      etiqueta: c.nombreCompleto || 'Cliente Titular',
+      detalle: `C.I.: ${c.cedula || 'S/D'} | Tel: ${c.telefono || 'S/D'}`,
+      peso: 4,
     });
   });
 
-  // Agregar expedientes
+  // 4. Agregar Expedientes / Causas Judiciales
   expedientes.forEach((e) => {
     const id = `exp_${e._id}`;
     nodosMap.set(id, {
       id,
       tipo: 'expediente',
-      etiqueta: e.caratula ? e.caratula.slice(0, 40) : `Exp. ${e.numero}`,
-      detalle: `Juzgado: ${e.juzgado || 'S/D'} | Estado: ${e.estado || 'activo'}`,
-      peso: 5,
+      etiqueta: e.caratula ? (e.caratula.length > 36 ? e.caratula.slice(0, 36) + '...' : e.caratula) : `Causa ${e.numero}`,
+      detalle: `Juzgado: ${e.juzgado || 'S/D'} | Fuero: ${e.materia || e.fuero || 'Civil'} | Estado: ${e.estado || 'activo'}`,
+      peso: 6,
     });
 
+    // Enlace con cliente titular
     if (e.cliente) {
       const clienteId = `cliente_${e.cliente}`;
       if (nodosMap.has(clienteId)) {
@@ -264,20 +325,38 @@ async function obtenerRedDeConocimiento({ usuarioId }) {
         });
       }
     }
+
+    // Enlace con normativa según materia
+    const materiaLower = (e.materia || e.fuero || '').toLowerCase();
+    baseLegal.forEach((b) => {
+      const bLower = (b.titulo || '').toLowerCase();
+      if (
+        (materiaLower.includes('laboral') && bLower.includes('laboral')) ||
+        (materiaLower.includes('civil') && bLower.includes('civil')) ||
+        (materiaLower.includes('penal') && bLower.includes('penal')) ||
+        (materiaLower.includes('administrativo') && bLower.includes('administrativo'))
+      ) {
+        enlaces.push({
+          source: id,
+          target: `ley_${b._id}`,
+          relacion: 'materia_regulada',
+        });
+      }
+    });
   });
 
-  // Agregar memorias y leyes
+  // 5. Agregar Memorias Agénticas del Usuario
   memorias.forEach((m) => {
     const id = `memoria_${m._id}`;
     nodosMap.set(id, {
       id,
-      tipo: 'concepto',
-      etiqueta: m.tema,
+      tipo: 'memoria',
+      etiqueta: m.tema || 'Memoria Legal',
       detalle: m.resumen,
       peso: 4,
     });
 
-    if (m.expediente) {
+    if (m.expediente && nodosMap.has(`exp_${m.expediente}`)) {
       enlaces.push({
         source: id,
         target: `exp_${m.expediente}`,
@@ -285,7 +364,7 @@ async function obtenerRedDeConocimiento({ usuarioId }) {
       });
     }
 
-    if (m.cliente) {
+    if (m.cliente && nodosMap.has(`cliente_${m.cliente}`)) {
       enlaces.push({
         source: id,
         target: `cliente_${m.cliente}`,
@@ -293,22 +372,17 @@ async function obtenerRedDeConocimiento({ usuarioId }) {
       });
     }
 
-    // Normas citadas
+    // Normas citadas en la memoria
     (m.entidades?.normasCitadas || []).forEach((norma) => {
-      const normaId = `norma_${norma.toLowerCase().replace(/[^a-z0-9]/g, '_')}`;
-      if (!nodosMap.has(normaId)) {
-        nodosMap.set(normaId, {
-          id: normaId,
-          tipo: 'ley',
-          etiqueta: norma,
-          detalle: 'Legislación Paraguaya citada en la causa o consulta',
-          peso: 4,
-        });
-      }
-      enlaces.push({
-        source: id,
-        target: normaId,
-        relacion: 'fundamentada_en',
+      const normaLower = norma.toLowerCase();
+      baseLegal.forEach((b) => {
+        if ((b.titulo || '').toLowerCase().includes(normaLower.slice(0, 15))) {
+          enlaces.push({
+            source: id,
+            target: `ley_${b._id}`,
+            relacion: 'cita_norma',
+          });
+        }
       });
     });
   });
@@ -319,7 +393,11 @@ async function obtenerRedDeConocimiento({ usuarioId }) {
     estadisticas: {
       totalNodos: nodosMap.size,
       totalEnlaces: enlaces.length,
-      totalMemorias: memorias.length,
+      leyes: baseLegal.length,
+      ensenanzas: aprendizajes.length,
+      expedientes: expedientes.length,
+      clientes: clientes.length,
+      memorias: memorias.length,
     },
   };
 }
