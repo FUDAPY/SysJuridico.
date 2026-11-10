@@ -99,18 +99,121 @@ document.addEventListener('DOMContentLoaded', async () => {
     hoja.focus();
   });
 
-  // Membretes rápidos judiciales paraguayos
-  document.getElementById('btnMembreteObjeto')?.addEventListener('click', () => {
-    document.execCommand('insertHTML', false, '<p style="text-align: right; margin-bottom: 1.5rem;"><strong>OBJETO: PROMOVER DEMANDA ORDINARIA.-</strong></p>');
-  });
-  document.getElementById('btnMembreteJuez')?.addEventListener('click', () => {
-    document.execCommand('insertHTML', false, '<p><strong>SEÑOR JUEZ DE PRIMERA INSTANCIA:</strong></p>');
-  });
-  document.getElementById('btnMembreteJusticia')?.addEventListener('click', () => {
-    document.execCommand('insertHTML', false, '<p style="text-align: right; margin-top: 2.5rem;"><strong>SERÁ JUSTICIA.-</strong></p>');
+  // 3. Fórmulas Judiciales Paraguayas
+  const selectFormulasCSJ = document.getElementById('selectFormulasCSJ');
+  if (selectFormulasCSJ) {
+    selectFormulasCSJ.addEventListener('change', (e) => {
+      const valor = e.target.value;
+      if (!valor) return;
+      let htmlInsertar = '';
+      switch (valor) {
+        case 'objeto':
+          htmlInsertar = '<p style="text-align: right; margin-bottom: 1.5rem;"><strong>OBJETO: PROMOVER DEMANDA ORDINARIA.-</strong></p>';
+          break;
+        case 'juez':
+          htmlInsertar = '<p><strong>SEÑOR JUEZ DE PRIMERA INSTANCIA EN LO CIVIL Y COMERCIAL:</strong></p>';
+          break;
+        case 'abogado':
+          htmlInsertar = '<p><strong>ABG. [NOMBRE DEL PROFESIONAL]</strong>, con Matrícula CSJ N° [MATRÍCULA], fijando domicilio procesal en la calle [DIRECCIÓN], respetuosamente digo:</p>';
+          break;
+        case 'derecho':
+          htmlInsertar = '<p><strong>DERECHO:</strong> Fundo la presente acción en las prescripciones de la Ley Nº 1183/85 (Código Civil) y las normas de procedimiento de la Ley Nº 1337/88 (Código Procesal Civil).</p>';
+          break;
+        case 'petitorio':
+          htmlInsertar = '<p><strong>PETITORIO:</strong></p><p>1. Tenerme por presentado y por constituido el domicilio procesal indicado.</p><p>2. Tener por promovida la presente demanda en tiempo y forma, corriendo traslado a la contraparte.</p><p>3. Oportunamente, dictar Sentencia Definitiva haciendo lugar a la pretensión con costas a la contraria.</p>';
+          break;
+        case 'justicia':
+          htmlInsertar = '<p style="text-align: right; margin-top: 2.5rem;"><strong>SERÁ JUSTICIA.-</strong></p>';
+          break;
+        case 'otrosi':
+          htmlInsertar = '<p><strong>OTROSÍ DIGO:</strong> A los efectos procesales correspondientes, manifiesto que dejo expresa reserva de articular las demás defensas y recursos que a mi derecho correspondan.-</p>';
+          break;
+      }
+      if (htmlInsertar) {
+        document.execCommand('insertHTML', false, htmlInsertar);
+        hoja.focus();
+        actualizarEstadisticasTexto();
+      }
+      selectFormulasCSJ.value = '';
+    });
+  }
+
+  // 4. Configuración de Márgenes Procesales CSJ
+  const selectMargenes = document.getElementById('selectMargenes');
+  const indicadorFoja = document.getElementById('indicadorFoja');
+  if (selectMargenes) {
+    selectMargenes.addEventListener('change', (e) => {
+      hoja.classList.remove('margen-estandar', 'margen-estrecho', 'margen-amplio');
+      const val = e.target.value;
+      if (val === 'estandar') {
+        hoja.classList.add('margen-estandar');
+        if (indicadorFoja) indicadorFoja.textContent = 'Margen Estándar (2.5cm uniforme) · ~1 foja';
+      } else if (val === 'estrecho') {
+        hoja.classList.add('margen-estrecho');
+        if (indicadorFoja) indicadorFoja.textContent = 'Margen Estrecho (1.5cm uniforme) · ~1 foja';
+      } else if (val === 'amplio') {
+        hoja.classList.add('margen-amplio');
+        if (indicadorFoja) indicadorFoja.textContent = 'Margen Amplio Forense (4.5cm Izq / 4cm Sup) · ~1 foja';
+      } else {
+        if (indicadorFoja) indicadorFoja.textContent = 'Formato A4 Judicial CSJ (4cm Izq / 3.5cm Sup / 2cm Der / 2.5cm Inf) · ~1 foja';
+      }
+    });
+  }
+
+  // Guías visuales de margen de cosido e impresión
+  const btnToggleGuias = document.getElementById('btnToggleGuias');
+  if (btnToggleGuias) {
+    btnToggleGuias.addEventListener('click', () => {
+      hoja.classList.toggle('mostrar-guias');
+      btnToggleGuias.classList.toggle('active');
+    });
+  }
+
+  // 5. Control de Zoom de la Hoja
+  const selectZoomHoja = document.getElementById('selectZoomHoja');
+  const hojaWrapper = document.getElementById('hojaWrapper');
+  const canvasScroller = document.getElementById('canvasScroller');
+
+  function aplicarZoom(val) {
+    if (!hojaWrapper) return;
+    if (val === 'auto') {
+      const anchoDisponible = (canvasScroller ? canvasScroller.clientWidth : window.innerWidth - 420) - 48;
+      const factor = Math.min(Math.max(anchoDisponible / 816, 0.65), 1.0);
+      hojaWrapper.style.transform = `scale(${factor})`;
+    } else {
+      const n = parseFloat(val) || 1;
+      hojaWrapper.style.transform = n === 1 ? 'none' : `scale(${n})`;
+    }
+  }
+
+  if (selectZoomHoja) {
+    selectZoomHoja.addEventListener('change', (e) => aplicarZoom(e.target.value));
+  }
+  window.addEventListener('resize', () => {
+    if (selectZoomHoja && selectZoomHoja.value === 'auto') {
+      aplicarZoom('auto');
+    }
   });
 
-  // 3. Copiloto IA (LexPY)
+  // 6. Contador de palabras, caracteres y fojas
+  const contadorTexto = document.getElementById('contadorTexto');
+  function actualizarEstadisticasTexto() {
+    if (!hoja || !contadorTexto) return;
+    const texto = hoja.innerText || '';
+    const caracteres = texto.length;
+    const palabras = texto.trim() ? texto.trim().split(/\s+/).length : 0;
+    const fojasAprox = Math.max(1, Math.ceil(palabras / 250));
+
+    contadorTexto.textContent = `${palabras} ${palabras === 1 ? 'palabra' : 'palabras'} · ${caracteres} caracteres`;
+    if (indicadorFoja && !selectMargenes?.value.includes('estandar')) {
+      indicadorFoja.textContent = `Formato A4 Judicial CSJ (4cm Izq / 3.5cm Sup / 2cm Der) · ~${fojasAprox} ${fojasAprox === 1 ? 'foja' : 'fojas'}`;
+    }
+  }
+
+  hoja.addEventListener('input', actualizarEstadisticasTexto);
+  setTimeout(actualizarEstadisticasTexto, 100);
+
+  // 7. Copiloto IA (LexPY)
   if (btnToggleCopilot) {
     btnToggleCopilot.addEventListener('click', () => {
       copilotPane.classList.toggle('collapsed');

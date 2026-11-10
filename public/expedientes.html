@@ -190,9 +190,23 @@
 
         <!-- Cliente Titular y Abogado Asignado -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-          <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Cliente Titular</label>
-            <select id="eCliente" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;"></select>
+          <div style="position:relative;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <label style="font-size:0.85rem; color:#cbd5e1;">Cliente Titular (CRM)</label>
+              <span id="badgeClienteSeleccionado" style="font-size:0.75rem; color:#10b981; font-weight:600; display:none;">✓ Seleccionado</span>
+            </div>
+            <div style="position:relative; display:flex; align-items:center;">
+              <input 
+                id="busquedaClienteExpediente" 
+                type="text" 
+                autocomplete="off"
+                placeholder="Escribí nombre o C.I. del cliente..." 
+                style="width:100%; padding:10px 36px 10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" 
+              />
+              <button type="button" id="btnLimpiarCliente" title="Limpiar cliente" style="position:absolute; right:10px; background:transparent; border:none; color:#94a3b8; font-size:1rem; cursor:pointer; display:none;">✕</button>
+            </div>
+            <input type="hidden" id="eCliente" />
+            <div id="dropdownSugerenciasClientes" style="display:none; position:absolute; top:100%; left:0; right:0; max-height:220px; overflow-y:auto; background:#1e293b; border:1px solid #334155; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.5); z-index:100; margin-top:4px;"></div>
           </div>
           <div id="contenedorAbogadoAsignado">
             <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Abogado Asignado</label>

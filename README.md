@@ -123,6 +123,7 @@ SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas 
 
 ### 2. Gestión de Expedientes Judiciales & Honorarios
 - **Ficha Integral de Causa:** Carátula, número, año, juzgado/despacho, circunscripción judicial, materia, tipo de proceso y fase procesal.
+- **Autocompletado en Vivo de Cliente Titular:** Búsqueda predictiva conectada en tiempo real al CRM de Clientes por nombre, cédula de identidad y teléfono con autoselección y reseteo ágil.
 - **Banner de Filtro Activo:** Al ingresar por un KPI del dashboard, muestra una alerta explicativa con la cantidad de causas encontradas y un botón rápido `✕ Ver todos los expedientes`.
 - **Generación Automática de Créditos:** Vinculación directa con el plan de pagos y cuotas de honorarios al crear la causa.
 - **Exportación Forense:** Exportación a formato CSV para auditorías del despacho.
@@ -141,10 +142,19 @@ SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas 
 - **Cálculo Exacto:** Preaviso, indemnización legal tarifada, aguinaldo proporcional, vacaciones causadas/fraccionadas y retención obrera IPS (9%).
 - **Exportación A4:** Documento imprimible listo para homologación en el MTESS.
 
-### 6. Editor Judicial Integrado
-- **Lienzo A4 Forense:** Procesador de texto judicial con sangrías, numeración de fojas y márgenes reglamentarios de tribunales.
+### 6. Editor Judicial Integrado con Márgenes Oficiales CSJ
+- **Lienzo A4 Forense Centrado:** Procesador de texto judicial optimizado para redacción forense en hojas A4 con centrado automático en el escritorio de trabajo.
+- **Márgenes Procesales Configurables:**
+  - *Margen Judicial CSJ (Predeterminado):* Izquierdo 4.0 cm (para cosido de expediente), Superior 3.5 cm (para sellos judiciales y cargos), Derecho 2.0 cm, Inferior 2.5 cm.
+  - *Margen Estándar (2.5 cm uniforme).*
+  - *Margen Estrecho (1.5 cm uniforme).*
+  - *Margen Amplio Forense (4.5 cm Izquierdo).*
+- **Guías Visuales de Margen:** Visualización de líneas delimitadoras punteadas en la hoja para verificación previa a impresión.
+- **Fórmulas Judiciales CSJ:** Menú desplegable para inserción rápida de fórmulas clásicas (OBJETO, SEÑOR JUEZ, COMPARECENCIA, DERECHO, PETITORIO, SERÁ JUSTICIA, OTROSÍ DIGO).
+- **Controles de Zoom y Ajuste:** Niveles de escala (75% a 100%) y ajuste automático al ancho disponible sin desbordamientos horizontales.
+- **Métricas de Texto en Tiempo Real:** Contador en vivo de palabras, caracteres y fojas judiciales estimadas (~250 palabras por carilla).
 - **Inserción Asistida con Techapyrã:** Generación de cláusulas o fundamentos en la posición del cursor.
-- **Exportación:** Descarga en formatos editables `.docx`, `.pdf` e impresión directa.
+- **Exportación:** Descarga en formatos editables `.docx`, `.pdf` e impresión directa con ocultamiento de barras de herramientas.
 
 ---
 
@@ -201,6 +211,8 @@ Disponible en `/grafo.html`, este módulo transforma toda la base de datos jurí
   - Las instituciones públicas se conectan tanto a su fuero orgánico como a sus competencias procesales.
   - Cada expediente judicial se enlaza automáticamente con su cliente y con el código o fuero que rige su materia.
 - **Filtros por Chip:** Filtrado en tiempo real por Fueros, Leyes/Códigos, Instituciones, Enseñanzas RAG, Expedientes o Clientes.
+- **Visor Interactivo y Desglose de Artículos:** Al tocar cualquier norma legal o institución pública, se despliega el panel inspector lateral de 520 px con desglose artículo por artículo, buscador interno en vivo y botón individual de copiado.
+- **Modo Lectura Forense en Pantalla Completa:** Modal de alta legibilidad para lectura continua y búsqueda profunda dentro del articulado completo de la ley seleccionada.
 - **Compatibilidad con Obsidian:** Compatible con clientes de notas tipo Obsidian (mediante endpoints OpenAI-compatible en `/api/v1`).
 
 ---

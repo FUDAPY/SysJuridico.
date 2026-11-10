@@ -13,16 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const busquedaInput = document.getElementById('busquedaGrafo');
   const drawer = document.getElementById('grafoDrawer');
   const drawerBadge = document.getElementById('drawerBadge');
+  const drawerCantArticulos = document.getElementById('drawerCantArticulos');
   const drawerTitulo = document.getElementById('drawerTitulo');
-  const drawerDetalle = document.getElementById('drawerDetalle');
+  const drawerMeta = document.getElementById('drawerMeta');
   const drawerConexiones = document.getElementById('drawerConexiones');
   const btnCloseDrawer = document.getElementById('btnCloseDrawer');
   const btnAccionNodo = document.getElementById('btnAccionNodo');
+  const filtroArticulosDrawer = document.getElementById('filtroArticulosDrawer');
+  const listaArticulosDrawer = document.getElementById('listaArticulosDrawer');
+  const btnModoLecturaModal = document.getElementById('btnModoLecturaModal');
+  const btnCopiarTodoDrawer = document.getElementById('btnCopiarTodoDrawer');
 
-  // Modal Obsidian
-  const btnGuiaObsidian = document.getElementById('btnGuiaObsidian');
-  const modalObsidian = document.getElementById('modalObsidian');
-  const btnCerrarModalObsidian = document.getElementById('btnCerrarModalObsidian');
+  // Modal Articulado Completo
+  const modalArticuladoCompleto = document.getElementById('modalArticuladoCompleto');
+  const modalArticuladoTitulo = document.getElementById('modalArticuladoTitulo');
+  const modalArticuladoBadge = document.getElementById('modalArticuladoBadge');
+  const modalArticuladoContador = document.getElementById('modalArticuladoContador');
+  const busquedaArticuloModal = document.getElementById('busquedaArticuloModal');
+  const contenedorArticulosModal = document.getElementById('contenedorArticulosModal');
+  const btnCerrarModalArticulado = document.getElementById('btnCerrarModalArticulado');
+  const btnCopiarTodoModal = document.getElementById('btnCopiarTodoModal');
   const btnEntendidoObsidian = document.getElementById('btnEntendidoObsidian');
   const endpointUrlInput = document.getElementById('endpointUrl');
   const btnCopiarEndpoint = document.getElementById('btnCopiarEndpoint');
@@ -459,22 +469,187 @@ document.addEventListener('DOMContentLoaded', () => {
     aplicarFiltros();
   });
 
+  // Estado del Inspector de Artículos
+  let articulosActuales = [];
+  let nodoInspectorActivo = null;
+
+  function parsearArticulosDeTexto(texto, titulo) {
+    if (!texto || typeof texto !== 'string') return [];
+    const limpio = texto.trim();
+
+    // Regex para detectar inicios de artículos, disposiciones, libros o títulos
+    const regexSeparador = /(?:^|\n)(?=(?:Artículo|Art\.|Disposición|LIBRO|TÍTULO)\s+[0-9A-Za-zº°\/-]+)/gi;
+    const bloques = limpio.split(regexSeparador).map((b) => b.trim()).filter(Boolean);
+
+    if (bloques.length <= 1 && !limpio.match(/^(?:Artículo|Art\.|Disposición)/i)) {
+      // Intentar dividir por numeración estándar (1. , 2. , etc.)
+      const regexNumerados = /(?:^|\n)(?=[0-9]+\.\s+)/g;
+      const partesNumeradas = limpio.split(regexNumerados).map((p) => p.trim()).filter(Boolean);
+      if (partesNumeradas.length > 1) {
+        return partesNumeradas.map((parte, idx) => {
+          const lineas = parte.split('\n');
+          const primera = lineas[0].trim();
+          return {
+            id: `punto_${idx + 1}`,
+            numero: `Apartado ${idx + 1}`,
+            titulo: primera.slice(0, 60),
+            cuerpo: parte,
+          };
+        });
+      }
+
+      return [
+        {
+          id: 'art_1',
+          numero: 'Contenido General',
+          titulo: titulo || 'Contenido',
+          cuerpo: limpio,
+        },
+      ];
+    }
+
+    return bloques.map((bloque, idx) => {
+      const lineas = bloque.split('\n');
+      const primera = lineas[0].trim();
+      const matchNum = primera.match(/^((?:Artículo|Art\.|Disposición|LIBRO|TÍTULO)\s+[0-9A-Za-zº°\/-]+)(?:\s*[-–—:]\s*(.*))?$/i);
+
+      let numero = `Art. ${idx + 1}`;
+      let tituloArt = primera;
+      if (matchNum) {
+        numero = matchNum[1].trim();
+        tituloArt = (matchNum[2] || '').trim() || numero;
+      }
+
+      return {
+        id: `art_${idx + 1}`,
+        numero: numero,
+        titulo: tituloArt,
+        cuerpo: bloque,
+      };
+    });
+  }
+
+  function renderizarArticulosDrawer(filtro = '') {
+    if (!listaArticulosDrawer) return;
+    const term = (filtro || '').toLowerCase().trim();
+    const filtrados = articulosActuales.filter((a) =>
+      !term ||
+      a.numero.toLowerCase().includes(term) ||
+      a.titulo.toLowerCase().includes(term) ||
+      a.cuerpo.toLowerCase().includes(term)
+    );
+
+    if (drawerCantArticulos) {
+      drawerCantArticulos.textContent = `${filtrados.length} ${filtrados.length === 1 ? 'Artículo' : 'Artículos'}`;
+    }
+
+    if (!filtrados.length) {
+      listaArticulosDrawer.innerHTML = `
+        <div style="text-align:center; padding:1.5rem 0.5rem; color:#94a3b8; font-size:0.82rem;">
+          No se encontraron artículos con "<strong>${escapeHtml(filtro)}</strong>".
+        </div>`;
+      return;
+    }
+
+    listaArticulosDrawer.innerHTML = filtrados
+      .map((art) => `
+        <div class="articulo-card">
+          <div class="articulo-card-header">
+            <span class="articulo-card-num">${escapeHtml(art.numero)}</span>
+            <button class="btn-copiar-art" onclick="window.copiarTextoArticulo('${art.id}', this)" title="Copiar artículo">
+              <span>📋</span> Copiar
+            </button>
+          </div>
+          <div class="articulo-card-body">${escapeHtml(art.cuerpo)}</div>
+        </div>
+      `)
+      .join('');
+  }
+
+  function renderizarArticulosModal(filtro = '') {
+    if (!contenedorArticulosModal) return;
+    const term = (filtro || '').toLowerCase().trim();
+    const filtrados = articulosActuales.filter((a) =>
+      !term ||
+      a.numero.toLowerCase().includes(term) ||
+      a.titulo.toLowerCase().includes(term) ||
+      a.cuerpo.toLowerCase().includes(term)
+    );
+
+    if (modalArticuladoContador) {
+      modalArticuladoContador.textContent = `${filtrados.length} de ${articulosActuales.length} artículos`;
+    }
+
+    if (!filtrados.length) {
+      contenedorArticulosModal.innerHTML = `
+        <div style="text-align:center; padding:3rem 1rem; color:var(--texto-muted); font-size:0.95rem;">
+          No se encontraron artículos con "<strong>${escapeHtml(filtro)}</strong>".
+        </div>`;
+      return;
+    }
+
+    contenedorArticulosModal.innerHTML = filtrados
+      .map((art) => `
+        <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:10px; padding:14px 18px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:6px;">
+            <div style="font-weight:700; color:var(--azul-accent); font-size:0.95rem;">${escapeHtml(art.numero)}</div>
+            <button class="boton btn-secundario btn-sm" onclick="window.copiarTextoArticulo('${art.id}', this)" style="padding:2px 8px; font-size:0.75rem; gap:4px;">
+              <span>📋</span> Copiar
+            </button>
+          </div>
+          <div style="font-size:0.88rem; line-height:1.65; color:var(--texto-principal); white-space:pre-wrap;">${escapeHtml(art.cuerpo)}</div>
+        </div>
+      `)
+      .join('');
+  }
+
+  window.copiarTextoArticulo = function(artId, btnEl) {
+    const art = articulosActuales.find((a) => a.id === artId);
+    if (!art) return;
+    navigator.clipboard.writeText(art.cuerpo).then(() => {
+      const orig = btnEl.innerHTML;
+      btnEl.innerHTML = '<span>✓</span> Copiado';
+      setTimeout(() => { btnEl.innerHTML = orig; }, 1800);
+    });
+  };
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
   // Inspector Lateral
   function abrirInspectorNodo(n) {
     if (!drawer) return;
+    nodoInspectorActivo = n;
     drawer.classList.add('active');
+
     if (drawerBadge) {
       drawerBadge.textContent = n.tipo;
       drawerBadge.style.background = COLORES[n.tipo] || COLORES.default;
     }
     if (drawerTitulo) drawerTitulo.textContent = n.etiqueta;
-    if (drawerDetalle) {
-      drawerDetalle.innerHTML = `
-        <div style="margin-bottom:8px;">${n.detalle || 'Sin descripción detallada.'}</div>
-        ${n.url ? `<div style="margin-top:6px;"><a href="${n.url}" target="_blank" rel="noopener noreferrer" style="color:#60a5fa; text-decoration:none;">🔗 Ver Documento Oficial en Línea &rarr;</a></div>` : ''}
-        ${n.fuente ? `<div style="margin-top:4px; font-size:0.78rem; color:#94a3b8;"><strong>Fuente:</strong> ${n.fuente}</div>` : ''}
+
+    if (drawerMeta) {
+      drawerMeta.innerHTML = `
+        ${n.fuente ? `<span><strong>Fuente:</strong> ${escapeHtml(n.fuente)}</span>` : ''}
+        ${n.fuero ? `<span style="margin-left:8px;"><strong>Fuero:</strong> ${escapeHtml(n.fuero)}</span>` : ''}
+        ${n.url ? `<div style="margin-top:4px;"><a href="${n.url}" target="_blank" rel="noopener noreferrer" style="color:#60a5fa; text-decoration:none;">🔗 Ver Documento Oficial en Línea &rarr;</a></div>` : ''}
       `;
     }
+
+    // Parsear artículos completos de contenido o detalle
+    const textoCompleto = n.contenido || n.detalle || '';
+    articulosActuales = parsearArticulosDeTexto(textoCompleto, n.etiqueta);
+
+    // Resetear filtro del drawer y renderizar
+    if (filtroArticulosDrawer) filtroArticulosDrawer.value = '';
+    renderizarArticulosDrawer('');
 
     // Conexiones del nodo
     if (drawerConexiones) {
@@ -487,7 +662,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .map(
               (c) => `
               <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.8rem; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="enfocarNodo('${c.id}')">
-                <span>${c.etiqueta.slice(0, 32)}</span>
+                <span>${escapeHtml(c.etiqueta.slice(0, 32))}</span>
                 <span class="badge" style="background:${COLORES[c.tipo] || '#64748b'}; font-size:0.7rem; padding:1px 6px;">${c.tipo}</span>
               </div>
             `
@@ -498,10 +673,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnAccionNodo) {
       btnAccionNodo.onclick = () => {
-        window.location.href = `/lexpy.html?consulta=${encodeURIComponent('Analizar: ' + n.etiqueta)}`;
+        window.location.href = `/lexpy.html?consulta=${encodeURIComponent('Analizar norma y artículos de: ' + n.etiqueta)}`;
       };
     }
   }
+
+  // Filtrado de artículos en vivo dentro del drawer
+  filtroArticulosDrawer?.addEventListener('input', (e) => {
+    renderizarArticulosDrawer(e.target.value);
+  });
+
+  // Copiar todo el texto del drawer
+  btnCopiarTodoDrawer?.addEventListener('click', () => {
+    if (!nodoInspectorActivo) return;
+    const txt = nodoInspectorActivo.contenido || nodoInspectorActivo.detalle || '';
+    navigator.clipboard.writeText(txt).then(() => {
+      alert('Texto legal completo copiado al portapapeles.');
+    });
+  });
+
+  // Modal Articulado Completo
+  function abrirModalArticulado() {
+    if (!nodoInspectorActivo || !modalArticuladoCompleto) return;
+    modalArticuladoCompleto.classList.remove('oculto');
+    if (modalArticuladoTitulo) modalArticuladoTitulo.textContent = nodoInspectorActivo.etiqueta;
+    if (modalArticuladoBadge) {
+      modalArticuladoBadge.textContent = nodoInspectorActivo.tipo;
+      modalArticuladoBadge.style.background = COLORES[nodoInspectorActivo.tipo] || COLORES.default;
+    }
+    if (busquedaArticuloModal) busquedaArticuloModal.value = '';
+    renderizarArticulosModal('');
+  }
+
+  btnModoLecturaModal?.addEventListener('click', abrirModalArticulado);
+  btnCerrarModalArticulado?.addEventListener('click', () => {
+    modalArticuladoCompleto?.classList.add('oculto');
+  });
+
+  busquedaArticuloModal?.addEventListener('input', (e) => {
+    renderizarArticulosModal(e.target.value);
+  });
+
+  btnCopiarTodoModal?.addEventListener('click', () => {
+    if (!nodoInspectorActivo) return;
+    const txt = nodoInspectorActivo.contenido || nodoInspectorActivo.detalle || '';
+    navigator.clipboard.writeText(txt).then(() => {
+      alert('Texto legal completo copiado al portapapeles.');
+    });
+  });
 
   window.enfocarNodo = function (nodoId) {
     const n = nodos.find((x) => x.id === nodoId);

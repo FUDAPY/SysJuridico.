@@ -5,6 +5,7 @@ const esAdmin = usuario.rol === 'admin';
 let pestanaEstadoActual = 'todos';
 let listaExpedientesMemoria = [];
 let filtroEspecialURL = null;
+let clientesMemoria = [];
 
 // Inicialización segura de elementos condicionales de admin
 const contFiltro = document.getElementById('contenedorFiltroAbogado');
@@ -22,11 +23,15 @@ if (!esAdmin) {
 async function cargarSelects() {
   try {
     const clientes = await apiFetch('/clientes').catch(() => []);
-    const opcionesClientes = (clientes || []).map((c) => `<option value="${c._id}">${c.nombreCompleto} (${c.cedula})</option>`).join('');
-    const eCliente = document.getElementById('eCliente');
-    if (eCliente) eCliente.innerHTML = opcionesClientes;
+    clientesMemoria = clientes || [];
+
+    // Filtro de tabla de expedientes
+    const opcionesClientes = clientesMemoria.map((c) => `<option value="${c._id}">${c.nombreCompleto} (${c.cedula})</option>`).join('');
     const fCliente = document.getElementById('fCliente');
     if (fCliente) fCliente.innerHTML = '<option value="">Todos</option>' + opcionesClientes;
+
+    // Configurar autocompletado en modal
+    configurarAutocompletadoClientes();
 
     if (esAdmin) {
       const usuarios = await apiFetch('/usuarios').catch(() => []);
@@ -40,6 +45,124 @@ async function cargarSelects() {
   } catch (err) {
     console.warn('[Expedientes] Error al cargar selects:', err);
   }
+}
+
+function configurarAutocompletadoClientes() {
+  const inputBusqueda = document.getElementById('busquedaClienteExpediente');
+  const dropdown = document.getElementById('dropdownSugerenciasClientes');
+  const btnLimpiar = document.getElementById('btnLimpiarCliente');
+  if (!inputBusqueda || !dropdown) return;
+
+  function renderizarSugerencias(filtro = '') {
+    const term = filtro.toLowerCase().trim();
+    const filtrados = term
+      ? clientesMemoria.filter((c) => {
+          const nombre = (c.nombreCompleto || '').toLowerCase();
+          const ci = (c.cedula || '').toLowerCase();
+          const tel = (c.telefono || '').toLowerCase();
+          return nombre.includes(term) || ci.includes(term) || tel.includes(term);
+        })
+      : clientesMemoria.slice(0, 10);
+
+    if (!filtrados.length) {
+      dropdown.innerHTML = `
+        <div style="padding:12px 14px; font-size:0.85rem; color:#94a3b8; text-align:center;">
+          No se encontró ningún cliente en CRM coincidente con "<em>${filtro}</em>".
+        </div>
+      `;
+      dropdown.style.display = 'block';
+      return;
+    }
+
+    dropdown.innerHTML = filtrados
+      .map(
+        (c) => `
+        <div 
+          class="item-sugerencia-cliente" 
+          style="padding:10px 14px; border-bottom:1px solid #334155; cursor:pointer; display:flex; justify-content:space-between; align-items:center; transition:background 0.15s;"
+          onmouseover="this.style.background='#334155'"
+          onmouseout="this.style.background='transparent'"
+          onclick="seleccionarClienteCRM('${c._id}')"
+        >
+          <div>
+            <div style="font-weight:600; color:#fff; font-size:0.88rem;">${c.nombreCompleto}</div>
+            <div style="font-size:0.75rem; color:#94a3b8; margin-top:2px;">
+              C.I.: <span style="color:#cbd5e1;">${c.cedula || 'S/D'}</span>
+              ${c.telefono ? `<span style="margin-left:8px;">Tel: ${c.telefono}</span>` : ''}
+            </div>
+          </div>
+          <span style="font-size:0.75rem; color:#60a5fa; font-weight:600;">Elegir &rarr;</span>
+        </div>
+      `
+      )
+      .join('');
+    dropdown.style.display = 'block';
+  }
+
+  inputBusqueda.addEventListener('input', (e) => {
+    const val = e.target.value;
+    if (btnLimpiar) btnLimpiar.style.display = val ? 'block' : 'none';
+    const hiddenId = document.getElementById('eCliente');
+    if (hiddenId) hiddenId.value = ''; // Reset ID hasta que seleccione uno de la lista
+    const badge = document.getElementById('badgeClienteSeleccionado');
+    if (badge) badge.style.display = 'none';
+    renderizarSugerencias(val);
+  });
+
+  inputBusqueda.addEventListener('focus', () => {
+    renderizarSugerencias(inputBusqueda.value);
+  });
+
+  btnLimpiar?.addEventListener('click', () => {
+    limpiarSeleccionCliente();
+  });
+
+  // Cerrar al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!inputBusqueda.contains(e.target) && !dropdown.contains(e.target) && !btnLimpiar?.contains(e.target)) {
+      dropdown.style.display = 'none';
+    }
+  });
+}
+
+window.seleccionarClienteCRM = function(clienteId) {
+  const cliente = clientesMemoria.find((c) => String(c._id) === String(clienteId));
+  if (!cliente) return;
+
+  const hidden = document.getElementById('eCliente');
+  if (hidden) hidden.value = cliente._id;
+
+  const input = document.getElementById('busquedaClienteExpediente');
+  if (input) input.value = `${cliente.nombreCompleto} (C.I.: ${cliente.cedula || 'S/D'})`;
+
+  const badge = document.getElementById('badgeClienteSeleccionado');
+  if (badge) badge.style.display = 'inline-block';
+
+  const btnLimpiar = document.getElementById('btnLimpiarCliente');
+  if (btnLimpiar) btnLimpiar.style.display = 'block';
+
+  const dropdown = document.getElementById('dropdownSugerenciasClientes');
+  if (dropdown) dropdown.style.display = 'none';
+};
+
+function limpiarSeleccionCliente() {
+  const hidden = document.getElementById('eCliente');
+  if (hidden) hidden.value = '';
+
+  const input = document.getElementById('busquedaClienteExpediente');
+  if (input) {
+    input.value = '';
+    input.focus();
+  }
+
+  const badge = document.getElementById('badgeClienteSeleccionado');
+  if (badge) badge.style.display = 'none';
+
+  const btnLimpiar = document.getElementById('btnLimpiarCliente');
+  if (btnLimpiar) btnLimpiar.style.display = 'none';
+
+  const dropdown = document.getElementById('dropdownSugerenciasClientes');
+  if (dropdown) dropdown.style.display = 'none';
 }
 
 function badgeEstado(estado) {
@@ -378,6 +501,7 @@ function abrirModalExpediente() {
   const chk = document.getElementById('eCreditoAutomatico');
   if (chk) chk.checked = true; // Activo por defecto como solicitado
   alternarCamposCredito();
+  limpiarSeleccionCliente();
 
   if (document.getElementById('eCaratula')) document.getElementById('eCaratula').value = '';
   if (document.getElementById('eNumero')) document.getElementById('eNumero').value = '';

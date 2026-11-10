@@ -226,7 +226,7 @@ async function destilarYGuardarMemoria({ usuarioId, expedienteId, clienteId, pre
 /**
  * Obtiene todas las leyes, enseñanzas del RAG, causas y memorias en formato de nodos y aristas (Obsidian Graph).
  */
-async function obtenerRedDeConocimiento({ usuarioId }) {
+async function obtenerRedDeConocimiento({ usuarioId } = {}) {
   const [memorias, expedientes, clientes, baseLegalRaw, aprendizajes] = await Promise.all([
     MemoriaAgente.find(usuarioId ? { usuario: usuarioId } : {}).lean(),
     Expediente.find({}).select('caratula numero ano juzgado estado cliente materia fuero').lean(),
@@ -347,11 +347,14 @@ async function obtenerRedDeConocimiento({ usuarioId }) {
       id,
       tipo,
       etiqueta: b.titulo || 'Norma Paraguaya',
-      detalle: (b.contenido || '').slice(0, 260) + '...',
+      detalle: b.contenido || '',
+      contenido: b.contenido || '',
       url: b.url || '',
       fuente: b.fuente || 'BACN / CSJ',
       fuero: b.fuero || 'General',
       estadoNormativo: b.estadoNormativo || 'Vigente',
+      numeroLey: b.numeroLey || '',
+      tags: b.tags || [],
       peso: tipo === 'constitucion' ? 10 : tipo === 'codigo' ? 9 : tipo === 'institucion' ? 8 : 6,
     });
 
