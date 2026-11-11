@@ -555,7 +555,204 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
   });
 
   // =========================================================================
-  // 6. MEMORIAS AGÉNTICAS DEL USUARIO
+  // 6. JURISPRUDENCIA CSJ POR FUERO (72.375 FALLOS CATALOGADOS)
+  // =========================================================================
+  const HUBS_JURISPRUDENCIA = [
+    {
+      id: 'juris_constitucional',
+      fuero: 'Constitucional',
+      etiqueta: '⚖️ Jurisprudencia Constitucional (26.421 fallos)',
+      detalle: 'Catálogo de 26.421 resoluciones de la Sala Constitucional de la CSJ: Acciones y Excepciones de Inconstitucionalidad, Hábeas Corpus y Amparos.',
+      tipo: 'jurisprudencia',
+      totalFallos: 26421,
+      sala: 'Sala Constitucional CSJ',
+      peso: 12,
+      targetHub: 'hub_administrativo',
+    },
+    {
+      id: 'juris_penal',
+      fuero: 'Penal',
+      etiqueta: '⚖️ Jurisprudencia Penal (17.153 fallos)',
+      detalle: 'Catálogo de 17.153 resoluciones de la Sala Penal de la CSJ: Casación penal, revisión de condenas, medidas cautelares, prescripción y garantías procesales.',
+      tipo: 'jurisprudencia',
+      totalFallos: 17153,
+      sala: 'Sala Penal CSJ',
+      peso: 12,
+      targetHub: 'hub_penal',
+    },
+    {
+      id: 'juris_civil',
+      fuero: 'Civil y Comercial',
+      etiqueta: '⚖️ Jurisprudencia Civil y Comercial (13.103 fallos)',
+      detalle: 'Catálogo de 13.103 resoluciones de la Sala Civil y Comercial de la CSJ: Contratos, quiebras, prescripción liberatoria, juicios ejecutivos y sucesiones.',
+      tipo: 'jurisprudencia',
+      totalFallos: 13103,
+      sala: 'Sala Civil y Comercial CSJ',
+      peso: 12,
+      targetHub: 'hub_civil',
+    },
+    {
+      id: 'juris_administrativo',
+      fuero: 'Contencioso Administrativo',
+      etiqueta: '⚖️ Jurisprudencia Contencioso Administrativa (13.077 fallos)',
+      detalle: 'Catálogo de 13.077 resoluciones sobre legalidad de actos administrativos, Tribunal de Cuentas, empleo público y contrataciones del Estado.',
+      tipo: 'jurisprudencia',
+      totalFallos: 13077,
+      sala: 'Tribunal de Cuentas / CSJ',
+      peso: 12,
+      targetHub: 'hub_administrativo',
+    },
+    {
+      id: 'juris_laboral',
+      fuero: 'Laboral',
+      etiqueta: '⚖️ Jurisprudencia Laboral (2.178 fallos)',
+      detalle: 'Catálogo de 2.178 resoluciones sobre despidos injustificados, estabilidad especial adquirida (Art. 94 C.T.), indemnizaciones tarifadas y salarios.',
+      tipo: 'jurisprudencia',
+      totalFallos: 2178,
+      sala: 'Apelación del Trabajo / CSJ',
+      peso: 12,
+      targetHub: 'hub_laboral',
+    },
+    {
+      id: 'juris_ninez',
+      fuero: 'Niñez y Adolescencia',
+      etiqueta: '⚖️ Jurisprudencia Niñez y Adolescencia (414 fallos)',
+      detalle: 'Catálogo de 414 resoluciones sobre prestación alimentaria, patria potestad, régimen de relacionamiento y principio rector del interés superior del niño.',
+      tipo: 'jurisprudencia',
+      totalFallos: 414,
+      sala: 'Apelación Niñez / CSJ',
+      peso: 12,
+      targetHub: 'hub_ninez',
+    },
+    {
+      id: 'juris_tributario',
+      fuero: 'Tributario',
+      etiqueta: '⚖️ Jurisprudencia Tributaria y Fiscal (29 fallos)',
+      detalle: 'Catálogo de resoluciones tributarias sobre determinaciones impositivas de la SET/DNIT, IVA, IRE, prescripción de 5 años y sanciones fiscales.',
+      tipo: 'jurisprudencia',
+      totalFallos: 29,
+      sala: 'Contencioso Tributario / CSJ',
+      peso: 12,
+      targetHub: 'hub_tributario',
+    },
+  ];
+
+  HUBS_JURISPRUDENCIA.forEach((hj) => {
+    nodosMap.set(hj.id, hj);
+    enlaces.push({ source: hj.id, target: hj.targetHub, relacion: 'jurisprudencia_fuero' });
+  });
+
+  // Fallos paradigmáticos de la CSJ vinculados a sus respectivos fueros
+  const FALLOS_PARADIGMATICOS = [
+    {
+      id: 'fallo_const_145',
+      fuero: 'Constitucional',
+      etiqueta: 'A.S. Nº 145/2023 CSJ (Inconstitucionalidad)',
+      detalle: 'Sala Constitucional CSJ. Doctrina sobre supremacía constitucional (Art. 137 CN) y límites del control de razonabilidad en actos legislativos.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_constitucional',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_const_890',
+      fuero: 'Constitucional',
+      etiqueta: 'A.S. Nº 890/2022 CSJ (Garantía de Amparo)',
+      detalle: 'Sala Constitucional CSJ. Requisitos de procedencia del amparo constitucional: arbitrariedad o ilegitimidad manifiesta y ausencia de vías idóneas.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_constitucional',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_penal_67',
+      fuero: 'Penal',
+      etiqueta: 'A.S. Nº 67/2023 CSJ (Extinción y Plazo Razonable)',
+      detalle: 'Sala Penal CSJ. Criterio vinculante sobre cómputo del plazo máximo del procedimiento (Art. 136 CPP) y causales de suspensión de la prescripción.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_penal',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_penal_421',
+      fuero: 'Penal',
+      etiqueta: 'A.S. Nº 421/2022 CSJ (In Dubio Pro Reo)',
+      detalle: 'Sala Penal CSJ. Estándar probatorio para condenas penales, presunción de inocencia y valoración de la prueba indiciaria (Art. 172 CPP).',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_penal',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_civil_112',
+      fuero: 'Civil y Comercial',
+      etiqueta: 'A.S. Nº 112/2023 CSJ (Caducidad de Instancia)',
+      detalle: 'Sala Civil CSJ. Interpretación armónica del Art. 172 del CPC: cómputo objetivo de plazos de perención y actos procesales que impulsan la causa.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_civil',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_civil_340',
+      fuero: 'Civil y Comercial',
+      etiqueta: 'A.S. Nº 340/2022 CSJ (Juicio Ejecutivo y Cheques)',
+      detalle: 'Sala Civil CSJ. Fuerza ejecutiva del cheque y título circulatorio. Improcedencia de discutir la causa de la obligación en el proceso ejecutivo.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_civil',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_admin_205',
+      fuero: 'Contencioso Administrativo',
+      etiqueta: 'A.S. Nº 205/2023 CSJ (Vía Administrativa Previa)',
+      detalle: 'Tribunal de Cuentas / CSJ. Doctrina de agotamiento de la vía administrativa conforme a las Leyes 1462/35 y 6715/21 antes de la demanda contenciosa.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_administrativo',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_laboral_180',
+      fuero: 'Laboral',
+      etiqueta: 'A.S. Nº 180/2023 CSJ (Estabilidad Especial 10 Años)',
+      detalle: 'Sala de Apelación del Trabajo / CSJ. Aplicación del Art. 94 del Código Laboral: nulidad del despido sin causa y pago de salarios caídos.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_laboral',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_ninez_33',
+      fuero: 'Niñez y Adolescencia',
+      etiqueta: 'A.S. Nº 33/2023 CSJ (Asistencia Alimentaria)',
+      detalle: 'Apelación Niñez / CSJ. Pautas para el cálculo prudencial de la cuota de alimentos (Art. 185 CNA) y presunción de necesidades básicas del menor.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_ninez',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+    {
+      id: 'fallo_trib_08',
+      fuero: 'Tributario',
+      etiqueta: 'A.S. Nº 08/2023 CSJ (Prescripción Tributaria)',
+      detalle: 'Contencioso Fiscal CSJ. Prescripción liberatoria de 5 años para liquidaciones impositivas y determinaciones de oficio bajo la Ley 6380/19.',
+      tipo: 'jurisprudencia',
+      sourceHub: 'juris_tributario',
+      peso: 8,
+      url: 'https://www.csj.gov.py/jurisprudencia',
+    },
+  ];
+
+  FALLOS_PARADIGMATICOS.forEach((fp) => {
+    nodosMap.set(fp.id, fp);
+    enlaces.push({ source: fp.id, target: fp.sourceHub, relacion: 'precedente_fuero' });
+  });
+
+  // =========================================================================
+  // 7. MEMORIAS AGÉNTICAS DEL USUARIO
   // =========================================================================
   memorias.forEach((m) => {
     const id = `memoria_${m._id}`;
@@ -597,6 +794,16 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
       expedientes: expedientes.length,
       clientes: clientes.length,
       memorias: memorias.length,
+      jurisprudencia: 72375,
+      jurisprudenciaPorFuero: {
+        'Constitucional': 26421,
+        'Penal': 17153,
+        'Civil y Comercial': 13103,
+        'Contencioso Administrativo': 13077,
+        'Laboral': 2178,
+        'Niñez y Adolescencia': 414,
+        'Tributario': 29,
+      },
       articulosIndexados: 32370,
     },
   };

@@ -71,6 +71,14 @@ const expedienteSchema = new mongoose.Schema(
       ref: 'Usuario',
     },
 
+    // Usuarios/abogados con acceso compartido otorgado por un administrador
+    compartidoCon: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario',
+      },
+    ],
+
     // ---- Campos de Sincronización CSJ (Portal Jurisdiccional) ----
     numeroCSJ: { type: String, trim: true, default: '' },
     anoCSJ: { type: Number, default: null },

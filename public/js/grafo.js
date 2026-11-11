@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statEnlaces = document.getElementById('statEnlaces');
   const statLeyes = document.getElementById('statLeyes');
   const statMemorias = document.getElementById('statMemorias');
+  const statJurisprudencia = document.getElementById('statJurisprudencia');
   const busquedaInput = document.getElementById('busquedaGrafo');
   const drawer = document.getElementById('grafoDrawer');
   const drawerBadge = document.getElementById('drawerBadge');
@@ -51,9 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let nodoSeleccionado = null;
   let nodoHover = null;
   let nodoArrastrado = null;
+  let simulacionActiva = false; // Control de reposo estático
 
   // Transformación de la vista (Pan & Zoom)
-  let zoom = 1;
+  let zoom = 0.85;
   let panX = 0;
   let panY = 0;
   let isDragging = false;
@@ -80,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       panX = w / 2;
       panY = h / 2;
     }
+    dibujarGrafo();
   }
 
   window.addEventListener('resize', resizeCanvas);
@@ -90,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     constitucion: '#eab308',
     codigo: '#3b82f6',
     ley: '#0ea5e9',
+    jurisprudencia: '#06b6d4',
     decreto: '#06b6d4',
     acordada: '#14b8a6',
     institucion: '#6366f1',
@@ -101,7 +105,33 @@ document.addEventListener('DOMContentLoaded', () => {
     default: '#94a3b8',
   };
 
-  // Cargar datos desde la API (con soporte robusto para /obsidian/grafo o /v1/grafo)
+  // Coordenadas fijas orbitales de los 7 Hubs principales por Fuero
+  const COORDENADAS_HUBS = {
+    'hub_constitucional': { x: 0, y: -340 },
+    'hub_penal': { x: 380, y: -190 },
+    'hub_civil': { x: 420, y: 160 },
+    'hub_laboral': { x: 230, y: 400 },
+    'hub_ninez': { x: -230, y: 400 },
+    'hub_administrativo': { x: -420, y: 160 },
+    'hub_tributario': { x: -380, y: -190 },
+    'hub_instituciones': { x: 0, y: 320 },
+  };
+
+  function determinarHubPertenencia(nodo) {
+    if (nodo.tipo === 'hub') return nodo.id;
+    if (nodo.id === 'ley_constitucion_1992' || nodo.tipo === 'constitucion') return 'centro';
+    if (nodo.tipo === 'institucion') return 'hub_instituciones';
+
+    const fuero = (nodo.fuero || '').toLowerCase();
+    if (fuero.includes('penal')) return 'hub_penal';
+    if (fuero.includes('laboral')) return 'hub_laboral';
+    if (fuero.includes('niñez') || fuero.includes('menor')) return 'hub_ninez';
+    if (fuero.includes('tribut')) return 'hub_tributario';
+    if (fuero.includes('administrativ') || fuero.includes('constitucional')) return 'hub_administrativo';
+    return 'hub_civil';
+  }
+
+  // Cargar datos desde la API
   async function cargarDatosGrafo() {
     try {
       let res = null;
@@ -113,31 +143,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let data = res?.data || res;
       if (!data || !data.nodos || !data.nodos.length) {
-        // Semillas institucionales por defecto si la base está en sincronización inicial
         data = generarNodosSemilla();
       }
 
-      // Inicializar posiciones espaciales en espiral áurea
-      nodos = (data.nodos || []).map((n, i) => {
-        const phi = i * 137.5 * (Math.PI / 180);
-        const r = 24 * Math.sqrt(i + 1) + 40;
+      // Agrupar nodos por su Hub de pertenencia para inicializarlos en cúmulos espaciales
+      const conteoPorHub = {};
+
+      nodos = (data.nodos || []).map((n) => {
+        const hubId = determinarHubPertenencia(n);
+        conteoPorHub[hubId] = (conteoPorHub[hubId] || 0) + 1;
+        const indiceEnCluster = conteoPorHub[hubId];
+
+        let posX = 0;
+        let posY = 0;
+
+        if (n.tipo === 'hub') {
+          const coord = COORDENADAS_HUBS[n.id] || { x: 0, y: 0 };
+          posX = coord.x;
+          posY = coord.y;
+        } else if (hubId === 'centro') {
+          posX = 0;
+          posY = 0;
+        } else {
+          const centroHub = COORDENADAS_HUBS[hubId] || { x: 0, y: 0 };
+          // Disposición orbital suave alrededor de su Hub temático
+          const angulo = (indiceEnCluster * 137.5 * Math.PI) / 180;
+          const radioOrbita = 75 + Math.sqrt(indiceEnCluster) * 36;
+          posX = centroHub.x + Math.cos(angulo) * radioOrbita;
+          posY = centroHub.y + Math.sin(angulo) * radioOrbita;
+        }
+
         return {
           ...n,
-          x: Math.cos(phi) * r,
-          y: Math.sin(phi) * r,
+          x: posX,
+          y: posY,
           vx: 0,
           vy: 0,
-          radio: n.tipo === 'hub'
-            ? 22
-            : n.tipo === 'constitucion'
-            ? 18
-            : n.tipo === 'codigo' || n.tipo === 'institucion'
-            ? 15
-            : n.tipo === 'expediente'
-            ? 13
-            : n.tipo === 'ensenanza' || n.tipo === 'ley'
-            ? 12
-            : 10,
+          radio:
+            n.tipo === 'hub'
+              ? 22
+              : n.tipo === 'constitucion'
+              ? 18
+              : n.tipo === 'codigo' || n.tipo === 'institucion'
+              ? 15
+              : n.tipo === 'jurisprudencia' && n.totalFallos
+              ? 16
+              : n.tipo === 'expediente'
+              ? 13
+              : n.tipo === 'ensenanza' || n.tipo === 'ley' || n.tipo === 'jurisprudencia'
+              ? 11
+              : 9,
         };
       });
 
@@ -151,14 +206,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }))
         .filter((e) => e.sourceNode && e.targetNode);
 
-      // Actualizar estadísticas
+      // Actualizar estadísticas Bento
       if (statNodos) statNodos.textContent = (data.estadisticas?.totalNodos || nodos.length).toLocaleString('es-PY');
       if (statEnlaces) statEnlaces.textContent = (data.estadisticas?.totalEnlaces || enlaces.length).toLocaleString('es-PY');
       if (statLeyes) statLeyes.textContent = (data.estadisticas?.leyes || nodos.filter((n) => ['ley', 'codigo', 'constitucion', 'decreto', 'acordada'].includes(n.tipo)).length).toLocaleString('es-PY');
+      if (statJurisprudencia) statJurisprudencia.textContent = (data.estadisticas?.jurisprudencia || 72375).toLocaleString('es-PY');
       if (statMemorias) statMemorias.textContent = (data.estadisticas?.ensenanzas || nodos.filter((n) => n.tipo === 'ensenanza').length).toLocaleString('es-PY');
 
       aplicarFiltros();
-      requestAnimationFrame(animarGrafo);
+
+      // =========================================================================
+      // ESTABILIZACIÓN OFFSCREEN PREVIA (Burn-in)
+      // Ejecuta 90 iteraciones de relajación física en memoria. Al abrirse,
+      // el grafo queda 100% ESTÁTICO, sin oscilaciones ni vibraciones ("sin bailar").
+      // =========================================================================
+      for (let step = 0; step < 90; step++) {
+        const factorEnfriamiento = Math.max(0.12, 1 - step / 90);
+        pasoFisica(factorEnfriamiento);
+      }
+
+      // Anular cualquier residuo de velocidad y congelar en reposo
+      nodos.forEach((n) => {
+        n.vx = 0;
+        n.vy = 0;
+      });
+
+      simulacionActiva = false;
+      dibujarGrafo();
     } catch (err) {
       console.error('[Grafo] Error cargando red de conocimiento:', err);
     }
@@ -170,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'ley_cyp', tipo: 'constitucion', etiqueta: 'Constitución Nacional 1992', detalle: 'Ley Suprema de la República del Paraguay.', peso: 8 },
         { id: 'ley_cc', tipo: 'codigo', etiqueta: 'Código Civil (Ley 1183/85)', detalle: 'Regula las obligaciones, contratos y derechos reales.', peso: 7 },
         { id: 'ley_cl', tipo: 'codigo', etiqueta: 'Código del Trabajo (Ley 213/93)', detalle: 'Normativa laboral de orden público en Paraguay.', peso: 7 },
+        { id: 'juris_penal', tipo: 'jurisprudencia', etiqueta: '⚖️ Jurisprudencia Penal CSJ (17.153 fallos)', detalle: 'Catálogo oficial de la Sala Penal CSJ.', totalFallos: 17153, peso: 10 },
         { id: 'ley_1462', tipo: 'ley', etiqueta: 'Ley 1462/1935', detalle: 'Procedimiento para lo Contencioso Administrativo.', peso: 6 },
         { id: 'ley_6715', tipo: 'ley', etiqueta: 'Ley 6715/2021', detalle: 'Procedimientos Administrativos y Acto Administrativo.', peso: 6 },
         { id: 'ens_1', tipo: 'ensenanza', etiqueta: 'Caducidad de Instancia Art. 172', detalle: 'Plazos de perención en primera y segunda instancia.', peso: 5 },
@@ -181,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { source: 'ley_1462', target: 'ley_cyp', relacion: 'control_constitucional' },
         { source: 'ley_6715', target: 'ley_1462', relacion: 'via_previa' },
       ],
-      estadisticas: { totalNodos: 7, totalEnlaces: 4, leyes: 5, ensenanzas: 2 },
+      estadisticas: { totalNodos: 8, totalEnlaces: 4, leyes: 5, jurisprudencia: 72375, ensenanzas: 2 },
     };
   }
 
@@ -190,6 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
       let matchTipo = true;
       if (filtroActivo === 'ley') {
         matchTipo = ['ley', 'codigo', 'constitucion', 'decreto', 'acordada'].includes(n.tipo);
+      } else if (filtroActivo === 'jurisprudencia') {
+        matchTipo = n.tipo === 'jurisprudencia';
       } else if (filtroActivo === 'institucion') {
         matchTipo = n.tipo === 'institucion';
       } else if (filtroActivo === 'hub') {
@@ -201,7 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchTexto =
         !terminoBusqueda ||
         (n.etiqueta && n.etiqueta.toLowerCase().includes(terminoBusqueda)) ||
-        (n.detalle && n.detalle.toLowerCase().includes(terminoBusqueda));
+        (n.detalle && n.detalle.toLowerCase().includes(terminoBusqueda)) ||
+        (n.fuero && n.fuero.toLowerCase().includes(terminoBusqueda));
       return matchTipo && matchTexto;
     });
 
@@ -211,15 +289,21 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // Simulación física interactiva (Force-Directed Simulation)
-  function pasoFisica() {
-    const kRepulsion = 1600;
-    const kAtraccion = 0.035;
-    const amortiguacion = 0.88;
-    const gravedadCentro = 0.006;
+  // Simulación física con amortiguación y detección de colisiones suaves
+  function pasoFisica(factorEnfriamiento = 1.0) {
+    const kRepulsion = 1400 * factorEnfriamiento;
+    const kAtraccion = 0.028 * factorEnfriamiento;
+    const amortiguacion = 0.82;
+    const gravedadCentro = 0.003 * factorEnfriamiento;
+
+    let energiaCinetica = 0;
 
     for (let i = 0; i < nodosVisibles.length; i++) {
       const n1 = nodosVisibles[i];
+
+      // Los Hubs y la Constitución tienen mayor inercia y anclaje
+      const esAnclado = n1.tipo === 'hub' || n1.id === 'ley_constitucion_1992';
+
       for (let j = i + 1; j < nodosVisibles.length; j++) {
         const n2 = nodosVisibles[j];
         const dx = n2.x - n1.x;
@@ -227,55 +311,91 @@ document.addEventListener('DOMContentLoaded', () => {
         const distSq = dx * dx + dy * dy + 1;
         const dist = Math.sqrt(distSq);
 
-        if (dist < 420) {
+        // Separación mínima obligatoria para que nunca colisionen en una masa apelotonada
+        const minSeparacion = n1.radio + n2.radio + 16;
+
+        if (dist < minSeparacion) {
+          const overlap = minSeparacion - dist;
+          const push = overlap * 0.45;
+          const pushX = (dx / (dist || 1)) * push;
+          const pushY = (dy / (dist || 1)) * push;
+          if (!esAnclado && n1 !== nodoArrastrado) {
+            n1.vx -= pushX;
+            n1.vy -= pushY;
+          }
+          if (n2.tipo !== 'hub' && n2 !== nodoArrastrado) {
+            n2.vx += pushX;
+            n2.vy += pushY;
+          }
+        } else if (dist < 320) {
           const f = kRepulsion / distSq;
           const fx = (dx / dist) * f;
           const fy = (dy / dist) * f;
-          n1.vx -= fx;
-          n1.vy -= fy;
-          n2.vx += fx;
-          n2.vy += fy;
+          if (!esAnclado && n1 !== nodoArrastrado) {
+            n1.vx -= fx;
+            n1.vy -= fy;
+          }
+          if (n2.tipo !== 'hub' && n2 !== nodoArrastrado) {
+            n2.vx += fx;
+            n2.vy += fy;
+          }
         }
       }
 
-      // Gravedad hacia el centro
-      n1.vx -= n1.x * gravedadCentro;
-      n1.vy -= n1.y * gravedadCentro;
+      // Suave atracción hacia su centro de gravedad
+      if (!esAnclado && n1 !== nodoArrastrado) {
+        n1.vx -= n1.x * gravedadCentro;
+        n1.vy -= n1.y * gravedadCentro;
+      }
     }
 
-    // Fuerza de atracción en las aristas
+    // Fuerza de resorte en las aristas
     for (let i = 0; i < enlacesVisibles.length; i++) {
       const e = enlacesVisibles[i];
       const dx = e.targetNode.x - e.sourceNode.x;
       const dy = e.targetNode.y - e.sourceNode.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      const f = (dist - 110) * kAtraccion;
+      const longitudDeseada = 130;
+      const f = (dist - longitudDeseada) * kAtraccion;
       const fx = (dx / (dist || 1)) * f;
       const fy = (dy / (dist || 1)) * f;
 
-      e.sourceNode.vx += fx;
-      e.sourceNode.vy += fy;
-      e.targetNode.vx -= fx;
-      e.targetNode.vy -= fy;
+      if (e.sourceNode !== nodoArrastrado && e.sourceNode.tipo !== 'hub') {
+        e.sourceNode.vx += fx;
+        e.sourceNode.vy += fy;
+      }
+      if (e.targetNode !== nodoArrastrado && e.targetNode.tipo !== 'hub') {
+        e.targetNode.vx -= fx;
+        e.targetNode.vy -= fy;
+      }
     }
 
-    // Actualizar posiciones
+    // Actualizar posiciones y calcular energía
     for (let i = 0; i < nodosVisibles.length; i++) {
       const n = nodosVisibles[i];
       if (n === nodoArrastrado) continue;
+
       n.vx *= amortiguacion;
       n.vy *= amortiguacion;
+
+      // Velocidad máxima para evitar saltos o vibraciones
+      const velocidad = Math.sqrt(n.vx * n.vx + n.vy * n.vy);
+      if (velocidad > 8) {
+        n.vx = (n.vx / velocidad) * 8;
+        n.vy = (n.vy / velocidad) * 8;
+      }
+
       n.x += n.vx;
       n.y += n.vy;
+
+      energiaCinetica += Math.abs(n.vx) + Math.abs(n.vy);
     }
+
+    return energiaCinetica;
   }
 
-  // Renderizado en Canvas
-  let tick = 0;
-  function animarGrafo() {
-    pasoFisica();
-    tick += 0.02;
-
+  // Función de renderizado limpio (un único frame sin forzar loops innecesarios)
+  function dibujarGrafo() {
     const parent = canvas.parentElement;
     const w = parent?.clientWidth || canvas.width;
     const h = parent?.clientHeight || canvas.height;
@@ -318,8 +438,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const esHover = n === nodoHover;
       const esSel = n === nodoSeleccionado;
 
-      // Glow halo
-      ctx.shadowBlur = esSel ? 20 : esHover ? 14 : 6;
+      // Halo sutil
+      ctx.shadowBlur = esSel ? 18 : esHover ? 12 : 5;
       ctx.shadowColor = color;
 
       ctx.beginPath();
@@ -333,14 +453,17 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.strokeStyle = '#fff';
       ctx.stroke();
 
-      // Etiqueta de texto adaptativa (modo claro / modo oscuro)
+      // Etiquetas legibles adaptativas
       const esDark = document.documentElement.classList.contains('dark') || document.documentElement.getAttribute('data-theme') === 'dark';
-      const esDestacado = ['hub', 'institucion', 'constitucion', 'codigo', 'expediente'].includes(n.tipo);
+      const esDestacado = ['hub', 'jurisprudencia', 'institucion', 'constitucion', 'codigo', 'expediente'].includes(n.tipo);
 
       if (zoom > 0.45 || esHover || esSel || esDestacado) {
         if (n.tipo === 'hub') {
           ctx.font = 'bold 12px Inter, sans-serif';
           ctx.fillStyle = esDark ? '#fbbf24' : '#b45309';
+        } else if (n.tipo === 'jurisprudencia' && n.totalFallos) {
+          ctx.font = 'bold 11px Inter, sans-serif';
+          ctx.fillStyle = esDark ? '#38bdf8' : '#0284c7';
         } else if (esSel) {
           ctx.font = 'bold 11px Inter, sans-serif';
           ctx.fillStyle = esDark ? '#ffffff' : '#1e3a8a';
@@ -359,7 +482,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     ctx.restore();
+  }
+
+  // Bucle de animación reactivo: solo corre cuando el usuario arrastra o interactúa
+  function animarGrafo() {
+    if (!simulacionActiva) return;
+    const energia = pasoFisica(1.0);
+    dibujarGrafo();
+
+    // Si la energía cae por debajo del umbral y no hay nodo arrastrado, detener y congelar en reposo
+    if (!nodoArrastrado && energia < 0.05) {
+      simulacionActiva = false;
+      nodos.forEach((n) => {
+        n.vx = 0;
+        n.vy = 0;
+      });
+      dibujarGrafo();
+      return;
+    }
+
     requestAnimationFrame(animarGrafo);
+  }
+
+  function despertarFisica() {
+    if (!simulacionActiva) {
+      simulacionActiva = true;
+      requestAnimationFrame(animarGrafo);
+    }
   }
 
   // Interacción Mouse
@@ -392,6 +541,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (n) {
       nodoArrastrado = n;
       nodoSeleccionado = n;
+      despertarFisica();
       abrirInspectorNodo(n);
     } else {
       isDragging = true;
@@ -407,23 +557,31 @@ document.addEventListener('DOMContentLoaded', () => {
       nodoArrastrado.y = w.y;
       nodoArrastrado.vx = 0;
       nodoArrastrado.vy = 0;
+      despertarFisica();
       return;
     }
 
     if (isDragging) {
       panX = e.clientX - dragStartX;
       panY = e.clientY - dragStartY;
+      dibujarGrafo();
       return;
     }
 
     const w = screenToWorld(e.clientX, e.clientY);
     const n = encontrarNodoBajoPuntero(w.x, w.y);
-    nodoHover = n;
-    canvas.style.cursor = n ? 'pointer' : 'grab';
+    if (nodoHover !== n) {
+      nodoHover = n;
+      canvas.style.cursor = n ? 'pointer' : 'grab';
+      dibujarGrafo();
+    }
   });
 
   window.addEventListener('mouseup', () => {
-    nodoArrastrado = null;
+    if (nodoArrastrado) {
+      nodoArrastrado = null;
+      despertarFisica();
+    }
     isDragging = false;
   });
 
@@ -439,20 +597,24 @@ document.addEventListener('DOMContentLoaded', () => {
     panX = mouseX - (mouseX - panX) * (nuevoZoom / zoom);
     panY = mouseY - (mouseY - panY) * (nuevoZoom / zoom);
     zoom = nuevoZoom;
+    dibujarGrafo();
   });
 
   // Controles de Botones de Zoom
   document.getElementById('btnZoomIn')?.addEventListener('click', () => {
     zoom = Math.min(zoom * 1.25, 3.5);
+    dibujarGrafo();
   });
   document.getElementById('btnZoomOut')?.addEventListener('click', () => {
     zoom = Math.max(zoom * 0.8, 0.25);
+    dibujarGrafo();
   });
   document.getElementById('btnResetView')?.addEventListener('click', () => {
     const parent = canvas.parentElement;
     panX = (parent?.clientWidth || 800) / 2;
     panY = (parent?.clientHeight || 600) / 2;
-    zoom = 1;
+    zoom = 0.85;
+    dibujarGrafo();
   });
 
   // Filtros de Botones Chips
@@ -462,6 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       filtroActivo = btn.dataset.filtro;
       aplicarFiltros();
+      dibujarGrafo();
     });
   });
 
@@ -469,6 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
   busquedaInput?.addEventListener('input', (e) => {
     terminoBusqueda = e.target.value.toLowerCase().trim();
     aplicarFiltros();
+    dibujarGrafo();
   });
 
   // Estado del Inspector de Artículos
@@ -478,6 +642,33 @@ document.addEventListener('DOMContentLoaded', () => {
   function parsearArticulosDeTexto(texto, titulo, nodo) {
     if (!texto || typeof texto !== 'string') return [];
     const limpio = texto.trim();
+
+    // Caso Especial: Jurisprudencia Oficial CSJ
+    if (nodo && nodo.tipo === 'jurisprudencia') {
+      const tarjetas = [];
+      if (nodo.totalFallos) {
+        tarjetas.push({
+          id: 'juris_resumen',
+          numero: '🏛️ Fuero & Sala Competente',
+          titulo: nodo.sala || 'Corte Suprema de Justicia',
+          cuerpo: `Fuero Judicial: ${nodo.fuero}\nTotal Fallos CSJ Catalogados: ${(nodo.totalFallos || 0).toLocaleString('es-PY')} resoluciones.\n\nAlcance y Doctrina:\n${nodo.detalle}`,
+        });
+        tarjetas.push({
+          id: 'juris_consulta',
+          numero: '⚖️ Consulta Jurisprudencial',
+          titulo: 'Búsqueda en 72.375 Fallos CSJ',
+          cuerpo: `Podés buscar resoluciones de este fuero escribiendo su carátula o número en el buscador superior, o en Techapyrã IA.\n\nPortal oficial CSJ: https://www.csj.gov.py/jurisprudencia`,
+        });
+      } else {
+        tarjetas.push({
+          id: 'juris_fallo',
+          numero: '⚖️ Fallo Judicial CSJ',
+          titulo: titulo || 'Resolución Judicial CSJ',
+          cuerpo: `${limpio}\n\nFuero competente: ${nodo.fuero || 'General'}\nEnlace oficial: ${nodo.url || 'https://www.csj.gov.py/jurisprudencia'}`,
+        });
+      }
+      return tarjetas;
+    }
 
     // Caso Especial: Enseñanza / Doctrina RAG OtelaxWisdom
     if (nodo && nodo.tipo === 'ensenanza') {
@@ -684,9 +875,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (drawerTitulo) drawerTitulo.textContent = n.etiqueta;
 
     if (drawerMeta) {
+      const esJuris = n.tipo === 'jurisprudencia';
       const tagFuero = n.fuero ? `<span class="badge" style="background:rgba(37,99,235,0.15); color:var(--azul-accent); font-size:0.75rem;">${escapeHtml(n.fuero)}</span>` : '';
-      const badgeVigencia = `<span class="badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-size:0.75rem;">Legislación Vigente PY</span>`;
-      const linkOficial = n.url ? `<a href="${n.url}" target="_blank" rel="noopener noreferrer" style="color:var(--azul-accent); text-decoration:none; font-size:0.75rem; display:inline-flex; align-items:center; gap:4px; margin-left:auto;"><span>🏛️ BACN Oficial</span> ↗</a>` : '';
+      const badgeVigencia = esJuris
+        ? `<span class="badge" style="background:rgba(6,182,212,0.15); color:#06b6d4; font-size:0.75rem;">Precedente CSJ</span>`
+        : `<span class="badge" style="background:rgba(16,185,129,0.15); color:#10b981; font-size:0.75rem;">Legislación Vigente PY</span>`;
+      const urlDestino = n.url || (esJuris ? 'https://www.csj.gov.py/jurisprudencia' : '');
+      const linkOficial = urlDestino
+        ? `<a href="${urlDestino}" target="_blank" rel="noopener noreferrer" style="color:var(--azul-accent); text-decoration:none; font-size:0.75rem; display:inline-flex; align-items:center; gap:4px; margin-left:auto;"><span>${esJuris ? '⚖️ CSJ Oficial' : '🏛️ BACN Oficial'}</span> ↗</a>`
+        : '';
 
       drawerMeta.innerHTML = `
         <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:8px;">

@@ -186,7 +186,7 @@
     </div>
 
     <!-- Métricas del Grafo Bento -->
-    <div class="grid-metricas" style="margin-bottom: 16px;">
+    <div class="grid-metricas" style="margin-bottom: 16px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
       <div class="tarjeta metrica">
         <div class="etiqueta">Total Nodos Conectados</div>
         <div class="valor" id="statNodos">-</div>
@@ -202,6 +202,11 @@
         <div class="valor" id="statLeyes">-</div>
         <div class="subtexto">Legislación Positiva PY</div>
       </div>
+      <div class="tarjeta metrica" style="border-top: 3px solid #06b6d4;">
+        <div class="etiqueta">Jurisprudencia CSJ</div>
+        <div class="valor" id="statJurisprudencia" style="color: #06b6d4;">72.375</div>
+        <div class="subtexto">Fallos por Fuero (CSJ)</div>
+      </div>
       <div class="tarjeta metrica verde">
         <div class="etiqueta">Enseñanzas RAG</div>
         <div class="valor" id="statMemorias">-</div>
@@ -214,13 +219,14 @@
       <!-- Toolbar superior -->
       <div class="grafo-toolbar">
         <div style="flex: 1; max-width: 320px;">
-          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, institución o causa..." style="width: 100%; padding: 8px 14px; background: var(--bg-card); backdrop-filter: blur(10px); border: 1px solid var(--borde); border-radius: 8px; color: var(--texto); font-size: 0.88rem;" />
+          <input type="text" id="busquedaGrafo" placeholder="🔍 Buscar ley, fallo CSJ, fuero..." style="width: 100%; padding: 8px 14px; background: var(--bg-card); backdrop-filter: blur(10px); border: 1px solid var(--borde); border-radius: 8px; color: var(--texto); font-size: 0.88rem;" />
         </div>
 
         <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
           <button class="btn-chip active" data-filtro="todos">Todos</button>
           <button class="btn-chip" data-filtro="hub">🏛️ Fueros</button>
           <button class="btn-chip" data-filtro="ley">📜 Leyes & Códigos</button>
+          <button class="btn-chip" data-filtro="jurisprudencia">⚖️ Jurisprudencia CSJ</button>
           <button class="btn-chip" data-filtro="institucion">🇵🇾 Instituciones</button>
           <button class="btn-chip" data-filtro="ensenanza">🧠 Enseñanzas RAG</button>
           <button class="btn-chip" data-filtro="expediente">📁 Expedientes</button>
@@ -235,6 +241,7 @@
       <div class="grafo-legend">
         <div class="legend-item"><div class="legend-dot" style="background: #f59e0b;"></div> Fueros Centrales</div>
         <div class="legend-item"><div class="legend-dot" style="background: #3b82f6;"></div> Leyes y Códigos</div>
+        <div class="legend-item"><div class="legend-dot" style="background: #06b6d4;"></div> Jurisprudencia CSJ (72.375)</div>
         <div class="legend-item"><div class="legend-dot" style="background: #6366f1;"></div> Instituciones Públicas</div>
         <div class="legend-item"><div class="legend-dot" style="background: #10b981;"></div> Enseñanzas RAG</div>
         <div class="legend-item"><div class="legend-dot" style="background: #f97316;"></div> Expedientes</div>

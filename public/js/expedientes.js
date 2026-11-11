@@ -278,6 +278,11 @@ async function cargarExpedientes() {
               <span class="badge" style="background:#1e293b; color:#93c5fd; padding:2px 8px; border-radius:4px; font-size:0.75rem;">${e.materia || e.fuero || 'Civil y Comercial'}</span>
               <span>🏛️ ${e.juzgado || 'Juzgado s/d'}</span>
               <span>👤 ${e.cliente?.nombreCompleto || 'Cliente s/d'}</span>
+              ${
+                Array.isArray(e.compartidoCon) && e.compartidoCon.length > 0
+                  ? `<span class="badge" style="background:rgba(147, 51, 234, 0.2); color:#c084fc; padding:2px 8px; border-radius:4px; font-size:0.75rem;" title="Compartido con ${e.compartidoCon.length} profesional(es)">👥 Compartido (${e.compartidoCon.length})</span>`
+                  : ''
+              }
             </div>
           </td>
           <td style="padding:16px 18px;">
@@ -294,6 +299,11 @@ async function cargarExpedientes() {
               <button class="boton btn-secundario btn-sm" onclick='verDetalleExpediente(${JSON.stringify(e)})' title="Ver detalles y documentación">
                 👁️ Ver
               </button>
+              ${
+                esAdmin || (usuario && String(e.abogadoAsignado?._id || e.abogadoAsignado) === String(usuario._id))
+                  ? `<button class="boton btn-secundario btn-sm" onclick='abrirModalCompartir("${e._id}", "${(e.caratula || '').replace(/'/g, "\\'")}")' title="Compartir causa con abogados">🔗 Compartir</button>`
+                  : ''
+              }
               ${Number(e.saldoPendiente) > 0 ? `<a href="/creditos.html" class="boton btn-primario btn-sm" title="Registrar cobranza">💰 Cobro</a>` : ''}
               <button class="boton btn-sm" style="background:#dc2626; color:#fff; border:none; padding:5px 9px; border-radius:6px; cursor:pointer;" onclick="eliminarExpediente('${e._id}', '${(e.caratula || '').replace(/'/g, "\\'")}')" title="Eliminar expediente">
                 🗑️ Eliminar
@@ -733,6 +743,135 @@ async function ejecutarSincronizacionCSJ() {
       btn.disabled = false;
       btn.textContent = '⚡ Sincronizar Ahora';
     }
+  }
+}
+
+/* ---------- Compartición de Expedientes (Administración & Roles) ---------- */
+let expedienteACompartirId = null;
+let abogadosDisponiblesMemoria = [];
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+async function abrirModalCompartir(id, caratula) {
+  expedienteACompartirId = id;
+  const modal = document.getElementById('modalCompartirExpediente');
+  const txtTitulo = document.getElementById('compCaratulaTitulo');
+  const inputId = document.getElementById('compExpedienteId');
+  if (inputId) inputId.value = id;
+  if (txtTitulo) txtTitulo.textContent = `🔗 Compartir: ${caratula ? caratula.slice(0, 45) + '...' : 'Causa Judicial'}`;
+
+  if (modal) modal.classList.remove('oculto');
+
+  try {
+    if (!abogadosDisponiblesMemoria.length) {
+      const usuarios = await apiFetch('/usuarios').catch(() => []);
+      abogadosDisponiblesMemoria = (usuarios || []).filter((u) => u.activo !== false);
+    }
+
+    const select = document.getElementById('compSelectAbogado');
+    if (select) {
+      select.innerHTML =
+        '<option value="">-- Seleccionar Abogado --</option>' +
+        abogadosDisponiblesMemoria
+          .map((u) => `<option value="${u._id}">${u.nombre} (${u.email || u.rol})</option>`)
+          .join('');
+    }
+
+    await recargarListaUsuariosCompartidos(id);
+  } catch (err) {
+    console.warn('[Compartir] Error preparando modal:', err);
+  }
+}
+
+async function recargarListaUsuariosCompartidos(expedienteId) {
+  const cont = document.getElementById('compListaUsuarios');
+  if (!cont) return;
+
+  try {
+    const res = await apiFetch(`/expedientes/${expedienteId}`);
+    const exp = res?.data || res;
+    const compartidos = exp?.compartidoCon || [];
+
+    if (!compartidos.length) {
+      cont.innerHTML = `
+        <div style="padding:14px; text-align:center; color:var(--texto-muted); font-size:0.85rem; background:var(--bg-subtle); border-radius:8px;">
+          Este expediente aún no ha sido compartido con ningún otro profesional.
+        </div>`;
+      return;
+    }
+
+    cont.innerHTML = compartidos
+      .map((u) => {
+        const uId = u._id || u;
+        const nombre = u.nombre || 'Abogado de la firma';
+        const email = u.email ? `(${u.email})` : '';
+        return `
+        <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-subtle); border:1px solid var(--borde); padding:8px 12px; border-radius:6px;">
+          <div>
+            <span style="font-weight:600; font-size:0.88rem; color:var(--texto);">${escapeHtml(nombre)}</span>
+            <span style="font-size:0.78rem; color:var(--texto-muted); margin-left:4px;">${escapeHtml(email)}</span>
+          </div>
+          <button class="boton btn-sm" style="background:#dc2626; color:#fff; border:none; padding:3px 8px; border-radius:4px; font-size:0.75rem; cursor:pointer;" onclick="ejecutarRevocarComparticion('${uId}')" title="Revocar acceso">
+            ✕ Quitar
+          </button>
+        </div>`;
+      })
+      .join('');
+  } catch (err) {
+    cont.innerHTML = `<div style="color:#f87171; font-size:0.85rem;">Error cargando permisos: ${err.message}</div>`;
+  }
+}
+
+function cerrarModalCompartir() {
+  const modal = document.getElementById('modalCompartirExpediente');
+  if (modal) modal.classList.add('oculto');
+  expedienteACompartirId = null;
+}
+
+async function ejecutarCompartirExpediente() {
+  if (!expedienteACompartirId) return;
+  const select = document.getElementById('compSelectAbogado');
+  const usuarioId = select?.value;
+
+  if (!usuarioId) {
+    alert('Por favor selecciona un abogado de la lista.');
+    return;
+  }
+
+  try {
+    await apiFetch(`/expedientes/${expedienteACompartirId}/compartir`, {
+      method: 'POST',
+      body: { usuarioId },
+    });
+    alert('¡Expediente compartido exitosamente!');
+    if (select) select.value = '';
+    await recargarListaUsuariosCompartidos(expedienteACompartirId);
+    cargarExpedientes();
+  } catch (err) {
+    alert('Error al compartir expediente: ' + err.message);
+  }
+}
+
+async function ejecutarRevocarComparticion(usuarioId) {
+  if (!expedienteACompartirId || !usuarioId) return;
+  if (!confirm('¿Deseas revocar el acceso a este profesional para esta causa?')) return;
+
+  try {
+    await apiFetch(`/expedientes/${expedienteACompartirId}/compartir/${usuarioId}`, {
+      method: 'DELETE',
+    });
+    await recargarListaUsuariosCompartidos(expedienteACompartirId);
+    cargarExpedientes();
+  } catch (err) {
+    alert('Error al revocar acceso: ' + err.message);
   }
 }
 

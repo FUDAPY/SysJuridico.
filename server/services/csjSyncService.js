@@ -151,7 +151,10 @@ async function sincronizarExpedientesCSJ({ usuarioId }) {
 
   for (const c of causasCSJ) {
     let exp = await Expediente.findOne({
-      $or: [{ numeroCSJ: c.numeroCSJ, anoCSJ: c.anoCSJ }, { caratula: c.caratula }],
+      $and: [
+        { $or: [{ numeroCSJ: c.numeroCSJ, anoCSJ: c.anoCSJ }, { caratula: c.caratula }] },
+        { $or: [{ abogadoAsignado: usuarioId }, { creadoPor: usuarioId }] },
+      ],
     });
 
     if (exp) {

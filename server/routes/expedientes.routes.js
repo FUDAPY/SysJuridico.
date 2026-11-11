@@ -10,6 +10,8 @@ const {
   listarDocumentos,
   descargarDocumento,
   eliminarDocumento,
+  compartirExpediente,
+  desasociarExpedienteCompartido,
 } = require('../controllers/expedienteController');
 const {
   vincularUsuarioCSJ,
@@ -61,7 +63,9 @@ router.post('/', crearExpediente);
 router.get('/:id', obtenerExpediente);
 // Editar/eliminar expedientes: exclusivo de 'admin'
 router.put('/:id', authorize('admin'), actualizarExpediente);
-router.delete('/:id', authorize('admin'), eliminarExpediente);
+// Compartir expedientes (Administrador o titular de causa)
+router.post('/:id/compartir', compartirExpediente);
+router.delete('/:id/compartir/:usuarioId', desasociarExpedienteCompartido);
 
 // Documentos adjuntos del expediente (ver/descargar: todos; subir/eliminar: solo admin)
 router.get('/:id/documentos', listarDocumentos);

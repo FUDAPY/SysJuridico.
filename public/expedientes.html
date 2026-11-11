@@ -21,6 +21,9 @@
         <button class="boton" id="btnModoFocus" onclick="alternarModoFocus()" style="background:#f59e0b; color:#fff; font-weight:600; border:none; padding:8px 16px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;">
           <span>⚡</span> Modo Focus 🚀
         </button>
+        <button class="boton btn-secundario" onclick="abrirModalCSJ()" style="gap:6px; padding:8px 14px; border-radius:8px;">
+          <span>⚖️</span> Mi Conexión CSJ
+        </button>
         <button class="boton btn-secundario" onclick="exportarExpedientesCSV()" style="padding:8px 16px; border-radius:8px;">
           <span>📥</span> Exportar
         </button>
@@ -288,6 +291,46 @@
           <button class="btn-secundario" onclick="cerrarModalCSJ()">Cerrar</button>
           <button class="boton btn-dorado" onclick="guardarCredencialesCSJ()">Guardar Credenciales</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Compartir Expediente (Administración de Acceso) -->
+  <div class="modal-fondo oculto" id="modalCompartirExpediente">
+    <div class="modal" style="max-width:560px">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px">
+        <div>
+          <h3 id="compCaratulaTitulo" style="margin:0; font-size:1.18rem; color:var(--texto);">🔗 Compartir Causa Judicial</h3>
+          <p style="color:var(--texto-muted); font-size:0.82rem; margin:4px 0 0">
+            Otorga acceso a abogados de la firma para colaborar y visualizar las actuaciones de esta causa.
+          </p>
+        </div>
+        <button onclick="cerrarModalCompartir()" style="background:transparent; border:none; font-size:1.3rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
+
+      <input type="hidden" id="compExpedienteId" value="" />
+
+      <div style="margin-bottom:16px;">
+        <label style="font-size:0.85rem; font-weight:600; color:var(--texto); margin-bottom:6px; display:block;">Seleccionar Abogado para Conceder Acceso</label>
+        <div style="display:flex; gap:8px;">
+          <select id="compSelectAbogado" style="flex:1; padding:9px 12px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.88rem;">
+            <option value="">Cargando profesionales...</option>
+          </select>
+          <button class="boton btn-primario" onclick="ejecutarCompartirExpediente()" style="white-space:nowrap; padding:9px 16px;">
+            <span>+</span> Compartir
+          </button>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--borde); padding-top:14px;">
+        <h4 style="margin:0 0 10px; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--texto-muted);">Profesionales con Acceso Compartido</h4>
+        <div id="compListaUsuarios" style="display:flex; flex-direction:column; gap:8px; max-height:220px; overflow-y:auto;">
+          <!-- Inyectado por JS -->
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+        <button class="btn-secundario" onclick="cerrarModalCompartir()" style="padding:8px 18px; border-radius:8px;">Cerrar</button>
       </div>
     </div>
   </div>

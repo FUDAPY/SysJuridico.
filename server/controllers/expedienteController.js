@@ -23,14 +23,28 @@ const listarExpedientes = asyncHandler(async (req, res) => {
     ];
   }
 
-  // El rol 'abogado' solo puede ver los expedientes que tiene asignados
+  // El rol 'abogado' solo puede ver expedientes que tiene asignados, creados o compartidos por el admin
   if (req.usuario.rol === 'abogado') {
-    filtro.abogadoAsignado = req.usuario._id;
+    const condicionUsuario = {
+      $or: [
+        { abogadoAsignado: req.usuario._id },
+        { creadoPor: req.usuario._id },
+        { compartidoCon: req.usuario._id },
+      ],
+    };
+
+    if (filtro.$or) {
+      filtro.$and = [{ $or: filtro.$or }, condicionUsuario];
+      delete filtro.$or;
+    } else {
+      filtro.$or = condicionUsuario.$or;
+    }
   }
 
   const expedientes = await Expediente.find(filtro)
     .populate('cliente', 'nombreCompleto cedula telefono')
     .populate('abogadoAsignado', 'nombre email')
+    .populate('compartidoCon', 'nombre email rol')
     .sort({ createdAt: -1 });
 
   res.json({ success: true, data: expedientes });
@@ -40,11 +54,19 @@ const listarExpedientes = asyncHandler(async (req, res) => {
 const obtenerExpediente = asyncHandler(async (req, res) => {
   const expediente = await Expediente.findById(req.params.id)
     .populate('cliente')
-    .populate('abogadoAsignado', 'nombre email rol');
+    .populate('abogadoAsignado', 'nombre email rol')
+    .populate('compartidoCon', 'nombre email rol');
   if (!expediente) throw new ApiError(404, 'Expediente no encontrado.');
 
-  if (req.usuario.rol === 'abogado' && String(expediente.abogadoAsignado._id) !== String(req.usuario._id)) {
-    throw new ApiError(403, 'No tiene permisos para ver este expediente.');
+  if (req.usuario.rol === 'abogado') {
+    const esAsignado = String(expediente.abogadoAsignado?._id || expediente.abogadoAsignado) === String(req.usuario._id);
+    const esCreador = String(expediente.creadoPor?._id || expediente.creadoPor) === String(req.usuario._id);
+    const esCompartido = (expediente.compartidoCon || []).some(
+      (u) => String(u._id || u) === String(req.usuario._id)
+    );
+    if (!esAsignado && !esCreador && !esCompartido) {
+      throw new ApiError(403, 'No tiene permisos para ver este expediente.');
+    }
   }
 
   res.json({ success: true, data: expediente });
@@ -287,6 +309,78 @@ const eliminarDocumento = asyncHandler(async (req, res) => {
   res.json({ success: true, message: 'Documento eliminado.' });
 });
 
+// POST /api/expedientes/:id/compartir
+const compartirExpediente = asyncHandler(async (req, res) => {
+  const expediente = await Expediente.findById(req.params.id);
+  if (!expediente) throw new ApiError(404, 'Expediente no encontrado.');
+
+  // Solo el administrador o el titular/abogado asignado pueden compartir
+  const esAdmin = req.usuario.rol === 'admin';
+  const esTitular =
+    String(expediente.abogadoAsignado) === String(req.usuario._id) ||
+    String(expediente.creadoPor) === String(req.usuario._id);
+
+  if (!esAdmin && !esTitular) {
+    throw new ApiError(403, 'Solo el administrador o el abogado titular pueden compartir este expediente.');
+  }
+
+  const { usuariosIds, usuarioId } = req.body;
+  const idsAAgregar = Array.isArray(usuariosIds) ? usuariosIds : usuarioId ? [usuarioId] : [];
+
+  if (!idsAAgregar.length) {
+    throw new ApiError(400, 'Debe especificar al menos un abogado para compartir el expediente.');
+  }
+
+  const actuales = (expediente.compartidoCon || []).map((id) => String(id));
+  idsAAgregar.forEach((id) => {
+    if (id && !actuales.includes(String(id))) {
+      actuales.push(String(id));
+    }
+  });
+
+  expediente.compartidoCon = actuales;
+  await expediente.save();
+
+  const expActualizado = await Expediente.findById(expediente._id)
+    .populate('cliente', 'nombreCompleto cedula telefono')
+    .populate('abogadoAsignado', 'nombre email rol')
+    .populate('compartidoCon', 'nombre email rol');
+
+  res.json({
+    success: true,
+    message: 'Expediente compartido exitosamente.',
+    data: expActualizado,
+  });
+});
+
+// DELETE /api/expedientes/:id/compartir/:usuarioId
+const desasociarExpedienteCompartido = asyncHandler(async (req, res) => {
+  const expediente = await Expediente.findById(req.params.id);
+  if (!expediente) throw new ApiError(404, 'Expediente no encontrado.');
+
+  const esAdmin = req.usuario.rol === 'admin';
+  const esTitular =
+    String(expediente.abogadoAsignado) === String(req.usuario._id) ||
+    String(expediente.creadoPor) === String(req.usuario._id);
+
+  if (!esAdmin && !esTitular) {
+    throw new ApiError(403, 'Solo el administrador o el titular pueden revocar la compartición.');
+  }
+
+  const usuarioIdRevocar = req.params.usuarioId;
+  expediente.compartidoCon = (expediente.compartidoCon || []).filter(
+    (u) => String(u._id || u) !== String(usuarioIdRevocar)
+  );
+
+  await expediente.save();
+
+  res.json({
+    success: true,
+    message: 'Acceso compartido revocado exitosamente.',
+    data: expediente.compartidoCon,
+  });
+});
+
 module.exports = {
   listarExpedientes,
   obtenerExpediente,
@@ -297,4 +391,6 @@ module.exports = {
   listarDocumentos,
   descargarDocumento,
   eliminarDocumento,
+  compartirExpediente,
+  desasociarExpedienteCompartido,
 };
