@@ -64,28 +64,62 @@ document.addEventListener('DOMContentLoaded', async () => {
   let ultimoRange = null;
   let accionIAPendiente = 'redactar';
 
+  // Configuración de párrafo estándar para edición fluida
+  try {
+    document.execCommand('defaultParagraphSeparator', false, 'p');
+  } catch (_) {}
+
   // =========================================================================
   // 1. GESTIÓN FLUIDA DEL LIENZO A4: CLIC Y ESCRITURA INMEDIATA
   // =========================================================================
+  function asegurarParrafoInicial() {
+    if (!hoja) return;
+    const hijosValidos = Array.from(hoja.children).filter(
+      (c) => !c.classList.contains('lo-corner-bl') && !c.classList.contains('lo-corner-br') && !c.classList.contains('lo-guide-box')
+    );
+    if (hijosValidos.length === 0) {
+      const p = document.createElement('p');
+      p.innerHTML = '<br>';
+      hoja.appendChild(p);
+      return p;
+    }
+    return hijosValidos[hijosValidos.length - 1];
+  }
+
   if (hoja) {
-    // Si el usuario hace clic en el área blanca de la foja (incluso abajo del texto),
+    // Si el usuario hace clic en el área blanca de la foja o al fondo,
     // garantizar que el cursor se posicione inmediatamente para escribir
     hoja.addEventListener('click', (e) => {
       if (e.target === hoja) {
+        const p = asegurarParrafoInicial();
         const sel = window.getSelection();
-        if (!sel.rangeCount || sel.isCollapsed) {
-          // Posicionar al final del último párrafo
-          const ultElemento = hoja.lastElementChild;
-          if (ultElemento) {
+        if (sel) {
+          const range = document.createRange();
+          range.selectNodeContents(p);
+          range.collapse(false);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+      }
+    });
+
+    // Clic en el scroller o fondo del lienzo enfoca el editor automáticamente
+    if (canvasScroller) {
+      canvasScroller.addEventListener('click', (e) => {
+        if (e.target === canvasScroller || e.target === docContainer) {
+          hoja.focus();
+          const p = asegurarParrafoInicial();
+          const sel = window.getSelection();
+          if (sel) {
             const range = document.createRange();
-            range.selectNodeContents(ultElemento);
+            range.selectNodeContents(p);
             range.collapse(false);
             sel.removeAllRanges();
             sel.addRange(range);
           }
         }
-      }
-    });
+      });
+    }
 
     // Guardar selección de texto al tipear o seleccionar con el mouse
     const actualizarRango = () => {

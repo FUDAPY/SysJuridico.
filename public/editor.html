@@ -86,11 +86,24 @@
       color: #0f172a !important;
     }
 
+    html, body.app-body {
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      display: block !important; /* Desactiva el display:flex del body de styles.css que restringía el ancho a la mitad */
+    }
+
     /* Layout Completo del Editor */
     .editor-layout {
       display: flex;
       flex-direction: column;
+      width: 100% !important;
+      max-width: 100% !important;
       height: 100vh;
+      min-width: 0;
       overflow: hidden;
       background: var(--lo-workspace);
       font-family: var(--fuente-cuerpo);
@@ -265,23 +278,28 @@
     .lo-ruler-container {
       display: flex;
       justify-content: center;
+      width: 100%;
+      max-width: 816px;
+      margin: 0 auto 1.5rem auto;
       background: var(--lo-ruler-bg);
-      border-bottom: 1px solid var(--lo-chrome-border);
+      border: 1px solid var(--lo-chrome-border);
+      border-radius: 4px;
       padding: 0;
       flex-shrink: 0;
       user-select: none;
-      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
     .lo-ruler {
-      width: 816px;
-      height: 18px;
+      width: 100%;
+      height: 20px;
       display: flex;
       position: relative;
       font-size: 9px;
       color: var(--lo-text);
-      opacity: 0.85;
+      opacity: 0.9;
       background: #111822;
-      box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+      border-radius: 3px;
+      overflow: hidden;
     }
     .lo-ruler-margin-left {
       width: 155px; /* 4.0 cm en escala */
@@ -322,20 +340,26 @@
     .editor-body {
       display: flex;
       flex: 1;
+      width: 100%;
+      min-width: 0;
+      min-height: 0;
       overflow: hidden;
       position: relative;
       background: var(--lo-workspace);
     }
     .lo-canvas-scroller {
       flex: 1;
+      width: 100%;
+      height: 100%;
+      min-width: 0;
       overflow-y: auto;
       overflow-x: auto;
-      padding: 2rem 1.5rem 6rem 1.5rem;
+      padding: 1.5rem 2rem 6rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 0;
       cursor: default;
+      box-sizing: border-box;
     }
     .lo-document-container {
       display: flex;
@@ -344,6 +368,7 @@
       gap: 24px; /* Separación visual entre fojas como en LibreOffice */
       width: 100%;
       max-width: 816px;
+      margin: 0 auto;
       transform-origin: top center;
       transition: transform 0.15s ease;
     }
@@ -368,6 +393,14 @@
       position: relative;
       caret-color: #000000;
       cursor: text;
+      user-select: text !important;
+      -webkit-user-select: text !important;
+    }
+    .hoja-pagina-lo .lo-corner-bl,
+    .hoja-pagina-lo .lo-corner-br,
+    .hoja-pagina-lo .lo-guide-box {
+      pointer-events: none !important;
+      user-select: none !important;
     }
     .hoja-pagina-lo:focus {
       outline: none;
@@ -830,46 +863,46 @@
       </div>
     </div>
 
-    <!-- 4. Regla Horizontal Graduada Forense CSJ (0 a 18 cm) -->
-    <div class="lo-ruler-container" id="rulerContainer">
-      <div class="lo-ruler" id="horizontalRuler">
-        <div class="lo-ruler-margin-left" title="Margen izquierdo CSJ (4.0 cm para cosido de expediente)">
-          4.0 cm (Cosido)
-        </div>
-        <div class="lo-ruler-body">
-          <span>| 1</span>
-          <span>| 2</span>
-          <span>| 3</span>
-          <span>| 4</span>
-          <span>| 5</span>
-          <span>| 6</span>
-          <span>| 7</span>
-          <span>| 8</span>
-          <span>| 9</span>
-          <span>| 10</span>
-          <span>| 11</span>
-          <span>| 12</span>
-          <span>| 13</span>
-          <span>| 14</span>
-          <span>| 15</span>
-        </div>
-        <div class="lo-ruler-margin-right" title="Margen derecho (2.0 cm)">
-          2.0 cm
-        </div>
-      </div>
-    </div>
-
     <!-- 5. Área de Trabajo (Lienzo Central + Panel Lateral) -->
     <div class="editor-body">
       <!-- Lienzo de Hoja A4 Centrado -->
       <main class="lo-canvas-scroller" id="canvasScroller">
+        <!-- 4. Regla Horizontal Graduada Forense CSJ (0 a 18 cm) -->
+        <div class="lo-ruler-container" id="rulerContainer">
+          <div class="lo-ruler" id="horizontalRuler">
+            <div class="lo-ruler-margin-left" title="Margen izquierdo CSJ (4.0 cm para cosido de expediente)">
+              4.0 cm (Cosido)
+            </div>
+            <div class="lo-ruler-body">
+              <span>| 1</span>
+              <span>| 2</span>
+              <span>| 3</span>
+              <span>| 4</span>
+              <span>| 5</span>
+              <span>| 6</span>
+              <span>| 7</span>
+              <span>| 8</span>
+              <span>| 9</span>
+              <span>| 10</span>
+              <span>| 11</span>
+              <span>| 12</span>
+              <span>| 13</span>
+              <span>| 14</span>
+              <span>| 15</span>
+            </div>
+            <div class="lo-ruler-margin-right" title="Margen derecho (2.0 cm)">
+              2.0 cm
+            </div>
+          </div>
+        </div>
+
         <div class="lo-document-container" id="documentContainer">
           <!-- Foja 1 Judicial -->
           <article class="hoja-pagina-lo" id="hojaEditor" contenteditable="true" spellcheck="true">
             <!-- Esquinas de corte LibreOffice Writer -->
-            <div class="lo-corner-bl"></div>
-            <div class="lo-corner-br"></div>
-            <div class="lo-guide-box"></div>
+            <div class="lo-corner-bl" contenteditable="false"></div>
+            <div class="lo-corner-br" contenteditable="false"></div>
+            <div class="lo-guide-box" contenteditable="false"></div>
 
             <p style="text-align: right; margin-bottom: 2rem;"><strong>OBJETO: PROMOVER DEMANDA ORDINARIA.-</strong></p>
             <p><strong>SEÑOR JUEZ DE PRIMERA INSTANCIA EN LO CIVIL Y COMERCIAL:</strong></p>

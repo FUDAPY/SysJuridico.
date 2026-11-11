@@ -119,7 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function determinarHubPertenencia(nodo) {
     if (nodo.tipo === 'hub') return nodo.id;
-    if (nodo.id === 'ley_constitucion_1992' || nodo.tipo === 'constitucion') return 'centro';
+    if (nodo.targetHub && COORDENADAS_HUBS[nodo.targetHub]) return nodo.targetHub;
+    if (nodo.id === 'ley_constitucion_1992' || nodo.tipo === 'constitucion') return 'hub_constitucional';
     if (nodo.tipo === 'institucion') return 'hub_instituciones';
 
     const fuero = (nodo.fuero || '').toLowerCase();
@@ -127,7 +128,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fuero.includes('laboral')) return 'hub_laboral';
     if (fuero.includes('niñez') || fuero.includes('menor')) return 'hub_ninez';
     if (fuero.includes('tribut')) return 'hub_tributario';
-    if (fuero.includes('administrativ') || fuero.includes('constitucional')) return 'hub_administrativo';
+    if (fuero.includes('administrativ')) return 'hub_administrativo';
+    if (fuero.includes('constitucional')) return 'hub_constitucional';
     return 'hub_civil';
   }
 
@@ -642,6 +644,24 @@ document.addEventListener('DOMContentLoaded', () => {
   function parsearArticulosDeTexto(texto, titulo, nodo) {
     if (!texto || typeof texto !== 'string') return [];
     const limpio = texto.trim();
+
+    // Caso Especial: Catálogos de Legislación Positiva por Fuero (BACN)
+    if (nodo && nodo.totalLeyes) {
+      const tarjetas = [];
+      tarjetas.push({
+        id: 'cat_resumen',
+        numero: '📜 Catálogo Oficial BACN',
+        titulo: nodo.etiqueta,
+        cuerpo: `${nodo.detalle}\n\nTotal de normas catalogadas: ${(nodo.totalLeyes || 0).toLocaleString('es-PY')} leyes y disposiciones.\nArtículos indexados en el fuero: ${(nodo.articulos || 0).toLocaleString('es-PY')} artículos.`,
+      });
+      tarjetas.push({
+        id: 'cat_instrucciones',
+        numero: '🔍 Acceso al Articulado y Búsqueda',
+        titulo: 'Consulta en OtelaxWisdom & Techapyrã IA',
+        cuerpo: 'Podés buscar cualquier ley específica de este catálogo en el buscador superior del sistema o solicitarle a Techapyrã IA que aplique sus disposiciones directamente a tu caso judicial.',
+      });
+      return tarjetas;
+    }
 
     // Caso Especial: Jurisprudencia Oficial CSJ
     if (nodo && nodo.tipo === 'jurisprudencia') {

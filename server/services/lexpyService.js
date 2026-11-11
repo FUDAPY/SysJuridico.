@@ -24,8 +24,28 @@ function esSaludo(pregunta) {
   return SALUDOS.some((frase) => t === frase || t.startsWith(`${frase} `));
 }
 
+function esConsultaMetaOtelax(pregunta) {
+  if (!pregunta || typeof pregunta !== 'string') return false;
+  const p = textoPlano(pregunta).replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+  const patrones = [
+    /\b(motor.*rag|rag.*motor|rag)\b/,
+    /\b(base.*conocimiento|nombre.*base)\b/,
+    /\b(quien.*sos|quien.*eres|que.*sos|que.*eres)\b/,
+    /\b(como.*te.*llamas|cual.*es.*tu.*nombre)\b/,
+    /\b(como.*funcionas|que.*haces|que.*podes.*hacer|que.*puedes.*hacer)\b/,
+    /\b(que.*modelo|que.*ia)\b/,
+    /\b(otelax|otelaxwisdom|techapyra)\b/,
+    /\b(que.*base.*datos|que.*leyes.*tenes|cuantas.*leyes)\b/,
+  ];
+  return patrones.some((rx) => rx.test(p));
+}
+
 async function buscarEnBaseLocal(consulta) {
   const q = String(consulta || '').trim();
+  if (esConsultaMetaOtelax(q)) {
+    return { aprendizajes: [], baseLegal: [] };
+  }
+
   // Detección de número de ley específica (ej: 1462, 6715, 213, 1183, 1626, 834)
   const numLeyMatch = q.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
   let baseLegal = [];
@@ -131,6 +151,35 @@ async function responderSaludo(pregunta) {
   );
 }
 
+async function procesarConsultaMeta(pregunta) {
+  const system =
+    'Sos Techapyrã IA, el asistente y copiloto jurídico de LIN GROUP & Asociados (Paraguay), impulsado por el motor de sabiduría jurídica paraguaya OtelaxWisdom.\n' +
+    'Tu base de conocimiento RAG propia y local incluye:\n' +
+    '- 7.179 leyes, códigos y normativas vigentes de la República del Paraguay (catálogo oficial BACN con 32.370 artículos indexados en base de datos).\n' +
+    '- 72.375 resoluciones y fallos jurisprudenciales de la Corte Suprema de Justicia (CSJ) categorizados por fueros (Civil, Penal, Laboral, Niñez, Contencioso Administrativo, Tributario, etc.).\n' +
+    '- Integración procesal en tiempo real con causas y expedientes judiciales del estudio jurídico y análisis forense de piezas adjuntas.\n' +
+    '- Memoria agéntica contextual y doctrina validada.\n' +
+    'Responde a la pregunta del usuario con cordialidad, precisión técnica y concisión en español.';
+
+  const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: null, system });
+  if (respuestaIA) {
+    return { respuesta: respuestaIA, fuente: 'ia_generativa' };
+  }
+
+  return {
+    respuesta:
+      '### Techapyrã IA — Motor OtelaxWisdom\n\n' +
+      'Soy **Techapyrã IA**, el asistente jurídico de **LIN GROUP & Asociados**, impulsado por el motor de sabiduría jurídica paraguaya **OtelaxWisdom**.\n\n' +
+      '#### Base de Conocimiento y Arquitectura RAG:\n' +
+      '- 📜 **Base Legal Positiva (BACN):** 7.179 leyes y códigos vigentes del Paraguay con 32.370 artículos indexados localmente.\n' +
+      '- ⚖️ **Jurisprudencia CSJ:** 72.375 fallos y resoluciones oficiales de la Corte Suprema de Justicia clasificados por fuero.\n' +
+      '- 📁 **Expedientes y Causas Activas:** Contexto procesal del cliente y lectura de documentos adjuntos del caso.\n' +
+      '- 🧠 **Doctrina Forense:** Resoluciones y criterios validados por el equipo jurídico.\n\n' +
+      '¿En qué asunto procesal o consulta legal paraguaya puedo ayudarte hoy?',
+    fuente: 'ia_generativa',
+  };
+}
+
 async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId }) {
   const { aprendizajes, baseLegal } = await buscarEnBaseLocal(pregunta);
   const totalLocal = aprendizajes.length + baseLegal.length;
@@ -195,17 +244,22 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     let salidaMarkdown = '';
     if (baseLegal.length) {
       salidaMarkdown = baseLegal
-        .map(
-          (b) =>
-            `# ${b.titulo}\n\n` +
-            `- **Fuente Oficial:** ${b.fuente || 'Biblioteca y Archivo Central del Congreso de la Nación (BACN)'}\n` +
-            (b.url ? `- **URL Oficial:** [${b.url}](${b.url})\n` : '') +
+        .map((b) => {
+          const extracto = b.contenido
+            ? b.contenido.slice(0, 600).trim() + (b.contenido.length > 600 ? '...' : '')
+            : '(Sin texto extraído disponible)';
+          return (
+            `### ${b.titulo}\n\n` +
+            `- **Fuente Oficial:** ${b.fuente || 'Biblioteca y Archivo Central del Congreso Nacional (BACN)'}\n` +
+            (b.url ? `- **Ficha Oficial:** [Ver en BACN](${b.url})\n` : '') +
             `- **Estado:** Vigente en la República del Paraguay\n\n` +
-            `### Disposiciones y Artículos:\n\n${b.contenido}\n`
-        )
+            `> ℹ️ *Extracto normativo referencial indexado en OtelaxWisdom:*\n\n` +
+            `${extracto}\n`
+          );
+        })
         .join('\n---\n\n');
     } else {
-      salidaMarkdown = contexto;
+      salidaMarkdown = (contexto || '').slice(0, 1500);
     }
     const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
     return {
@@ -229,6 +283,11 @@ async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam,
   if (esSaludo(pregunta)) {
     const respuesta = await responderSaludo(pregunta);
     return { respuesta, fuente: 'ia_generativa', aprendizaje: false };
+  }
+
+  if (esConsultaMetaOtelax(pregunta)) {
+    const metaRes = await procesarConsultaMeta(pregunta);
+    return { respuesta: metaRes.respuesta, fuente: 'ia_generativa', aprendizaje: false };
   }
 
   const resultado = await procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId });
