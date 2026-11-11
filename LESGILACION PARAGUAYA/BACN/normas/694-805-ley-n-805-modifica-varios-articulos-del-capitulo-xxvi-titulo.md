@@ -1,0 +1,47 @@
+# Ley Nº 805 / MODIFICA VARIOS ARTICULOS DEL CAPITULO XXVI, TITULO II, LIBRO III, DEL CODIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA LEY N° 941/64 Y DESPENALIZA EL CHEQUE CON FECHA ADELANTADA
+
+## Datos de la fuente
+
+- **Identificador BACN:** 694
+- **Promulgación:** 16-01-1996
+- **Publicación:** 16-01-1996
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/694/ley-n-805-modifica-varios-articulos-del-capitulo-xxvi-titulo-ii-libro-iii-del-codigo-civil-y-crea-la-figura-del-cheque-bancario-de-pago-diferido-deroga-la-ley-n-941-64-y-despenaliza-el-cheque-con-fecha-adelantada-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/694/20140825100331.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+- **referencia relacionada:** [Ley Nº 1183 / CODIGO CIVIL - III PARTE - LIBRO TERCERO](522-1183-ley-n-1183-codigo-civil-iii-parte-libro-tercero.md) — Art.1696.- El cheque debe contener:
+a) el número de orden impreso en el talón y en el cheque, y el número de cuenta;
+b) la fecha y el lugar de emisión;
+c) la orden pura y simple de pagar una suma determinada de dinero;
+d) el nombre del banco contra el cual se gira;
+e) la indicación del lugar del pago; y
+f) la firma del librador.
+Los bancos imprimirán cheque numerados progresivamente en los que los datos arriba mencionados puedan ser fácilmente completados de una manera regular, tanto en el chequ
+- **derogación mencionada:** [Ley Nº 2835 / MODIFICA LOS ARTÍCULOS 10 Y 16 Y DEROGA EL ARTÍCULO 13 DE LA LEY Nº 805/96 “QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXVI, TÍTULO II, LIBRO III, DEL CÓDIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA LEY Nº 941/64, Y DESPENALIZA EL CHEQUE CON FECHA ADELANTADA”.](686-2835-ley-n-2835-modifica-los-articulos-10-y-16-y-deroga-el-articu.md) — BANCARIO DE PAGO DIFERIDO, DEROGA LA LEY Nº 941/64, Y DESPENALIZA EL CHEQUE CON FECHA ADELANTADA”.
+EL CONGRESO DE LA NACION PARAGUAYA SANCIONA CON FUERZA DE
+LEY:
+Artículo 1°.- Modifícanse los Artículos 10 y 16 de la [Ley Nº 805/96](http://www.bacn.gov.py/ampliar-leyes-paraguayas.php?id=694) “QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXVI, TÍTULO II, LIBRO III, DEL CÓDIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA [
+- **modificación mencionada:** [Ley Nº 2835 / MODIFICA LOS ARTÍCULOS 10 Y 16 Y DEROGA EL ARTÍCULO 13 DE LA LEY Nº 805/96 “QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXVI, TÍTULO II, LIBRO III, DEL CÓDIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA LEY Nº 941/64, Y DESPENALIZA EL CHEQUE CON FECHA ADELANTADA”.](686-2835-ley-n-2835-modifica-los-articulos-10-y-16-y-deroga-el-articu.md) — IZA EL CHEQUE CON FECHA ADELANTADA”, que quedan redactados de la siguiente manera:
+“Art 10.- Quien librara un cheque bancario que, presentado al cobro al banco girado dentro del plazo que determina el Artículo 4º de la Ley Nº 805/96, modificatorio a su vez del Artículo 1.726 de la [Ley Nº 1.183/85](http://www.bacn.gov.py/ampliar-leyes-paraguayas.php?id=522) Código Civil, no tuviera suficiente provisión de fondos disponibles, o no tuviera autoriz
+- **referencia relacionada:** [Ley Nº 6524 / DECLARA ESTADO DE EMERGENCIA EN TODO EL TERRITORIO DE LA REPÚBLICA DEL PARAGUAY ANTE LA PANDEMIA DECLARADA POR LA ORGANIZACIÓN MUNDIAL DE LA SALUD A CAUSA DEL COVID-19 O CORONAVIRUS Y SE ESTABLECEN MEDIDAS ADMINISTRATIVAS, FISCALES Y FINANCIERAS.](9156-6524-ley-n-6524-declara-estado-de-emergencia-en-todo-el-territori.md) — Excepcionalmente, hasta el 1 de julio de 2020, inclusive, considerando los efectos económicos de la situación de emergencia sanitaria, los bancos de plaza se abstendrán de aplicar y comunicar a la Superintendencia de Bancos sanciones de inhabilitación de cuentas corrientes bancarias previstas en las leyes Nº 805/1996 y 3711/2009 “
+- **modificación mencionada:** [Ley Nº 6541 / MODIFICA EL ARTÍCULO 51 DE LA LEY N° 6524/2020 “QUE DECLARA ESTADO DE EMERGENCIA EN TODO EL TERRITORIO DE LA REPÚBLICA DEL PARAGUAY ANTE LA PANDEMIA DECLARADA POR LA ORGANIZACIÓN MUNDIAL DE LA SALUD A CAUSA DEL COVID-19 O CORONAVIRUS Y SE ESTABLECEN MEDIDAS ADMINISTRATIVAS, FISCALES Y FINANCIERAS”](9299-6541-ley-n-6541-modifica-el-articulo-51-de-la-ley-n-6524-2020-que.md) — Excepcionalmente, hasta el 1 de julio de 2020, inclusive, considerando los efectos económicos de la situación de emergencia sanitaria, los bancos de plaza se abstendrán de aplicar y comunicar a la Superintendencia de Bancos sanciones de inhabilitación de cuentas corrientes bancarias, además de cualquier otro costo que pudiera imputarse, previstas en las Leyes N°s. 805/1996 y 3711/2009 “QUE MODIFICA LOS ARTÍCULOS N°s. 10, 13 Y 16 DE LA LEY N° 805/96, QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXV
+- **derogación mencionada:** [Ley Nº 6541 / MODIFICA EL ARTÍCULO 51 DE LA LEY N° 6524/2020 “QUE DECLARA ESTADO DE EMERGENCIA EN TODO EL TERRITORIO DE LA REPÚBLICA DEL PARAGUAY ANTE LA PANDEMIA DECLARADA POR LA ORGANIZACIÓN MUNDIAL DE LA SALUD A CAUSA DEL COVID-19 O CORONAVIRUS Y SE ESTABLECEN MEDIDAS ADMINISTRATIVAS, FISCALES Y FINANCIERAS”](9299-6541-ley-n-6541-modifica-el-articulo-51-de-la-ley-n-6524-2020-que.md) — -iii-del-codigo-civil-y-crea-la-figura-del-cheque-bancario-de-pago-diferido-deroga-la-ley-n-94164-y-despenaliza-el-cheque-con-fecha-adelantada-y-deroga-la-ley-n-283505) “QUE MODIFICA LOS ARTÍCULOS N°s. 10, 13 Y 16 DE LA LEY N° 805/96, QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXVI, TÍTULO II, LIBRO III, DEL CÓDIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA [LEY N° 941/64](https://www.bacn.gov.py/leyes-paraguayas/2553/
+- **referencia relacionada:** [Ley Nº 6587 / ESTABLECE EL PROGRAMA “PYTYVÕ 2.0” COMO SALVAGUARDA DE LOS INGRESOS DE LOS TRABAJADORES EN SITUACIÓN DE INFORMALIDAD CON ÉNFASIS EN CIUDADES DE FRONTERA, Y OTRAS MEDIDAS QUE IMPULSEN LA ECONOMÍA NACIONAL](9309-6587-ley-n-6587-establece-el-programa-pytyvo-2-0-como-salvaguarda.md) — Modifícase el Artículo 51 de la Ley Nº 6524/2020 “QUE DECLARA ESTADO DE EMERGENCIA EN TODO EL TERRITORIO DE LA REPÚBLICA DEL PARAGUAY ANTE LA PANDEMIA DECLARADA POR LA ORGANIZACIÓN MUNDIAL DE LA SALUD A CAUSA DEL COVID-19 O CORONAVIRUS Y SE ESTABLECEN MEDIDAS ADMINISTRATIVAS, FISCALES Y FINANCIERAS”, quedando redactado de la siguiente forma: “Excepcionalmente, hasta el 31 de octubre de 2020 inclusive, considerando los efectos económicos de la situación de emergencia sanitaria, los bancos de plaz
+- **derogación mencionada:** [Ley Nº 6587 / ESTABLECE EL PROGRAMA “PYTYVÕ 2.0” COMO SALVAGUARDA DE LOS INGRESOS DE LOS TRABAJADORES EN SITUACIÓN DE INFORMALIDAD CON ÉNFASIS EN CIUDADES DE FRONTERA, Y OTRAS MEDIDAS QUE IMPULSEN LA ECONOMÍA NACIONAL](9309-6587-ley-n-6587-establece-el-programa-pytyvo-2-0-como-salvaguarda.md) — o-iii-del-codigo-civil-y-crea-la-figura-del-cheque-bancario-de-pago-diferido-deroga-la-ley-n-94164-y-despenaliza-el-cheque-con-fecha-adelantada-y-deroga-la-ley-n-283505) “QUE MODIFICA LOS ARTÍCULOS Nºs 10, 13 Y 16 DE LA LEY Nº 805/96, QUE MODIFICA VARIOS ARTÍCULOS DEL CAPÍTULO XXVI, TÍTULO II, LIBRO III, DEL CÓDIGO CIVIL Y CREA LA FIGURA DEL CHEQUE BANCARIO DE PAGO DIFERIDO, DEROGA LA [LEY Nº 941/64](https://www.bacn.gov.py/leyes-paraguayas/2553/
+- **referencia relacionada:** [Ley Nº 6809 / ESTABLECE MEDIDAS TRANSITORIAS DE CONSOLIDACIÓN ECONÓMICA Y DE CONTENCIÓN SOCIAL, PARA MITIGAR EL IMPACTO DE LA PANDEMIA DEL COVID-19 O CORONAVIRUS](9663-6809-ley-n-6809-establece-medidas-transitorias-de-consolidacion-e.md) — Excepcionalmente, hasta el 31 de diciembre de 2021, inclusive, considerando los efectos económicos de la Declaración de Emergencia Nacional por la Pandemia de la COVID-19 o Coronavirus, los bancos de plaza se abstendrán de aplicar y comunicar a la Superintendencia de Bancos las sanciones de inhabilitación por 1 (un) año para girar cheques y operar en cuentas corrientes en todos los bancos del país, como así también se abstendrán de aplicar multas o cualquier otro costo que pudiera imputarse, con
+- **derogación mencionada:** [Ley Nº 6809 / ESTABLECE MEDIDAS TRANSITORIAS DE CONSOLIDACIÓN ECONÓMICA Y DE CONTENCIÓN SOCIAL, PARA MITIGAR EL IMPACTO DE LA PANDEMIA DEL COVID-19 O CORONAVIRUS](9663-6809-ley-n-6809-establece-medidas-transitorias-de-consolidacion-e.md) — or 1 (un) año para girar cheques y operar en cuentas corrientes en todos los bancos del país, como así también se abstendrán de aplicar multas o cualquier otro costo que pudiera imputarse, conforme a lo dispuesto en la [Ley N° 805/1996](https://www.bacn.gov.py/leyes-paraguayas/694/ley-n-805-modifica-varios-articulos-del-capitulo-xxvi-titulo-ii-libro-iii-del-codigo-civil-y-crea-la-figura-del-cheque-bancario-de-pago-diferido-deroga-la-ley-n-94164-y-desp
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

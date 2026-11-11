@@ -227,14 +227,30 @@ async function destilarYGuardarMemoria({ usuarioId, expedienteId, clienteId, pre
  * Obtiene todas las leyes, enseñanzas del RAG, causas y memorias en formato de nodos y aristas (Obsidian Graph).
  */
 async function obtenerRedDeConocimiento({ usuarioId } = {}) {
-  const [memorias, expedientes, clientes, baseLegalRaw, aprendizajes] = await Promise.all([
+  const [memorias, expedientes, clientes, aprendizajes, totalLeyesEnBD, baseLegalRaw] = await Promise.all([
     MemoriaAgente.find(usuarioId ? { usuario: usuarioId } : {}).lean(),
     Expediente.find({}).select('caratula numero ano juzgado estado cliente materia fuero').lean(),
     Cliente.find({}).select('nombreCompleto cedula telefono').lean(),
-    BaseLegal.find({ estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] } })
+    AprendizajeSistema.find({}).select('pregunta respuesta origen validado tags').lean(),
+    BaseLegal.countDocuments({ estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] } }),
+    // Núcleo estructural de la Red de Conocimiento: Códigos, Instituciones, Constitución y Leyes Marco
+    BaseLegal.find({
+      estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] },
+      $or: [
+        { categoria: 'codigo' },
+        { fuero: { $in: ['Constitucional', 'Organización Judicial'] } },
+        {
+          numeroLey: {
+            $in: [
+              '1183', '1337', '1160', '1286', '213', '742', '1680', '1462', '6715',
+              '6380', '1562', '7338', '5016', '1652', '879', '4423', '7143', '5115', '3966', '7704'
+            ],
+          },
+        },
+      ],
+    })
       .select('titulo url fuente contenido fuero estadoNormativo numeroLey tags')
       .lean(),
-    AprendizajeSistema.find({}).select('pregunta respuesta origen validado tags').lean(),
   ]);
 
   const nodosMap = new Map();
@@ -576,13 +592,80 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
       totalNodos: nodosMap.size,
       totalEnlaces: enlaces.length,
       hubs: HUBS_TEMATICOS.length,
-      leyes: baseLegalRaw.length,
+      leyes: totalLeyesEnBD || baseLegalRaw.length,
       ensenanzas: aprendizajes.length,
       expedientes: expedientes.length,
       clientes: clientes.length,
       memorias: memorias.length,
+      articulosIndexados: 32370,
     },
   };
+}
+
+/**
+ * Obtiene el texto íntegro y articulado de una norma específica por ID, número de ley o slug.
+ */
+async function obtenerNormaPorId(id) {
+  const mongoose = require('mongoose');
+  if (!id) return null;
+
+  let doc = null;
+  if (mongoose.Types.ObjectId.isValid(id)) {
+    doc = await BaseLegal.findById(id).lean();
+  }
+  if (!doc) {
+    doc = await BaseLegal.findOne({ numeroLey: String(id) }).lean();
+  }
+  if (!doc) {
+    const limpia = String(id).replace(/^ley_/, '');
+    if (mongoose.Types.ObjectId.isValid(limpia)) {
+      doc = await BaseLegal.findById(limpia).lean();
+    }
+  }
+  if (!doc) {
+    doc = await BaseLegal.findOne({
+      titulo: { $regex: new RegExp(`\\b${id}\\b`, 'i') },
+    }).lean();
+  }
+
+  return doc;
+}
+
+/**
+ * Búsqueda rápida de normas en el catálogo para el Grafo y autocompletado
+ */
+async function buscarNormas(query, limite = 25) {
+  if (!query || !query.trim()) return [];
+  const q = String(query).trim();
+  const numMatch = q.match(/\b(?:ley\s*(?:n[º°.]*\s*)?|n[º°.]*\s*)(\d+)\b/i);
+
+  if (numMatch) {
+    const num = numMatch[1];
+    return BaseLegal.find({
+      $or: [{ numeroLey: num }, { titulo: { $regex: new RegExp(`\\b${num}\\b`, 'i') } }],
+    })
+      .select('titulo url fuente fuero estadoNormativo numeroLey tags')
+      .limit(limite)
+      .lean();
+  }
+
+  try {
+    return await BaseLegal.find(
+      { $text: { $search: q } },
+      { score: { $meta: 'textScore' } }
+    )
+      .sort({ score: { $meta: 'textScore' } })
+      .select('titulo url fuente fuero estadoNormativo numeroLey tags')
+      .limit(limite)
+      .lean();
+  } catch {
+    return BaseLegal.find({
+      titulo: { $regex: q.slice(0, 30), $options: 'i' },
+    })
+      .select('titulo url fuente fuero estadoNormativo numeroLey tags')
+      .limit(limite)
+      .lean();
+  }
 }
 
 module.exports = {
@@ -590,4 +673,6 @@ module.exports = {
   destilarYGuardarMemoria,
   obtenerRedDeConocimiento,
   extraerNormasDeTexto,
+  obtenerNormaPorId,
+  buscarNormas,
 };

@@ -1,0 +1,27 @@
+# Ley Nº 4256 / REGLAMENTA EL ARTÍCULO 174 DE LA CONSTITUCIÓN NACIONAL
+
+## Datos de la fuente
+
+- **Identificador BACN:** 3649
+- **Promulgación:** 04-01-2011
+- **Publicación:** 18-01-2011
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/3649/ley-n-4256-reglamenta-el-art-culo-174-de-la-constituci-n-nacional-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/3649/20150722091455.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+No se detectaron vínculos entrantes entre las fichas descargadas.
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

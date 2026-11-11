@@ -1,0 +1,27 @@
+# Ley Nº 2709 / DESAFECTA DEL DOMINIO PUBLICO MUNICIPAL Y AUTORIZA A LA MUNICIPALIDAD DE VILLA ELISA A TRANSFERIR A TITULO GRATUITO A FAVOR DEL CUERPO DE BOMBEROS VOLUNTARIOS DEL PARAGUAY, UN INMUEBLE INDIVIDUALIZADO COMO PARTE DE LA FINCA Nº 6500 PARA ASIENTO DEL LOCAL DE LA NOVENA COMPAÑÍA VILLA ELISA, UBICADO EN EL BARRIO CENTRO DEL CITADO MUNICIPIO
+
+## Datos de la fuente
+
+- **Identificador BACN:** 4267
+- **Promulgación:** 04-10-2005
+- **Publicación:** 28-10-2005
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/4267/ley-n-2709-desafecta-del-dominio-publico-municipal-y-autoriza-a-la-municipalidad-de-villa-elisa-a-transferir-a-titulo-gratuito-a-favor-del-cuerpo-de-bomberos-voluntarios-del-paraguay-un-inmueble-individualizado-como-parte-de-la-finca-n-6500-para-asiento-del-local-de-la-novena-compa-a-villa-elisa-ubicado-en-el-barrio-centro-del-citado-municipio-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/4267/20151028105722.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+No se detectaron vínculos entrantes entre las fichas descargadas.
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

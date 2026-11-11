@@ -2,7 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const Usuario = require('../models/Usuario');
 const { procesarConsultaLexPY } = require('../services/lexpyService');
-const { destilarYGuardarMemoria, obtenerRedDeConocimiento } = require('../services/agentMemoryService');
+const { destilarYGuardarMemoria, obtenerRedDeConocimiento, obtenerNormaPorId, buscarNormas } = require('../services/agentMemoryService');
 
 const router = express.Router();
 
@@ -127,6 +127,33 @@ router.get('/grafo', authObsidianOpcional, async (req, res) => {
   try {
     const red = await obtenerRedDeConocimiento({ usuarioId: req.usuario._id });
     res.json({ success: true, data: red });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+/**
+ * GET /api/v1/norma/:id
+ * Retorna el articulado completo de una ley específica
+ */
+router.get('/norma/:id', authObsidianOpcional, async (req, res) => {
+  try {
+    const norma = await obtenerNormaPorId(req.params.id);
+    if (!norma) return res.status(404).json({ success: false, message: 'Norma no encontrada' });
+    res.json({ success: true, data: norma });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+/**
+ * GET /api/v1/buscar-norma
+ * Búsqueda de leyes en el catálogo BACN
+ */
+router.get('/buscar-norma', authObsidianOpcional, async (req, res) => {
+  try {
+    const resultados = await buscarNormas(req.query.q);
+    res.json({ success: true, data: resultados });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }

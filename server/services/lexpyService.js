@@ -35,7 +35,10 @@ async function buscarEnBaseLocal(consulta) {
   if (numLeyMatch) {
     const num = numLeyMatch[1];
     const regexLey = new RegExp(`\\b${num}\\b`, 'i');
-    baseLegal = await BaseLegal.find({ titulo: { $regex: regexLey }, ...filtroVigencia }).limit(2);
+    baseLegal = await BaseLegal.find({
+      $or: [{ numeroLey: num }, { titulo: { $regex: regexLey } }],
+      ...filtroVigencia,
+    }).limit(2);
   }
 
   // Si no hubo match específico o no se encontraron, búsqueda por texto completo
@@ -376,5 +379,5 @@ async function procesarAsistenteEditor({
   };
 }
 
-module.exports = { procesarConsultaLexPY, procesarAsistenteEditor };
+module.exports = { procesarConsultaLexPY, procesarAsistenteEditor, buscarEnBaseLocal };
 

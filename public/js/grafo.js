@@ -152,10 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .filter((e) => e.sourceNode && e.targetNode);
 
       // Actualizar estadísticas
-      if (statNodos) statNodos.textContent = data.estadisticas?.totalNodos || nodos.length;
-      if (statEnlaces) statEnlaces.textContent = data.estadisticas?.totalEnlaces || enlaces.length;
-      if (statLeyes) statLeyes.textContent = data.estadisticas?.leyes || nodos.filter((n) => ['ley', 'codigo', 'constitucion', 'decreto', 'acordada'].includes(n.tipo)).length;
-      if (statMemorias) statMemorias.textContent = data.estadisticas?.ensenanzas || nodos.filter((n) => n.tipo === 'ensenanza').length;
+      if (statNodos) statNodos.textContent = (data.estadisticas?.totalNodos || nodos.length).toLocaleString('es-PY');
+      if (statEnlaces) statEnlaces.textContent = (data.estadisticas?.totalEnlaces || enlaces.length).toLocaleString('es-PY');
+      if (statLeyes) statLeyes.textContent = (data.estadisticas?.leyes || nodos.filter((n) => ['ley', 'codigo', 'constitucion', 'decreto', 'acordada'].includes(n.tipo)).length).toLocaleString('es-PY');
+      if (statMemorias) statMemorias.textContent = (data.estadisticas?.ensenanzas || nodos.filter((n) => n.tipo === 'ensenanza').length).toLocaleString('es-PY');
 
       aplicarFiltros();
       requestAnimationFrame(animarGrafo);
@@ -700,6 +700,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Parsear artículos completos de contenido o detalle
     const textoCompleto = n.contenido || n.detalle || '';
     articulosActuales = parsearArticulosDeTexto(textoCompleto, n.etiqueta, n);
+
+    // Carga perezosa del articulado íntegro si el nodo contiene un resumen
+    if ((n.tipo === 'ley' || n.tipo === 'codigo' || n.tipo === 'institucion') && (!n.contenido || n.contenido.length < 500)) {
+      const idRef = n.numeroLey || n.id.replace(/^ley_/, '');
+      apiFetch(`/obsidian/norma/${encodeURIComponent(idRef)}`).then((res) => {
+        if (res?.data?.contenido) {
+          n.contenido = res.data.contenido;
+          articulosActuales = parsearArticulosDeTexto(n.contenido, n.etiqueta, n);
+          renderizarArticulosDrawer(filtroArticulosDrawer ? filtroArticulosDrawer.value : '');
+          if (modalArticuladoCompleto && modalArticuladoCompleto.classList.contains('active')) {
+            renderizarArticulosModal(busquedaArticuloModal ? busquedaArticuloModal.value : '');
+          }
+        }
+      }).catch(() => {});
+    }
 
     // Resetear filtro del drawer y renderizar
     if (filtroArticulosDrawer) filtroArticulosDrawer.value = '';

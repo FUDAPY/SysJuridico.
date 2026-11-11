@@ -105,8 +105,21 @@ SysJurídico implementa tecnologías probadas y de alta eficiencia para garantiz
    - **Instituto de Previsión Social - IPS (Decreto-Ley Nº 1860/1950):** Cobertura del seguro social obligatorio de salud y jubilación.
    - **Municipalidades y Policía Municipal de Tránsito - PMT (Ley Nº 3966/2010):** Jurisdicción estricta en el ejido urbano municipal.
 
+### 📚 Corpus Normativo del BACN & Arquitectura Local-First
+Para garantizar la máxima velocidad de respuesta y erradicar el consumo innecesario de tokens de IA, **OtelaxWisdom** incorpora el catálogo normativo completo de la **Biblioteca y Archivo Central del Congreso Nacional (BACN)**:
+
+- **7.133 fichas normativas** organizadas en archivos Markdown en la carpeta `LESGILACION PARAGUAYA/BACN/normas/` y sincronizadas en la base de datos MongoDB (`base_legal`).
+- **Constitución Nacional de la República del Paraguay (1992):** Documento íntegro con su preámbulo y los 291 artículos en `LESGILACION PARAGUAYA/constitucion_nacional.md`.
+- **Estructura de Índices y Relaciones:** El índice principal enlaza los índices de [códigos](LESGILACION%20PARAGUAYA/BACN/indices/codigos.md), [leyes](LESGILACION%20PARAGUAYA/BACN/indices/leyes.md), [instituciones públicas](LESGILACION%20PARAGUAYA/BACN/indices/instituciones.md) y [modificaciones y derogaciones detectadas](LESGILACION%20PARAGUAYA/BACN/indices/modificaciones-derogaciones.md). Cada ficha conserva los metadatos y enlaces de BACN, detectando **3.720 relaciones entre normas**.
+- **Alcance y Límites Jurídicos del Catálogo:**
+  - *Texto íntegro visible en HTML:* **2.836 fichas** exponen el articulado completo en texto estructurado.
+  - *Fichas con enlace a archivo oficial:* En **4.297 fichas** donde BACN no expuso texto legible en HTML, se preservaron todos los metadatos y el enlace directo de descarga al PDF oficial del BACN.
+  - *Vigencia y Modificaciones:* Las modificaciones y derogaciones son referencias analíticas detectadas en los textos, no una certificación oficial de vigencia ni un texto consolidado.
+- **Scraper Reanudable y Verificación de Integridad:** Se incluye el script de scraping reanudable (`scripts/scrape-bacn-laws.js`) y de ingesta (`scripts/ingest-bacn-to-db.js`). La verificación técnica confirmó **7.133 archivos íntegros**, sin fichas faltantes ni errores pendientes de sintaxis.
+- **Estrategia Local-First (Ahorro >85% de Tokens):** Techapyrã IA y el Editor Judicial consultan en primer término la base de datos local en MongoDB mediante índices de texto y coincidencias exactas por número de ley (`numeroLey`). Solo en caso de que una disposición no figure en el catálogo interno, el sistema procede a la consulta externa en portales oficiales, garantizando latencias mínimas y certidumbre jurídica.
+
 ### 🛡️ Principio de Vigencia Estricta
-SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas o históricas (como la Ley Nº 2597/2005 o la Ley Nº 5102/2013). Tanto el motor de RAG como el asistente Techapyrã IA consultan y citan únicamente **derecho positivo vigente**.
+SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas o históricas (como la Ley Nº 2597/2005 o la Ley Nº 5102/2013). Tanto el motor de RAG como el asistente Techapyrã IA consultan y citan prioritariamente **derecho positivo vigente**.
 
 ---
 

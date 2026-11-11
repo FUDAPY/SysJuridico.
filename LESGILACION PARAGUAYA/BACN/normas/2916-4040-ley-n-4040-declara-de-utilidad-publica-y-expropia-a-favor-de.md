@@ -1,0 +1,27 @@
+# Ley Nº 4040 / DECLARA DE UTILIDAD PUBLICA Y EXPROPIA A FAVOR DE LA MUNICIPALIDAD DE FERNANDO DE LA MORA TRES INMUEBLES INDIVIDUALIZADOS COMO PARTE DE LAS FINCAS N°s 4581, 5033 Y 5614, RESPECTIVAMENTE, A SER DESTINADOS PARA ENSANCHE DE LA CALLE SAN BLAS DEL BARRIO SAN JUAN DEL CITADO MUNICIPIO
+
+## Datos de la fuente
+
+- **Identificador BACN:** 2916
+- **Promulgación:** 16-07-2010
+- **Publicación:** 20-07-2010
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/2916/ley-n-4040-declara-de-utilidad-publica-y-expropia-a-favor-de-la-municipalidad-de-fernando-de-la-mora-tres-inmuebles-individualizados-como-parte-de-las-fincas-n-s-4581-5033-y-5614-respectivamente-a-ser-destinados-para-ensanche-de-la-calle-san-blas-del-barrio-san-juan-del-citado-municipio-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/2916/20141209144539.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+No se detectaron vínculos entrantes entre las fichas descargadas.
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

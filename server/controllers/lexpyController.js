@@ -4,7 +4,7 @@ const SesionChat = require('../models/SesionChat');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { procesarConsultaLexPY, procesarAsistenteEditor } = require('../services/lexpyService');
 const { redactarBorrador } = require('../services/draftService');
-const { destilarYGuardarMemoria, obtenerRedDeConocimiento } = require('../services/agentMemoryService');
+const { destilarYGuardarMemoria, obtenerRedDeConocimiento, obtenerNormaPorId, buscarNormas } = require('../services/agentMemoryService');
 
 // POST /api/lexpy/chat  { pregunta, sesionId?, cliente?, expediente? }
 const chat = asyncHandler(async (req, res) => {
@@ -101,6 +101,13 @@ const obtenerGrafo = asyncHandler(async (req, res) => {
   res.json({ success: true, data: red });
 });
 
+// GET /api/lexpy/norma/:id -> Devuelve el texto y articulado completo de una norma
+const obtenerNorma = asyncHandler(async (req, res) => {
+  const norma = await obtenerNormaPorId(req.params.id);
+  if (!norma) throw new ApiError(404, 'Norma no encontrada.');
+  res.json({ success: true, data: norma });
+});
+
 module.exports = {
   chat,
   listarSesiones,
@@ -109,5 +116,6 @@ module.exports = {
   redactar,
   obtenerGrafo,
   asistenteEditor,
+  obtenerNorma,
 };
 

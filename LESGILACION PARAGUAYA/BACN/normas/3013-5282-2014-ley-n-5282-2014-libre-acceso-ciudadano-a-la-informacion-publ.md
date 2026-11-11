@@ -1,0 +1,34 @@
+# Ley Nº 5282/2014 / LIBRE ACCESO CIUDADANO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA GUBERNAMENTAL.
+
+## Datos de la fuente
+
+- **Identificador BACN:** 3013
+- **Promulgación:** 18-09-2014
+- **Publicación:** 19-09-2014
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/3013/ley-n-5282-2014-libre-acceso-ciudadano-a-la-informaci-n-p-blica-y-transparencia-gubernamental
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/3013/20150224093030.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+- **referencia relacionada:** [Ley Nº 6167 / MODIFICA VARIOS ARTÍCULOS DE LA LEY N° 834/1996](8683-6167-ley-n-6167-modifica-varios-articulos-de-la-ley-n-834-1996.md) — De la apertura y el cierre de la cuenta única deberá informarse al Tribunal Superior de Justicia Electoral, que podrá en cualquier momento exigir la presentación de todas las informaciones referidas al manejo de fondos electorales a los respectivos administradores. Los ciudadanos electores podrán solicitar en cualquier momento información referida al cumplimiento de las disposiciones que regulan el financiamiento de las campañas generales y municipales en los términos de la Ley N° 5.282/2014 DE 
+- **referencia relacionada:** [Ley Nº 6446 / CREA EL REGISTRO ADMINISTRATIVO DE PERSONAS Y ESTRUCTURAS JURÍDICAS Y EL REGISTRO ADMINISTRATIVO DE BENEFICIARIOS FINALES DEL PARAGUAY](9116-6446-ley-n-6446-crea-el-registro-administrativo-de-personas-y-est.md) — El referido listado de cumplimiento deberá ser publicado y actualizado semestralmente en el portal web y será de libre acceso ciudadano, conforme a los términos de la Ley N° 5282/2014 “DE LIBRE ACCESO CIUDADANO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA GUBERNAMENTAL”.
+- **referencia relacionada:** [Ley Nº 6486 / DE PROMOCIÓN Y PROTECCIÓN DEL DERECHO DE NIÑOS, NIÑAS Y ADOLESCENTES A VIVIR EN FAMILIA, QUE REGULA LAS MEDIDAS DE CUIDADOS ALTERNATIVOS Y LA ADOPCIÓN](9165-6486-ley-n-6486-de-promocion-y-proteccion-del-derecho-de-ninos-ni.md) — Todas las actuaciones del Consejo Administrador, serán consideradas información de carácter público y, por tanto, sujeta a los mandatos de la Ley N° 5282/2014 “DE LIBRE ACCESO CIUDADANO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA GUBERNAMENTAL”, así como otras normas que garantizan la difusión y acceso a la información. La única limitación establecida en estos casos, constituirá aquella información que pueda lesionar derechos fundamentales de niños, niñas o adolescentes.
+- **referencia relacionada:** [Ley Nº 6707 / DECLARA BIEN PÚBLICO LA INVESTIGACIÓN, DESARROLLO, FABRICACIÓN Y ADQUISICIÓN PARA LA DISTRIBUCIÓN GRATUITA A LA POBLACIÓN DE LAS VACUNAS CONTRA EL COVID-19.](9510-6707-ley-n-6707-declara-bien-publico-la-investigacion-desarrollo-.md) — Facúltase al Poder Ejecutivo, a través del Ministerio de Salud Pública y Bienestar Social (MSPYBS), a incluir cláusulas o acuerdos de confidencialidad en los contratos de adquisición de las vacunas destinadas contra el COVID-19, toda vez que no implique violación a la Ley N° 5.282/2014 “
+- **referencia relacionada:** [Ley Nº 6727 / MODIFICA LOS ARTÍCULOS 2º, 3º, 4º Y 5º DE LA LEY Nº 6707/2021 “QUE DECLARA BIEN PÚBLICO LA INVESTIGACIÓN, DESARROLLO, FABRICACIÓN Y ADQUISICIÓN PARA LA DISTRIBUCIÓN GRATUITA A LA POBLACIÓN DE LAS VACUNAS CONTRA EL COVID-19”](9564-6727-ley-n-6727-modifica-los-articulos-2-3-4-y-5-de-la-ley-n-6707.md) — Autorízase al Poder Ejecutivo, a través del Ministerio de Salud Pública y Bienestar Social (MSPYBS), a aceptar cláusulas o acuerdos de confidencialidad, ya sea total, parcial o de cualquier otro alcance, en los contratos de adquisición, transporte y/o logística de las vacunas destinadas contra el COVID-19. Tales documentos y la información que derive de ellos, constituirán información pública reservada en los términos del artículo 22 de la Ley Nº 5.282/2014 "DE LIBRE ACCESO CIUDADANO A LA INFORM
+- **referencia relacionada:** [Ley Nº 6900 / POR LA CUAL SE IMPLEMENTAN MEDIDAS TRANSITORIAS DE CONTINGENCIA PARA LA COMERCIALIZACIÓN DEL DIÉSEL / GASOIL TIPO III Y NAFTA 93 OCTANOS POR PETRÓLEOS PARAGUAYOS, A TRAVÉS DE SU RED DE ESTACIONES DE SERVICIOS HABILITADAS BAJO EL EMBLEMA “PETROPAR”; Y SE ESTABLECEN MEDIDAS DE RACIONALIZACIÓN DEL GASTO PÚBLICO Y OTRAS, ORIENTADAS A LA EFICIENCIA DE LOS PROCESOS DE COMPRA PÚBLICA PARA LA PROVISIÓN DE COMBUSTIBLES DERIVADOS DEL PETRÓLEO](10238-6900-ley-n-6900-por-la-cual-se-implementan-medidas-transitorias-d.md) — La estructura de costos mencionada en el Artículo 2° de esta Ley, actual o a futuro, incluyendo los montos, porcentajes, hasta el más mínimo detalle en sus costos, será de acceso público y, a la vez, publicado, en la página web oficial de Petróleos Paraguayos, aplicada en la presente Ley y a futuro conforme a lo dispuesto en la Ley N° 5282/2014 “
+- **referencia relacionada:** [Ley Nº 7107 / IMPLEMENTA LA OBLIGATORIEDAD DE CONTAR CON EQUIPOS Y TECNOLOGÍAS DE INSPECCIÓN NO INTRUSIVA (ESCÁNER), DISPONIBLES DE MANERA PERMANENTE EN LAS ZONAS PRIMARIAS ADUANERAS Y ÁREAS DE VIGILANCIA ESPECIAL, QUE PERMITAN UN CONTROL EFICAZ DE LAS MERCADERÍAS QUE INGRESAN, EGRESAN Y EN TRÁNSITO ADUANERO INTERNACIONAL EN EL TERRITORIO PARAGUAYO](11720-7107-ley-n-7107-implementa-la-obligatoriedad-de-contar-con-equipo.md) — Lo dispuesto en la Ley Nº 5282/2014 “DE LIBRE ACCESO CIUDADANO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA GUBERNAMENTAL”, será aplicable, siempre que la misma no ponga en riesgo la seguridad nacional a las investigaciones en curso.
+- **referencia relacionada:** [Ley Nº 7278/2024 / QUE REGULA LA ORGANIZACIÓN ADMINISTRATIVA DEL ESTADO](12597-7278-2024-ley-n-7278-2024-que-regula-la-organizacion-administrativa-de.md) — El Poder Ejecutivo desarrollará una plataforma de registro informático centralizado para la carga y actualización de la información, de conformidad con los contenidos, formatos, procedimientos y plazos establecidos en la Ley N° 5282/2014 “DE LIBRE ACCESO CIUDADANO A LA INFORMACIÓN PÚBLICA Y TRANSPARENCIA GUBERNAMENTAL” y en las demás normativas de transparencia, acceso a la información pública y sus reglamentaciones. Será de uso obligatorio para todas las instituciones públicas alcanzadas por la
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

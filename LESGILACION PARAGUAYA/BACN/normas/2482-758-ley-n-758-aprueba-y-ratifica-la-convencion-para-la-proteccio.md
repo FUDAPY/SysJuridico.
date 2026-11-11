@@ -1,0 +1,33 @@
+# Ley Nº 758 / APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCION DE LA FLORA, DE LA FAUNA Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAISES DE AMÉRCIA.
+
+## Datos de la fuente
+
+- **Identificador BACN:** 2482
+- **Promulgación:** 24-09-1979
+- **Publicación:** No informada en la ficha
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/2482/ley-n-758-aprueba-y-ratifica-la-convenci-n-para-la-proteccion-de-la-flora-de-la-fauna-y-de-las-bellezas-esc-nicas-naturales-de-los-paises-de-am-rcia-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/2482/20140611092156.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+- **referencia relacionada:** [Ley N° 5723 / DECLARA COMO ÁREA SILVESTRE PROTEGIDA BAJO DOMINIO PÚBLICO AL PARQUE NACIONAL MÉDANOS DEL CHACO](8216-5723-ley-n-5723-declara-como-area-silvestre-protegida-bajo-domini.md) — La Secretaría del Ambiente (SEAM) comunicará la declaración del Parque Nacional Médanos del Chaco como Área Silvestre Protegida a la Secretaría de la Convención de Washington para la Protección de la Flora, de la Fauna y de las Bellezas Escénicas Naturales de los Países de América. Conforme a la Ley N° 758/79 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA, Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA".
+- **referencia relacionada:** [Ley Nº 5793 / DECLARA ÁREA SILVESTRE PROTEGIDA BAJO DOMINIO PÚBLICO MUNICIPAL Y CON LA CATEGORÍA DE MANEJO PAISAJES PROTEGIDOS AL CERRO LAMBARÉ, EN LA CIUDAD DE ASUNCIÓN.](9696-5793-ley-n-5793-declara-area-silvestre-protegida-bajo-dominio-pub.md) — Artículo 6.° La Secretaría del Ambiente comunicará la declaración del Área Paisajes Protegidos “Cerro Lambaré” a la Secretaría de la Convención de Washington para la protección de la flora, de la fauna y de las bellezas escénicas naturales de los países de América, Ley N° 758/79 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA, Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA”.
+- **referencia relacionada:** [Ley Nº 6052 / DECLARA ÁREA SILVESTRE PROTEGIDA BAJO DOMINIO PÚBLICO MUNICIPAL Y CON LA CATEGORÍA DE MANEJO PAISAJES PROTEGIDOS AL CERRO BOGARÍN, DE LA CIUDAD DE CARAPEGUÁ](8577-6052-ley-n-6052-declara-area-silvestre-protegida-bajo-dominio-pub.md) — comunicará la declaración del Área Paisajes Protegidos “Cerro Bogarín” a la Secretaría de la Convención de Washington para la protección de la flora, de la fauna y de las bellezas escénicas naturales de los países de América, Ley N° 758/79 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA, Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA”.
+- **referencia relacionada:** [Ley Nº 6062 / DECLARA ÁREA SILVESTRE PROTEGIDA AL ESTERO YETYTY, QUE ABARCA PARTE DE LOS DISTRITOS DE CHORÉ, GENERAL ELIZARDO AQUINO, SAN PABLO Y VILLA DEL ROSARIO, DEPARTAMENTO SAN PEDRO](8505-6062-ley-n-6062-declara-area-silvestre-protegida-al-estero-yetyty.md) — La Secretaría del Ambiente comunicará la declaración de Área Silvestre Protegida “Estero Yetyty” a la Secretaría de Convención de Washington para la protección de Flora, de la Fauna y de las Bellezas escénicas naturales de los Países de América (LEY N° 758/79 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA”).
+- **referencia relacionada:** [Ley Nº 6159 / DECLARA ÁREA SILVESTRE PROTEGIDA DE DOMINIO MUNICIPAL CON LA CATEGORÍA DE MANEJO PAISAJE PROTEGIDO A LA LAGUNA VERÁ Y SUS HUMEDALES ADYACENTES, EN EL DEPARTAMENTO PARAGUARÍ](8677-6159-ley-n-6159-declara-area-silvestre-protegida-de-dominio-munic.md) — Se comunicará la declaración del Área Paisaje Protegido “Laguna Verá y sus humedales adyacentes” a la Secretaría de la Convención de Washington para la protección de la flora, de la fauna y de las bellezas escénicas naturales de los países de América Ley N° 758/79 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA, Y DE LAS BELLEZAS ESCENICAS NATURALES DE LOS PAÍSES DE AMÉRICA”.
+- **referencia relacionada:** [Ley Nº 6747 / DECLARA ÁREA SILVESTRE PROTEGIDA DE DOMINIO PÚBLICO CON LA CATEGORÍA DE MANEJO PAISAJE PROTEGIDO A LA LAGUNA YRENDY Y LOS BOSQUES CONTIGUOS, QUE FORMAN PARTE DE LA FINCA N° 3726, PADRÓN N° 5959 DEL DISTRITO DE CIUDAD DEL ESTE, DEPARTAMENTO DE ALTO PARANÁ.](9601-6747-ley-n-6747-declara-area-silvestre-protegida-de-dominio-publi.md) — El Ministerio del Ambiente y Desarrollo Sostenible (MADES), informará la presente disposición legal a la Secretaría de Washington D.C., para la protección de la flora, de la fauna y de las bellezas escénicas naturales de los países de América, conforme a la Ley N° 758/1979 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA, Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA”.
+- **referencia relacionada:** [Ley Nº 6941 / DECLARA ÁREA SILVESTRE PROTEGIDA BAJO DOMINIO PRIVADO DEL ESTADO, CON LA CATEGORÍA ESPECIAL DE MANEJO DE NOMBRE GENÉRICO “RESERVA ECOLÓGICA”, A LA PROPIEDAD ASENTADA SOBRE LA FINCA Nº 17077 CON CTA. CTE. CTRAL. N° 15-0192-01, Y LA FINCA Nº 21276 CON CTA. CTE. CTRAL. N° 27-3703-02, PROPIEDAD DEL ESTADO PARAGUAYO - MINISTERIO DE DEFENSA NACIONAL, LUGAR DENOMINADO PARQUE GUASÚ METROPOLITANO](10548-6941-ley-n-6941-declara-area-silvestre-protegida-bajo-dominio-pri.md) — El Ministerio del Ambiente y Desarrollo Sostenible, comunicará la declaración de la Reserva Ecológica a la Secretaría de la Convención de Washington para la protección de la flora, de la fauna y de las bellezas escénicas naturales de los países de América, aprobado por Ley Nº 758/1979 “QUE APRUEBA Y RATIFICA LA CONVENCIÓN PARA LA PROTECCIÓN DE LA FLORA, DE LA FAUNA Y DE LAS BELLEZAS ESCÉNICAS NATURALES DE LOS PAÍSES DE AMÉRICA.”, en un plazo máximo de 30 (treinta) días desde la promulgación de l
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.

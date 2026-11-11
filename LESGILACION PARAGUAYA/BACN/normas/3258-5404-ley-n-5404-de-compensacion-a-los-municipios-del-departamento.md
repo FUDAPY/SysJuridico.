@@ -1,0 +1,34 @@
+# Ley Nº 5404 / DE COMPENSACIÓN A LOS MUNICIPIOS DEL DEPARTAMENTO CANINDEYÚ EN REPARACIÓN POR LA DESAPARICIÓN DE LOS SALTOS DEL GUAIRÁ, EN EL MARCO DE LA DISTRIBUCIÓN DE COMPENSACIONES DE LA ENTIDAD BINACIONAL ITAIPÚ
+
+## Datos de la fuente
+
+- **Identificador BACN:** 3258
+- **Promulgación:** 20-03-2015
+- **Publicación:** 24-03-2015
+- **Ficha oficial:** https://www.bacn.gov.py/leyes-paraguayas/3258/ley-n-5404-de-compensaci-n-a-los-municipios-del-departamento-canindey-en-reparaci-n-por-la-desaparici-n-de-los-saltos-del-guair-en-el-marco-de-la-distribuci-n-de-compensaciones-de-la-entidad-binacional-itaip-br
+- **Archivo enlazado por BACN:** [Descargar](https://www.bacn.gov.py/descarga/3258/20150416112155.pdf)
+
+> **Vigencia:** esta copia se transcribe de la ficha BACN. La ficha y las referencias disponibles no constituyen una certificación jurídica de vigencia ni un texto consolidado. Las modificaciones y derogaciones identificadas deben verificarse en las normas vinculadas y en la publicación oficial.
+
+## Modificaciones y derogaciones mencionadas en el texto
+
+No se detectaron en el texto referencias explícitas de modificación o derogación a otras leyes.
+
+## Referencias entrantes detectadas en BACN
+
+- **referencia relacionada:** [Ley Nº 6258 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACION PARA EL EJERCICIO FISCAL 2019](8716-6258-ley-n-6258-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — 186.- El ingreso del monto total de los desembolsos de los recursos en concepto de Royalties, Compensaciones en Razón del Territorio Inundado y Cesión de Energía, provenientes de las Entidades Binacionales Itaipú y Yacyretá serán liquidados y distribuidos, previa deducción de lo previsto en la Ley Nº 5404/15, “DE COMPENSACIÓN A LOS MUNICIPIOS DEL DEPARTAMENTO CANINDEYÚ EN REPARACIÓN POR LA DESAPARICIÓN DE LOS SALTOS DEL GUAIRÁ, EN EL MARCO DE LA DISTRIBUCIÓN DE COMPENSACIONES DE LA ENTIDAD BINAC
+- **modificación mencionada:** [Ley Nº 6258 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACION PARA EL EJERCICIO FISCAL 2019](8716-6258-ley-n-6258-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — Y MUNICIPALES”, en la Ley N° 4758/12, “QUE CREA EL FONDO NACIONAL DE INVERSIÓN PÚBLICA Y DESARROLLO (FONACIDE) Y EL FONDO PARA LA EXCELENCIA DE LA EDUCACIÓN Y LA INVESTIGACIÓN”, modificada por la Ley N° 5581/16 y en la Ley N° 5404/15, “DE COMPENSACIÓN A LOS MUNICIPIOS DEL DEPARTAMENTO CANINDEYÚ EN REPARACIÓN POR LA DESAPARICIÓN DE LOS SALTOS DEL GUAIRÁ, EN EL MARCO DE LA DISTRIBUCIÓN DE COMPENSACIONES DE LA ENTIDAD BINACIONAL ITAIPÚ” y sus modifi
+- **modificación mencionada:** [Ley Nº 6469 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACIÓN PARA EL EJERCICIO FISCAL 2020.](9115-6469-ley-n-6469-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — MUNICIPALES”, en la Ley N° 4758/2012, “QUE CREA EL FONDO NACIONAL DE INVERSIÓN PÚBLICA Y DESARROLLO (FONACIDE) Y EL FONDO PARA LA EXCELENCIA DE LA EDUCACIÓN Y LA INVESTIGACIÓN”, modificada por la Ley N° 5581/2016, en la Ley N° 5404/2015, “DE COMPENSACIÓN A LOS MUNICIPIOS DEL DEPARTAMENTO CANINDEYÚ EN REPARACIÓN POR LA DESAPARICIÓN DE LOS SALTOS DEL GUAIRÁ, EN EL MARCO DE LA DISTRIBUCIÓN DE COMPENSACIONES DE LA ENTIDAD BINACIONAL ITAIPÚ” y sus modificat
+- **modificación mencionada:** [Ley Nº 6672 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACION PARA EL EJERCICIO FISCAL 2021](9492-6672-ley-n-6672-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — MUNICIPALES’”, en la Ley N° 4758/2012 “QUE CREA EL FONDO NACIONAL DE INVERSIÓN PÚBLICA Y DESARROLLO (FONACIDE) Y EL FONDO PARA LA EXCELENCIA DE LA EDUCACIÓN Y LA INVESTIGACIÓN”, modificada por la Ley N° 5581/2016, en la Ley N° 5404/2015 “DE COMPENSACIÓN A LOS MUNICIPIOS DEL DEPARTAMENTO CANINDEYÚ EN REPARACIÓN POR LA DESAPARICIÓN DE LOS SALTOS DEL GUAIRÁ, EN EL MARCO DE LA DISTRIBUCIÓN DE COMPENSACIONES DE LA ENTIDAD BINACIONAL ITAIPÚ” y sus modificato
+- **referencia relacionada:** [Ley Nº 6873 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACIÓN DEL EJERCICIO FISCAL 2022](10179-6873-ley-n-6873-aprueba-el-presupuesto-general-de-la-nacion-del-e.md) — Los Gobiernos Departamentales y Municipales informarán cuatrimestralmente al Ministerio de Hacienda, a través de la Unidad de Departamentos y Municipios (UDM), sobre los resultados cualitativos y cuantitativos de los programas y/o proyectos en ejecución, especificando actividades desarrolladas y el monto de los recursos aplicados de conformidad a las normas establecidas en el Artículo 27 de la Ley Nº 1535/1999 “DE ADMINISTRACIÓN FINANCIERA DEL ESTADO”, en la Ley N° 4372/2011 “QUE DISPONE LA COMP
+- **modificación mencionada:** [Ley Nº 6873 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACIÓN DEL EJERCICIO FISCAL 2022](10179-6873-ley-n-6873-aprueba-el-presupuesto-general-de-la-nacion-del-e.md) — cion-y-la-investigacion#:~: text=Y%20LA%20INVESTIGACI%C3%93N%E2%80%9D-, Ley%20N%C2%BA%205581%20%2F%20MODIFICA%20LOS%20ART%C3%8DCULOS%205%C2%B0%20Y%208, LA%20EDUCACI%C3%93N%20Y%20LA%20INVESTIGACI%C3%93N%E2%80%9D), en la [Ley N° 5404/2015](https://www.bacn.gov.py/leyes-paraguayas/3258/ley-n-5404-de-compensacion-a-los-municipios-del-departamento-canindeyu-en-reparacion-por-la-desaparicion-de-los-saltos-del-guaira-en-el-marco-de-la-distribucion-de-compensa
+- **referencia relacionada:** [Ley Nº 7050 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACIÓN PARA EL EJERCICIO FISCAL 2023.](11239-7050-ley-n-7050-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — Los gobiernos departamentales y municipales informarán cuatrimestralmente al Ministerio de Hacienda, a través de la Unidad de Departamentos y Municipios (UDM), sobre los resultados cualitativos y cuantitativos de los programas y/o proyectos en ejecución, especificando actividades desarrolladas y el monto de los recursos aplicados de conformidad a las normas establecidas en el artículo 27 de la Ley Nº 1535/1999 “DE ADMINISTRACIÓN FINANCIERA DEL ESTADO”, en la Ley N° 4.372/2011 “QUE DISPONE LA COM
+- **modificación mencionada:** [Ley Nº 7050 / APRUEBA EL PRESUPUESTO GENERAL DE LA NACIÓN PARA EL EJERCICIO FISCAL 2023.](11239-7050-ley-n-7050-aprueba-el-presupuesto-general-de-la-nacion-para-.md) — -paraguayas/4789/ley-n-5581-modifica-los-articulos-5-y-8-de-la-ley-n-475812-que-crea-el-fondo-nacional-de-inversion-publica-y-desarrollo-fonacide-y-el-fondo-para-la-excelencia-de-la-educacion-y-la-investigacion), en la [Ley N° 5.404/2015](https://www.bacn.gov.py/leyes-paraguayas/3258/de-compensacion-a-los-municipios-del-departamento-canindeyu-en-reparacion-por-la-desaparicion-de-los-saltos-del-guaira-en-el-marco-de-la-distribucion-de-compensaciones-de-l
+
+## Texto publicado por BACN
+
+_La ficha BACN no expuso texto legible en HTML. Se conserva el enlace de archivo proporcionado por BACN, si existe; su descarga no se verificó._
+
+## Normas relacionadas indicadas por BACN
+
+BACN no presenta vínculos a otras leyes en esta ficha.
