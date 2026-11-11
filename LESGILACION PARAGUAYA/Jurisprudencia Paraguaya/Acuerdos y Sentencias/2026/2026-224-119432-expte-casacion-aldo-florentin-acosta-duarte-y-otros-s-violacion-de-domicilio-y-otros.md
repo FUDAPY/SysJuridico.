@@ -1,0 +1,244 @@
+# Acuerdo y Sentencia N.º 224/2026
+
+**Carátula:** EXPTE: “CASACION: ALDO FLORENTIN ACOSTA DUARTE Y OTROS S/ VIOLACION DE DOMICILIO Y OTROS”. -
+
+- **Código CSJ:** 119432
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 224/2026
+- **Fecha:** 2026-04-14
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=119432)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=119432)
+
+## Texto de la resolución
+
+EXPTE: “CASACION: ALDO FLORENTIN ACOSTA
+                                                      DUARTE Y OTROS S/ VIOLACION DE DOMICILIO Y
+                                                      OTROS”. -
+
+
+                                               ACUERDO Y SENTENCIA
+
+              En la ciudad de Asunción, Capital de la República del Paraguay, estando reunidos en
+        la Sala de Acuerdos los Excelentísimos Señores Ministros de la Corte Suprema de Justicia –
+        Sala Penal- los Dres. LUIS MARÍA BENÍTEZ RIERA, MANUEL RAMÍREZ CANDIA Y MARÍA
+        CAROLINA LLANES OCAMPOS, se trajo el expediente caratulado: “ALDO FLORENTIN
+        ACOSTA DUARTE Y OTROS S/ VIOLACION DE DOMICILIO Y OTROS”, a fin de resolver el
+        Recurso Extraordinario de Casación, interpuesto contra las S.D. N° 05 de fecha 15 de abril
+        del 2024, S.D. Nº 07 de fecha 29 de abril de 2024 y el Acuerdo y Sentencia N° 14 de fecha
+        09 de junio de 2025. -
+
+             Previo el estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+        Penal, resolvió plantear las siguientes: -
+
+                                                        CUESTIONES:
+                   ¿Es admisible el recurso de casación interpuesto? -
+                   En su caso, ¿Resulta procedente? -
+
+              Practicado el sorteo de Ley para determinar el orden de la votación, arrojó el
+        siguiente resultado: LUIS MARÍA BENÍTEZ RIERA, MANUEL RAMÍREZ CANDIA y MARÍA
+        CAROLINA LLANES OCAMPOS. -
+
+              A LA PRIMERA CUESTION PLANTEADA, el Ministro BENÍTEZ RIERA dijo: Para analizar
+        las condiciones de admisibilidad del recurso se debe tener presente lo dispuesto por el
+        Art. 477 del Código Procesal Penal que determina el “OBJETO” de la impugnación al
+        señalar: “Sólo podrá deducirse el recurso extraordinario de casación contra las sentencias
+        definitivas del tribunal de apelaciones o contra aquellas decisiones de ese Tribunal que
+        pongan fin al procedimiento, extingan la acción o la pena, o denieguen la extinción,
+        conmutación o suspensión de la pena”. -
+
+              Asimismo, el Art. 478 del mismo Código individualiza en sus tres incisos, los únicos y
+        exclusivos MOTIVOS que hacen a la procedencia de la casación y a ese respecto dispone:
+        “El recurso extraordinario de casación procederá exclusivamente: 1) cuando en la sentencia
+        de condena se imponga una pena privativa de libertad mayor a diez años, y se alegue la
+        inobservancia o errónea aplicación de un precepto constitucional, 2) cuando la sentencia o
+        el auto impugnado sea contradictorio con un fallo anterior de un Tribunal de Apelaciones o
+        de la Corte Suprema de Justicia y 3) cuando la sentencia o el auto sean manifiestamente
+        infundados”. -
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+             El Art. 480 del Código Procesal Penal, en concordancia con el Art. 468 del mismo
+        cuerpo legal, dispone que el Recurso Extraordinario de Casación debe interponerse en el
+        término de diez días de notificada la resolución que se impugna, ante la Sala Penal de la
+        Corte Suprema de Justicia. -
+
+             Precisado de este modo los límites para la admisibilidad del Recurso Extraordinario de
+        Casación; veremos seguidamente si el planteo del recurrente se halla o no circunscripto
+        dentro del marco fijado por nuestra Ley penal de forma. -
+
+              Avocados ya, al análisis de admisibilidad, surge que respecto a la casación planteada
+        contra la Sentencia Definitiva de Primera Instancia, ésta deviene manifiestamente
+        inadmisible teniendo en cuenta que el recurrente en su oportunidad ha optado por
+        interponer el recurso de Apelación Especial ante el Tribunal de Apelaciones y una vez
+        articulado éste, la misma resolución ya no puede ser objeto de casación dado que: 1)
+        obtuvo la respuesta jurisdiccional correspondiente, y 2)           resulta a todas luces
+        extemporáneo.-
+
+              En ese sentido, del análisis del recurso de casación interpuesto, se desprende de las
+        constancias de autos, que el mismo fue interpuesto por la Abogada Roxana Chamorro, en
+        representación de la defensa de la Abg. Gloria Aldana Acosta Duarte, y Aldo Florentín
+        Acosta Duarte por la personería reconocida en estos autos, bajo patrocinio de los Abgs.
+        Marcos A. Chamorro Cáceres y Alfredo Chamorro Thompson, no puede ser admitido para
+        su estudio en esta Instancia, por no haber cumplido con la presentación de la cédula de
+        notificación, lo cual imposibilita el control de la temporalidad del recurso. -
+
+                Al no tener a la vista la cédula de notificación, es imposible determinar si el recurso
+        fue interpuesto dentro del plazo legal. De igual manera, teniendo como referencia la fecha
+        del Acuerdo y Sentencia N°14 dictado por el Tribunal de Apelación Penal, 9 de junio de
+        2025, claramente no se cumple con el plazo de diez días establecidos por el Art. 468 del
+        C.P.P., ya que el Recurso Extraordinario de Casación fue presentado en fecha 28 de junio de
+        2025. -
+
+              Es menester recordar que, el recurso extraordinario de casación tiene una tramitación
+        particular, por imperio del art. 480 del código de forma penal: “TRÁMITE Y RESOLUCIÓN. El
+        recurso extraordinario de casación se interpondrá ante la Sala Penal de la Corte Suprema de
+        Justicia…”. -
+
+             Al exigir la norma que la presentación se realice de forma directa ante la Sala Penal de
+        la Excma. Corte Suprema de Justicia está requiriendo, a su vez, que la misma sea
+        autosuficiente, a fin de que, si se cumplen todos los requisitos formales, se dé viabilidad al
+        estudio de la misma; empero, esto no ocurre en el presente caso, como consecuencia de la
+        ausencia de la documentación suficiente. Este órgano jurisdiccional se ve imposibilitado de
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+        tomar una decisión sobre el cumplimiento del requisito de temporalidad, por carecer de los
+        elementos para ello, esta decisión ya fue adoptada por esta máxima instancia judicial en
+        innumerables resoluciones1 –por mayoría de votos- quedando sentado que a mi criterio es
+        un requisito indispensable para la admisibilidad del recurso, la presentación de la cédula de
+        notificación para el estudio de admisibilidad del recurso, esto es así debido a que el recurso
+        extraordinario de casación, debe ser autosuficiente y bastarse por sí mismo. -
+
+               Ante el incumplimiento de este requisito formal, se torna inoficioso e innecesario el
+        continuar con el análisis de los demás requerimientos formales para la admisibilidad del
+        presente recurso extraordinario de casación, en consideración a que, la presencia de todos
+        ellos son condición necesaria para su viabilidad, de lo contrario no puede prosperar. -
+
+              La declaración de inadmisibilidad del recurso de casación sella definitivamente la
+        controversia en el ámbito penal, no quedando abierta vía alguna para reeditar el debate
+        procesal ni revisar el contenido jurídico del fallo mediante mecanismos ajenos al sistema
+        recursivo penal. Ello es así, en virtud a lo establecido en el Art. 17 de la ley N° 609/65 Que
+        Organiza la Corte Suprema de Justicia, en el Capítulo V, bajo el epígrafe de “Disposiciones
+        Comunes”, que establece: “Irrecurribilidad de las Resoluciones. Las resoluciones de las salas
+        o del Pleno de la Corte solamente son susceptibles del recurso de aclaratoria y, tratándose
+        de providencia de mero trámite o resolución de regulación de honorarios originados en
+        dicha instancia, del recurso de reposición. No se admite impugnación de ningún género,
+        incluso las fundadas en la inconstitucionalidad.”. ES MI VOTO. -
+
+
+                   A su turno, el Ministro Manuel Dejesus Ramírez Candia, dijo:
+
+             1.Coincido con la opinión del Ministro preopinante en el sentido de declarar
+        inadmisible al recurso de casación interpuesto, por los siguientes motivos:
+
+              2. Según las constancias adjuntas al expediente electrónico, el Tribunal de Sentencia
+        Unipersonal de la Ciudad de Encarnación integrado por la Jueza Ninfa Dejesús Aguilera, por
+        S.D. N° 5 del 15 de abril de 2025, resolvió entre otras cosas, condenar a los acusados Aldo
+        Florentín Acosta Duarte y Gloria Aldana Acosta Duarte a la pena privativa de libertad de un
+        año, con suspensión a prueba de la ejecución de la condena. Respecto a esta resolución, se
+        solicitó aclaratoria, pedido rechazado por S.D. N° 7 del 29 de abril de 2025. Este fallo fue
+        impugnado mediante apelación especial y resuelto por el Tribunal de Apelación de la
+        correspondiente Circunscripción Judicial, que a través de Acuerdo y Sentencia Nº 14 del 9 de
+        junio de 2025, resolvió modificar el punto 2 de la parte resolutiva de la sentencia apelada, y
+
+                   1 1. Acuerdo y Sentencia N.° 705 del 21 de agosto del 2020; 2. Acuerdo y Sentencia N.° 1234 del 4 de diciembre del 2020; 3.
+
+        Acuerdo y Sentencia N.° 585 del 16 de junio del 2021; 4. Acuerdo y Sentencia N.° 1164 del 24 de noviembre del 2021; 5. Acuerdo y
+        Sentencia N.°1179 del 3 de diciembre del 2021; 6. Acuerdo y Sentencia N.° 1234 del 4 de diciembre del 2021; 7. Acuerdo y Sentencia
+        N.° 1247 del 23 de diciembre del 2021; entre otros.
+
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+        confirmar los demás puntos, incluyendo la condena. Ante este resultado, la Abg. Roxana
+        Chamorro, por la defensa técnica de los mencionados acusados, impugna las mencionadas
+        resoluciones a través del recurso extraordinario de casación hoy traído a la atención de esta
+        Sala Penal. -
+
+              3. Corresponde entonces a esta instancia verificar la adecuación del escrito a las
+        condiciones legales establecidas para la modalidad recursiva empleada, tales como plazo,
+        legitimidad para recurrir, objeto de impugnación y fundamentación del escrito. -
+
+             4. En primer lugar, se debe determinar si el recurso ha sido interpuesto dentro del
+        plazo de ley, es decir, dentro de diez días hábiles posteriores a la notificación, condición
+        procesal impuesta por el Art. 468 C.P.P., aplicable a esta modalidad recursiva por remisión
+        del Art. 480 del mismo cuerpo legal. -
+
+             5. En este contexto, el recurrente presenta su escrito de interposición ante la
+        Secretaría de esta Sala Penal en fecha 27 de junio de 2025, pero no presenta constancia
+        alguna de la notificación de la resolución que impugna. -
+
+              6. En este caso, no corresponde admitir para su estudio en esta instancia una casación
+        contra la S.D. N° 5 del 15 de abril de 2025 ni contra la S.D. N° 7 del 29 de abril de 2025, pues
+        fueron dictadas por un Tribunal de Sentencia y han sido objeto de impugnación y resolución
+        a través del recurso oportuno. En relación al Acuerdo y Sentencia N° 14 de fecha 9 de junio
+        de 2025 - que es la resolución susceptible de ser impugnada mediante la modalidad
+        recursiva empleada-, el recurso ha sido presentado a los trece días hábiles a partir del
+        dictado del mismo, y por ello, no cumple con la exigencia del plazo de interposición fijado
+        por el legislador, debiendo declararse su inadmisibilidad por extemporáneo. ES MI VOTO. -
+
+                   A su turno, la ministra María Carolina Llanes, dijo:
+
+                   Me adhiero al voto del ministro preopinante por los mismos fundamentos. -
+
+            Con lo que se dio por terminado el acto firmando S.S.E.E., todo ante mí que certifico,
+        quedando acordada la sentencia que inmediatamente sigue: -
+
+                                   Y VISTOS: Los méritos del Acuerdo que antecede, la. -
+
+                                               CORTE SUPREMA DE JUSTICIA
+                                                      SALA PENAL
+
+                                                       R E S U E L V E:
+
+             DECLARAR INADMISIBLE el Recurso Extraordinario de Casación, interpuesto contra las
+        S.D. N° 05 de fecha 15 de abril del 2024, S.D. Nº 07 de fecha 29 de abril de 2024 y el
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+        Acuerdo y Sentencia N° 14 de fecha 09 de junio de 2025, dictado por el Tribunal de
+        Apelación Penal, Segunda Sala de Encarnación, de conformidad a los fundamentos
+        esbozados en el considerando de la presente resolución. -
+
+                   ANOTAR, notificar y registrar. -
+
+
+
+
+Para conocer la                           Firmado digitalmente   Firmado digitalmente   Firmado digitalmente por:
+                                                                                        MARIA CAROLINA LLANES
+     validez del                          por: LUIS MARIA        por: MANUEL DEJESUS    OCAMPOS (MINISTRO/A)
+   documento,                             BENITEZ RIERA          RAMIREZ CANDIA
+ verifique aquí.                                                                        Asunción, 14 de abril de 2026
+                                          (MINISTRO/A)           (MINISTRO/A)           con Nro. AyS: 224 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

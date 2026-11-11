@@ -1,0 +1,558 @@
+# Acuerdo y Sentencia N.º 959/2016
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: "JOSÉ PATROCINIO MORALES CÁCERES C/ ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y ART. 6 DEL DECRETO N° 1579/2004".
+
+- **Código CSJ:** 50521
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 959/2016
+- **Fecha:** 2016-07-15
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; SALA CONSTITUCIONAL
+- **Estado de extracción:** texto extraído del documento oficial
+- **Páginas PDF:** 5
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=50521)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=50521)
+
+## Texto de la resolución
+
+CORTE
+SUPREMA
+DEJUSTICIA ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+y, ri_SICCIUilI O Y SENTENCIA NUMERO: 11D1£1,.(«140 5 ~r14c, N'ele
+te n lá,-.:,Z,Ciudad de Asunción, Capital de la República del Paraguay, a
+o - c o
+46 g"v-• días del mes de del año dos mil dieciséis,
+est ndo érf la Sala de Acuerdos de la Corte uprema de Justicia, los Excmos. Señores
+ffligtros de la Sala Constitucional, Doctora MIRYAM PEÑA CANDI_ A, Presidenta y
+Doctores GLADYS BAREIRO DE MÓDICA y ANTONIO FRETES, Miembros, ante
+mí, el Secretario autorizante, se trajo al acuerdo el expediente caratulado: ACCIÓN DE
+INCONSTITUCIONALIDAD; "JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y ART. 6 DEL DECRETO N°
+1579/2004", a fin de resolver la acción de inconstitucionalidad promovida por el Señor José
+Patrocinio Morales Cáceres, por sus propios derechos y bajo patrocinio de Abogado.
+Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+Constitucional, resolvió plantear y votar la siguiente:
+CUESTION:
+¿Es procedente la acción de inconstitucionalidad deducida?.
+A la cuestión planteada el Doctor FRETES dijo: Se presenta el señor JOSE
+PATROCINIO MORALES CACERES, promoviendo Acción de Inconstitucionalidad
+contra los Arts. 2, 5, 6, 8 y 18 Inc. u) de la Ley 2345/2003 "DE REFORMA Y
+SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES
+DEL SECTOR PÚBLICO", y contra el Art. 6 del Decreto N° 1579/04 "Por el cual se
+reglamenta la Ley N° 2345/03".
+Se advierte que el accionante acompaña copia del Decreto N° 1591 de fecha 04 de
+julio de 2008, "por la cual se acuerda haber de retito a efectivos de la Policía Nacional",
+acreditando por medio de este documento su calidad de jubilado de la Policía Nacional.
+Refiere que los artículos impugnados por medio de esta acción de
+inconstitucionalidad infringen principios, derechos y garantías consagrados en los Art. 6,
+14, 102, 103, 137 y 247 de la Constitución Nacional.
+Manifiesta además que los Art. 2, 5, 6, 8 y 18 de la Ley 2345/03 van en
+contrasentido a lo dispuesto por la Carta Magna, contraviniéndose con ello el derecho a una
+vida digna en la tercera edad, creando además una condición de absoluta desigualdad.
+En primer lugar, y con relación al Art. 2 de la Ley N° 2345/03, cabe señalar que dicha
+normativa ha sido modificada por el Art. 1 de la Ley 2527/04, por lo que un
+pronunciamiento de esta Corte en relación a la disposición impugnada resultaría ineficaz y
+carente de interés práctico.
+Ahora bien, cabe señalar el Art. 5 de la Ley N° 2345/03 el cual dispone que "La
+Remuneración Base, para la determinación de las jubilaciones. pensiones y haberes de
+retiro, se calculará como el promedio de las remuneraciones imponibles percibidas
+durante los últimos cinco años. El procedimiento de cálculo estará sujeto a reglamentación
+mediante decreto del Poder Ejecutivo, y deberá tener en cuenta el cambio en el ncepto
+de remuneración imponible".
+Considero que la norma transcripta en el párrafo p ecedente no trans e normas
+de rango constitucional. En efecto, el artículo cuestionad establece el pi laso de
+tiempo a considerar para calculara la remuneración base obre la cual s án los
+respectivos haberes jubilatorios. Si bi el recurrente inició sus aportes bajo cia de
+Módica
+Barei 0141	Pra' Gla-Y Ministra
+D M»tsil
+lO
+CORTE
+SUPREMA
+DEJUSTICIA ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+y, ri_SICCIUilI O Y SENTENCIA NUMERO: 11D1£1,.(«140 5 ~r14c, N'ele
+te n lá,-.:,Z,Ciudad de Asunción, Capital de la República del Paraguay, a
+o - c o
+46 g"v-• días del mes de del año dos mil dieciséis,
+est ndo érf la Sala de Acuerdos de la Corte uprema de Justicia, los Excmos. Señores
+ffligtros de la Sala Constitucional, Doctora MIRYAM PEÑA CANDI_ A, Presidenta y
+Doctores GLADYS BAREIRO DE MÓDICA y ANTONIO FRETES, Miembros, ante
+mí, el Secretario autorizante, se trajo al acuerdo el expediente caratulado: ACCIÓN DE
+INCONSTITUCIONALIDAD; "JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y ART. 6 DEL DECRETO N°
+1579/2004", a fin de resolver la acción de inconstitucionalidad promovida por el Señor José
+Patrocinio Morales Cáceres, por sus propios derechos y bajo patrocinio de Abogado.
+Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+Constitucional, resolvió plantear y votar la siguiente:
+CUESTION:
+¿Es procedente la acción de inconstitucionalidad deducida?.
+A la cuestión planteada el Doctor FRETES dijo: Se presenta el señor JOSE
+PATROCINIO MORALES CACERES, promoviendo Acción de Inconstitucionalidad
+contra los Arts. 2, 5, 6, 8 y 18 Inc. u) de la Ley 2345/2003 "DE REFORMA Y
+SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES
+DEL SECTOR PÚBLICO", y contra el Art. 6 del Decreto N° 1579/04 "Por el cual se
+reglamenta la Ley N° 2345/03".
+Se advierte que el accionante acompaña copia del Decreto N° 1591 de fecha 04 de
+julio de 2008, "por la cual se acuerda haber de retito a efectivos de la Policía Nacional",
+acreditando por medio de este documento su calidad de jubilado de la Policía Nacional.
+Refiere que los artículos impugnados por medio de esta acción de
+inconstitucionalidad infringen principios, derechos y garantías consagrados en los Art. 6,
+14, 102, 103, 137 y 247 de la Constitución Nacional.
+Manifiesta además que los Art. 2, 5, 6, 8 y 18 de la Ley 2345/03 van en
+contrasentido a lo dispuesto por la Carta Magna, contraviniéndose con ello el derecho a una
+vida digna en la tercera edad, creando además una condición de absoluta desigualdad.
+En primer lugar, y con relación al Art. 2 de la Ley N° 2345/03, cabe señalar que dicha
+normativa ha sido modificada por el Art. 1 de la Ley 2527/04, por lo que un
+pronunciamiento de esta Corte en relación a la disposición impugnada resultaría ineficaz y
+carente de interés práctico.
+Ahora bien, cabe señalar el Art. 5 de la Ley N° 2345/03 el cual dispone que "La
+Remuneración Base, para la determinación de las jubilaciones. pensiones y haberes de
+retiro, se calculará como el promedio de las remuneraciones imponibles percibidas
+durante los últimos cinco años. El procedimiento de cálculo estará sujeto a reglamentación
+mediante decreto del Poder Ejecutivo, y deberá tener en cuenta el cambio en el ncepto
+de remuneración imponible".
+Considero que la norma transcripta en el párrafo p ecedente no trans e normas
+de rango constitucional. En efecto, el artículo cuestionad establece el pi laso de
+tiempo a considerar para calculara la remuneración base obre la cual s án los
+respectivos haberes jubilatorios. Si bi el recurrente inició sus aportes bajo cia de
+Módica
+Barei 0141	Pra' Gla-Y Ministra
+D M»tsil
+lO
+
+-- 1 of 5 --
+
+una ley anterior, el mismo gozaba de derechos en expectativa, no así de derechos
+adquiridos, ello debido a que la modificación de la ley del régimen de jubilaciones
+sobrevino de manera anterior a la jubilación del accionante.
+En cuanto al 6 de la Ley 2345/03, el accionante carece de legitimación activa para
+peticionar la impugnación del mismo, ello debido a que el citado artículo hace referencia a
+la forma en que los herederos obtendrán el beneficio de pensión, y teniendo en cuenta el
+carácter de jubilado del accionante dicha normativa no le es susceptible de aplicación.
+Con relación al Art. 8 de la ley 2345/03 se da la inexistencia de agravio actual, es
+decir, el gravamen ya no tiene existencia al momento en que es resuelta la acción de
+inconstitucionalidad, ello debido a que la norma impugnada ha sido modificada por la Ley
+N° 3.542 de fecha 26 de junio de 2008, que en su Art. 1° dispone: "Modificase el Art. 8 de
+la Ley N° 2345/2003 "DE REFORMA Y SOSTENIBILIDAD DE LA CAJA FISCAL.
+SISTEMA DE JUBILACIONES Y PENSIONES DEL SECTOR PUBLICO", de la siguiente
+manera: Art. 8°.- Conforme lo dispone el Artículo 103 de la Constitución Nacional, todos
+los beneficios que paga la Dirección General de Jubilaciones y Pensiones del Ministerio de
+Hacienda se actualizarán anualmente, de oficio, por dicho Ministerio. La tasa de
+actualización será la variación del índice de Precios del Consumidor calculados por el
+Banco Central del Paraguay, correspondiente al periodo inmediatamente precedente.
+Quedan expresamente excluidos de lo dispuesto en este artículo, los beneficios
+correspondientes a los programas no contributivos".
+Nos encontramos ante un caso en el cual existe una alteración de las circunstancias
+que motivaron el proceso, circunstancia que conlleva una pérdida de toda virtualidad
+práctica. Esta Corte ha sostenido en diversos pronunciamientos que la sentencia debe
+sujetarse a la situación vigente en el momento en que se dicta, y, advirtiendo que en el caso
+de autos los supuestos de hecho se han alterado, cualquier pronunciamiento sería un
+pronunciamiento en abstracto y carente de significación efectiva, lo que es vedado ya que la
+Corte solamente puede decidir en asuntos de carácter contencioso.
+Respecto al Art. 18 inciso u), debemos tener en cuenta que el mismo deroga el Art.
+92 de la Ley N° 222/93, el cual hace referencia a los herederos de Oficiales y Sub Oficiales
+de la Policía Nacional, en el caso de autos, teniendo en cuenta el carácter del accionante -
+jubilado- , dicha normativa no le es aplicable.
+En relación al Decreto N° 1579/2004 por el cual se reglamenta la Ley N°2345/03,
+resulta que el mismo era reglamentario del Art. 8 de la Ley 2345/2003 en cuanto al
+mecanismo de actualización de haberes jubilatorios. Actualmente con la nueva redacción de
+la Ley 3542/08 el Ministerio de Hacienda aplica directamente la variación del índice de
+Precios del Consumidor como tasa de actualización anual de los haberes jubilatorios,
+dejando de lado así el Decreto N° 1579/04.
+En atención a las manifestaciones vertidas, considero que no corresponde hacer
+lugar a la presente Acción de Inconstitucionalidad promovida por el señor JOSE
+PATROCINIO MORALES CACERES, de conformidad al art. 555 del CPC. ES VOTO.----
+A su turno la Doctora BAREIRO DE MÓDICA dijo: El señor JOSE
+PATROCINIO MORALES CÁCERES, por sus propios derechos y bajo patrocinio de
+Abogado, se presenta a promover Acción de Inconstitucionalidad contra los Artículos 2, 5,
+6, 8 y 18 inc. u) de la Ley N° 2345/03 "DE REFORMA Y SOSTENIBILIDAD DE LA CAJA
+FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES DEL SECTOR PÚBLICO" y
+contra el Artículo 6° del Decreto N° 1579/2004 "POR EL CUAL SE REGLAMENTA LA
+LEY N° 2345, DE FECHA 24 DE DICIEMBRE DE 2003, DE REFORMA Y
+SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES
+DEL SECTOR PÚBLICO". Acompaña debidamente el documento que acredita la calidad
+de Jubilado de la Policía Nacional (Resolución DGJP N° 1591, de fecha 04 de julio de
+2008)
+Que, en primer lugar, debo lamentar el lapso transcurrido desde la promoción
+de esta acción de inconstitucionalidad, más esta Magistratura no puede per.../11...
+una ley anterior, el mismo gozaba de derechos en expectativa, no así de derechos
+adquiridos, ello debido a que la modificación de la ley del régimen de jubilaciones
+sobrevino de manera anterior a la jubilación del accionante.
+En cuanto al 6 de la Ley 2345/03, el accionante carece de legitimación activa para
+peticionar la impugnación del mismo, ello debido a que el citado artículo hace referencia a
+la forma en que los herederos obtendrán el beneficio de pensión, y teniendo en cuenta el
+carácter de jubilado del accionante dicha normativa no le es susceptible de aplicación.
+Con relación al Art. 8 de la ley 2345/03 se da la inexistencia de agravio actual, es
+decir, el gravamen ya no tiene existencia al momento en que es resuelta la acción de
+inconstitucionalidad, ello debido a que la norma impugnada ha sido modificada por la Ley
+N° 3.542 de fecha 26 de junio de 2008, que en su Art. 1° dispone: "Modificase el Art. 8 de
+la Ley N° 2345/2003 "DE REFORMA Y SOSTENIBILIDAD DE LA CAJA FISCAL.
+SISTEMA DE JUBILACIONES Y PENSIONES DEL SECTOR PUBLICO", de la siguiente
+manera: Art. 8°.- Conforme lo dispone el Artículo 103 de la Constitución Nacional, todos
+los beneficios que paga la Dirección General de Jubilaciones y Pensiones del Ministerio de
+Hacienda se actualizarán anualmente, de oficio, por dicho Ministerio. La tasa de
+actualización será la variación del índice de Precios del Consumidor calculados por el
+Banco Central del Paraguay, correspondiente al periodo inmediatamente precedente.
+Quedan expresamente excluidos de lo dispuesto en este artículo, los beneficios
+correspondientes a los programas no contributivos".
+Nos encontramos ante un caso en el cual existe una alteración de las circunstancias
+que motivaron el proceso, circunstancia que conlleva una pérdida de toda virtualidad
+práctica. Esta Corte ha sostenido en diversos pronunciamientos que la sentencia debe
+sujetarse a la situación vigente en el momento en que se dicta, y, advirtiendo que en el caso
+de autos los supuestos de hecho se han alterado, cualquier pronunciamiento sería un
+pronunciamiento en abstracto y carente de significación efectiva, lo que es vedado ya que la
+Corte solamente puede decidir en asuntos de carácter contencioso.
+Respecto al Art. 18 inciso u), debemos tener en cuenta que el mismo deroga el Art.
+92 de la Ley N° 222/93, el cual hace referencia a los herederos de Oficiales y Sub Oficiales
+de la Policía Nacional, en el caso de autos, teniendo en cuenta el carácter del accionante -
+jubilado- , dicha normativa no le es aplicable.
+En relación al Decreto N° 1579/2004 por el cual se reglamenta la Ley N°2345/03,
+resulta que el mismo era reglamentario del Art. 8 de la Ley 2345/2003 en cuanto al
+mecanismo de actualización de haberes jubilatorios. Actualmente con la nueva redacción de
+la Ley 3542/08 el Ministerio de Hacienda aplica directamente la variación del índice de
+Precios del Consumidor como tasa de actualización anual de los haberes jubilatorios,
+dejando de lado así el Decreto N° 1579/04.
+En atención a las manifestaciones vertidas, considero que no corresponde hacer
+lugar a la presente Acción de Inconstitucionalidad promovida por el señor JOSE
+PATROCINIO MORALES CACERES, de conformidad al art. 555 del CPC. ES VOTO.----
+A su turno la Doctora BAREIRO DE MÓDICA dijo: El señor JOSE
+PATROCINIO MORALES CÁCERES, por sus propios derechos y bajo patrocinio de
+Abogado, se presenta a promover Acción de Inconstitucionalidad contra los Artículos 2, 5,
+6, 8 y 18 inc. u) de la Ley N° 2345/03 "DE REFORMA Y SOSTENIBILIDAD DE LA CAJA
+FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES DEL SECTOR PÚBLICO" y
+contra el Artículo 6° del Decreto N° 1579/2004 "POR EL CUAL SE REGLAMENTA LA
+LEY N° 2345, DE FECHA 24 DE DICIEMBRE DE 2003, DE REFORMA Y
+SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES
+DEL SECTOR PÚBLICO". Acompaña debidamente el documento que acredita la calidad
+de Jubilado de la Policía Nacional (Resolución DGJP N° 1591, de fecha 04 de julio de
+2008)
+Que, en primer lugar, debo lamentar el lapso transcurrido desde la promoción
+de esta acción de inconstitucionalidad, más esta Magistratura no puede per.../11...
+
+-- 2 of 5 --
+
+tro Módica
+tia
+vittical	lást,15
+2
+CORTE
+SUPREMA
+DEJUSTICIA
+ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+I
+Lb5Y
+ck°(*:
+-:filf.. itii" más demora que la ya generada, debido a que estos autos llegaron a mi	EJE
+G binete recién en fecha 20 de mayo de 2014.
+ks Alega el recurrente que se encuentran vulnerados los Artículos 6, 14, 102 y 103 de1 Su
+Constitución y funda su acción manifestando, entre otras cosas, que "(...) La aplicación
+de las formulas comprendidas en la Ley recurrida, arrojan como resultado una
+SUSTRACCION de gran parte de nuestro bien patrimonial jubilatorio, que no es otra cosa
+que una CONFISCACION que viola y arremete preceptos Constitucionales y legales(...) ".-
+Es oportuno resaltar que el Articulo 2 de la Ley N° 2345/03, impugnado en autos,
+ha dejado de tener eficacia jurídica en razón de su modificación por el Articulo 1 de la Ley
+N° 2527/04 "QUE MODIFICA EL ARTICULO 2° DE LA LEY N° 2345/03, DE REFORMA
+Y SOSTENIBILIDAD DE LA CAJA FISCAL", y la vigencia de la Ley N° 2613 "QUE
+AUTORIZA AL PODER EJECUTIVO A PAGAR UNA GRATIFICACION ANUAL A LOS
+JUBILADOS DE LA ADMINISTRACION PUBLICA". Así las cosas, los agravios
+manifestados por el accionante han perdido sustento legal, por lo que no corresponde su
+análisis.
+Con respecto a la impugnación del Artículo 5 de la Ley N° 2345/03, es preciso
+traerlo a colación para su correspondiente análisis. La norma dice: "La Remuneración
+Base, para la determinación de las jubilaciones, pensiones y haberes de retiro, se calculará
+como el promedio de las remuneraciones imponibles percibidas durante los últimos cinco
+años. El procedimiento de cálculo estará sujeto a reglamentación mediante decreto del
+Poder Ejecutivo, y deberá tener en cuenta el cambio en el concepto de remuneración
+imponible" (Negritas y Subrayado son míos).
+Cabe mencionar que las jubilaciones deben cumplir un rol sustitutivo de las
+remuneraciones en actividad. Por ello, debe existir un necesario equilibrio entre las
+remuneraciones de quienes se encuentren en actividad y los haberes de la clase pasiva, ya
+que la jubilación constituye una consecuencia de la remuneración que percibía el
+beneficiario como contraprestación de su actividad laboral una vez cesada ésta y como
+débito de la comunidad por tal servicio. Dicho de otro modo, el conveniente haber
+jubilatorio solo se haya cumplido cuando el jubilado conserva una situación patrimonial
+equivalente a la que le habría correspondido gozar en caso de continuar en actividad. Las
+políticas salariales del Estado no deben derivar en modificaciones sustanciales del haber
+jubilatorio, que signifiquen una retrogradación en la condición de los pasivos, por lo que es
+inconstitucional que el Estado cause un menoscabo patrimonial a las acreencias
+provisionales, privándolas de un beneficio legalmente acordado.
+De ahí que la aplicación del Artículo 5 de la Ley N° 2345/03 ciertamente
+contraviene disposiciones de la Ley Suprema en sus Artículos 14 "De la Irretroactividad
+de la Ley", 46 "De la Igualdad de las Personas" y 103 "Del Régimen de Jubilaciones de
+los Funcionarios Públicos", al impedir al accionante percibir el correspondiente beneficio
+económico en su calidad de jubilado de la Policía Nacional, que sea digno y le garantice un
+nivel de vida optimo y básico.
+Por otra parte, el accionante en su carácter de Jubilado no se en
+legitimado a los efectos de la impugnación del Artículo 6 de la Ley N° 2345/03
+dicha norma no le afecta, pues está dirigida para los sobrevivientes d
+pensionados y retirados fallecidos con derechos a haber de reii
+El Artículo 8 de la Ley N° 2345/03 también impugri
+fue modificado por el Articulo 1 de la Ley N° 3542/08 "QtY
+4
+Bar
+Dra•
+o.
+o por el acci
+MODIFICA
+11:f'
+tra
+ya que
+bilados,
+tro Módica
+tia
+vittical	lást,15
+2
+CORTE
+SUPREMA
+DEJUSTICIA
+ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+I
+Lb5Y
+ck°(*:
+-:filf.. itii" más demora que la ya generada, debido a que estos autos llegaron a mi	EJE
+G binete recién en fecha 20 de mayo de 2014.
+ks Alega el recurrente que se encuentran vulnerados los Artículos 6, 14, 102 y 103 de1 Su
+Constitución y funda su acción manifestando, entre otras cosas, que "(...) La aplicación
+de las formulas comprendidas en la Ley recurrida, arrojan como resultado una
+SUSTRACCION de gran parte de nuestro bien patrimonial jubilatorio, que no es otra cosa
+que una CONFISCACION que viola y arremete preceptos Constitucionales y legales(...) ".-
+Es oportuno resaltar que el Articulo 2 de la Ley N° 2345/03, impugnado en autos,
+ha dejado de tener eficacia jurídica en razón de su modificación por el Articulo 1 de la Ley
+N° 2527/04 "QUE MODIFICA EL ARTICULO 2° DE LA LEY N° 2345/03, DE REFORMA
+Y SOSTENIBILIDAD DE LA CAJA FISCAL", y la vigencia de la Ley N° 2613 "QUE
+AUTORIZA AL PODER EJECUTIVO A PAGAR UNA GRATIFICACION ANUAL A LOS
+JUBILADOS DE LA ADMINISTRACION PUBLICA". Así las cosas, los agravios
+manifestados por el accionante han perdido sustento legal, por lo que no corresponde su
+análisis.
+Con respecto a la impugnación del Artículo 5 de la Ley N° 2345/03, es preciso
+traerlo a colación para su correspondiente análisis. La norma dice: "La Remuneración
+Base, para la determinación de las jubilaciones, pensiones y haberes de retiro, se calculará
+como el promedio de las remuneraciones imponibles percibidas durante los últimos cinco
+años. El procedimiento de cálculo estará sujeto a reglamentación mediante decreto del
+Poder Ejecutivo, y deberá tener en cuenta el cambio en el concepto de remuneración
+imponible" (Negritas y Subrayado son míos).
+Cabe mencionar que las jubilaciones deben cumplir un rol sustitutivo de las
+remuneraciones en actividad. Por ello, debe existir un necesario equilibrio entre las
+remuneraciones de quienes se encuentren en actividad y los haberes de la clase pasiva, ya
+que la jubilación constituye una consecuencia de la remuneración que percibía el
+beneficiario como contraprestación de su actividad laboral una vez cesada ésta y como
+débito de la comunidad por tal servicio. Dicho de otro modo, el conveniente haber
+jubilatorio solo se haya cumplido cuando el jubilado conserva una situación patrimonial
+equivalente a la que le habría correspondido gozar en caso de continuar en actividad. Las
+políticas salariales del Estado no deben derivar en modificaciones sustanciales del haber
+jubilatorio, que signifiquen una retrogradación en la condición de los pasivos, por lo que es
+inconstitucional que el Estado cause un menoscabo patrimonial a las acreencias
+provisionales, privándolas de un beneficio legalmente acordado.
+De ahí que la aplicación del Artículo 5 de la Ley N° 2345/03 ciertamente
+contraviene disposiciones de la Ley Suprema en sus Artículos 14 "De la Irretroactividad
+de la Ley", 46 "De la Igualdad de las Personas" y 103 "Del Régimen de Jubilaciones de
+los Funcionarios Públicos", al impedir al accionante percibir el correspondiente beneficio
+económico en su calidad de jubilado de la Policía Nacional, que sea digno y le garantice un
+nivel de vida optimo y básico.
+Por otra parte, el accionante en su carácter de Jubilado no se en
+legitimado a los efectos de la impugnación del Artículo 6 de la Ley N° 2345/03
+dicha norma no le afecta, pues está dirigida para los sobrevivientes d
+pensionados y retirados fallecidos con derechos a haber de reii
+El Artículo 8 de la Ley N° 2345/03 también impugri
+fue modificado por el Articulo 1 de la Ley N° 3542/08 "QtY
+4
+Bar
+Dra•
+o.
+o por el acci
+MODIFICA
+11:f'
+tra
+ya que
+bilados,
+
+-- 3 of 5 --
+
+LEY N° 2345/03, DE REFORMA Y SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA
+DE JUBILACIONES Y PENSIONES DEL SECTOR PUBLICO", entendemos que tal
+modificación no altera en lo sustancial lo prescripto en la norma anterior, ya que sigue
+manteniendo el criterio de que la actualización de los haberes jubilatorios será de acuerdo
+con la variación del índice de Precios del Consumidor calculados por el Banco Central del
+Paraguay (B.C.P). El mismo prescribe: "Conforme lo dispone el Artículo 103 de la
+Constitución Nacional, todos los beneficios que paga la Dirección General de Jubilaciones
+y Pensiones del Ministerio de Hacienda se actualizarán anualmente, de oficio, por dicho
+Ministerio. La tasa de actualización será la variación del índice de Precios del
+Consumidor calculados por el Banco Central del Paraguay, correspondiente al período
+inmediatamente precedente. Quedan expresamente excluidos de lo dispuesto en este
+artículo, los beneficios correspondientes a los programas no contributivos" (Negritas y
+Subrayado son míos).
+De la norma transcripta se desprende que el Artículo 1 de la Ley N° 3542/08 (que
+modifica el Artículo 8 de la Ley N° 2345/03), supedita la actualización de todos los
+beneficios pagados por la Dirección General de Jubilaciones y Pensiones al "índice de
+Precios del Consumidor calculado por el Banco Central del Paraguay" como tasa de
+actualización, contraviniendo lo dispuesto por el Artículo 103 de la Constitución que
+dice: "La ley garantizará la actualización de los haberes jubilatorios en igualdad de
+tratamiento dispensado al funcionario público en actividad".
+Con respecto a la impugnación del Artículo 18 inc. u) de la Ley N° 2345/03 el
+accionante no se encuentra legitimado para impugnarlo, por cuanto el mismo es sujeto
+pasivo-jubilado. El referido artículo deroga el Articulo 92 de la Ley N° 222/93 "Orgánica
+de la Policía Nacional" que se refiere a los herederos de Oficiales y Sub-oficiales de la
+Policía Nacional, y teniendo en cuenta la calidad de jubilado del accionante dicha norma no
+les es aplicable, por lo que no le causa agravio alguno.
+En cuanto al Artículo 6 del Decreto N° 1579/04, cabe señalar que al ser derogado
+el Articulo 8 de la Ley N° 2345/03 por una nueva Ley (Ley N° 3542/08) esta normativa
+(Artículo 6 del Decreto N° 1579/04) ha perdido total virtualidad por ser reglamentaria de la
+norma derogada. Es preciso señalar que actualmente, con la nueva redacción contenida en
+la Ley N° 3542/08 el Ministerio de Hacienda aplica directamente la variación del índice de
+Precios del Consumidor como tasa de actualización anual de los haberes jubilatorios,
+dejando de lado el mecanismo previsto en el Decreto N° 1579/04. Por tanto, el caso
+sometido a consideración de esta Sala con respecto a esta normativa, no surge como
+controversia) sino meramente abstracto y la eventual declaración de inconstitucionalidad de
+la norma no tendría más efecto que el solo beneficio de la norma.
+Por lo manifestado precedentemente concluyo que el Artículo 5 de la Ley N°
+2345/03 y Artículo 1 de la Ley N° 3542/08 (que modifica el Artículo 8 de la Ley N°
+2345/03) contravienen manifiesta e indudablemente principios constitucionales previstos en
+los Artículos 14 "De la Irretroactividad de la Ley", 46 "De la Igualdad de las personas",
+47 num. 2) "De las Garantías de la Igualdad", 103 "Del Régimen de Jubilaciones" y 137
+"De la Supremacía de la Constitución" de la Constitución, siendo la incompatibilidad de
+los mismos con los preceptos constitucionales altamente inconciliable.
+Por tanto, opino que debe hacerse lugar parcialmente a la Acción de
+Inconstitucionalidad promovida por el señor JOSE PATROCINIO MORALES
+CÁCERES, y en consecuencia, declarar la inaplicabilidad del Artículo 5 de la Ley N°
+2345/03 y Artículo 1 de la Ley N° 3542/08 (que modifica el Artículo 8 de la Ley N°
+2345/03), respecto del mismo, por los fundamentos expuestos. Es mi voto.
+A su turno la Doctora PEÑA CANDIA dijo: Manifiesto mi adhesión parcial al voto
+del Dr. Antonio Fretes, en cuanto estima improcedente la impugnación de
+inconstitucionalidad de los Arts. 2, 5, 6 y 18 inc. u) de la Ley N°.2345/2003 y Art. 6 del
+Decreto N°.1579/2004, por sus mismos fundamentos. Y adhiero parcialmente al voto de la
+Dra. Gladys Bareiro de Módica en cuanto considera que debe admitirse la acción de...///...
+LEY N° 2345/03, DE REFORMA Y SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA
+DE JUBILACIONES Y PENSIONES DEL SECTOR PUBLICO", entendemos que tal
+modificación no altera en lo sustancial lo prescripto en la norma anterior, ya que sigue
+manteniendo el criterio de que la actualización de los haberes jubilatorios será de acuerdo
+con la variación del índice de Precios del Consumidor calculados por el Banco Central del
+Paraguay (B.C.P). El mismo prescribe: "Conforme lo dispone el Artículo 103 de la
+Constitución Nacional, todos los beneficios que paga la Dirección General de Jubilaciones
+y Pensiones del Ministerio de Hacienda se actualizarán anualmente, de oficio, por dicho
+Ministerio. La tasa de actualización será la variación del índice de Precios del
+Consumidor calculados por el Banco Central del Paraguay, correspondiente al período
+inmediatamente precedente. Quedan expresamente excluidos de lo dispuesto en este
+artículo, los beneficios correspondientes a los programas no contributivos" (Negritas y
+Subrayado son míos).
+De la norma transcripta se desprende que el Artículo 1 de la Ley N° 3542/08 (que
+modifica el Artículo 8 de la Ley N° 2345/03), supedita la actualización de todos los
+beneficios pagados por la Dirección General de Jubilaciones y Pensiones al "índice de
+Precios del Consumidor calculado por el Banco Central del Paraguay" como tasa de
+actualización, contraviniendo lo dispuesto por el Artículo 103 de la Constitución que
+dice: "La ley garantizará la actualización de los haberes jubilatorios en igualdad de
+tratamiento dispensado al funcionario público en actividad".
+Con respecto a la impugnación del Artículo 18 inc. u) de la Ley N° 2345/03 el
+accionante no se encuentra legitimado para impugnarlo, por cuanto el mismo es sujeto
+pasivo-jubilado. El referido artículo deroga el Articulo 92 de la Ley N° 222/93 "Orgánica
+de la Policía Nacional" que se refiere a los herederos de Oficiales y Sub-oficiales de la
+Policía Nacional, y teniendo en cuenta la calidad de jubilado del accionante dicha norma no
+les es aplicable, por lo que no le causa agravio alguno.
+En cuanto al Artículo 6 del Decreto N° 1579/04, cabe señalar que al ser derogado
+el Articulo 8 de la Ley N° 2345/03 por una nueva Ley (Ley N° 3542/08) esta normativa
+(Artículo 6 del Decreto N° 1579/04) ha perdido total virtualidad por ser reglamentaria de la
+norma derogada. Es preciso señalar que actualmente, con la nueva redacción contenida en
+la Ley N° 3542/08 el Ministerio de Hacienda aplica directamente la variación del índice de
+Precios del Consumidor como tasa de actualización anual de los haberes jubilatorios,
+dejando de lado el mecanismo previsto en el Decreto N° 1579/04. Por tanto, el caso
+sometido a consideración de esta Sala con respecto a esta normativa, no surge como
+controversia) sino meramente abstracto y la eventual declaración de inconstitucionalidad de
+la norma no tendría más efecto que el solo beneficio de la norma.
+Por lo manifestado precedentemente concluyo que el Artículo 5 de la Ley N°
+2345/03 y Artículo 1 de la Ley N° 3542/08 (que modifica el Artículo 8 de la Ley N°
+2345/03) contravienen manifiesta e indudablemente principios constitucionales previstos en
+los Artículos 14 "De la Irretroactividad de la Ley", 46 "De la Igualdad de las personas",
+47 num. 2) "De las Garantías de la Igualdad", 103 "Del Régimen de Jubilaciones" y 137
+"De la Supremacía de la Constitución" de la Constitución, siendo la incompatibilidad de
+los mismos con los preceptos constitucionales altamente inconciliable.
+Por tanto, opino que debe hacerse lugar parcialmente a la Acción de
+Inconstitucionalidad promovida por el señor JOSE PATROCINIO MORALES
+CÁCERES, y en consecuencia, declarar la inaplicabilidad del Artículo 5 de la Ley N°
+2345/03 y Artículo 1 de la Ley N° 3542/08 (que modifica el Artículo 8 de la Ley N°
+2345/03), respecto del mismo, por los fundamentos expuestos. Es mi voto.
+A su turno la Doctora PEÑA CANDIA dijo: Manifiesto mi adhesión parcial al voto
+del Dr. Antonio Fretes, en cuanto estima improcedente la impugnación de
+inconstitucionalidad de los Arts. 2, 5, 6 y 18 inc. u) de la Ley N°.2345/2003 y Art. 6 del
+Decreto N°.1579/2004, por sus mismos fundamentos. Y adhiero parcialmente al voto de la
+Dra. Gladys Bareiro de Módica en cuanto considera que debe admitirse la acción de...///...
+
+-- 4 of 5 --
+
+CORTE SUPREMA DE JUSTICIA
+Sala Constitucional
+RESUELVE:
+HACER LUGAR parcialmente a la acción de inconstituci
+consecuencia, declarar la inaplicabilidad del Art. 1 de la Ley N°
+Artículo 8 de la Ley N° 2345/03), con relación al accionante.
+1 ANOTAR, registrar y notificar.
+CORTE
+SUPREMA
+DE JUSTICIA ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+1!.,le ncoilti	? ucionalidad en relación con el Art. 8 de la Ley N°. 2345/2003 (modificado
+él Árt/ine la Ley N°. 3542/2008).
+„En conclusión, estimo que corresponde hacer lugar parcialmente a la acción de
+nstitudionalidad promovida por José Patrocinio Morales Cáceres; y en consecuencia,
+deelarar la inaplicabilidad del Art. 8° de la Ley N° 2345/2003 modificado por el Art. 1° de
+la Ley N°.3542/2008, en relación con el accionante. Es mi voto.
+Con lo que se dio por terminado el acto, firmando SS.EE., t¢do po ante mí, de que
+certifico, quedando acordada la sentencia que inmediatamente sigue
+reino de Módica
+‘rstistra
+NCIA NUMERO: C159 -
+Asunc , 15 de zs duo • de 2.016.-
+VISTOS: Los méritos del Acuerdo que anteceden, la
+CORTE SUPREMA DE JUSTICIA
+Sala Constitucional
+RESUELVE:
+HACER LUGAR parcialmente a la acción de inconstituci
+consecuencia, declarar la inaplicabilidad del Art. 1 de la Ley N°
+Artículo 8 de la Ley N° 2345/03), con relación al accionante.
+1 ANOTAR, registrar y notificar.
+CORTE
+SUPREMA
+DE JUSTICIA ACCIÓN DE INCONSTITUCIONALIDAD:
+"JOSÉ PATROCINIO MORALES CÁCERES C/
+ARTS. 2, 5, 6 Y 18 DE LA LEY N° 2345/2003 Y
+ART. 6 DEL DECRETO N° 1579/2004". AÑO:
+2008 — N° 1064.
+1!.,le ncoilti	? ucionalidad en relación con el Art. 8 de la Ley N°. 2345/2003 (modificado
+él Árt/ine la Ley N°. 3542/2008).
+„En conclusión, estimo que corresponde hacer lugar parcialmente a la acción de
+nstitudionalidad promovida por José Patrocinio Morales Cáceres; y en consecuencia,
+deelarar la inaplicabilidad del Art. 8° de la Ley N° 2345/2003 modificado por el Art. 1° de
+la Ley N°.3542/2008, en relación con el accionante. Es mi voto.
+Con lo que se dio por terminado el acto, firmando SS.EE., t¢do po ante mí, de que
+certifico, quedando acordada la sentencia que inmediatamente sigue
+reino de Módica
+‘rstistra
+NCIA NUMERO: C159 -
+Asunc , 15 de zs duo • de 2.016.-
+VISTOS: Los méritos del Acuerdo que anteceden, la
+
+-- 5 of 5 --
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

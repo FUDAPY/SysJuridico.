@@ -1,0 +1,84 @@
+# Auto Interlocutorio N.º 11/2024
+
+**Carátula:** JUICIO: "RECURSO DE QUEJA POR APEL. DENEG. INTERP. POR LOS ABGS. ZUNILDA BENAVENTE Y MARÍA FERNÁNDEZ EN: IRMA DELFINA FRETES DE CABAÑA C/ EMPRESA DE TRANSPORTE Y TURISMO DE LA CONQUISTA S.A. Y OTROS S/ INDEMNIZACIÓN DE DAÑOS Y PERJUICIOS".--
+
+- **Código CSJ:** 102686
+- **Tipo:** Auto Interlocutorio
+- **Número:** 11/2024
+- **Fecha:** 2024-02-05
+- **Sala:** SALA CIVIL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; Declarar operada la caducidad; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=102686)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=102686)
+
+## Texto de la resolución
+
+JUICIO:             "RECURSO               DE        QUEJA       POR      APEL.
+                                                     DENEG.          INTERP.               POR        LOS      ABGS.        ZUNILDA
+                                                    BENAVENTE                Y       MARÍA           FERNÁNDEZ          EN:        IRMA
+                                                     DELFINA FRETES DE CABAÑA C/ EMPRESA DE
+                    ,J                              TRANSPORTE                   Y      TURISMO           DE     LA    CONQUISTA
+    I                '    ,\.
+/
+                                                     S.A.       Y OTROS S/ INDEMNIZACIÓN DE DAÑOS
+                                                     Y PERJUICIOS".-------------------------
+
+
+                                                      A. I.       N! .... ~.~ .......
+
+                                                   Asunción,              5          de        ~'°                    del 2.02..4.
+                                      Estos autos; y,
+                                             CONSIDERANDO:
+                         las         constancias          del         Juicio               y        del     informe           de     la
+                                 Judicial          ( f.     30)          se          advierte              que        la    última
+                                                    impulsó la Instancia Recursiva y de la
+        cual existe constancia en el expediente, es la Providencia de
+        fecha 10 de Marzo del 2.023, que obra a f. 29 de autos.------
+               El        Artículo            172     del        Código                  Procesal            Civil,          en       lo
+        pertinente,                  establece:           "Se       operará                    la     caducidad             de       la
+        instancia en toda clase de juicios,                                              cuando no se instare su
+        curso dentro del plazo de seis meses".-----------------------
+               En    el          caso       se     advierte            que           desde           el     dictado           de     la
+        Providencia de fecha 10 de Marzo del 2.023 hasta la fecha, ha
+        transcurrido un plazo superior a seis meses para que opere la
+        Caducidad de Instancia,                       sin que la Parte recurrente cumpliera
+        acto procesal alguno capaz de instar el curso del proceso.---
+               Por lo tanto,                     corresponde declarar -de oficio- operada
+        la Caducidad de                     Instancia Recursiva,                           de       conformidad con lo
+        dispuesto               en    los    Artículos          172           y         17 5    del       Código           Procesal
+        Civil e imponer las Costas al apelante,                                                     conforme lo dispone
+        el Artículo 200 del citado Código de Forma.------------------
+               Por tanto, la Excelentísima;
+                                            CORTE SUPREMA DE JUSTICIA
+                                              SALA~VIL Y COMERCIAL
+                                                                               V E:
+                                      OPERADA                                                       lnstancia recursiva
+                     Juicio por haber transcurr'do el término prescript
+
+
+
+
+        hub'
+
+
+
+                                                          ·zslmón
+
+
+        ¡
+
+
+
+
+                       -
+.,-.:
+
+            t.,   ,.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

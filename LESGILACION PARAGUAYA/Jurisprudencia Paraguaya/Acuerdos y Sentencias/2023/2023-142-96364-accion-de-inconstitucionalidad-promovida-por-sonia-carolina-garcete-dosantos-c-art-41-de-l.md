@@ -1,0 +1,240 @@
+# Acuerdo y Sentencia N.º 142/2023
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: "PROMOVIDA POR SONIA CAROLINA GARCETE DOSANTOS C/ ART. 41º DE LA LEY Nº 2856/06 "QUE SUSTITUYE LA LEY 73/91 Y 1802/01". AÑO: 2020 - N.° 832.--------
+
+- **Código CSJ:** 96364
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 142/2023
+- **Fecha:** 2023-03-02
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=96364)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=96364)
+
+## Texto de la resolución
+
+ACCIÓN       DE      INCONSTITUCIONALIDAD:
+                                                        "PROMOVIDA       POR       SONIA         CAROLINA
+                                                        GARCETE DOSANTOS C/ ART. 41º DE LA LEY
+                                                        Nº 2856/06 "QUE SUSTITUYE LA LEY 73/91 Y
+                                                        1802/01". AÑO: 2020 - N.0 832.--------------------------
+
+       \\\\ 01   02 O
+'\.~     1         • '.l
+                           º<
+               ~~          ,y
+                           ,, ✓
+
+
+
+       iH.,\i~... .--,"\'- '~                                              1                1           .
+  siP.D\Si\C~\lER~""' y SENTENCIA NÚMERO: c;C'Ait'                              WtlV(I'. +"'-     ½ doJ
+             -\'ff ·eo            ~: . . .
+  , '?> e'Ji€tr'la;, l:~f:;; ad de Asunción, Capital de la República del Paraguar, a los
+    Wf-\'-' ~s\':, c<fo_l(-:~
+                                                                                                     1
+                                  días, del mes de    ~"-{ -to     , del año dos mil V(.°,.•·h't-rr         ,
+        ,W,d~Í'~ ':J · ~ ala de Acuerdos de la Corte Suprema de Justicia, los Excmos. Señ<?rcfs
+       111i         :t\    la Sala Constitucional, Doctores, ANTONIO FRETES, VICTOR RIOS
+   OJEDA y CÉSAR MANUEL DIESEL JUNGHANNS, Ante mí, el Secretario autorizante,
+   se trajo al acuerdo el expediente caratulado: ACCIÓN DE INCONSTITUCIONALIDAD:
+   "PROMOVIDA POR SONIA CAROLINA GARCETE DOSANTOS C/ ART. 41º DE LA
+   LEY Nº 2856/06 "QUE SUSTITUYE LA LEY 73/91 Y 1802/01 ", a fin de resolver la
+   Acción de inconstitucionalidad promovida por la señora Sonia Carolina Garcete
+   Dosantos, por sus propios derechos y bajo patrocinio de Abogado.------------------------------
+                 Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+   Constitucional, resolvió plantear y votar la siguiente: -------------------------------------------------
+
+                                                       CU ES TI O N:
+
+              ¿Es procedente la Acción de inconstitucionalidad deducida?.-----------------------------
+              Practicado el sorteo de ley para determinar el orden de votación, dio el siguiente
+       resultado: Diesel Junghanns, Fretes y Ríos Ojeda.----------------------------------------------------
+
+               A la cuestión planteada el Doctor DIESEL JUNGHANNS dijo: La señora SONIA
+       CAROLINA GARCETE DOSANTOS, promueve Acción de lnconstitucionalidad contra el
+       artículo 41º de la Ley 2856/06 "QUE SUSTITUYE LAS LEYES Nº 73/91 Y 1802/01 'DE
+       LA CAJA DE JUBILACIONES Y PENSIONES DE EMPLEADOS BANCARIOS DEL
+       PARAGUAY".----------------------------------------------------------------------------------------------------
+               Refiere que el artículo impugnado por medio de esta acción de
+       inconstitucionalidad transgrede no solo los derechos adquiridos, sino también violenta el
+       principio de Igualdad consagrado en los Arts. 46º, 47° de la Constitución Nacional,
+       colisionando al mismo tiempo con el artículo 109º del mismo cuerpo legal.--------------------
+               La disposición considerada agraviante expresa cuanto sigue: "Corresponderá la
+       devolución de sus aportes a /os, funcionarios que cuenten con una antigüedad superior a
+       los diez años y que no tengan derecho a la jubilación, que fuesen despedidos, dejados
+       cesantes o que se retiren voluntariamente de las entidades donde prestan servicio. La
+        Caja podrá optar por la aplicación del citado monto a la amortización o cancelación de su
+       obligación.---------- - -------------------------------------------------------------------------------------------
+               No serán susce ibles de devolución los aportes patronales.------------------------------
+               EI derec o a soli "far la devolución de aportes prescribirá después de tres años del
+       retiro del f1 ·a o de su trabajo, salvo que el mismo tenga deuda con la Caja, en cuyo
+       caso los po s serán plicados a la amortización o cancelación de su obligación".--------
+               S stien la accionante que los requisitos establecidos por la disposi · 'n que
+        impugn le p van d acceder al retiro de sus aportes, circunstancia que vulne a los
+        principi s de ratee ón a la Propiedad Privada y de Igualdad e sagrados de m nera
+        expresa en I C stitución               c1onal.         las constancias pre ntadas en [auto se
+
+
+
+                                             Cesar M. Die-ser' Junghanns                                      Ministro
+                                                    Ministro CSJ.
+
+
+verifica que la accionante era aportante de la Caja de Jubilaciones y Pensiones de
+Empleados de Bancos y Afines por los servicios prestados durante el tiempo en que se
+desempeñó como funcionaria de un Banco de plaza.-------------------------------------------------
+           Examinada la norma atacada de inconstitucional, tenemos que ésta establece dos
+requisitos a los efectos de conceder el derecho a la devolución de los aportes realizados
+por parte de los trabajadores aportantes a la Caja. En primer lugar, se establece la
+antigüedad mínima de diez años y, en segundo lugar, se debe tratar de funcionarios que
+no tengan derecho a la jubilación o, que fuesen despedidos o, cesantes o, que se retiren
+v o I un ta ria mente.-------------------------------------------------------------------------------------------------
+           T al y como lo ha relatado la accionante, la misma no reúne las exigencias
+establecidas en la norma impugnada a los efectos de acceder al retiro de los aportes que
+realizara durante su gestión en una entidad bancaria, extremo que señala como
+inconstitucional por conculcar lo preceptuado por el artículo 47° de la Constitución
+Na ci o na 1, el cu a I expresa: ------------------------------------------------------------------------------------
+           "Artículo 47° -.De las garantías de la igualdad.- El Estado garantizará a todos los
+habitantes de la República. 1 º) la igualdad para el acceso a la justicia, a cuyo efecto
+allanará los obstáculos que la impidiesen; 2º) la igualdad ante las leyes; 3º) la igualdad
+para el acceso a las funciones públicas no electivas, sin más requisitos que la idoneidad,
+y 4 º) la igualdad de oportunidades en la participación de los beneficios de la naturaleza,
+de los bienes materiales y de la cultura".-----------------------------------------------------------------
+         En lo relacionado al marco legal específico, tenemos en la propia Ley atacada la
+delimitación de la naturaleza jurídica de los aportes realizados a la Caja de Jubilaciones y
+Pensiones de Empleados Bancarios del Paraguay, expresada por medio de su Título
+Tercero "Del Patrimonio", Capítulo Primero "De la Formación de Recursos ", artículo 11 º
+primera parte: "Los tondos y rentas que se obtengan de conformidad con las
+disposiciones de esta Ley, son de exclusiva propiedad de los beneficiarios de la Caja".----
+         En este punto, cabe traer a colación la clásica definición de Propiedad de Aubry y
+Rau: " ... La propiedad es el derecho de gozar y disponer de una cosa sin más limitaciones
+que las establecidas en las leyes ... " (Cabanellas, G. "Diccionario Enciclopédico de
+Derecho Usual", Editorial Heliasta, Buenos Aires- República Argentina, 2001, Tomo VI P-
+O).-------------------------------------------------------------------------------------------------------------------
+       En esta inteligencia debemos entender que disponiendo la propia ley la exclusiva
+propiedad sobre tales aportes en beneficio de los empleados de la institución, mal podría
+contradecir sus propias directivas al establecer solapadamente, bajo ciertos requisitos, la
+imposibilidad de ejercer aquél derecho, vulnerando así el mentado principio
+constitucional para proceder a un despojo de nada menos que el total de sus aportes en
+forma ilegítima. Así, acorde al concepto trasuntado líneas arriba, en defensa de las
+atribuciones que por derecho posee sobre los aportes realizados a la Caja, la accionante
+reclama su devolución considerando que aquellos se encuentran indebidamente en
+poder de otros.---------------------------------------------------------------------------------------------------
+       D el análisis de las cuestiones suscitadas y desde la perspectiva constitucional de
+las mismas, se constata una clara contradicción en la Ley cuando, por una parte esta
+expresa que: "Los fondos y rentas que se obtengan de conformidad con las disposiciones
+de esta Ley, son de exclusiva propiedad de los beneficiarios de la Caja", más por otro
+lado limita lo transcripto con condicionamientos que, bajo pena de pérdida de esos
+derechos en caso de incumplimiento, establecen: "Corresponderá la devolución de sus
+aportes a los funcionarios que ... "; todo ello sin otro perjudicado que el mismo aportante a
+quien la propia norma al inicio de sus disposiciones pretende proteger.-------------------------
+       En las condiciones apuntadas surge evidente, además, una afrenta al Principio de
+Igualdad, ya que implica un trato claramente discriminatorio hacia los asociados
+bancarios que, como en el caso de la accionante hayan sido desvinculados de la
+actividad bancaria y que no cuenten en consecuencia con los años requeridos para
+acceder a la devolución de sus aportes, amén de ello, se erige indudablemente como un
+despojo absolutamente ilegal ya que por el incumplimiento de los requisitos enunciados
+
+
+
+
+                                                                                                                      2
+
+
+   ¡,,OEL~CORTE
+ (?'ft*\1 SUPREMA                                                           ACCIÓN        DE      INCONSTITUCIONALIDAD:
+   ~~      Bl 'J TICIA                                                      "PROMOVIDA        POR        SONIA         CAROLINA
+              1   L         !   ,,,           ,f<                           GARCETE DOSANTOS C/ ART. 41º DE LA LEY
+                      ,..
+                  ,1'.\ \
+                                                    "J',,
+                                                       ~
+                                                                            Nº 2856/06 "QUE SUSTITUYE LA LEY 73/91 Y
+             '('t '\\'ó t', ,,•\
+               l~ .\- ·
+             ,J ' ~ .-. '
+                              ··'
+                                                       """'
+                                                        0'                  1802/01 ". AÑO: 2020 - N. 0 832.--------------------------
+        _ . . _-_ . . "··· i'l..l
+        ~
+                                                            ~
+~        t.~·,'?, . mJ~_y,Jla       ente la _Caja, en abierta viola~ión_ a s~ propio marco no:mativo, procede a
+ <P.::,. " .,.. }-or:n¡use, co      la totalidad de los aportes jubilatorios de sus asociados, en el caso
+ ..- ,      , ···'p rtteular-:- ~ la señora Sonia Carolina Garcete Dosantos, circunstancia que también
+  ~ ✓  ,i/r,, colisior~:~~n la garantía constitucional contenida en el artículo 109º de nuestra Ley
+           si' fi ~d'a éht~I, que dispone: " ... Se garantiza la propiedad privada, cuyo contenido y límites
+                                      1
+                                          '
+
+
+
+                  serán establecidos por la Ley, atendiendo a su función económica y social, a fin de
+                  hacerla accesible para todos ... ". ---------------------------------------------------------------------------
+                         Por lo precedentemente expuesto, en atención a las normas legales citadas y en
+                  concordancia con el parecer del Ministerio Público, considero que corresponde hacer
+                  lugar a la acción y en consecuencia declarar la inaplicabilidad del 41 º de la Ley Nº
+                  2856/2006 "Que sustituye las leyes Nº 73/91 y 1802/01 de la Caja de Jubilaciones y
+                  Pensiones de Empleados Bancarios del Paraguay", en la parte que condiciona a una
+                  antigüedad superior a diez años a los efectos de la devolución de aporte jubilatorio de la
+                  señora Sonia Carolina Garc .· Dosantos, ello de conformidad al Art. 555 del C.P.C. Es
+                  mi voto.----------------------------------------------------------------------------------------------------------
+
+                         A su turno, 1 s                        ctores FR TES y RÍOS OJEDA manifestaron que se adhieren al
+                  voto del Ministro p                           nte, Docto DIESEL JUNGHANNS, por los mismos fundamén os.--
+
+                        Con lo qu                                                                                                      te mí, de
+                  que certifico, que
+
+                                                                                                                                               /
+
+
+
+
+                                              SE TENCIA NÚME O: "41.
+                                              Asunción, 01, de       M af::&o     de 202] .-
+                                              VISTOS: Los méritos del Acuerdo que anteceden, la
+                                                                 CORTE SUPREMA DE JUSTICIA
+                                                                        Sala Constitucional
+                                                                         RESUELVE:
+                                              HACER LUGAR a la acción de inconstitucionalidad
+                                                                                           promovida y, en
+                  consecuencia, declarar la in licabilidad del Art. 41 º de la Ley Nº 2856/2006 "Que sustituye
+                  las leyes Nº 73/91 y 18 2/0 de la Caja de Jubilaciones y Pensiones de Empleados
+                  Bancarios del P    uay" en la arte que condiciona a una antigüedad superior a · z años
+                  a los efectos e la de lución de aporte jubilatorio, con relación a         acciona nte onia
+                  Carolina Garc te D a tos, ell de conformidad a lo establecido en el 'A . 555 d I C.P. .---
+                         ANOT R, reqist ar y n i ic \------------------------- ---- -- ---------- ------- -----
+                                                                         __./J    ' r
+                                                                                                                -   H   ~,-:,'I';-:S
+
+
+                                                                  Cesar M. Diesel Ju 'hanns
+                                                                         Ministro CSJ ~
+
+
+                                                                                    ~ ffift.,·i·;)lú ,
+                                                                                    8
+                                                                                          \'~''/!y * ·,
+                                                                                          SE~~~~Rli\
+                                                                                        ~ JUDICIAL l ¡;;
+                                                                                        A
+                                                                                        \1'   ~      :;
+                                                                                                         ~ji
+                                                                                                         fl.)
+
+
+                                                                                        ~~~         '1.1.
+                                                                                         ~ ~~                                                  3
+
+
+.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

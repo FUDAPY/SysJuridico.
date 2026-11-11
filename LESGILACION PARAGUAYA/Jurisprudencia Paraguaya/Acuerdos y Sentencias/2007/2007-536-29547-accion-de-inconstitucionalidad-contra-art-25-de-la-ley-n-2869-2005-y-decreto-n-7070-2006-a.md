@@ -1,0 +1,128 @@
+# Acuerdo y Sentencia N.º 536/2007
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: “CONTRA ART. 25 DE LA LEY N° 2869/2005 Y DECRETO N° 7070/2006”. AÑO: 2006 – Nº 39.
+
+- **Código CSJ:** 29547
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 536/2007
+- **Fecha:** 2007-06-26
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=29547)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=29547)
+
+## Texto de la resolución
+
+ACCION DE INCONSTITUCIONA-LIDAD: “CONTRA ART. 25 DE LA LEY N° 2869/2005 Y DECRETO N° 7070/2006”. AÑO: 2006 – Nº 39.-------------------------------
+
+
+
+ACUERDO Y SENTENCIA NUMERO: QUINIENTOS TREINTA Y SEIS.-
+
+
+
+	En la Ciudad de Asunción, Capital de la República del Paraguay,   a  los
+
+  Veinte y seis       días del mes de    junio           del año dos mil siete, estando en la Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos. Señores Ministros de la Sala Constitucional, Doctor ANTONIO FRETES, Presidente y Doctores VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ Y JOSÉ V. ALTAMIRANO AQUINO, Miembros, ante mí, el Secretario autorizante, se trajo al acuerdo el expediente caratulado: ACCIÓN DE INCONSTITUCIONALIDAD: “CONTRA ART. 25 DE LA LEY N° 2869/2005 Y DECRETO N° 7070/2006”, a fin de resolver la acción de inconstitucionalidad promovida por un grupo de accionantes individualizados en el escrito de promoción de esta acción, por sus propios derechos y bajo patrocinio de la Abog. Olga Acosta Ferreira.-----------------------------------------
+
+Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala Constitucional, resolvió plantear y votar la siguiente:--------------
+
+
+
+				C U E S T I O N:
+
+
+
+	¿Es procedente la acción de inconstitucionalidad deducida?.---------------
+
+A la cuestión planteada el Doctor FRETES dijo: Un grupo de accionantes individualizados en el escrito de promoción de esta acción, por sus propios derechos y bajo patrocinio de la Abog. Olga Acosta Ferreira, promueven acción de inconstitucionalidad contra el Art. 25 de la Ley N° 2869/2005 y contra el Decreto N° 7070/2006, alegando que las normas impugnadas son violatorias del régimen constitucional vigente al dejar sin efecto derechos laborales adquiridos. Fundan la presente acción en los Arts. 14, 16, 46, 47, 68, 86, 87, 102, 107 y 137.--------------------------------------------
+
+La primera cuestión a examinar en cualquier proceso es la relativa a la legitimación procesal. Es decir, si la relación señalada y suscitada con motivo del proceso, puede tener la virtualidad de generar una confirmación, modificación o extinción de la relación jurídica de fondo que subyace en el mismo, vale decir, si existe la “legitimario ad causam”. Es esta la primera obligación a cargo de cualquier juzgador, y es la razón por la cual nos imponemos con carácter previo su consideración.-----------------------------------
+
+Los accionantes alegan ser funcionarios del Ministerio de Salud Pública y Bienestar Social, sin que los mismos hayan acompañado constancia fehaciente que acredite esa condición. Cabe señalar que la Ley N° 1626/00 en su Art. 4° define al funcionario público como: “...la persona nombrada mediante acto administrativo para ocupar de manera permanente un cargo incluido o previsto en el Presupuesto General de la Nación, donde desarrolle tareas inherentes a la función del organismo o entidad del Estado en el que presta sus servicios. El trabajo del funcionario público es retribuido y se presta en relación de dependencia con el Estado”. Asimismo el Art. 5 de la misma Ley establece: “Es personal contratado la persona que en virtud de un contrato y por tiempo determinado ejecuta una obra o presta un servicio al Estado...” Tal situación, impide que esta Corte pueda expedirse con respecto a la acción promovida por cuanto que el requisito esencial, es decir, la condición de funcionario público permanente o contratado, no ha sido constatada por medio fehaciente, la sola invocación del mismo en tal sentido resulta insuficiente, ya que justamente las normas por ellos impugnadas hacen relación a los contratos celebrados entre el personal y el Estado.------------------
+
+En consecuencia, opino que no procede la acción de inconstitucionalidad planteada por defectos formales. Es mi voto.----------------  
+
+
+
+A su turno el Doctor ALTAMIRANO AQUINO dijo: Adhiero al voto del Ministro preopinante y amplio cuanto sigue:-------------------------------------
+
+1. Los expedientes con Acciones de Inconstitucionalidad contra Actos Normativos, no han pasado por un estudio previo que determine la  admisibilidad o no de las mismas, atendiendo que dentro de éstas se encuentran los rechazos por cuestiones de forma, esta situación ha derivado en la consecuencia de que las acciones planteadas han sido admitidas de facto al obtener las medidas  cautelares y con la correspondiente significación de éstas en materia de efectos. Sin embargo, luego de que el trámite cumpliera su ciclo con el Dictamen de la Fiscalía General del Estado, nos encontramos ante situaciones de rechazos por cuestiones de forma, generando la imposibilidad material de ser subsanadas y limitando las posibilidades de nuevas presentaciones.----------------------------------------------------------------------------
+
+2. Oportunamente y en forma continua vengo sosteniendo que antes de dar trámite a Acciones de Inconstitucionalidad, es necesario verificar que se haya dado cumplimiento a las formalidades establecidas en la Ley en virtud a lo dispuesto en el art. 552 del Código Procesal Civil.-------------------------------
+
+3. Pues bien, la insuficiencia en la “legitimatio ad causam” al no acreditarse en autos la calidad de “Funcionarios Públicos”, así como el hecho de limitarse a la simple mención de los artículos impugnados sin detallar el agravio especifico con relación a la norma, el que debe darse en cada caso y atendiendo a la condición de cada accionante, por lo que la acumulación activa debe acreditarse, es decir es admisible la presentación conjunta de una Acción de Inconstitucionalidad, pero es responsabilidad del profesional que la presenta, determinar la calidad de afectación en cada caso a los efectos de lo dispuesto en el art. 555 del Código Procesal Civil, situación determinante para el rechazo de la acción intentada. En el caso en cuestión, por un lado debe acreditarse en cada caso la calidad de Funcionario Público y por otro lado debe determinarse el modo o grado de afectación a cada uno de los accionantes, de las normas atacadas de inconstitucionalidad en relación con los artículos constitucionales teóricamente conculcados.--------------------...///...
+
+ACCION DE INCONSTITUCIONA-LIDAD: “CONTRA ART. 25 DE LA LEY N° 2869/2005 Y DECRETO N° 7070/2006”. AÑO: 2006 – Nº 39.-------------------------------
+
+
+
+...///...4. Por las consideraciones que anteceden, opino que la Acción de Inconstitucionalidad debe ser rechazada por cuestiones de forma. Es mi voto.--
+
+
+
+A su turno el Doctor NÚÑEZ RODRÍGUEZ, manifestó que se adhiere al voto del Ministro preopinante, Doctor FRETES, por los mismos fundamentos.------------------------------------------------------------------------------
+
+
+
+Con lo que se dio por terminado el acto, firmando SS.EE., todo por ante mí, de que certifico, quedando acordada la sentencia que inmediatamente sigue:
+
+
+
+
+
+
+
+
+
+
+
+Ante mí:										   	
+
+	
+
+
+
+	
+
+	SENTENCIA NUMERO: 536.-
+
+
+
+Asunción,    26    de       junio         de 2.007.-
+
+
+
+VISTO: Los méritos del Acuerdo que anteceden, la
+
+
+
+CORTE SUPREMA DE JUSTICIA
+
+Sala Constitucional
+
+R E S U E L V E:
+
+
+
+NO HACER LUGAR a la acción de inconstitucionalidad promovida contra el Art. 25 de la Ley N° 2869/2005 y Decreto N° 7070/2006, por los motivos expuestos en el considerando de esta resolución.--------------------------
+
+	ANOTAR, registrar y notificar.------------------------------------------------
+
+
+
+
+
+
+
+
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

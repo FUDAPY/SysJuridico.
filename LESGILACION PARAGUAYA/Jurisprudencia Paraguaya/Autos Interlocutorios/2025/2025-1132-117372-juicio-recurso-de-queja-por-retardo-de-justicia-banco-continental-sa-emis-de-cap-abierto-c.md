@@ -1,0 +1,94 @@
+# Auto Interlocutorio N.º 1132/2025
+
+**Carátula:** JUICIO: “RECURSO DE QUEJA POR RETARDO DE JUSTICIA: BANCO CONTINENTAL SA EMIS DE CAP ABIERTO C/ SERGIO RAMON BARRIOS HEYN S/ ACCIÓN PREPARATORIA DE JUICIO EJECUTIVO”. N° 323. AÑO 2022.-
+
+- **Código CSJ:** 117372
+- **Tipo:** Auto Interlocutorio
+- **Número:** 1132/2025
+- **Fecha:** 2025-12-11
+- **Sala:** SALA CIVIL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inoficioso; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=117372)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=117372)
+
+## Texto de la resolución
+
+JUICIO:      “RECURSO       DE       QUEJA
+                                                           POR     RETARDO       DE    JUSTICIA:
+                                                           BANCO      CONTINENTAL          SA    EMIS
+                                                           DE    CAP    ABIERTO       C/    SERGIO
+                                                           RAMON       BARRIOS         HEYN        S/
+                                                           ACCIÓN        PREPARATORIA              DE
+                                                           JUICIO EJECUTIVO”. N° 323.
+                                                           AÑO 2022.-
+
+
+                                                            A.I.
+                       VISTOS:    El    Recurso   de    Queja   por    retardo    de    Justicia
+                   interpuesto    por   el    Abogado   Samuel     Drelichman,        las       demás
+                   constancias, y;
+                                              C O N S I D E R A N D O:
+                       El citado Profesional del Foro presentó Recurso de Queja
+                   por retardo de Justicia y en el escrito respectivo manifestó:
+                   “…Que, en el juicio más arriba especificado el TRIBUNAL DE
+                   APELACIONES retarda en dictar la resolución correspondiente,
+                   mi parte ha elevado dos respetuosos urgimientos de despacho,
+                   conforme copias simples que adjunto, y, no obstante el Juez
+                   Ad-quo, sigue sin expedirse sobre mi pedido, razón por la
+                   cual y de conformidad a lo dispuesto por el art. 412 del C.
+                   P. C., solo me resta recurrir al Superior a los efectos de
+                   que conmine al Inferior a dictar despacho…”
+                       Ante la interposición del mencionado Recurso, se dictó
+                   la Providencia con fecha 25 de Junio del 2.025, que ordenó se
+                   libre Oficio al Tribunal de Apelación en lo Civil y Comercial
+                   Cuarta Sala, a fin que informe la situación procesal en que
+                   se encuentra el Expediente caratulado: “BANCO CONTINENTAL SA
+                   EMIS DE CAP ABIERTO C/ SERGIO RAMON BARRIOS HEYN S/ ACCIÓN
+                   PREPARATORIA DE JUICIO EJECUTIVO”.-
+                       El Tribunal elevó el informe correspondiente y manifestó
+                   que dictó el Auto Interlocutorio N° 383 del 26 de Junio del
+                   2.025, en el que resolvió lo incoado por el aquí quejoso.-
+                       En   las    condiciones      apuntadas,        corresponde       declarar
+                   inoficioso el estudio del Recurso de Queja por retardo de
+                   Justicia planteado, ya que ha desaparecido el motivo que dio
+                   lugar a la formación del Expediente, por lo que carece de
+                   objeto la tramitación del mismo.-
+                            POR TANTO, la Excelentísima;
+                                         CORTE SUPREMA DE JUSTICIA
+                                             SALA CIVIL Y COMERCIAL
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                                                  R E S U E L V E:
+                       DECLARAR INOFICIOSO el estudio del Recurso de queja por
+                   retardo     de    Justicia     interpuesto           por      el        Abogado      Samuel
+                   Drelichman, contra el Tribunal de Apelación en lo Civil y
+                   Comercial Cuarta Sala.-
+                       REGISTRAR, y conservar en el gestor documental del Poder
+                   Judicial,    en    los   términos          del   artículo        66     de   la    Ley       N°
+                   6822/2021 y la Acordada N° 1108/2016, dictada por la Excma.
+                   Corte Suprema de Justicia.-
+
+
+
+
+Para conocer la                        Firmado digitalmente         Firmado digitalmente             Firmado digitalmente por:
+                                                                                                     ALBERTO JOAQUIN MARTINEZ
+     validez del                       por: CESAR ANTONIO           por: EUGENIO                     SIMON (MINISTRO/A)
+   documento,                          GARAY ZUCCOLILLO             JIMENEZ ROLON                    Asunción, 11 de diciembre de
+ verifique aquí.                                                                                     2025 con Nro. A.I.: 1132 D.
+                                       (MINISTRO/A)                 (MINISTRO/A)
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

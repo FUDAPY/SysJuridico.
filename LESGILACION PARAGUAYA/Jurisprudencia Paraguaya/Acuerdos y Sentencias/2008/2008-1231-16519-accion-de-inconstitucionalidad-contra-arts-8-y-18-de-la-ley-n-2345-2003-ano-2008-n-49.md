@@ -1,0 +1,181 @@
+# Acuerdo y Sentencia N.º 1231/2008
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: “CONTRA ARTS. 8 Y 18 DE LA LEY N° 2345/2003”. AÑO: 2008 – Nº 49.-
+
+- **Código CSJ:** 16519
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 1231/2008
+- **Fecha:** 2008-12-02
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=16519)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=16519)
+
+## Texto de la resolución
+
+ACCIÓN
+DE INCONSTITUCIONALIDAD: “CONTRA ARTS. 8 Y 18 DE LA LEY N° 2345/2003”. AÑO:
+2008 – Nº 49.------------------------
+
+ACUERDO Y SENTENCIA NUMERO: MIL
+DOSCIENTOS TREINTA Y UNO.-
+
+En  la   Ciudad  
+de   Asunción,   Capital  
+de   la   República  
+del   Paraguay,    a 
+los            Dos                 días del mes de            Diciembre                del año dos mil ocho, estando
+en la Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos. Señores
+Ministros de la Sala Constitucional, Doctor VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente y Doctores JOSÉ
+V. ALTAMIRANO AQUINO y ANTONIO FRETES, Miembros, ante mí, el Secretario
+autorizante, se trajo al acuerdo el expediente caratulado: ACCIÓN DE INCONSTITUCIONALIDAD: “CONTRA ARTS. 8 Y 18 DE LA LEY N° 2345/2003”,
+a fin de resolver la acción de inconstitucionalidad promovida por la Sra.
+Angélica Garay Vda. de Galeano y otras, por sus propios derechos y bajo
+patrocinio de
+Abogado.--------------------------------------------------------------------------------------------------
+
+Previo estudio
+de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+Constitucional, resolvió plantear y votar la
+siguiente:----------------------------------------------
+
+C U E S T I O N:
+
+¿Es procedente la acción de
+inconstitucionalidad deducida?.-----------------------------
+
+A la cuestión planteada el
+Doctor FRETES dijo: Las Sras. ANGÉLICA GARAY VDA. DE GALEANO, JOSEFINA
+ESQUIVEL VDA. DE LUGO, FLORENCIA JARA VDA. DE RAMÍREZ, BONIFACIA ROLÓN VDA. DE
+VILLAR, ESTANISLAA SCAPPINI VDA. DE GAYOSO, JUANA JOAQUINA RODRÍGUEZ VDA. DE
+BELTRÁN, DOROTEA RIVAROLA CASCO, ADELAIDA RIVAROLA CASCO, MARCELINA DURÉ VDA.
+DE PEÑA y EUSTAQUIA CABALLERO VDA. DE RAMÍREZ, por sus propios derechos
+y bajo patrocinio de abogado, promueven acción de inconstitucionalidad contra
+los Arts. 8 y 18 inc. w) de la Ley N° 2345 del 24/12/2003.-------
+
+Las
+accionantes justifican su legitimación acompañando los documentos que las
+acreditan como herederas de jubilados de las Fuerzas Armadas de la
+Nación.------------------
+
+Argumentan que los artículos aquí impugnados vulneran principios, derechos
+y garantías constitucionales, vulneran el principio de igualdad consagrado en
+el art. 46 de la Constitución. Finalmente contradicen abiertamente la garantía
+establecida en el art. 103 de la Constitución
+Nacional.-------------------------------------------------------------------------------
+
+El art. 8º de la Ley 2345/03 señala: “Conforme lo
+dispone el Artículo 103 de la Constitución Nacional, todos los beneficios
+pagados por la Dirección General de Jubilaciones y Pensiones del Ministerio de
+Hacienda, serán anualmente actualizados de oficio, de acuerdo con el promedio
+de los incrementos de salarios del sector público. La tasa de actualización
+tendrá como límite superior, la variación del Índice de Precios del Consumidor
+calculado por el Banco Central del Paraguay, correspondiente al periodo
+inmediatamente precedente. El Poder Ejecutivo reglamentará el mecanismo preciso
+a utilizar. Quedan expresamente excluidos de lo dispuesto en este artículo, los
+beneficios correspondientes a los programas no contributivos”.----------------------------------------------
+
+El art. 103 de la Constitución Nacional establece: “Dentro
+del sistema nacional de seguridad social, la ley regulará el régimen de jubilaciones
+de los funcionarios y los empleados públicos, atendiendo a que los organismos
+autárquicos creados con ese propósito acuerden a los aportantes y jubilados la
+administración de dichos entes bajo control estatal. Participarán del mismo
+régimen todos los que, bajo cualquier título, presten servicios al Estado. La
+ley garantizará la actualización de los haberes jubilatorios en igualdad de
+tratamiento dispensado al funcionario público en actividad”.------------------
+
+Surge que la acción
+deviene procedente, en razón que el art. 103 antes trascripto dispone que la
+ley garantice la igualdad y, ni la ley ni el decreto reglamentario pueden
+oponerse a lo establecido en la norma constitucional, porque carecerán de
+validez (Art. 137 de la C.N.). De ahí que al supeditar el art. 8º de la Ley Nº
+2345/03 la actualización de los beneficios al “…promedio de los incrementos de
+salarios..:” crea una medida de regulación, entre básicos y altos salarios del
+conjunto de funcionarios activos, no prevista en la Constitución, que puede
+ciertamente beneficiar a los primeros pero decididamente perjudicar a los
+segundos.-------------------------------------------------------------------------------
+
+La Constitución ordena que la ley
+garantice la actualización de los haberes en igualdad de tratamiento dispensado
+al funcionario público en actividad mientras que la Ley Nº 2345/03 supedita la
+actualización al promedio de los incrementos de salarios del sector público y a
+la variación del Índice de Precios del Consumidor calculado por el Banco
+Central de Paraguay, como tasa de actualización. Sin Embargo el Poder Ejecutivo
+al reglamentar el mecanismo preciso a utilizar, a través del Decreto Nº 1579/04
+introduce unas variables y unos universos extraños a los preestablecidos para
+obtener el “Factor ajuste” que podría eventualmente servir de factor de ajuste
+pero no para actualizar los haberes jubilatorios en igualdad de tratamiento
+dispensado al funcionario público en
+actividad.--------------------------------------------------------------------------------------------------
+
+La ley puede, naturalmente, utilizar
+el Índice de Precios del Consumidor calculado por el Banco Central del
+Paraguay, para la tasa de variación, siempre que ésta se aplique a todo el
+universo de los afectados respetando las desigualdades positivas. Las distintas
+situaciones de los actores resultan de los distintos niveles jerárquicos y
+escalas salariales correspondientes y éstas diferencias originarias no traducen
+“desigualdades injustas” o “discriminatorias” (Art. 46 C.N.) como para
+igualarlas con un promedio (tasa común) en ocasión de las actualizaciones de
+los importes correspondientes a la Jubilaciones y pensiones que de
+implementarse sí constituiría un factor injusto y discriminatorio para los
+mismos.----------------------------------------------------------------------------------------------------
+
+En relación con la impugnación referida al art. 18
+inc. w) de la Ley Nº 2345/03, consideramos que el mismo contraviene principios
+establecidos en los Arts. 14, 46 y 103 de la Carta Magna, creando una mayor
+desigualdad en cotejo con lo ya expuesto en cuanto al agravio constitucional
+que genera el mecanismo de actualización establecido en el art. 8º de la Ley Nº
+2345/03.---------------------------------------------------------------------------------------
+
+Voto en conclusión, por hacer lugar a la
+acción de inconstitucionalidad promovida, declarando la inaplicabilidad de los
+arts. 8 y 18 inc. w) de la Ley N° 2345/03, en relación con las accionantes. Es
+mi voto.-----------------------------------------------------------------------
+
+A sus turnos
+los Doctores NÚÑEZ RODRÍGUEZ y
+ALTAMIRANO AQUINO, manifestaron que se adhieren al voto del Ministro
+preopinante, Doctor FRETES, por los
+mismos fundamentos.-----------------------------------------------------------------------------------
+
+Con lo que se
+dio por terminado el acto, firmando SS.EE., todo por ante mí, de que certifico,
+quedando acordada la sentencia que inmediatamente sigue:
+
+Ante mí:
+
+SENTENCIA NUMERO: 1231.-
+
+Asunción,      02      
+de        Diciembre         de 2.008.-
+
+VISTOS: Los méritos
+del Acuerdo que anteceden, la
+
+CORTE SUPREMA DE JUSTICIA
+
+Sala Constitucional
+
+R E S U E L V E:
+
+HACER LUGAR a la acción de
+inconstitucionalidad promovida y, en consecuencia, declarar la inaplicabilidad de los arts. 8 y 18 inc. w) de la Ley N° 2345/03, en
+relación con las accionantes.------------------------------------------------------------------------
+
+ANOTAR, registrar y
+notificar.---------------------------------------------------------------
+
+FDO.: Doctor VÍCTOR
+MANUEL NÚÑEZ RODRÍGUEZ (Presidente), y Doctores JOSÉ V. ALTAMIRANO
+AQUINO y ANTONIO FRETES (Miembros). Ante mí: Abog. HÉCTOR FABIÁN
+ESCOBAR DÍAZ (Secretario Judicial I).-
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

@@ -1,0 +1,233 @@
+# Acuerdo y Sentencia N.º 40/2025
+
+**Carátula:** EXPTE: “F.M.R. S/ ABUSO SEXUAL EN NIÑOS” Nº 3703 AÑO 2021.
+
+- **Código CSJ:** 110588
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 40/2025
+- **Fecha:** 2025-02-27
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=110588)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=110588)
+
+## Texto de la resolución
+
+EXPTE: “CASACIÓN: F.M.R. S/ ABUSO
+                                                            SEXUAL EN NIÑOS” Nº 3703 AÑO 2021.--
+                                                            --------------------------
+
+                                             ACUERDO Y SENTENCIA
+
+         En la Ciudad de Asunción, Capital de la República del Paraguay, estando reunidos en
+         la Sala de Acuerdos los Excmos. Señores Ministros de la Corte Suprema de Justicia,
+         Sala Penal, los Dres. LUIS MARÍA BENÍTEZ RIERA, MARÍA CAROLINA LLANES y
+         MANUEL DEJESÚS RAMÍREZ CANDIA, se trajo el expediente caratulado: “CASACIÓN:
+         F.M.R. S/ ABUSO SEXUAL EN NIÑOS”, a fin de resolver el
+         recurso de casación interpuesto contra el Acuerdo y Sentencia Nº 50 de fecha 13 de
+         junio de 2024, dictado por el Tribunal de Apelación, Primera Sala de la
+         Circunscripción Judicial de Caaguazú.---------------------------------------------------------------
+
+               Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala
+         Penal, resolvió plantear y votar las siguientes:---------------------------------------------------
+
+                                                C U E S T I O N E S:
+
+         ¿Es admisible el recurso de casación interpuesto?
+         En su caso, ¿resulta procedente?
+
+               Practicado el sorteo de ley para determinar el orden de votación dio el
+         siguiente resultado: LUIS MARÍA BENÍTEZ RIERA, MANUEL DEJESÚS RAMÍREZ
+         CANDIA y MARÍA CAROLINA LLANES .---------------------------------------------------------------
+
+               A LA PRIMERA CUESTIÓN PLANTEADA, EL DR. LUIS MARÍA BENÍTEZ RIERA
+         DIJO: En la presente causa, el Abogado FRANCISCO ÁNGEL GÓMEZ AGUAYO, por la
+         defensa de F.M.R., interpuso el recurso extraordinario de casación contra el
+         Acuerdo y Sentencia Nº 50 de fecha 13 de junio de 2024, dictado por el Tribunal de
+         Apelación, Primera Sala de la Circunscripción Judicial de Caaguazú.
+
+               Que, corresponde hacer el examen de la admisibilidad del recurso, y para
+         analizar las condiciones de admisibilidad, se debe tener presente en primer lugar lo
+         dispuesto por el art. 477 del C.P.P. que determina el “objeto” de la impugnación al
+         señalar que: “Solo podrá deducirse el recurso extraordinario de casación contra las
+         sentencias definitivas del Tribunal de Apelaciones o contra aquellas decisiones de
+         ese Tribunal que pongan fin al procedimiento, extingan la acción o la pena, o
+         denieguen la extinción, conmutación o suspensión de la pena”.----------------------------
+
+               Asimismo, el art. 478 del mismo Código individualiza en sus tres incisos, los
+         únicos y exclusivos motivos que hacen a la procedencia de la casación, y a ese
+
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+         respecto dispone: “El recurso extraordinario de casación procederá exclusivamente:
+         1) cuando en la sentencia de condena se imponga una pena privativa de libertad de
+         diez años, y se alegue la inobservancia o errónea aplicación de un precepto
+         constitucional, 2) cuando la sentencia o el auto impugnado sea contradictorio con
+         un fallo anterior de un Tribunal de Apelaciones o de la Corte Suprema de Justicia y
+         3) cuando la sentencia o el auto sean manifiestamente infundados”.----------------------
+
+                Sobre la forma de interposición, el art. 480 del C.P.P., en concordancia con el
+         art. 468 del mismo cuerpo legal, dispone que el Recurso Extraordinario de Casación
+         debe interponerse en el término de diez días de notificada la resolución que se
+         impugna, ante la Sala Penal de la Corte Suprema de Justicia.--------------------------------
+         -
+
+               No debe olvidarse que el Recurso de Casación es de carácter extraordinario, lo
+         que implica que las normas que lo regulan son de interpretación estricta, sin
+         posibilidad de ampliar lo que ellas expresan ni entenderlas analógicamente, más aún
+         cuando las mismas son tan claras, transparentes y terminantes, como son las
+         disposiciones contenidas en los artículos 477, 478 y 480 del C.P.P.-------------------------
+
+               Una vez establecidos estos parámetros y cuestiones relevantes al tema,
+         corresponde iniciar el análisis de admisibilidad del recurso de casación deducido.-----
+
+
+                Corresponde observar primero las condiciones de interposición del recurso, y
+         vemos que el mismo ha sido presentado en fecha 31 de octubre de 2024. La
+         notificación a la defensa técnica de la resolución en cuestión fue practicada el 22 de
+         octubre de 2024, por lo que cabe decir, que el recurso fue planteado dentro del
+         plazo legal de diez días.---------------------------------------------------------------------------------
+
+               Sobre la impugnabilidad subjetiva, se puede observar que el representante
+         del acusado tiene intervención legal en la presente causa conforme constancias de
+         autos, se halla acreditada su personería, hallándose debidamente legitimado para
+         recurrir en casación conforme a lo dispuesto por el art. 449 del C.P.P.--------------------
+
+                 Sobre la impugnabilidad objetiva, vemos que el Acuerdo y Sentencia recurrido
+         se trata de una resolución que pone fin al procedimiento, tal como lo establece el
+         artículo 477 del C.P.P., ya que la misma confirma la sentencia del Tribunal de
+         Sentencia que, entre otras cosas, impuso condena a F.M.R. a pena privativa de
+         libertad de siete (7) años, por el hecho punible de Abuso Sexual en Niños.---------------
+         -----------------------------------------------------------------------------------------
+
+               En lo que hace al escrito de interposición: La forma del mismo se rige por lo
+         dispuesto en el art. 468 del CPP, al cual remite el art. 480 del mismo cuerpo legal,
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+          que exige que el escrito sea fundado y que en él se expresen concreta y
+          separadamente cada motivo con sus fundamentos y la solución que se pretende.-----
+
+                De la lectura del escrito de casación se observa que la recurrente invocó el
+           motivo previsto en el inciso 3 del 478 del C.P.P.-------------------------------------------------
+
+               Respecto al motivo invocado, y luego de analizar el escrito de casación, es
+         posible deducir que su fundamentación es defectuosa e insuficiente por los
+         siguientes motivos:--------------------------------------------------------------------------------------
+
+                 Si bien el recurrente afirma que el Tribunal de Apelación no se pronunció
+         sobre la violación de la sana crítica y la omisión de la valoración de las pruebas por
+         parte del Tribunal de Sentencia, el impugnante no realizó el análisis jurídico del
+         Acuerdo y Sentencia en cuestión, puesto que no explicó por qué es jurídicamente
+         incorrecto ni cuál debió ser la correcta aplicación de la ley. Además, con relación a la
+         supuesta violación de las reglas de la sana crítica no argumentó de qué manera se
+         ha violado el referido principio por parte del tribunal de mérito, y en lugar de ello se
+         limitó a relatar lo acontecido durante el juicio oral y público. En cuanto a la omisión
+         de la valoración por parte del Aquo de las pruebas consistentes en la declaración
+         testifical de M.C.T.J., la declaración del Dr. F.R.O.O., el resultado de la Cámara
+         Gessel, el casacionista no explicó qué relevancia jurídica tenía cada una de las
+         pruebas supuestamente no valoradas frente a las pruebas que sí fueron valoradas,
+         ni de qué manera, a través de una correcta valoración, debieron incidir en el
+         desenlace de la Sentencia Definitiva de primera instancia. Por tanto, no se vislumbra
+         que el recurrente haya realizado el análisis jurídico requerido de la resolución en
+         cuestión, en aras de señalar los errores jurídicos de que, según el impugnante
+         padece, de modo que más que una expresión de agravios lo que manifiesta es su
+         desacuerdo con lo resuelto por el tribunal de apelación. El escrito de casación debe
+         contener un análisis jurídico del fallo recurrido; el casacionista debe explicar de
+         manera expresa los errores, las omisiones, las violaciones a los derechos y garantías
+         establecidas en la Constitución Nacional y en las leyes, en atención a que esta
+         instancia no puede conocer otro motivo que aquellos a los cuales se refieren los
+         agravios. Por tanto, cuando los motivos no sean expuestos en el escrito respectivo,
+         no será posible dar trámite al recurso en cuestión.---------------------------------------------
+         ----------------------------------------
+
+               El escrito de casación debe ser completo y autosuficiente, y esta presentación
+         no cumple con ninguno de los requisitos exigidos. En cuanto a la falta de
+         fundamentación del fallo de segunda instancia, tampoco basta afirmar sin más que
+         una resolución es infundada pues es el recurrente el que debe indicar por qué es
+         infundada y arbitraria mediante una argumentación suficiente, lógica y verificable,
+         lo cual en este caso el recurrente no se ha hecho, por lo que el escrito no cumple las
+         exigencias establecidas en el artículo 468 del CPP, al cual remite el art. 480 del
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+         mismo cuerpo legal, el cual exige que el escrito sea fundado y que en él se expresen
+         concreta y separadamente cada motivo con sus fundamentos y la solución que se
+         pretende. Por todas las razones debidamente explicadas, corresponde que sea
+         declarada la inadmisibilidad del recurso interpuesto. En cuanto a las costas, de
+         conformidad a las atribuciones que confiere el artículo 261 del CPP, corresponde
+         imponerlas en el orden causado, pues no se vislumbra temeridad ni malicia en la
+         presentación. Es mi voto.------------------------------------------------------------------------------
+
+                A su turno el Ministro MANUEL DEJESÚS RAMÍREZ CANDIA DIJO: Comparto y
+         me adhiero a la decisión del Ministro Benítez Riera de DECLARAR INADMISIBLE el
+         recurso de Casación planteado porque el escrito no se halla debidamente fundado
+         en los términos requeridos en el Art 468 del Código Procesal Penal en concordancia
+         con el Art. 480 de la misma ley.-----------------------------------------------------------------------
+
+                En cuanto al requisito de admisibilidad vinculado al objeto del recurso de
+         casación, considero que el Art. 477 del Código Procesal Penal establece dos tipos de
+         resoluciones que pueden ser cuestionados por esta vía recursiva: 1) la sentencia
+         definitiva de los Tribunales de Apelación y 2) las resoluciones del Tribunal de
+         Apelación que pongan fin al procedimiento, cuando el recurso es planteado contra
+         las resoluciones identificadas como autos interlocutorios.------------------------------------
+
+                   VOTO DE LA MINISTRA MARÍA CAROLINA LLANES OCAMPOS
+
+              Comparto la posición asumida por el Ministro Preopinante respecto a la
+         inadmisibilidad del presente recurso, por no cumplirse con el requisito de
+         fundamentabilidad. ES MI VOTO.--------------------------------------------------------------------
+
+                Con lo que se dio por terminado el acto firmando S.S.E.E., quedando acordada
+         la sentencia que inmediatamente sigue:-----------------------------------------------------------
+
+                                            ACUERDO Y SENTENCIA
+                   VISTOS: Los méritos del acuerdo que antecede, la------------------------
+
+                                                   R E S U E L V E:
+
+          1. DECLARAR LA INADMISIBILIDAD del recurso extraordinario de casación
+             interpuesto por la Defensa de F.M.R., contra el Acuerdo y Sentencia Nº 50 de
+             fecha 13 de junio de 2024, dictado por el Tribunal de
+
+
+
+
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+                   Apelación, Primera Sala de la Circunscripción Judicial de Caaguazú, por los
+                   fundamentos expuestos en el exordio.--------------------------------------------------------
+
+          2. IMPONER las costas en el orden causado.----------------------------------------------------
+
+          3. ANOTAR, registrar, notificar.---------------------------------------------------------------------
+
+
+
+
+Para conocer la                            Firmado digitalmente       Firmado digitalmente
+     validez del                           por: LUIS MARIA            por: MANUEL DEJESUS
+    documento,                             BENITEZ RIERA              RAMIREZ CANDIA
+ verifique aquí.                           (MINISTRO/A)               (MINISTRO/A)
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

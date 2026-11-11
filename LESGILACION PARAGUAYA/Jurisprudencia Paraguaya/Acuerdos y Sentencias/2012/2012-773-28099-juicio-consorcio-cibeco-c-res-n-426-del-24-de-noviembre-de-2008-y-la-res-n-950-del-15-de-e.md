@@ -1,0 +1,135 @@
+# Acuerdo y Sentencia N.º 773/2012
+
+**Carátula:** JUICIO: “CONSORCIO CIBECO C/ RES. Nº 426 DEL 24 DE NOVIEMBRE DE 2008 Y LA RES. Nº 950 DEL 15 DE ENERO DE 2009 DICTADAS POR LA SECRETARÍA DEL AMBIENTE (SEAM)” (EXPEDIENTE N° 79 Folio 348 Año 2009)
+
+- **Código CSJ:** 28099
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 773/2012
+- **Fecha:** 2012-08-17
+- **Sala:** TRIBUNAL de CUENTAS – CONT. ADM 1RA. Sala
+- **Materia:** 0; Administrativa
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=28099)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=28099)
+
+## Texto de la resolución
+
+JUICIO: “CONSORCIO CIBECO C/ RES. Nº 426 DEL 24 DE NOVIEMBRE DE 2008 Y LA RES. Nº 950 DEL 15 DE ENERO DE 2009 DICTADAS POR LA SECRETARÍA DEL AMBIENTE (SEAM)” (EXPEDIENTE N° 79 Folio 348 Año 2009).-------------------------
+
+ ACUERDO Y SENTENCIA NÚMERO: 773 (setecientos setenta y tres)
+
+En la ciudad de Nuestra Señora de la Asunción, Capital de la República del Paraguay, a los -17- diez y siete días del mes de agosto del año dos mil doce, estando presentes los Excelentísimos Señores Miembros del Tribunal de Cuentas, Primera Sala, MARIO MAIDANA GRIFFITH, MARTIN AVALOS VALDEZ y RODRIGO A. ESCOBAR, en su Sala de Audiencias y Público Despacho, bajo la Presidencia del Primero de los Nombrados, por ante mi el Secretario Autorizante, se trajo a acuerdo el expediente con la portada que se expresa más arriba a objeto de resolver el juicio contencioso administrativo caratulado: “CONSORCIO CIBECO C/ RES. Nº 426 DEL 24 DE NOVIEMBRE DE 2008 Y LA RES. Nº 950 DEL 15 DE ENERO DE 2009 DICTADAS POR LA SECRETARÍA DEL AMBIENTE (SEAM)”.---------------
+
+Previo el estudio de los antecedentes del caso, el Tribunal de Cuentas, Primera Sala, resolvió plantear y votar la siguiente.--------------------------
+
+C U E S T I Ó N:
+
+¿Está ajustado a derecho el acto administrativo recurrido? ------------------
+
+Practicado el sorteo de ley para determinar el orden de votación, dio el siguiente resultado: RODRIGO A. ESCOBAR, MARIO IGNACIO MAIDANA GRIFFITH Y MARTÍN AVALOS VALDEZ.--------------------------------------
+
+Y EL MIEMBRO DEL TRIBUNAL DE CUENTAS, PRIMERA SALA DR. RODRIGO A. ESCOBAR, DIJO: ---------------------------------------------
+
+QUE, en fecha 3 de febrero de 1998 (fs. 60/63) se presentó ante este Tribunal de Cuentas, Primera Sala, el Señor Ismael Aranda Costas por derecho propio y bajo patrocinio de la Abogada C. Elizabeth Torales, a promover demanda contencioso administrativa en contra de la Resolución Nº 4, Acta 220, del 13 de noviembre de 1997 y la Resolución Nº 1, Acta 233, del 4 de diciembre de 1997 del Directorio del Banco Central del Paraguay; fundada en los siguientes términos: ---------------------------------------------
+
+QUE, inicia su presentación exponiendo: “…Mi parte plantea esta acción a fin de que V.E. revoque las resoluciones impugnadas, y en consecuencia disponga el sobreseimiento libre del Sr. Ismael Aranda Costas en el sumario dispuesto en la Resolución N° 8, Acta 118 de fecha 20 de junio de 1997, fundado en las siguientes consideraciones de hecho y de derecho que paso a relatar a continuación. 1. Conforme a la Resolución Nº 4, Acta 220 del 13 de noviembre de 1997 y en base al Considerando contenido en el mismo, el Directorio del Banco Central del Paraguay a dispuesto sancionar al Sr. Ismael Aranda Costas por sus actuaciones como Director del Banco Unión S.A.E.C.A., sin que para ello se le haya comprobado una sola de las responsabilidades que aparentemente le son imputadas y además, aplicándome una sanción considerada como falta grave por el art. 95 de la Ley 489…”.------------------------------------------------------------------------
+
+QUE, luego refiere sobre los puntos investigados en el sumario de la siguiente manera: “…a)	Pérdidas en Cámara Compensadora Las pérdidas registradas en Cámara Compensadora están generadas por el movimiento de los clientes y la evidente situación de falta de confianza hacia el Banco, la que se generó en el mercado como consecuencia de la calificación en el Caula, con categoría D dada por el Banco Central al Banco Unión S.A.E.C.A. El retiro masivo de fondos por parte de los clientes no es un comportamiento que pueda ser imputado al Directorio, dado que el mismo no puede manejar la voluntad de dichas personas. Por su parte, la perdida en Cámara Compensadora no es un hecho penado por la Ley 489 y por tanto, bajo ningún aspecto, dicha situación puede ser imputada a mi parte…”.----
+
+QUE, del mismo modo sigue con su fundamentación así: “…b) Sobregiro en el Banco Central. El mismo Banco Central evidentemente conocía la situación financiera del Banco Unión y prueba de ello es que permanentemente le estuvo asistiendo financieramente y cuya circunstancia generó el sobregiro, por la que la sanción por esta causal no puede ser considerada como válida. Al respecto, el otorgamiento del sobregiro por el BCP, así como la línea de crédito para el programa de rehabilitación otorgada por este ente son actos de gestión del Directorio originados en la fiscalización y acompañamiento permanente de dicho ente en el manejo del Banco al momento de ocurrir dichos supuestos. El sobregiro está autorizado por la Ley y no puede ser motivo de sanción…".------------------------------------------
+
+QUE, a ese respecto también dice: “c) Sobregiros a ahorros Paraguayos. Conforme claramente lo menciona la Resolución recurrida, existen sobradas pruebas en el expediente del Sumario, que solicito sea traído a la vista, que demuestran que estos sobregiros eran objeto de un manejo y autorización exclusivas del Presidente del Banco, sin que el Directorio tuviera intervención alguna en su autorización. No obstante ello, mi parte ha señalado permanentemente a los demás miembros del Directorio la necesidad de reducir los depósitos en dicha institución…”.-------------------
+
+QUE, en ese sentido manifestó: “…Sobregiro a J.M. Peña. En este aspecto, cabe destacar que el Sr. J.M. Peña ejercía el cargo de Director del Banco con una reputación de más de 29 años en la actividad bancaria, además de tener una notoria solvencia, muy por encima del importe involucrado. Evidentemente, el sobregiro del Dr. Peña no causó ningún perjuicio al Banco, ni fue motivo de dificultad operativa ni de gestión para el mismo. El Dr. Peña ha honrado en forma oportuna y total dicho importe, con más sus intereses, por lo que el mismo no puede ser motivo de sanción, ni de responsabilidad del Directorio. Por otra parte, la concesión de dichos sobregiros no son tratados por el Directorio, sino que simplemente son autorizados por los Gerentes comerciales en base a la calificación del cuente y en consecuencia no ha sido autorizado por mi parte…”.---------------
+
+QUE, continúa con su argumentación de la siguiente forma: “…e)	Minera Chaco S.R.L. El préstamo a Minera Chaco S.R.L., a más de no ser empresa vinculada como lo pretende establecer el BCP, ha sido debidamente observada por el Sr. Ismael Aranda en sesión del Directorio del Banco Unión (ver Acta N° 756 del 06.05.97) y condicionado a la regularización de la documentación en carpeta. Su posterior implementación por el Directorio ya no puede ser imputada a mi parte, dado que en ese momento ya no formaba parte del Directorio y en consecuencia la responsabilidad derivada del art. 91 de la Ley 489/95 y art. 1111 del C. Civil, imputadale por la Resolución impugnada, es manifiestamente irregular e ilegal…”.----------------------------------------------------------------------------
+
+QUE, continúa con su argumentación de la siguiente forma: “…f)	Indemnizaciones del Directorio. El Sr. Ismael Aranda no solamente no coincidió con esa disposición del Directorio del Banco Unión, sino que se además se negó a cobrar la misma a pesar del derecho que le surgió en virtud de dicha decisión del cuerpo y como dicha constancia consta en la Resolución impugnada, no cabe formular mayores descargos…”.-------------
+
+QUE, por otro lado el profesional también acota: “…g) Falta de certificación de cheque de Gerencia. De la nómina de cheques presentada en el sumario, solo uno carecía de la certificación de fondos, que configura en el peor de los casos un hecho aislado, que por su parte no ha ocasionado perjuicio al Banco o alterado la gestión financiera del mismo que amerite la aplicación de sanción alguna. Además, la certificación de fondos.es una seguridad establecida a favor del beneficiario, siendo este el verdadero legitimado para reclamar el cumplimiento de esta formalidad…”.---------------
+
+QUE, más adelante manifiesta consideraciones como: “…Del análisis exhaustivo de los documentos del sumario respecto de lo precedentemente señalado, ninguno de los puntos imputados como irregulares constituyen falta ni transgresión a las obligaciones a cargo de Director Titular en el carácter de tal y mucho menos de actos individuales de mi parte que pudieran dar lugar a la sanción indebida e injustamente aplicada por el Directorio del Banco Central del Paraguay. La Ley 489/95 no tipifica como irregularidad ni transgresión la realización de los hechos atribuidos por el Directorio del BCP a mi parte o al menos, no han sido suficientemente probados como que ellos hubieren existido en algunos casos…”.--------------
+
+QUE, atento a dichas consideraciones pide cuanto sigue: “Sean revocadas la Resolución Nº 4, Acta 220, del 13 de noviembre de 1997 y la Resolución Nº 1, Acta 233, del 4 de diciembre de 1997 Directorio del Banco Central del Paraguay, y sobreseyéndole…”.-------------------------------------
+
+QUE, posteriormente, en fecha 15 de abril de 1998 (fs. 148/150), se presenta ante este Tribunal de Cuentas, Primera Sala, el Abogado Jorge Saldivar Romero en representación del Banco Central del Paraguay, con el objeto de contestar la demanda incoada, y, luego de realizar una negatoria general de lo expuesto por la actora, funda su contestación en los siguientes términos: “…la conducta de los administradores del Banco Unión SAECA, constituyen falta grave, prevista y penada por el artículo 89 inciso b) concordante con los artículos 91 y 95 de la ley 489/95, con el artículo 38 de la ley 861/96 y artículo 1111 y siguientes del C.C.. Conforme se tiene comprobado en el sumario administrativo; ellos, a sabiendas de la situación de crisis por la que atravesaba el Banco -cuyos intereses estaban obligados a proteger y preservar- asistían sistemáticamente a sus empresas vinculadas (en igual o peor estado de deterioro), caso Ahorros Paraguayos S.A. Unión Paraguaya Financiera S.A., Mineras Chaco SRL y otros, contraviniendo expresas disposiciones de la ley de bancos (art. 46, 47, 59 y concordantes) además del compromiso asumido con el BCP, en desmedro de la liquidez del propio Banco Unión”.---------------------------------------------------------------
+
+QUE, en ese sentido manifestó: “…las pérdidas de la Institución en la Cámara Compensadora, motivada ya por los desmanejos en la Institución y por la acelerada pérdida de confianza de sus depositantes que motivo el sobregiro en la cuenta corriente que mantiene con el BCP que el viernes anterior a la intervención ascendió a Gs. 23.969.534.298.--; el otorgamiento de créditos en condiciones pocos favorables a entidades de la cual eran también directores, como el caso de Minera Chaco SRL, el otorgamiento de créditos, por la vía del sobregiro, a sus Directores y en el caso particular del Sr. Juan Manuel Peña Nieto, sin las garantías exigidas por el artículo 70 inciso f) de la ley 861/96, Resolución N°8, Acta N° 252 del 30 de diciembre de 1.996, de lo expuesto precedente nótese que dichas decisiones contribuyo a deteriorar patrimonialmente a la entidad, la mala política de concesión de créditos, evidenciaba por la masiva aceptación de bienes inmuebles en dación en pago para cancelación de las deudas y generalmente y en mayoría a través de las empresas vinculadas de la entidad. Es decir, los créditos eran otorgados sin importar la verdadera capacidad de repago por el deudor, contraviniendo la Resolución N° 8, Acta N° 252 de fecha 30 de diciembre de 1.996…”.-------------------------------------------------------------
+
+QUE, continúa con su argumentación de la siguiente forma: “…Finalmente, cabe señalar que no solo a través del Banco Central del Paraguay, que los Directores y administradores de Banco Unión SAECA tomaron conocimiento de la situación real del Banco, sino sus propios auditores externos le informaron en febrero de 1997 que el "....el banco ha sufrido deterioro considerable a su patrimonio neto, que nos lleva a pensar que existen importantes dudas con respecto a la habilidad de la empresa de continuar como empresa en marcha, a menos que se ponga en práctica, en corto plazo, algún pina de restructuración financiera que corrija los defectos señalados...", según surge de la documentación que se adjunta…”.------------
+
+QUE, por otro lado el profesional también acota: “…Señores Miembros del Tribunal de Cuentas, como pueden notar, los hechos señalados precedentemente son pruebas suficientes para sostener que la sanción aplicada al actor se ajusta a derecho y debe ser confirmada en todos sus términos, este -Peña Nieto- no puede alegar desconocimiento de la situación, faltas de pruebas en el sumario, ya que las mismas, conformen se demuestran en el presente escrito, son más que suficientes para que el Tribunal confirme la resolución adoptada por el Banco Central. De igual modo, cabe señalar que es hora de que terminen las falsas imputaciones de los responsables directos de la situación que atraviesa Banco Unión, en contra del Banco Central del Paraguay y sus funcionarios, del manejo hostil de la intervención y del procedimiento adoptado por este para intentar la reactivación del Banco Unión SAECA sino muy por el contrario, se deja trasuntado en todas las actuaciones del Banco Central que trato, por todos los medios legales posibles intentar su reactivación, sin embargo, la situación extremadamente crítica por la atravesaba la institución, impidió el éxito del mismo, situación está que bajo ningún punto de vista puede ni debe ser imputada al Banco Central del Paraguay…”.--------------------------------------
+
+QUE, termina solicitando que oportunamente y luego de los trámites de rigor, se dicte Acuerdo y Sentencia rechazando la acción presente demanda.---------------------------------------------------------------------------
+
+QUE, a fojas 164 y vlto. consta el A.I. Nº 239 del 8 de abril de 1999, donde se declara la competencia de este Tribunal para entender en el presente juicio y habiendo hechos controvertidos declara la apertura de la causa a prueba por todo el término de ley. ------------------------------------
+
+QUE, a fojas 172 y vlto. el Tribunal de Cuentas Previo informe del Actuario, por providencia de fecha 26 de octubre de 1999, llamó a “AUTOS PARA SENTENCIA”.----------------------------------------------------------------
+
+Y EL EXCELENTÍSIMO MIEMBRO DEL TRIBUNAL DE CUENTAS, PRIMERA SALA, DOCTOR RODRIGO A. ESCOBAR prosiguió diciendo:--
+
+QUE, una vez determinada la pretensión de la acción Contenciosa, esta Magistratura pasa al estudio de la cuestión planteada por la que resolveremos si corresponde o no en derecho hacer lugar a la presente acción que busca revocar los Actos Administrativos que resolvieron imponer una sanción de una multa equivalente a cien (100) jornales mínimos diarios a la firma Consorcio Cibeco además de exigir la destrucción de un muro de contención de curso de manantiales.---------------------------------------------
+
+QUE, analizadas las constancias de autos se visualiza que a raíz de la denuncia presentada por el Señor César da Silva propietario de un inmueble colindante del inmueble en que la firma actora estaba realizando obras de construcción de viviendas, como consecuencia de dicha denuncia se procedió a la constatación in situ de los hechos denunciados en fecha 22 de febrero de 2008, en donde de todo lo actuado se labró acta. Luego de los trámites de rigor se concluyó el sumario administrativo con la Resolución Nº 426 del 24 de noviembre de 2008 la cual resolvió sancionar a la firma actora con una sanción de una multa equivalente a diez (10) jornales mínimos diarios, además de exigir la destrucción de un muro de contención de curso de manantiales. Ante dicha resolución la accionante promovió recurso de reconsideración, el cual fue resuelto por Resolución Nº 950 del 15 de enero de 2009 emanada de la Secretaría del Ambiente (SEAM), razón por la cual la parte actora promovió la presente acción contencioso administrativa.---------
+
+QUE, entrando al estudio del fondo de la cuestión se observa los agentes fiscalizadores de la SEAM informaron a raíz de la constatación in situ lo siguiente:  “…a) La construcción de un muro de contención, en el área de construcción, de cursos de agua de manantiales al solo efecto de la extracción de agua para el abastecimiento de los camiones cisternas, utilizados por el Consorcio Cibeco; b) Se observó también una motobomba conectada a dos caños para la extracción del mismo. El Primer caño de color negro proviene de la propiedad privada colindante y el otro del tajamar formado a consecuencia de la contención; 3) En la propiedad colindante mencionada se constató igualmente la contención de aguas incluyendo una llave de paso…”.-------------------------------------------------------------------
+
+QUE, en este sentido en el escrito de demanda figura que la propia parte actora admite la construcción una represa cuando manifiesta que: “…Consorcio Cibeco se encuentra realizando obras de construcción sobre un terreno bien anegadizo, de manera que para contener las aguas de lluvia que vienen de arriba si hizo la ampliación de una pequeña laguna existente, represándola con la simple acumulación de tierra en forma provisoria sin que se realice obra alguna…”. Al respecto soy del criterio que dicha acumulación de tierra ya constituye una obra dirigida al represamiento de la circulación de agua, lo cual no fue autorizado a realizar por la Secretaría del Ambiente, pues del Estudio de Impacto Ambiental no se desprende dicha posibilidad, en consecuencia se halla plenamente probada la comisión de una falta meritoria de sanción por parte de la actora.-----------------------------------------------
+
+QUE, el represamiento confesado por la actora constituye una infracción a las leyes ambientales, pues no se encontraba facultado a realizarlo, de conformidad a los establecido en el artículo 4º de la Ley 716/96 inciso d), es necesaria una habilitación por parte de la autoridad competente, en este caso la SEAM, dicha obligación también se halla contemplada en el artículo 7º de la ley 294/93 “de Evaluación de Impacto Ambiental” cuando dispone: “…Se requerirá Evaluación de Impacto Ambiental para los siguientes proyectos de obras o actividades públicas o privadas: a) Los asentamientos humanos, las colonizaciones y las urbanizaciones, sus planes directores y reguladores; g) Obras hidráulicas en general; j) Recolección, tratamiento y disposición final de residuos urbanos e industriales; s) Cualquier otra obra o actividad que por sus dimensiones o intensidad sea susceptible de causar impactos ambientales…”. Lo cual concuerda con los establecido en el art. 28 de la Ley 3239/07 “De los Recursos Hídricos del Paraguay” que dispone: “…Previo a su realización, todas las obras o actividades relacionadas con la utilización de los recursos hídricos deberán someterse al procedimiento de Evaluación de Impacto Ambiental previsto en la Ley Nº 294/93 “Evaluación de Impacto Ambiental” y sus reglamentaciones…”.------------------------------
+
+QUE, del mismo modo, el artículo 6 del Decreto Reglamentario de la Ley 294/93 dispone: “Cualquier actividad que no mencione en el artículo anterio, que implique efectos negativos a los recursos naturales y el medio ambiente, o requiera, según las disposiciones contenidas en leyes, reglamentos y normas técnicas, la consideración de la variable ambiental para ser autorizada, podrá se objeto de la exigencia de un EIA/RIMA y/o un Plan de Control Ambiental (PCA), de acuerdo a la evaluación del cuestionario ambiental básico contenido en este reglamento, que deberá ser analizado y dictaminado por la DOA (Secretaría del Ambiente)…”.--------------------------
+
+QUE, los hechos denunciados y comprobados en autos, son calificados por este Juzgador como la realización de actos en inobservancia de las condiciones básicas establecidas, en la normas legales, reglamentaria y de principio de eficiente y prudente gestión ambiental, contraviniendo lo dispuesto en las leyes ambientales ut supra mencionadas cuya sanción se halla prevista en el art. 30 de la Ley 1562/00 que dispone: “…Además de las expresamente previstas en disposiciones legales vigentes independientemente de que hechos ilícitos merezcan juicio civil o penal, la Secretaría podrá aplicar a los responsables las siguientes sanciones administrativas: apercibimiento, multa, inhabilitación, suspensión o revocación de licencia o clausura de locales, suspensión de actividades, retención o decomiso de bienes…”.-----------------------------------------------
+
+QUE, con respecto a la sanción a imponer a las entidades son determinadas con la razonable discrecionalidad propia de las atribuciones de la Secretaría del Ambiente y conforme a variados criterios como la naturaleza de la falta, la gravedad del peligro o perjuicio causado, el beneficio o la ganancia obtenida, la subsanación de la falta por iniciativa propia y la conducta anterior de la entidad. En cuanto al primero de estos parámetros, la naturaleza, puede sostenerse que los hechos que dieron pie a la sanción constituyen un evidente incumplimiento de las normativas previamente establecidas por la autoridad administrativa, traducida en un desmedro en el medio ambiente de la zona. Con respecto a la gravedad del peligro o perjuicio causado, brevemente podemos resumir lo señalado sobre los riesgos que conllevan actuaciones como las de la entidad, en el sentido de que al transgredir las disposiciones legales y reglamentarias en la forma en la que lo hizo se violan los parámetros rígidos exigidos a las entidades que componen el Sistema Nacional del Ambiente, en perjuicio de los inmuebles colindantes lo que afectó seriamente la situación ecológica de la zona. En relación al beneficio obtenido, quedó demostrado en autos que el manejo era responsabilidad de los directivos lo cual queda traducido en sumas multimillonarias en relación a la construcción de tamaña obra. Asimismo con relación a la conducta posterior de la entidad, encontramos que los directivos sumariados no demostraron intención ni capacidad en dar cumplimiento a las principales normativas que rigen el sistema ambiental nacional, siendo responsables por las transgresiones precedentemente señaladas. Razones estas por las que se encuentra ajustado a derecho la sanción impuesta por la Secretaría del Ambiente al hoy accionante.---------------------------------------
+
+QUE, además no debe olvidarse que la normativa de la legislación Ambiental pertenece a la esfera del Derecho Público, por cuanto las entidades sujetas al cumplimiento de la misma no pueden realizar ninguna operación que la Ley no autorice expresamente. En el caso de autos, las operaciones denunciadas como irregulares por los vecinos de la obra, no se encuentran autorizadas expresamente por el Organismo de Aplicación y en consecuencia se encuentran prohibidas. -----------------------------------------
+
+QUE, por otro lado, debe agregarse; que todos los actos administrativos que formaron parte del aludido proceso contemplaron en todo momento el principio de legalidad que debe regir en este ámbito y se traduce en el cumplimiento de las disposiciones que regulan una actividad como la de Construcciones de obras, que se encuentra sometida a control administrativo; así como a su adecuación, en los casos de modificación de las regulaciones aplicadas, como fuera en este caso.-------------------------------
+
+QUE, por último, no debemos olvidar que las resoluciones recurridas gozan de la presunción pe legitimidad y ejecutoriedad, ya que fueron dictadas por el órgano competente, dentro de las facultades legales que le eran inherentes; por lo que considero ajustado a derecho la actuación del órgano administrativo al declarar como configurada la existencia de una falta meritoria de sanción, por ser la Secretaría del Ambiente, el órgano competente, de quien emano la resolución atacada.----------------------------
+
+QUE, por las razones expuestas, VOTO por la positiva a la cuestión, considerando que no se ajusta a derecho hacer lugar a la presente demanda contencioso administrativa promovida por Consorcio Cibeco, en consecuencia, confirmar la Resolución Nº 426 del 24 de noviembre de 2008 y la Resolución Nº 950 del 15 de enero de 2009 dictadas por la Secretaría del Ambiente (SEAM). En cuanto a las costas, soy de opinión que en virtud de la teoría del riesgo objetivo asumido en el evento, las mismas deben ser impuestas a la parte perdidosa de conformidad con las normas contenidas, en el art. 192 del C.P.C. ES MI VOTO.--------------------------------------------
+
+A SU TURNO, LOS EXCELENTÍSIMOS MIEMBROS DEL TRIBUNAL DE CUENTAS PRIMERA SALA, MARIO MAIDANA GRIFFFITH, y MARTIN AVALOS VALDEZ manifiestan adherirse al voto del Miembro Preopinante por los mismos fundamentos.--------------------------------------------------------
+
+Con lo que se dio por terminado el acto previa lectura y ratificación del mismo firman los Excelentísimos Señores Miembros del Tribunal de Cuentas, Primera Sala, por ante mí el Secretario Autorizante, quedando acordada la Sentencia que sigue:--------------------------------------------------------------
+
+Ante mí:
+
+
+
+
+SENTENCIA N°: 773
+
+
+
+
+
+ 			Asunción, 17 de Agosto de 2012.-
+
+VISTO: Por el mérito que ofrece el Acuerdo y Sentencia y sus fundamentos, ---------------------------------------------------------------------
+
+EL TRIBUNAL DE CUENTAS, PRIMERA SALA
+
+RESUELVE:
+
+1.- NO HACER LUGAR a la presente demanda promovida por Consorcio Cibeco de conformidad a los fundamentos expuestos en el exordio de la presente resolución y en consecuencia;------------------------------------
+
+2.- CONFIRMAR la Resolución Nº 426 del 24 de noviembre de 2008 y la Resolución Nº 950 del 15 de enero de 2009 dictadas por la Secretaría del Ambiente (SEAM). -----------------------------------------------------------------
+
+3.- IMPONER las costas, a la perdidosa. ------------------------------
+
+4.- NOTIFICAR, anotar, registrar y remitir copia a la Excma. Corte Suprema de Justicia.---------------------------------------------------------------
+
+
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

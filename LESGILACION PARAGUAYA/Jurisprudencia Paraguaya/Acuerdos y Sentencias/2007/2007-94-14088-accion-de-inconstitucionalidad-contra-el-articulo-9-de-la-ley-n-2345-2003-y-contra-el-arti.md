@@ -1,0 +1,444 @@
+# Acuerdo y Sentencia N.º 94/2007
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD CONTRA EL ARTÍCULO 9 DE LA LEY Nº 2345/2003 Y CONTRA EL ARTÍCULO 127 DE LA LEY Nº 2344/2003. AÑO: 2004-Nº 2085.-
+
+- **Código CSJ:** 14088
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 94/2007
+- **Fecha:** 2007-03-20
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; SALA CONSTITUCIONAL
+- **Normas de referencia:** Constitución, 46, 47, 86, 88, 103, 132, 137; Código del Trabajo, 249.-
+- **Estado de extracción:** texto extraído del documento oficial
+- **Páginas PDF:** 9
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=14088)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=14088)
+
+## Texto de la resolución
+
+Corte Suprema de Justicia
+ACCION 	DE 	INCONSTITUCIONA-
+LIDAD: "CONTRA ART. 9 DE LA LEY Nº
+2345/2003 Y CONTRA EL ART. 	127 DE
+LA LEY 2344/03". AÑO: 2004 - Nº 2085.----
+-
+ACUERDOYSENTENCIANUMERO : ~~~~ . _
+En la Ciudad de Asunción, Capital de la República del Paraguay, 	a los
+~ 	días del mes de 	e~~ 	del año dos mil siete,
+estando en la Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos.
+Señores Ministros de la Sala Constitucional, Doctor ANTONIO FRETES,
+Presidente y Doctores VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ y JOSÉ
+AL TAMIRANO AQUINO, Miembros, ante mí, el Secretario autorizante,
+'se"" ,~,, 	~o 	al 	acuerdo 	el 	expediente 	caratulado: 	ACCION 	DE
+éO,NSTITUCIONALIDAD: 	"CONTRA 	ART. 	9 	DE 	LA 	L,EY 	Nº
+-- 	.45712-003 Y CONTRA EL ART. 	127 DE LA LEY 2344/03", a fin de
+•' a, \;olve~ la acción de inconstitucionalidad promovida por la Señora Marina de~ - 	, -
+; ·; Paz González de 	Ye gros, por derecho propio y bajo patrocinio 	de la
+1/J 	d 	. 	.t _.1,)oga ~-a Mómca R1vas Vera.-----------------------------------------------------------
+., : - .:::: · ,Previo 	estudio 	de 	los 	antecedentes 	del 	caso, la Corte 	Suprema de	{ 	,
+ustjJ ia, Sala Constitucional, resolvió plantear y votar la siguiente:--------------
+::: /,/
+- -:,;
+r C UE STION:
+¿Es procedente la acción de inconstitucionalidad deducida?.---------------
+A la cuestión planteada el Doctor FRETES dijo: La Señora Marina de
+la Paz González de 	Yegros, 	por derecho propio 	y bajo patrocinio de la
+Abogada Mónica Rivas Vera, promueve acción de inconstitucionalidad contra
+el art. 9 de la Ley Nº 2345/2003 	y en contra del Art. 	127 de la Ley Nº
+2344/03.-------------------- ------- ---------------------------------------------------------
+La accionante justifica su legitimación acompañando los documentos
+que la acreditan como funcionaria del Poder Judicial.------------------------------
+El art. 9 de la mencionada ley dispone: "El aportante que complete
+sesenta y dos años de edad y que cuente con al menos diez años de servicio,
+tendrá que acogerse a la jubilación obligatoria. El monto de la jubilación
+obligatoria se calculará multiplica...rido la Tasa de Sustitución (valor del primer
+pago 	en 	concepto 	de 	jubilación 	o 	pensión 	como 	proporción 	de 	la
+remuneración base) por la Remuneración Base, tal como se la d . fine en el
+Artículo 	5º de 	esta ley. 	La Tasa de 	Sustitución será del 	20¾ 	para 	tma
+antigüedad de diez años y aumentará 2, 7 puntos porcentuales por 	da año de
+servicio 	adicional 	hasta 	un 	tope 	del 	100%. 	Aquellos 	que 	no 	lleguen 	a
+completar diez año~ 	servicio, tendrán dere ho a ~etirar el 	· · % de sus
+aportes 	realizados, 	a 	st 	os 	por 	la 	variació 	del 	Indice 	de
+Consumidor (IPC) de 	a 	o Central del Para 	y.------------------
+Dr. VTCTOR M. NVNEZ I
+
+-- 1 of 9 --
+
+Quedan excluidos de la obligatoriedad de la jubilación ordinaria, los
+docentes universitarios del sector público, quienes podrán seguir aportando
+hasta el límite de setenta y cinco años de edad".-------------------------------------
+Analizadas 	las 	constancias 	de 	autos, surge 	que 	los 	agravios 	de 	la
+accionante van dirigidos contra dos partes esenciales del artículo trascripto. En
+la primera parte, cuestiona la jubilación obligatoria a los 62 años, estipulado
+en el artículo atacado de inconstitucional; a ello cabe señalar que no vemos
+conculcación 	de 	derechos 	constitucionales 	en 	esa parte 	de 	la 	normativa
+impugnada, puesto que creemos que es potestad del Poder Administrador
+señalar o fijar la edad en la cual el funcionario a su cargo se jubilará. Está
+dentro de sus facultades regladas, la de indicar el tope máximo para ejercer
+una función pública.----------------------------------------------------------------------
+Ahora bien, en cuanto a la segunda parte, referente al cálculo del monto
+de la jubilación obligatoria, la recurrente manifiesta que el derecho a la
+jubilación consagrado por nuestro orden legal, en vez de constituir un mínimo
+de remuneración para un retiro digno, se convierte en un castigo representado
+en un monto escuálido y miserable, con lo cual lo sumirá en la más profunda
+indigencia.---------------------------------------------------------------------------------
+A este respecto, es oportuno indicar que la norma, en la parte que legisla
+sobre el procedimiento a adoptar para el cálculo de la jubilación obligatoria,
+contenida en el artículo 9 de la Ley Nº 2345 es inconstitucional. Y ello es así
+porque se aparta claramente de la disposición de la Carta Magna, art. 	103
+segundo párrafo, que expresa: "La ley garantizará la actualización de los
+haberes jubilatorios en igualdad de tratamiento dispensado al funcionario
+público en actividad". En nuestro caso particular, la Constitución garantiza al
+funcionario jubilado, que a través de la Ley reglamentaria (que es justamente
+la Nº 2345), se actualicen sus haberes " en igualdad" de tratamiento que los
+activos. Es por ello que la norma reglamentaria al no estar de acuerdo con la
+Ley Fundamental, carece de validez, conforme lo dispone el art. 137 C.N. y
+debe ser declarada inconstitucional, art. 260 inc. 	1) también de la misma
+Constitución.------------------------------------------------------------------------------
+Lle gamos a dicha conclusión por cuanto que el mecanismo que prevé la
+norma impugnada, en concordancia con el Decreto reglamentario, para la
+actualización de los haberes jubilatorios hace que año tras año, los jubilados
+vayan perdiendo la igualdad de sus haberes con respecto a los funcionarios en
+actividad. · En relación a la impugnación del art. 	127 de la Ley 2344, que
+señala cuanto sigue: "El Poder Ejecutivo, a través del Ministerio de Hacienda,
+procederá a disponer la jubilación automática de todos los funcionarios de los
+organismos y entidades del Estado que durante el Ejercicio 2004, cumplan con
+los requisitos establecidos en la Ley. Una vez producida la jubilación y
+cubiertos los cargos que quedaren vacantes con las promociones respectivas,
+el 	Ministerio 	de 	Hacienda 	procederá 	a 	suprimir 	los 	cargos 	de 	menor
+asignación", 	al 	respecto de 	este 	artículo, 	atacado 	de 	inconstitucional, 	no
+vemos 	agravios 	que 	reparar, 	pues 	el mismo 	se 	limita a reglamentar 	los
+presupuestos establecidos en la Ley 2345 para la jubilación automática.- .. ./// ...
+
+-- 2 of 9 --
+
+le S uprema de Justicia
+ACCION 	DE 	INCONSTITUCIONA-
+LIDAD: "CONTRA ART. 9 DE LA LEY Nº
+2345/2003 Y CONTRA EL ART. 127 DE
+LA LEY 2344/03". AÑO: 2004 - Nº 2085.----
+.. ./// ... Voto en conclusión, por hacer lugar parcialmente a la acción de
+inconstitucionalidad, declarando inaplicable la sección del art. 9 de la Ley Nº
+2345/03 que se refiere al cálculo de la jubilación obligatoria.---------------------
+A 	su 	tumo 	el 	Doctor 	AL TAMIRANO 	AQUINO 	dijo: 	La 	Sra.
+\'( 	ARINA DE LA PAZ GONZÁLEZ DE YEGROS, por derecho propio y
+,'t ajo patrocinio de abogada, promueve Acción de Inconstitucionalidad contra
+1
+.' ,WArt. 127 de la Ley Nº 2344/03 "Que Aprueba el Presupuesto General de
+1 • • ti Nación para el Ejercicio Fiscal 2004", el Art. 9de la Ley 234Sdel 24 de
+-~~fciembre del 2003, de Reforma de la Caja Fiscal, por conculcación de la
+é. <r onstitución Nacional.-------------------------------------------------------------------'< /¡
+~ ' 	1.- 	La 	accionante 	manifiesta: 	" ... QUE, 	estoy 	convencida 	que 	las
+t 	encionadas leyes lesionan legítimos derechos adquiridos durante el tiempo
+ue presto mis servicios como funcionaria pública, específicamente en la
+Dirección General de los Registros Públicos dependiente del Poder Judicial,
+según consta en el legajo de personal que adjunto impecable, sin ninguna
+amonestación, 	ni 	antecedentes 	penales 	y 	mucho 	menos 	de 	sumarios
+d . . 	. 	"a mzn1strat1vos .. . 	.-----------------------------------------------------------------------
+2. - Como primer elemento de consideración, creo oportuno manifestar
+lo referente a "la desigualdad" en cuanto a la "determinación oficial y etaria"
+para la jubilación obligatoria establecida en la Ley 2345/03. En este sentido,
+considero que la determinación legal para proceder a jubilar a funcionarios
+públicos efectivamente y legalmente es facultad del Poder Administrador
+como órgano operativo de los "beneficios sociales" y en este sentido coincido
+con el voto expresado por el Ministro Antonio Fretes, en que la determinación
+mencionada no es inconstitucional.----------------------------------------------------
+2 .1.- Por lo demás, la edad es una variable que normalmente como dato
+de la demografía de un país, fluctúa conforme a la esperanza de vida, por lo
+que como tal puede, el Poder Administrador, determinarlo de acuerdo a las
+características propias del país, en este sentido la de " 62 años" establecida en
+ia 	Ley 	2345/03, 	surge 	como 	consecuencia 	directa 	y 	verificabie 	de 	ia
+expectativa de vida de la población paraguaya.--------------------------------------
+2. 2- Fortaleciendo la tesis anterior sostengo que las políticas públicas
+tendientes 	al 	mejoramiento 	del 	"Bienestar 	Social", 	competen 	al 	órgano
+Ejecutivo o Administrador del Estado, en razón de que es éste· el facultado
+p 	a 	disponer 	de 	estrategias 	y planes 	sociales, 	dentro 	de 	l ·s 	principios
+e tablecidos en la Constit ción Nacional y plasmados en ley s que hacen
+ectivos aquellos. En '-f'JPLl...,,..,cuencia habiendo e Poder Legislaf 	o, dentro de
+us facultades discreci 	a es de legislador, ap obado y sanci 	ad , la Ley
+· 345/2003, a los efec 	e garantizar el usu 	cto efectivo d 	s Haberes
+/\11
+. . 	!FRETES 	o
+!sfro 	r. Vl CTOR M. NUÑEZ R.
+
+-- 3 of 9 --
+
+Jubilatorios y no existiendo en tal acto ninguna arbitrariedad manifiesta, no
+puede considerarse la Ley en sí misma como violatoria de los mandatos
+constitucionales; así mismo estando facultado el Poder Ejecutivo a través de
+sus 	Ministerios, 	quienes 	con 	sus 	representantes 	son 	solidariamente
+responsables de los "Actos de Gobierno", son estos los que dentro de los
+lineamientos de las políticas sociales trazadas, deben dar respuesta mediante la
+reglamentación de 	las normas y 	en ese 	orden tampoco 	se 	descubre 	una
+arbitrariedad, en razón de que dicha facultad es Constitucional; 	Artículo 103.
+Del régimen de jubilaciones. 	" .. . Dentro del sistema nacional de seguridad
+social, la ley regulará el régimen de iubilaciones de los funcionarios y
+empleados públicos, 	atendiendo a que los organismos autárquicos creados
+con ese propósito acuerden a los aportantes y jubilados la administración de
+dichos entes bajo control·estatal .... ". -------------------------------------------------
+2. 3. - Ciertamente la Corte Suprema de Justicia, 	a . través de la Sala
+Constitucional, se convierte en la instancia que permite el control del ejercicio
+de 	las 	facultades 	otorgadas 	a 	los 	demás 	poderes 	del Estado 	(Ejecutivo-
+L 	:slativo ), sin embargo no puede constituirse en Juzgador de los criterios de
+las 	"Políticas 	Públicas" 	en 	cuanto 	que 	ellas 	son 	facultativas 	del 	Poder
+Ejecutivo en cooperación con los demás poderes del Estado. En consecuencia
+puede considerarse injusta o no una disposición normativa o reglamentaria, lo
+que no significa que la misma sea contraria a una disposición constitucional,
+la que permita declarar la in.constitucionalidad del alcance de la misma, por
+arbitrariedad u otros fundamentos.-----------------------------------------------------
+3.- Por otro lado, de 	las expresiones vertidas por la accionante, el
+agravio 	siguiente 	y 	creo 	que 	el 	fundamental 	con 	relación 	al 	artículo
+impugnado, no se relaciona con la edad fijada para acceder a la jubilación en
+sí misma, sino contra el perjuicio que genera la jubilación obligatoria en
+cuanto al monto exiguo derivado de la distribución porcentual, 	establecida en
+el Art. 9º de 	la ley accionada y en particular en el Decreto Nº 1579 del 30 de
+enero 	del 	2004, 	reglamentario 	de 	la 	Ley 	2345/2003, 	en 	particular 	lo
+establecido en el artículo 3º " ... Cálculo de la Jubilación Obligatoria. El monto
+del 	primer pago 	del 	beneficio 	establecido 	en 	el 	Artículo 	9º 	de 	la 	Ley
+2345/2003 se calculará de acuerdo a la siguiente fórmula: Monto del primer
+pago de la Jubilación Obligatoria; igual; Remuneración Base; por; Tasa de
+Sustitución para Jubilación Obligatoria. La Remuneración Base será la que
+resulte de aplicar el Artículo 2º de este Decreto. (Art. 2º Remuneración Base:
+... será la que resulte de la aplicación de la siguiente fórmula: Remuneración
+Base; igual; Sumatoria de las últimas 60 remuneraciones imponibles, sobre,
+sesenta. De existir periodos no aportados durante los cinco (5) últimos años,
+igual 	se 	tomarán 	las 	sesenta 	(60) 	últimas 	remuneraciones 	imponibles
+percibidas de 	acuerdo 	a 	la 	legislación 	vigente 	en 	su 	momento, aunque
+sobrepasen dicho período .. .). La Tabla de Tasas de Sustitución de 	acuerdo a
+los años de servicios será la establecida en el Anexo Nº 1 que forma parte del
+presente Decreto. Una vez determinado el monto del primer pago, éste variará
+exclusivamente de acuerdo aj. mecanismo de actualización establecido en el
+Artículo 6º del presente Decreto. (Art. 6° Mecanismo de actualización de .. ./// ..
+
+-- 4 of 9 --
+
+e Supre ma de Justicia
+ACCION 	DE 	INCONSTITUCIONA-
+LIDAD: "CONTRA ART. 9 DE LA LEY Nº
+2345/2003 Y CONTRA EL ART. 	127 DE
+LA LEY 2344/03". AÑO: 2004-Nº 2085.----
+.. .///. .. los beneficios. En todos los casos, la actualización de las jubilaciones,
+pensiones y haberes de retiro, se realizará de oficio en el mes de enero de
+cada año, multiplicando los haberes vigentes en el año anterior por un factor
+de 	aplicación general. . .. El factor 	de 	ajuste 	se 	calculará 	de 	la siguiente
+forma: ... En ningún caso el ajuste podrá representar un porcentaje mayor que
+la inflación del año anterior, calculada por el Banco Central del Paraguay).--
+{ 	N 	3 .1. - Si bien he manifestado que el Poder Administrador a través de una
+1€ 110&,:ia que lo habilita puede proceder a hacer efectivas determinadas "políticas
+(Rú@.icas ", sin embargo, considero que ellas nunca pueden ser operadas en
+_Q~uicio de la calidad de vida de sus afectados. En este sentido, el Art. 9º en
+él,:Jrimer párrafo in fme y el Decreto Reglamentario Nº 1579/2004 en los arts.
+~ ~l 5º y sus Anexos respectivos, al determinar un porcentaje jubilatorio
+~guo e irrisorio, absolutamente insuficiente para " .. satisfacer las necesidades
+~
+!?~~l es_. .. " 	(art. 	2~9 C.T.) de cualquier sujeto ?asivo, ~iolenta la _norma
+nstltuc10nal que dispone en su art. 6: ".. De la calidad de vida. La calzdad de
+, ida 	será 	promovida 	por · el 	Estado 	mediante 	planes 	y 	políticas 	que
+reconozcan factores condicionantes, 	tales como la extrema pobreza y los
+impedimentos de la discapacidad o de la edad ... "; art. 57: 	" ... De la tercera
+edad. 	Toda persona 	en 	la tercera edad tiene 	derecho 	a 	una protección
+integral. 	La familia, 	la sociedad y 	los poderes públicos promoverán 	su
+biene star mediante servicios sociales que se ocupen de sus necesidades de
+alimentación, salud, vivienda, cultura y ocio ... ". ------------------------------------
+3 .2. - Concluyendo considero que no es la escala etaria, que podría ser
+60 , 65, 70, o cualquier otra edad, razonablemente dimensionada, sino el monto
+resultante de la aplicación del porcentaje establecido tanto por la Ley 2345/03
+como su Decreto reglamentario, el que decididamente es irrisorio, irrazonable,
+casi inhumano para obligar a un trabajador o funcionario activo a pasar a la
+condición 	de 	pasivo. 	Por 	ello, 	ambas 	disposiciones 	normativas 	devienen
+inconstitucional 	y 	por 	tanto 	inaplicables 	a 	quienes 	deben 	acceder 	a 	la
+. bºl 	. ' 	bl º 	.	JU 1 ac1on o 	1gator1a. --------------------------------------------------------------------
+4. - Por otro lado, me adhiero al voto del Ministro Preopinante Dr.
+Fretes, en cuanto hace referencia al Art . 127 de la Ley Nº 2344/03 ''Que
+aprueba el Presupuesto General de la Nación para el Ejercicio Fiscal 2004".---
+5.- 	Por las 	consideraciones 	que 	anteceden, 	considero 	que 	debe
+hacerse 	lugar 	parcialmente 	a 	la 	Acción 	de 	Inconstitucionalidad,
+déclarando inaplicable la Remuneración base y el porcentaje 	stablecido
+rel art. 9º de la Ley 2345/03: ~s mi voto.--_------ -----------------
+A su turno el Do 	r 	UNEZ RODRIGU, Z dijo: 1.- Di
+opinión emitida po 	os 	stros que me preced n en relación a
+Dr. VIcr
+~I(? FRETES 	OR M. NUNF,Z
+v1,nistro
+
+-- 5 of 9 --
+
+inconstitucionalidad contra el Art. 127 de la Ley Nº 2344/03 "De Presupuesto
+General 	de 	la 	Nación 	- 	Ejercicio 	Fiscal 	Periodo 	2004", 	el 	Art. 	9º 	y
+concordantes de la Ley Nº 2345/03 "De Reforma y Sostenibilidad de la Caja
+Fiscal, Sistema de Jubilaciones y Pensiones del Sector Público", promovida
+por la Sra. Marina de la Paz González de Yegros, funcionaria de la Dirección
+General de 	los Registros Públicos, según Decreto Nº 65 	de fecha 	13 	de
+setiembre de 197 3, que adjunta.--------------------------------------------------------
+Aduce que las normativas impugnadas le causa agravio, por cuanto que
+obliga a acogerse a la jubilación, cercenando sus derechos de 	funcionaria
+pública, no encontrándose aun en condiciones de acogerse a los beneficios
+otorgados por el sistema de jubilaciones. De esta manera, al obligar a los
+funcionarios públicos a jubilarse a la edad de sesenta y dos años y diez años
+de 	servicio, 	se 	vulneran 	con 	ello 	derechos 	adquiridos 	en 	virtud 	a 	las
+disposiciones 	legales 	vigentes 	al 	momento 	de 	ingresar 	a 	la 	institución
+pública.-------------------------------------------------------------------------------------
+El Art. 	127 de 	la Ley Nº 2344/ 03, 	expresa: 	"El Poder Ejecutivo, a
+través 	del 	Ministerio 	de 	Hacienda, 	procederá 	a 	disponer 	la jubilación
+automática 	de 	todos 	los funcionarios 	de 	los organismos y 	entidades del
+Estado que durante el Ejercicio 2004, cumplan con los requisitos establecidos
+en 	la Ley. 	Una 	vez producida la jubilación y 	cubiertos 	los cargos que
+quedaren 	vacantes 	con 	las 	promociones 	respectivas, 	el Ministerio 	de
+Hacienda procederá a suprimir los cargos de menor asignación".---------------
+La disposición legal del Art. 9º de la Ley Nº 2345/03, establece: 	"El
+aportante que complete sesenta y dos años de edad y que cuente con al menos
+diez años de servicio, 	tendrá que acogerse a la jubilación obligatoria. El
+monto de 	la jubilación obligatoria se calculará multiplicando la Tasa de
+Sustitución (valor del primer pago en concepto de jubilación o pensión como
+proporción de la remuneración base) por la Remuneración Base, tal como se
+la define en el Articulo 5° de esta ley. La Tasa de Sustitución será del 20%
+para una antigüedad de diez años y aumentará 2, 7 puntos porcentuales por
+cada año de servicio adicional hasta un tope del 100%. Aquellos que no
+lleguen a completar diez años de servicio, tendrán derecho a retirar el 90%
+de sus aportes realizados, ajustados por la variación del Índice de Precios al
+Consumidor (IPC) del Banco Central del Paraguay. Quedan excluidos de la
+obligatoriedad de 	la jubilación ordinaria, 	los docentes universitarios del
+sector público, quienes podrán seguir aportando hasta el limite de setenta y
+cinco años de edad".---------------------------------------------------------------------
+En la cuestión planteada por la accionante, se verifica los siguientes
+extremos jurídicos bien concretos: 1. Si se sigue la tésis de la obligatoriedad
+del paso automático a la pasividad, por el sólo hecho de cumplir 62 años de
+edad, con prescindencia de los años de servicio, se conculcan las siguientes
+garantías constitucionales en favor del funcionario público.-----------------------
+2. Derecho a la Carrera administrativa~ en condiciones de estabilidad
+funcional, emocional y económica, una vez admitido en la función pública
+como subordinado regular.------------------------------------------------------- .. .///. ..
+
+-- 6 of 9 --
+
+1e Suprema de Ju s ticia
+ACCION 	DE 	INCONSTITUCIONA-
+LIDAD: "CONTRA ART. 9 DE LA LEY Nº
+2345/2003 Y CONTRA EL ART. 	127 DE
+LA LEY 2344/03". AÑO: 2004 - Nº 2085.-
+.. ./// ... 3. 	Derecho a la estabilidad especial en el empleo, estabilidad
+ganada merced a normas jurídicas anteriores a la vigencia de la Ley Nº
+2345/2003, 	que 	aseguraban 	al 	postulante 	otro 	régimen 	jurídico 	con
+consecuencias en la ecuación económico - 	financiera de quien, como él, o
+como 	muchos 	otros, 	optaron 	por 	la 	carrera 	pública 	con 	o 	bajo 	ciertas
+expectativas contenidas en un reglamento de juego. Al paso señalado por el
+art. 9º de dicha Ley, no habría nunca estabilidad jurídica para los trabajadores
+del 	sector público, 	al 	ingresar bajo un 	determinado 	sistema, 	modificarse
+abruptamente pero aceptándolo y, cuando concurra para amparars'é en uno u
+tro sistema, o quizás en el último, le digan, nó, porque la ley acaba de ser
+~~ - evamente 	modificada 	y 	por 	lo 	tanto, 	surgieron 	estos 	otros
+* ,i 	d. 	. 	.c~n 1c1 onarmentos.-----------------------------------------------------------------------? p.
+ªlj 	4. 	El 	derecho 	a 	la 	igualdad 	entre 	los 	iguales 	tampoco 	resulta
+&~sguardado 	mediante 	dicha 	ley. Al 	contrario, discrimina de modo injusto	._, ;:
+.,::· donde no debe hacerlo. En efecto, todos los servidores públicos son iguales
+ante 	la ley, 	y todos 	ellos, 	en un régimen de absoluta igualdad con 	los
+trabajadores 	del 	sector 	privado, 	según 	se 	desprende 	de 	los 	términos
+constitucionales vigentes.---------------------------------------------------------------
+5. 	El 	Código 	Laboral, 	ni 	las 	Leyes 	de 	previsión 	social 	vigentes,
+establecen 	limitaciones 	de 	edad 	para 	el 	trabajo 	útil 	al 	servicio 	del
+empleador. Tal imposibilidad fisica debe surgir, en cada caso, de las pruebas
+de los hechos concretos, para posibilitar la justificada desvinculación laboral
+del trabajador.-----------------------------------------------------------------------------
+En el sector público, las normas son erráticas, unos fijándolos en 7 5
+años (fuerzas armadas y policiales, magistrados en general), es decir, parten de
+la base de la depreciación lenta de las facultades 	fisicas y mentales del
+servidor público, pero en otros sectores (funcionarios públicos en general,
+incluidos los funcionarios del mismo Poder Judicial) pareciera que esa misma
+depreciación debe ser más acelerada, al disponer que las mismas facultades
+psíquicas y físicas llegan sol I mente a los 62 	años. 	Si esto no constituye	~ y •
+desigualdad, ante la ley que es ~ara todos, es un atentado a la razón, más aún
+si se lo aplica con carácter retroa'?tivo.------------------------~-----------------------
+En resumen, el hombre paraguayo puede laborar al semcio de terceros
+sin limitaciones de edad, cuando se trata del trabajo en el sector privado, es
+decir, por lo visto su constitución fisica y psíquica natural lo trae consigo
+n 	almente. Naturalmente, también, quienes nacieron marcados como para
+s r Magistrados, Presidentes d 	la República, Directores de Entes Públicos,
+olicías y Militares, etc., 	at 	almente pueden o están en condiciones de
+oportar los rigores del se 	i io hasta incluso después de cumplidos los 7 5
+os y, al contrario, 	al 	ente desd 	uego (según así lo quiere la ley
+vy1
+,, 'f.AM.I RANO
+Ministro
+Afi o, . Héc 	Fabián Escobar Diaz
+Secretario
+
+-- 7 of 9 --
+
+citada) los signados como simples funcionarios públicos de inferior jerarquía,
+sólo pueden soportar las exigencias del trabajo hasta los expresados 62 años
+de edad.------------------------------------------------------------------------------------
+N o se advirtió que los Ministros de la CSJ respecto de los funcionarios
+judiciales, 	los 	Ministros 	y 	Presidente 	de 	la 	República 	respecto 	de 	los
+funcionarios del Poder Central, los Parlamentarios y funcionarios legislativos,
+pertenecen a la misma categoría funcional y sin embargo, se los discrimina
+como seres inferiores, a estos últimos.-------------------------------------------------
+Si la decisión es de carácter "político", entonces la cuestión no es
+jurídica, sino a-jurídica o meta-jurídica, lo que implicaría para quienes lo
+aceptan como causa fundante que el Poder Judicial no podría inmiscuirse en
+tales casos de actos, lo cual seria inconstitucional al dejar inmune al examen
+judicial, de una Ley de la República.--------------------------------------------------
+En cuanto a la segunda parte de la cuestión, referente al cálculo del
+monto de la jubilación obligatoria, lo considero igualmente inconstitucional
+porque el monto del haber jubilatorio debiera ser actualizado al mismo tiempo
+que el haber de los trabajadores activos del sector público. No se advirtió que
+la normativa constitucional citada al efecto hace referencia a "la Ley" que en
+consecuencia se dicte, esto es, que la igualación del salario del trabajador
+pasivo 	con 	los 	del 	activo, 	depende 	totalmente 	de 	la Ley 	presupuestaria
+anual. 	En 	consecuencia, 	el 	Art. 	103 	de 	la 	C.N. 	no 	es 	operativo, 	sino
+pro gramático.------------------------------------------------------------------------------
+P or las razones expuestas se toma inconstitucional el Art. 9º de la Ley
+Nº 2345/03, y consecuentemente el art. 	127 de la Ley Nº 2344/03, al no
+garantizar al funcionario activo, un retiro digno que permita al mismo y a su
+familia, gozar del sistema provisional público que otorgue al funcionario los
+medios necesarios para luchar contra la enfermedad, la pobreza, la falta de
+trabajo y vejez. ----------------------------------------------------------------------------
+En consecuencia, mi voto es por que se decrete la inconstitucionalidad
+del Art. 127 de la Ley Nº 2344/03, el Art. 9º de la Le 	Nº 2345 del 24 de
+diciembre de 2003, y declarar su inaplicabilidad en relac ón con la accionante,
+de acuerdo a lo previsto en el Art. 555 C.P.C.------------- -----------:_:---------- --
+Ante mí:
+SENTEN.. .///...
+Abog. Héctor Fabián Escobar Díaz
+Secretario
+.EE., todo por 	te
+inmediatam 	te
+----Dr. VIcroR M. NUNF.Z R.
+
+-- 8 of 9 --
+
+eSuprema de Justicia
+ACCION 	DE 	INCONSTITUCIONA-
+LIDAD: "CONTRA ART. 9 DE LA LEY Nº
+2345/2003 Y CONTRA EL ART. 	127 DE
+LA LEY 2344/03". AÑO: 2004- Nº 2085.----
+.. .///... CIA NUMERO:9 	'--\
+Asunción, 	Ro de 	c n~b-=:> 	de 2.00~
+VISTO: Los méritos del Acuerdo que anteceden, la
+CORTE SUPREMA DE JUSTICIA
+Sala Constitucional
+RESUELVE:
+HACER LUGAR, parcialmente a la Acción de 	ne 	·tucionalidad y
+en consecuencia, declarar ina licable la Remune 	· ' 	el porcent ·
+AN OTAR , registrar 	ificar.------------- - - 	- 	------; -----
+establecido en el art. 9º de 1 	2345/03, en rei-	a 	ó 	1 	ionante.---
+\ 	_,-4 	' 	'
+\
+,A 	,~ ,~ ·f.¡
+.. -__ ... ___ ___ 	--- 	- 	* 	·~7 	*I
+JOSEv!~lT•A ·,nA l1 	RETES 	C . 	•
+Ante mí: 	Mi ni' - 	rs.J . 	0 	~ PRtSIDENCIA
+-l
+c.r,r,
+Dr. VICTOR 	:t!#
+Ab og. Héctor Fabián Escobar Diaz
+. 	Secretario
+/
+
+-- 9 of 9 --
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

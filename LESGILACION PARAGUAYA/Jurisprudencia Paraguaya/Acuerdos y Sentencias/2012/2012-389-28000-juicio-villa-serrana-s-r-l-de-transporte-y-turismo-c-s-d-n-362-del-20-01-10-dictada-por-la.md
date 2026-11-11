@@ -1,0 +1,1619 @@
+# Acuerdo y Sentencia N.º 389/2012
+
+**Carátula:** JUICIO: “VILLA SERRANA S.R.L. DE TRANSPORTE Y TURISMO C/ S.D.  Nº 362 DEL 20/01/10, DICTADA POR LA MUNICIPALIDAD DE YPACARAI”.( Expte.  Nº 40,  Folio 25, Año 2010).
+
+- **Código CSJ:** 28000
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 389/2012
+- **Fecha:** 2012-07-09
+- **Sala:** TRIBUNAL de CUENTAS – CONT. ADM 1RA. Sala
+- **Materia:** 0; Administrativa
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=28000)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=28000)
+
+## Texto de la resolución
+
+JUICIO: “VILLA SERRANA S.R.L.  DE  TRANSPORTE  Y
+                            TURISMO C/ S.D.  Nº 362  DEL  20/01/10,  DICTADA
+                            POR LA MUNICIPALIDAD DE YPACARAI”.(  Expte.   Nº
+                            40,  Folio 25, Año 2010).----------
+
+ ACUERDO Y SENTENCIA N°: Trescientos ochenta y nueve (389)
+
+ En la ciudad de Nuestra Señora de la Asunción, Capital de la República del
+ Paraguay, a los nueve -09- días del mes de julio del  año  dos  mil  doce,
+ estando presentes los Excelentísimos  Señores  Miembros  del  Tribunal  de
+ Cuentas, Primera Sala, MARIO MAIDANA  GRIFFITH,  MARTIN  AVALOS  VALDEZ  y
+ RODRIGO A. ESCOBAR, en su Sala de Audiencias y Público Despacho,  bajo  la
+ Presidencia del Primero de  los  Nombrados,  por  ante  mi  el  Secretario
+ Autorizante, se trajo a acuerdo  el  expediente  con  la  portada  que  se
+ expresa  más  arriba  a  objeto  de   resolver   el   juicio   contencioso
+ administrativo caratulado: “VILLA SERRANA S.R.L. DE TRANSPORTE  Y  TURISMO
+ C/ S.D.  Nº362 DEL 20/01/10, DICTADA POR LA MUNICIPALIDAD DE YPACARAI”.----
+ ---------------------------------------------------
+
+ Previo el estudio de los antecedentes del caso, el  Tribunal  de  Cuentas,
+ Primera Sala, resolvió plantear y votar la siguiente.---------------------
+
+                                  CUESTIÓN:
+
+Están ajustados a derecho los actos administrativos impugnados?.---
+
+Practicado el sorteo de ley para determinar el orden  de  votación,  dio  el
+siguiente resultado: RODRIGO A. ESCOBAR, MARIO MAIDANA  GRIFFITH   y  MARTÍN
+AVALOS VALDEZ.------------------------------
+
+Y EL EXCMO. MIEMBRO DEL TRIBUNAL DE CUENTAS, PRIMERA  SALA  DR.  RODRIGO  A.
+ESCOBAR, DIJO: Que, en fecha 7 de  mayo  de  2010,  se  presenta  ante  este
+Tribunal el Abogado EUSEBIO BRITOS MOREL, en representación  de  la  Empresa
+Villa  Serrana  S.R.L.,  de  transporte  y  turismo,  a  interponer  demanda
+Contencioso Administrativa contra la S.D. Nº 362 del 20 de  enero  de  2010,
+dictada por el Juzgado de Faltas  Municipales  de  la  Ciudad  de  Ypacarai,
+solicitando  el  demandante,  se  declare  nula  la  citada  Sentencia   y/o
+revocándola en todas sus partes, con costas. -------------------------------
+--------------------------
+
+      Funda la demanda en los siguientes términos: ---
+
+      QUE, la accionante  inicia  su  demanda  expresando  que  “…cumpliendo
+instrucciones recibidas del  referido  mandante,  vengo  a  deducir  demanda
+contencioso administrativa en contra de laS.D. Nº 362 del  20  de  enero  de
+2010, dictado por la, Juez de Faltas de la Municipalidad de Ypacarai; en  el
+expediente caratulado: “N° 188/09 MUNICIPALIDAD DE YPACARAI  c/  EMPRESA  DE
+TRANSPORTE VILLA SERRANA S.R.L. s/  INFRACCION  DE  TRANSITO".  La  referida
+Sentencia, fue objeto de RECURSO DE APELACION Y NULIDAD ante  el  Intendente
+Municipal, conforme el Art. 49 de la Ley  1276/98,  conforme  la  copia  del
+recurso presentado que se adjunta  con  esta,  vigente  en  ese  tiempo.  El
+recurso fue denegado, por  lo  que  se  recurrió  a  la  queja  que  no  fue
+despachada concediéndose en forma ficta,  conforme  el  artículo  53°  2da.,
+parte de la referida ley. V.E., en cuanto al recurso el  Sr.  Intendente  no
+se ha expedido en el plazo de diez días hábiles, por  lo  que  se  considera
+que la Sentencia apelada tiene una confirmación ficta, conforme el  artículo
+50° de la referida Ley. Por lo tanto mi parte en tiempo hábil  recurre  ante
+este Tribunal Administrativo a los efectos  de  que  en  su  oportunidad  se
+proceda anular y/o revocar la S.D. Nº 362 del 20 de enero de  2010,  dictado
+por la Juez de Faltas de la Municipalidad de Ypacarai en  el  expediente  N°
+188/09, caratulado: "MUNICIPALIDAD DE  YPACARAI  C/  EMPRESA  DE  TRANSPORTE
+VILLA SERRANA S.R.L. S/ INFRACCION DE TRANSITO"…”. -------------------------
+--------------------
+
+      QUE, la actora al referirse a los ANTECEDENTES DEL CASO,  refiere  que
+“… el Juzgado de Faltas de  la  Municipalidad  de  Ypacarai  ha  formado  un
+sumario en averiguación y comprobación  de  una  supuesta  falta  municipal,
+específicamente violación del Art. 60 inc. "c" de la Ordenanza Municipal  N°
+15/2008 - avanzar en rojo una  boca-calle  protegida  por  el  semáforo;  en
+donde supuestamente quedo involucrado una unidad de ómnibus propiedad de  la
+empresa con matricula ABS803. V.E., el control y ordenamiento del  tránsito,
+del que habla el  sumario.  Está  determinado  por  un  control  electrónico
+instalado en la boca-calle de Gral. Bernardino  Caballero  (variante  de  la
+Ruta II y esq. Iturbe); control electrónico  del  cruce  de  la  boca-calle;
+filmaciones de los vehículos que  supuestamente  pasan  cuando  el  semáforo
+está luz roja. En dicho lugar no existe ningún  agente  de  tránsito;  nunca
+esta  apostado  en  dicho  lugar  un  inspector   de   tránsito.   Por   esa
+circunstancia NO FUERON DEMORADOS NINGUN CONDUCTOR POR DICHA INFRACCION.  El
+procedimiento de la Dirección de Transito de la Municipalidad  de  Ypacarai,
+consiste en remitir a los propietarios de los  vehículos  que  supuestamente
+incurrieron en infracción; la notificación de su multa. Y  al  no  pagar  la
+multa le instruye un sumario por la infracción de tránsito cometido  por  el
+conductor...”. --
+
+      QUE,  la  accionante  al  referirse  a  la  posición  de  la  empresa
+ propietaria de los ómnibus cuyos conductores supuestamente  cometieron  una
+ infracción de tránsito expresa, “...V.E., la empresa manifestó a la Juez de
+ Faltas; de que está en una posición del que  resulta  imposible  admitir  o
+ negar con propiedad los hechos que se le atribuyen.  Cual  es  cometer  una
+ infracción a las reglas de tránsito (cruzar en  rojo  una  boca-calle).  No
+ está en posición de aceptar o negar un  hecho  que  se  le  atribuye  a  un
+ tercero; no puede rechazar, objetar, desmentir un hecho que solamente puede
+ admitir o negar el conductor. La empresa es un tercero en la  investigación
+ de la falta Municipal. Como la empresa  no  maneja  ómnibus  de  transporte
+ público, lo hace a través de  conductores  contratados.  Estos  conductores
+ contratados son personas profesionales acreditadas con su carnet o registro
+ de conductor. Como tal están obligados a conocer y respetar las señales  de
+ tránsito; son su responsabilidad personal. Así el Art. 78 de  la  Ordenanza
+ Municipal transcripta en la Sentencia recurrida  dice:  "...Todo  conductor
+ deberá mantener  el  control  de  su  vehículo  durante  la  circulación  y
+ conducirlo conforme a la norma de seguridad determinadas en este reglamento
+ sin que motivo alguno justifique el  desconocimiento  o  incumplimiento  de
+ ella...". Ello habla de una responsabilidad  personal  del  conductor  como
+ siempre ha estado alegando la  empresa.  V.E.,  la  empresa  de  transporte
+ público, no esta de acuerdo en que sea multado por el  solo  hecho  de  ser
+ propietario de los vehículos que supuestamente cometieron la infracción.  Y
+ que  al  conductor  infraccionado  NI  SIQUIERA  SE  LE  LLAMA  A   PRESTAR
+ DECLARACION. Se llegaría al absurdo de condenar el vehículo como  autor  de
+ la infracción; cuando que es el conductor el único  que  puede  cometer  la
+ infracción de la regla de transito; como habla claramente el Art. 78 de  la
+ referida Ordenanza Municipal…”.---------------------------
+
+       QUE, la actora al referirse al  sumario  administrativo  expresa  que
+“…no hubo integración procesal (sumario insuficiente): V.E., toda  sentencia
+para ser válida y ejecutable, debe ser el resultado de  un  debido  proceso;
+en donde todas las partes involucradas y afectadas, tengan el derecho  y  la
+oportunidad de ofrecer, controlar e impugnar pruebas y que no se le  opongan
+pruebas obtenidas indebidamente o actuaciones producidas  con  violación  de
+las normas jurídicas. (Art. 17 inc. 8 y 9 C.N.). Así mi parte  ha  insistido
+en que se encontraba con la imposibilidad de impugnar una prueba o mejor  la
+prueba base del sumario; por tratarse de  pruebas  de  hechos  atribuidos  a
+terceros no sea a los conductores de los  buses  supuestamente  involucrados
+en una infracción de tránsito. La posición de la empresa  terminaba  con  la
+manifestación  de  que  se  trataba  de  propietario  de  los  buses   cuyos
+conductores  cometieron  supuestamente  una  infracción  al  reglamento   de
+tránsito. Y como tal estaba fuera  de  la  posibilidad  de  cometer  ninguna
+infracción de tránsito. Y que solamente el conductor  podrá  dar  cuenta  de
+esa supuesta infracción. VICIOS QUE INVALIDAN  LA  SENTENCIA  RECURRIDA:  La
+S.D. Nº 362 del 20 de enero de 2010; demandada en esta  instancia,  contiene
+un vicio que invalida o hace imposible su ejecución. Así, la Juez de  Faltas
+de la Municipalidad de Ypacarai, funda su sentencia en contra de la  Empresa
+Villa Serrana S.R.L., en lo medular en el artículo 8 de la Ley  1276/98  que
+dice: "... Las personas de existencia física como  la  de  existencia  ideal
+son  responsable  por  las  faltas  cometidas  por  quienes  actúen  en   su
+representación o a su servicio, con su autorización o para su  beneficio,  o
+en cumplimiento de funciones o labores les presten aun  ocasionalmente,  sin
+perjuicios  de  la  responsabilidad  personal  que  a  estas  personas   les
+correspondiere...". De conformidad a la  disposición  legal  referida...  la
+Empresa Villa Serrana S.R.L. sería responsable por las  faltas  cometidas...
+por las personas que actúan a su servicio...".  Es  decir  tiene  que  haber
+investigación, dilucidación y determinación de las faltas cometidas  por  la
+persona que actúa en nombre de la empresa o a su servicio  –  es  decir  del
+conductor del bus involucrado. Al respecto la empresa en el momento  de  ser
+llamada, individualizó al conductor y  solicito  que  la  investigación  del
+hecho de la infracción sea llevado con el conductor, única persona idónea  a
+quien es atribuible la  falta  municipal  de  infracción  al  Reglamento  de
+Tránsito.”.----------------------------------
+
+       QUE, la demandante continua expresando que “…para que la empresa  sea
+responsable por las faltas municipales en los términos del Art. 8 de la  Ley
+1276/98 debe haber una condena  al  infractor  de  las  faltas.  Si  no  hay
+condena al infractor de las faltas no  puede  haber  responsabilidad  de  la
+empresa. La responsabilidad surge de la condena al infractor de las  faltas:
+es más el mismo cuerpo legal citado también en el  considerando;  le  obliga
+al Juzgado Instructor de Sumarios determinar las  faltas  cometidas  por  el
+conductor al Citar el Art. 78 del Reglamento de Tránsito aplicado; debe  ser
+investigado con el conductor; al transcribirla con estos términos:  "...Todo
+conductor deberá mantener el control de su vehículo durante  la  circulación
+y conducirlo conforme  a  las  normas  de  seguridad  determinadas  en  este
+reglamento  sin  que  motivo  alguno   justifique   su   desconocimiento   o
+incumplimiento  de  ella...".  Estas  citas  jurídicas   en   la   sentencia
+recurridas nos da la razón  de  que  el  sumario  debió  ser  al  infractor-
+conductor, no  al  propietario  de  los  vehículos.  La  responsabilidad  va
+subsidiaria a la  condena  por  la  infracción  a  las  Reglas  de  Tránsito
+Municipal. Sin embargo el juzgado de faltas, no investigo si  cometió  o  no
+la infracción el conductor del ómnibus, no lo ha llamado a declarar; es  mas
+no le instruyó el sumario correspondiente:  por  lo  que  la  conclusión  es
+obvia: la condena dispuesta por el Juzgado de Faltas es nula. Condena  a  un
+responsable subsidiario de una falta; sin sumariar al supuesto infractor  de
+las Reglas de Transito; en clara  violación  del  debido  proceso;  no  hubo
+determinación de  la  comisión  de  la  falta  municipal;  cuya  autoría  es
+imputado solamente al conductor…”. -----------------------------------------
+---------
+
+ QUE, asimismo la accionante continua sosteniendo que “…LA ACTUACION  DE  LA
+ INTENDENCIA MUNICIPAL COLICIONA CON VARIAS DISPOSICIONES LEGALES  VIGENTES:
+ Todo  el  funcionamiento  del  sistema  de  control  del  cumplimiento  del
+ reglamento de tránsito, con la utilización de la franja del dominio de  las
+ rutas, corresponde con exclusividad a LA DIRECCION NACIONAL DE VIALIDAD DEL
+ MOPC Ley 75/69, art. 180, prohíbe el aprovechamiento de cualquier  modo  de
+ las fajas del terreno perteneciente de cualquier camino público. Sobre  una
+ prohibición establecida en una ley no se puede fundar un  Derecho;  por  lo
+ tanto la sentencia recurrida es  ilegal.  Con  respecto  a  la  Competencia
+ territorial del que goza el Municipio no autoriza al intendente, ni a otros
+ organismos municipales de su dependencia, a desconocer la  ley.  Si  existe
+ una ley debe cumplirla o si considera que no tiene razón de  ser  solicitar
+ su derogación, no puede interpretarla de por si y  para  si,  solamente  el
+ poder judicial puede hacerlo.  Si  existe  colisión  de  normas.  El  poder
+ judicial debe resolverlo, no el intendente. Como  las  actuaciones  de  los
+ órganos  del  estado  deben  ceñirse  estrictamente  a  lo  que   dice   la
+ ley—PRINCIPIO DE LEGALIDAD—, en ese orden, violo,  el  juzgado  de  faltas,
+ disposiciones  de  la  ley  1276/98,  que  regula  el  régimen  de   faltas
+ municipales, específicamente el art. 29, que habla de flagrancia, y de cómo
+ debe actuar el funcionario que constata la falta con  flagrancia,  requiere
+ que se labre acta en el lugar y con la presencia  del  supuesto  infractor,
+ quien deberá firmarla o dejarse constancia de que se dio a la fuga o que no
+ quiso firmar con identificación de los testigos. Los antecedentes  adolecen
+ de este procedimiento. Por lo tanto es  nula  el  acta  base  del  sumario.
+ Porque no fueron labradas REGULARMENTE, como lo exige  el  art.  31  de  la
+ referida ley,  para  que  sean  consideradas  como  suficiente  pruebas  de
+ culpabilidad. En el cumplimiento formal de estos procedimientos  deben  ser
+ al máximo puntilloso la autoridad administrativa ya que, el art.  4  de  la
+ ley citada dice: "no se aplicara otras normas jurídicas por analogía ni  se
+ harán interpretaciones extensivas para condenar al transgresor..."  por  lo
+ tanto se impone el decreto de nulidad solicitada…”.-----------------
+
+ Termina solicitando que oportunamente se dicte sentencia declarando nula la
+ S.D. Nº 362 del 20 de enero de 2010, recurrida y/o revocarla en  todas  sus
+ partes, con costas.------
+
+      QUE, una  vez  corrido  el  correspondiente  traslado  de  la  demanda
+contencioso administrativa, en fecha 23 de setiembre de  2010,  se  presenta
+el  Abogado  JAVIER  PIROVANO  SILVA,  en  nombre  y  representación  de  la
+Municipalidad de Ypacarai, a fin contestar la demanda, la que  se  encuentra
+glosada a fojas 109/119 de autos. -------
+
+      Funda la contestación de la demanda en los siguientes términos: -------
+-----------------------------------------------------
+
+      QUE, la demandada al  iniciar  su  fundamentación  expresado  que:  “…
+CONSIDERACIONES PREVIAS: Que, conforme lo establece la  Ley  1462/1935,  que
+"el  Procedimiento  para  lo  Contencioso  Administrativo",  en  su  Art.  3
+incisos. d), la demanda contencioso administrativa  podrá  deducirse  contra
+las resoluciones que reúnen  los  siguientes  requisitos:  "...a)   Que   la
+resolución  vulnere  un  derecho administrativo   preestablecido   a   favor
+del  demandante;   ...;"   Que,   en   la   presente   demanda   Contencioso
+Administrativa, el actor no ha alegado especificando cual ha sido el  citado
+derecho administrativo preestablecido a su favor en  concreto  que  ha  sido
+vulnerado, y en esas condiciones, este defecto ya no  podrá  ser  objeto  de
+actividad probatoria ni mucho menos ser determinada en la  resolución  final
+conforme a la máxima:«iudex iudicare debet  secundum  allegata  et  probata,
+non secundum conscientiam».  Por  tanto,  al  surgir  a  "prima  facie"  del
+escrito de demanda que la parte actora ha incurrido en  el  citado  defecto,
+la misma debió ser rechazada de oficio e "in limine".  Sin  embargo,  al  no
+habérsele imprimido ese trámite, es obvio que tanto posteriormente  como  al
+dictarse la correspondiente Sentencia Definitiva,  el  aludido  defecto  (la
+omisión)  ya  no  podrá  ser  subsanado,  sin  afectarse  el  principio   de
+congruencia y el de igualdad procesal. Que,  esta  parte  solo  reconoce  la
+existencia y validez de la S.D. Nº 362 del 20 de enero de 2010, dictada  por
+el Juzgado de Faltas de Municipio de Ypacarai. NEGACIONES. Que,  hago  notar
+a VV.EE. que la demandante durante el Procedimiento de  Faltas  Municipales,
+ha alegado que la misma explota el servicio de transporte público y  que  lo
+hace a través de conductores que utilizan los vehículos de su  propiedad,  a
+quienes ha hecho llegar la notificaciones de las  infracciones  constatadas,
+por lo que ha reconocido  los  hechos  investigados,  causa  originaria  del
+presente procedimiento, y por lo  tanto,  la  presente  demanda  contencioso
+administrativa a esta altura se constituye  ya  en  una  cuestión  de  "puro
+derecho…". Que, el no proceder de esa manera, y tratar a esta altura  además
+asuntos que no fueron alegados  y  debatidos  durante  el  Procedimiento  de
+Faltas y ante la Jueza de  Faltas  respectivos,  importaría  inmiscuirse  en
+funciones y atribuciones propias de  la  citada  Jueza  y  de  la  autonomía
+Municipalidad afectándose el Principio de la descentralización y división  y
+recuperación  de  competencias  y  atribuciones,  administrativas  (arts.  1
+C.N.), ya que existe  una  suerte  de  relación  de  apelación  entre    las
+actuaciones  del   procedimiento   de   faltas   y   las   del   contencioso
+administrativo…”.-----------
+
+      QUE, la demandada continua expresando que “... sin embargo, cumpliendo
+con un imperativo procesal, niego todos y cada uno de  los  hechos  alegados
+por la parte actora, salvo los expresamente reconocidos en  la  presente.  Y
+específicamente niego de manera categórica que: El  control  y  ordenamiento
+del tránsito, del que habla el  sumario  está  determinado  por  un  control
+electrónico  instalado  en  la  boca-calle  de  Gral.  Bernardino  Caballero
+(variante de la Ruta II y esq. Iturbe), control electrónico del cruce de  la
+boca-calle; filmaciones...-----
+
+      En dicho lugar  no  existe  ningún  agente  de  tránsito;  nunca  esta
+apostado en dicho lugar un inspector. Así  también  se  niega  la  siguiente
+falacia, que aquello se deduzca de la  circunstancia  que  no  fue  demorado
+ningún conductor por dicha infracción. El procedimiento de la  Dirección  de
+Transito de  la  Municipalidad  de  Ypacarai,  consiste  en  remitir  a  los
+propietarios  de   los   vehículos   que   supuestamente   incurrieron;   la
+notificación multa. Y que al no pagar la multa le instruye un sumario...  La
+empresa haya manifestado a la Juez de Faltas; de que esta  en  una  posición
+del que resulta imposible admitir o negar con propiedad los  hechos  que  se
+le atribuyen. Cual es  cometer  una  infracción  a  la  reglas  de  transito
+(cruzar en rojo una boca-calle). No está en posición de aceptar o  negar  un
+hecho que se le atribuye a tercero; no puede  rechazar,  objetar,  desmentir
+un hecho que solamente puede admitir o negar el conductor. La empresa es  un
+tercero en la investigación de la  falta  municipal.  Que,  respecto  a  los
+conductores sea de la responsabilidad personal  y  exclusiva  de  estos  las
+infracciones. Así, también se niega la falacia que ello se deduzca del  art.
+78 de la Ordenanza Municipal. Se llegue al absurdo de condenar  al  vehículo
+como autor de la infracción; Que la parte demandante haya insistido  en  que
+se encontraba con la imposibilidad impugnar una prueba  o  mejor  la  prueba
+base del sumario; Que la posición de la empresa terminaba que  estaba  fuera
+de  la  posibilidad  de  cometer  ninguna  infracción  de  tránsito.  Y  que
+solamente el conductor podrá dar cuenta de esa supuesta infracción. La  S.D.
+Nº 362 del 20 de enero de 2010; demandada en  esta  instancia,  contiene  un
+vicio que invalida o hace imposible su ejecución. La empresa en  el  momento
+de ser llamado, individualizo al conductor y solicito la  investigación  del
+hecho de la infracción sea llevado con el conductor. Así  también  se  niega
+que el conductor es la única persona idónea a quien es atribuible  la  falta
+municipal de infracción al Reglamento de Tránsito. Que, para que la  empresa
+sea responsable por las faltas municipales en los términos del Art. 8 de  la
+Ley 1276/98 (ahora art.  76  Ley  3.966/2010)  debe  hacer  una  condena  al
+infractor de las faltas. Así también se niega  que  si  no  hay  condena  al
+infractor de las faltas no puede haber responsabilidad de la   empresa;  que
+la responsabilidad surge de la condena al infractor; que  se  le  obliga  al
+Juzgado Instructor de  Sumarios  determinar  las  faltas  cometidas  por  el
+conductor al citar el art. 78 del Reglamento de Tránsito aplicado; y que  el
+sumario debió  ser  al  infractor-  conductor,  no  el  propietario  de  los
+vehículos. La responsabilidad va subsidiaria a la condena por la  infracción
+a las Reglas de Tránsito Municipal. -------------
+
+      QUE, la accionada sostiene además que niega que “…El juzgado de faltas
+no investigó si cometió o no la infracción el conductor del ómnibus; que  la
+condena dispuesta por el Juzgado de Faltas es nula;  que  se  condena  a  un
+responsable subsidiario de una falta sin sumariar al supuesto  infractor  de
+las Reglas de Transito; que se ha violado el debido  proceso;  que  no  hubo
+determinación de la comisión de la falta municipal;  y  que  la  autoría  es
+imputado solamente al conductor.  Todo  el  funcionamiento  del  sistema  de
+control del cumplimiento del reglamento de tránsito, con la  utilización  de
+la franja del dominio de  las  rutas,  corresponde  con  exclusividad  a  la
+DIRECCION NACIONAL DE VIALIDAD DEL MOPC. La ley 75/69,  arts.  180,  prohíbe
+el aprovechamiento de cualquier modo las fajas del terreno perteneciente  de
+cualquier camino público. Que como  alega  la  parte  actora   la  sentencia
+recurrida sea ilegal  porque sobre una prohibición establecida  en  una  ley
+no se puede  fundar  un  derecho.  Que   como  alega   la  parte  actora  el
+intendente y otros organismos municipales de su dependencia  desconozcan  la
+ley, interpreten por si y para si  la  ley,  y  que  resuelvan  colisión  de
+normas. Que como lo alega la parte actora el Juzgado de Faltas haya  violado
+disposiciones de la Ley 1276/98, específicamente el art. 29 (ahora  art.  97
+de la Ley 3.966/2010). Que como lo alega la parte actora el  acta  base  del
+sumario sea nulo y que no fue labrada en el lugar y regularmente;  así  como
+que sea nulo porque según lo alega la parte actora se requiera que se  labre
+el acta con la presencia del supuesto infractor, que debe  firmarla  este  o
+dejarse constancia de que se dio a  la  fuga  o  que  no  quiso  firmar  con
+identificación de los testigos. Y al  respecto,  niego  que  los  requisitos
+citados constituyan condición "sine qua non" al efecto de la validez  de  la
+acta y antecedentes base del sumario en  cuestión.  Que  como  lo  alega  la
+parte actora se impone el decreto de la nulidad solicitada...”.-------------
+
+
+      QUE,  asimismo la demandada plantea sus DEFENSAS expresando que “…  la
+Constitución Nacional en sus artículos 166 y 168 inc. 8), establece  que  la
+regulación y fiscalización del tránsito, así como  la  penalización  de  sus
+infracciones son competencia exclusivas de las municipalidades,  dentro  del
+marco  de  su  Autonomía  Político,  Administrativa  y  Normativa.  En  este
+sentido, hago míos los  fundamentos  expresados  por  la  Corte  Suprema  de
+Justicia en el Acuerdo y Sentencia N° 337 del 25 de abril de  2.002  dictado
+en el expediente: "M.O.P.C. c/ Ordenanza Municipal N° 019/99  del  26/05/99,
+dictada por la Junta Municipal de Ciudad del Este",  cuya  parte  pertinente
+paso a transcribir: "... Entonces, cae de suyo con toda  la  fuerza  de  una
+lógica indiscutible, que son los municipios los  que  deben  administrar  en
+forma  exclusiva  todas  las  cuestiones  relativas  a  la  Seguridad  y  el
+Transito, como lo previene el Art. 46  de  la  mencionada  Ley  1294/87.  No
+pueden  reglarse  de  una  forma  general,  las  distintas  y   particulares
+necesidades de cada municipio. El planeamiento  urbanístico  es  competencia
+privativa del órgano municipal, y en  tales  condiciones,  la  ordenanza  de
+referencia  no  hizo  otra  cosa  que  usar  de  la  facultad   discrecional
+conferídale, dentro de los límites exactos consignados en la  Ley  básica  y
+Leyes complementarias..."... Al quedar declarado que nadie  pretende  restar
+competencia ni mucho menos jurisdicción al Ministerio de  Obras  Publicas  y
+Comunicaciones en lo que  a  las  rutas  nacionales  e  internacionales,  se
+refiere, pero las mismas  se  circunscriben  única  y  exclusivamente  a  la
+construcción o conservación de lo construido dentro del ejido  municipal  en
+aquellos trechos de los caminos que al cruzarlos  forman  parte  de  la  red
+nacional de caminos. Sin embargo,  la  reglamentación  y  fiscalización  del
+tránsito, del transporte público y la  de  otras  materias  relativas  a  la
+circulación de vehículos;  dentro  del  territorio  comunal,  es  atribución
+exclusiva de los municipios los cuales adquieren  tanto  jurisdicción  como;
+competencia  en  esta  materia   en   virtud   de   expresas   disposiciones
+constitucionales y leyes  afines,  por  lo  que  los  representantes  de  la
+Secretaria del Estado no pueden sentirse agraviados por el  dictado  de  una
+ordenanza que reglamenta el tránsito, y mucho menos  aún,  sostener  que  de
+las citas legales mencionadas se pueda inferir  "implícitamente"  que  a  su
+mandante le  asista  la  facultad  de  regular  el  tránsito  en  las  rutas
+nacionales..."."... Habiendo analizado detenidamente la normativa  aplicable
+al caso sub-examine, soy del parecer que el Art. 168 inc.  8)  de  la  Carta
+Magna y los arts. 46 y 241 de la Ley 1294/87 Orgánica Municipal, otorgan  al
+Ejecutivo Municipal, la cobertura legal para el  dictado  de  la  Resolución
+administrativa del tenor de la impugnada, en correcta asunción  y  ejercicio
+de facultades discrecionales...".----------------
+
+      QUE, la demandada seguidamente expresa  “…  que,  esta  autonomía  que
+refiere la Carta Magna, implica que  las  Municipalidad  pueden  dictar  sus
+propias  normas,  o  auto  legislarse  tal  como  lo  define  la   doctrina,
+legislación y jurisprudencia en la materia.  En  ese  orden  de  cosas  cabe
+advertir que la autonomía consiste en la facultad inherente a algunos  entes
+públicos de organizarse jurídicamente, de darse derecho propio, el  cual  no
+solo es reconocido como tal por el Estado sino que, además, es adoptado  por
+este para integrar su propio sistema jurídico y declararlo obligatorio  como
+sus  propios  reglamentos  y  leyes   (Zanobini).   La   autonomía   implica
+necesariamente derecho de  legislación  propia  (Emilio  Fernández  Vazquez.
+Diccionario de Derecho Público. EdicionAstrea, pag.  63).  Que,  dentro  del
+marco de su autonomía y en el ejercicio de su competencia (art. 168 inc.  8)
+C.N.), la Municipalidad de  Ypacarai,  por  Ordenanza  Municipal  N°  22/09,
+amplio la ordenanza 15/2008 (Reglamento General de Transito de la ciudad  de
+Ypacarai),  para  la  implementación  del   sistema   de   comprobación   de
+infracciones de tránsito con apoyatura gráfica. (Se adjunta copia de  dichas
+ordenanzas).  En  ese  contexto,  las  citadas  tomas   fotográficas,   solo
+constituyen elementos de apoyo a las Boletas de Contravención,  instrumentos
+estos que no se sustituyen  y  que  finalmente  constituyen  el  instrumento
+público substantivo  y  prueba  suficiente  de  culpabilidad  (art.  31  Ley
+1.276/98, ahora art. 98 Ley 3.966/2010) del Procedimiento Administrativo  de
+Faltas,  por  lo  que  se  demuestra  que  las  actuaciones  referentes   al
+Procedimiento de  Faltas  Municipal  de  autos  en  el  que  se  ha  dictado
+sentencia condenatoria contra la empresa demandante  se  hallan  sustentadas
+en vigentes normas jurídicas tanto de  la  respectiva  ley  dictada  por  el
+Congreso como de las Ordenanzas del Municipio, normas  que  en  el  caso  de
+parecerle injustas a la parte actora debería previamente impugnarlas por  la
+vía de la Declaración de Inconstitucionalidad…”.----------------------------
+--------------------------
+
+      En la presente causa, la cabeza del sumario ante el Juzgado de  Faltas
+de la  Municipalidad de Ypacarai ha constituido el Acta de Contravención  N°
+0440, documento que constato la infracción  objeto  del  citado  sumario  en
+consonancia  con  el  art.  26  de  la  Ordenanza  N°   15/2008.   Acta   de
+Contravención que confeccionada por un Inspector de Tránsito  Municipal  con
+facultad legal para ello, reviste el carácter de instrumento público,  a  la
+luz del art.55 de la Ley N° 1276/98 "Regimen Penal  Municipal"  (ahora  art.
+122 Ley 3.966/2010),  en  concordancia  con  el  art.  375  del  Cod.  Civil
+Paraguayo, y que por lógica consecuencia, hace  plena  fe  mientras  no  sea
+redargüido de falso. En cuanto a la  supuesta  falta  de  requisitos  en  el
+Acta de Contravención, paso a transcribir el artículo 29° de la Ley  1276/98
+(ahora art. 97 Ley 3.966/2.010), y el art 26 de la Ordenanza  15/08 (Por  la
+cual se Establece el Nuevo Reglamento General de Transito para la Ciudad  de
+Ypacarai), que rezan lo siguiente: Art. 29.- El  funcionario  municipal  que
+constate uno o varios hechos que pudieran constituir faltas labrara un  acta
+en el lugar, que contendrá la información siguiente:  Lugar,  fecha  y  hora
+del hecho o de la constatación del mismo; Nombre y domicilio  del  imputado,
+en caso de que puedan  ser  determinados,  así  como  de  testigos,  si  los
+hubiere; Naturaleza y circunstancias del hecho y descripción de  los  medios
+empleados para la comisión; La disposición legal  presuntamente  infringida;
+La firma del funcionario interviniente con aclaración de nombre y cargo;  y,
+La firma del imputado" o  en su defecto, las firmas e identificación de  los
+testigos. Art. 26  Ordenanza  15/08.-  "....  También  serán  imputables  al
+propietario  las  faltas  cometidas  por  un  conductor  que  no  haya  sido
+individualizado, salvo que aquel acredite que el vehículo le fue tomado  sin
+su conocimiento o sin su  autorización  expresa  o  táctica".  Que,  de  los
+términos transcriptos y especialmente  los  subrayados,  se  deduce  que  la
+presencia del supuesto infractor, así como que deba firmar este  el  acta  o
+dejarse constancia de que se dio a  la  fuga  o  que  no  quiso  firmar  con
+identificación de los testigos, no  constituyan  condición  "sine  qua  non”
+para la validez de las Actas de Contravención…”-----------------------------
+-------------------------------
+
+      QUE, también expresa que “… Por otro lado, en  cuanto  a  la  supuesta
+responsabilidad subsidiaria alegada por la parte actora en su  condición  de
+propietaria y de beneficiario de las  labores  de  los  choferes,  traigo  a
+colación además del ya citado art. 26 de la Ordenanza 15/08, el  art.  8  de
+la Ley 1.276/98 (ahora Ley 3.966/2010), que  reza:  Art.  8  (ahora  76  Ley
+3.966/2010)- Las personas de existencia física como las de existencia  ideal
+son  responsables  por  las  faltas  cometidas  por  quienes  actúen  en  su
+representación o a su servicio, con su autorización o para su  beneficio,  o
+en  cumplimiento  de  funciones,  o  de  labores   que   les   presten   aun
+ocasionalmente, sin perjuicio de la responsabilidad  personal  que  a  estas
+personas les correspondiera. Con  lo  que  también  se  demuestra,  que  las
+normas (arts. 8 Ley 1276, 76 Ley 3.966, y 26  Ordenanza  15/08)  no  exigen,
+como si ocurre por ejemplo en el caso del art. 106  C.N.,  para  la  condena
+del  propietario  la  previa  determinación  de   la   responsabilidad   del
+conductor, el que no ha sido  individualizado  (nombre  complete  domicilio,
+etc). La parte actora  también  basamenta  su  demanda  en  el  supuesto  de
+imposibilidad de reconocer o no  los  hechos,  o  de  practicar  pruebas  al
+respecto, y  al  respecto  me  permito  denunciar  ante  VV.EE.  la  grosera
+violación de la DOCTRINA DE LOS ACTOS PROPIOS por  parte  de  la  misma  (la
+actora). Y como demostración de la  violación  de  la  citada  doctrina,  me
+remito a su Declaración Indagatoria ante el Juzgado de Faltas,  en  la  cual
+ha reconocido que la misma explota el servicio de transporte público  y  que
+lo hace a través de conductores que utilizan los vehículos de su  propiedad,
+alegando que ha hecho llegar la notificación a los choferes  conductores  de
+la unidad  individualizada  en  la  filmación.  Entonces,  después   de   lo
+relatado  me  surge  la   siguiente   pregunta,  ¿DE  QUE  IMPOSIBILIDAD  DE
+PRODUCIR  PRUEBAS  O  DESCONOCER  LOS  HECHOS  PRETENDE  VALERSE  AHORA   AL
+FUNDAMENTAR  SU  DEMANDA   CONTENCIOSO-ADMINISTRATIVO   LA   PARTE   ACTORA?
+Evidentemente, la  presente  demanda  contencioso-administrativa  carece  de
+fundamentos serios; y en atención a su actuación relatada  ante  el  Juzgado
+de Faltas Municipal y las normas invocadas procede tanto  en  el  expediente
+municipal como en el caso de autos, el aforismo jurídico:  "A  CONFESION  DE
+PARTE RELEVO DE PRUEBAS"; y por lo  tanto,  resolver  haciendo  lugar  a  la
+pretensión de la parte actora en los  términos  de  su  escrito  de  demanda
+sería no solo desajustado a derecho, sino también incurrir en un  Exceso  de
+Ritualismo, incompatible con un adecuado Servicio de Justicia….”------------
+---------------------------------------
+
+      QUE, la demandada se refiere  a  la  Nulidad  por  la  nulidad  misma,
+expresando que “… la parte actora pretende la Nulidad de la S.D. Nº 362  del
+20 de enero de 2010SIN EMBARGO, NO HA) NEGADO  LA  EXISTENCIA  MISMA  DE  LA
+INFRACCION NI HA REDARGÜIDO DE FALSEDAD EL ACTA  DE  CONTRAVENCION;  TAMPOCO
+HA NEGADO QUE EL VEHICULO CON EL QUE SE COMETIO LA  INFRACCION  HAYA  ESTADO
+EN EL LUGAR QUE INDICA EL ACTA EN EL DIA Y HORA SEÑALADOS. Que,  conforme  a
+la doctrina y la jurisprudencia pacifica en este punto no existen  nulidades
+por las nulidades mismas es decir  que  si  la  parte  demandante  no  alego
+inocencia en la comisión de una infracción carece  de  sentido  plantear  la
+nulidad del instrumento que  prueba  la  ilegalidad.  Sentencia  Ajustada  a
+Derecho Evidentemente la  parte  actora  al  entablar  la  presente  demanda
+pretende que se avasalle la  Autonomía  Municipal,  en  atención  a  que  no
+existen Motivos valederos para declarar la nulidad o revocar  la  resolución
+impugnada. En ese sentido, pretende que el control judicial  vaya  más  alía
+del llamado control de legalidad, a pesar de que,  por  ningún  concepto  el
+control  judicial  puede  inmiscuirse  encuestiones  ajenas  a  su  cometido
+exclusivo jurisdiccional, ni sustituir menesteres propios de  otros  órganos
+de entidades públicas (Municipalidad de Ypacarai)y/o  privadas.  Trasladando
+estos conceptos  al  caso  en  concrete  se  recalca  que  las  resoluciones
+impugnadas no son arbitrarias,  y,  por  el  contrario,  han  sido  dictadas
+aplicando las normas constitucionales y legales pertinentes, y  en  especial
+han sido dictados respetándose el Derecho a la Defensa y al Debido  Proceso.
+Es así, que la EMPRESA VILLA SERRANA  S.R.L.  DE  TRANSPORTE  Y  TURISMO  ha
+tenido conocimiento y participación durante  la  sustanciación  de  todo  el
+proceso  sumarial,  alegando  sus   respectivas   defensas,   ofreciendo   y
+adjuntando  sus  pruebas,  conforme   se   desprende   de   las   siguientes
+actuaciones: Declaración Indagatoria prestada por el  Abog.  Eusebio  Britos
+Montiel como representante de la EMPRESA VILLA SERRANA S.R.L. DE  TRANSPORTE
+Y TURISMO. (Recurso de Apelación y Nulidad presentado por la  EMPRESA  VILLA
+SERRANA S.R.L. DE TRANSPORTE Y TURISMO contra la  S.D.  Nº  362  del  20  de
+enero de 2010. De lo expuesto, cabe  concluir  que  NO  EXISTE  MOTIVO  para
+declarar la nulidad ni revocar la S.D. impugnada, ya  que  ha  sido  dictada
+respetándose el DERECHO A LA DEFENSA Y  AL  DEBIDO  PROCESO,  y  dentro  del
+marco de la  AUTONOMIA  MUNICIPAL.  Conclusión  Por  tanto,  por  todos  los
+fundamentos  expuestos  precedentemente,  corresponde  el  rechazo   de   la
+presente  demanda  contenciosa-administrativa,  con  expresa  imposición  de
+costas a la parte actora...”.-------------------------
+
+      Termina solicitando  que  oportunamente,  y  previo  los  tramites  de
+estilo,  dicte  sentencia  rechazando  la  presente  demandada  contencioso-
+administrativa promovida por la EMPRESA VILLA SERRANA S.R.L.  DE  TRANSPORTE
+Y TURISMO, contra la S.D. Nº 362 del  20  de  enero  de  2010,  con  expresa
+imposición de las COSTAS a la adversa, por así corresponder en derecho. ----
+-----------------------------------------------
+
+      QUE, a fs. 124, consta la A.I. N° 691 de  fecha  29  de  diciembre  de
+2010, donde se declara la competencia de este Tribunal para entender  en  el
+presente juicio, y a fs. 140, por A.I. N° 456 de fecha 10 de junio de  2011,
+se resuelve que existiendo hechos que probar se recibe  la  causa  a  prueba
+por todo el término de Ley. --------------------------------
+
+      QUE, a fs. 143vlto., en la providencia de  fecha  15  de  febrero  del
+2012, consta el Informe del Actuario  respecto  del  vencimiento  del  plazo
+probatorio  y  el  diligenciamiento  de  las  pruebas  de  las   partes;   a
+continuación, se llama AUTOS PARA SENTENCIA. -------------------------
+
+      ANALIZADAS  las   constancias   de   autos,  escrito   de   demanda  ,
+contestación  y   los   antecedentes   administrativos   agregados   a   los
+autos, habiendo quedado trabada la relación procesal en la  forma  descripta
+más arriba, y estando firme la providencia de fecha 15 de febrero del  2012,
+por la cual se llamó Autos para Sentencia, corresponde entrar a examinar  el
+fondo de la cuestión y resolver según lo alegado  y  probado,  conforme  los
+fundamentos que siguen.-
+
+  Y EL EXCELENTISIMO MIEMBRO DEL TRIBUNAL DE CUENTAS, PRIMERA SALA,  RODRIGO
+ESCOBAR E., prosiguió diciendo: -------
+
+QUE, del análisis  de  estos  autos,  surgen  los  siguientes  elementos  de
+convicción. ----------------------------------------------------------------
+----
+
+QUE, el Juez de Faltas de la Ciudad de Ypacarai, por S.D. Nº 362 del  20  de
+enero de 2010, resuelve CONFIRMAR, la Boleta de  Contravención  Nº  0440  de
+fecha 02 de enero  de  2009,  en  consecuencia,  determina  que  corresponde
+imputar, la sanción al propietario del ómnibus Placa ABS 803 PY, Empresa  de
+Transporte “VILLA SERRANA S.R.L.”.  Asimismo  SANCIONA  a  dicha  empresa  a
+abonar en concepto de multa la suma Gs. 1.192.114. ---------------
+
+      QUE, desde el inicio del análisis de la cuestión, se debe  puntualizar
+que esta magistratura se abocará a analizar si se ajusta o no a  derecho  la
+Resolución  emitida  por  el  Juzgado  de  faltas  de  la  Municipalidad  de
+Ypacarai, en su carácter de órgano municipal interviniente  en  la  cuestión
+traída para el análisis de esta Magistratura. Por tal motivo, al iniciar  el
+análisis de la cuestión de fondo, es oportuno señalar que existen una  serie
+de normas que se deben tener en cuenta en  torno  a  las  disposiciones  que
+toman los órganos municipales. Así, la Constitución Nacional en su  artículo
+167° se refiere al Gobierno Municipal, señalando  que  el  gobierno  de  los
+municipios estará a cargo de un Intendente y de  una  Junta  Municipal,  los
+cuales serán electos  en  sufragio  directo  por  las  personas  habilitadas
+legalmente. En el artículo  168º  expresa  que  serán  atribuciones  de  las
+municipalidades, en su jurisdicción territorial y con arreglo a  la  ley  la
+libre gestión en materias de  su  competencia,  particularmente  en  las  de
+urbanismo,  ambiente,  abasto,   educación,   cultura,   deporte,   turismo,
+asistencia  sanitaria  y  social,  instituciones  de  crédito,  cuerpos   de
+inspección y de policía (inciso 1º). Asimismo le corresponde el  dictado  de
+ordenanzas,  reglamentos  y   resoluciones   (inciso   6º);   además   serán
+atribuciones de las municipalidades, en su jurisdicción  territorial  y  con
+arreglo a la ley  (inciso  8)  la  reglamentación  y  la  fiscalización  del
+tránsito, del transporte público y la  de  otras  materias  relativas  a  la
+circulación  de  vehículos  y  las  demás  atribuciones   que   fijen   esta
+Constitución y la ley (inciso 9º) En el artículo 168 expresa que. ----------
+----------------------------------------
+
+      QUE, la Ley Orgánica Municipal Nº 1294/87, vigente al momento  en  que
+se cometió el hecho sometido a investigación administrativa y  por  el  cual
+emitió el acto administrativo Cuestionado, en su artículo 12º, al  referirse
+a las Funciones Municipales, establece en su apartado 3., b) que en  materia
+de Orden  Público  y  de  Tránsito,  tiene  como  función  la  regulación  y
+fiscalización del tránsito en calles, avenidas y demás caminos  municipales,
+incluyendo lo relativo a la seguridad y la circulación  de  vehículos  y  de
+peatones, y los requisitos de conducir para mayores de edad.  Asimismo  este
+ordenamiento legal prevé en su artículo 15º que entre las potestades  de  la
+Función Municipal podrán, de conformidad a la legislación vigente, dictar  y
+ejecutar ordenanzas, reglamentos y resoluciones; como  así  también  aplicar
+sanciones por la comisión de faltas. En su artículo 18º, al referirse a  las
+Funciones Municipales, establece en  su   inciso  i),  que  entre  ellas  se
+encuentra   la   reglamentación   y   fiscalización   del   tránsito,    del
+funcionamiento de los transportes de pasajeros, y demás  materias  relativas
+a la circulación de vehículos, y  en  su  inciso  l)  prevé  la  creación  y
+reglamentación de la Policía Municipal para el cumplimiento y el control  de
+las actividades relativas a las materias de competencia municipal.  Asimismo
+el artículo 33) prevé que para  el  mejor  tratamiento  y  análisis  de  los
+asuntos  de  su  competencia,  la  Junta  Municipal  organizará  entre   sus
+comisiones asesoras la de Seguridad y Tránsito. Por  su  parte  el  artículo
+46) establece que en las cuestiones relacionadas con Seguridad  y  Tránsito,
+son atribuciones y deberes de la Junta Municipal: a) regular lo  relativo  a
+la seguridad y la circulación de vehículos y de peatones, a  los  requisitos
+para conducir y a la  expedición  de  placas  numerativas  de  vehículos,  y
+establecer las sanciones  correspondientes;  y  c)  dictar  normas  para  la
+organización y funciones de la Policía Municipal  de  Tránsito.  También  es
+importante destacar que en su artículo 238º expresa que la  contravención  a
+las leyes,  Ordenanzas  y  Resoluciones  municipales,  será  sancionada  con
+multas,  comiso   de   mercaderías   y   clausura   total   o   parcial   de
+establecimiento, previstas en ellas. En su artículo 241º establece  que  las
+disposiciones de esta ley serán aplicables a  las  rutas  nacionales  y  los
+caminos  departamentales  en  las  partes  que  crucen  zonas   urbanas   de
+municipios.  Finalmente  se  destaca  que  el  artículo  253º  estipula   la
+derogación de la Ley N° 222 del 30 de julio de 1954,  sus  modificaciones  y
+todas las demás disposiciones contrarias a esta ley. -----------------------
+-------------
+
+      QUE, la Municipalidad de Ypacarai,  en  ejercicio  de  sus  facultades
+legales, sancionó, a través de sus  órganos  competentes,  la  Ordenanza  Nº
+015/2008, por la cual se establece “el Nuevo Reglamento General de  Transito
+para la Ciudad de Ypacarai”, el que en su artículo 26º establece  que  "....
+También  serán  imputables  al  propietario  las  faltas  cometidas  por  un
+conductor que no haya sido individualizado, salvo que aquel acredite que  el
+vehículo le fue tomado sin su conocimiento o sin su autorización  expresa  o
+táctica". Por su parte el artículo 29º expresa que el funcionario  municipal
+que constate uno o varios hechos que pudieran constituir faltas  labrara  un
+acta en el lugar, que contendrá la información siguiente: 1º)  Lugar,  fecha
+y hora del hecho o de la constatación del mismo; 2º) Nombre y domicilio  del
+imputado, en caso de que puedan ser determinados, así como de  testigos,  si
+los hubiere; 3º) Naturaleza y circunstancias del hecho y descripción de  los
+medios empleados para la comisión; 4º) La  disposición  legal  presuntamente
+infringida; 5º) La firma del funcionario  interviniente  con  aclaración  de
+nombre y cargo; y, 6º) La firma del imputado, en su defecto,  las  firmas  e
+identificación de los testigos. ------
+
+      QUE, la Ley Nº 1276/98 que establece el Régimen de Faltas  Municipales
+y el Procedimiento en materia de  Faltas  Municipales,  en  su  artículo  8º
+expresa que las personas de existencia física como las de  existencia  ideal
+son  responsables  por  las  faltas  cometidas  por  quienes  actúen  en  su
+representación o a su servicio, con su autorización o para su  beneficio,  o
+en  cumplimiento  de  funciones  o  de   labores   que   les   presten   aun
+ocasionalmente, sin perjuicio de la responsabilidad  personal  que  a  estas
+personas les correspondiera. En su artículo 11º  inciso  b)  establece   que
+entre las sanciones aplicables se encuentra la Multa,  y para la  aplicación
+de  dicha  multa  tendrá  jurisdicción  el  Juzgado  de  Faltas  Municipales
+(artículo 26º), fijando además el procedimiento que se deberá  cumplir  para
+dictar fallos en los casos que sean  sometidos  a  la  jurisdicción  de  los
+Juzgados   de   Faltas   Municipales.   Al   referirse   al    PROCEDIMIENTO
+ADMINISTRATIVO PREVIO, establece en  su  artículo  29º  que  el  funcionario
+municipal que constate uno o varios hechos que  pudieran  constituir  faltas
+labrará un acta en el lugar, que  contendrá  la  información  siguiente:  1)
+Lugar, fecha y hora del hecho o de la constatación del mismo;  2)  Nombre  y
+domicilio del imputado, en caso de que puedan ser determinados, así como  de
+testigos, si los hubiere;   3)  Naturaleza  y  circunstancias  del  hecho  y
+descripción de los medios empleados para  la  comisión;  4)  La  disposición
+legal presuntamente infringida; 5) La firma  del  funcionario  interviniente
+con aclaración de nombre y cargo; y, 6) La  firma  del  imputado  o,  en  su
+defecto, las firmas e  identificación  de  los  testigos.  El  artículo  30º
+determina que la jefatura de la dependencia interviniente remitirá  el  acta
+de intervención junto con la acusación y, en su caso, los informes  técnicos
+y demás elementos de juicio recogidos, que conforman  el  legajo  acusatorio
+que deberá ser remitido al  intendente,  para  los  casos  previstos  en  el
+Artículo 9o. o al juzgado de faltas en los  demás  casos.  El  artículo  31º
+expresa que las actas de intervención labradas regularmente y  no  refutadas
+válidamente en el proceso, serán consideradas por el  juez  como  suficiente
+prueba  de  culpabilidad.  El  acta  de  intervención  tendrá  carácter   de
+declaración  testifical  para  el  funcionario  interviniente   y  para  los
+testigos  que  la  suscribieron   mediante   la   respectiva   ratificación.
+Finalmente destacamos que el artículo 55º establece que las actuaciones  del
+Juzgado de Faltas Municipales, sus  fallos  y  los  fallos  del  intendente,
+constituirán instrumentos públicos y podrán ser ejecutadas forzosamente  por
+la vía administrativa. ------------------------
+
+     QUE, surge de las constancias de autos que, en  el  sumario  instruido
+para la averiguación y comprobación del hecho  por  el  cual  se  comete  la
+infracción de “avanzar con el semáforo en rojo”, que motivó  la  sanción  de
+multa  cuestionada,  fueron  tomados  en  cuenta  los  datos  del  Acta   de
+Contravención de Transito Nº 0003036. Según constancia obrante a fojas 19  y
+24 de autos, donde dicha pieza del  sumario  administrativo  reza  que  “los
+datos transcriptos a continuación fueron constatados  en  el  acta  original
+por el inspector en el lugar de la infracción...”.  Seguidamente  consta  1.
+El lugar fecha y hora de la infracción, 2. La descripción de  la  falta,  3.
+La disposición legal infringida, y 4. El vehículo, marca, modelo y  dominio,
+luciendo debajo de estos datos, una foto del vehículo  que  habría  cometido
+la infracción, registrada por un medio de  producción  fotográfico,  el  que
+debe ser tomado como semi plena prueba de la comprobación de la  falta,  tal
+como lo prevé el artículo1º) de la Ordenanza Nº 31/2009 de la  Municipalidad
+de Ypacarai. ---------------
+
+     QUE, a fojas 17 de autos consta el  Acta  de  Contravención  Nº  0440,
+donde se detallan: la fecha de la  infracción:  02  de  enero  de  2009,  la
+dirección  donde  se  cometió  la  infracción,  el  número  de  dominio  del
+vehículo, la Firma del inspector de Tránsito interviniente y la  descripción
+de  la  Infracción.  Sin  embargo  no  constan  los  datos  personales   del
+infractor, ni de su domicilio, ni el número  de  su  registro  de  conducir.
+Asimismo no consta la firma del infractor, ni tampoco constan las firmas  de
+testigos. ---------------------------------------------------------
+
+     QUE, a fojas 20 consta la Cedula de Notificación, en el expediente  Nº
+TR 188/09, dirigida a la Empresa  de  Transporte  y  Turismo  Villa  Serrana
+S.R.L., donde se le notifica de la instrucción del sumario y de la fecha  de
+la audiencia para el día 25 de agosto de 2009,  a  fin  de  que  la  empresa
+nombrada  comparezca,  por  si  o  por  apoderado,  a  objeto   de   prestar
+declaración indagatoria, y a ofrecer la prueba de descargo se tuviere,  bajo
+apercibimiento de que, de no hacerlo así, se tendrá  por  ciertos  el  hecho
+denunciado y se dictará sentencia sin más trámite.
+
+     QUE, a fojas 21 de autos, consta la Declaración Indagatoria, donde  se
+presenta el Representante de la citada,  Empresa  de  Transporte  y  Turismo
+Villa Serrana S.R.L., y a quien  se  le  comunica,  teniendo  en  cuenta  el
+artículo 17º incisos 5º y 7º de la Constitución Nacional, la imputación  del
+hecho de infracción de  tránsito  que  se  investiga.  Seguidamente  al  ser
+preguntado si está o no de acuerdo con el acta  de  Contravención  Nº  0440,
+461, 524,  466,  536  y  711  dijo  que  NO,  aclarando  que  “…no  está  en
+condiciones de  aceptar,  rechazar,  o  rectificar,  tanto  el  informe  del
+inspector de transito, ni los otros  documentos  agregados…”,  puntualizando
+además que la empresa no puede responder sobre la responsabilidad  o  no  de
+los conductores, cuyas culpas deben ser  dilucidadas  en  el  sumario  y  no
+precisamente con la empresa. El representante de la  empresa  señala  además
+que presenta las constancias de las notificaciones, cursada por  la  empresa
+a los conductores supuestamente Infraccionados para lo que hubiere lugar  en
+derecho y solicita además que se amplíe el  sumario  a  dichos  conductores.
+Según consta en la Indagatoria,  el  representante  de  la  empresa  adjunta
+documentación que ya había presentado anteriormente en el Juzgado de  faltas
+del Municipio. ---------
+
+     QUE, la S.D. Nº 362 del 20 de enero de 2010 del Juzgado de  Faltas  de
+la Municipalidad de Ypacarai, obrante  a  fojas  25,  en  sus  considerando:
+expresa que  se  instruyo  el  correspondiente  sumario  en  averiguación  y
+comprobación de la supuesta infracción, señalándose la  audiencia  para  que
+el  Propietario  de  la  Empresa  de  Transporte  “VILLA  SERRANA   S.R.L.”,
+comparezca  por  si  o  por  apoderado  a  objeto  de  prestar   Declaración
+Indagatoria, y ofrecer en la misma sus pruebas de descargo si  las  tuviere.
+Asimismo sostiene el fallo que la  Boleta  de  Contravención  da  inicio  al
+presente sumario y “…dicho documento al ser  confeccionado  por  un  oficial
+público con facultad legal para ello, reviste  el  carácter  de  Instrumento
+Público, a la luz de lo dispuesto en los  Artículo  375  y  376  del  Código
+Civil Paraguayo, y por lógica consecuencia hace plena  fe  mientras  no  sea
+redargüido de falso, en ese  sentido  cabe  destacar  que  el  representante
+legal de la Empresa Villa Serrana S.R.L., en su declaración solo  se  limitó
+a negar la responsabilidad  de  la  referida  empresa,  sin  embargo  no  ha
+aportado pruebas que puedan refutar la comisión de la infracción, , de  esta
+forma corresponde  confirmar  la  Boleta  de  Contravención…”.  ------------
+
+
+     QUE, analizados  los  diferentes  elementos  aportados  al  expediente
+administrativo, debemos concluir que, la intención del órgano municipal,  de
+comprobar la comisión de la falta de tránsito consistente  en  “avanzar  con
+semáforo  en  rojo”,  por  un  único  medio,  en  este  caso,  con  la  sola
+reproducción  fotográfica,  deviene  improcedente,  ya  que  como  bien   lo
+determina el artículo 1º de la  Ordenanza  Nº  31/2009,  “…  las  faltas  de
+tránsito, …que puedan comprobarse por medios  de  reproducción  fotográfico,
+filmaciones y  similares,  servirán  de  semi-plena  prueba…”.  Atento  esta
+normativa el Juzgado de falta debió reunir  otras  pruebas  que  unidas,  al
+medio  de  producción  fotográfico,  puedan  determinar   objetivamente   la
+existencia del hecho que constituye la falta de transito, y que el mismo  se
+produjo de la forma en que se refleja en el la placa fotográfica  tomada  al
+vehículo que aparece en  la  misma.  Más,  cuando  el  representante  de  la
+empresa al  asistir  a  la  Declaración  Indagatoria  no  ha  reconocido  la
+existencia del hecho lo que torna al mismo en  controvertido.  La  Ordenanza
+citada al expresar que el medio  de  reproducción  fotográfico,  servirá  de
+semi-plena prueba, esta significando  que  dicho  medio  fotográfico  no  se
+basta por si solo para demostrar los hechos controvertidos en el proceso,  y
+necesita de otros elementos de prueba  para  poder  demostrar  objetivamente
+como ocurrieron los hechos debatidos en el proceso. -
+
+     QUE, por otra parte en la placa más ampliada de la fotográfica aparece
+un vehículo de frente donde debería divisarse  correctamente  el  número  de
+placa de dominio o número de chapa, cosa que  no  se  ve  claramente  en  la
+copia glosada al expediente contencioso administrativo, lo que dificulta  la
+tarea de análisis de esta magistratura. No obstante si coincidiéramos  todos
+en que el Número de  Dominio  es  el  que  figura  escrito  sobre  la  placa
+fotográfica esto es, ABS803,  en  dicha  placa  fotográfica  central  y  más
+ampliada, no se observa si el vehículo está pasando o no la  luz  roja,  por
+lo tanto, por si sola, no sirve para la determinación objetiva de si pasó  o
+no la luz roja. Sin embargo en las tres imágenes más pequeñas sí aparece  el
+semáforo, y supone esta magistratura, ya que en la  copia  de  autos  no  se
+distingue claramente, que se ve cuando un vehículo: 1º) va a pasar,  2º)  ya
+avanzó, y 3º) ya se alejó con luz roja. El inconveniente que vemos  en  este
+sistema, es que no se ve, en forma normal o ampliada el Número de Dominio  o
+número de chapa del vehículo que está  pasando  la  luz  roja  y  se  aleja.
+Conforme lo que se está planteando, no hay  forma  de  relacionar,  en  este
+sistema de presentación de las fotos tomadas por este medio mecánico, ni  de
+comprobar solo por estas fotos, que el vehículo que aparece  de  frente  con
+el número de chapa visible, es el mismo vehículo que  está  pasando  la  luz
+roja en las tres secuencias fotográficas  más  pequeñas,  ya  que  en  dicho
+vehículo no se divisa el Número de Dominio o número de chapa. --------------
+--------------------------------------------
+
+     QUE, el artículo 8º de la ley 1276/98 determina que  las  personas  de
+existencia física como las de existencia  ideal  son  responsables  por  las
+faltas cometidas por quienes actúen en su representación o  a  su  servicio,
+con su autorización o para su beneficio, o en cumplimiento  de  funciones  o
+de  labores  que  les  presten  aun  ocasionalmente,  sin  perjuicio  de  la
+responsabilidad personal que a estas personas les  correspondiera.  Asimismo
+la Ordenanza Nº 015/2008, por la cual  se  establece  “el  Nuevo  Reglamento
+General de Transito  para  la  Ciudad  de  Ypacarai”,  en  su  artículo  26º
+establece que ".... También  serán  imputables  al  propietario  las  faltas
+cometidas por un conductor que  no  haya  sido  individualizado,  salvo  que
+aquel acredite que el vehículo le fue tomado sin su conocimiento  o  sin  su
+autorización expresa o táctica". Lo que  estas  normas  están  aplicando  al
+responsable que tiene  a  cargo  un  dependiente,  es  el  Principio  de  la
+Responsabilidad Objetiva, o sea la  Responsabilidad  del  Principal  por  el
+hecho del Dependiente. ------------
+
+     QUE, respecto de esta atribución de responsabilidad al principal, o en
+este caso  concreto  al  empleador  (Empresa  de  Transporte  Villa  Serrana
+S.R.L.), requiere que previamente se  condene  al  dependiente,  ya  que  la
+responsabilidad subjetiva,  en  este  caso  es  del  chofer  que  comete  la
+infracción, y una vez determinada esta responsabilidad subjetiva del  mismo,
+nace la obligación objetiva del empleador de responsabilizarse de  la  falta
+cometida  por  el  dependiente,  o  en  este  caso   de   quien   actúa   en
+representación de la empresa, tal como lo prevé el artículo  8º  de  la  ley
+1276/98  que  es  jerárquicamente  superior  a  la  Ordenanza  015/2008.  El
+artículo  26º  de  dicha  Ordenanza  establece  que  "....   También   serán
+imputables al propietario las faltas cometidas por un conductor que no  haya
+sido individualizado, salvo que  aquel  acredite  que  el  vehículo  le  fue
+tomado sin su conocimiento o sin su  autorización  expresa  o  táctica".  En
+este caso concreto el conductor,  empleado  de  la  Empresa,  es  fácilmente
+individualizable, ya que con un simple pedido de informe a  la  empresa,  es
+posible individualizar al mismo, para seguidamente llamarlo al proceso  y  a
+partir de allí determinar la responsabilidad del chofer dependiente, da  tal
+forma de hacer nacer la responsabilidad objetiva  del  empleador,  tal  como
+está previsto en  el  artículo  8º  de  la  ley  1276/98.  Evidentemente  la
+Municipalidad de  Ypacarai  al  sancionar  el  artículo  26º  de  la  citada
+Ordenanza, quiso seguir el camino más sencillo de condenar al principal  sin
+necesidad de individualizar al dependiente, en este caso  el  conductor  del
+vehículo, lo que constituye un aplicación errónea del artículo 8º de la  ley
+1276/98 que es la norma de mayor jerarquía aplicable al  caso  concreto  que
+se ventila en esta instancia Contencioso Administrativa. En  todo  caso,  el
+juez de faltas debe  demostrar  en  el  expediente  que  individualizado  el
+propietario del vehículo, y  habiendo  éste  negado  que  cometió  la  falta
+personalmente, se agotaron las diligencias pertinentes  para  individualizar
+al conductor y al no lograrlo, sí condenar al propietario. Téngase  presente
+que el Representante de la Empresa en la  Declaración  Indagatoria  solicito
+que se amplíe el sumario a los conductores y  aporto  documentación  de  los
+mismos,  expresando  que  la  empresa  trasmitió  la  notificación   a   los
+conductores  acompañando  dichas  notificaciones,  que  la  responsable  del
+Juzgado de faltas, ni siquiera agregó al expediente administrativo, pues  en
+la documentación recibida por este Tribunal,  no  consta  la  documentación,
+que el representante de  la  empresa  manifiesta  haber  acompañado,  en  su
+Declaración Indagatoria. De acuerdo a lo manifestado, el Juzgado  de  faltas
+sencillamente   podría   haber   citado   a   los   choferes,   fijando   la
+responsabilidad de los mismos, dando nacimiento  así  a  la  responsabilidad
+objetiva del empleador, responsabilidad consagrada por el artículo 8º de  la
+ley 1276/98. Si el Juzgado de Faltas de  la  Municipalidad  de  Ypacarai  no
+actuó de la forma señalada, se excedió en la aplicación de lo dispuesto  por
+el artículo 8º de la ley 1276/98, lo que significa  que  se  excedió  en  la
+aplicación de sus facultades Regladas, lo que constituye  una  violación  al
+Principio de legalidad que la administración debe  tener  en  cuenta  en  su
+accionar.----
+
+     QUE,  la  obligación  de  indemnizar  que  le  incumbe  al  patrono  o
+comitente, surge de un principio muy antiguo,  no  exento  de  cierto  matiz
+moral, que dispone: “está  en  la  conciencia  de  todos  la  obligación  de
+responder por los actos de las personas que dependen de uno, puesto que  los
+hechos del dependiente se disponen para una  acción  lícita  y  útil,  y  el
+mismo hecho ilícito está evidenciando la frustración de esta finalidad”.  No
+obstante a pesar de este consenso hay grandes discrepancias acerca  de  cuál
+es  el  verdadero  fundamento  y  de  donde  surge  la  responsabilidad  del
+principal. --------------------------------------
+
+     QUE, con el fin de fundamentar la Responsabilidad objetiva, es  decir,
+la responsabilidad del principal por  los  hechos  del  dependiente  se  han
+esbozado muchas teorías: ----------------------------------------------
+
+      a) Teoría de laCulpa in  eligendo  o  in  vigilando:  Fue  la  que  se
+desarrolló en  un  primer  momento  y  que  en  la  actualidad  ya  ha  sido
+desechada. Estas teorías atribuían responsabilidad al principal en  base  al
+reproche de la mala elección del subordinado, la mala vigilancia, o ambas  a
+la vez, pero resultaron insuficientes para explicar supuestos en los que  el
+principal no elige al dependiente o no ejerce un poder de vigilancia, y  sin
+embargo no es justo desobligarlo frente a  los  requerimientos  de  justicia
+que se plantean en  la  actualidad.  Se  dice,  además,  con  razón  que  su
+fundamento es una pura  ficción,  habida  cuenta  que  no  hay  elección  ni
+vigilancia que pueda impedir ciertos hechos dañosos, por más empeño  que  en
+ello se ponga. Sus principales sostenedores se inspiraban  en  el  principio
+contenido en el Código de Napoleón  “pas  de  responsabilitésansfaute”,  más
+allá de que su artículo 1384  atinente  a  la  responsabilidad  refleja  del
+principal no hace mención a la culpa. Pero al desembocar en iure et de  iure
+la presunción de la culpa del principal en  su  elección  o  vigilancia,  es
+decir sin admitirse prueba en contrario, esto derivó en  una  mera  ficción,
+pues la culpa del principal, regularmente, no explica el porqué de su  deber
+de responder. Es por ello  que  ante  el  indubitable  carácter  objetivo  e
+inexcusable de la responsabilidad del principal esta teoría ha  devenido  en
+abstracta y no alcanza para explicar los fundamentos en los que se  inspira.
+-----------------------------------------------------------------------
+
+b)  Teoría  del  Riesgo  creado:  Esta  corriente,  integrada   por   Borda,
+MossetIturraspe, Zavala de González, entre  otros,  encuentra  apoyo  en  el
+riesgo creado, "en  razón  del  peligro  de  daños  que  pueden  causar  las
+personas  bajo  dependencia"  cuyas  conductas  son  siempre  ingobernables.
+También cierta jurisprudencia ha hecho eco de esta doctrina.  Dicha  postura
+encontró apoyo en la noción de riesgo de la empresa,  traduciéndose  en  que
+el empresario debe hacerse cargo de los daños provocados en el ejercicio  de
+la empresa de la cual obtiene provecho, daños  que  se  le  transfieren  por
+diversas razones, como ser la mayor capacidad económica para soportarlo,  la
+facilidad con la cual podrá recuperar la suma gastada para el  resarcimiento
+aumentando  los  precios,  el  hecho  del  todo  lógico  de  que  los  daños
+extracontractuales así como también el  desgaste  o  envejecimiento  de  las
+Máquinas y su renovación  se  incluyen  en  el  pasivo  de  la  empresa.  No
+obstante se le refuta que es un criterio insuficiente por el  hecho  de  que
+no todos los principales son empresarios e inexacto porque no  se  trata  de
+una responsabilidad puramente objetiva, como supone asentarla en el  riesgo,
+toda vez que, como  regla  el  hecho  del  dependiente  debe  ser  doloso  o
+culposo, amén de que el principal tiene abierta  la  vía  de  la  repetición
+contra el dependiente.--------------------------------------------
+
+c) Teoría de la Representación: Esta postura reconoce el  fundamento  en  la
+circunstancia de que  el  dependiente  actúa  por  cuenta  y  a  nombre  del
+principal.  Fue  sostenida  por  alguna  doctrina  aislada.  Su  origen   se
+identifica en el viejo adagio “quifacit per aliumfacit per se” (quien  actúa
+mediante otros actúa para sí). Su crítica es ostensible si  se  entiende  el
+fenómeno de la representación en sentido rigurosamente voluntario,  pues  el
+acto doloso o culposo del dependiente no  fue  objeto  del  encargo  por  el
+principal.---------------------------------------------------------------
+
+d) Teoría de la ampliación de la esfera de  acción:  Es  una  derivación  un
+poco más elaborada que pretende subsanar las críticas que se le han hecho  a
+la postura que encuentra el fundamento de la responsabilidad  del  principal
+en la representación, aunque en rigor de  verdad  continua  vinculada  a  la
+idea de ella y por ende es susceptible de iguales críticas.-----------------
+---------------------------------------------
+
+e) Teoría de laGarantía: Contemporáneamente, puede afirmarse que  la  teoría
+con mayor predicamento concibe al deber del principal  como  una  obligación
+legal de garantía, al sostener que "la  ley  constituye  al  principal,  por
+razones de prácticas y  de  justicia,  en  garante  de  las  culpas  de  sus
+subordinados en el ejercicio de sus funciones. Existe un interés  social  en
+proteger a la  víctima  frente  a  quien  extiende  su  marco  de  actividad
+recurriendo al auxilio de terceros. En el marco de la sociedad moderna,  con
+la evidencia de la potenciación de los riesgos y de  la  insolvencia  de  un
+gran número de responsables, se plantea la necesidad  de  garantizar  a  los
+terceros (dentro de límites razonables) por la acción  eventualmente  dañosa
+de quienes actúan en  el  interés  de  otros.  Por  ello,  Cazeaux  y  Trigo
+Represas expresan que esta teoría "tiene un evidente sustento de equidad  ya
+que la ley, mediante  valoraciones  sociales  que  anticipa  el  legislador,
+impone determinados deberes que tienden al  mantenimiento  de  equilibrio  y
+concreción de la justicia en el caso concreto. A más que no se trata de  una
+Condenación a inocentes, sino una especie de anticipo de la  reparación  que
+se brinda a la víctima”. En las IV Jornadas Provinciales de  Derecho  Civil,
+Comercial y Procesal, de  la  República  Argentina,  se  votó  la  siguiente
+recomendación: "la responsabilidad por el hecho del dependiente (art.  1113,
+párr.  1,  Cód.  Civil)  es  indirecta  y  objetiva.  El  fundamento  es  la
+garantía".  Esta  concepción  es  la  que  se   viene   imponiendo   en   la
+jurisprudencia Argentina, y en base a  la  misma  se  interpreta  con  mayor
+laxitud la configuración de los presupuestos. Resta señalar  que,  con  esta
+última teoría se explicaría adecuadamente  el  carácter  inexcusable  de  la
+responsabilidad del principal y la  acción  recursoria  admitida  contra  el
+autor directo del daño, en virtud del art. 1123 del Código Civil  Argentino.
+En suma como expone el profesor francés  FrancoisChabas,  después  de  citar
+las disposiciones del artículo 1113 del Código Civil Argentino  y  del  art.
+1384 del Código Civil Francés, el  principal  "No  responde  por  su  propia
+responsabilidad sino que garantiza la responsabilidad ajena. En  verdad,  es
+simplemente una caución solidaria". ----------------------------------------
+--------------------------
+
+      QUE, nuestro Código Civil Paraguayo en su artículo 98º prevé que  “las
+personas jurídicas responden del daño que los actos  de  sus  órganos  hayan
+causado a terceros, trátese de una acción u omisión  y  aunque  sea  delito,
+cuando los hechos han sido ejecutados en el ejercicio de sus funciones y  en
+beneficio de la entidad. Dichos actos responsabilizan  personalmente  a  sus
+autores con relación a la persona jurídica. Responden también  las  personas
+jurídicas por los daños que causen sus dependientes o las cosas  de  que  se
+sirven, conforme a las  normas  de  este  Código”.  Asimismo  al  tratar  LA
+RESPONSABILIDAD POR HECHO AJENO, en el artículo 1842º establece que “el  que
+cometiere un acto ilícito actuando bajo la dependencia  o  con  autorización
+de otro,  compromete  también  la  responsabilidad  de  éste.  El  principal
+quedará exento de responsabilidad si prueba  que  el  daño  se  produjo  por
+culpa de la víctima o por caso fortuito. También es importante destacar  que
+el Código Civil se refiere a la  Responsabilidad  Objetiva  del  Estado,  al
+establecer en  su  artículo  1845º  que  “las  autoridades  superiores,  los
+funcionarios y empleados públicos del Estado, de las Municipalidades, y  los
+entes de Derecho Público serán responsables, en forma  directa  y  personal,
+por los actos ilícitos cometidos en  el  ejercicio  de  sus  funciones.  Los
+autores  y  copartícipes  responderán   solidariamente.   El   Estado,   las
+Municipalidades y los entes de Derecho Público responderán  subsidiariamente
+por ellos en caso de insolvencia de éstos. --------------
+
+      QUE, también la Constitución  Nacional  establece  la  responsabilidad
+objetiva del Estado, en el grado de subsidiaria, ya que en su artículo  106º
+ al establecer LA RESPONSABILIDAD DEL FUNCIONARIO Y  DEL  EMPLEADO  PUBLICO,
+expresando que  “ningún  funcionario  o  empleado  público  está  exento  de
+responsabilidad. En los  casos  de  transgresiones,  delitos  o  faltas  que
+cometiesen  en  el   desempeño   de   sus   funciones,   son   personalmente
+responsables, sin perjuicio de la responsabilidad  subsidiaria  del  Estado,
+con derecho de éste a repetir el pago de lo que llegase a abandonar  en  tal
+concepto”.  Evidentemente  nadie  pensaría  que  se  puede   responsabilizar
+directamente al Estado, sin  antes  de  Determinar  la  responsabilidad  del
+funcionario. -----------------------------
+
+      QUE, por lo expuesto, se entiende que para que  nazca  esa  obligación
+de garantía del principal por los hechos del dependiente, necesariamente  se
+debe establecer previamente la responsabilidad del dependiente, extremo  que
+el Juzgado de Faltas no concretó, por lo que no  puede  válidamente  aplicar
+multa alguna a la Empresa empleadora del conductor  del  vehículo  propiedad
+de la Empresa  Villa  Serrana  S.R.L.,  hasta  tanto  no  se  establezca  la
+responsabilidad del  conductor.  Al  no  establecerse  la  culpabilidad  del
+conductor, no se cumplieron  los  postulados  del  artículo  8º  de  la  ley
+1276/98, que determina que las personas de existencia  física  como  las  de
+existencia ideal son responsables  por  las  faltas  cometidas  por  quienes
+actúen en su representación o a su servicio, con su autorización o  para  su
+beneficio, o en cumplimiento de funciones o de labores que les  presten  aun
+ocasionalmente, sin perjuicio de la responsabilidad  personal  que  a  estas
+personas les correspondiera. Por  lo  tanto  mientras  no  se  determine  la
+responsabilidad personal del dependiente, que actuó  en  representación  del
+principal, no nace, la obligación de garantía  del  principal,  empleador  o
+propietario del vehículo. Por lo tanto  la  aplicación  de  la  multa  a  la
+empresa Villa  Serrana  S.R.L.,  deviene  totalmente  improcedente  por  los
+fundamentos hasta aquí expresados, habiendo, el  Juzgado  de  Faltas  de  la
+ciudad de Ypacaraí, violado el Principio de Legalidad  al  excederse  en  la
+aplicación de sus facultades regladas por el artículo 8º de la ley  1274/98.
+------------------------------------------------
+
+      QUE, el principio de Legalidad se basa  en  la  exigencia  de  que  la
+actuación  de  la  Administración  se  realice   de   conformidad   con   el
+ordenamiento positivo. El principio de legalidad se traduce en la  exigencia
+de que el accionar de la  Administración  se  realice  de  acuerdo  con  las
+normas y valores del sistema jurídico, como  forma  de  garantizar  que  los
+organismos del estado actúen de acuerdo a la finalidad de  bien  común  para
+la que fueron creados. El Principio de Legalidad ha  sido  recepcionado  por
+la Constitución Nacional en su artículo 257° al expresar  que  “los  órganos
+del Estado se subordinan a los dictados de la ley…”. El  equilibrio  al  que
+deben propender  las  relaciones  entre  el  particular  administrado  y  la
+Administración Pública requiere un justo y eficaz sistema de  garantías  que
+compensen la situación de desigualdad en la que se encuentra  el  particular
+frente al  Estado.  El  fundamento  de  este  sistema  de  garantías  es  la
+realización de la justicia distributiva del bien común –libertad,  igualdad,
+etc.- entre los particulares. La sujeción de  la  Administración  a  la  ley
+constituye uno de  los  principios  capitales  del  Estado  de  Derecho.  El
+nacimiento del Principio de legalidad se debe al pensamiento  revolucionario
+de 1789, que, al modificar la concepción del  antiguo  régimen,  estableció,
+en sus últimas consecuencias, que la Administración Pública no deriva de  la
+emanación personal del  soberano,  sino  que  se  origina  en  una  creación
+abierta del derecho y que, a su vez, se encuentra sometida a  una  legalidad
+objetiva, que puede ser invocada por los particulares  mediante  un  sistema
+de recursos y acciones que se transforman en una haz de derechos  subjetivos
+públicos  (TOMAS  HUTCHINSON  “REGIMEN  DE  PROCEDIMIENTOS  ADMINISTRATIVOS”
+editorial Astrea 2da. Edición actualizada – 1994”). -
+
+     QUE, el concepto de Legalidad se encuentra vinculado  al  concepto  de
+COMPETENCIA  por  el  cual  la  norma  administrativa  le  confiere   a   la
+Administración un determinado mandato y la  administración  debe  actuar  de
+acuerdo a ese  mandato  plasmado  en  la  norma  positiva,  por  lo  que  la
+administración no  está  autorizada  a  obrar  en  un  sentido  distinto  al
+señalado por la norma, si actúa en forma diferente a  lo  que  le  manda  la
+norma está violando el principio de legalidad.  Dentro  de  nuestro  sistema
+legal la Administración puede ser fuente del ordenamiento  administrativo  a
+través de su potestad reglamentaria,  esto  significa  que  está  habilitada
+para dictar reglamentos, en este caso  Ordenanzas,  resoluciones  y  también
+para derogarlos, pero una vez dictado un reglamento o  una  resolución  debe
+cumplir obligatoriamente las normas que la administración misma creó,  salvo
+que las derogue expresamente, por lo tanto del  Principio  de  Legalidad  se
+deriva la prohibición  de  que  la  Administración  Pública  no  cumpla  las
+regulaciones  normativas  producidas  por  ella  misma.  “El  principio   de
+legalidad, derivado del Estado de derecho, viene ha convertirse  en  el  eje
+central del régimen jurídico de la Administración Pública, ya  que  en  caso
+de su infracción se justifica  el  conjunto  de  medios  arbitrados  por  el
+derecho para restablecer el derecho violado” (MANUEL MARIA DIEZ, “Manual  de
+derecho Administrativo Tomo 2” editorial Plus Ultra 1985). -----------------
+------------------------------------------------------
+
+      QUE, respecto al Acta de Contravención de Transito Nº 0440, el  propio
+fallo del Juzgado de Faltas de la Municipalidad de Ypacarai, dice que es  la
+que da inicio al Sumario Administrativo en cuestión. Dicha Acta,  obrante  a
+fs., 18, en el ítem correspondiente a DATOS DE  LAS  FALTAS  CONTRAVENCIONES
+ORDENANZA 15/2008, consta marcado el casillero correspondiente a “Cruzar  la
+Bocacalle cuando el semáforo tiene luz roja encendida”. La  ley  1276/98  en
+su  artículo  29º  detalla  los  requisitos  que  debe  tener  el  Acta   de
+Contravención, determinando que “el funcionario municipal que  constate  uno
+o varios hechos que pudieran constituir faltas labrará un acta en el  lugar,
+que contendrá la información siguiente: 1) Lugar, fecha y hora del  hecho  o
+de la constatación del mismo;  2) Nombre y domicilio del imputado,  en  caso
+de que puedan ser determinados, así como de testigos, si  los  hubiere;   3)
+Naturaleza y circunstancias del hecho y descripción de los medios  empleados
+para la comisión; 4) La disposición legal presuntamente  infringida;  5)  La
+firma del funcionario interviniente con Aclaración de nombre y cargo; y,  6)
+La firma del imputado o, en su defecto, las firmas e identificación  de  los
+testigos. Efectivamente tal como dice el fallo del  Juzgado  de  Faltas,  al
+referirse al Acta de Contravención: “…dicho documento al  ser  confeccionado
+por un oficial público con facultad legal para ello, reviste el carácter  de
+Instrumento Público, a la luz de lo dispuesto en los Artículo 375 y 376  del
+Código Civil Paraguayo, y por lógica consecuencia hace plena fe mientras  no
+sea redargüido de falso, en ese sentido cabe destacar que  el  representante
+legal de la Empresa Villa Serrana S.R.L., en su declaración solo  se  limitó
+a negar la responsabilidad  de  la  referida  empresa,  sin  embargo  no  ha
+aportado pruebas que puedan refutar la comisión de la infracción, , de  esta
+forma corresponde confirmar la Boleta de Contravención…”.Pero  esa  Acta  de
+Contravención confeccionada por un oficial público con facultad  legal  para
+ello, para convertirse en Instrumento Público debe  contener  todos  y  cada
+uno de los requisitos señalados en el artículo 29° de  la  ley  1274/98,  si
+falta uno de los requisitos enumerados, el Acta  de  Contravención  no  está
+revistiendo la forma prescripta por la ley, por lo tanto se convierte en  un
+acto nulo, por aplicación del artículo 357° inciso c) del Código Civil. ----
+---------
+
+     QUE, el Acta de Contravención de Transito Nº 0440, no cumple  con  las
+pautas fijadas en el artículo 29° de la  Ley  1274/98,  ya  que  según  este
+artículo “el funcionario municipal que constate  uno  o  varios  hechos  que
+pudieran constituir faltas labrará un acta en el  lugar,  que  contendrá  la
+información siguiente: …, 2) Nombre y domicilio del  imputado,  en  caso  de
+que puedan ser determinados, así como de testigos, si los hubiere; …, 6)  La
+firma del imputado o, en su defecto, las  firmas  e  identificación  de  los
+testigos. Por lo tanto, además del medio de producción fotográfica que  solo
+servirá de semi-plena prueba (artículo 1° de la Ordenanza  N°  31/2009,  fs.
+45), debe estar en el lugar un funcionario municipal que constate  el  hecho
+que pudiera constituir falta y labrará en el lugar un acta que deberá  tener
+nombre y domicilio del imputado, la firma del mismo  y  si  no  pudiera  ser
+determinado el infractor, o este se negara a firmar el acta, el  funcionario
+deberá por lo menos identificar a dos testigos, ya que  la  ley  utiliza  el
+plural, que además deberán firmar el acta. Esta exigencia de testigos  tiene
+una doble finalidad, como primera finalidad establecer  que  el  funcionario
+está labrando el acta en el lugar y como segunda finalidad que, en el  lugar
+de  la  infracción,  no  se  ha  podido  identificar  al  infractor  o  que,
+identificado, este se negó a firmar.-----------------
+
+     QUE, si es que no se puede identificar al infractor, en el  lugar  del
+hecho o este se niega a firmar, y no consta en el acta la  identificación  y
+firmas de testigos, no solo está faltando un requisito esencial en el  acta,
+sino  que  no  se  puede  determinar  si  el  funcionario  municipal  estuvo
+realmente en el lugar de la infracción y constató la  misma,  por  lo  tanto
+cae la presunción de legitimidad relativa del acto del funcionario  público,
+que según consta,  en  la  parte  superior  de  la  foto  del  vehículo  que
+supuestamente comete la infracción, “los datos transcriptos  a  continuación
+fueron constatados en el acta original por el Inspector en el  lugar  de  la
+infracción…”.Este  hecho  que  afirma  la  citada  actuación  administrativa
+municipal, no está corroborado por la firma del infractor ni por la firma  e
+identificación de testigos que deberían estar en el lugar de  la  infracción
+con el funcionario municipal que deben confirmar con sus firmas  que  no  se
+pudo  identificar  al  infractor  en  el  lugar  de  la  infracción  o   que
+identificado se negó a firmar. Al no contener, el acta de  Contravención  de
+transito  N°  0003036,  estos  requisitos  expresamente  detallados  en   el
+artículo 29° de la ley 1274/98, tornan a dicha Acta nula por no revestir  la
+forma prescripta por la ley (artículo 357° inciso c) del Código Civil). ----
+------------------------------------------
+
+     QUE, el sistema de  nulidades  consagrado  en  nuestro  Código  Civil,
+establece en el artículo 355°  que  las  únicas  nulidades  que  los  jueces
+pueden declarar son las que expresa o implícitamente se  establece  en  este
+Código. El artículo 356° determina que los actos nulos no producen  efectos,
+aunque su nulidad no haya sido juzgada, salvo que la causa de la nulidad  no
+aparezca en el acto, en  cuyo  caso  deberá  comprobarse  judicialmente.  El
+citado artículo 357° prevé que es  nulo  el  acto  jurídico:  a)  cuando  lo
+hubiere realizado un incapaz por falta de discernimiento; b) si  el  acto  o
+su objeto fueren ilícitos o imposibles; c) en caso de no revestir  la  forma
+prescripta  por  la  ley;  d)  si  dependiendo  su  validez  de   la   forma
+instrumental, fuese nulo el instrumento respectivo; y e)  cuando  el  agente
+procediese con simulación o fraude presumidos por la ley. ------------------
+-------------
+
+     QUE, la ley  1274/98  al  referirse  al  PROCEDIMIENTO  ADMINISTRATIVO
+PREVIO, establece en su artículo 31º que las actas de intervención  labradas
+regularmente y no refutadas válidamente en el  proceso,  serán  consideradas
+por el juez como suficiente prueba de culpabilidad. El acta de  intervención
+tendrá carácter de declaración testifical para el funcionario  interviniente
+  y  para  los  testigos  que  la  suscribieron   mediante   la   respectiva
+ratificación. Por lo tanto, aunque el imputado no haya redargüido  de  falsa
+el  Acta  de  contravención  de  transito  N°  0003036,  ésta   debe   estar
+confeccionada regularmente, ya que si no lo está, no podrá  ser  considerada
+por el juez como suficiente prueba de culpabilidad. Si  bien  el  fallo  del
+Juzgado de Faltas de  la  Municipalidad  de  Ypacarai,  expresa  que  “…  el
+representante legal de la Empresa Villa Serrana S.R.L.,  en  su  declaración
+solo se limitó a negar  la  responsabilidad  de  la  referida  empresa,  sin
+embargo no ha  aportado  pruebas  que  puedan  refutar  la  comisión  de  la
+infracción…”, el Acta de Contravención de  transito  citada,  no  puede  ser
+confirmada, pues no ha sido labrada regularmente, y al no revestir la  forma
+prescripta por la ley (artículo 357 inciso c) del Código  Civil),  es  nula,
+por lo  tanto  esta  Magistratura  debe  declarar  la  nulidad  de  Acta  de
+Contravención de  transito  N°  0003036,  por  los  fundamentos  hasta  aquí
+expuestos. ---------------------------------------
+
+     QUE, asimismo el fallo del Juzgado de Faltas de  la  Municipalidad  de
+Ypacarai, al referirse  al  Acta  de  Contravención  N°  0440,  expresa  que
+“…dicho documento al ser confeccionado por un oficial público  con  facultad
+legal para ello, reviste el carácter de Instrumento Público, a la luz de  lo
+dispuesto en los Artículo 375 y  376  del  Código  Civil  Paraguayo,  y  por
+lógica consecuencia hace plena fe mientras no sea redargüido de falso…”.  En
+este sentido ya se dijo que aunque, el Acta de  Contravención,  no  se  haya
+redargüido de falsa, ésta debe ser confeccionada regularmente (artículo  31°
+ley 1274/98), y si no lo está y además no reviste la  forma  prescripta  por
+la ley (artículo 357 inciso c) del Código Civil), es nula. También  se  debe
+puntualizar que justamente el artículo 375° del Código Civil,  en  su  parte
+pertinente expresa que “son  instrumentos  públicos:  …  b)  cualquier  otro
+instrumento que autoricen los escribanos o  funcionarios  públicos,  en  las
+condiciones  determinadas  por  las  leyes…”,  y  como  vimos,  el  Acta  de
+Contravención de transito N° 2448, no  reúne  las  condiciones  determinadas
+por el  artículo  26°  de  la  ley  1274/98,  por  lo  tanto  no  puede  ser
+considerada Instrumento Público. Por otra parte el artículo 376° del  Código
+Civil, al referirse a la validez del instrumento público, establece  que  el
+mismo requiere: “…c) que llenadas las formas legales, contenga la firma  del
+funcionario autorizante, así como  las  de  todos  los  que  aparezcan  como
+partes o testigos necesarios de él. Si alguna de  las  personas  mencionadas
+no lo suscribiere, carecerá de valor para todos…”. Por lo tanto, el Acta  de
+Contravención en cuestión, al no tener la firma del infractor, esto  es,  al
+no contener la firma de una de las partes y  al  no  contener  la  firma  de
+testigos necesarios en el Acta, la misma carece, para todos, de  valor  como
+instrumento  público.  Asimismo  el  artículo  377°  expresa  que   “…   son
+instrumentos nulos: … c) los que no  llenaren  las  condiciones  prescriptas
+para la validez del instrumento público…”. Por lo tanto se reafirma que,  el
+Acta de contravención, al no llenar  las  condiciones  prescriptas  para  la
+validez del Instrumento Público,  es  un  instrumento  nulo.  Es  importante
+mencionar el artículo 379° del  Código  Civil,  el  que  señala  que  “…  el
+instrumento autorizado por  oficial  incompetente,  o  que  no  tuviere  las
+formas legales, valdrá, sin embargo, como documento privado, si lo  hubieren
+suscripto las partes. Es decir que el Acta de Contravención, al no  revestir
+las condiciones prescriptas para la validez del Instrumento Público,  podría
+valer como Documento Privado, si lo hubiesen suscripto las partes.  En  este
+caso como una de las partes no la firmó, o  sea,  no  consta  la  firma  del
+infractor, dicha Acta de Contravención no tiene, ni siquiera,  el  valor  de
+Documento Privado.-----
+
+      QUE, como  señala  el  maestro  Salvador  VillagraMaffiodo,  el  “Acto
+Administrativo es irregular cuando  viola  la  Constitución,  la  ley  o  el
+reglamento.   Para   no   decir    que    es    inconstitucional,    ilegal,
+antirreglamentario, decimos simplemente que  es  irregular”  (PRINCIPIOS  DE
+DERECHO ADMINISTRATIVO  –  4ta.  Ediciónión  actualizada.  Página  119).  Es
+propio del orden jurídico que su violación sea  sancionada,  en  el  Derecho
+Administrativo la sanción del acto irregular consistirá en la invalidez  del
+Acto Administrativo. --------
+
+      QUE, la invalidez del acto administrativo  se  traduce  en  diferentes
+clases o categoría de nulidades, tanto en la legislación comparada  como  en
+la doctrina existen gran diversidad  de  clasificaciones  de  nulidades.  El
+Profesor VillagraMaffiodo, sostiene que la  categoría  que  distingue  entre
+nulidad y anulabilidad es la clasificación o categoría más aceptadas  en  la
+doctrina y constituyen el eje  del  régimen  de  las  nulidades  de  nuestro
+Código Civil Paraguayo. Efectivamente, las  únicas  categoría  de  nulidades
+receptada por nuestro Código Civil en los artículos  355  a  365  es  la  de
+actos NULOS y actos ANULABLES, y como no existe una ley  administrativa  que
+enuncie y  sistematice  las  nulidades  en  el  Derecho  Administrativo,  es
+conveniente adoptar la misma terminología, para mantener en  lo  posible  la
+uniformidad en nuestro ordenamiento jurídico. ------------------------------
+------------------------
+
+      Aquí se debe puntualizar que en sistema de Derecho  Civil,  y  Derecho
+Procesal Civil paraguayo solo existe  la  clasificación  en  Actos  NULOS  y
+ANULABLES, y no existe, por ejemplo la categoría  de  nulidad  absoluta,  es
+más en la doctrina administrativista paraguaya, tanto el  Profesor  Salvador
+Villagra Maffiodo como el Profesor Miguel Angel  Pangrazio  se  expresan  en
+contra de la clasificación de nulidades en absolutas  y  relativas,  ya  que
+las mismas han sido criticadas por la doctrina, dejando plenamente  aclarado
+que el Código Civil Paraguayo adopta solo la clasificación de actos nulos  y
+anulables. --------------------
+
+      QUE,  el  Profesor  Miguel  Angel  Pangrazio   al   referirse   a   la
+clasificación entre nulidades absolutas y relativas  expresa,  que  si  bien
+estaban muy en boga en la corriente doctrinal  de  ciertas  escuelas,  dicha
+distinción ha sido objeto de críticas, y  que  finalmente  el  Código  Civil
+paraguayo, recogiendo los mejores criterios de  diferentes  tratadistas,  ha
+optado por la clasificación de las nulidades en dos categorías:  a)  nulidad
+y  b)  anulabilidad,  acotando  algo  muy  importante:  “que   la   presente
+clasificación es aplicable en  Derecho  Público  y  en  el  Privado”.  Sigue
+señalando que: “la diferencia  radical  existente  entre  la  nulidad  y  la
+anulabilidad  es  que  en  la  nulidad  el  acto  no  puede  ser  objeto  de
+confirmación por parte de la autoridad, mientras  que  los  actos  anulables
+pueden ser confirmados y las irregularidades  subsanadas”.  También  expresa
+que como consecuencia de esta  clasificación  y  por  lo  que  establece  el
+Código Civil, los actos nulos no  prescriben,  mientras  que  los  anulables
+tienen un lapso de prescripción. -------------------------------------------
+-----
+
+      QUE, el jurista argentino Miguel  AngelCassagne,  al  referirse  a  la
+necesidad de sentar las bases para  la  composición  de  una  teoría  de  la
+invalidez administrativa, se remonta al Derecho Romano para señalar  que  el
+derecho Pretoriano hizo surgir en materia de nulidades la  distinción  entre
+nulidades absolutas y  relativas,  luego  el  derecho  francés  recoge  esta
+distinción fundamentando las nulidades absolutas en el orden público  y  las
+nulidades relativas en el interés privado. El derecho argentino adopta  esta
+clasificación entre nulidades absolutas y  relativas  y  también  adopta  la
+clasificación entre actos nulos y  anulables,  consagrando  así  una  teoría
+compleja de las nulidades, la que  justamente  es  criticada  por  su  misma
+complejidad, llevando a los doctrinarios de nuestro derecho a  consagrar  en
+el Código Civil paraguayo, solamente, la clasificación entre actos  nulos  y
+anulables (artículos 357 y 358 del Código Civil). --------------
+
+      QUE, la función de la Administración Municipal de tomar  Resoluciones,
+no tiene fuerza de verdad legal, justamente por eso la decisión  del  órgano
+administrativo, es revisable en sede judicial, y en  nuestro  Proceso  legal
+administrativo  el  Juez  Natural,  que  está  dotado  de  independencia   e
+imparcialidad para revisar los actos de los órganos  administrativos  es  el
+Tribunal de Cuentas (artículo 265 de la Constitución Nacional,  artículo  30
+del Código de Organización  Judicial)  que  tiene  a  su  cargo  el  control
+judicial de las decisiones administrativas. --------------------------------
+---------------------------
+
+     QUE,  el  límite  del  análisis  que  debe  realizar  el  Tribunal  se
+circunscribe a la comprobación de  la  legalidad  del  acto  Administrativo,
+respecto a las facultades regladas del órgano que lo  emite,  y  respecto  a
+las facultades discrecionales, como lo  es  la  fijación  del  monto  de  la
+multa, se debe disponer, este Tribunal, al análisis de  la  razonabilidad  y
+proporcionalidad de la misma. ----------------------------------------------
+
+
+     QUE,  el  maestro  Salvador  VillagraMaffiodo  al  referirse   a   las
+disposiciones  de  la  Sentencia  Contencioso  Administrativa,  expresa  que
+“…podría la Sentencia limitarse a revocar la resolución  administrativa  por
+nulidad, anulabilidad, exceso o desviación de poder, disponiendo  el  renvío
+de la causa a la autoridad administrativa para  que  esta  dicte  una  nueva
+resolución conforme a derecho…”; “…pero  al  mismo  tiempo  de  declarar  la
+ilegalidad del acto, podría disponer en su  lugar  lo  que  sea  justo  como
+consecuencia directa de su pronunciamiento…”, esto último  no  es  contrario
+al  “…principio  de  la  separación  de  poderes,  en  el  sentido   de   la
+especialización de  funciones  según  la  cual  compete  al  Poder  Judicial
+entender y decidir en todo asunto contencioso. Esta disposición positiva  de
+la sentencia constituye una protección mucho más segura para el  particular,
+que no queda librado al riesgo de una  resolución  administrativa  otra  vez
+adversa. No puede haber duda para ello en el caso de los actos reglados,  en
+los cuales la misma ley establece las normas concretas para  su  aplicación,
+como en el caso de una liquidación de impuesto que  el  tribunal  puede,  no
+sólo declarar ilegal, sino establecer cuál es la correcta; o en el  caso  de
+que la disposición sea consecuencia  directa  de  la  ilegalidad  declarada,
+como la reposición  en  el  cargo  de  un  funcionario  separado  sin  causa
+injustificada. También en el caso de actos  discrecionales  condicionados  a
+hechos ciertos, al  punto  de  que  confinan  con  los  reglados,   como  la
+imposición de multas que el tribunal puede graduar conforme a la gravead  de
+la  transgresión”  (SALVADOR  VILLAGRA  MAFFIODO.  Principios   de   Derecho
+Administrativo, 4ta. Edición. Página 431/432. Año 2011). -------------------
+-------------------------
+
+     QUE,  teniendo  en  cuenta  que  la  notificación  de  la  Declaración
+Indagatoria fue cursada a la Empresa Villa Serrarna S.R.L., y no  al  chofer
+que cometió efectivamente la infracción de  tránsito,  con  lo  cual  no  se
+estableció la responsabilidad del conductor y  por  lo  tanto  no  nació  la
+responsabilidad de la empresa por la infracción  de  su  dependiente,  y  no
+habiéndose reconocido por la empresa la comisión de  la  infracción,  no  se
+puede tomar válidamente a la Declaración Indagatoria como  medio  de  prueba
+para confirmar que se ha configurado el hecho constitutivo de la  infracción
+de tránsito.  Por  otra  parte  la  Declaración  Indagatoria  constituye  en
+esencia un medio de defensa  que  no  ha  sido  ejercido  por  quien  habría
+cometido la infracción, en este  caso  el  chofer  de  la  empresa,  lo  que
+constituye una violación a las garantías constitucionales de la  Defensa  en
+Juicio, consagrada en el artículo 16 de  la  Constitución  Nacional,  y  del
+debido Proceso, consagrado en el artículo 17 de  la  Constitución  Nacional.
+Asimismo, de acuerdo a lo detallado el Acta  de  Contravención  N°  0000440,
+suscripta por el Inspector  de  Transito  Hugo  Cardozo  Martínez,  ésta  no
+reviste las formalidades prescritas por la  ley  (artículo  29°  de  la  ley
+1274/98), por lo tanto es nula, por lo que se declara irregular el  acto  de
+CONFIRMACIÓN de la Boleta de Contravención N° 0440 de fecha 02 de  enero  de
+2009, con lo cual, tampoco se puede  tomar,  al  Acta  de  infracción,  como
+medio de  prueba  para  confirmar  el  hecho  por  el  cual  se  cometió  la
+infracción en cuestión. Por lo expuesto, solo queda como único  elemento  de
+convicción la reproducción fotográfica obrante en autos, pero la misma  solo
+sirve como semi-plena prueba de la  producción  del  hecho  constitutivo  de
+infracción (artículo 1° Ordenanza 31/2009), por lo tanto no se  basta  a  si
+misma para determinar que la infracción se cometió.  Por  otra  parte  dicha
+toma fotográfica no sirve para determinar que el vehículo que aparece en  la
+toma más grande donde se divisa en N° de chapa, es el mismo que  el  que  se
+divisa en las tres tomas fotográficas más  pequeñas,  donde  se  ve  que  un
+vehículo pasa la luz roja, pero no se divisa el N° de chapa  del  mismo,  lo
+que hace que no se pueda determinar si en dichas tomas fotográficas se  está
+mostrando el  mismo  vehículo,  por  lo  que  el  expediente  administrativo
+municipal  tramitado  en  el  Juzgado  de  Faltas  de  la  Municipalidad  de
+Ypacarai, no tiene ningún elemento de  convicción  para  determinar  que  el
+hecho constitutivo de la infracción se produjo realmente, y que el  vehículo
+individualizado en la toma fotográfica más grande avanzó con luz  roja,  con
+lo cual, y por todos los fundamentos expuestos corresponde,  hacer  lugar  a
+la  demanda  contencioso  administrativa  interpuesta  y  como  consecuencia
+declarar la nulidad del Acta de Contravención  N°  000440  de  fecha  02  de
+enero de 2009, revocando la S.D. Nº 362 del 20 de  enero  de  2010,  dictada
+por el Juzgado de Faltas de la Municipalidad de Ypacarai,  por  el  cual  se
+dispone CONFIRMAR la Boleta de Contravención N° 0440 de fecha  02  de  enero
+de 2009, dejando sin efecto la multa de Gs. 1.192.114 aplicada a la  Empresa
+de Transporte Villa Serrana S.R.L., por los fundamentos expuestos.----------
+-----------------------------------
+
+     QUE, lo hasta aquí expuesto, determina que ha habido una  transgresión
+de los funcionarios municipales intervinientes, por el  ejercicio  irregular
+de las facultades regladas de los mismos, en el proceso de  fijación  de  la
+multa que  se  le  ha  impuesto  a  la  Empresa  Villa  Serrana  S.R.L.,  de
+Transporte y Turismo,  lo  que  hace  responsables  en  forma  personal,  al
+inspector de tránsito que  confeccionó  el  Acta  de  Contravención  sin  la
+correspondiente firma del infractor o en su defecto, sin  la  firma  de  los
+testigos; a la Jueza de Faltas  que  confirmó  la  validez  de  un  Acta  de
+Contravención de tránsito sin  que  la  misma  contara  con  los  requisitos
+exigidos por el artículo 29º de la ley 1274/98; y  al  Intendente  Municipal
+de Ypacarai que no dio curso al Recurso de Apelación y  Nulidad  interpuesto
+por la Empresa mencionada; por la eventual acción de daños y perjuicios  que
+podría soportar la Municipalidad de Ypacarai, en caso de que  sea  demandada
+por la transgresión materializada por los  funcionarios  municipales  en  la
+fijación de la multa como consecuencia de la  aplicación  irregular  de  las
+normas que  establecen  sus  facultades  regladas.  Que  la  responsabilidad
+personal señalada se deriva de lo  dispuesto  por  el  artículo  39º  de  la
+Constitución Nacional que expresa que  toda  persona  tiene  derecho  a  ser
+indemnizada  justa y adecuadamente por los daños o perjuicios de  que  fuese
+objeto por parte del  Estado.  Como  así  también  de  lo  dispuesto  en  su
+artículo 106º al expresar que ningún funcionario  o  empleado  público  está
+exento de responsabilidad. En los casos de transgresiones, delitos o  faltas
+que  cometiesen  en  el  desempeño  de  sus  funciones,  son   personalmente
+responsables, sin perjuicio de la responsabilidad  subsidiaria  del  Estado,
+con derecho de éste a repetir el pago de lo que  llegase  a  abonar  en  tal
+concepto.  Por  lo  tanto  esta  magistratura  debe  comunicar  a  la  Junta
+Municipal de Ypacarai lo  resuelto  en  este  Acuerdo  y  Sentencia,  en  su
+carácter de órgano deliberante  y  contralor  de  la  actividad  del  órgano
+ejecutivo, a fin de que tome las medidas correctivas que  crea  conveniente,
+ante  la  eventual  responsabilidad  de  sus  agentes   y   de   su   propia
+responsabilidad  subsidiaria,  por  las  transgresiones  cometidas  por  sus
+funcionarios, por el ejercicio irregular  de  las  facultades  regladas  que
+fijan la competencia de sus agentes. -----
+
+De conformidad a la reiterada jurisprudencia administrativa del Tribunal  de
+Cuentas, Primera Sala, y en numerosas otras causas que  han  merecido  igual
+tratamiento por este  Tribunal  y  en  consecuencia  por   los   fundamentos
+precedentemente  expresados,  soy  del   criterio   de   que   la   presente
+demanda  contencioso  administrativa  instaurada  en  estos  autos   por  la
+Empresa Villa Serrana S.R.L., contra la S.D. Nº 362 del 20 de enero de  2010
+dictada por el Juzgado de  Faltas  de  la  Municipalidad  de  la  Ciudad  de
+Ypacarai, debe prosperar y por lo tanto se debe hacer  lugar  a  la  demanda
+instaurada y como consecuencia se debe  declarar  la  nulidad  del  Acta  de
+contravención de  transito  N°  0000440  de  fecha  20  de  enero  de  2009,
+revocando además  la  S.D.  Nº  362  del  20  de  enero  de  2010,  por  los
+fundamentos expuestos.--------------------------
+
+Por tanto, VOTO POR LA NEGATIVA DE LA CUESTIÓN, y en consecuencia  para  que
+este  Tribunal  proceda  HACER  LUGAR  a  la  presente  demanda  contencioso
+administrativa, DECLARAR la nulidad del Acta de  Contravención  de  transito
+N° 0000440 de fecha 02 de enero de 2009, REVOCANDO la S.D. Nº 362 del 20  de
+enero de 2010, DEJANDO SIN EFECTO la sanción  de  multa  consistente  en  el
+pago de la suma de  Gs.  1.192.114,  de  conformidad  y  de  acuerdo  a  los
+fundamentos desarrollados en el presente acuerdo. --------------------------
+------------
+
+En cuanto a las costas de la instancia, ellas deberán ser soportadas por  la
+parte demandada, en la persona de la autoridad administrativa que  suscribió
+el acto administrativo irregular o nulo,  en  virtud  del  art.  106  de  la
+Constitución Nacional. ES MI VOTO.----------------------------------
+
+A SU TURNO, EL EXCMO. MIEMBRO DEL TRIBUNAL DE CUENTAS PRIMERA  SALA,  MARTIN
+AVALOS VALDEZ manifiesta que se  adhiere al voto  del  Miembro  Preopinante,
+Dr. Rodrigo A. Escobar, por los mismos fundamentos.-------------------------
+----------------------
+
+A SU TURNO, EL EXCMO. MIEMBRO DEL TRIBUNAL DE CUENTAS  PRIMERA  SALA,  MARIO
+MAIDANA GRIFFITH DIJO:
+
+     Que, me adhiero a la  preopinion  de  mi  distinguido  colega  el  Dr.
+Rodrigo Escobar en lo que hace al fondo de la cuestión, no asi a lo que  se
+refieren las Costas del  proceso   permitiéndome  respetuosamente  disentir
+sobre la aplicación de las Costas, a la parte vencida, ya que considero que
+se debe resolver las Costas en el orden causado. -----------------------
+
+     QUE, si bien es cierto que la Municipalidad de Ypacarai fue  la  parte
+vencida en el pleito, encuentro justificación  (artículo  193°  del  Código
+Procesal Civil) en que, en este caso, no se le aplique la totalidad de  las
+Costas a la Administración Municipal, ya que  considero  que  la  misma  ha
+actuado dentro de las funciones que hacen al ordenamiento del  tránsito  en
+la ciudad, existiendo deficiencias  en  la  aplicación  de  los  métodos  y
+procedimientos utilizados  para  la  aplicación  de  la  multa  sometida  a
+análisis de esta Magistratura, pero respecto a la aplicación de dicha multa
+la municipalidad de Ypacarai ha actuado dentro de lo que creyó que hacía  a
+sus funciones y facultades regladas por lo que no se justifica  que  se  la
+cargue con la totalidad del pago de las Costas del Juicio.------------------
+----------------
+
+     QUE, la propia Corte Suprema de Justicia, en  su  reciente  Acuerdo  y
+Sentencia 253/12 de fecha 23 de abril de  2012,  referido  a  la  Acción  de
+Inconstitucionalidad en  el  Juicio:  "contra  el  artículo  12  de  la  ley
+3966/2010",  sobre  las  llamadas  fotomultas,   ha   expresado   que   "...
+Anteriormente ante la vigencia de la Ley N° 1.294/87 el Art. 241  establecía
+"Las disposiciones de esta ley serán aplicables a  las  rutas  nacionales  y
+los caminos departamentales en  las  partes  que  crucen  zonas  urbanas  de
+municipios". Cabe  señalar  que  la  disposición  transcripta  planteaba  el
+problema  de  las  atribuciones  de  control  sobre  rutas  internacionales,
+situación ante la que no había solución y  no  pudiendo  mantenerse  en  tal
+estado es el propio gobierno central quien por medio de  sus  organismos  la
+ejercía, situación qué  luego  deriva  tácticamente  en  un  colisionamiento
+entre instituciones (central y municipal) ante la falta de  delimitación  de
+rutas nacionales e internacionales... Vale decir, existió un  reconocimiento
+por  parte  de  los  municipios  de  las  potestades  "legales"   sobre   la
+reglamentación de los caminos, prueba de ello es que la anterior  ley  nunca
+fue protestada  por  aquellos.  Pues  bien,  es  esa  misma  potestad  legal
+-reconocida y respetada por los municipios anteriormente-  emergente  de  la
+soberanía del Estado paraguayo y ejercida por medio  del  Congreso  Nacional
+la que hoy determina los nuevos  límites  municipales  en  lo  que  hace  al
+control de rutas nacionales e  internacionales..,  Vale  decir,  existió  un
+reconocimiento por parte de  los  municipios  de  las  potestades  "legales"
+sobre la reglamentación de los caminos, prueba de ello es  que  la  anterior
+ley nunca fue protestada por aquellos. Pues  bien,  es  esa  misma  potestad
+legal -reconocida y respetada por los municipios anteriormente emergente  de
+la soberanía  del  Estado  paraguayo  y  ejercida  por  medio  del  Congreso
+Nacional la que hoy determina los nuevos límites municipales en lo que  hace
+al control de rutas nacionales e internacionales..."-  Hasta  aquí  la  cita
+del fallo de la Corte. ---
+
+     QUE, el hecho que motiva la imposición de la multa aquí analizada,  se
+produjo durante la vigencia de  la  ley  1294/87  donde  estaba  plenamente
+vigente el artículo 241° de la ley 1294/87 destacado por  la  Corte  en  la
+cita transcripta en el párrafo anterior, por lo tanto la  Municipalidad  de
+Ypacarai pudo entender con toda razonabilidad que era  competente  para  la
+aplicación de las fotomultas, por lo que creo razonable  que  se  le  exima
+parte a las costas del proceso, por lo que considero que las  costas  deben
+ser soportadas por ambas partes en el orden causado.    —-   --
+
+     QUE,  con  respecto  al  concepto  de  revocar  o   anular   el   acto
+administrativo,  tanto   la   revocación   como   la   nulidad   del   acto
+administrativos, que se produce en la instancia judicial, tienen el  efecto
+de la nulidad de pleno derecho, esto es que sus efectos se  producen  Ex  —
+tunc,  lo  que  significa  que  los  efectos  de  la  revocación  del  acto
+administrativo como los efectos de  la  nulidad  del  acto  administrativo,
+dictados por el Tribunal de Cuentas, se producen desde el  momento  que  se
+dictó el acto  administrativo  impugnado.  Por  lo  que  en  definitiva  la
+Revocación y la Nulidad del acto administrativo tienen el  mismo  efecto  o
+sea son sinónimos.
+
+      QUE, el Profesor Salvador Villagra Maffiodo hace una distinción  entre
+Revocación en sentido amplio y en sentido estricto, reservando esta  última
+denominación para designar la cancelación total o parcial  de  los  efectos
+del acto administrativo "... por razones de conveniencia  u  oportunidad  o
+por cambio de criterio en la aplicación de la ley, sin que el Acto  sea  en
+si mismo irregular...", pero el maestro se refiere, en dicho párrafo, a  la
+revocación que  hace  la  administración  pública  de  sus  propios  actos,
+revocación  que  no:  se  debe  confundir  con  la  REVOCACIÓN   DEL   ACTO
+ADMNISTRATIVO que hace el Tribunal de Cuentas en sede judicial.
+
+       QUE, en el caso particular analizado por el colega  preopinante,  Dr.
+Rodrigo Escobar, se declara la nulidad solo del acta de contravención, pero
+no se declara la nulidad del acto administrativo, sino  que  se  REVOCA  EL
+ACTO ADMINISTRATIVO consistente en la S.D. por la que se confirma la Boleta
+de contravención anulada.  Por  lo  tanto  no  se  esta  anulando  el  acto
+administrativo impugnado sino que lo  está  revocando,  lo  que  de  alguna
+manera y siguiendo con el razonamiento sostenido, demuestra  que,  en  sede
+judicial, revocación y nulidad tienes el mismo efecto Ex - tun.
+
+     QUE, ya sea que se revoque o  se  anule  el  acto  administrativo,  la
+administración  no  podrá,  en  el  caso   concreto,   dictar   otro   acto
+administrativo de acuerdo a un nuevo criterio, oportunidad o mérito. En  el
+caso de que, frente a un  hecho  similar,  la  administración  resuelva  en
+determinado sentido, de acuerdo a un nuevo criterio, oportunidad o  mérito,
+dicha resolución siempre será susceptible de ser revisada por  el  Tribunal
+de Cuentas, quien será el que revoque o anule  el  acto  administrativo  en
+caso de que asi corresponda.------------------------------------------------
+-----------------
+
+     QUE, lo atinente a la fijación de las Costas, nada tiene que  ver  con
+los efectos de la revocación o anulación del acto administrativo, si  tiene
+que ver con la razonabilidad en la aplicación de las costas  a  la  vencida
+(principio general, artículo 192° del Código Procesal  Civil),  o  a  ambas
+partes. En este sentido, es el mismo código de procedimiento Civil,  en  su
+artículo 193°, el que deja librado al leal saber y entender del  magistrado
+si se debe "... eximir total o parcialmente  de  las  costas  al  litigante
+vencido...", siempre que el magistrado encontrare razón para ello.-
+
+     QUE,  por  los  fundamentos  expresados  en  los  párrafos  anteriores
+considero que es razonable que las costas se impongan en el orden causado.
+
+
+
+Con lo que se dio por terminado el acto previa lectura  y  ratificación  del
+mismo firman los Excelentísimos Señores Miembros del  Tribunal  de  Cuentas,
+Primera Sala, por ante mí el Secretario Autorizante,  quedando  acordada  la
+Sentencia que inmediatamente sigue: ------------------------
+
+Ante Mí:
+
+|                                               |
+|SENTENCIA N°: 389                              |
+
+
+                                            …///…ción, 09 de julio de 2012.-
+
+VISTO: Por el mérito que ofrece el Acuerdo y Sentencia y sus fundamentos,.--
+-------------------------------------------------------------
+
+EL TRIBUNAL DE CUENTAS, PRIMERA SALA, ------------------------
+
+                           R  E  S  U  E  L  V  E:
+
+1.- HACER LUGAR a la presente demanda contencioso administrativa  promovida,
+por LA EMPRESA VILLA SERRANA S.R.L., de Transporte y Turismo, en  los  autos
+caratulados VILLA SERRANA S.R.L. DE TRANSPORTE Y TURISMO C/ S.D. Nº 362  DEL
+20 DE ENERO DE 2010, DICTADA POR LA MUNICIPALIDAD DE YPACARAI”, ---------
+
+2.- DECLARAR LA NULIDAD del Acta de Contravención de tránsito N° 0000440  de
+fecha 02 de enero de 2009, por no revestir la forma prevista por la  ley,  y
+en consecuencia, -----------------------------------
+
+3.- DEJAR SIN EFECTO la sanción de multa consistente en el pago de  la  suma
+de un millón ciento noventa y dos mil ciento catorce (Gs. 1.192.114). ------
+------------------------------------------------------------
+
+4.- REMITIR OFICIO a la Junta Municipal de Ypacarai,  comunicando  la  parte
+resolutiva del presente Acuerdo y Sentencia, a fin de que tome  las  medidas
+correctivas que crea conveniente, ante la eventual responsabilidad  personal
+de  sus  agentes,  y  de  su  propia  responsabilidad  subsidiaria,  por  el
+ejercicio irregular de las facultades regladas,  contenidas  en  las  normas
+que fijan la competencia de sus agentes.------
+
+5.- IMPONER LAS COSTAS, a la demandada,  en  la  persona   de  la  autoridad
+administrativa que suscribió el acto administrativo irregular o nulo. ------
+--------------------------------------------------------------------
+
+6.- NOTIFICAR, anotar, registrar y remitir copia a la Excma.  Corte  Suprema
+de Justicia. --------------------------------------------------------
+
+
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

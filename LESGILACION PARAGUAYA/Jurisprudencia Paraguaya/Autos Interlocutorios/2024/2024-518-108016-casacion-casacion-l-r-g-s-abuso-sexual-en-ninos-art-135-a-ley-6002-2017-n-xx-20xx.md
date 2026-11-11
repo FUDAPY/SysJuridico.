@@ -1,0 +1,103 @@
+# Auto Interlocutorio N.º 518/2024
+
+**Carátula:** CASACIÓN: CASACION: L.R.G. S/ABUSO SEXUAL EN NIÑOS (ART. 135 A. LEY 6002/2017). N° XX/20XX.
+
+- **Código CSJ:** 108016
+- **Tipo:** Auto Interlocutorio
+- **Número:** 518/2024
+- **Fecha:** 2024-09-26
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=108016)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=108016)
+
+## Texto de la resolución
+
+CASACIÓN: CASACION: L.R.G. S/ABUSO SEXUAL
+                                                                             EN NIÑOS (ART. 135 A. LEY 6002/2017). N°
+                                                                             XX/20XX
+
+
+
+                                                                      AUTO INTERLOCUTORIO
+                          VISTO: el recurso extraordinario de casación interpuesto por la Defensora Pública, Abg.
+                   Dolly Villasanti Ferreira, por la defensa del procesado L.R.G., en contra del A.I. N° XXX de
+                   fecha 01 de agosto de 20XX dictado por el Tribunal de Apelaciones de la Circunscripción
+                   Judicial de Concepción, y;-----------------------------------------------------------------
+
+                                                                        CONSIDERANDO
+                           El régimen recursivo vigente impone a esta Sala Penal, verificar si el planteamiento
+                   escrito obedece íntegramente los requerimientos formales -condicionan la viabilidad- previstos en
+                   los arts. 449, 477, 478, 480 y 468 del CPP1. -
+
+                          El recurrente plantea Recurso Extraordinario de Casación contra la resolución del
+                   Tribunal de Apelaciones que resolvió: “DECLARAR ADMISIBLE el Recurso de Apelación
+                   General interpuesto por el representante del Ministerio Público, Abg. Oscar Daniel Fernández
+                   Sequeira, contra el A.I. N° XX de fecha 25 de abril de 20XX… …REVOCAR el auto interlocutorio
+                   indicado ut supra por los fundamentos y con los alcances expuestos en el exordio de la presente
+                   resolución, y en consecuencia… REENVIAR estos autos a los efectos de que el proceso siga su curso…”.-
+
+                          A su vez, el A.I. N° XX de fecha 25 de abril de 20XX estableció: “I. DECLARAR la
+                   competencia de este TRIBUNAL DE SENTENCIA… …2. HACER LUGAR al incidente de nulidad
+                   de la declaración indagatoria y consecuentemente a partir de dicho acto procesal… 3.
+                   DECLARAR la extinción de la acción penal de conformidad a lo dispuesto en los Arts. 170 y 171
+                   del C.P.P…. 4. SOBRESEER DEFINITIVAMENTE al señor L.R.G.…”.-
+                           La resolución objeto de la presente casación, fue notificada al representante de la defensa
+                   pública en fecha 14 de agosto de 20XX, y el recurso fue interpuesto el 28 de agosto de 20XX, por
+                   lo tanto, la presentación recursiva se adecua al plazo establecido en la ley. –
+                          Con referencia al derecho a recurrir, se tiene que la Abg. Dolly Villasanti Ferreira, es la
+                   representante de la defensa pública, por lo que se halla cumplida la exigencia prevista en el Art.
+                   449 del CPP. –
+
+                          En cuanto al objeto, la presentación aducida no cumple las disposiciones de forma, dado
+                   que la resolución recurrida no es objetivamente impugnable por esta vía. La misma no tiene el
+                   efecto ni la virtualidad de poner fin al procedimiento, extinguir la acción o la pena, o denegar la
+                   extinción, conmutación o suspensión de la pena, según lo preceptuado por el Art. 477 del CPP. -
+                           Bajo las consideraciones expuestas precedentemente, la Excelentísima Corte Suprema de
+                   Justicia, Sala Penal,
+
+                                                          R E S U E L V E:
+                         1. DECLARAR INADMISIBLE el recurso extraordinario de casación interpuesto por la
+                   Defensora Pública, Abg. Dolly Villasanti Ferreira, por la defensa del procesado L.R.G.
+
+                   1          Art. 449, CPP. “Reglas generales. Las resoluciones judiciales serán recurribles solo por los medios y en los casos
+                   expresamente establecidos, siempre que causen gravamen al recurrente. El derecho de recurrir corresponderá tan sólo a quien le
+                   sea expresamente acordado. Cuando la ley no distinga entre las diversas partes, el recurso podrá ser interpuesto por cualquiera de
+                   ellas”
+                             Art. 477, CPP. “Objeto. Sólo podrá deducirse el recurso extraordinario de casación contra las sentencias definitivas del
+                   tribunal de apelaciones o contra aquellas decisiones que pongan fin al procedimiento, extingan la acción o la pena, denieguen la
+                   extinción, conmutación o suspensión de la pena”
+                             Art. 468, CPP. “Interposición… en el término de diez días luego de notificada y por escrito fundado, en el que se
+                   expresará concreta y separadamente, cada motivo con sus fundamentos y la solución que se pretende. Fuera de esta oportunidad
+                   no podrá aducirse otro motivo…”
+
+
+                                                                                                                                                   1
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+              , en contra del A.I. N° XXX de fecha 01 de agosto de 20XX dictado por el Tribunal de Apelaciones
+              de la Circunscripción Judicial de Concepción, por los fundamentos expuestos en el exordio de la
+              presente resolución. -
+                          2. REMITIR estos autos al órgano jurisdiccional competente, advirtiéndose que el
+                   trámite no puede suspenderse por esta presentación u otra vinculada a ella. -
+                         3. ANOTAR, registrar y notificar. -
+
+
+
+
+Para conocer la                          Firmado digitalmente     Firmado digitalmente
+     validez del                         por: LUIS MARIA          por: MANUEL DEJESUS
+    documento,                           BENITEZ RIERA            RAMIREZ CANDIA
+ verifique aquí.                         (MINISTRO/A)             (MINISTRO/A)
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

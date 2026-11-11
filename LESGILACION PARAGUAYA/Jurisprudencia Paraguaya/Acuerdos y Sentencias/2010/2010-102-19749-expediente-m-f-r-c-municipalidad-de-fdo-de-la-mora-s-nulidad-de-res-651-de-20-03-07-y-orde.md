@@ -1,0 +1,98 @@
+# Acuerdo y Sentencia N.º 102/2010
+
+**Carátula:** EXPEDIENTE: "M. F. R. C/ MUNICIPALIDAD DE FDO. DE LA MORA S/ NULIDAD DE RES. 651 DE 20/03/07 Y ORDENANZA 106 DE 24/12/05 NULIDAD DE DESPIDO, PAGO DE INDEMNIZACIÓN Y SALARIOS CAÍDOS"
+
+- **Código CSJ:** 19749
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 102/2010
+- **Fecha:** 2010-03-29
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; No Hace Lugar; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Normas de referencia:** Código Procesal Civil, artículo 192 y 203, inciso a).
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=19749)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=19749)
+
+## Texto de la resolución
+
+EXPEDIENTE: “M.F.R.c/ la Municipalidad de Fernando de la Mora sobre nulidad de Resolución Nº 651, del 20 de marzo de 2007, y Ordenanza Nº 106, del 24 de diciembre de 2005, sobre Nulidad de Despido, Pago de Indemnización y Salarios Caídos”.-----------------------------------------------------------------
+ 
+                                               ACUERDO Y SENTENCIA NÚMERO: Ciento Dos
+ 
+                En la Ciudad de Asunción, República del Paraguay, a los veintinueve días del mes de Marzo del año dos mil diez, estando reunidos en la Sala de Acuerdo, los Excmos. Señores Ministros de la Corte Suprema de Justicia, Sala Penal, los Dres. SINDULFO BLANCO, ALICIA BEATRIZ PUCHETA DE CORREA, y RAUL TORRES KIRMSER en reemplazo del Dr. WILDO RIENZI GALEANO, según providencia de fecha 30 de octubre de 2009, obrante a fojas 140 de autos, por ante mi, la Secretaría autorizante, se trajo a colación el acuerdo del expediente caratulado: “M.F.R. c / la Municipalidad de Fernando de la Mora sobre nulidad de Resolución Nº 651, del 20 de marzo de 2007, y Ordenanza Nº 106, del 24 de diciembre de 2005, sobre Nulidad de Despido, Pago de Indemnización y Salarios Caídos” a fin de resolver los recursos de apelación y nulidad interpuestos por el Abogado del municipio demandado contra el Acuerdo y Sentencia Nº 17 de fecha 02 de julio de 208, dictado por el Tribunal Electoral de la Capital, Primera Sala.--------------------------------------------------------------------------------
+                Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala Penal, resolvió plantear las siguientes cuestiones:----------------------------------------------------------------------------------------------
+                                                                              C U E S T I O N E S :
+                                                               ¿Es nula la sentencia apelada?
+                                                               En caso contrario, ¿se halla ajustada a derecho?
+                Practicado el sorteo de ley para determinar el orden de votación dio el siguiente resultado: BLANCO, PUCHETA, y TORRES KIRMSER.-------------------------------------------------------------------------------------
+                A LA PRIMERA CUESTION PLANTEADA, EL Dr. SINDULFO BLANCO DIJO: La recurrente fundó escuetamente el recurso de nulidad, expresando que la sentencia recurrida está viciada por arbitraria por cuanto, sostiene, se dictó resolución sin considerar las pruebas diligenciadas en el expediente.--------
+                Los argumentos antes expuestos son insuficientes para considerar fundado el recurso en estudio. No obstante, examinada la resolución recurrida, no se observan vicios o defectos que ameriten su tratamiento de oficio. Debe declarárselo desierto el recurso de nulidad. Es mi voto.----------------------------
+                A su turno, los Dres. PUCHETA DE CORREA y TORRES KIRMSER manifiestan que se adhieren al voto que antecede por los mismos fundamentos.--------------------------------------------------------------------------
+                A LA SEGUNDA CUESTION PLANTEADA, EL Dr SINDULFO BLANCO DIJO: prosiguió diciendo: a continuación, se pasa revista sintética de los antecedentes.------------------------------------------------------------
+a.       SENTENCIA IMPUGNADA. Por Acuerdo y Sentencia Nº 17 de 02 de julio de 2008, el  …///…
+ 
+…///…Tribunal Electoral de la Capital, resolvió cuanto sigue: “1. HACER LUGAR a la presente acción de nulidad promovida por M.F.R., contra  la presente acción de nulidad promovida por M.F.R. contra la Intendencia Municipal de Fernando de la Mora, y en consecuencia, DECLARAR nula la Resolución Nº 651, del 20 de marzo de 20007, dictada por el Intendente Municipal de Fernando de la Mora, por las razones esbozadas en el exordio de la presente resolución. 2 DISPONER la inmediata reposición en el cargo que ocupaba el actor o en otro de similar categoría y remuneración debiendo abonársele los salarios caídos correspondientes a 12 meses, de conformidad al artículo 44 de la Ley de la Función Pública, bajo apercibimiento  de lo dispuesto en el artículo 45 de la misma disposición legal. Asimismo, deberá abonársele al actor el equivalente en guaraníes que le corresponde por los rubros de vacaciones y aguinaldo durante el periodo en que estuvo cesante en sus funciones. 3. IMPONER las costas a la vencida. 4 ANOTAR…” (sic.).------------------------------------------------------------------------------------------
+ARGUMENTO DE LAS PARTES.
+b.      ARGUMENTO DE LA PARTE APELANTE – Municipalidad de Fernando de la Mora: se ratifica en los argumentos expuestos en la contestación de la demanda. Sostiene que el accionante fue nombrado en la institución Municipal en un cargo de confianza, según lo dispuesto en la Ordenanza Nº 106, del 24 de mayo de 2005. Agrega que el actor en el ejercito de sus funciones, incumplió gravemente con sus obligaciones en el marco de un proyecto de cooperación internacional, y expresa textualmente que: “ESTE CONVENIO FUE FIRMADO POR EL INTENDENTE ANTERIOR EL SEÑOR MANUEL GOMEZ Y EL ENCARGADADO ERA EL SEÑOR MARIO FLORENTIN QUE EN LA CIUDAD DE BRUSELAS, EN DICIEMBRE DEL 2006 RECIBIO LA SUMA DE 5.020 EUROS, CUYA RENDICION FUE INTIMADA POR MI MANDANTE SIN QUE HASTA LA FECHA SE HALLA PRESENTADA LA RENDICIÓN DE DICHO MONTO A LA INSTITUCIÓN MUNICIPAL” (sic.).-------------------------------------------------------------------------------------------------------------------
+Expresa, que además, según el considerando de la resolución administrativa recurrida, el actor fue destituido en razón de no  haber cumplido el requisito establecido en el artículo 15 de la Ley 1.626/00. Finaliza su exposición, peticionando se revoque la resolución recurrida, con costas. ------------
+b.2. Apelada – parte demandante. Sostiene que el Tribunal de inferior grado otorgó suficientes razones al sostener que el cargo que ocupaba en la Municipalidad no se trataba de confianza, de un lado, porque, refiere, la ordenanza invocada por el órgano municipal fue dictada con posterioridad a su nombramiento, y de otro, porque se halla incurso en los supuestos indicados en el artículo 8º de la Ley 1.626/00.------------------------------------------------------------------------------------------------------------------------------
+                Refiere, que fue nombrado en carácter de funcionario de la Municipalidad demandada, en fecha 01 de junio de 1999, por tal motivo, expresa, no le es aplicable la disposición del artículo 15 de la Ley 1.626/00. Respecto del supuesto incumplimiento grave de sus obligaciones, expresa, que ello es falso, y que dichas cuestiones debieron debatirse previamente mediante un sumario administrativo. Finaliza su exposición solicitando se confirme la resolución impugnada.-----------------------------------------------------------
+ANALISIS JURIDICO DEL CASO.
+                La cuestión es clara. Se trata en definitiva, de determinar si la destitución del funcionario municipal M.F.R., sin sumario administrativo previo, se halla ajustada a derecho.-------
+                Juzgo que la apelación es improcedente, por las razones que expongo a continuación:--------------
+                El actor fue nombra por la Municipalidad de Fernando de la Mora, en fecha 01 de junio de 1999. Luego por Resolución Nº 611, del 20 de marzo de 2007, el Intendente Municipal de la citada ciudad, resolvió dar por terminadas sus funciones con el siguiente fundamento: “habiendo analizado los …///…
+ 
+                                                                                              ( 2 )
+ 
+…///…documentos obrantes en la jefatura de recursos humanos, no consta comprobación alguna que el citado funcionario a ser desvinculado por intermedio de esa resolución haya cumplido con el requisito  establecido en el artículo 15 de la Ley 1.626/00 y por lo tanto en estos casos corresponde también lo establecido en el artículo 17 del mismo cuerpo legal. Que existiendo reglamentación de los cargos de confianza por ordenanza Nº 106, de fecha 24 de diciembre de 2005, que faculta a la Intendencia a disponer de esos cargos…” (sic.).------------------------------------------------------------------------------------------------ 
+                Conforme a lo antedicho, quedó en claro que el accionante fue nombrado bajo la vigencia de la Ley 200/70 ESTATUTO DEL FUNCIONARIO PÚLICO. El artículo 8º de dicho cuerpo legal, instituía la necesidad de que los cargos de confianza fueran reglamentados. En autos, no obra ninguna constancia legal, o cuando menos, no lo probó la parte demandada, la existencia de una reglamentación municipal al tiempo de estar vigente la citada Ley 200/70.---------------------------------------------------------------------------
+                Cobra relevancia lo anterior, vale decir, la reglamentación vigente al tiempo de la vigencia de la sobredicha Ley 200/70, pues, dicho marzo normativo era el aplicable al accionante. La Ley 1626/00, es norma posterior al nombramiento del actor, y por lo demás, dicho cuerpo legal, reglamenta expresamente cargo de confianza en su artículo 8º, entre los cuales, ciertamente no figura tampoco el cargo que ocupaba el accionante.-----------------------------------------------------------------------------------------------
+                En el mismo orden de ideas, resulta oportuno resaltar que la Ordenanza Nº 106, de fecha 24  de mayo de 2005, dictada por la Junta Municipal de Fernando de la Mora, no es aplicable al caso, aún el hipotético caso de que la Ley 1626700, fuera aplicable. Ello es así, por cuanto la citada Ley en su artículo 8º , estatuye que cargos son considerados de confianza, y su interpretación y aplicación es restrictiva, con lo cual, la ampliación que se haga respecto de ellos, en ordenamientos legales de inferior jerarquía, carecen de validez, pues, se contraponen a lo que expresamente establece la Ley.------------------------------
+                La posición antedicha, constituye jurisprudencia pacifica de esta Sala Penal, trayendo a colación, los siguientes fallos: a) Ac. y Sent. Nº 208 del 17 de mayo de 2005, Expte: “SIMEON GUASP contra Resolución 1823/2003 dictada por la Municipalidad de San Lorenzo sobre Nulidad” ; b) Ac. y Sent. Nº 1049 del 11 de noviembre de 2005, Expte: “PATRICIA ACEVAL MALDONADO contra la Municipalidad de Coronel Oviedo, sobre Reposición en el trabajo, y cobro de guaraníes en diversos conceptos laborales”.
+                Como corolario de lo antes de lo antes expuesto, es menester señalar que no solo está en juego la estabilidad laboral del funcionario, sino también su derecho a la jubilación, y por tal motivo, las garantías laborales no pueden estar supeditadas a la interpretación antojadiza que la administración haga de las normas. En casos como el que nos ocupa, lo que hubiera correspondido es trasladar a los funcionarios con estabilidad laboral, a otra función de igual categoría, pero no destituirlos so pretexto de que ocupaban cargo de confianza. ---------------------------------------------------------------------------------------------
+                En conclusión: el cargo ocupado por el accionante no era de confianza, por lo tanto, su destitución debió estar precedida del correspondiente sumario administrativo, habida cuenta que el mismo adquirió estabilidad laboral. La fundamentación del órgano de inferior grado, en el sentido de que el despido del funcionario demandante fue irregular, es correcta, por consiguiente, el Acuerdo y Sentencia impugnado debe ser confirmado en todos sus puntos. El recurso de apelación debe ser rechazado por improcedente.-------------------------------------------------------------------------------------------…///…
+…///…   En cuanto a las costas, ellas deben ser impuestas a la perdidosa, con fundamento en los artículo 192 y 203, inciso a) del Código Procesal Civil. Es mi voto.---------------------------------------------------------------
+VOTO EN DISIDENCIA DE LA SEÑORA MINISTRA Dra. ALICIA BEATRIZ PUCHETA DE CORREA A SU TURNO DIJO: Comparto a la conclusión  arribada  con el ilustre colega y compañero de Sala Dr. Sindulfo Blanco, en cuanto  al Recurso de Nulidad, pero DISIENTO  con el  mismo en cuanto al RECURSO DE APELACIÓN, por las razones que paso a exponer:-------------------------------------------------------------------------
+Por Resolución N° 651 de fecha 20 de marzo de 2007, emanada  de la Intendencia Municipal de la Municipalidad de Fernando de la Mora, ha resuelto: “…DAR POR TERMINADAS las  funciones y la relación jurídica entre la Municipalidad y el arq. M.F.R., quien ocupa el cargo de confianza ejerciendo las  funciones de JEFE DEL DEPARTAMENTO DE PLANIFICACIÓN  URBANA...”-----------
+Contra al mencionada Resolución el Sr. M.F.R., recurre ante en el Tribunal Electoral, Primera Sala a presentar demanda contencioso administrativo .-----------------------------------------
+El Tribunal Electoral, Primera Sala, por Acuerdo y Sentencia  N° 17 de fecha 02 de julio de 2008, resolvió:  “HACER LUGAR a la presente acción de nulidad promovida por M.F.R.contra la Intendencia Municipal de Fernando de la Mora y en consecuencia DECLARAR nula la resolución N° 651 de 20 de mayo de 2007, dictada por la Intendencia Municipalidad de Fernando de la Mora…DISPONER la inmediata reposición en el cargo  que ocupada el actor o en otro de similar categoría debiendo  abonársele los salarios correspondientes a doce meses, de conformidad al Art. 44 de  la ley de la Función Pública, bajo apercibimiento de lo dispuesto en el Art. 45 de la misma disposición legal…”.---------------------
+El Sr. M.F.R., fue nombrado por Resolución N° 3550 de fecha 30 de Noviembre de 2006, en carácter de “…Jefe del Departamento de Planificación Urbana, Representante oficial de la Institución al seminario  de inicio del Proyecto TIC – Tecnologías de la Informática y la comunicación…” (fs. 16). Posteriormente por Resolución N° 651 de fecha 20 de mayo de 2007, se dan por terminadas sus funciones, en el cargo antes señalado (fs. 1).--------------------------------------------------------------------------------
+Por Ordenanza Municipal Nº 106 de fecha 24 de mayo de 2005, la Municipalidad de la ciudad defecando de la mora (fs.61/62, ordena en su Art. 1° “ Establécese la denominación de Cargos de Confianza, y por tanto, de libre nombramiento y remoción, aquellos que por su poder decisorio, su alto nivel en los cuadros superiores de la Municipalidad, la alta confidenciabilidad de las tareas o ejercicios de  facultades de dirección, fiscalización o vigilancia, así fueron considerados conforme a las normas de la presente Ordenanza”.-----------------------------------------------------------------------------------------------------
+                    La Ley 1626/00 “De la Función Pública ”en su Artículo 8 expresa: “Son cargos de confianza y, sujetos a libre disposición, los ejercidos por las siguientes personas: b) los secretarios, los directores, los jefes de departamentos, divisiones y secciones, de la Presidencia de la República”.  Teniendo en cuenta la norma que rige la materia, corresponde revocar el Acuerdo y Sentencia dictado por el Tribunal…///…
+                                                                                      ( 3 )
+ 
+ 
+…///…Electoral Primera Sala, conforme al Artículo  8 de la Ley de la Función Pública, que en forma  categórica  expresa jefes de departamentos  tal como se puede  ver a fs. 16 de autos en donde la actora fue nombrada y  se desempañaba en dicho cargo.-------------------------------------------------------------------------                                                
+            La misma postura  tumo esta  alta Magistratura  por los Acuerdos y Sentencias N° 48 de fecha  08 de marzo de 2006  y N° 854 de fecha 4 de setiembre de 2006.----------------------------------------------------------
+       Teniendo en consideración  la normativa  constitucional y legal citada, se  tiene que la  Sr. M.F.R., ingreso y ocupó  cargo en la  función pública en los denominados “cargos de  confianza”. Dadas las circunstancias  para la desvinculación  laboral del Sr. F.R., al detentar un cargo de confianza no era necesario seguir  las formas establecidas  en la Ley de la Función Pública, es decir un sumario  Administrativo. Atento a las cuestiones señaladas anteriormente, corresponde   revocar  el Acuerdo y Sentencia Nº 17 de fecha  02 de julio de 2008, dictada  por Tribunal Electoral Primera Sala y en consecuencia  confirmar el Acto Administrativo Resolución  Nº 651 de fecha  220 de marzo de 2007, emanada  de la Municipalidad de Fernando de la Mora. Es mi voto.-----------------------------
+                A su turno, el Dr. JOSE RAUL TORRES KIRMSER, manifiesta que se adhiere al voto del Doctor SINDULFO BLANCO sus los mismos fundamentos.--------------------------------------------------------------------------            Con lo que se dio por terminado el acto firmando SS.EE todo por ante mi, de que lo certifico quedando acordada la sentencia que inmediatamente sigue:
+ 
+ 
+Ante mi: 
+ 
+                                               ACUERDO Y SENTENCIA NÚMERO: 102
+ 
+                                               Asunción,   29                  de          Marzo                   de 2010
+ 
+VISTOS: los méritos del Acuerdo que antecede, la
+ 
+                                                               C O R T E  S U P R E M A  D E  J U S T I C I A
+                                                                                S A L A   P E N A L
+                                                                               R E S U E L V E:                                                                …///…
+ 
+                …///…DECLARAR DESIERTO el recurso de nulidad.--------------------------------------------------------------
+                NO HACER LUGAR al recurso de apelación interpuesto por el representante del Municipio demandado, y en consecuencia CONFIRMAR el Acuerdo y Sentencia Nº 17 de fecha 02 de julio de 2008, dictado por el Tribunal Electoral de la Capital, Primera Sala.-------------------------------------------------------------
+                IMPONER las costas a la perdidosa, parte apelante.-------------------------------------------------------------
+                ANOTAR, registrar y notificar.-----------------------------------------------------------------------------------------
+ 
+ 
+ 
+Ministros: SINDULFO BLANCO, ALICIA BEATRIZ PUCHETA DE CORREA, y RAUL TORRES KIRMSER
+Ante mi: Karinna Penoni de Bellassai, Secretaria Judicial
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

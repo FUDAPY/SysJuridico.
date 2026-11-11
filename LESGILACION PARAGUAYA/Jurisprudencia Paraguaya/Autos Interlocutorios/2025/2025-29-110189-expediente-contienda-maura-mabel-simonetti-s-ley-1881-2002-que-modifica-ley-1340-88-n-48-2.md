@@ -1,0 +1,306 @@
+# Auto Interlocutorio N.º 29/2025
+
+**Carátula:** EXPEDIENTE: “CONTIENDA: MAURA MABEL SIMONETTI S/ LEY 1881/2002 QUE MODIFICA LEY 1340/88” Nº 48/2020. ---
+
+- **Código CSJ:** 110189
+- **Tipo:** Auto Interlocutorio
+- **Número:** 29/2025
+- **Fecha:** 2025-02-10
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Ver Observaciones; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=110189)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=110189)
+
+## Texto de la resolución
+
+EXPEDIENTE: “CONTIENDA: MAURA MABEL
+                                                          SIMONETTI S/ LEY 1881/2002 QUE MODIFICA
+                                                          LEY 1340/88” Nº 48/2020. ---------
+
+
+                                                    Auto Interlocutorio
+
+                   VISTO: El conflicto de competencia, y; -----------------------------------------------------------
+
+                                                     CONSIDERANDO
+
+              Que, la Corte Suprema de Justicia – Sala Penal- es competente para conocer del
+         procedimiento relativo a las contiendas de competencia. ---------------------------------------------
+
+               El Código Procesal Penal, en el CAPÍTULO II, Artículo 39 dispone: "CORTE
+         SUPREMA DE JUSTICIA. Además de los casos previstos en la Constitución y en las leyes,
+         la Corte Suprema de Justicia será competente para conocer: 1)…; 2)…; 3) del
+         procedimiento relativo a las contiendas de competencia…”, y en el CAPITULO V,
+         Artículo 335 establece: "CONFLICTO DE COMPETENCIA. Si dos jueces se declaran
+         simultánea y contradictoriamente competentes o incompetentes, el conflicto será resuelto
+         por la Corte Suprema de Justicia, según las reglas de la competencia...". -----------------------
+
+                 Primeramente, cabe señalar que la palabra Competencia etimológicamente
+         proviene de “compelere”, que significa lo que nos pertenece o corresponde, pudiendo ser
+         definido, “como la potestad conferida a los jueces y tribunales de conocer y decidir en un
+         caso concreto en particular aplicando las leyes e imponiendo penas al culpable como
+         sucede en el campo penal”. Es la porción de jurisdicción de los diversos órganos
+         jurisdiccionales y también la aptitud que poseen para juzgar determinados casos. Es el
+         ámbito de atribuciones del órgano. La regla es que la competencia sólo puede ser ejercida
+         por sus propios agentes, por tanto, es indelegable. No corresponde la representación o
+         mandato salvo que la ley así lo autorice. El Código de Organización Judicial manifiesta que
+         los jueces y tribunales ejercerán jurisdicción dentro de los límites de su competencia. ------
+
+                La distribución de competencia responde a la necesidad práctica de mejor y más
+         eficiente servicio de justicia. Existen diferentes razones o criterios, algunos se fundan en el
+         orden jerárquico de los tribunales, otros en razón del territorio, del valor, etc.-------------------
+
+              La Contienda de Competencia tiene lugar cuando dos órganos jurisdiccionales del
+         mismo tipo pretenden conocer de un mismo asunto o rehúsan el conocimiento por ambos
+         que nos les corresponde. En el primer caso nos encontramos ante una cuestión de
+         competencia positiva, en el segundo ante una cuestión de competencia negativa. ------
+
+               En el presente caso, para precisar la cuestión en estudio por parte de esta Sala Penal
+         corresponde señalar los antecedentes que hacen a la cuestión planteada: ---------------------
+
+              Así tenemos que el Juez Penal de Ejecución Especializado en Crimen Organizado
+         N°3, Dr. Carlos Luis Mendoza Peña dicta el A.I. N° 43 de fecha 27 de junio de 2024, por el
+         cual entre otras cosas, se declara incompetente para resolver las cuestiones planteadas,
+         debido a que la causa penal fue ingresada al sistema penal previamente a la fecha indicada
+         en la acordada N° 1741, por lo que a su criterio, el órgano competente es el del fuero
+         ordinario, el mismo señala puntualmente lo siguiente: “…En segundo término, y de igual
+         modo, es dable destacar que todas aquellas causas en las que se investigue el hecho
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+         punible previsto en el art. 26 de la Ley 1340/88 y que hayan ingresado al sistema penal
+         DESDE el 20 de octubre del 2020, son competencia del Fuero Penal Especializado de
+         Crimen Organizado, aun cuando no se haya utilizado las técnicas especiales de
+         investigación ya hartamente mencionadas… …Por ultimo y en base a todo lo expuesto y
+         teniendo en cuenta todos los criterios esbozados más arriba, en todos los casos, se tiene
+         que esta causa fue ingresada: 1) conforme al formulario de ingreso del Ministerio público
+         es el día 15/09/2020 12:03 (Fjs. 2); acto coercitivo de procedimiento policial el día 14 de
+         setiembre de 2020 12:30 (Fjs. 3,4,5,6); 3) 15 de setiembre de 2020, 19:50 acta de
+         imputación, sello de cargo fjs. 13 y por último; 4) audiencia de 303 16 de setiembre de
+         2020, fjs. 16...”. ---------------------------------------------------------------------------------------------------
+
+               Consecuentemente, que por providencia de fecha 18 de mayo de 2024, la Magistrada
+         Sandra Patricia Silveira resuelve: “…Atenta al informe del Actuario que antecede y notando
+         lo dispuesto en la Acordada N°1741 modificatoria de la Acordada N°1406/2020 por la cual
+         dispone cuales son los Artículos que se entenderán en el ámbito especializado tenemos
+         que por S.D. N°99 de fecha 03 de abril de 2024 emanada del Tribunal Colegiado de
+         Sentencia de la Capital, se condenó a la acusada MAURA MABEL SIMONETTI AGÜERO
+         a la pena privativa de libertad de 1 AÑO 6 MESES calificando la conducta de la misma
+         dentro de los Art. 21 de la Ley 1340/88 y su modificatoria Ley 1881/02, en concordancia
+         con los Art.26, 27 Inc. 1° 13 y 29 inc. 1° del Código Penal y el Art. 43 segunda parte de la
+         Ley 1340/88, por lo tanto conforme a la citada acodada la causa en relación a MAURA
+         MABEL SIMONETTI AGÜERO con C.I. N°4.020.718 debe ser tramitada en el fuero
+         Especializado, en cuanto al acusado RODRIGO MALDONADO BLANCO con
+         C.I.N°1.970.752, tenemos que fue condenado por S.D. N°99 de fecha 03 de abril de 2024
+         fue condenado a la Pena Privativa de Libertad de 10 AÑOS calificando la conducta del
+         mismo dentro de lo dispuesto por el Art. 37 de la Ley 1340/88 y su modificatoria la Ley
+         1881/02, en concordancia con el Art. 29 inc. 1° y 13 del Código Penal, debiendo ser
+         tramitada la causa en relación al mismo en el fuero ordinario, en consecuencia corresponde
+         ordenar la devolución de la Causa: “MAURA MABEL SIMONETTI S/ LEY 1881/2002 QUE
+         MODIFICA LEY 1340/88” Expte. N°1-1-1-1-2020-48; al Juzgado de Sentencia
+         Especializado en Crimen Organizado N°5 a fin de que se realicen las compulsas
+         correspondientes al condenado RODRIGO MALDONADO BLANCO con C.I. N°1.970.752
+         para que sea objeto de control en el fuero ordinario; puesto que las actuaciones en relación
+         a la condenada MAURA MABEL SIMONETTI AGÜERO deber ser tramitadas por el
+         Juzgado de Ejecución Especializado de Turno, sirviendo el presente proveído de suficiente
+         y atento oficio, bajo constancia en los autos de cuadernos de secretaría...” ---------------------
+
+
+                Analizando la cuestión planteada, tenemos que en el presente caso nos encontramos
+         ante una contienda negativa de competencia pues existen dos órganos jurisdiccionales
+         que se declaran simultáneamente incompetentes para entender en la causa, con relación
+         a la condenada MAURA MABEL SIMONETTI AGUERO. --------------------------------------------
+
+                 Ahora bien, analizando las disposiciones de la acordada N° 1741 del 3 de abril de
+         2024 vemos que la misma en el art. 1° elimina el requisito de técnicas especiales de
+         investigación y la cantidad de sustancias ilícitas para entender en las causas que tengan
+         que ver con los hechos punibles previstos en los artículos 21, 25 y 26 de la Ley N° 1881/02,
+         a excepción de los hechos punibles previstos en los artículos 27 y 44 de la Ley 1340/88, en
+         los cuales es requisito la utilización de técnicas especiales de investigación. Así también en
+         el art. 2° la acordada precitada establece: “…DISPONER que la aclaratoria con relación a
+         la competencia señalada, sea revisada y organizada conforme a lo mencionado, tanto por
+         los Juzgados y Tribunales Penales ordinarios de todo el país, como por los Juzgados y
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+         Tribunales especializados, respecto a las causas ingresadas al sistema penal desde el 21
+         de octubre del 2020…” (las negrillas son mías). Así, para que una causa que cumpla con
+         los presupuestos del artículo primero, sea de naturaleza especializada, se requiere que la
+         causa haya ingresado al sistema penal desde el 21 de octubre del 2020. En este caso en
+         particular, con relación a la condenada MAURA MABEL SIMONETTI, ingresó la causa al
+         sistema penal en fecha 03 de enero de 2020, es decir, con anterioridad a la fecha señalada
+         por el art. 2° de la Acordada N° 1741, por lo cual, la causa corresponde al Juzgado de
+         Ejecución Ordinario. --------------------------------------------------------------------------------------------
+
+                Así también, se debe tener presente las disposiciones previstas en la Acordada N°
+         1406/2020, que en su art. 10 num. 7° que establece: “…Los Juzgados de Ejecución Penal
+         especializados en las diversas materias, serán competentes una vez que las causas
+         ingresadas a los Juzgados de Garantías especializados hayan obtenido condena firme y
+         ejecutoriada…” situación que no se cumple en este caso. -------------------------------------------
+
+               Por estas razones, corresponde declarar la competencia del Juzgado de Ejecución
+         Penal Ordinario N°3 de la Capital. ---------------------------------------------------------------------------
+
+
+                   A su turno, el Ministro MANUEL RAMÍREZ CANDIA dijo: ---------------------------------
+
+               1. Por Ley N° 6379/2019 fue creada la competencia en delitos económicos y crimen
+         organizado en la jurisdicción del fuero penal. ------------------------------------------------------------
+
+                2. La Acordada N° 1406, dictada por la Corte Suprema de Justicia, reglamenta la
+         implementación de los Tribunales creados por Ley N° 6379, entró en vigencia a partir del
+         01 de julio del 2020. ---------------------------------------------------------------------------------------------
+
+                3.La Acordada N° 1741, en su Art. 1 establece: “ART. 1°: MODIFICAR el inciso d del
+         artículo 3° de la Acordada 1467 del 21 de octubre del 2020, que quedará redactado como
+         sigue: COMPETENCIA EN CRIMEN ORGANIZADO. Atendiendo a lo dispuesto en la
+         normativa correspondiente, se tendrá en cuenta cuanto sigue: Se entenderá en materia
+         especializada: d) Los hechos punibles previstos en los artículos 21, 25 y 26 de la ley Nº
+         1340/88 Que reprime el tráfico ilícito de estupefacientes y su modificatoria la Ley Nº
+         1881/02, sin necesidad de la existencia previa de técnicas especiales de investigación
+         previstas en la ley 1340 y su modificatoria 1881/02 como son: Art. 82 Operación encubierta;
+         Art. 84 Entrega vigilada; Art. 88 Interceptación de Comunicaciones y otros, como tampoco
+         será requisito la cantidad de sustancias ilícitas introducidas a nuestro país o remitidas al
+         exterior. Se exceptúa de la consideración anterior los hechos punibles previstos en los Arts.
+         27 y 44 de la Ley 1340/88, que, para estos casos, el Ministerio Público deberá cumplir con
+         la condición previa a la imputación, haber solicitado la autorización judicial para la utilización
+         de técnicas especiales de investigación.”. ----------------------------------------------------------------
+
+                4.De lo expuesto, surge que los Juzgados Penales de Ejecución Especializados son
+         competentes en las causas cuya sentencia definitiva haya quedado firme con posterioridad
+         al 01 de julio del 2020 y los procesados hayan sido condenados por alguno de los hechos
+         punibles de competencia especializada. En síntesis, lo que el Juez Carlos Mendoza, plantea
+         erróneamente es la aplicación del principio de legalidad material a una cuestión procesal,
+         que además, se refiere a una acordada. ------------------------------------------------------------------
+
+              5. Del análisis de autos, se infiere que corresponde DECLARAR LA COMPETENCIA
+         DEL JUZGADO PENAL DE EJECUCIÓN ESPECIALIZADO EN CRIMEN ORGANIZADO
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+         N° 3, en base a las siguientes argumentaciones: -------------------------------------------------------
+
+                 6. Por S.D. N° 99 de fecha 03 de abril del 2024, el Tribunal Colegiado de Sentencia
+         calificó la conducta de la Sra. Maura Mabel Simonetti Agüero dentro de lo previsto en el Art.
+         21 de la Ley N° 1340/88 y su modificatoria Ley N° 1881/2002, en concordancia con los Arts.
+         26, 27 Inc. 1° 13 y 29 inc. 1° del Código Penal y el Art. 43 segunda parte de la Ley N°
+         1340/88, y la del Sr. Rodrigo Maldonado Blanco, dentro de lo previsto en el Art. 37 de la
+         Ley N° 1340/88 y su modificatoria Ley N° 1881/2002, en concordancia con el Art. 29 inc. 1°
+         y 13 del Código Penal. -----------------------------------------------------------------------------------------
+
+                 7. En consecuencia, al haber quedado firme la sentencia con posterioridad al 01 de
+         julio del 2020, se cumple con el primer requisito a los efectos de que se encuentre habilitada
+         la competencia del Juzgado de Ejecución Especializado. Además, de conformidad a lo 8.
+         establecido en la Acordada N° 1741 trascripta más arriba, en los casos en los que se
+         investigue la comisión del hecho punible previsto en el Art. 21 de la Ley 1340/88, serán
+         competentes los juzgados especializados sin necesidad de la realización de técnicas
+         especiales de investigación, con lo que se cumple el segundo requisito para la habilitación
+         de la competencia del juzgado especializado, en lo que respecta a la Sra. Maura Mabel
+         Simonetti Agüero, y, con relación al Sr. Rodrigo Maldonado Blanco, si bien, ha sido
+         investigado, y condenado por la comisión del hecho punible previsto en el Art. 37 de la Ley
+         N° 1340/88 y su modificatoria Ley N° 1881/2002, hecho punible que no se encuentra dentro
+         de los hechos punibles de la competencia del área especializada, no obstante, de las
+         constancias obrantes en autos, se verifica que dicho tipo penal, se trata de instigación, que
+         es accesoria al hecho principal, y en consecuencia, se trata del mismo hecho, por tanto, de
+         igual modo corresponde la competencia del órgano especializado en referencia al Sr.
+         Rodrigo Maldonado Blanco. -----------------------------------------------------------------------------------
+
+                8. Con relación a lo expresado por el Juez Especializado, de que son de competencia
+         especializada las causas ingresadas a partir del 21 de octubre del 2020, cabe aclarar que
+         dicha fecha se refiere a la modificación realizada, por Acordada N° 1741, respecto al pedido
+         de autorización de realización de técnicas especiales de investigación y no, con relación a
+         la entrada en vigencia de los juzgados especializados. ES MI VOTO. ----------------------------
+
+                   A su turno, la Ministra MARÍA CAROLINA LLANES OCAMPOS dijo: ------------------
+
+               Me adhiero a la opinión del Ministro Manuel Dejesús Ramírez Candia, puesto que
+         considero que corresponde declarar la competencia del Juzgado Penal de Ejecución
+         Especializado en Crimen Organizado N°3, con relación a la Sra. Maura Mabel Simonetti
+         Agüero por los siguientes fundamentos: -----------------------------------------------------------------
+
+                Ante una determinada contienda de competencia suscitada entre juzgados
+         especializados y no especializados, se debe considerar que las reglas de la Acordada Nº
+         1406/2020 fueron establecidas para su aplicación en forma gradual, por lo cual, para la
+         resolución de estas cuestiones se toman en cuenta no sólo la fecha de vigencia de dicho
+         instrumento sino también la etapa procesal en la que se encuentra la causa. En efecto, ésta
+         intención se refleja en el texto del artículo 10, inc. 2 “Las causas que hayan ingresado antes
+         de la vigencia de la presente acordada y se encuentren en trámite en los Juzgados de
+         Garantía especializado, seguirán el curso de sus acciones hasta concluir la etapa respectiva
+         y luego serán tramitadas dentro de lo previsto en materia de especialización (Tribunal de
+         Sentencia, Tribunal de Apelación y Juzgado de Ejecución)”. Con ello, se busca preservar la
+         competencia de los juzgados y tribunales especializados, para la resolución de las
+         cuestiones suscitadas en la causa; entonces de las constancias de autos se verifica que la
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+         Sra. Maura Mabel Simonetti fue condenada por los hechos punibles establecidos en el Art.
+         21 de la Ley 1340/88 y su modificatoria Ley 1881/02, en concordancia con los Art. 26, 27
+         Inc. 1° 13 y 29 inc. 1° del Código Penal y el Art. 43 segunda parte de la Ley 1340/88 y
+         resulta claro que la causa es de naturaleza especializada, por tanto corresponde
+         DECLARAR LA COMPETENCIA DEL JUZGADO DE EJECUCIÓN ESPECIALIZADO EN
+         CRIMEN ORGANIZADO, para entender en la etapa de ejecución de la condena, respecto
+         a la misma. --------------------------------------------------------------------------------------------------------
+
+               Con relación al Sr. Rodrigo Maldonado Blanco; considero que corresponde que
+         sea competente el Juzgado de Ejecución en crimen Organizado; en base a las siguientes
+         consideraciones: -------------------------------------------------------------------------------------------------
+
+                 Por SD N° 99 del 03 de abril de 2024 Rodrigo Maldonado Blanco fue condenado por
+         el Tribunal de Sentencias Especializado en Crimen Organizado por el hecho punible
+         previsto en el Art. 37 de la Ley 1340/88 y su modificatoria la Ley 1881/02 - instigación para
+         tráfico internacional - de lo que se infiere que el mismo es conexo al hecho punible de tráfico
+         internacional que es de competencia especializada; teniendo en cuenta que las causas son
+         conexas cuando se presentan relación en cuanto a los hechos punibles - como en el caso
+         de autos- por tanto de conformidad al Art. de la Acordada 1406 corresponde que sea el
+         Juzgado Especializado el competente en estos autos.-------------------------------------------------
+
+               POR TANTO, bajo los argumentos esgrimidos en el exordio del presente fallo y con
+         sustento en las disposiciones legales vigentes, la; -----------------------------------------------------
+
+
+                                            CORTE SUPREMA DE JUSTICIA,
+
+                                                         SALA PENAL
+
+                                                       R E S U E L V E:
+
+                      DECLARAR LA COMPETENCIA del Juzgado Penal de Ejecución
+         Especializado en Crimen Organizado N°3, con relación a los condenados Maura Mabel
+         Simonetti y Rodrigo Maldonado Blanco, por los fundamentos expuestos en el exordio
+         de la presente resolución. ------------------------------------------------------------------------------------
+
+                         ANOTAR, registrar y notificar. --------------------------------------------------------------
+
+
+
+
+Para conocer la                            Firmado digitalmente            Firmado digitalmente             Firmado digitalmente por:
+                                                                                                            MARIA CAROLINA LLANES
+     validez del                           por: LUIS MARIA                 por: MANUEL DEJESUS              OCAMPOS (MINISTRO/A)
+   documento,                              BENITEZ RIERA                   RAMIREZ CANDIA
+ verifique aquí.                                                                                            Asunción, 10 de febrero de
+                                           (MINISTRO/A)                    (MINISTRO/A)                     2025 con Nro. A.I.: 29 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

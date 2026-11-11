@@ -1,0 +1,431 @@
+# Acuerdo y Sentencia N.º 2197/2012
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA LEY Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”. AÑO: 2008 – Nº 899.
+
+- **Código CSJ:** 26957
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 2197/2012
+- **Fecha:** 2012-12-11
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=26957)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=26957)
+
+## Texto de la resolución
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA LEY
+Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”. AÑO: 2008 – Nº
+899.------------------------------------------------------------
+
+ACUERDO
+Y SENTENCIA NÚMERO: DOS
+MIL CIENTO NOVENTA Y SIETE.-
+
+En   la  
+Ciudad   de   Asunción,  
+Capital   de   la  
+República   del   Paraguay, 
+a   los            Once              días del mes de                  Diciembre             del año dos mil doce, estando en
+la Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos. Señores
+Ministros de la Sala Constitucional, DoctorVÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente
+y Doctores GLADYS BAREIRO DE
+MÓDICA y ANTONIO FRETES, Miembros, ante mí, el Secretario autorizante, se
+trajo al acuerdo el expediente caratulado: ACCIÓN
+DE INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA
+LEY Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”, a fin de resolver la
+acción de inconstitucionalidad promovida por los Señores Germán Vázquez Brítez y Casiano Troche Ocampo, por sus propios derechos y
+bajo patrocinio de
+abogado.----------------------------------------------------------------------------------
+
+Previo estudio de los antecedentes del
+caso, la Corte Suprema de Justicia, Sala Constitucional, resolvió plantear y
+votar la siguiente:----------------------------------------------
+
+C
+U E S T I O N:
+
+¿Es
+procedente la acción de inconstitucionalidad deducida?.----------------------------
+
+A la
+cuestión planteada el Doctor FRETES dijo:
+Los
+Sres. GERMAN VAZQUEZ BRITEZ y CASIANO TROCHE OCAMPO justifican su
+legitimación con la Resolución DGJP N° 929 de fecha 17 de abril de 2008 y
+Resolución DGJP N°
+788 de fecha 04 de abril de 2008
+respectivamente, que lo acreditan como jubilados de la Policía Nacional, impugnan los Arts. 8 y 18 incs. u) y z') de la Ley N°
+2345/2003.----------------------------------------------------------------------
+
+Argumentan que los artículos impugnados vulneran principios, derechos y garantíasconstitucionales, violan derechos adquiridos y el principio de igualdad consagrado en el Art. 46 de la Constitución. Finalmente contradicen
+abiertamente la garantía establecida en
+el art. 103 de la Constitución
+Nacional.------------------------------------------------------------          Con relación al Art. 8 de la
+ley 2345/03, sometido a estudio considero puntualmente, la inexistencia de
+agravio actual que significa que el gravamen no existe al momento que se
+resuelve la acción de inconstitucionalidad, ya que dicho artículo ha sido
+modificado por la Ley N° 3542 de fecha 26 de junio de 2008, que en su art. 1°
+dispone: "Modificase el Artículo 8 de la Ley N° 2345/03 "DE REFORMA Y
+SOSTENIBILIDAD DE LA CAJA FISCAL. SISTEMA DE JUBILACIONES Y PENSIONES DEL SECTOR PUBLICO, de la siguiente manera: Art.
+8.-"Conforme lo dispone el Artículo 103 de la Constitución
+nacional, todos 1os beneficios que paga
+la Dirección General de Jubilaciones
+y Pensiones del Ministerio de Hacienda se
+actualizarán anualmente, de oficio,
+por dicho Ministerio. La tasa
+actualización será la variación del
+Índice de Precios del Consumidor calculados por Banco Central del
+Paraguay, correspondiente al periodo
+inmediatamente precedente. Quedan
+expresamente excluidos de lodispuesto en este artículo, los beneficios, correspondiente a los programas no contributivos".----------------------------------------------------       Evidentemente, lo que tenemos que afirmar es que ciertamente el Artículo atacado ha sido modificado; pero la modificación introducida no varía en absoluto la argumentación sostenida para declarar la inconstitucionalidad del Artículo 8 de la Ley N° 2345/03, que igualmente válida y vigente para la Ley N° 3542/08, teniendo en cuenta que los aspectosvariados
+no afectan la parte sustancial cuestionada.---------------------------------------------
+
+Nos
+encontramos justamente ante un caso en que
+la alteración de las circunstancias que
+motivaron dicho proceso, hace que ésta haya perdido toda virtualidad práctica. Esta corte ha sostenido en
+diversos pronunciamientos que la sentencia “debe
+sujetarse a la situación
+vigente
+en el momento en que se dicta.  Y como que al presente, por las razones
+expuestas, los supuestos de hecho se han alterado
+sustancialmente, cualquier pronunciamiento sería un pronunciamiento en abstracto, lo que es vedado ya que esta Corte
+solamente puede decidir o asuntos de carácter
+contencioso" (CS,Asunción, 5 de setiembre, 1997, Ac. y Sent. N°
+506).----
+
+Por tanto, opino que la Acción de
+Inconstitucionalidad debe ser sobreseída con relación al artículo 8 de la Ley
+N° 2345/2003. Asimismo corresponde el sobreseimiento de acción respecto al Art.
+6 del Decreto N° 1579/04. Al no estar vigente el art. 8 de la Ley 2345/03 (por
+modificación de una ley posterior) tampoco lo está su decreto reglamentario.--­
+
+Con
+respecto a la impugnación referida al art. 18 inc. u) de la Ley N° 2345/2003, el mismo
+deroga
+el Art. 92 de la Ley N° 222/93 que se refiere a herederos de Oficiales y SubOficiales de la
+Policía Nacional, y teniendo en cuenta el carácter de
+jubilados de los accionantes, dicha normativa no le es
+aplicable.---------------------------------------------------------
+
+Finalmente
+en referencia al inc. z') del Art. 18,
+es de advertir que dicha disposición tiene sustento en el
+contenido de la propia Ley N° 2345/03. En efecto, dicho inciso constituye  una redacción de forma en la cual se consigna
+la derogación de toda disposición legal que se oponga a lo dispuesto en la Ley
+Nº 2345/03. En consecuencia, la determinación de la constitucionalidad o no
+de dicha disposición depende de lo resuelto en referencia a otros artículos
+de la misma ley
+cuestionados.-------------------------------------------------------     En el caso de autos, las demás disposiciones atacadas han sido
+desestimadas, conforme lo expresado precedentemente, por lo que corresponde que
+la acción intentada contra el inc. z') también corra la misma
+suerte.---------------------------------------------------- En consecuencia, y en atención a las
+manifestaciones vertidas corresponde no hace lugar
+a la acción de inconstitucionalidad promovida contra el Art. 18 incs. u) y z') de la Ley N° 2345/03. Sobreseer la acción respecto al Art. 8 de la Ley N° 2345/03 y
+Art. 6 del Decreto N° 1579/2004. Es mi
+voto.---------------------------------------------------------------
+
+A su turno
+el Doctor NÚÑEZ RODRÍGUEZ, dijo: Me
+adhiero parcialmente al voto del Ministro Preopinante en el sentido de
+rechazar la acción respecto del
+Art. 18 inc. u) de la Ley Nº 2345/03, por las mismas razones.--------------------------------------------------------
+
+Ahora, disiento con relación al rechazo de todos los demás artículos también impugnados,
+pues considero que la acción si debe prosperar respecto de los Arts. 8 y 18 inc. z´ de la Ley N° 2345/2003 y el Art. 6 del Decreto Nº 1579/2004, por
+las razones que seguidamente paso a exponer:-----------------------------------------------------------------------
+
+Con
+relación al Art. 8, modificado por el Art. 1 de la Ley
+N° 3542/2008, considero que la acción de inconstitucionalidad es a todas luces procedente, porque el Art. 103 de la Ley Suprema
+dispone que "la Ley" garantizará la
+actualización de los haberes jubilatorios en igualdad de tratamiento dispensado al funcionario público en actividad.
+Por tanto ni la ley, en este caso la
+Ley Nº 2345/03, ni normativa alguna pueden oponerse a lo
+establecido en la
+norma constitucional
+transcripta, porque carecerán de validez en base a la prelación de nuestro sistema positivo (Art. 137 CN).------------------------------------------------
+
+De ahí que al supeditar el Art.
+8 de la Ley Nº 2345/03, la actualización de todos los beneficios pagados por la Dirección General de Jubilaciones y Pensiones de forma ANUAL, crea una medida de regulación arbitraria, pues los aumentos
+podrían darse varias veces en el año,
+con lo cual los jubilados quedarían excluidos de tal aumento hasta el año entrante no previsto en la Constitución, en
+desigualdad de tratamiento con los salarios del conjunto de funcionarios activos.---------------------------------
+
+De igual manera, la
+actualización de los aumentos debe hacerse en igual proporción y tiempo que sucede respecto a los funcionarios
+activos, y no de acuerdo a la variación del Índice de Precios del Consumidor calculados por el Banco Central del
+Paraguay, porque el mismo cálculo no
+siempre coincide con el promedio del aumento de los salarios fijados en forma definitiva por el Poder Ejecutivo,
+produciendo de este …///…
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA LEY
+Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”. AÑO: 2008 – Nº
+899.------------------------------------------------------------
+
+…///…modo un
+desequilibrio entre los poderes adquisitivos de funcionarios pasivos, en
+relación con los
+activos.----------------------------------------------------------------------------------
+
+La igualdad de tratamiento
+contemplado en la norma constitucional implica que los aumentos resueltos por
+el Poder Ejecutivo a favor de los activos favorece de igual modo a los jubilados, a los cuales sus haberes debe
+actualizarse en igual
+porcentaje y tiempo que lo hace el
+Ministerio de Hacienda respecto a los activos. Debemos recordar que al
+funcionario activo aportante, cuando se produce un aumento salarial, su primer
+aumento va de forma íntegra a la Caja de Jubilaciones para compensar el
+nuevo aumento obtenido, el cual beneficia de modo directo a los
+jubilados.---------------------------------------------------
+
+Nuestra Carta
+Magna garantiza también la defensa en juicio de las personas y de sus
+derechos, es por ello que la Corte Suprema de Justicia no puede dejar de dar
+respuesta a los reclamos hechos por los ciudadanos, máxime cuando en aplicación
+al principio “iura novit curiae”, ello es una facultad
+del magistrado, sino su deber analizar el derecho positivo aplicable al caso de forma armoniosa. Conforme a este punto,
+debemos afirmar que la Constitución ya
+no es una mera carta de organización del poder y la declaración de unas
+libertades básicas sino, antes bien,
+una norma directamente operativa que
+contiene el reconocimiento de garantías -positivas y negativas- exigibles jurisdiccionalmente.-------
+
+Tenemos el
+deber constitucional de identificar el derecho comprometido en
+la causa, en la medida en que existe la inexorable necesidad de
+satisfacer el interés público de proteger y defender los derechos fundamentales de la persona. Nuestra obligaciónes
+hacer justicia y velar por la
+supremacía de la Constitución; en el
+marco del respeto de las garantías constitucionales en él amparadas. En
+esta línea de argumento, el Poder Judicial, y
+en especial la Corte Suprema de Justicia, está obligado a remover factores que propicien discriminaciones
+prohibidas por nuestra Constitución; por ello, cualquier interpretación que
+propicie la discriminación que significa que una persona con derechos y
+calidad adquiridos, resulte menoscabada y/o discriminada no puede sino ser tachado de inconstitucional.------------------------------------------------------------------------------
+
+En
+aplicación de este deber constitucional, considero que si bien el Articulo 8 de
+la Ley Nº 2345/2003, fue modificado por el Art. 1° de la Ley N° 3.542/2008, no
+fue derogado como quiere entender y aplicar el Ministerio de Hacienda. Los
+agravios son exactamente los mismos, independiente del número del artículo o de
+la ley que lo recoja, pues debemos diferenciar la norma en sí misma (derecho u
+obligación), del Artículo en la que eventualmente se halla transcripta. El
+artículo 8 sigue vigente con las modificaciones introducidas, los agravios
+constitucionales expresados por la accionante siguen estando presentes y la
+acción contra el mismo sigue siendo
+procedente.-----------------------------------
+
+Siguiendo
+este mismo razonamiento, considero que el Art. 6º del Decreto Nº 1579/2004 es igualmente inconstitucional, por ser una derivación de la norma impugnada en la presente acción, debiendo correr la misma
+suerte que el Art. 8 de la Ley Nº 2345/2003, modificado por el Art. 1 de la Ley
+3542/2008; y esto es así, porque si bien, en adelante el Poder Ejecutivo ya no reglamentará la aplicación de las actualizaciones, el Decreto no fue derogado y por tanto sigue
+vigente.---------------------------------------------------
+
+Asimismo, el
+Art. 18 inc. z´) también deviene inconstitucional respecto de los
+accionantes, por cuanto implica un efecto retroactivo sobre los beneficios efectivamente
+adquiridos
+por los mismos, lo cual les ocasiona un perjuicio patrimonial, violando un
+derecho y una
+garantía reconocida por nuestra Constitución, como lo es el de la propiedad
+privada (Art. 109 C.N.).-----------------------------------------------------------------------------------
+
+En atención
+a los fundamentos expuestos precedentemente, considero que corresponde
+hacer lugar parcialmente a la acción de inconstitucionalidad, y en consecuencia,
+declarar la inaplicabilidad de los Arts. 8 (modificado por el Art. 1° de la
+Ley N° 3.542/2008),
+18 inc. z' de la Ley N° 2345/2003 y del Art. 6 del
+Decreto N° 1579/2004, en relación con los
+accionantes, y en disidencia con el Ministro Preopinante. Es mi
+voto.------------------------------------------------------------------------------------------
+
+A su turno la Doctora BAREIRO DE MÓDICA, dijo: Los
+Señores German Vázquez Brítez
+y Casiano Troche Ocampo, por sus propios derechos y bajo
+patrocinio de Abog., acompañan a la presentación de la Acción de
+Inconstitucionalidad las Resoluciones del Ministerio de Hacienda, como
+documentos que acreditan la calidad de Sub-­Oficiales Superiores de la Policía Nacional (Jubilados), impugnando por dicha representación los arts. 8 y 18 incs.
+u) y z) de la Ley 2345/2003 y art. 6 del Decreto N° 1579/2004.-----------­
+
+1- En primer lugar, con relación al Art. 8 de la
+Ley Nº 2345/2003, el Art. 103 de la
+Constitución Nacional dispone que "La Ley"
+garantizará la actualización de los haberes Jubilatorios en igualdad de tratamiento dispensado al funcionario
+público en actividad. Por tanto
+ni la ley,
+en este caso la Ley N° 2345/2003, ni la Resolución reglamentariaque dicte
+el Poder Ejecutivo relacionado con "...el mecanismo
+preciso a utilizar", pueden oponerse a lo establecido en la norma constitucional transcripta, porque carecerán de
+validez (Art.137 CN). Deahí que al supeditar el Art. 8 de la Ley N° 2345/2003, la actualización de todos los
+beneficios pagados por la Dirección General de Jubilaciones y Pensiones al
+"...promedio de los incrementos de salarios..." crea una media de regulación, entre
+básicos y altos salarios de la cohorte de funcionarios activos, no prevista en la Constitución, que puede ciertamente
+beneficiar a los primeros pero decididamente perjudicar a los
+segundos.-----------------------------------------------------------------------------------­
+
+La Constitución Nacional ordena que la ley
+garantice "...la actualización"
+de los haberes jubilatorios "...en
+igualdad de tratamiento dispensando al
+funcionario público enactividad" (Art. 103 CN); la Ley Nº 2345/2003
+supedita la actualización "...al promedio
+de los incrementos de salarios del
+sector público" y al IPC calculado por el BCP,
+como tasa de actualización. Sin embargo,
+el Poder Ejecutivo al reglamentar "...el mecanismo preciso a utilizar" Decreto Nº 1579/2004, introduce
+unas variables y unos universos extraños a los preestablecidos para obtener el "Factor ajuste", que podría
+eventualmente servir de factor de ajuste pero no para actualizar, los haberes jubilatorios en igualdad de
+tratamiento dispensado al funcionario público en actividad.­--------------------------------------
+
+1.1.- El Art. 46 de la C.N. dispone: "De la Igualdad de las personas: Todos los habitantes de la
+República son iguales en dignidad y derechos. No se admiten discriminaciones.
+El Estado removerá los obstáculos e impedirá
+los factores que las mantengan olas propicien.
+Las protecciones que se establezcan
+sobre desigualdades injustas no serán consideradas como factores discriminatorios sino igualitarios".--------­
+
+1.2.-La ley puede, naturalmente, utilizar el IPC calculado por el B.C.P para la
+tasa de variación, siempre que ésta se aplique a todo el universo de los
+afectados respetando las desigualdades positivas. Las distintas situaciones
+de los actores resultan de los distintos niveles jerárquicos y escalas salariales correspondientes
+y éstas diferencias originarias no traducen “...desigualdades
+injustas” o “...discriminatorias” (Art. 46 CN) como para igualarlas con un promedio (tasa común) en ocasión de las
+actualizaciones de los importes correspondientes a las Jubilaciones y Pensiones que de implementarse sí
+constituiría un factor injusto y discriminatorio para los
+mismos.---------------------------------------------------­
+
+La igualdad de tratamiento contemplada en la
+norma constitucional implica que los aumentos resueltos por el Poder Ejecutivo a favor de los activos favorece de
+igual modo a los jubilados, a los cuales sus haberes debe actualizarse en igual
+porcentaje y tiempo que lo hace el Ministerio de Hacienda respecto a los activos. Debemos recordar que al funcionario
+activo aportante, cuando se produce
+un aumento salarial, su primer …///…
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA LEY
+Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”. AÑO: 2008 – Nº
+899.------------------------------------------------------------
+
+…///… aumento va de
+forma íntegro a la Caja de Jubilaciones pare compensar el nuevo aumento
+obtenido, el cual beneficia de modo directo a los jubilados.---------------------------
+
+Nuestra Carta
+Magna garantiza también la defensa en juicio de las personas y de sus derechos,
+es
+por ello que la Corte Suprema de Justicia no puede dejar de dar respuesta a los
+reclamos hechos por los ciudadanos, máxime cuando en aplicación al principio
+"iura novit curiae" ello no sólo es una facultad del
+magistrado, sino su deber analizar el derecho positivo aplicable al caso de
+forma hermenéutica y armoniosa. Conforme a este punto, debemos afirmar que la
+Constitución Nacional ya no es una mera carta de organización del poder y la
+declaración de unes libertades básicas sino, antes bien, una norma directamente
+operativa que contiene el reconocimiento de garantías positivas y negativas exigibles,
+jurisdiccionalmente.-------------------------------------------------------------------------------------­
+
+Tenemos el deber constitucional de identificar el
+derecho comprometido en la causa, en la medida en que existe la
+inexorable necesidad de satisfacer el interés público de proteger y defender
+los derechos fundamentales de la persona. Nuestra obligación es hacer justicia
+y velar por la supremacía de la
+Constitución, en el marco del respeto de las garantías constitucionales en él amparadas. En esta línea de argumento, el Poder
+Judicial, y enespecial
+la Corte Suprema de Justicia, está obligado
+a remover factores que propicien discriminaciones prohibidas por nuestra Constitución; por ello, cualquier interpretación
+que favorezca la discriminación que significa que una persona con derechos y calidad adquiridos,
+resulte menoscaba y/o discriminada no puede sino ser tachado de
+inconstitucional.­------------------------------------------------------------------------------------------
+
+Por otro lado, cabe destacar que si bien se dictó
+la Ley Nº 3542/2008, por la cual se
+modifica el Art. 8 de la Ley Nº 2345/2003, no obstante dicha modificación no
+altera en lo sustancial la norma
+anterior, ya que sigue manteniendo el criterio de que la actualización de los
+haberes se realizará en base al IPC, es
+decir, persiste la situación inconstitucional hasta la fecha.­----------------------------------------------------------------------------
+
+2- En cuanto a la impugnación del Art. 18 inc. u)
+de la Ley Nº 2345/2003, creo oportuno mencionar que el accionante no se encuentra
+legitimado a los efectos del citado art., por cuanto es sujeto pasivo-jubilado, y el mismo artículo
+derogo el Art. 92 de la Ley Nº 222/93 que se refiere
+a los herederos de Oficiales y Sub-oficiales de la Policía Nacional, por lo que
+teniendo en cuenta el carácter de
+jubilado del accionante dicha norma no le esaplicable, es decir, no le causa
+agravios.------------------------------------------------­
+
+3- En relación al Art. 18 inc. z) de la Ley
+2345/2003, y deconformidad a los términos del escrito de presentación, se infiere que el accionante
+viene a atacar el Inc z') que deroga cualquier
+otra disposición legal que se oponga a lo
+establecido en la Ley encuestión, situación que al igual que el Art. 6 del
+Decreto Nº 1579/2004 contravienen principios
+establecidos en los Arts. 14 (Irretroactividad de la Ley), 46 (Igualdad
+de las personas) y 103 (Régimen de Jubilaciones de los funcionarios públicos) de la Constitución Nacional, creando una mayor
+desigualdad en el mecanismo de
+actualización establecido en el Art. 8 de la Ley 2345/2003 y su Decreto Reglamentario.------------------------------------
+
+4- En
+consecuencia, y en atención a las manifestaciones vertidas considero
+hacer lugar parcialmente
+a la acción de inconstitucionalidad en relación a los Arts. 8 y 18 inc. z') de la Ley N°2345/2003 y elArt.
+6 del Decreto Nº 1579/2004, no así
+con relación al Art. 18 inc. u) de la Ley Nº  2345/2003, por los fundamentos ya expuestos.
+Es mi voto.-------
+
+…///…
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD: “GERMAN VAZQUEZ BRITEZ Y OTRO C/ ARTS. 8 Y 18 DE LA LEY
+Nº 2345/2003 Y ART. 6 DEL DECRETO Nº 1579/2004”. AÑO: 2008 – Nº
+899.------------------------------------------------------------
+
+…///…Con
+lo que se dio por terminado el acto, firmando SS.EE., todo por ante mí, de que
+certifico, quedando acordada la sentencia que inmediatamente sigue:----------------------------
+
+Ante mí:
+
+SENTENCIA NÚMERO: 2197.-
+
+Asunción,     11       de     
+Diciembre       de 2.012.-
+
+VISTOS: Los méritos del Acuerdo que anteceden,
+la
+
+CORTE
+SUPREMA DE JUSTICIA
+
+Sala
+Constitucional
+
+R
+E S U E L V E:
+
+HACER
+LUGAR parcialmente a la
+acción de inconstitucionalidad planteada, y en consecuencia declarar la
+inaplicabilidad los Arts. 8 (modificado por el Art. 1° de la Ley N° 3.542/2008) y 18 inc. z') de la Ley N° 2345/2003; y del Art. 6 del Decreto N°
+1579/2004, en relación a los
+accionantes.-----------------------------------------------------------------
+
+ANOTAR, registrar y
+notificar.---------------------------------------------------------------
+
+FDO.: Doctor
+VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente y Doctores GLADYS BAREIRO DE MÓDICA y ANTONIO FRETES.
+ANTE MÍ: Héctor Fabián Escobar Díaz (Secretario Judicial I).-
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

@@ -1,0 +1,152 @@
+# Acuerdo y Sentencia N.º 51/2011
+
+**Carátula:** EXPEDIENTE: “Banco Regional S.A. c/ Mecánica Gotze S.R.L. s/ Acción Ejecutiva”
+
+- **Código CSJ:** 26789
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 51/2011
+- **Fecha:** 2011-05-03
+- **Sala:** TRIBUNAL DE APELACION PRIMERA SALA - ENCARNACION
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; JUZGADO DE PRIMERA INSTANCIA EN LO CIVIL Y COMERCIAL, 1º TURNO, SEC.Nº 1 - ENCARNACION
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=26789)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=26789)
+
+## Texto de la resolución
+
+ACUERDO Y SENTENCIA Nº 051/11/01.-
+
+
+
+		En Encarnación, Paraguay, a tres días de mayo de dos mil once, estando reunidos en la sala de acuerdos del Tribunal de Apelación, Primera Sala, los Miembros Abogados, Sergio Martyniuk Barán, Blas Eduardo Ramírez Palacios y Wilfrido Clemente Rolón Molinas, bajo la presidencia del primero de los nombrados, ante mí, el actuario autorizante, se trajo a acuerdo el expediente caratulado: “Banco Regional S.A. c/ Mecánica Gotze S.R.L. s/ Acción Ejecutiva”, con el objeto de resolver los recursos de apelación y nulidad interpuestos por el Abg. Carlos Fernando Airaldi, en representación de la parte demandada, contra la S.D. Nº 2301/2010/01 del 08 de noviembre de 2010, dictada por la Jueza de Primera Instancia en lo Civil y Comercial del Primer Turno, Abg. Edith Diana Scoscería de Sosa.-
+
+
+
+		Previo estudio de los antecedentes del caso, el Tribunal de Apelación, resolvió plantear y decidir las siguientes:
+
+
+
+CUESTIONES:
+
+ES NULA LA SENTENCIA RECURRIDA?,
+
+EN SU DEFECTO, SE HALLA AJUSTADA A DERECHO?
+
+
+
+		Practicado el sorteo de ley, resultó el siguiente orden de votación: Ramírez Palacios, Martyniuk Barán y Rolón Molinas.
+
+
+
+ 		A la primera cuestión planteada el Miembro preopinante, Abg. Blas Eduardo Ramírez Palacios, dijo: Que, el recurrente desistió expresamente del recurso de nulidad en esta instancia, y al no observarse vicios o defectos en la construcción del fallo, corresponde declarar la deserción de dicho recurso. Es mi voto.- 
+
+
+
+ 		A sus turnos los Miembros Abogados, Sergio Martyniuk Barán y Wilfrido Clemente Rolón Molinas, dijeron: Que, se adhieren al voto del preopinante por los mismos fundamentos expuestos.-
+
+
+
+		A la segunda cuestión planteada el Miembro preopinante, Abg. Blas Eduardo Ramírez Palacios, dijo: Que, por la resolución recurrida el Juzgado resolvió: “1.- RECHAZAR, con costas, la EXCEPCIÓN DE INHABILIDAD DE TÍTULO planteada por la parte demandada, conforme a los fundamentos expuestos en el exordio de la presente resolución. 2.- LLEVAR ADELANTE, con costas, la presente ejecución seguida por BANCO REGIONAL S.A. en contra de MECANICA GOTZE S.R.L., hasta que el acreedor se haga íntegro pago de la suma reclamada, sus intereses y costas. 3.- ANOTAR,…”.
+
+
+
+ 		Que, la parte recurrente sostiene que la resolución recurrida le agravia enormemente, porque en la construcción de la sentencia el Juzgado acoge como válida la vía ejecutiva utilizada por la actora en virtud de la certificación de la firma que el pagaré que se ejecuta lleva impresa. Menciona que al contrario de lo que sostuvo la Juzgadora, existe una prescindencia entre el pagaré que se ejecuta y la hipoteca aludida en la presente acción, habida cuenta de lo pactado en el contrato de hipoteca y que la presente acción ejecutiva se promueve en virtud del pagaré que representa la obligación principal que se encuentra garantizada con la hipoteca abierta como accesoria y, en fin, realiza una diferenciación entre la presente acción ejecutiva con garantía hipotecaria de lo que sería una acción hipotecaria. Sostiene que el Juzgado no analizó la diferencia existente entre el monto impreso en el pagaré ejecutado (G. 816.301.370) y el monto reclamado en la demanda (G. 756.000.000), obviando la exigencia procesal de que el título sea proveniente de una deuda líquida y exigible, lo cual –sostiene- no resulta del documento por las condiciones apuntadas, “…pues en efecto, lo que en realidad surge de manera clara de la documentación presentada por la parte actora, es que el pagaré que ejecuta es un documento librado por el monto que en el figura, en garantía tal vez, pero que el monto que en realidad se ejecuta debería estar representado en otro tipo de documento tal como una liquidación en la que consten los pagos realizados por mi mandante y en tal caso el saldo impago, que en el caso de marras sólo surge de lo expuesto en la demanda…(sic)”. Expresa a seguir que la Jueza de grado no ha considerado que la parte actora, al promover el presente juicio ejecutivo, reclama expresamente la suma de G. 756.000.000, y ampara dicha deuda reclamada en el pagaré que acompaña a la presentación; sin embargo, el pagaré presentado en juicio contiene otro monto, a partir de allí no existe otra explicación que la parte actora haya esbozado con miras a explicar el porqué de la susodicha diferencia, cita en este punto la normativa del art. 439 del C.P.C. A seguir expresa que: “…En doctrina procesal, se ha interpretado que el Título Ejecutivo es aquel que permite al acreedor ejercer su derecho por la vía ejecutiva, lo cual tiene como requisito que la deuda contenida o reclamada sea exigible, es decir tener el plazo vencido, no estar sujeta a condición y representar una cantidad líquida en dinero, es decir que el monto reclamado debe constar en el mismo documento, sin que sea necesaria una liquidación previa (sic…)”. Este argumento refiere que no ha sido considerado por el Juzgado en la sentencia recurrida, ni la diferencia denunciada, haciendo sumamente injusta a la resolución recurrida, por lo que solicita la corrección en Alzada por la vía recursiva interpuesta. Concluye más adelante solicitando que se revoque la resolución recurrida, rechazando la presente ejecución, con costas. 
+
+
+
+ 		Que, la parte ejecutante, al contestar el traslado de los agravios, refiere que la parte recurrente alega cuestiones no propuestas en la anterior instancia, en este sentido refiere que la adversa con relación a la excepción de inhabilidad de título ha argumentado que el pagaré que sirve de título ejecutivo en el presente juicio no está inscripto en la Dirección General de los Registros Públicos, y la discusión en la primera instancia ha girado en torno ese punto. El Juzgado, con sobrados fundamentos legales y jurisprudenciales, ha rechazado la defensa articulada; la parte recurrente en esta instancia sostiene que el fallo apelado debe ser revocado porque el monto de la demanda es inferior a la suma consignada en el pagaré ejecutado. Vale decir que altera el fundamento de la excepción opuesta, es decir que trae a colación cuestiones no propuestas en la primera instancia; este detalle es significativo, ya que el Tribunal de Alzada no puede examinar cuestiones no propuestas en la instancia anterior por aplicación del art. 420 del código ritual, por lo que el recurso de apelación deviene improcedente y solicita su desestimación, con costas. Seguidamente expresa que el apelante no trae consigo un agravio atendible ni realiza una crítica razonada de la sentencia recurrida, y expresa que resulta cómico que la adversa venga a agraviarse por el hecho de que la suma demandada es menor que la consignada en el pagaré ejecutado, calificando ese argumento como totalmente improcedente para sostener la inhabilidad de título, invocando al efecto: 1) el apelante no lleva a cabo una crítica razonada contra los requisitos extrínsecos que formalmente debe contener el pagaré a la orden, único fundamento para la viabilidad de la excepción de inhabilidad de título; y 2) el apelante carece de agravios contra una sentencia que lleva adelante una ejecución por un capital que es inferior al registrado en el título de crédito, lo cierto es que esta diferencia no quebranta la validez formal del título ejecutivo, pues se trata de un asunto vinculado al alcance de la pretensión, que es ajeno respecto a los requisitos extrínsecos que debe lucir el pagaré agregado en autos. Básicamente el apelante no ha hecho una crítica razonada y válida para defender la excepción de inhabilidad de título opuesta, conforme lo exige el art. 419 del código ritual. A seguir sostiene que el fallo está ajustado a derecho porque el pagaré agregado en autos demuestra certeramente el desembolso del préstamo otorgado a los demandados, que a su vez cuenta con el respaldo de las hipotecas abiertas cuyas escrituras fueron adjuntadas (art. 2359 del C.C.). Asimismo es sabido que el pagaré librado bajo el amparo de una hipoteca abierta no requiere inscripción registral en virtud de la Resolución Nº 3/97 del 29 de octubre de 1997, dictada por la interventora de la Dirección General de los Registros Públicos. A seguir cita la jurisprudencia que considera aplicable al caso, y concluye solicitando el rechazo del recurso de apelación interpuesto, con costas, y, en consecuencia, se confirme la sentencia recurrida.
+
+
+
+ 		Que, al analizar los argumentos del recurso de apelación interpuesto, cabe coincidir con la parte recurrida que la parte recurrente trae a esta instancia argumentos no tratados ni debatidos  en la anterior instancia, no obstante ello conviene señalar que la eventualidad de que en un juicio ejecutivo el título base de la ejecución necesariamente deba tratarse de aquel instrumentado entre las partes para formalizar la obligación respectiva, desde ya indica que debe ser ese título y no otro el que deba reclamarse en el juicio ejecutivo, pero a nadie escapa que tratándose de obligaciones pactadas con los bancos nada obsta a que el deudor pueda ir amortizando su deuda y el banco pueda aceptar tales amortizaciones, las que desde luego estarán instrumentadas en los recibos de dinero respectivos o en los extractos de cuenta bancaria a los fines de la determinación del saldo deudor respectivo. Lo que sí es necesario señalar con el mayor énfasis, ya sea que se trate de una obligación instrumentada en un título obligacional cualquiera (pagaré, cheque, etc.), es que no existe en el marco del derecho positivo ninguna norma que prohíba al acreedor reclamar, a menos de los que inicialmente se instrumentaron como obligación a cargo del y al deudor, quien en todo caso si no está de acuerdo con el monto reclamado tiene la oportunidad de interponer la excepción de pago parcial o total documentado, de no hacerlo así resulta más que obvio que acepta el monto que se le reclama y además, siendo así, no puede cuestionar los requisitos extrínsecos del título al pretender que no existe una deuda líquida o exigible o de plazo no vencida o sujeta a condición, sin demostrar tales asertos. Por lo dicho, tales argumentos carecen de entidad para enervar la presente ejecución.
+
+
+
+ 		Que, por otra parte creo necesario realizar una repetición de una opinión anterior vertida recientemente en un fallo sobre una cuestión planteada en términos similares, al argumentar la excepción de inhabilidad de título del pagaré que instrumentaba una obligación pactada con una entidad bancaria cubierta por una línea de crédito habilitada a favor del deudor, por una suma similar o menor al pagaré que se ejecuta, y con la garantía real del derecho de hipoteca abierta o flotante, a la cual se suma la omisión reclamada de la inscripción del pagaré como hipotecario en la Dirección General de los Registros Públicos (registro de inmuebles respectivo), fundamentó la excepción de inhabilidad de título señalando que: En efecto, he sostenido, y ahora en este fallo vuelvo a sostener con la mayor convicción que las obligaciones garantizadas con hipoteca son las mismas que las correspondientes a las obligaciones que tiene el cliente con su banco en virtud de un contrato de apertura de crédito bancario, de lo que se sigue que es innegable que ante la existencia del contrato de apertura de crédito bancario, garantizado con hipoteca, tal garantía real se extiende precisamente a los compromisos o deudas adquiridas por el deudor. No se trata pues de un crédito garantizado inicialmente con una hipoteca ab inicio, en cuyo caso la deuda puede estar documentada en la misma escritura de hipoteca formando una unidad en el contrato de hipoteca (garantía real) y la instrumentación del crédito (obligación), o en su caso separadamente a la escritura de otorgamiento de la garantía hipotecaria por el deudor a favor del acreedor, y la instrumentación fraccionada o no de la deuda asumida (obligación) en tantos pagarés como alícuotas de la deuda sean pactadas, en tal caso además de la registración de la garantía real de hipoteca deben ser registrados los pagarés en la Dirección General de los Registros Públicos, tal es el caso entonces de la categoría jurídica de los “Pagarés Hipotecarios”, que no es el caso de autos. Por eso es posible afirmar que existe diferencia entre las obligaciones nacidas del contrato de mutuo (pacto de préstamo de dinero con garantía hipotecaria) y las originadas por el contrato de apertura de crédito o también denominada “línea de crédito con garantía real de hipoteca” (o prenda en su caso). Dicho en términos más sencillos, en la primera la obligación es cierta y actual, en tanto que en la segunda variante la obligación es eventual y variable toda vez que en el marco de la línea de crédito bancario el prestatario o cliente obligado puede realizar sucesivas extracciones de dinero, conforme a lo acordado y dentro de la línea de crédito y hacer los pagos o reembolsos respectivos que se irán acreditando en su cuenta correspondiente. Lo importante en este contrato (mutuo) es que en el momento mismo de la celebración el banco ya sabe cuánto le debe el cliente y cuándo debe pagar lo debido. A este tipo de obligaciones de dar sumas de dinero que nacen con la celebración misma del contrato y de las cuales se conoce tanto el monto de la deuda en dinero como el momento en que se debe efectuar el pago, se las denomina obligaciones ciertas y actuales.
+
+
+
+ 		Que, por el contrario, en el contrato de apertura de crédito bancario, el art. 1412 del Código Civil lo define en los siguientes términos: “Por la apertura del crédito bancario el Banco se obliga a tener a disposición de la otra parte una suma de dinero por un tiempo determinado o indeterminado”. La distinción es sumamente trascendente porque los efectos de la garantía real de hipoteca no varían, sufriendo sí sustancial variante la determinación actual y cierta o eventual y variable el monto de la obligación del deudor, tal como quedó ya expresado precedentemente, y obviamente el tratamiento a la instrumentación de la deuda u obligación no puede dejar de sufrir la variación por efecto del modo de operar de ambos contratos (el contrato de mutuo y el contrato de apertura de crédito bancario), en el mutuo normalmente se asume la obligación fraccionada en pagarés conforme al uso comercial constante (aunque no es el único modo), en cuyo caso tales pagarés deben ser mencionados en la escritura de hipoteca y mutuo en su caso, debiendo registrarse ambos (la hipoteca y los pagarés), que en tal caso los pagarés son denominados Pagarés Hipotecarios y sujetos al régimen del art. 2371 del Código Civil.-
+
+
+
+ 		Que, dice Emilio Ayala Añazco en su obra “La garantía hipotecaria en el contrato de mutuo y en el contrato de apertura de crédito bancario”: “(…) En este contrato (refiriéndose al contrato de crédito de cuenta bancaria), la única obligación que nace en el momento de la celebración misma, es la de tener a disposición de la otra parte una suma de dinero, es decir, la de constituir una línea de crédito por parte del banco. No nacen para el cliente obligaciones de dar sumas de dinero a favor del banco, pues las mismas están supeditadas a la realización de sucesivas extracciones, garantizándose el saldo final y no las cuentas singulares determinadas por cada extracción. Es por esta razón, que el contrato de apertura de crédito bancario es un contrato consensual, ya que no es necesaria la entrega del dinero por parte del banco para que el contrato quede perfeccionado. En cambio en el contrato de mutuo, es la entrega del dinero por parte del banco lo que convierte al cliente automáticamente en deudor del monto entregado. Se trata pues, de un contrato real, en atención a que la obligación de devolver el dinero prestado nace desde el momento mismo en que el dinero es recibido. En tal sentido, dado que en el momento de la celebración del contrato de apertura de crédito bancario lo que se origina es la línea de crédito y no las deudas en dinero del cliente, se denominan a las obligaciones dinerarias del cliente constituidas por el saldo adeudado al cerrarse la cuenta, obligaciones eventuales, porque se desconoce el monto que les corresponde y el momento en que debe pagarse la deuda, el cual depende del momento en que se cierra la cuenta, acontecimiento por otra parte, también incierto. La incertidumbre relativa a cuándo ha de generarse la obligación y a cuánto ha de deberse en tal concepto, determina la naturaleza eventual de la misma. Cabe señalar, que las partes pueden pactar que el cliente con sucesivos ingresos esté en condiciones de reintegrar sus primitivas disponibilidades (art. 1.413 Código Civil)”.
+
+
+
+ 		Que, queda muy claro entonces que en el contrato de apertura de crédito bancario o de “línea de crédito” como se denomina en la jerga bancaria, no es posible la instrumentación de una determinada, cierta y actual obligación, puesto que tal obligación no existe, de modo que mal podrá pretenderse la inscripción de pagarés que instrumentan una obligación aún no existente como “pagarés hipotecarios”. 
+
+
+
+ 		Que, la pregunta obligada que sigue es obviamente si una vez formalizada una obligación dineraria por el deudor (desembolso mediante el banco), esta deuda que fuera instrumentada en un pagaré, como se da en el caso de autos, debe ser registrada como pagaré hipotecario en los términos de la normativa del art. 2371 del Código Civil. Y la respuesta sin dudas es negativa, puesto que únicamente pueden fraccionarse y documentarse en pagarés las obligaciones nacidas del contrato de mutuo, porque son obligaciones ciertas y actuales. Puede leerse en el art. 2371 del C.C. que: “La obligación hipotecaria podrá fraccionarse y documentarse en pagarés endosables, haciéndolo constar el Escribano en la escritura y en los documentos…”, es decir, el fraccionamiento recae sobre la obligación garantizada con hipoteca y no sobre la línea de crédito garantizada con hipoteca.
+
+
+
+		Que, de modo que en las obligaciones derivadas del contrato de apertura de crédito bancario no corresponde la anotación registral de la obligación instrumentada en pagarés, porque inicialmente no existen obligaciones ni monto cierto y actual; y una vez que comience a operar el contrato los pagarés que se suscriben por cada retiro de dinero o extracción determinan únicamente la documentación de la obligación/deuda asumida por el deudor en el marco de la línea de crédito, y no pueden ser tratados ni considerados como pagarés hipotecarios porque no determinan la obligación total, dado que cada operación es independiente la una de la otra, tanto de las que se realizan o de aquellas que aún pueden ser realizadas, que quedan documentadas sin excepción alguna en los extractos de movimientos de la cuenta de crédito bancario, que determinan justamente eso, el movimiento de la cuenta tanto en cuanto a las obligaciones asumidas por el retiro dinerario por parte del deudor y por las amortizaciones que el mismo deudor vaya realizando conforme a lo pactado; de suerte que es posible afirmar que la documentación acostumbrada que realizan los bancos de las extracciones dinerarias realizadas por el cuenta/creditista, deudor u obligado, resulta absolutamente innecesaria y se debe únicamente a una costumbre comercial/bancaria a los fines, tal vez, de facilitar el control, que bien puede ser obviada ante la existencia de un contrato expreso de cuenta de crédito bancario, dado que en tal caso la obligación del deudor estará determinada para su reclamación judicial por los extractos de los movimientos de la cuenta bancaria y la respectiva escritura pública de hipoteca en cuanto a la garantía real se refiere. La confusión que surge en el caso cabe atribuir al desconocimiento que aún existe y persiste hasta ahora de los efectos de las Líneas de Crédito Bancarias garantizadas con el derecho real de hipoteca o de prenda, en su caso.- 
+
+
+
+ 		Que, por lo precedentemente expuesto, concluyo que corresponde rechazar el recurso de apelación interpuesto por su notoria improcedencia, debiendo imponerse las costas de esta instancia a la parte recurrente perdidosa. Es mi voto.
+
+
+
+ 		A sus turnos los Miembros Abogados, Sergio Martyniuk Barán y Wilfrido Clemente Rolón Molinas, dijeron: Que, se adhieren al voto del preopinante por los mismos fundamentos expuestos.-
+
+
+
+ 		Con lo que se dio por terminado el acto, firmando por ante mí, los Señores Miembros quedando acordada la Sentencia siguiente:
+
+
+
+Ante mí:
+
+
+
+SENTENCIA DEFINITIVA Nº 051 /11/01.-
+
+
+
+		 	Encarnación,   03  de mayo de 2011.-
+
+
+
+		VISTO: Los méritos que ofrece el acuerdo precedente y sus fundamentos, el Excmo. Tribunal de Apelación, Primera Sala, de la Circunscripción Judicial de Itapúa;-
+
+
+
+RESUELVE
+
+
+
+ 		1.- TENER POR DESISTIDO al recurrente del recurso de nulidad interpuesto.
+
+ 
+
+ 		2.- NO HACER LUGAR al recurso de apelación interpuesto por el Abg. Carlos Fernando Airaldi, en representación de la parte demandada, contra la S.D. Nº 2301/2010/01 del 08 de noviembre de 2010, dictada por la Jueza de Primera Instancia en lo Civil y Comercial del Primer Turno, Abg. Edith Diana Scoscería de Sosa, por improcedente, conforme a los fundamentos expuestos en el exordio de esta resolución.-
+
+
+
+ 		3.- IMPONER las costas de esta instancia a la parte recurrente perdidosa.-
+
+  
+
+ 		4.-   ANOTAR y registrar.-
+
+ Ante mí: Actuario Judicial: Miguel Ángel Zayas G.- 
+
+                                      
+
+Firman los Miembros 
+
+Abg. Wilfrido C. Rolón Molinas
+
+Abg. Blas Eduardo Ramírez Palacios
+
+Abg. Sergio Martyniuk Baran
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

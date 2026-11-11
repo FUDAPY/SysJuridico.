@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const LexpyFuenteCache = require('../models/LexpyFuenteCache');
@@ -57,14 +59,74 @@ async function conectorConCache(nombreFuente, consulta, fetcherFn) {
   return null;
 }
 
+let catalogoLocalCSJCache = null;
+
+function obtenerCatalogoLocalCSJ() {
+  if (catalogoLocalCSJCache) return catalogoLocalCSJCache;
+  const p = path.resolve(__dirname, '../../LESGILACION PARAGUAYA/Jurisprudencia Paraguaya/catalogo.json');
+  if (fs.existsSync(p)) {
+    try {
+      catalogoLocalCSJCache = JSON.parse(fs.readFileSync(p, 'utf8'));
+    } catch (e) {
+      console.warn('[CSJ Local] Error leyendo catalogo.json:', e.message);
+    }
+  }
+  return catalogoLocalCSJCache;
+}
+
 /**
  * 1. Conector CSJ Jurisprudencia (Corte Suprema de Justicia de Paraguay)
  * Busca fallos, acordadas y autos interlocutorios en jurisprudencia.pj.gov.py
+ * Prioriza el catálogo local OtelaxWisdom (72.375 fallos) para latencia cero y cero consumo de tokens.
  */
 async function buscarJurisprudenciaCSJ(consulta) {
   return conectorConCache('csj_jurisprudencia', consulta, async () => {
+    // 1. Búsqueda local en el catálogo de 72.375 fallos
+    const cat = obtenerCatalogoLocalCSJ();
+    if (cat && Array.isArray(cat.records) && cat.records.length > 0) {
+      const q = consulta.toLowerCase().trim();
+      const palabras = q.replace(/[^a-záéíóúñ0-9\s]/g, ' ').split(/\s+/).filter((w) => w.length > 3);
+      const matches = [];
+
+      for (let i = 0; i < cat.records.length; i++) {
+        const r = cat.records[i];
+        const textoFallo = `${r.caratula || ''} ${r.norms || ''} ${r.topics || ''} ${r.sala || ''} ${r.materia || ''}`.toLowerCase();
+
+        let coincidencia = false;
+        if (textoFallo.includes(q)) {
+          coincidencia = true;
+        } else if (palabras.length > 0 && palabras.every((p) => textoFallo.includes(p))) {
+          coincidencia = true;
+        }
+
+        if (coincidencia) {
+          matches.push(r);
+          if (matches.length >= 3) break;
+        }
+      }
+
+      if (matches.length > 0) {
+        const resultadoLocal = matches
+          .map((m) => {
+            return (
+              `[${m.type} Nº ${m.number}/${m.year} - ${m.sala || 'Corte Suprema de Justicia'}]\n` +
+              `Carátula: ${m.caratula}\n` +
+              (m.materia ? `Materia: ${m.materia}\n` : '') +
+              (m.norms ? `Normas aplicadas: ${m.norms}\n` : '') +
+              `Fallo oficial: ${m.source || 'https://www.csj.gov.py/jurisprudencia'}`
+            );
+          })
+          .join('\n---\n');
+
+        return {
+          resultado: resultadoLocal,
+          url: matches[0].source || 'https://www.csj.gov.py/jurisprudencia',
+        };
+      }
+    }
+
+    // 2. Respaldo por scraping web en tiempo real
     const url = `https://jurisprudencia.pj.gov.py/`;
-    // Petición de búsqueda por términos
     const { data } = await axios.get(url, {
       params: { q: consulta, buscar: '1' },
       timeout: TIMEOUT_MS,
@@ -74,7 +136,6 @@ async function buscarJurisprudenciaCSJ(consulta) {
     const $ = cheerio.load(data);
     const fallos = [];
 
-    // Selectores para sentencias / fallos en portal CSJ
     $('.fallo-item, .resultado-item, table tr, article').each((i, el) => {
       const t = limpiarTexto($(el).text());
       if (t.length > 30 && (t.includes('Acuerdo') || t.includes('Sentencia') || t.includes('Sala') || t.includes('CSJ'))) {
@@ -82,9 +143,10 @@ async function buscarJurisprudenciaCSJ(consulta) {
       }
     });
 
-    const resultado = fallos.length > 0
-      ? fallos.slice(0, 4).join('\n---\n')
-      : `Precedentes de CSJ consultados para "${consulta}". Relevancia: jurisprudencia vinculante de las Salas Constitucional, Civil y Comercial, y Penal.`;
+    const resultado =
+      fallos.length > 0
+        ? fallos.slice(0, 4).join('\n---\n')
+        : `Precedentes de CSJ consultados para "${consulta}". Relevancia: jurisprudencia vinculante de las Salas Constitucional, Civil y Comercial, y Penal.`;
 
     return { resultado, url };
   });

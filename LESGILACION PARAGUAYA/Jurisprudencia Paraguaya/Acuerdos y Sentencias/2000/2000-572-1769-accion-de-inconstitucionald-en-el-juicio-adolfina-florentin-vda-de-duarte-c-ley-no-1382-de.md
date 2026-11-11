@@ -1,0 +1,140 @@
+# Acuerdo y Sentencia N.º 572/2000
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALD EN EL JUICIO: "Adolfina Florentín Vda. de Duarte c/ Ley No 1382 del 12 de enero de 1999.
+
+- **Código CSJ:** 1769
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 572/2000
+- **Fecha:** 2000-10-10
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=1769)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=1769)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALD EN  EL  JUICIO:  "Adolfina  Florentín  Vda.  de
+Duarte c/ Ley No 1382 del 12 de enero de 1999~.
+
+
+             ACUERDO Y SENTENCIA NUMERO QUINIENTOS SETENTA Y DOS
+
+
+      En Asunción del Paraguay, a los diez días del mes de octubre del año
+dos mil, estando en la Sala de Acuerdos de la Corte Suprema de Justicia los
+Señores Ministros de la Sala Constitucional, Doctor CARLOS FERNÁNDEZ GADEA,
+Presidente, y Doctores LUIS LEZCANO CLAUDE y RAUL SAPENA BRUGADA, miembros,
+ante mi, el Secretario autorizante, se trajo al acuerdo el expediente:
+"Adolfina Florentín Vda. de Duarte c/ Ley No 1382 del 3 de enero de 1999",
+a fin de resolver la acción de inconstitucionalidad promovida por la Sra.
+Adolfina Florentín Vda. de Duarte.---------------------------------------
+Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia,
+Sala Constitucional, resolvió plantear y votar la siguiente:
+
+                             C U E S T I O N:
+      ¿Es procedente la acción de inconstitucionalidad promovida?.-----------
+---
+      A la cuestión planteada el Dr. Luis Lezcano Claude  dijo:  La  Abogada
+Alicia Funes Martínez, en  nombre  y  representación  de  la  Sra.  Adolfina
+Florentín Vda. de Duarte,  promueve acción  de  inconstitucionalidad  contra
+la Ley N° 1534 del 12 de enero de  1999,  "Que  aprueba  los  programa   del
+Presupuesto General de la Nación para el ejercicio fiscal 1999".------------
+-----------------------------
+      El Art. 45 de dicha ley establece: "Fijase en Gs. 504.000  (quinientos
+cuatro mil guaraníes) mensuales las pensiones  a  las  herederas  viudas  de
+veteranos y lisiados de  la  Guerra  del  Chaco  nacidas  antes  del  31  de
+diciembre de 1935". El Art. 46 dice cuanto sigue: "Fijase en Gs.  720.000  (
+setecientos veinte mil guaraníes) mensuales las pensiones de  los  veteranos
+y lisiados de la Guerra del Chaco más una bonificación adicional mensual  de
+Gs. 280.000 (doscientos ochenta mil  guaraníes).  La  bonificación  no  será
+transferible a los herederos de los veteranos y lisiados de  la  Guerra  del
+Chaco".------------------------------------
+      La accionante sostiene que debe ser beneficiada con el traspaso de  la
+pensión que le correspondería a  su  extinto  marido,  que  conforme  a  las
+disposiciones del Art. 46 de la Ley  N°  1382  del  12  de  enero  de  1999,
+asciende a la suma de setecientos veinte mil  guaraníes  mensuales,  más  la
+bonificación establecida. En efecto, de conformidad con el  Art.  14  de  la
+Ley N° 217, "en caso de muerte de Mutilados, Lisiados  y  Veteranos   de  la
+Guerra  del  Chaco,  comprendidos  en  el  Articulo  1°  de  esta  Ley,   su
+jubilación, pensión o haber de retiro pasará a beneficiar directamente a  su
+viuda, hijas solteras sin medios de subsistencia e hijos  más  trámites  que
+la presentación de la Cédula de  Identidad  Policial,  Carnet  de  Viuda  de
+Excombatiente, Certificado de Matrimonio, Certificado de  Defunción,  Carnet
+de Foja de Servicio del Veterano, que acrediten dichas titularidades".
+      La  accionante  considera  que  la  Ley  de  Presupuesto  violenta  la
+Constitución al establecer limitaciones a los derechos de las viudas de  los
+veteranos, pues contradice el Art. 130 de la misma, que establece:  "En  los
+beneficios  económicos  les  sucederán  sus  viudas  e   hijos   menores   o
+discapacitados, incluidos los de los veteranos fallecidos  con  anterioridad
+a la promulgación de esta  Constitución.  Los  beneficios  acordados  a  los
+beneméritos de la Patria no  sufrirán  restricciones  y  serán  de  vigencia
+inmediata, sin mas requisitos que su certificación fehaciente".-------------
+-------------------------------
+      La lectura de las disposiciones cuestionadas nos permite concluir que,
+efectivamente, el texto constitucional ha sido dejado de lado por la Ley  N°
+1534/00. La restricción de los beneficios acordados  a  las  viudas  de  los
+veteranos no encuentra sustento en el Art. 130 de la Ley  Suprema,  el  cual
+no establece discriminaciones de ningún tipo. Por lo demás, el  Art.  14  de
+la Ley N° 217 establece expresamente que las viudas  y  demás  herederos  se
+beneficiarán con las pensiones que corresponderían a los veteranos, con  las
+mismas asignaciones, previa presentación de los recaudos correspondientes.--
+-----------------------------
+      Del mismo modo, la limitación en cuanto a la fecha  de  nacimiento  de
+las herederas viudas, resulta inadmisible cuando el matrimonio celebrado  se
+ajusta a las disposiciones legales pertinentes.-----------------------------
+-----------------------
+      Esta Corte Suprema ha venido sosteniendo en forma constante y  unánime
+que las restricciones a los derechos  económicos  de  los  veteranos  o  sus
+herederos   que   hayan   certificado   su   condición   de    tales,    son
+inconstitucionales,  pues  éste  es  el  único  requisito   que   exige   la
+Constitución para que se hagan merecedores de tales beneficios.-
+      Por los motivos apuntados y de conformidad con el dictamen del  Fiscal
+General  del  Estado,  corresponde  hacer  lugar  a  la  acción   promovida,
+declarando la inaplicabilidad del Art. 57 y del Art. 58,  en  la  parte  que
+dice que "la bonificación no  será  transferible  a  los  herederos  de  los
+veteranos y lisiados de la Guerra del Chaco", de  la  Ley  N°  1534/00.  Las
+costas den ser soportadas en el orden  causado  en  atención  a  que  no  ha
+habido oposición. Es mi voto.------------
+      A su turno, los Doctores Sapena Brugada y Fernández Gadea manifestaron
+que se adhieren al voto del Ministro  preopinante,  Doctor  Lezcano  Claude,
+por los mismos fundamentos.-------------------------------------------------
+
+      De este modo se dio  por  terminado  el  acto,  firmando  los  señores
+Ministros, todo  por  ante  mi,  de  que  certifico,  quedando  acordada  la
+sentencia que sigue a continuación
+
+
+      Ante mi:
+
+
+                            SENTENCIA NUMERO: 572
+                       Asunción, 10 de octubre de 2000
+               VISTO: Los méritos del Acuerdo que antecede, la
+                          CORTE SUPREMA DE JUSTICIA
+                             SALA CONSTITUCIONAL
+                              R E S U E L V E :
+      HACER LUGAR  a  la  presente  acción  de  inconstitucionalidad  y,  en
+consecuencia, declarar la inaplicabilidad del Art. 45 y del Art.  46  de  la
+Ley No 1382, de fecha 12 de enero de 1999, en la  parte  que  dice  que  “la
+bonificación no será  transferible  a  los  herederos  de  los  veteranos  y
+lisiados de la  Guerra  del  Chaco”,  en  relación  con  la  accionante,  de
+conformidad a artículo 555 del C.P.C.
+      IMPONER las costas en el orden causado---------------------------------
+---
+      REGULAR los honorarios profesionales de la Abog. Alicia Funes Martínez
+en  la  suma  de  dos  millones  trescientos  cuarenta  mil  guaraníes  (Gs.
+2.340.000), en su carácter de abogada patrocinante.-------------------------
+--------
+      ANOTAR registrar y notificar.------------------------------------------
+-------
+
+
+      Ante mi:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

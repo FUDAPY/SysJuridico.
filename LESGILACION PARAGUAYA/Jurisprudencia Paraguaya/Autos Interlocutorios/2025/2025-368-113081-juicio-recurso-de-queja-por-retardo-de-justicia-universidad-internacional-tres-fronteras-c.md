@@ -1,0 +1,102 @@
+# Auto Interlocutorio N.º 368/2025
+
+**Carátula:** JUICIO: “RECURSO DE QUEJA POR RETARDO DE JUSTICIA: UNIVERSIDAD INTERNACIONAL TRES FRONTERAS C/ SUCESIÓN DE JUAN
+GREGORIO SILVERO GONZALEZ S/ PAGO POR CONSIGNACIÓN” N° 151. AÑO 2018.-
+
+- **Código CSJ:** 113081
+- **Tipo:** Auto Interlocutorio
+- **Número:** 368/2025
+- **Fecha:** 2025-07-14
+- **Sala:** SALA CIVIL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inoficioso; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=113081)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=113081)
+
+## Texto de la resolución
+
+JUICIO: “RECURSO DE QUEJA POR RETARDO
+                                                        DE JUSTICIA: UNIVERSIDAD INTERNACIONAL
+                                                        TRES    FRONTERAS       C/     SUCESIÓN             DE     JUAN
+                                                        GREGORIO SILVERO GONZALEZ S/ PAGO POR
+                                                        CONSIGNACIÓN” N° 151. AÑO 2018.-
+
+
+                                                                A.I.
+
+                          Y VISTOS: El Recurso de Queja por retardo de Justicia
+                   interpuesto        por     el        Abogado       Christian        Tuma,           las        demás
+                   constancias, y;
+                                              C O N S I D E R A N D O:
+                          El citado profesional del Foro presentó Recurso de Queja
+                   por retardo de Justicia y en el escrito respectivo manifestó:
+                   “…El 21 de mayo de 2024, se dictó la providencia “autos” para
+                   resolver el recurso interpuesto el 30 de agosto del 2023; y
+                   pese    a   los    meses        transcurridos            desde     entonces          y     a     los
+                   urgimientos presentados, el Juzgado no resolvió lo peticionado
+                   hasta la fecha. Las copias de las actuaciones que acompaño al
+                   presente     escrito,           demuestran          el     incumplimiento                de      las
+                   obligaciones impuestas en los artículos 15 y 162 del CPC y que
+                   corresponde iniciar el procedimiento pertinente para que se
+                   provea de justicia al caso que nos ocupa…”-
+                          En   primer       término,       debemos         recordar        que    el        presente
+                   Juicio es tramitado de manera electrónica ante el Tribunal de
+                   Apelación     en     lo    Civil       y     Comercial,          Quinta       Sala,        y,     de
+                   conformidad a la Acordada Nº 1641 del 18 de Mayo del 2.022,
+                   dictada     por     la     Excma.          Corte    Suprema        de     Justicia,              las
+                   constancias del mismo pueden ser visualizadas íntegramente en
+                   el Portal de Consulta de Casos Judiciales, tanto por esta Sala
+                   Civil y Comercial, como por las Partes intervinientes.-
+                          De tal suerte, se advierte que el Auto Interlocutorio N°6
+                   con fecha 11 de Febrero del 2.025, resolvió: “…1. DECLARAR
+                   DESIERTO     el    recurso       de     nulidad         interpuesto           en    autos.        2.
+                   CONFIRMAR,    el     A.I.       Nº    161    de    fecha    22     de    marzo        de       2023;
+                   dictado por el Juzgado de Primera Instancia en lo Civil y
+                   Comercial del Décimo Noveno Turno, por haberse fijado la suma
+                   en concepto de honorarios conforme los porcentajes y cálculos
+                   permitidos por la ley. 3. IMPONER, las costas en el orden
+                   causado.     4.    ANOTAR,       registrar          y    remitir…”.           Con    ello,        el
+                   reclamo del quejoso, a la fecha ha obtenido respuesta.-
+                          En    consecuencia,              en        las      condiciones              apuntadas,
+                   corresponde       declarar       inoficioso         el     estudio       del        Recurso       de
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+              Queja     por        retardo       de     Justicia         planteado,             ya     que        ha
+              desaparecido         el   motivo        que    dio   lugar       a    la     formación            del
+              expediente, por lo que carece de objeto la tramitación del
+              mismo.-
+                        POR TANTO, la Excelentísima;
+                                        CORTE SUPREMA DE JUSTICIA
+                                          SALA CIVIL Y COMERCIAL
+                                               R E S U E L V E:
+                   DECLARAR INOFICIOSO el estudio del Recurso de Queja por
+              retardo de Justicia planteado por el Abogado Christian Tuma,
+              contra    el    Tribunal         de     Apelación     en    lo       Civil    y        Comercial,
+              Quinta Sala.-
+                   REGISTRAR, y conservar en el gestor documental del Poder
+              Judicial,       en    los     términos        del    artículo         66     de    la     Ley       N°
+              6822/2021 y la Acordada N° 1108/2016, dictada por la Excma.
+              Corte Suprema de Justicia.-
+
+
+
+
+Para conocer la                           Firmado digitalmente      Firmado digitalmente                Firmado digitalmente por:
+                                                                                                        ALBERTO JOAQUIN MARTINEZ
+     validez del                          por: CESAR ANTONIO        por: EUGENIO                        SIMON (MINISTRO/A)
+   documento,                             GARAY ZUCCOLILLO          JIMENEZ ROLON                       Asunción, 14 de julio de 2025
+ verifique aquí.                                                                                        con Nro. A.I.: 368 D.
+                                          (MINISTRO/A)              (MINISTRO/A)
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

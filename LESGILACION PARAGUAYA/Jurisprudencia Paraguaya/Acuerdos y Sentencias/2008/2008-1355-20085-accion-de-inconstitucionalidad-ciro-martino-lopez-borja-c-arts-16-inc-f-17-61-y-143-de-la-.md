@@ -1,0 +1,449 @@
+# Acuerdo y Sentencia N.º 1355/2008
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD: “CIRO MARTINO LÓPEZ BORJA C/ ARTS. 16 INC. F), 17, 61 Y 143 DE LA LEY N° 1626/2000 DE LA FUNCIÓN PÚBLICA; LEY N° 700/96; LEY N° 2061/01; ART. 251 DE LA LEY DE ORGANIZACIÓN ADMINISTRATIVA; ARTS. 4° INC. B) Y 7° INC. A) DEL DECRETO N° 14.434/01 Y EL DECRETO N° 16.244/02”. AÑO: 2003 – Nº 4636.----------------------------------------------
+
+- **Código CSJ:** 20085
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 1355/2008
+- **Fecha:** 2008-12-29
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Normas de referencia:** Constitución, arts. 47, 86, 101, 103, 109 y 110; Código Procesal Procesal, art. 555.-
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=20085)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=20085)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALIDAD:
+“CIRO MARTINO LÓPEZ BORJA C/ ARTS. 16 INC. F), 17, 61 Y 143 DE LA LEY N°
+1626/2000 DE LA FUNCIÓN PÚBLICA; LEY N° 700/96; LEY N° 2061/01; ART. 251 DE LA
+LEY DE ORGANIZACIÓN ADMINISTRATIVA; ARTS. 4° INC. B) Y 7° INC. A) DEL DECRETO
+N° 14.434/01 Y EL DECRETO N° 16.244/02”. AÑO: 2003 – Nº
+4636.----------------------------------------------
+
+ACUERDO
+Y SENTENCIA NUMERO: MIL
+TRESCIENTOS CINCUENTA Y CINCO.-
+
+En   la  
+Ciudad   de   Asunción,  
+Capital   de   la  
+República   del   Paraguay, 
+a   los         veinte y nueve            días del mes de          diciembre           del año dos mil ocho, estando en la
+Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos.
+Señores Ministros de la Sala Constitucional, Doctor VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente y Doctores JOSÉ
+V. ALTAMIRANO AQUINO y MIGUEL OSCAR BAJAC ALBERTINI, quien integra la Sala por inhibición del Doctor ANTONIO FRETES, ante mí, el Secretario
+autorizante, se trajo al acuerdo el expediente caratulado: ACCIÓN DE INCONSTITUCIONALIDAD: “CIRO MARTINO LÓPEZ BORJA C/ ARTS. 16
+INC. F), 17, 61 Y 143 DE LA LEY N° 1626/2000 DE LA FUNCIÓN PÚBLICA; LEY N°
+700/96; LEY N° 2061/01; ART. 251 DE LA LEY DE ORGANIZACIÓN ADMINISTRATIVA;
+ARTS. 4° INC. B) Y 7° INC. A) DEL DECRETO N° 14.434/01 Y EL DECRETO N°
+16.244/02”, a fin de resolver la acción de inconstitucionalidad promovida
+por el
+Sr. Ciro Martino López Borja, bajo patrocinio de
+abogado.---------------------------------------------------------------------------------------------------
+
+Previo estudio de los antecedentes del
+caso, la Corte Suprema de Justicia, Sala Constitucional, resolvió plantear y
+votar la siguiente:----------------------------------------------
+
+C
+U E S T I O N:
+
+¿Es
+procedente la acción de inconstitucionalidad deducida?.-----------------------------
+
+A la cuestión planteada el Doctor ALTAMIRANO AQUINO
+dijo:
+El Sr. Ciro Martino López Borja, bajo patrocinio de
+abogado, se presentó a promover Acción de Inconstitucionalidad contra los Arts.
+16 inc. f), 17, 61 y 143 de la Ley N° 1626/2000 de la
+Función Pública; Ley N° 700/96; Ley N° 2061/01; Art. 251 Ley de Organización
+Administrativa; Arts. 4 inc. b) y 7 inc.
+a) del Decreto N° 14.434/01 y el Decreto N° 16.244/02,
+por violación de los Arts. 14, 16, 17, 46, 47, 86, 92, 93, 94, 101, 102, 103,
+119, 132 y 137 de la Constitución
+Nacional.---------------------------------------------------------------
+
+1.- El accionante acompaña como documento de la
+presentación el Decreto N° 2175 del 4 de agosto de 1989, por el cual se acuerda
+jubilación ordinaria al Señor Ciro Martino López
+Borja, funcionario de la Administración Pública, estableciéndose en el artículo
+primero la jubilación ordinaria en la suma mensual de GUARANÍES NOVENTA Y SIETE
+MIL CUATROCIENTOS TREINTA Y OCHO (Gs. 97.438) en
+mérito a los veinte y siete años de servicios prestados en la Administración
+Pública. Posteriormente se acompaña la Resolución N° 1216 del 25 de agosto de
+2003 por la cual se designa al Señor Ciro López como Jefe Interino de la
+Sección Preparación y Microfilmación del Instituto de Previsión
+Social.------------------------------------------------------------------------------------------------------
+
+2. El Estado es el garante de la igualdad de todos los
+habitantes de la República “...para el acceso a las funciones públicas no
+electivas, sin mas requisitos que la idoneidad” (art.
+47, núm. 3 CN). “Todos los habitantes de la república tienen derecho a un
+trabajo lícito, libremente escogido y a realizarse en condiciones dignas y
+justas” (art. 86 CN) y “Todos los paraguayos tienen el derecho a ocupar
+funciones y empleos públicos” (art. 101
+CN).--------------------------------------------------------------------------------------------------------
+
+Los que prestan servicios al Estado participan del
+régimen de jubilaciones regulado por ley (art. 103
+CN).------------------------------------------------------------------------------------
+
+Estos presupuestos constitucionales nos
+dicen claramente que el Estado debe garantizar el legítimo derecho de todos los
+habitantes, y más específicamente el legítimo derecho de todos los paraguayos,
+de llegar a ocupar una función o empleo público, sin más requisito que la
+idoneidad. El Estado, a través de sus reparticiones, provee lugar de trabajo a
+los habitantes de la República y los somete a un régimen de jubilación mediante
+el cual los  mismos, al llegar a una
+determinada edad, o aún sin llegar a esa edad se invaliden para el trabajo,
+puedan disfrutar de una renta vitalicia que les permita atender a sus
+necesidades vitales. Con la jubilación el funcionario o empleado público
+concluye la relación de dependencia con el Estado, y el Estado da por cumplida
+su obligación de dador de trabajo y al mismo tiempo habilita un nuevo lugar
+para otro habitante. El jubilado, desde entonces, ya no puede reingresar al
+sistema, y es justo que así sea frente a otros que pretenden acceder a la
+función o empleo. Con esta modalidad en modo alguno se priva o afecta el
+derecho del jubilado de continuar trabajando. Puede hacerlo de todas las
+maneras posibles permitidas y lícitas, menos reingresar al sistema conservando
+su condición de jubilado. Y así debe ser, porque qué es mas
+justo o en todo caso menos injusto, que un jubilado continúe ocupando una
+función o un cargo, o que un habitante idóneo desocupado quede privado de
+acceder a élla o a él?. Los
+casos excepcionales de jubilados con reconocida habilidad, competencia o
+experiencia invocados para justificar la continuidad de la prestación de
+servicios al Estado, puede encararse a través de muchas modalidades
+contractuales, pero reitero, no puede jamás traducir la generalidad y,
+consecuentemente, servir de argumento para sostener que la disposición legal
+que prohibe la continuidad o permanencia de la
+relación con el Estado, sea inconstitucional. Para el caso, tampoco es
+pertinente referirse a la prohibición constitucional relacionada a la doble
+retribución simultanea exigida al funcionario o
+empleado público (art. 105 CN), ya que el concepto importe de jubilación ha
+quedado reiteradamente aclarado en el sentido que no es salario o remuneración.
+Y finalmente, es probable que toda la carga del cuestionamiento a la ley
+atacada esté más dirigida a la exigüidad o manifiesta insuficiencia de los
+valores asignados a los importes de las jubilaciones, pero esa es una razón
+ciertamente atendible pero extraña al caso
+planteado.-----------------------------------------------------------------------------------------
+
+Por las consideraciones que anteceden, opino que las
+disposiciones legales atacadas, en modo alguno vulneran normas de rango
+constitucional, por el contrario, operacionalizan las
+declaraciones de igualdad para el acceso a las funciones públicas y elimina la
+posibilidad de discriminación ante otros habitantes o paraguayos desocupados
+provistos de idoneidad. Voto por el rechazo de la acción. Es mi
+voto.-------------------------------------------
+
+A su turno el
+Doctor NÚÑEZ RODRÍGUEZ dijo: El señor Ciro Martino
+López Borja, por derecho propio, bajo patrocinio de Abogado, promueve acción de
+inconstitucionalidad contra los Arts. 16 inc. f), 17,
+61 y 143 de la Ley N° 1626/2000 de la Función Pública, Ley N° 700/96, Ley N°
+2061/01, Art. 251 de la Ley Organización Administrativa; Art. 4 inc. b) y 7 inc. a) del Decreto N° 14.434/01 y el Decreto N°
+16.244/02.-------------------------------------------------------------------------------------------------
+
+El Artículo 16
+inc. f) de la Ley 1626/2000 dice: “Están inhabilitados para ingresar a la
+función pública, así como para contratar con el Estado: a)... b)...c)... d)...
+e)... f) los jubilados con jubilación completa o total de la administración
+pública”.----------------------
+
+El Artículo 143
+establece: “Los funcionarios que se hayan acogido al régimen jubilatorio
+no podrán ser incorporados a la administración pública…”.----------------------
+
+El Decreto N° 14.434/01, en su artículo 4° dispone: “Suprímase,
+a partir de la vigencia del presente Decreto y de conformidad con los registros
+de pago de remuneraciones del Ministerio de Hacienda y de cada organismo o
+entidad del Estado, el pago de las siguientes remuneraciones de      personal: a)... b) Las remuneraciones de
+los funcionarios que perciben en contravención a la prohibición de doble
+remuneración prevista en el artículo 105 de la Constitución Nacional y a sus
+disposiciones reglamentarias, hasta tanto el afectado opte por una de ellas,
+dentro del plazo de 30 días...”.----------------------------------------------------------------------------------------------------
+
+Asimismo el artículo 7° del citado decreto dispone:
+“Facultase al Ministerio de Hacienda a disponer las siguientes medidas de
+depuración de planillas de beneficiarios de la Caja Fiscal de Jubilaciones  y 
+Pensiones:  a)  Suspender 
+el  pago  de haberes...///...
+
+ACCIÓN DE INCONSTITUCIONALIDAD:
+“CIRO MARTINO LÓPEZ BORJA C/ ARTS. 16 INC. F), 17, 61 Y 143 DE LA LEY N°
+1626/2000 DE LA FUNCIÓN PÚBLICA; LEY N° 700/96; LEY N° 2061/01; ART. 251 DE LA
+LEY DE ORGANIZACIÓN ADMINISTRATIVA; ARTS. 4° INC. B) Y 7° INC. A) DEL DECRETO
+N° 14.434/01 Y EL DECRETO N° 16.244/02”. AÑO: 2003 – Nº
+4636.----------------------------------------------
+
+...///...jubilatorio y de retiro de beneficiarios que
+perciban alguna remuneración legalmente incompatible como personal activo del
+Estado, hasta tanto el afectado realice la opción correspondiente dentro del
+plazo de 30 días”.------------------------------------------
+
+La Ley de Organización Administrativa de 1909 en su
+Art. 251  dispone: “Los jubilados que vuelvan a ocupar un empleo
+o cargo público rentado, fuese nacional o municipal, sin excepción, deberán
+optar entre la jubilación o la remuneración del cargo o empleo que acepten
+ingresando a los fondos de jubilaciones y pensiones el importe de la
+retribución que dejen de percibir”.----------------------------------------------------------------
+
+Manifiesta el
+accionante que por Decreto N° 2175 de fecha 4/08/89 dictado por el Poder
+Ejecutivo, se acogió a los beneficios de la jubilación. Posteriormente ingresó
+como funcionario del Instituto de Previsión Social, según Resolución N° 1216
+del 25 de agosto de 2003, que adjunta. Alega que, en virtud del Dto. N°
+14434/01, la Ley N° 700/96, de la Ley N° 1626/00, Art. 251 de la Ley de
+Organización Administrativa, y de la Ley N° 1857 del 8 de enero de 2002, fue
+emplazado para que en el término de ocho días opte entre la jubilación y la
+remuneración que actualmente percibe del Estado en razón del cargo que ocupa,
+bajo la amenaza de suspender el pago de sus haberes de retiro y/o jubilatorio,
+situación que lesionan sus derechos y garantías consagrados en la Constitución.---------------
+
+El accionante
+sostiene que las disposiciones legales impugnadas violan los Artículos 46
+primera parte, 47 inc. 3), 86, 88, 92, 103, y 109 de
+la Constitución. Arguye que las citadas normas legales conculcan su derecho a
+acceder a un cargo de la Función Pública por el hecho de haber obtenido la
+declaración de su derecho a la jubilación por los años de servicios al Estado,
+lo cual no solo es violatorio del Art. 86 de la C.N. que garantiza el derecho a
+un trabajo lícito a todos los habitantes de la República, contraviniendo la
+prohibición de toda discriminación contemplada en el Art. 88, cuando que por
+imperio del Art. 47 inc. 3, se garantiza el acceso a las funciones públicas no
+electivas, sin más requisitos que la idoneidad. Igualmente aduce, que la
+jubilación que por ley se le ha acordado entró a formar parte de su
+patrimonio  (art. 109 C.N.), y por lo
+mismo es un bien que no puede ser menoscabado como resultaría por la aplicación
+de los Artículos 16 inc. f) y 143 de la Ley N° 1626/00, en concordancia con el
+Dto. N° 14434/01, Dto. N° 16244/02, la Ley 700/96, y el Art. 251 de la Ley de
+Organización Administrativa, impugnados de inconstitucionalidad.-------------------------------------------------------------------------------------
+
+Asimismo, las normas pertinentes del Decreto N°
+16244/02, invocado por el accionante, son los Arts. 109 y 110 que establecen:
+Art. 109: “De las Jubilaciones y Pensiones. Facúltase
+al Ministerio de Hacienda a disponer las siguientes medidas de depuración de
+planillas de beneficiarios de la Caja Fiscal de Jubilaciones y Pensiones: a)
+Suspender el pago de haberes jubilatorios y de retiro de beneficiarios que
+perciban alguna remuneración legalmente incompatible como personal activo...;
+Art. 110: “La Dirección General de
+Jubilaciones y Pensiones, suspenderá el pago de los haberes jubilatorios y de
+retiro de beneficiarios de la Caja Fiscal de Jubilaciones y Pensiones del
+Estado que reciban alguna remuneración legalmente incompatible como personal
+activo, sobre la base de los informes remitidos por la Dirección General de
+Informática y Comunicaciones con la participación y supervisión de la
+Secretaría de la Función Pública de la Presidencia de la República, hasta tanto
+los afectados realicen sus respectivas opciones, mediante nota dirigida a la
+Dirección General de Jubilaciones y
+Pensiones”.-----------------------------------
+
+La acción debe
+prosperar parcialmente. En el caso de autos se plantea la situación del
+funcionario público pasivo (jubilado) que vuelve a ocupar un cargo a servicio del Estado, a quién se emplaza a optar por una
+de las  remuneraciones  que 
+percibe. La cuestión fáctica expuesta, guarda relación con la aptitud
+legal para desempeñar función pública, a los que gozasen de jubilación obtenida
+mediante el cumplimiento de los requisitos establecidos por la ley para
+conseguir dicho beneficio.--------------------------------
+
+En relación con
+las condiciones requeridas para tener acceso a la función pública, el Art. 47
+de la Constitución establece: “El Estado
+garantizará a todos los habitantes de la República: 1)…, 2)…, 3) la igualdad
+para el acceso a las funciones públicas no electivas, sin más requisitos que la
+idoneidad, y…”. Por su parte, la Ley de la Función Pública establece en su
+Art. 15 el procedimiento a seguirse en el proceso de demostración de la
+idoneidad profesional del interesado en tener acceso a la función
+pública.----------------------
+
+Consecuentemente,
+siendo la idoneidad el único requisito exigido al interesado a prestar sus
+servicios al Estado, no es admisible ninguna otra exigencia, sin quebrantar el
+referido principio de
+igualdad.--------------------------------------------------------------------------
+
+Además, se
+conculcaría el derecho al trabajo, que es erigido a la categoría de un
+verdadero derecho humano, que el Estado tiene la obligación de respetar,
+conforme a diversos documentos internacionales, de los cuales la República del
+Paraguay es signatario, y en consecuencia, se halla obligado a cumplir. De las
+consideraciones expuestas precedentemente, resulta que las disposiciones contenidas
+en los Arts. 16 inc. f) y 143 de la Ley 1626/00
+devienen inconstitucionales por atentar contra los principios consagrados por
+la Ley Fundamental del Estado Paraguayo, ya mencionados. Además de éstos, si
+admitiéramos que la condición de jubilado restaría al ciudadano paraguayo la
+posibilidad de trabajar en la función pública tendríamos que admitir la
+legalidad de una discriminación, totalmente repudiada por el sistema
+constitucional que rige en nuestro país.--------------------
+
+Por otro lado,
+si interpretamos la norma cuestionada desde el punto de vista que la misma se
+basa en la prohibición legal de la doble remuneración, surge que de esta
+disposición subyace una prohibición de percibir en forma conjunta el haber
+jubilatorio y el salario que corresponde al cargo para el cual ha sido
+contratado.---------------------------------
+
+De acuerdo con
+autorizadas opiniones doctrinarias de tratadistas de Derecho Administrativo
+cabe puntualizar que el haber jubilatorio no es un favor que hace el Estado, es
+una devolución de los aportes que el funcionario ha hecho durante todo el
+tiempo que se halla establecido en la ley. No es una remuneración o salario que
+el jubilado percibe por trabajos realizados. Es considerado simplemente como
+una deuda del Estado que tiene con el funcionario que ha pasado de la actividad
+a la pasividad.---------------------------------------
+
+El Art. 105 de la
+Constitución prohíbe la doble remuneración del funcionario público al
+establecer que ninguna persona podrá percibir como funcionario público, más de
+un sueldo o remuneración simultáneamente, con excepción de los que provengan de
+la docencia. La norma constitucional mencionada es sumamente clara y no ofrece
+ninguna duda. Pero se refiere a la doble remuneración del empleado público en
+servicio activo y no pasivo (jubilado), estableciendo en forma precisa una
+excepción al referirse al salario que provenga de la
+docencia.--------------------------------------------------------------------------------
+
+De lo expuesto
+precedentemente podemos sostener que, los referidos artículos 16 inc. f) y 143
+son conculcatorios del Art. 109 de la Constitución,
+en razón de que la jubilación constituye un patrimonio del jubilado con
+carácter vitalicio y ninguna autoridad puede privarle de este beneficio, salvo
+la excepción expresa de la mencionada norma constitucional. Con referencia a lo
+expresado sobre la doble remuneración, cabe destacar que la Corte Suprema de
+Justicia ya se expidió con respecto a este tema, a través del Acuerdo y
+Sentencia Nº 554 de fecha 07 de setiembre de 2001 y las que se emitieron
+posteriormente con referencia a la misma
+cuestión.-------------------------------------------------
+
+Con respecto a las demás normas impugnadas, cabe realizar las siguientes
+precisiones. 1) el Decreto 14.434/01 (Artículos 4°
+inc. b) y 7° inc. a) era reglamentario de la Ley de Presupuesto 1661/2000, y
+por lo tanto su vigencia estaba supeditada a la respectiva ley de presupuesto,
+que en nuestro país y por disposición constitucional es  anual. En consecuencia, al tiempo de
+promoción de la acción (27 de octubre del 2003) el mismo no se encontraba
+vigente. Tal situación impide que la Corte se expida respecto a la
+constitucionalidad o no de dicha norma; del mismo modo los Arts. 109 inc. a) y 110 del Decreto 16.244/02 “Que reglamenta la ley
+1857/02  que  aprueba 
+el presupuesto gene...///...
+
+ACCIÓN DE INCONSTITUCIONALIDAD:
+“CIRO MARTINO LÓPEZ BORJA C/ ARTS. 16 INC. F), 17, 61 Y 143 DE LA LEY N°
+1626/2000 DE LA FUNCIÓN PÚBLICA; LEY N° 700/96; LEY N° 2061/01; ART. 251 DE LA
+LEY DE ORGANIZACIÓN ADMINISTRATIVA; ARTS. 4° INC. B) Y 7° INC. A) DEL DECRETO
+N° 14.434/01 Y EL DECRETO N° 16.244/02”. AÑO: 2003 – Nº
+4636.----------------------------------------------
+
+...///...ral de la nación para el ejercicio
+fiscal 2002”, ya no están vigentes por lo que no procede el estudio de los
+mismos.--------------------------- ------------------------------------------
+
+El Art. 61 de la
+Ley N° 1626/00, y el Artículo 1° de la Ley N° 700/96 que reglamenta el Art. 105
+de la Constitución, agravia igualmente al accionante, en cuanto establece la
+prohibición de doble remuneración a los funcionarios públicos. Sostiene que
+ello afecta a su derecho a la propiedad, por que le
+obliga a optar por su haber jubilatorio o la remuneración que percibe por la
+prestación de sus servicios en el cargo que ocupa
+actualmente.-----------------------------------------------------------------------------------------------
+
+La citada
+disposición no denota vicios de inconstitucionalidad, porque reglamenta el Art.
+105 de la Ley Suprema, y como expresáramos más arriba, la prohibición de la
+doble remuneración se refiere al empleado público en servicio activo que ocupa
+dos cargos simultáneamente, y no a quienes se encuentran bajo el régimen
+jubilatorio y hayan accedido nuevamente a la función pública.----------------------------------------------------------------------
+
+Por las consideraciones que anteceden, corresponde
+hacer lugar parcialmente a la presente acción de inconstitucionalidad promovida
+por el señor Ciro Martínez López Borja, y en consecuencia, declarar
+inaplicables los Arts. 16 inc. f) y 143 de la Ley N°
+1626/00 “De la Función Pública” y Art. 251 de la Ley de Organización
+Administrativa, en relación con el accionante, de acuerdo al Art. 555 del
+C.P.C. y desestimarla en cuanto a la impugnación de la Ley 700/96, Arts. 4°
+inc. b) y 7° inc. a) del Decreto N° 14434/01 y Arts. 109 y 110 del Decreto N°
+16244/02. Es mi
+voto.---------------------------------------------------------------------
+
+A su turno el Doctor BAJAC ALBERTINI dijo: Me adhiero
+al voto del Ministro Víctor Núñez, y en ese sentido me permito agregar cuanto
+sigue:
+
+La Jubilación es
+el nombre que recibe el acto administrativo por el que un trabajador activo, ya
+sea por cuenta propia o ajena, pasa a una situación pasiva o de inactividad
+laboral; luego de alcanzar una determinada edad máxima legal para trabajar, es
+así que para compensar la pérdida de ingresos que deriva del cese laboral, se
+le reconoce una prestación económica con carácter vitalicio y que solo se
+extingue con la muerte del interesado. En este sentido la “jubilación” no debe
+abordarse como una “muerte laboral”, puesto que la persona jubilada con
+el transcurso del tiempo y conforme al arte, oficio o profesión que haya
+desempeñado, adquirió con el transcurso del tiempo, la destreza, conocimiento y
+experiencia que algunas veces sería imposible reemplazarlo.------------------
+
+Por las razones
+apuntadas, al no poder volver a contratar sus servicios no solo se lo discrimina
+sino que también se le priva al empleador sea este público o privado de volver
+a contar con recursos humanos de
+calidad.-------------------------------------------------------------
+
+Finalmente, por
+Acuerdo y Sentencia Número 1064 del 27 de Julio del año 2004, ya me he
+expresado con relación a la inaplicabilidad del Art. 16 de la Ley
+1626/2000.----------
+
+En consecuencia,
+corresponde hacer lugar parcialmente a la presente acción de
+inconstitucionalidad promovida por el Sr. CIRO MARTINO LÓPEZ BORJA. Es mi
+voto.--
+
+Con lo que se dio por terminado el acto,
+firmando SS.EE., todo por ante mí, de que certifico, quedando acordada la
+sentencia que inmediatamente sigue:
+
+Ante
+mí:
+
+SENTENCIA NUMERO: 1355.-
+
+Asunción,      29   
+de     diciembre      de 2.008.-
+
+VISTOS: Los méritos del Acuerdo que anteceden,
+la
+
+CORTE SUPREMA DE JUSTICIA
+
+Sala Constitucional
+
+R
+E S U E L V E:
+
+HACER LUGAR a
+la acción de inconstitucionalidad promovida por el señor Ciro Martino López Borja, y en consecuencia, declarar
+inaplicables los Arts. 16 inc. f) y 143 de la Ley N°
+1626/00 “De la Función Pública” y Art. 251 de la Ley de Organización
+Administrativa, en relación
+con el accionante, de acuerdo al Art. 555 del C.P.C.--------------
+
+NO HACER LUGAR a la acción de inconstitucionalidad
+promovida por el señor Ciro Martino López Borja
+contra la Ley 700/96, Arts. 4° inc. b) y 7° inc. a) del Decreto N° 14434/01 y
+Arts. 109 y 110 del Decreto N° 16244/02, por los fundamentos expuestos en el
+considerando de esta
+resolución.-----------------------------------------------------------------------
+
+ANOTAR, registrar y
+notificar.---------------------------------------------------------------
+
+FDO.: Doctor VÍCTOR
+MANUEL NÚÑEZ RODRÍGUEZ, Presidente
+y Doctores JOSÉ V. ALTAMIRANO
+AQUINO y MIGUEL OSCAR BAJAC ALBERTINI, quien integra la Sala por inhibición del Doctor ANTONIO FRETES. ANTE MÍ: HÉCTOR FABIÁN
+ESCOBAR DÍAZ (Secretario Judicial I).-
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

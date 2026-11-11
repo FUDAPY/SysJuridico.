@@ -1,0 +1,24 @@
+# Auto Interlocutorio N.º 404/2021
+
+**Carátula:** 2021. ROBERTO FONSECA FERIS S/ CARTA DE NATURALIZACIÓN, N° 784, AÑO 2018, FOLIO 74.
+
+- **Código CSJ:** 85743
+- **Tipo:** Auto Interlocutorio
+- **Número:** 404/2021
+- **Fecha:** 2021-05-19
+- **Sala:** SALA CIVIL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; Ver Observaciones; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** documento oficial disponible, pero sin texto extraíble (posible escaneo)
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=85743)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=85743)
+
+## Texto de la resolución
+
+_La ficha de la CSJ no ofrece texto extraíble para esta resolución._
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

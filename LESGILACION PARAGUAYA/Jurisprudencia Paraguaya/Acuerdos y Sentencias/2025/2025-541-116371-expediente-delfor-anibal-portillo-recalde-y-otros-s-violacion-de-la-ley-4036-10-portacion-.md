@@ -1,0 +1,123 @@
+# Acuerdo y Sentencia N.º 541/2025
+
+**Carátula:** EXPEDIENTE: DELFOR ANIBAL PORTILLO RECALDE Y OTROS S/ VIOLACION DE LA LEY 4036/ 10 PORTACIÓN Y TENENCIA DE ARMAS Y
+OTROS” N° 4030/2019.-
+
+- **Código CSJ:** 116371
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 541/2025
+- **Fecha:** 2025-10-29
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; No Hace Lugar; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=116371)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=116371)
+
+## Texto de la resolución
+
+EXPEDIENTE:         DELFOR        ANIBAL       PORTILLO
+                                                 RECALDE Y OTROS S/ VIOLACION DE LA LEY
+                                                 4036/ 10 PORTACIÓN Y TENENCIA DE ARMAS Y
+                                                 OTROS” N° 4030/2019.-
+
+
+
+                                           ACUERDO Y SENTENCIA
+
+                           En la ciudad de Asunción, Capital de la República del Paraguay, estando presentes
+                   en la Sala de Acuerdos la ministra y los señores ministros de la Excma. Corte Suprema
+                   de Justicia, Sala Penal, MARÍA CAROLINA LLANES, LUIS MARÍA BENÍTEZ
+                   RIERA y MANUEL DEJESÚS RAMÍREZ CANDIA, se trajo a estudio el expediente
+                   arriba caratulado a fin de resolver la procedencia de la aclaratoria planteada por el Abog.
+                   Néstor Candia por la defensa del procesado Dionisio Caballero Aquino, en contra del
+                   Acuerdo y Sentencia N° 180 D de fecha 19 de junio de 2024, dictado por la Sala Penal
+                   de la Corte Suprema de Justicia.-
+
+                           Previo estudio de los antecedentes del caso, la Excelentísima Corte Suprema de
+                   Justicia, resolvió plantear la siguiente:-
+
+
+                                                      C U E S T I Ó N:
+                          ¿Corresponde hacer lugar a la aclaratoria o no? -
+                           A la única cuestión planteada, la ministra María Carolina Llanes Ocampos
+                   dijo: el Abg. Néstor Candia por la defensa del procesado Dionisio Caballero Aquino, en
+                   contra del Acuerdo y Sentencia N° 180 D de fecha 19 de junio de 2024, dictado por esta
+                   Sala Penal.-
+                          En dicha resolución, esta Sala Penal de la Corte Suprema de Justicia resolvió: “1)
+                   DECLARAR INADMISIBLE el Recurso Extraordinario de Casación interpuesto por
+                   el Abog. Abog. Rodrigo Huespe Martínez en representación de la defensa técnica del
+                   acusado Dionisio Caballero Aquino, contra el Acuerdo y Sentencia N° 49 de fecha 09
+                   de Octubre de 2023, dictado por el Tribunal de Apelación Penal, Primera Sala de la
+                   Capital, por los fundamentos expuestos en el exordio de la presente resolución….”
+                           En primer término, cabe recordar lo dispuesto en el Art. 126 del Código Procesal
+                   Penal: “Aclaratoria. Antes de ser notificada una resolución, el Juez o Tribunal podrá
+                   aclarar las expresiones oscuras, corregir cualquier error material o suplir alguna
+                   omisión en la que haya incurrido, siempre que ello no importe la modificación esencial
+                   de la misma. Las partes podrán solicitar aclaraciones dentro de los tres días posteriores
+                   a la notificación” (las negritas son nuestras).-
+
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                           Asimismo, el Art. 17 de la Ley 609/95 “Que organiza la Corte Suprema de
+                   Justicia” autoriza también la aclaración de las resoluciones de las Salas o del Pleno de la
+                   Corte Suprema de Justicia.-
+                          En este orden de ideas, “entiéndase por aclaratoria al remedio previsto para
+                   lograr que el mismo órgano judicial que dictó una resolución subsane las deficiencias
+                   de orden material o conceptual que la afecten, o bien la integre de conformidad con las
+                   cuestiones involucradas en el proceso supliendo omisiones de que adolece el
+                   pronunciamiento siempre que, en cualquiera de esas hipótesis, no altere lo esencial de
+                   aquel” (Lino Enrique Palacio – Los Recursos en el Proceso Penal, pág. 51).-
+                           Dichas disposiciones, facultan a este órgano jurisdiccional a corregir errores
+                   materiales, suplir omisiones o aclarar expresiones oscuras que puedan contener el fallo
+                   atacado. En cuanto al plazo, la resolución fue notificada el 19 de junio de 2024 y la
+                   aclaratoria fue presentada el 22 de junio del mismo año -dentro de los tres días- sin
+                   embargo, en el caso que nos ocupa, no se advierte que en esta instancia se haya incurrido
+                   en error alguno, más bien el peticionante pretende que su recurso sea nuevamente
+                   estudiado, en la resolución recurrida claramente se observa la fundamentación y lo
+                   resuelto en el caso concreto, razón por la cual, corresponde no hacer lugar al pedido de
+                   aclaratoria planteado, por su notoria improcedencia. -
+                           Por todo lo expuesto precedentemente, corresponde NO HACER LUGAR a la
+                   aclaratoria solicitada, atendiendo a su notoria improcedencia.-
+                          A su turno, el ministro Luis María Benítez Riera dijo: Adhiero mi voto al de la
+                   Ministra María Carolina Llanes por los mismos fundamentos.-
+                          A su turno, el ministro Manuel Dejesús Ramírez Candia dijo: Me adhiero al
+                   voto de la Ministra Preopinante, María Carolina Llanes Ocampos, por compartir los
+                   mismos fundamentos.-
+                           Con lo que se dio por terminado el acto, firmando VV.EE. todo por ante mí que
+                   certifico, quedando Acordada la Sentencia que inmediatamente sigue:
+                       VISTO: El mérito que ofrece el acuerdo que antecede y sus fundamentos, LA
+                   CORTE SUPREMA DE JUSTICIA, SALA PENAL,
+
+
+                                                    R E S U E L V E:
+                           1.- NO HACER LUGAR a la Aclaratoria planteada por el Abog. Néstor Candia
+                   por la defensa del procesado Dionisio Caballero Aquino, contra el Acuerdo y Sentencia
+                   N° 180 D de fecha 19 de junio de 2024, dictado por la Sala Penal de la Corte Suprema
+                   de Justicia, de conformidad a los fundamentos expuestos en el exordio de la presente
+                   resolución. -
+
+                          2.- ANOTAR, notificar y registrar.-
+
+
+
+
+Para conocer la                             Firmado digitalmente       Firmado digitalmente          Firmado digitalmente por:
+                                                                                                     MANUEL DEJESUS RAMIREZ
+     validez del                            por: MARIA CAROLINA        por: LUIS MARIA               CANDIA (MINISTRO/A)
+   documento,                               LLANES OCAMPOS             BENITEZ RIERA
+ verifique aquí.                                                                                     Asunción, 29 de octubre de
+                                            (MINISTRO/A)               (MINISTRO/A)                  2025 con Nro. AyS: 541 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

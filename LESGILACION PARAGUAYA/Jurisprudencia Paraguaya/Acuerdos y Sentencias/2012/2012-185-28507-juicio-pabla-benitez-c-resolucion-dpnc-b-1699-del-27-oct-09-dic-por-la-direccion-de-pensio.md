@@ -1,0 +1,691 @@
+# Acuerdo y Sentencia N.º 185/2012
+
+**Carátula:** JUICIO: “PABLA BENITEZ C/RESOLUCION DPNC-B° 1699 DEL 27/OCT/09 DIC. POR LA DIRECCION DE PENSIONES NO CONTRIBUTIVAS DEL MINISTERIO DE HACIENDA”
+
+- **Código CSJ:** 28507
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 185/2012
+- **Fecha:** 2012-06-25
+- **Sala:** TRIBUNAL de CUENTAS – CONT. ADM 1RA. Sala
+- **Materia:** 0; Administrativa
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=28507)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=28507)
+
+## Texto de la resolución
+
+JUICIO: “PABLA BENITEZ C/RESOLUCION DPNC-B° 1699  DEL
+                       27/OCT/09 DIC.  POR  LA  DIRECCION  DE  PENSIONES  NO
+                       CONTRIBUTIVAS DEL MINISTERIO DE HACIENDA”-------------
+                       --------------------
+
+
+                 ACUERDO Y SENTENCIA: Ciento ochenta y seis (186)
+
+
+      En la ciudad de Nuestra Señora de la Asunción, Capital de la República
+del Paraguay, a los días 25 del mes de  Junio  del  dos  mil  doce,  estando
+presentes los Excmos. Señores Miembros  del  Tribunal  de  Cuentas,  Primera
+Sala, Rodrigo A. Escobar Espínola, Mario Maidana Griffith  y  Martín  Ávalos
+Valdez, en su Sala de Audiencias y Público  Despacho,  bajo  la  Presidencia
+del Primero de los nombrados, por ante  mí  el  Secretario  Autorizante,  se
+trajo a acuerdo el expediente caratulado: “PABLA BENITEZ C/RESOLUCION  DPNC-
+B° 1699 DEL 27/OCT/09 DIC. POR LA DIRECCION DE  PENSIONES  NO  CONTRIBUTIVAS
+DEL MINISTERIO DE HACIENDA”-------------------------
+
+      Previo el estudio  de  los  antecedentes  del  caso,  el  Tribunal  de
+Cuentas, Primera Sala, resolvió plantear y votar la siguiente. -------------
+--------------------------
+
+                                  CUESTIÓN:
+
+      Está ajustado a derecho el acto administrativo recurrido? -------------
+------------
+
+      Practicado el sorteo de ley para determinar el orden de votación,  dio
+el siguiente resultado: MARTÍN ÁVALOS VALDEZ, RODRIGO A. ESCOBAR E. Y  MARIO
+MAIDANA GRIFFITH.--------------------------------------------------------
+
+
+Y EL MIEMBRO DEL TRIBUNAL  DE  CUENTAS,  PRIMERA  SALA,  DR.  MARTÍN  ÁVALOS
+VALDEZ, DIJO: Que en fecha 16 de marzo de 2010 (fojas 10/12  de  autos),  se
+presenta ante este Tribunal de Cuentas Primera Sala, La Sra.  PABLA  BENITEZ
+por derecho propio y bajo patrocinio  de  los  abogados  VICTOR  M.  ALVAREZ
+TORRES  y  FERNANDO  GARCIA   TORRES,   a   promover   demanda   contencioso
+administrativa contra la Resolución DPNC-B° N° 1699 de fecha 27  de  octubre
+de 2009 dictada por la Dirección de Pensiones No Contributivas de  Pensiones
+del Ministerio de Hacienda en el expediente supra citado. Funda  la  demanda
+en los siguientes términos: HECHOS: Que por el presente escrito  y  habiendo
+agotado la instancia administrativa pertinente, vengo a  interponer  recurso
+de apelación en contra de la resolución  DPNC  -  B.  N°  1699,  del  27  de
+octubre de 2009, dictada por la  Dirección  de  Pensiones  No  Contributivas
+dependiente del Ministerio de  Hacienda,  en  el  expediente  supra  citado,
+basado en las siguientes consideraciones: Por  la  referida  resolución,  el
+señor Director de la  repartición  ministerial  precedentemente  citada,  ha
+resuelto: "Art. í* Denegar por improcedente la solicitud de pendón  como  he
+tedero, de Veterano de la Guerra del Chaco, presentada  por  la  SETA  PABLA
+BENÍTEZ, por los. motivos  expuestos  en  el  considerando  de  la  presente
+resolución..." (Sic.)  Contra  la  misma,  fue  interpuesto  el  recurso  de
+reconsideración pertinente, el cual fue resuelto por Resolución  DPNC  -  B.
+N° 31, del 04 de febrero de 2010,  en  los  siguientes  términos:  "Art.  1'
+Denegar por improcedente la solicitud de Reconsideración  de  la  Resolución
+DPNC - B1699 de fecha 27 de octubre de 2009, presentada por la  SETA.  PABLA
+NÍTEZ,  por  los  motivos  expuestos  en  el  considerando  de  la  presente
+resolución... “(Sic.) El  basamento  utilizado  por  el  Sr.  Director  para
+denegar la e pensión como heredera que  presentara  ante  la  Dirección  mas
+arriba mencionada, fue mí supuesta capacidad para el  trabajo,  teniendo  en
+la. posibilidad de recuperación a través de una cirugía;  sin  embargo  cabe
+recordar primeramente la existencia  de  una  resolución  judicial  que  por
+sobre cualquier decisión administrativa, la S.D. N° 44 de fecha 10 de  junio
+de 2008, dictada por el Juzgado de Paz de la Ciudad de Lambaré a  cargo  del
+Abog. José Segundo Velázquez. En la miaña se declaró: “ fecha 27 de mayo  de
+2008 se dio cumplimiento al Dictamen Fiscal N° 15 de fecha 28  de  ABRIL  de
+2008, en el sentido de realizar una Junta de Evaluación  Médica,  a  fin  de
+determinar si el problema de salud que  padece  la  Sra.  PABLA  BENITEZ  le
+impide  trabajar  y  proporcionarse  el  ostento  diario,  por  lo  que   se
+remitieron  los  correspondientes  oficios  al  Médico  Forense  del   Poder
+Judicial Dr. MILCLADES OSORIO y al Médico Forense  del  Ministerio  Público,
+que en la fecha mencionada se llevó a cabo la  Junta  de  Evaluación  Medica
+con la presencia del Sr. Juez de Paz Abog. José Segundo  Velásquez,  la  Sm.
+PAPALA BENÍTEZ y los  Doctores  Milciades  Osorio,  Silvio  Alfredo  Chirife
+(médico particular de la Sm. PABLA BENITEZ y Médico Forense  del  Ministerio
+Público), luego de las preguntas y  evaluaciones  de  rigor  se  labró  acta
+manifestando cada uno su diagnóstico,  en  el  que  todos  coincidieron  que
+"...en la inspección de la Sra. PABLA BENITEZ,  tiene  impedimento  limitado
+para realizar trabajos por HIPERTENSIÓN ARTERIAL  CRÓNICA,  DISFIDEMIA  *  Y
+VASCULOPATIA DE MIEMBROS INFERIORES, sobre  todo  lado  derecho  con  ULSURA
+TROFICA de dicho miembro, OBESIDAD que  dificultan  la  movilidad..  "En  la
+parte resolutiva se puede leer: ...DECLARAR, que por  el  fallecimiento  del
+causante de la presente sucesión, don PEDRO PABLO BENÍTEZ.  VETERANO  DE  LA
+GUERRA DEL CHACO, le sucede como  única  heredera  su  hija  la  Sra.  PABLA
+BENÍTEZ, a los efectos de percibir  la  PENSION  JUBILATORIA  o  HABERES  DE
+RETIRO, que le  corresponde sin perjuicio de terceros..(Sic.)Como  V.V.E.E.,
+podrán notar claramente, existe una  orden  judicial  que  1a  Dirección  de
+Pensiones No Contributivas  no  ha  cumplido,  en  la  cual  se  declara  la
+incapacidad de mi  persona  pata  cumplir  trabajos  y  según  la  gradación
+Kelsiana, la resolución  administrativa  se  encuentra  por  debajo  de  una
+sentencia judicial emitida por autoridad competente, por lo que se  solicita
+la rectificación de la situación resuelta  en  la  Resolución  DPNC-  B.  N°
+1699, concediéndome lo solicitado, es decir, la  pensión  como  heredera  de
+veterano de la guerra del chaco. El basamento  pata  la  denegatoria  de  mi
+petición, corresponde a  un  informe  de  una  supuesta  junta  médica  para
+Jubilaciones del Ministerio de Salud Pública y Bienestar Social,  que  lleva
+el N" 382, el cual llega a la conclusión de que soy apta  para  el  trabajo.
+Sin embargo, no ha tenido  en  cuenta  para  nada  la  junta  realizada  por
+peritos médicos conformada por Médicos del Poder  Judicial,  del  Ministerio
+Público y mi Galeno particular, que concluyeron lo  que  más  arriba  se  ha
+trascripto,  es  decir  mi  imposibilidad  para  desempeñarme  en  cualquier
+trabajo decide- múltiples enfermedades que me aquejan, incumpliendo de  esta
+manera lo establecido en el artículo 130 de la  Constitución  Nacional,  así
+como el articulo 12 inc. 3) de la ley 2345/2003. Es importante  hacer  notar
+a V.V.EE., que no tengo ninguna  forma  mantenerme  y  menos  de  acceder  a
+ningún tipo de cirugía, pues no tengo ingresos de ninguna clase, es por  eso
+que está pensión reviste tanta importancia pata mi subsistencia.  Por  tanto
+y en atención a las breves consideraciones  que  anteceden,  además  de  las
+normativas vigentes, al  Excmo.  Tribunal  de  Cuentas,  «licito  tenga  por
+presentado el presente recurso de apelación  en  los  términos  precedentes,
+así  como  los  documentos  que  se  acompañan  y  le  imprima  el   trámite
+correspondiente,  dictando  resolución  favorable  a  lo   solicitado,   por
+corresponder así en derecho.------------------------------------------------
+-
+
+      Termina solicitando, que previo los trámites de rigor, El Tribunal  de
+Cuentas, Primera Sala, dicte resolución  revocando la  sentencia  recurrida,
+con costas. ----------------------------------------------------------------
+-------------------------Que, en fecha 19 de julio de 2010 se presentó  ante
+este Tribunal, el Abogado Miguel Que en fecha 19 de  marzo  de  2010  (fojas
+114/121 de autos), Miguel  E.  Cardozo  Abogado  Fiscal  del  Ministerio  de
+Hacienda bajo el patrocinio del Abogado  del  Tesoro,  Abogado  Raúl  Sapena
+Giménez, en representación de la Dirección  de  Pensiones  No  Contributivas
+del  Ministerio  de  Hacienda.  Funda  la  contestación  en  los  siguientes
+términos: "...El basamento utilizado para el Sr. Director  para  denegar  la
+solicitud de pensión como heredera que  presentara  ante  la  Dirección  más
+arriba mencionada, fue mi supuesta capacidad para el  trabajo,  teniendo  en
+cuenta la posibilidad de recuperación a través de una cirugía,  sin  embargo
+cabe recordar primeramente la existencia  de  una  resolución  judicial  que
+esta por sobre cualquier decisión administrativa, la S.D. N° 44 de fecha  10
+de junio de 2008 dictada por el Juzgado de Paz de la  Ciudad  de  Lambaré  a
+cargo del Abofa José Segundo Velázquez. En la misma se  declaró:  "en  fecha
+27 de mayo de 2.008 se dio cumplimiento al Dictamen Fiscal N°  15  de  fecha
+28 de abril de 2.008, en el sentido de  realizar  una  Junta  de  Evaluación
+Médica, a fin de determinar si el problema  de  salud  que  padece  la  Sra.
+Pabla Benítez, le impide trabajar y proporcionarse el sustento  diario,  por
+lo que se remitieron los correspondientes  oficios  al  Médico  Forense  del
+Poder Judicial Dr. Milciades Osorio  y  al  Médico  Forense  del  Ministerio
+Público, que en la fecha mencionada se llevo a cabo la Junta  de  Evaluación
+Médica con la presencia del Sr. Juez de Paz José Segundo Velazquez, la  Sra.
+Pabla Benítez y  los  doctores  Milciades  Osorio,  Silvio  Alfredo  Chirife
+(médico particular de la Sra. PABLA BENITEZ y Medico Forense del  Ministerio
+de Público), luego de las preguntas y evaluaciones de rigor  se  labró  acta
+manifestando cada uno su diagnóstico en el que todos coincidieron que: "  en
+la inspección de la Sra.  Pabla  Benítez  tiene  impedimento  limitado  para
+realizar  trabajos  por  HIPERTENSIÓN   ARTERIAL   CRONICA,   DISPIDEMIA   Y
+VASCULOPATIA DE MIEMBROS INFERIORES  sobre  todo  lado  derecho  con  ULCERA
+TROFICA de dicho miembro OBESIDAD que dificulta la  movilidad...  ".  En  la
+parte resolutiva se puede  leer:  DECLARAR  que  por  el  fallecimiento  del
+causante de la presente sucesión, Don Pedro Pablo Benítez,  VETERANO  DE  LA
+GUERRA DEL CHACO, le sucede como única  heredera  su  hija  la  Srta.  PABIA
+BENITEZ a los efectos de  percibir  la  PENSIÓN  JUBILATORIA  O  HABERES  DE
+RETIRO  que  le  corresponde  sin   perjuicio   de   terceros...   "Continua
+exponiendo, "...como WEE podrán notar claramente existe una  orden  judicial
+que la dirección de Pensiones no Contributivas no ha cumplido en el cual  se
+declara la incapacidad de mi  persona  para  cumplir  trabajos  y  según  la
+gradación kelseniana, la resolución administrativa se encuentra  por  debajo
+de una sentencia judicial emitida por autoridad competente, por  lo  que  se
+solicita la rectificación de la situación resuelta en la Resolución DPNC  N°
+1699 concediéndome lo solicitado, es  decir  la  pensión  como  heredera  de
+veterano de la guerra del chaco... “De la  simple  lectura  del  escrito  de
+demanda,  VV.EE  puede  apreciar  lo  descabellado  y  lo  temerosa  de   la
+pretensión de la adversa y  que  el  acto  administrativo  que  se  pretende
+impugnar se hallan ajustado a estricto derecho en base a/  los  lineamientos
+establecidos en la ley previsional que nos ocupa aplicar.Lo afirmado por  la
+demandante en las líneas anteriores denota  ignorancia  con  relación  a  la
+legislación previsional, así como una confusa de lo  que  pretende  ser  una
+ORDEN JUDICIAL en términos vulgares.  Como  primer  término,  no  hay  orden
+judicial ni incumplimiento de la DNPC  con  relación  a  la  demandante.  El
+hecho que el Señor Juez de Paz de la ciudad de Lambaré, haya reconocido  por
+intermedio de una Sentencia  Declaratoria  de  herederos  a  la  Sra.  Pabla
+Benítez, como hija del extinto veterano de la guerra del  chaco,  de  manera
+alguna obliga a la Caja Fiscal a que esta última sea reconocida  y  amparada
+a los beneficios previsionales, sino solamente la reconoce como  heredera  y
+la habilita e inviste de potestad para hacer la petición  en  nombre  propio
+en términos formales. (Tremendo desatino jurídico al basar su demanda  sobre
+una supuesta orden judicial inexistente). Este hecho no deja de  exponer  el
+asombro de esta representación ministerial, puesto que  subrepticiamente  la
+recurrente solicita dentro de  dichos  autos  (Sucesión  del  causante)  una
+Junta Médica ad hoc, para el  estudio  y  análisis  de  su  situación.  Cabe
+destacar que aunque sea discutida legalmente la  competencia  de  la  misma,
+sin temor a equívocos decimos  que  la  imparcialidad  de  la  citada  junta
+medica, esta seriamente comprometida, puesto que tal cual como lo afirma  la
+actora, se halla como parte integrante de la misma, su médico  de  cabecera,
+el cual expone: "...la Sra. Pabla Benítez tiene impedimento  ilimitado  para
+realizar trabajos... ", "OBESIDAD que dificulta su movilidad...  ".,  de  lo
+que se infiere que  la  incapacidad  no  es  total  sino  limitada,  por  la
+obesidad de la  Srta.  Pabla  Benítez.  Véase  al  respecto,  que  sobre  el
+particular no hay normas ni artículos ambiguos que deben ser  interpretados,
+ni derechos avasallados tal cual como lo insinúa la actora,  en  su  escrito
+de demanda, sino que de acuerdo al principio de legalidad la misma debe  ser
+aplicada con criterios restrictivos, tal cual exige la Ley  N°  2345/03  "DE
+REFORMA Y SOSTENIBILIDAD  DE  LA  CAJA  FISCAL  SISTEMA  DE  JUBILACIONES  Y
+PENSIONES DEL SECTOR  PÚBLICO".  Como  primer  término,  observamos  que  la
+Constitución Nacional  en  su  Art.  130°  expresa:  "...En  los  beneficios
+económicos le  sucederán  sus  Viudas  e  Hijos  Menores  o  Discapacitados,
+incluidos  los  de  los  veteranos  fallecidos   con   anterioridad   a   la
+promulgación  de  esta  Constitución.  Los  beneficios   acordados   a   los
+beneméritos de la patria no  sufrirán  restricciones  y  serán  de  vigencia
+inmediata, sin mas requisito que su certificación fehaciente.", de ese  modo
+la ley, en su carácter tuitivo, salvaguarda y  prevé  el  ejercicio  de  los
+derechos de los hijos menores, así como  el  de  los  "DISCAPACITADOS",  del
+excombatiente, que son beneficiados con  la  pensión  por  imposibilidad  de
+realizar  trabajo  alguno,  en  el  caso  del  menor  y  del   discapacitado
+dependiente del mismo. Como segundo  término,  cabe  oportuno  remarcar  que
+para ser beneficiado con la  Pensión  solicitada,  la  recurrente  tuvo  que
+haber vivido bajo el amparo y o techo del Benemérito de la patria, así  como
+comprobar   de   manera   inequívoca   y   fehaciente                    que
+indefectiblemente había una  dependencia  económica  del  mismo,  hecho  que
+tampoco se constata en autos, independiente a la mera declaración  realizada
+por  la  actora.  -Como  tercer  punto  a  mencionar,  entendemos   que   la
+incapacidad que refiere el cuerpo de la ley, es referida una  INACTIVIDAD  E
+INCAPACIDAD TOTAL DEL TRABAJO por parte del o la beneficiaria,  enfermedades
+mentales como ser el síndrome de Down, autismo, esquizofrenia,  sordo  mudez
+o  tal  vez  alguna  derivada  por  las  secuelas  de  parálisis   infantil,
+enfermedades las cuales causan una TOTAL DISCAPACIDAD  para  el  trabajo,  y
+dejan al menor o discapacitado en una orfandad e indefensión total.  Es  por
+ello que la CARTA MAGNA prevé mecanismos de defensa al respecto. No  creemos
+que este sea el caso de marras, dado que según consta en el  Informe  de  la
+Junta Médica para Jubilaciones y Pensiones del Ministerio de  Salud  Pública
+y Bienestar Social N° 382 del 14 de agosto de 2.009, en la cual se  expresa:
+"Postulante PABLA BENITEZ, con  diagnostico  1.-ULCERA  TROFICA  EN  MIEMBRO
+INFERIOR DERECHO - HIPERTENSIÓN ARTERIAL CONTROLADA.  Comentario:  La  Junta
+Médica reunida en la fecha somete a inspección a la recurrente  y  certifica
+CAPACIDAD para el trabajo. Recomendaciones, de conformidad  a  lo  expuesto,
+la JUNTA MEDICA  recomienda  NO  HACER  al  pedido  solicitado.  Ampliación:
+ENFERMEDAD NO INCAPACITANTE, no es congénito en plan para cirugía.".,  estas
+dolencias LIMITAN pero NO  EXCLUYEN,  son  enfermedades  PROPIA  DE  LA(EDAD
+ulcera trófica miembro inferior derecho (úlcera de insuficiencia  venosa)  y
+la hipertensión o presión alta), teniendo en la edad de la recurrente en  la
+actualidad  Y  SU  OBESIDAD.  (Subrayados  y  negritas  son   nuestras)   Si
+alentáramos la tesis sostenida por el recurrente, más de  las  tres  cuartas
+partes de la población paraguaya de la  tercera  edad,  tendrá  discapacidad
+para trabajar so pretexto de tener hipertensión. Este extremo es de  opinión
+que los fundamentados esgrimidos por el demandante no son  excluyentes  para
+el ejercicio del trabajo sino que son limitantes. Convengamos que llegada  a
+cierta edad, el ratio laboral se  circunscribe  en  una  circunferencia  más
+pequeña en el abanico de elección al empleado, limitándolo a éste  a  ocupar
+uno u otro puesto, pero no lleguemos al absurdo de afirmar que  una  persona
+con hipertensión y con Ulcera  en  la  pierna  derecha,  no  puede  realizar
+trabajos de oficina o trabajos manuales, sin  esfuerzos  físicos.  Es  dable
+mencionar a modo de ilustrar  mejor  a  VV.EE  que  el  significado  palabra
+"ulcera trófica" es utilizada por la actora para  maquillar  u  incapacidad.
+La úlcera trófica, también conocida como "úlcera de insuficiente es  una  de
+las  complicaciones  de  la  insuficiencia  venosa.  Se  forman   debido   a
+anormalidades en la circulación venosa, cuando una cantidad insuficiente  de
+venas no puede transportar la sangra usada  nuevamente  al  corazón.  En  su
+lugar, la sangre venosa  permanece  en  la  pierna,  con  el  tiempo,  dicho
+estancamiento sanguíneo produce una desnutrición de la piel y  la  formación
+de  grandes  lesiones  cutáneas  que  no  se  curan,  denominadas   úlceras,
+generalmente  con  infección   secundaria   y   otras   complicaciones.   Su
+tratamiento consiste en modificar el estilo de vida, terapia de  compresión,
+cuidado  y  control  de  heridas,  tratamiento  médico  y  una  variedad  de
+procedimientos, que incluyen, entre otros,  terapia  endovenosa  con  láser,
+microflebectomía,   escleroterapia   Esta   enfermedad   (hipertensión)   es
+adquirida por la misma durante el transcurso  de  su  vida  y  por  ende  es
+propia de la  edad.  Tanto  la  presión  alta  como  la  úlcera  pueden  ser
+controladas y ser  coexistente  con  una  dieta  balanceada  y  medicamentos
+controlados, pudiendo el paciente llevar una vida complemente normal  si  se
+limita en una vida sin excesos. (Alcohol y comidas sin sal).  -El  argumento
+"ad misericordia", hábil e  inteligentemente  esbozada  por  la  adversa  es
+bastante conmovedor, en razón a que toca las fibras mas íntimas y  delicadas
+de cualquier ser racional, puesto que todos y cada uno de  nosotros  debemos
+indefectiblemente atravesar dicha etapa, "senectud", y que sin los  recursos
+mínimos, esa senectud se hace mucho menos llevadera,  pero  no  llevemos  al
+extremo la afirmación hecha por la adversa en  pretender  cargar  al  Estado
+con enfermedades propias de  la  edad,  dado  que  su  carácter  tuitivo  se
+circunscribe a  los  menores,  viuda  e  hijos  especiales  sin  posibilidad
+absoluta de trabajo. Según el informe médico, la actual demandante no  tiene
+discapacidad mental, por lo que  podría  desempeñarse  en  varios  tipos  de
+trabajos, nada mas con  ciertas  limitaciones,  como  existen  tantos  otros
+casos, tanto dentro de la Administración Pública como en el sector  Privado,
+incluso en situaciones mucho mas desventajosas que la hoy demandante.  Ahora
+bien, no podemos escapar de lo que  establece  la  normativa,  dado  que  el
+adagio "DURA LEX, SED LEX", debe ser  irremediablemente  aplicado  al  caso,
+puesto que legalmente  deviene  improcedente  el  otorgamiento  del  mentado
+beneficio a la Señora Pabla Benítez, por no tipificarse su "limitación",  en
+la esfera de incapacidad total del  trabajo  al  tiempo  de  la  muerte  del
+causante, ni comprobar fehacientemente  su  dependencia  económicamente  del
+mismo. La Junta Médica, hace expresa mención a que la  misma  es  APTA  PARA
+ELTRABAJO y se certifica su CAPACIDAD , que  las  dolencias  de  las  cuales
+sufren no son  congénitas y no son discapacitante,  dado  que  la  misma  es
+remediable  por  la  vía  de  la  operación.  Entendemos  asimismo,  que  la
+discapacidad tuvo que tener origen antes o al menos al tiempo de  la  muerte
+del causante para que la hija discapacitada pueda tener derecho  a  pensión,
+si el certificado de la junta medica data del año 2.009, decimos  sin  temor
+a equívocos, que la Señora Pabla Benítez, adquirió su  discapacidad  7  años
+después de la muerte del benemérito de la patria, que remonta del año  2.002
+ Es dable presumir  que  al  tiempo  de  la  muerte  del  veterano,  la  hoy
+recurrente no poseía la supuesta incapacidad que hoy  alega  como  argumento
+para adquirir la pensión de su padre. La limitación que hoy  día  le  aqueja
+es consecuencia del transcurso del tiempo y propia de la edad.  ¿Pueden  ser
+consideradas la hipertensión  y  la  úlcera  como  enfermedades  que  no  le
+permitan  trabajar?  si  bien  es  cierto  la  presión  alta  es  un  estado
+condicionante para un buen pasar, no  es  menos  cierto  afirmar  que  dicha
+enfermedad limita pero no excluye, el 90% de las personas en este  país  con
+mas de 50 años de edad padecen de esta enfermedad. ¿Como  quedaría  la  caja
+previsional si tuviéramos que otorgar pensiones a  hijos  de  excombatientes
+que presenten solicitudes por invalidez propias de la tercera  edad  o  peor
+aún, dolencias producidas por accidentes, después de transcurrir años de  la
+muerte del causante? No aplicar  el  criterio  restrictivo  en  el  presente
+"tema decidendum" atentaría groseramente contra  el  principio  de  igualdad
+consagrado en  la  Constitución  Nacional,  la  Dirección  de  Pensiones  no
+Contributivas, ha aplicado correctamente la ley, ella se halla  compelida  a
+proveer  solo  conforme  lo  que  la  Ley  establece  y  excluyen   realizar
+interpretaciones extensivas de la misma. Ahora  bien,  la  tesis  presentada
+por  la  Señora  Pabla  Benítez,  carece  totalmente  de  fundamentos  y  es
+manifiestamente peregrina e  incongruente,  en  razón  a  que  la  misma  no
+considera importante los criterios jurídicos  firmemente  aplicados  por  la
+administración en relación al otorgamiento de pensión  a  hijos  "MINUS  VAL
+IDOS". –¿Puede el Tribunal  de  Cuentas  comprender  la  magnitud  de  dicha
+solicitud?, pues bien, entonces nos formulamos la siguiente pregunta,  ¿cual
+sería el objeto de hacer leyes y exigir requisitos para la consolidación  de
+un derecho si cada uno presenta un criterio hecho a medida a  sus  intereses
+para la obtención de un beneficio por parte  del  Estado?,  o  solicita  una
+junta médica vía judicial al solo efecto de obtener la  pensión./-  -En  ese
+sentido, observamos el completo desatino  jurídico  en  el  que  incurre  la
+demandante al solicitar el beneficio señalado, denegado y  fundamentado  por
+el Ministerio de Hacienda correctamente por ser a todas luces  improcedente.
+Por tanto, encarecemos de VV. EE., procedan a declarar  la  inviabilidad  de
+la presente demanda contencioso administrativa.----------
+
+
+
+
+Termina solicitando que previo  los  trámites  de  estilo,  el  Tribunal  de
+Cuentas, Primera Sala,  dicte  Sentencia,  rechazando  la  presente  demanda
+contencioso administrativa, con costas.-------------------------------------
+-------------------------------
+
+
+ Y EL MIEMBRO DEL TRIBUNAL DE CUENTAS PRIMERA SALA, ABOG. A.  MARTIN  AVALOS
+VALDEZ PROSIGUIÓ DICIENDO:
+
+De acuerdo al escrito de fs. 10 a 12 de los autos  más  arriba  citados,  la
+SRA. PABLA BENÍTEZ, por derecho propio y bajo patrocinio  del  Abog.  Víctor
+M. Álvarez  Torres,  instaura  demanda  contencioso-administrativa  para  la
+revocatoria de la Resolución DPNC-B Nº 1699  del  27  de  Octubre  de  2009,
+dictada por la DIRECCION DE  PENSIONES  NO  CONTRIBUTIVAS,  DEPENDIENTE  DEL
+MINISTERIO DE HACIENDA.-----------------------------------------------------
+---------
+
+El acto administrativo recurrido dispuso en lo pertinente lo siguiente:
+
+    - RESOLUCIÓN Nº 1699/09. Art. 1.- “Denegar por improcedente la solicitud
+      de  pensión  como  heredera  de  Veterano  de  la  Guerra  del  Chaco,
+      presentada por la SRTA. PABLA BENÍTEZ, por los motivos expuestos en el
+      considerando de la presente Resolución”. ------------------------------
+      ---------------
+
+Que, por providencia de fecha 26 de marzo de 2010, se  tuvo  por  presentado
+al recurrente en el carácter invocado y por constituido su domicilio  en  el
+lugar señalado.-------------------------------------------------------------
+-----------------------
+
+Que, la recurrente en su escrito de demanda obrante a fs.  10/12  de  autos,
+manifiesta entre otras cosas  que:  “…El  basamento  utilizado  por  el  Sr.
+Director para denegar la solicitud de pensión como heredera  que  presentara
+ante la Dirección mas arriba mencionada, fue mi supuesta capacidad  para  el
+trabajo, teniendo en cuenta la posibilidad de recuperación a través  de  una
+cirugía; sin  embargo  debe  recordar  primeramente  la  existencia  de  una
+resolución judicial que está por sobre  cualquier  decisión  administrativa,
+la S.D. N° 44 de fecha 10 de  junio  de  2008…Como  V.V.E.E.,  podrán  notar
+claramente, existe una orden judicial  que  la  Dirección  de  Pensiones  No
+Contributivas no ha cumplido, en la cual se declara  la  inaplicabilidad  de
+mi  persona  para  cumplir  trabajos  y  según  la  gradación  Kelsiana,  la
+resolución administrativa se encuentra por debajo de una sentencia  judicial
+emitida por autoridad competente, por lo que se  solicita  la  rectificación
+de la situación resuelta en la Resolución DPNC-B N° 1699,  concediéndome  lo
+solicitado, es decir, la pensión como heredera de veterano de la guerra  del
+chaco…”.-----------------------
+
+Que, al momento de contestar el traslado, el Abog. Fiscal del Ministerio  de
+Hacienda, Miguel E. Cardozo  Z.,  bajo  patrocinio  del  Señor  Abogado  del
+Tesoro, Raúl Fernando Sapena  Giménez,  presenta  escrito  que  rola  a  fs.
+114/121 de autos, el  cual  expresa  cuanto  sigue:  “…Lo  afirmado  por  la
+demandante en  las  líneas  anteriores  denota  una  supina  ignorancia  con
+relación a la legislación previsional, así como una confusa  y  oscura  idea
+de lo que pretende ser una ORDEN JUDICIAL en términos vulgares. Como  primer
+término, no hay orden judicial ni incumplimiento de la DNPC con  relación  a
+la demandante. El hecho que el Señor Juez de Paz de la  ciudad  de  Lambaré,
+haya reconocido por intermedio de una Sentencia Declaratoria de herederos  a
+la Sra. Pabla Benítez, como hija del  extinto  veterano  de  la  guerra  del
+chaco, de manera alguna obliga a la  Caja  Fiscal  a  que  esta  última  sea
+reconocida y amparada a los  beneficios  previsionales,  sino  solamente  la
+reconoce como heredera…Este hecho no deja de  exponer  el  asombro  de  esta
+representación  ministerial,  puesto  que  subrepticiamente  la   recurrente
+solicita dentro de dichos autos (Sucesión del causante) una Junta Médica  ad
+hoc, para el estudio y análisis de su situación-----------------------------
+------
+
+Que, trabada la  relación procesal  en  la  forma  relatada  más  arriba,  y
+estando firme la providencia de fecha 29 de abril de 2011, por  la  cual  se
+llamó “Autos para sentencia” (fs. 132 vlto. de autos), corresponde entrar  a
+analizar el fondo de la cuestión y resolverlo según lo  alegado  y  probado,
+conforme fundamentos que siguen: -------------------------------------------
+----------------------------------------
+
+Analizadas  las  constancias  de  autos  y  los  antecedentes  agregados  al
+expediente, encontramos que la cuestión planteada por la actora  surge  como
+consecuencia del acto administrativo denegatorio por  improcedente,  dictado
+por  la Dirección de Jubilaciones y Pensiones del Ministerio  de   Hacienda,
+ante  la  solicitud  de  Pensión  presentada  en   su   carácter   de   hija
+discapacitada, por la Srta. Pabla Benítez.----------
+
+Que, la Srta. Pabla Benítez, ante  el  Ministerio  de  Defensa  Nacional  en
+fecha 08 de julio de 2008, solicita pensión  en  su  carácter  de  heredera,
+hija discapacitada del extinto Veterano  de  la  Guerra  del  Chaco  Soldado
+Pedro Pablo Benítez, fallecido el 26 de octubre de  2002  según  Certificado
+del  Acta  de  Defunción  N°  318899  (obrante   a   fs.   26   de   autos),
+posteriormente fue derivado al Ministerio de Hacienda, resultando este  como
+Expte. SIME Nº 22.528/2008, y del cual por Resolución DPNC-B Nº  1699/09  se
+resolvió denegar por improcedente la solicitud de  Pensión,  presentada  por
+la actora-------------------------------------------------------------------
+-
+
+Que, la actora ha solicitado la Reconsideración de la Resolución  DPNC-B  Nº
+1699 de  fecha  27  de  octubre  de  2009,  por  presentación  formulada  en
+solicitud administrativa ante Mesa de Entrada  del  Ministerio  de  Hacienda
+del 11 de noviembre de 2009, la cual por Resolución DPNC-B Nº  31  de  fecha
+04 de febrero de 2010,  resolvió  denegar  por  improcedente,  con  lo  cual
+cumplió y agotó todas las instancias administrativas.-----------------------
+--------------------------------------------
+
+Que por la Resolución impugnada  Nº  1699,  la  citada  Dirección  consideró
+denegar por improcedente el  pedido  de  la  Srta.  Pabla  Benítez,  por  no
+ajustarse a derecho en virtud a lo dispuesto en la Constitución  Nacional  y
+la Ley Nº 2345/03, considerando que no tiene ningún  impedimento  físico  ni
+psíquico discapacitante según consta en  el  Informe  de  la  Junta  Médica.
+Asimismo,  la  Asesoría  Jurídica  recomendó  denegar  por  improcedente  la
+solicitud de Reconsideración de la Resolución DPNC-B Nº 1699, atendiendo  al
+Informe de la Junta Médica que certifica la Capacidad para el trabajo de  la
+recurrente.---------------------------------------
+
+Para dar  solución  al  agravio  impetrado  por  el  recurrente  es  preciso
+establecer las normas y criterios aplicables a la presente causa.-----------
+--------------------------------
+
+Primeramente, debemos precisar que el presente juicio se  fundamenta  en  el
+Art. 130 de la Constitución Nacional. De los Beneméritos de la  Patria,  que
+expresa: “Los veteranos de la guerra del Chaco, y los  de  otros  conflictos
+armados internacionales que se libren en defensa de la  Patria,  gozarán  de
+honores y privilegios; de pensiones que les  permitan  vivir  decorosamente;
+de asistencia preferencial, gratuita y completa a  su  salud,  así  como  de
+otros beneficios, conforme con lo que determine la ley.  En  los  beneficios
+económicos les sucederán  sus  viudas  e  hijos  menores  o  discapacitados,
+incluidos  los  de  los  veteranos  fallecidos   con   anterioridad   a   la
+promulgación  de  esta  Constitución.  Los  beneficios   acordados   a   los
+beneméritos de la Patria no  sufrirán  restricciones  y  serán  de  vigencia
+inmediata, sin más requisito que su certificación fehaciente…”.-------------
+--
+
+Asimismo, la norma legal vigente al momento en que  la  Sra.  Pabla  Benítez
+ejerce su derecho y solicita pensión en carácter de heredera de Veterano  en
+fecha 08/07/2008, estipula: “En caso de muerte de los mutilados, lisiados  y
+veteranos de la Guerra del Chaco que cobran su jubilación o  pensión  en  la
+Dirección General de Jubilaciones y Pensiones del  Ministerio  de  Hacienda,
+los familiares sobrevivientes tendrán derecho  a  percibir  en  concepto  de
+pensión el 75% de la pensión que percibía el causante,  como  sigue:  A)  La
+viuda, en concurrencia con los hijos solteros hasta la mayoría  de  edad,  y
+los minusválidos, en cuyo caso la mitad de la  pensión  corresponderá  a  la
+viuda, y la otra mitad a los citados hijos  por  partes  iguales;  B)  A  la
+viuda con menos de cuarenta años de edad le corresponderá una  indemnización
+equivalente  a  diez  mensualidades   de   la   pensión   que   le   hubiera
+correspondido. Esta suma es independiente de lo que  pudiera  percibir  como
+contribución por los gastos de sepelio, de acuerdo con el artículo 28 de  la
+Ley N° 431/73; y, C) Los hijos huérfanos  hasta  la  mayoría  de  edad,  los
+hijos minusválidos, por partes iguales  la  totalidad  de  la  pensión”.  De
+igual manera, el Art.  3  de  la  Ley  N°  4317/2011  “Que  fija  beneficios
+económicos a favor de los Veteranos y Lisiados  de  la  Guerra  del  Chaco”,
+vigente actualmente,  establece:  “Ante  el  fallecimiento  del  veterano  o
+lisiado de la Guerra del Chaco le sucederán sus viudas  e  hijos  menores  o
+discapacitados en lo correspondiente al beneficio dispuesto en  concepto  de
+pensión mensual otorgada a los veteranos y lisiados de la Guerra del  Chaco,
+a partir de la resolución dictada por el Ministerio de Hacienda por la  cual
+se otorgará el beneficio”. -------------------
+
+Así, surge del texto de la norma que como requisito  indispensable  para  el
+otorgamiento de la pensión a los hijos de Veteranos de la Guerra  del  Chaco
+es  que  los  mismos  sean  menores  o  en  condición  de   minusvalidez   o
+discapacidad. Igualmente,  en atención al Art. 130 de la  CN,  cabe  señalar
+que la misma establece claramente que: “…en los  beneficios  económicos  les
+sucederán sus viudas e hijos menores o discapacitados, incluidos los de  los
+veteranos  fallecidos  con  anterioridad   a   la   promulgación   de   esta
+Constitución…”. ------------------------------
+
+Que, en el caso de marras, la discapacidad alegada por la actora,  no  había
+sido probada  fehacientemente  por  la  Junta  Médica  para  Jubilaciones  y
+Pensiones  del Ministerio de Salud Pública y Bienestar Social,  por  Informe
+Médico Nº 382 del 14 de agosto de 2009,  del  cual  se  lee:  “Diagnósticos:
+Ulcera  Trófica  en  Miembro   Inferior   Derecho.   Hipertensión   Arterial
+Controlada. Comentarios: La Junta Médica…certifica  su  CAPACIDAD,  para  el
+trabajo. Recomendaciones:…recomienda NO hacer lugar  al  pedido  solicitado.
+Ampliación: Enfermedad no incapacitante,  no  es  congénito,  en  plan  para
+cirugía”. ----------------
+
+Sin embargo, a fs. 133 de estos autos obra la providencia  de  fecha  11  de
+octubre de 2011, que textualmente dice: “Como medida de mejor proveer, y  en
+uso de  las  facultades  ordenatorias  e  instructorias  conferidas  a  este
+Tribunal en el Art. 18 in fine del C.P.C., líbrese  oficio  al  Departamento
+de Junta Médica para  Jubilaciones  y  Pensiones  del  Ministerio  de  Salud
+Pública y Bienestar Social, a los efectos de someter a una nueva  Inspección
+Médica a la SRA. PABLA BENITEZ,  hija  discapacitada  del  extinto  veterano
+Pedro Pablo Benítez, e informe a este Tribunal la  condición  actual  de  la
+enfermedad que padece la misma, en el juicio caratulado: “Pabla  Benítez  c/
+Res. DPNC-B N° 1699 del 27/oct/09, dictada por la Dirección de Pensiones  No
+Contributivas del Ministerio de Hacienda…”.-----------------------------
+
+Que, atendiendo a este requerimiento del Tribunal de Cuentas, el  Ministerio
+de Salud Pública y Bienestar Social ha remitido el Memorándum obrante a  fs.
+139 de autos, del cual se puede leer que  la  Sra.  Pabla  Benítez  ha  sido
+inspeccionada nuevamente por la Junta Médica en fecha 23/11/11 y que en  tal
+oportunidad, se pudo constatar que  la  actora  padece  de  Úlcera  Varicosa
+Trófica más Hipertensión Arterial.  Asimismo,  la  Junta  ha  entendido  que
+actualmente,  la  paciente  presenta  una   incapacidad   física   del   60%
+aproximadamente y no de un 100%,  que la misma no  es  congénita  y  que  se
+inició hace 10 años. -------------------------------------------------
+
+Como se puede observar, el Ministerio de Salud Pública  y  Bienestar  Social
+expidió el presente informe a pedido del Ministerio de Hacienda,  donde  con
+experiencia y responsabilidad en el área en  el  cual  tienen  conocimiento,
+los médicos han diagnosticado DOS enfermedades, las  cuales  consideran  que
+afectan a la recurrente, al punto de incapacitarla en un 60%. --------------
+-------------------------------
+
+Que, en atención al Art. 130  de  la  CN,  cabe  señalar  que  el  mismo  no
+establece una distinción entre discapacidad congénita  o  sobreviniente,  ni
+tampoco un parámetro de medición  de  la  discapacidad;  por  el  contrario,
+consagra la discapacidad como un derecho  adquirido  del  beneficiario,  sin
+otra condición o limitación  que  la  de  ser  hijo  heredero  del  causante
+(Probado en el caso de autos se por S.D. Nº 44/08 dictada por el Juzgado  de
+Paz de Lambaré; y Certificado del Acta de Nacimiento Nº 5620945).  Asimismo,
+otorga derechos específicos sin retaceos de ninguna laya, siendo  procedente
+el beneficio (pensión) sin impedimentos o restricciones, y en el  A.I.  1066
+del 08/09/97 de la máxima instancia judicial se sostuvo  que  el  privilegio
+consagrado por el Art. 130 de  la  C.N.  es  compatible  con  la  noción  de
+justicia, aunque tardía y simbólica, como homenaje a quienes defendieron  el
+territorio  nacional,  y  que  tales  honores  y   privilegios   deben   ser
+reconocidos en la práctica.-------------------------------
+
+Que, la Convención  sobre los Derechos de  las  Personas  con  Discapacidad,
+aprobada por el Congreso de la Nación Paraguaya por Ley Nº 3540/2008, en  su
+Art. 1 establece: “…Las personas con discapacidad incluyen  a  aquellas  que
+tengan deficiencias físicas, mentales, intelectuales o sensoriales  a  largo
+plazo  que,  al  interactuar  con  diversas  barreras,  puedan  impedir   su
+participación plena y efectiva en la sociedad, en  igualdad  de  condiciones
+con las demás”.-------------------
+
+En el caso de  marras,  según  el  informe  remitido  a  este  Tribunal,  la
+discapacidad no es congénita, es a largo plazo, así como  queda  certificado
+el porcentaje de discapacidad de la actora, no obstante, esto no  impide  la
+posibilidad de acogerse a los beneficios o “privilegios especiales”  que  la
+Constitución Nacional y las leyes le otorgan,  constituyendo  ella  “derecho
+adquirido” para el beneficiario o privilegiado, en razón de  que  la  propia
+Constitución  le  otorga  tales  derechos  especiales,  sin  distinguir   la
+discapacidad congénita  de  la  adquirida,  ni  establecer  un  parámetro  o
+porcentaje de discapacidad, y nos obliga por  el  principio:  “Ubi  lex  non
+distinguit,  nec   nos   distinguere   debemus”   interpretar   el   término
+“discapacidad” en su sentido mas lato, contrariamente a lo  ocurrido  en  el
+artículo 90 de la Ley 3692/2009, violatoria  de  la  Constitución  y  de  la
+citada Convención que fuera aprobada y  ratificada  por  la  Ley  3540/2008,
+teniendo en cuenta que  tales  derechos  constituyen   derechos  humanos  de
+primera generación como bien  lo  consagra  la  cita  da  Convención  en  su
+Preámbulo, el artículo 1 que  preceptúa:  “Propósito.  El  propósito  de  la
+presente Convención es promover, proteger y asegurar  el  goce  pleno  y  en
+condición es  de  igualdad  de  todos  los  derechos  humanos  y  libertades
+fundamentales por  todas  las  personas  con  discapacidad,  y  promover  el
+respeto de su dignidad inherente. Las personas con discapacidad  incluyen  a
+aquellas  que  tengan  deficiencias  físicas,  mentales,   intelectuales   o
+sensoriales a largo plazo que, al interactuar con diversas barreras,  pueden
+impedir su participación plena y efectiva en la  sociedad,  en  igualdad  de
+condiciones con las demás”,  y  en  especial  el  artículo  6  que  dispone:
+“Mujeres con discapacidad. 1. Los Estados Partes reconocen que  las  mujeres
+y niñas con discapacidad están sujetas a múltiples formas de  discriminación
+y, a ese respecto, adoptarán medidas  para  asegurar  que  puedan  disfrutar
+plenamente y en igualdad de condiciones de  todos  los  derechos  humanos  y
+libertades fundamentales. 2. Los Estados Partes tomarán  todas  las  medidas
+pertinentes para asegurar el pleno desarrollo, adelanto  y  potenciación  de
+la mujer, con el  propósito  de  garantizar  el  ejercicio  y  goce  de  los
+derechos humanos y las libertades fundamentales establecidas en la  presente
+Convención.”.-----------------
+
+Que, el Art. 137 de la C.N. De la Supremacía de la  Constitución,  establece
+la prevalencia  de  “los  tratados,  convenios  y  acuerdos  internacionales
+aprobados y ratificados” sobre  las  leyes  nacionales,  y  su  parte  final
+expresa: “…Carecen de validez todas las disposiciones o actos  de  autoridad
+opuestos a lo establecido en esta Constitución”.----------------------------
+---------------------------------------------------
+
+En consideración a las probanzas obrantes en autos debidamente analizados  e
+individualizados precedentemente,  sustento  el  criterio  que  la  presente
+demanda debe prosperar, y en consecuencia, revocar la Resolución  DPNC-B  Nº
+1699 del 27/10/09 dictada por la Dirección  de  Pensiones  No  Contributivas
+del Ministerio de Hacienda. En cuanto a las costas deben ser impuestas a  la
+perdidosa, de conformidad a lo dispuesto por el Art. 192 del  C.P.C.  ES  MI
+VOTO.---------------------
+
+      A su turno  los  Miembros  Magistrados  Rodrigo  A.  Escobar  y  Mario
+Maidana Griffith dijeron: Que se adhieren al voto  del  miembro  preopinante
+por sus mismos fundamentos.-------------------------------------------------
+---------------
+
+       Con  lo  que  se  dio  por  terminado  el  acto,  previa  lectura   y
+ratificación del mismo firman los Excelentísimos Miembros  del  Tribunal  de
+Cuentas Segunda Sala, por  ante  mí,  el  Secretario  Autorizante,  quedando
+acordada la Sentencia que inmediatamente sigue.-----------------------------
+---------------------------------------------
+
+
+
+
+
+Ante mí:
+
+
+
+
+
+
+                              SENTENCIA Nº: 186
+
+                                                               Asunción,  25
+ de Junio  2012.-
+
+
+
+VISTO: El mérito que ofrece el Acuerdo y Sentencia y sus fundamentos, ------
+                                      -
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    EL TRIBUNAL DE CUENTAS, PRIMERA SALA,
+
+                              R E S U E L V E:
+
+1.-  HACER  LUGAR,  a  la  presente   demanda   contencioso   administrativa
+instaurada por la Srta. PABLA BENÍTEZ contra la Resolución  DPNC-B  Nº  1699
+del 27 de Octubre  de  2009  dictadas  por  la  Dirección  de  Pensiones  No
+Contributivas, dependiente del Ministerio de Hacienda, y en consecuencia; --
+------------------------
+
+2.- REVOCAR la Resolución DPNC-B Nº 1699 del 27 de Octubre de 2009,  dictada
+por la Dirección de Pensiones No Contributivas, dependiente  del  Ministerio
+de Hacienda, de conformidad y de acuerdo a los fundamentos expresados en  el
+exordio de la presente resolución.-----------------------------------------
+
+3.- IMPONER las costas a la parte vencida.----------------------------------
+--------------
+
+4.- ANOTAR,  registrar  y  remitir  copia  a  la  Excma.  Corte  Suprema  de
+Justicia.-------
+
+
+
+
+
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

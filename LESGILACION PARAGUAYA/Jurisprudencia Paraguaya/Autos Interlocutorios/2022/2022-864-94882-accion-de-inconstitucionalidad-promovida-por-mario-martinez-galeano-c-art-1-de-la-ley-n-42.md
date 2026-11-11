@@ -1,0 +1,55 @@
+# Auto Interlocutorio N.º 864/2022
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA POR MARIO MARTINEZ GALEANO C/ ART. 1° DE LA LEY Nº 4252/2010" Nº 1448 - AÑO 2022.
+
+- **Código CSJ:** 94882
+- **Tipo:** Auto Interlocutorio
+- **Número:** 864/2022
+- **Fecha:** 2022-07-11
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Administrativa
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=94882)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=94882)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA POR
+                                             MARIO MARTINEZ GALEANO C/ ART. 1° DE LA LEY Nº
+                                             4252/2010" Nº 1448 - AÑO 2022. -----------------------------------
+
+
+                                                A.I. Nº: .... '??vlL ......
+                                                            Asunción, ;f-1         de       jJ\iO              de 207.:¿ .-
+
+
+
+
+                                            C O N S I D E R A N D O:
+      Que, el mencionado recurrente en el escrito de promoción de la acción solicita la
+suspensión de efectos del acto normativo impugnado de inconstitucional en base a lo
+dispuesto en el art. 553 del Código Procesal Civil. -----------------------------------------------·-
+      Que, el Artículo 553 del C.P.C., dispone que: "la interposición de la demanda no
+suspende los efectos de la ley, decreto, reglamento, acto normativo o disposición impugnada
+salvo cuando la Corte Suprema así lo dispusiere, a petición de parte, porque su cumplimiento
+podría ocasionar al reclamante un perjuicio irreparable. Dicha resolución se dictará de
+inmediato y sin substanciación". -- -- -- --- - -- ---- ---- --- - -- --- --- ------ ----- -- ---- -- --- --- --- --- ----- --
+        Que, en estas condiciones y estando cumplidos los requisitos exigidos por el Art.
+553 citado, procede hacer lugar a lo solicitado. ---------------------------------------------------
+        A su turno el Ministro Víctor Ríos dijo: Considero que en el presente caso no se
+evi~e1;1~iayeligro en la de~ora,_ ni que la aplicación de la norma atacada pueda ocasionar
+pe1Ju1c10 irreparable al accíonante. ------------------------------------------------------------------
+        Por lo que no estando cumplidos los requisitos exigidos en el Artículo 553 del C.P.C.,
+voto por el rechazo de la medida solicitada. ES MI VOTO. --------------------------------------
+        POR TANTO, la
+
+                                       CORTE SUPREMA DE JUSTICIA
+                                          SALA CONSTITUCIONAL
+                                             RESUELVE:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

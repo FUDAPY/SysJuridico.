@@ -1,0 +1,132 @@
+# Auto Interlocutorio N.º 1671/2024
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA POR EMPRESA DE SEGURIDAD PRIVADA PREVENCIÓN S.R.L. EN LOS AUTOS CARATULADOS: "VICTOR JAVIER FRANCO C/ PREVENCIÓN S.R.L. GUARDIA PRIVADA Y FRANCISCA BENITEZ DE GIMENEZ S/ COBRO DE GUARANÍES EN DIVERSOS CONCEPTOS LABORALES". AÑO 2021 Nº 354.
+
+- **Código CSJ:** 108632
+- **Tipo:** Auto Interlocutorio
+- **Número:** 1671/2024
+- **Fecha:** 2024-09-23
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Laboral
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=108632)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=108632)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA
+                                                  POR   EMPRESA     DE    SEGURIDAD   PRIVADA
+                                                  PREVENCIÓN S.R.L. EN LOS AUTOS CARATULADOS:                                ~
+                                                  "VICTOR JAVIER FRANCO C/ PREVENCIÓN S.R.L.
+                                                  GUARDIA PRIVADA Y FRANCISCA BENITEZ DE
+                                                  GIMENEZ SI COBRO DE GUARANÍES EN DIVERSOS
+                                                  CONCEPTOS LABORALES". AÑO 2021 Nº 354.-------------
+
+
+
+                                                          A.I.N º      /16+1.
+                                   Asunción, 'l.) de      > ef l   t~~Vt de fl.,,o 1, ~ . -
+
+
+
+
+                                        C O N S I D E R A N D O:
+
+         Opinión del Dr. César M. Diesel Junghanns:-.;.                                                                 _
+        QUE, a fin de verificar la procedencia de la presente acción, debe señalarse que la acción de
+inconstitucionalidad es autónoma y por lo tanto debe observar principios rectores consagrados en el
+marco normativo que regula los requisitos para su promoción. En ese sentido, el Art. 70 del Código
+Procesal Laboral que reza: "El poder conferido para determinado asunto, cualquiera que sean los
+términos, conlleva la facultad de intervenir en todos los incidentes del principal, interponer recurso
+y ejercitar cuantos actos ocurrieren durante la secuela de la litis en todas las instancias, excepto
+aquellos reservados por el mandante o que requieren poder especial por la ley".-----------------------
+        QUE, en el caso de autos se presenta el abogado Osear Emmanuel Godoy Irala, en los autos
+caratulados: "VICTOR JAVIER FRANCO C/ PREVENCIÓN S.R.L. GUARDIA PRIVADA Y
+FRANCISCA BENITEZ DE GIMENEZ S/ COBRO DE GUARANÍES EN DIVERSOS CONCEPTOS
+LABORALES", pretendiendo invocar la intervención en la citada causa, sin agregar el poder
+habilitante para ejercer determinada representación. En ese sentido, cabe expresar que para la
+formulación de una proposición constitucional, es requisito indispensable el otorgamiento de poder
+suficiente para intervenir en este juicio en representación de quien alega ser el mandante, y al no
+haberse acreditado suficientemente la representación invocada, ello constituye motivo suficiente
+para el rechazo in limine de la acción.---------------------------------------------------------------------------
+       . QUE, esta Máxima Instancia Judicial ha sentado jurisprudencia a este respecto que confirma
+la tesis denegatoria de dar curso a la acción cuando la personería no se encuentra acreditada
+mediante poder para el caso en concreto. Así ha expresado: "Los representantes sean legales o
+convencionales, deben acompañar con el primer escrito los documentos que acrediten el carácter
+que invisten, salvo que se indique dónde se encuentran individualizados suficientemente (Dirección
+General de los Registros Públicos - Sección Poderes), en cuyo supuesto se podrán agregar
+posteriormente al expediente; o se trate de un caso urgente, en cuya hipótesis se aplican las reglas
+del Art. 60 del C. P. C. ". --------------------------------------------------------------------------------------------
+         QUE, además, conviene recordar, que uno de los requisitos formales para admitir la acción
+de inconstitucionalidad es la constancia de la notificación, con el objeto de verificar el cumplimiento
+del plazo legal de presentación de la acción establecido en el Art. 557 del C.P.C., circunstancia en
+este caso omitida al no haberse adjuntado la correspondiente cédula, impidiéndose así la
+comprobación del plazo estab 1 ec ido. -- --- --- ------------ ------------------------ ----------------------- ----------
+         QUE, al no darse cumplimiento a los requisitos exigidos por el Código de forma y la
+jurisprudencia de esta Sala, corresponde el rechazo de la presente acción.---------------------------------
+         A su turno, el Ministro Gustavo Santander Dans, manifiesta que se adhiere al voto del
+Ministro César Diesel Junhganns, por los mismos fundamentos.--------------------------------------------
+
+
+
+
+                                                                                                                             j
+                                                                                                                             ¡
+                                                                                                                             1
+
+                                                                                                                             1
+                                                                                                                             t
+                                                                                                                             ,
+
+
+        Opinión del Doctor Víctor Ríos Ojeda:-------------------------------------------------------
+
+         1.- El artículo 557 del Código Procesal Civil, dispone cuáles son los requisitos para la
+promoción de la acción. De tal disposición normativa se desprende los siguientes requisitos:
+(i) que el accionante constituya domicilio; (ii) que individualice la resolución impugnada; (iii)
+que identifique el juicio donde recayó la resolución impugnada; (iv) que funde la petición en
+términos claros y determine el derecho, exención, garantía o principio constitucional que
+considera infringido y; (v) que presente la acción en el plazo de 9 días.----------------------------
+        2.- En relación al último requisito, de presentación de la acción dentro del plazo de
+ley, debemos señalar que no se ha agregado constancia de notificación de la última
+resolución impugnada, de modo que, en este estado no es posible verificar el cabal
+cumplimiento de todas las exigencias legales de admisión.-------------------------------------------
+        3 .- En consecuencia, antes de emitir opinión sobre el trámite o rechazo liminar de la
+demanda, estimo que debe ser intimado al accionante a que adjunte copia autenticada de la
+notificación a efectos de corroborar si la promoción de la acción fue realizada en tiempo
+hábil.----------------------------------------------------------------------------------------------------------
+        4.- En idéntico sentido voto respecto de la falta de agregación del poder respectivo. En
+tal sentido, esta magistratura considera que corresponde intimar al profesional del foro, a que
+dé cumplimiento a lo previsto por el Art. 57 del CPC, ello, dentro del plazo de 5 cinco días a
+tenor de lo dispuesto por el Art. 146 del invocado cuerpo legal.-------------------------------------
+        5 .- Por lo tanto, voto por intimar al profesional del foro, para que acredite su
+personería y acompañe la cédula de notificación de la resolución, dentro del plazo de 5 días y
+bajo el apercibimiento de tener por no admitida la presente acción. Es mi voto.------------------
+        POR TANTO, la
+                                 CORTE SUPREMA DE JUSTICIA
+                                      SALA CONSTITUCIONAL
+                                             RESUELVE:
+
+        RECHAZAR "in limine" la acción de inconstitucionalidad presentada por el abogado
+Osear Emmanuel Godoy Irala, en representación de la Empresa de Seguridad Privada
+Prevención S.R.L., contra la S.D. Nº 35/01//2018/01, de fecha 10 de mayo del 2018, dictado
+por el Juzgado de Primera Instancia en lo Laboral del Primer Tumo de Encamación, sí c
+el Acuerdo y Sentencia Nº 73/2020/T.A.L., de fec       05 e octubre de 2020, dict · do por
+Tribunal de Apelación en lo Laboral, de la Ci unscri ción Judicial de Itap a, por los
+fundamentos expuestos en el exordio de la present resoluci n.----------------------- ------------
+
+         ANOTA
+
+Ante mí:
+                    Cesar M. Díese+dunghan s                               Gustavo E. Santander
+                             Ministro CSJ.                                          M. nistro
+
+                                                                                                     V{ctor Ríos Ojeda
+                                                                                              D r.      Ministro
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

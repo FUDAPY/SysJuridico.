@@ -1,0 +1,260 @@
+# Auto Interlocutorio N.º 824/2022
+
+**Carátula:** JUICIO: "INFORME E IMPUGNACIÓN EN LOS AUTOS: EDILBURGA BARRETO VIERA C/ NELLY PORTILLO Y OTROS S/ INDEMNIZACIÓN POR DAÑOS Y PERJ. POR RESPONSABILIDAD EXTRACONTRACTUAL".
+
+- **Código CSJ:** 92937
+- **Tipo:** Auto Interlocutorio
+- **Número:** 824/2022
+- **Fecha:** 2022-09-19
+- **Sala:** SALA CIVIL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; Hace Lugar; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Normas de referencia:** CPC, arts. 20, 21, 33.
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=92937)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=92937)
+
+## Texto de la resolución
+
+JUICIO:  "INFORME E IMPUGNACIÓN EN LOS
+                                                                AUTOS: EDILBURGA BARRETO VIERA C/ NELLY
+                                                                VÁZQUEZ     PORTILLO     Y    OTROS    S/
+                                                                INDEMNIZACIÓN   POR  DAÑOS  Y  PERJ.  POR
+                                                                RESPONSABILIDAD EXTRACONTRACTUAL".------
+                             ,:\\{ZL
+
+                 ' \·/ \~ --:_7:---:---
+       ~ -~\\    .'      1',
+
+      ~,y'
+       -.¡'           .i..
+
+       ¡                                                            Asunción,          J.q     de   se,pt,e(Y')Ore.           del 2. 022. -
+--i/            >.,.'
+""'
+                                                          La    impugnación formulada por el Magistrado
+                                                          Godoy        Martínez,               Miembro             del      Tribunal        de
+                                                          Civil y Comercial,                        Segunda Sala,               contra la
+                 excusación                     de        la        Magistrada               Juliana            Giménez         Portillo,
+                 Miembro del Tribunal de Apelación en lo Civil y Comercial,
+                  Primera                 Sala,       ambos           de     la        Circunscripción                   Judicial         Alto
+                  Paraná, y,--------------------------------------------------
+
+
+                                                                    CONSIDERANDO:
+                                   Por      Providencia                de     fecha          08     de     Julio         de    2.022,       la
+                 Magistrada Juliana Giménez                                       Portillo,           se      separó de entender
+                 en el presente juicio por hallarse comprendida en la causal
+                 prevista                  en        el        inc.        f) '        del     Art.           2o     de 1      c. P. c,     en
+                 concordancia                     con          el     Art.        21    del       mismo            cuerpo      legal,       al
+                 referir                  haber           emitido           opinión            en        la        causa       Nº     314/14
+                 caratulada                     "Investigación                     Fiscal            sobre           supuesto          hecho
+                 punible                  contra          la    integridad física" al                              momento       de   haber
+                 ejercido el cargo de Agente Fiscal de la Unidad Penal Nº0l
+                 de Ciudad del Este,                                destacando que dicha causa penal guarda
+                                          directa con el caso de autos (f.9) .----------------
+                                   El Magistrado Wilfrido Osear Godoy Martínez impugnó la
+                             xcusación          de        la    Conjuez,               alegando            la       inexistencia            de
+                                          alguna acerca del pleito por parte de la Magistrada
+                                          Portillo,             al    momento            del        ejercicio            del     cargo      de
+                                                           la Unidad Penal Nºl de Ciudad del Este,                                          en
+                                                           referenciada.
+                                                                                                                      . C.,     que fuera
+                                                                                                                            autos no se
+
+
+                                                                                                              /•
+
+
+
+
+del C.P.C.,         teniendo que ser válida corno causal establecida
+en el Art. 21 del C.P.C.------------------------------------
+      Precisada esta cuestión,                             ahora pasaremos a analizar la
+procedencia            o      no     de        la        impugnación         en        contra     de     la
+excusación de la Magistrada Juliana Girnénez Portillo.
+      Aquí resulta pertinente estudiar primeramente la regla
+del Art.      22 del C.P. C.                   el cual establece:                     "El juez deberá
+manifestar         siempre            circunstanciadamente                       la     causa     de     su
+excusación.            Si     no     lo        hiciere,         o    si     no    fuere     legal        la
+invocada, el juez o conjuez reemplazante deberá impugnarla,
+pasando      directamente                 el     incidente           al     superior,       qui eti      lo
+resolverá sin sustanciación en el plazo de cinco días".                                                  En
+efecto, constituye una carga para todo juzgador que pretenda
+excusarse      el          explicitar           de       manera      clara        y    detallada        las
+razones       en            las      cuales              se    basa        para         adoptar         tal
+determinación.              Ello resulta del todo lógico si se considera
+que los jueces naturales no deben excusarse por motivos de
+excesiva      sensibilidad                o     susceptibilidad              extrema,           debiendo
+tener el celo en el ejercicio de sus funciones y no eludir
+el conocimiento de los asuntos por razones injustificadas.--
+      En cuanto a la causal de preopinión invocada,                                             la misma
+se configura cuando el Juzgador ha exteriorizado su opinión
+o dictamen respecto de la f orrna en que deben ser resueltas
+las cuestiones debatidas en el pleito que se presenta~ su
+decisión      y        jurisdicción.                 Para      que    constituya           causal        de
+recusación,            el     prejuzgarniento                 debe    ser    expreso        y     recaer
+sobre la cuestión a decidir. Asimismo, existe prejuzgarniento
+cuando esa opinión hace posible entrever la decisión final
+que ha de tener la Causa.-----------------------------------
+      Así,    la        Doctrina          y     Jurisprudencia              han       sostenido        que:
+" ... Constituye causal de recusación la emisión por el juez de
+opinión respecto del asunto litigioso,                                     con conocimiento de
+los   autos ",              " ... intempestiva             (antes     de     la       emisión     de     la
+sentencia)        ",       e innecesaria                 (es necesaria cuando la opinión
+se    emite        para             decidir              acerca      de      cuestión       previa        o
+incidental),            " ... Por    ello,          no    constituye prej uzgamiento:                    la
+
+
+                                  JUICIO: "INFORME E IMPUGNACIÓN EN LOS
+CORTE                             AUTOS: EDILBURGA BARRETO VIERA C/ NELLY
+             EMA                  VÁZQUEZ     PORTILLO    Y     OTROS    S/
+               CIA                INDEMNIZACIÓN POR DAÑOS Y PERJ.       POR
+                                  RESPONSABILIDAD EXTRACONTRACTUAL".------
+
+
+                      juez        vertida             para       resol ver           caso      análogo ",
+                                causa       deba       hacer cosa juzgada                      en    esta ",
+                                expuesta          para       fundar          la      decisión         de        una
+cuestión inciden tal..."," ... tampoco constituye prej uzgamien to la
+decisión       que ordena medidas para mejor proveer ... ",                                          " ... ni    la
+que     ordena       medidas            cautelares ... ",                " ... aun     cuando          exista
+conexidad con             otro proceso ... ",               " ... ni    la    que     el      juez      tomara
+como     secretario          en     proceso            anterior ... ",            " ... Por   la     razones
+expuestas, la causal de                     prejuzgamiento debe considerarse de
+interpretación restrictiva, por lo cual solo es procedente
+cuando recae de modo directo sobre la                                        cuestión de fondo a
+resol ver      en    la     li tis ... 11    (   Palacio         y Al varado             Velloso,           Lino
+Enrique y Adolfo,                Código Procesal                       Civil y Comercial de la
+Nación Comentado, Rubinzal Culzoni Editores, pp. 441/447)
+        Estudiada          la     cuestión             planteada,              y      analizadas                las
+constancias de autos,                   corresponde denotar que del tenor de
+la     providencia          de     excusación                dictada          por       la     Magistrada
+Juliana       Giménez        Portillo,            no        se     puede       evidenciar             que        la
+misma        haya        realizado               un     análisis              circunstanciado                     y
+pormenorizado de las razones que le dan sustento al actuar
+de la misma, puesto que se limitó a mencionar que al momento
+de desempeñar el cargo de Agente Fiscal de la Unidad Penal
+Nº 01,       intervino como tal en la causa Nº 314/14 caratulada:
+"Investigación Fiscal sobre supuesto hecho punible contra la
+integridad física" y que la misma guardaría relación directa
+        el     caso        debatido              en      autos,              omitiendo             acompañar
+constancias          que        acrediten              suficientemente                   los        extremos
+señalados,          es     decir,           que        la        misma        haya         efectivamente
+exteriorizado su opinión o dictamen respecto de la forma en
+                ser       resueltas              las    cuestiones             debatidas             en     este
+          posesorio.-------------------------------------------
+                           la Magistrad                                               res precisiones
+                                                                                     causal prevista
+                                                                                      sta debió haber
+
+
+debatido        en       autos           y    que        justifiquen                las    razones           por       las
+cuales      consideró                    pertinente                 su     excusación.                Además,           es
+importante               resaltar                 que     la         misma          no         alegó        que        las
+circunstancias              mencionadas                   para       fundar          su    separación                hayan
+generado        en       ella    sentimientos                      que     obstaculicen               resol ver         el
+litigio     con           imparcialidad                   y        objetividad            o,     cuanto          menos,
+ilustrar acabadamente con instrumentales la vinculación que,
+de    existir,           tiene       la       causa penal                con    lo       discutido          en       estos
+autos.------------------------------------------------------
+       Asimismo,            cabe             señalar           que       el     hecho          de     que     la       hoy
+Magistrada           haya        intervenido                       como        Agente          Fiscal,           en     un
+juicio,     distinto             a       éste,          per se no resulta concluyente al
+momento        de        acreditar                    fehacientemente                que        la     misma          haya
+emitido opinión respecto al tema debatido en autos; esto en
+atención a que la misma se limitó a aseverar dicho extremo
+sin    acompañar            el       caudal              probatorio             que        sustenten             dichas
+aseveraciones.                  Además,                  se         debe        puntualizar                 que         su
+intervención              en     dicho                 proceso           se     circunscribió                    a     las
+facultades           y    obligaciones                   que        le     fueron         conferidas              en    su
+condición        de       Agente             Fiscal,           cargo          que     le       cupo       ocupar        al
+momento de intervenir en la causa penal de referencia.------
+       Se   debe          tener              presente              siempre       que       las       causales           de
+excusación se              analizan con un                          criterio más                restrictivo,             a
+los fines de respetar el principio del juez natural. Tampoco
+se     puede        desconocer                    que     los        Magistrados                se        encuentran
+obligados        a       entender                 y    resolver           en    todos           aquellos             casos
+puestos     a       su     conocimiento,                      es    decir,          pesa       sobre        ellos       un
+deber legal que resulta insoslayable,                                           de modo que no les es
+permitido apartarse ni ser apartados injustificadamente.                                                                De
+ahí que dicha justificación,                                   en caso de existir,                          no puede
+ser meramente invocada,                               sino que,           tal como se desprende de
+la      norma             del            Art.            22          del         C.P. e.,              debe            ser
+circunstanciadamente referida y acreditada.-----------------
+       Con respecto                  a       la       causal        del Art.          21       del     e. P. e.,        la
+cual     fue         referida                de        manera        .concordante                a     la        causal
+esgrimida,           se     debe             decir,           primeramente,                que       la     referida
+
+
+                                      JUICIO:  "INFORME E IMPUGNACIÓN EN LOS
+                                      AUTOS: EDILBURGA BARRETO VIERA C/ NELLY
+                                      VÁZQUEZ     PORTILLO     Y    OTROS    S/
+                                      INDEMNIZACIÓN   POR  DAÑOS  Y  PERJ.  POR
+                                      RESPONSABILIDAD EXTRACONTRACTUAL".------
+
+
+                      consagrada en el                       Código de             Forma con el                fin de
+                                               puedan        separarse                 voluntariamente                  de
+               en     ciertos              juicios,           en    aquellos               casos        en    que       la
+sensibilidad              y     estimación              del        juez,          en       relación          con       las
+personas       y/ o       el       objeto        del       litigio,          le    impidan         entender             en
+él.    La    norma             del        Art.        21      constituye                así       una        cláusula
+abierta,       dispuesta precisamente con el                                      fin de abarcar todos
+aquellos       casos           que        no    se     subsuman         dentro             de    los     supuestos
+contemplados              en        el         Art.     20        del      C.P.C.,              pero         que,       no
+obstante,       revistan una entidad tal que puedan potencialmente
+comprometer           la           independencia               o     imparcialidad                     del     órgano
+juzgador.---------------------------------------------------
+       Así pues,              a pesar de la marcada dimensión subjetiva de
+la    causal     en        estudio,             sería        ilógico         considerar                que    por       la
+mera    invocación                  del        Art.     21    del       C.P.C.,             los     Magistrados
+puedan      separarse                 sin         más        de      entender               en     una         causa,
+excluyéndose              toda        posibilidad              de       valoración               acerca           de    la
+legitimidad           o       no    de     la     separación.            Más           bien,      la    causal          se
+encuentra           prevista                    para         escenarios                    especiales,                 que
+comprometan la objetividad del juzgador;                                               pero siempre pueden
+examinarse          las            circunstancias                 alegadas             a    los        efectos          de
+determinar si su entidad es tal que justifique la separación
+del Magistrado.---------------------------------------------
+         En la inteligencia de lo expuesto,                                            se concluye que no
+se encuentran cumplidos los parámetros legales que den razón
+suficiente            al           apartamiento               de        la         excusada,                por        las
+circunstancias                 mencionadas.                  Por     ende,             corresponde             acoger
+favorablemente                 la    impugnación               planteada                contra         la     aludida
+separación;         al tiempo de devolver estos autos al Tribunal de
+origen,     conforme con el Art.                           33 del C.P.C.------------------
+       Por tanto,              la Excelentísima;---------------------------
+
+
+                                                                                     •
+
+
+
+
+                       CORTE SUPREMA DE JUSTICIA
+                           SALA CIVIL Y COMERCIAL
+                             RESUELVE:
+
+
+     HACER   LUGAR     a    la    impugnación       formulada    por     Wilfrido
+Osear Godoy Martínez,            Miembro del     Tribunal      de Apelación     en
+              Comercial,         Segunda    Sala,    de   la   Circunscripción
+           Alto Paraná contra la excusación de Juliana Giménez
+             · embro   del       Tribunal   de   Apelació
+
+
+
+
+     DEVOLVER                                             de   origen,     a   los
+
+
+
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

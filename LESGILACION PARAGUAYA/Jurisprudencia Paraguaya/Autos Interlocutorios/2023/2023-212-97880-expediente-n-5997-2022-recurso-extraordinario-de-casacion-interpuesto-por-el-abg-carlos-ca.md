@@ -1,0 +1,240 @@
+# Auto Interlocutorio N.º 212/2023
+
+**Carátula:** EXPEDIENTE N° 5997/2022: “Recurso Extraordinario de Casación interpuesto por el Abg. Carlos Cantero en la causa “SANDRA NOELIA FERNÁNDEZ GERNHOFFER S/ ESTAFA Y OTROS”.--
+
+- **Código CSJ:** 97880
+- **Tipo:** Auto Interlocutorio
+- **Número:** 212/2023
+- **Fecha:** 2023-05-18
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=97880)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=97880)
+
+## Texto de la resolución
+
+EXPEDIENTE N° 5997/2022: “Recurso Extraordinario
+                                                          de Casación interpuesto por el Abg. Carlos Cantero
+                                                          en la causa “SANDRA NOELIA FERNÁNDEZ
+                                                          GERNHOFFER S/ ESTAFA Y OTROS”.---------------------
+
+
+
+                                                       Auto Interlocutorio
+
+                         VISTO: los recursos extraordinarios de casación interpuestos por el Abg.
+                   Carlos Cantero contra el A.I. N° 913 de fecha 31 de agosto de 2022 dictado por
+                   el Juzgado Penal de Garantías N° 2 de Ciudad del Este, y contra el A.I. N° 495
+                   de fecha 14 de diciembre de 2022, dictado por el Tribunal de Apelación en lo
+                   Penal Primera Sala de la Circunscripción Judicial de Alto Paraná, y;-
+
+                                                     CONSIDERANDO:
+
+                                        VOTO DEL MINISTRO RAMÍREZ CANDIA.
+
+
+                           1. Según manifestaciones del recurrente y las constancias que remite,
+                   el Juzgado Penal de Garantías N° 2 de Ciudad del Este, por A.I. N° 913 de fecha
+                   31 de agosto de 2022, resolvió entre otras cosas, no hacer lugar al
+                   sobreseimiento definitivo planteado por la defensa técnica y admitir la acusación
+                   formulada por el Ministerio Público y por la querella adhesiva en contra de
+                   Sandra Noelia Fernández. Contra esta resolución, el Abg. Carlos Cantero
+                   interpuso recurso de apelación general, resuelto por el Tribunal de Apelación en
+                   lo Penal Primera Sala de la Circunscripción Judicial de Alto Paraná, que por A.I.
+                   N° 495 de fecha 14 de diciembre de 2022 resolvió confirmar el auto apelado.-
+                           2. Ante este resultado, el citado profesional impugna los citados fallos a
+                   través del recurso extraordinario de casación hoy traído a la atención de esta
+                   Sala Penal.-
+                          3. Ante esta presentación, corresponde verificar su adecuación a las
+                   condiciones legales establecidas para la modalidad recursiva empleada, tales
+                   como plazo, legitimidad para recurrir, objeto de impugnación y fundamentación
+                   del escrito.-
+                          4. En primer lugar, se debe determinar si el recurso ha sido interpuesto
+                   dentro del plazo de ley, es decir, dentro de diez días hábiles posteriores a la
+                   notificación, condición procesal impuesta por el Art. 468 C.P.P.1, aplicable a esta
+                   modalidad recursiva por remisión del Art. 480 del mismo cuerpo legal2.-
+                        5. En este contexto, el recurrente ha sido notificado de las resoluciones
+                   que impugna en fecha 15 de diciembre de 2022, presentando su escrito de
+
+                   1 Art. 468. Interposición. El recurso de apelación se interpondrá ante el juez o tribunal que dictó la sentencia, en
+                   el término de diez días luego de notificada, y por escrito fundado, en el que se expresará, concreta y
+                   separadamente, cada motivo con sus fundamentos y la solución que se pretende. Fuera de esta oportunidad no
+                   podrá aducirse otro motivo.
+                   2 Art. 480. Trámite y resolución. El recurso extraordinario de casación se interpondrá ante la Sala Penal de la
+                   Corte Suprema de Justicia. Para el trámite y la resolución de este recurso serán aplicables, analógicamente, las
+                   disposiciones relativas al recurso de apelación de la sentencia, salvo en lo relativo al plazo para resolver que se
+                   extenderá hasta un mes como máximo, en todos los casos.
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+     interposición ante la Secretaría de esta Sala Penal en fecha 28 del mismo mes
+     y año, es decir, dentro del plazo legal establecido para ejercer este derecho.-
+
+            6. Con referencia al derecho a recurrir, se verifica que el citado profesional
+     tiene intervención en la causa en carácter de Abogado defensor. De esta forma,
+     está habilitado para implementar los medios de impugnación que estime
+     convenientes a los derechos de su defendida, por considerar que el fallo en
+     cuestión causa agravio a su parte, como establece el Art. 449 del C.P.P.3.-
+
+            7. Sin embargo, en cuanto al requisito de admisibilidad vinculado al objeto
+     del recurso de casación, el Art. 477 del Código Procesal Penal4. establece dos
+     tipos de resoluciones que pueden ser cuestionados por esta vía recursiva: 1) la
+     sentencia definitiva de los tribunales de apelación, y 2) las resoluciones de este
+     órgano que pongan fin al procedimiento, cuando el recurso es planteado contras
+     las resoluciones identificadas como Auto Interlocutorio.
+            8. En este caso, el A.I. N° 913 fue dictado por un Juzgado de Garantías,
+     por lo que no puede ser admitido para su revisión a través del presente recurso;
+     y en cuanto al A.I. N° 495, es un auto interlocutorio dictado por un Tribunal de
+     Apelaciones, pero que no cumple la exigencia prevista por la citada norma, que
+     requiere para los autos interlocutorios que además pongan fin al
+     proceso. Efectivamente, al confirmar el A.I. N° 913 que rechaza el
+     sobreseimiento definitivo y admite la acusación, el órgano jurisdiccional de
+     alzada no pone fin al proceso, sino que, por el contrario, ordena su continuidad.
+     En este contexto, las resoluciones que “ponen fin al procedimiento” deben ser
+     entendidas como aquellas que hacen lugar a una forma excepcional de
+     conclusión del proceso, por ejemplo el sobreseimiento definitivo.-
+            9. En la Acción de Inconstitucionalidad planteada en el caso de Camilo
+     Soares Machado y otros sobre Lesión de Confianza5 he señalado que el Auto
+     de Apertura a juicio es apelable, lo que no contradice mi posición actual debido
+     a que en esta oportunidad se analiza la admisibilidad de un Recurso de
+     Casación que tiene requisitos diferentes a la Apelación General puesto que el
+     primero exige que la resolución recurrida (autos interlocutorios) pongan fin al
+     proceso.-
+              11. En conclusión, al no estar cumplidos los requisitos procesales
+     fijados por el Código Procesal Penal para la interposición del recurso, el mismo
+     debe declararse inadmisible.-
+
+
+     3 Art. 449. Reglas generales. Las resoluciones judiciales serán recurribles sólo por los medios y en los casos
+     expresamente establecidos, siempre que causen agravio al recurrente. El derecho de recurrir corresponderá tan
+     sólo a quien le sea expresamente acordado. Cuando la ley no distinga entre las diversas partes, el recurso podrá
+     ser interpuesto por cualquiera de ellas.
+     4 Art. 477. Objeto. Sólo podrá deducirse el recurso extraordinario de casación contra las sentencias definitivas
+
+     del tribunal de apelaciones o contra aquéllas decisiones de ese tribunal que pongan fin al procedimiento,
+     extingan la acción o la pena, o denieguen la extinción, conmutación o suspensión de la pena.
+     5 Acuerdo y Sentencia Nº 440 del 23 de mayo de 2019 dictado por la Sala Constitucional de la Corte Suprema de
+     Justicia.
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                                              EXPEDIENTE N° 5997/2022: “Recurso Extraordinario
+                                              de Casación interpuesto por el Abg. Carlos Cantero
+                                              en la causa “SANDRA NOELIA FERNÁNDEZ
+                                              GERNHOFFER S/ ESTAFA Y OTROS”.---------------------
+
+
+                           12. A su turno, la Ministra LLANES OCAMPOS, dijo:
+                           13. En cuanto a la primera cuestión: comparto la posición asumida por
+                   el colega preopinante Dr. Manuel Dejesús Ramírez Candia respecto a la
+                   inadmisibilidad del presente recurso, con la siguiente aclaración:-
+                            14. El art. 477 del Código Procesal Penal establece: Sólo podrá
+                   deducirse el recurso extraordinario de casación contra las Sentencias
+                   Definitivas del Tribunal de Apelaciones o contra aquellas decisiones de ese
+                   tribunal que pongan fin al procedimiento, extingan la acción o la pena, o
+                   denieguen la extinción, conmutación o suspensión de la pena.-
+                            15. En ese sentido, el cuantificador lógico solo denota la imposibilidad
+                   de interposición del recurso de casación contra las resoluciones que no pongan
+                   fin al procedimiento, teniendo en cuenta, el principio de taxatividad objetiva que
+                   selecciona algunas decisiones jurisdiccionales, dejando fuera del elenco legal a
+                   las demás. -
+                            16. En el caso del enunciado normativo “...contra las sentencias
+                   definitivas del tribunal de apelaciones o contra aquellas decisiones de ese
+                   tribunal que pongan fin al procedimiento, extingan la acción o la pena, o
+                   denieguen la extinción, conmutación o suspensión de la pena”, la “o” es utilizada
+                   para expresar equivalencia, entre las sentencias definitivas y otras resoluciones
+                   que ponen fin al procedimiento.-
+                            17. Afirmamos esto, con apoyo en la doctrina que reconoce a la
+                   “sentencia” como la decisión que pone fin a la instancia, dictada por el tribunal
+                   decisor sobre la base de un juicio oral. Sobre el punto, explica ROXIN que “Al
+                   igual que en el proceso civil, se diferencia entre sentencia procesal y sentencia
+                   material. A través de la sentencia procesal el procedimiento es declarado
+                   inadmisible (“el procedimiento es sobreseído”). A través de la sentencia de
+                   mérito se decide sobre si existe o no una pretensión sancionatoria del Estado;
+                   por ello, estas sentencias versan sobre la condena, la absolución o la orden de
+                   aplicar una medida de seguridad y corrección”.-
+                            18. Sumado a lo anterior, con respecto a las resoluciones judiciales
+                   denominadas “autos interlocutorios”, el artículo 124 del CPP, indica que
+                   mediante las mismas deben decidirse cuestiones incidentales que requieran
+                   previa sustanciación, no obstante, aclara que “las decisiones que pongan
+                   término al procedimiento… también serán resueltas en la forma de autos
+                   interlocutorios”.-
+                           19. En síntesis, las resoluciones impugnables a través del recurso de
+                   casación, independientemente de su forma (S.D. o A.I.) son aquellas que
+                   contienen una decisión sobre el fondo del caso (condena o absolución) o las
+                   que sin contener un pronunciamiento sobre el fondo, igualmente conllevan la
+                   conclusión o cierre del procedimiento y por lo tanto, gozan de eventual aptitud
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+     para adquirir eficacia de cosa juzgada (sobreseimiento definitivo, decisiones
+     sobre la prescripción, extinción de la acción, desestimación de la denuncia,
+     entre otras).-
+             20. De esta manera, la resolución impugnada no pone fin al
+     procedimiento, puesto que al no admitir el recurso de apelación general en
+     subsidio interpuesto contra la admisión del acta de imputación justamente con
+     ello se busca la prosecución del procedimiento sin dilaciones procesales
+     indebidas. ES MI VOTO.-
+             21. A su turno el Ministro BENÍTEZ RIERA dijo que se adhiere al voto
+     de la Ministra Llanes Ocampos, por compartir sus mismos fundamentos.-
+
+
+              Por tanto, bajo las consideraciones precedentemente expuestas y en
+     virtud a las disposiciones legales citadas; la –
+
+
+                           CORTE SUPREMA DE JUSTICIA
+
+                                     SALA PENAL
+
+                                   RESUELVE:
+
+           DECLARAR INADMISIBLE al recurso extraordinario de casación
+     interpuesto por el Abg. Carlos Cantero contra el A.I. N° 913 de fecha 31 de
+     agosto de 2022 dictado por el Juzgado Penal de Garantías N° 2 de Ciudad del
+     Este, y contra el A.I. N° 495 de fecha 14 de diciembre de 2022, dictado por el
+     Tribunal de Apelación en lo Penal Primera Sala de la Circunscripción Judicial
+     de Alto Paraná, por los fundamentos expuestos en el exordio de esta
+     resolución.-
+           ANOTAR, notificar y registrar.-
+
+
+
+
+     Ante mí:
+
+
+
+
+Para conocer la                 Firmado digitalmente   Firmado digitalmente   Firmado digitalmente por:
+                                                                              MARIA CAROLINA LLANES
+     validez del                por: MANUEL DEJESUS    por: LUIS MARIA        OCAMPOS (MINISTRO/A)
+   documento,                   RAMIREZ CANDIA         BENITEZ RIERA
+ verifique aquí.                                                              Asunción, 18 de mayo de 2023
+                                (MINISTRO/A)           (MINISTRO/A)           con Nro. A.I.: 212 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

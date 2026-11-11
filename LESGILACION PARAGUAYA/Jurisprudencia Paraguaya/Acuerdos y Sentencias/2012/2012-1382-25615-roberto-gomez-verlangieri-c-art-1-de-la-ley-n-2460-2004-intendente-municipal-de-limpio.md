@@ -1,0 +1,229 @@
+# Acuerdo y Sentencia N.º 1382/2012
+
+**Carátula:** ROBERTO GOMEZ VERLANGIERI C/ ART. 1º DE LA LEY Nº 2460/2004 -  INTENDENTE MUNICIPAL DE LIMPIO
+
+- **Código CSJ:** 25615
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 1382/2012
+- **Fecha:** 2012-09-21
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Normas de referencia:** Art. 3 C.N.
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=25615)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=25615)
+
+## Texto de la resolución
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD “CONTRA ART. 1 DE LA LEY 2460/2004”. AÑO: 2008 – Nº 1896.----------------------------------------------
+
+ACUERDO
+Y SENTENCIA NUMERO: MIL
+TRESCIENTOS OCHENTA Y DOS.-
+
+En  la   Ciudad   de  
+Asunción,   Capital   de   la  
+ República  
+del   Paraguay,    a 
+los     Veinte y un                días del mes de       Septiembre            del año dos mil doce, estando en la Sala de Acuerdos de la Corte Suprema de
+Justicia, los Excmos. Señores Ministros de la Sala Constitucional,
+Doctor VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente y Doctores GLADYS BAREIRO DE MÓDICA y ANTONIO FRETES,
+Miembros, ante mí, el Secretario autorizante, se trajo al acuerdo el expediente
+caratulado: ACCIÓN DE
+INCONSTITUCIONALIDAD: “CONTRA ART. 1 DE LA LEY 2460/2004”, a fin de
+resolver la acción de inconstitucionalidad promovida por el Intendente
+Municipal, Roberto Gómez Verlangieri, de la Ciudad de
+Limpio, Departamento Central, por sus propios derechos y bajo patrocinio de
+abogado.--------------------------------------------
+
+Previo estudio de los antecedentes del
+caso, la Corte Suprema
+de Justicia, Sala Constitucional, resolvió plantear y votar la siguiente.-----------------------------------------------
+
+C
+U E S T I O N:
+
+¿Es
+procedente la acción de inconstitucionalidad deducida?.----------------------------
+
+A
+la cuestión planteada el Doctor NÚÑEZ RODRÍGUEZ dijo: Se presenta ante esta Corte el Intendente
+Municipal, Roberto Gómez Verlangieri, de la Ciudad de
+Limpio, Departamento Central, por sus propios derechos y bajo patrocinio de
+abogado, a promover acción de inconstitucionalidad contra el Art. 1 de la Ley
+2460/2004.----------------------------
+
+1.- Se agravia el accionante
+manifestando, que el artículo impugnado viola sus derechos adquiridos de
+conformidad a los derechos y garantías consagradas en la Constitución Nacional, la Ley
+834/96 “Código Electoral”, puesto que la Ley promulgada por el Poder
+Legislativo constituye una intromisión al sistema de independencia, equilibrio,
+coordinación y reciproco control de los Poderes del Estado que ejercen el Gobierno.
+Alegan que el Poder Legislativo se abrogó facultades extraordinarias al pretender
+obtener la potestad para determinar discrecionalmente la duración del mandato de
+las autoridades
+municipales.­-------------------------------------------
+
+2.- El Art. 1 ° de la Ley N° 2460/2004 establece: “Las
+autoridades municipales a ser electas
+en los comidos de noviembre del año 2006 durarán cuatro años en sus funciones”.-----------------------------------------------------------------------------------------------
+
+3.- La acción debe ser
+archivada.­------------------------------------------------------------
+
+Es criterio sostenido de manera
+reiterada por esta Corte la independencia de los poderes que ejercen el Gobierno y el control
+constitucional tiene por objeto velar que
+este principio no sea vulnerado con intromisiones de otros poderes de conformidad al Art. 3 de nuestra Ley Suprema; esta
+conclusión es irrebatible, pero en
+este caso concreto, considero que la acción intentada debe ser archivada,
+puesto que el Artículo primero de la
+citada Ley ha sido derivada a la Comisión de Asuntos Constitucionales del Poder Legislativo, del
+proyecto presentado se aprobó el proyecto
+de Ley “Que amplía el mandato de las autoridades municipalidades electas en los comicios del año 2006”; este proyecto ha
+sido vetado por la Comisión, habiéndose
+realizado los comicios municipales en el año 2010 conforme al Art. 1 de la Ley
+N° 2460/2004, la cual es una Ley especial vigente sancionada en el año 2006, por lo que no existe agravio a los accionantes
+puesto que tenían conocimiento de la vigencia
+de esta norma antes de haber sido electos y cualquier pronunciamiento al respecto
+sería en abstracto sin ninguna virtualidad práctica y sin consecuencias reales sobre
+la situación fáctica expresada por los accionantes.-----------
+
+Como puede apreciarse, la
+solución a la situación planteada habría tenido validez para el periodo vigente
+del acto normativo impugnado, con lo que se configura un caso de inexistencia de agravio actual
+hacia los accionantes.----------------------
+
+Puntualmente, la inexistencia de agravio actual significa que el
+gravamen no existe al momento que se resuelve la acción de inconstitucionalidad.
+Al respecto la doctrina
+señala: “Otra faceta interesante en
+materia de agravios no subsistentes se presenta cuando nuevas normas dejan
+sin efecto aquellas cuya constitucionalidad se discute por el recurso
+extraordinario. En tal hipótesis, el juicio de inconstitucionalidad sobre las
+normas derogadas se torna en principio
+inoficioso, como si la norma impugnada ya no se aplicara mas al afectado” (vide: Sagüés, Néstor
+Pedro. Derecho Procesal Constitucional. Recurso extraordinario.
+Edit. Astrea. 4ta. Edición actualizada y ampliada. (T.I.
+Pág. 509). Por su parte, sobre el tema: Desaparición sobrevenida del Objeto, Ángel
+Gómez Montoro cita lo afirmado en la STC 96/1996 en
+cuyo fundamento jurídico 31° se dice literalmente: “...el conflicto sólo puede ser resuelto en la medida
+en que permanece vivo, careciendo de todo interés público la resolución de las cuestiones
+periclitadas” (vide: Cuadernos y Debates, núm.
+66 La Sentencia sobre la Constitucionalidad de la      Ley. Tribunal Constitucional. Centro de
+estudios Constitucionales. Madrid 1997. Pág. 302).--------------------------------------------------------------------------------------------------------
+
+En atención a la cuestión
+fáctica y en razón que el agravio irreparable necesario para la viabilidad del
+estudio de la acción de inconstitucionalidad ya no tiene actualidad y cualquier
+decisión sobre el fondo se tornaría irrelevante y en abstracto, lo cual está
+vedado a la Corte, por lo que corresponde archivar la presente acción. Es mi
+voto.---------------------
+
+A
+su turno la Doctora BAREIRO DE MÓDICA
+dijo: Roberto Gómez Verlangieri, Intendente Municipal de Limpio; por sus propios derechos y bajo
+patrocinio de abogado, promueve Acción de Inconstitucionalidad contra el
+Art. 1° de la Ley N° 2460/04 “QUE ESTABLECE DURACIÓN DE FUNCIONES DE
+AUTORIDADES MUNICIPALES A SER ELECTAS EN LOS COMICIOS DEL AÑO 2006”.--------------------------
+
+Refiere el accionante que la
+vigencia del Art. 1° de la Ley N° 2460/2004, afecta sus derechos y
+garantías
+individuales
+consagrados por la Constitución Nacional, el Código Electoral Paraguayo y la Ley N° 1.294/87 “Orgánica Municipal”, y que además
+ninguna de estas disposiciones fueron derogadas ni modificados en lo
+relativo al período de mandato de cinco años.---
+
+El Art. 1 de la Ley N° 2460/04 establece: “Las autoridades municipales o ser electas
+en los comicios de noviembre del año 2006 durarán cuatro anos en sus funciones”.-----------------------------------------------------------------------------------------------------
+
+Ante esta situación, y debido a
+que en el año 2010 fueron realizados nuevos comicios municipales, ya no
+corresponde a esta Corte pronunciarse sobre los agravios alegados por los
+accionantes, ya que sería in abstracto sin ninguna virtualidad practica y sin
+consecuencias reales sobre la situación fáctica expresada por los mismos.-----------------
+
+Como puede apreciarse, la
+solución a la situación planteada habría tenido validez para el periodo vigente
+del acto normativo impugnado, con lo que se configura un caso de inexistencia
+de agravio actual hacia los accionantes.--------------------------------------------------
+
+Puntualmente, la inexistencia
+de agracio actual significa que el gravamen no existe al momento que se
+resuelve la acción de inconstitucionalidad. Al respecto la doctrina señala: “Otra faceta interesante en materia de
+agravios no subsistentes se presenta cuando nuevas normas dejan sin efecto aquellas cuya constitucionalidad se
+discute por el recurso extraordinario.
+En tal hipótesis, el juicio de inconstitucionalidad sobre las normas derogadas
+se torna en principio inoficioso, como si la norma impugnada ya no se aplicara
+mas al afectado” (vide: Sagüés
+Néstor Pedro. Derecho Procesal Constitucional. Recurso Extraordinario. Edit. Astrea. 4ta Edic. Actualizada y
+ampliada. T I. Pág. 509).-------------------
+
+Por su parte, sobre el tema: Desaparición Sobrevenida del Objeto, Ángel
+Gómez Montoro cita lo afirmado en la STC 96/1996 en
+cuyo fundamento jurídico 31º se dice literalmente que: “el conflicto solo puede ser resuelto en la medida en que permanece
+vivo, careciendo de todo in…///…
+
+ACCIÓN DE
+INCONSTITUCIONALIDAD “CONTRA ART. 1 DE LA LEY 2460/2004”. AÑO: 2008 – Nº 1896.----------------------------------------------
+
+…///…terés
+público la resolución de cuestiones periclitadas” (vide:
+Cuadernos y Debates, núm. 66. La Sentencia sobre la Constitucionalidad de la
+Ley. Tribunal Constitucional. Centro de Estudios Constitucionales. Madrid 1991.
+Pág. 302).--------------------------------------------------------------
+
+En consecuencia, y debido a que el agravio deja de ser actual y la controversia ya no existe, encontrándose la Corte Suprema de Justicia ante
+un asunto abstracto, donde su decisión sobre el fondo de la cuestión se tornaría inoficiosa, opino que
+corresponde el archivo de la acción intentado. Es mi voto.------------------------------------------------------------------------------------
+
+A su turno el Doctor FRETES manifestó que se adhiere al voto del Ministro preopinante, Doctor
+NÚÑEZ RODRÍGUEZ, por los mismos
+fundamentos.-------------------
+
+Con lo que se dio por terminado el acto,
+firmando SS.EE., todo por ante mí, de que certifico, quedando acordada la
+sentencia que inmediatamente sigue:
+
+Ante mí:
+
+SENTENCIA NUMERO: 1382.-
+
+Asunción,   21  
+de    Septiembre       de
+2.012.-
+
+VISTOS: Los méritos del Acuerdo que anteceden,
+la
+
+CORTE
+SUPREMA DE JUSTICIA
+
+Sala
+Constitucional
+
+R
+E S U E L V E:
+
+ARCHIVAR la presente Acción de
+Inconstitucionalidad.--------------------------------
+
+ANOTAR, registrar y
+notificar.---------------------------------------------------------------
+
+FDO.: Doctor
+VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ, Presidente
+y Doctores GLADYS BAREIRO DE
+MÓDICA y ANTONIO FRETES. ANTE MÍ: Héctor Fabián Escobar Díaz (Secretario
+Judicial I).-
+
+Ante mí:
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

@@ -1,0 +1,122 @@
+# Auto Interlocutorio N.º 513/2025
+
+**Carátula:** EXPEDIENTE: APELACION: “R. A. F. I. S/ COACCION SEXUAL Y VIOLACIÓN. UF Nº X S. A.” XX/20X
+
+- **Código CSJ:** 113689
+- **Tipo:** Auto Interlocutorio
+- **Número:** 513/2025
+- **Fecha:** 2025-08-25
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=113689)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=113689)
+
+## Texto de la resolución
+
+EXPEDIENTE: APELACION: “R. A. F. I. S/ COACCION
+                                                  SEXUAL Y VIOLACIÓN. UF Nº 2 SAN ANTONIO”
+
+
+
+
+                                               AUTO INTERLOCUTORIO
+
+                          VISTO: El recurso de apelación general interpuesto por la Abg. Jessica Escobar,
+                   contra el A.I. Nº X de fecha X de X de 20X, dictado por el Tribunal de Apelación en lo
+                   Penal, Segunda Sala, de la Circunscripción Judicial de Central, y; -
+
+                                                    CONSIDERANDO:
+
+                           Que, por el auto interlocutorio recurrido, el Ad quem revocó el A.I. N° X de
+                   fecha X de X de 20X dictado por el Tribunal de Sentencia de la ciudad de Luque, a
+                   cargo de la Juez Abg. Liz María Ramírez e hizo lugar a la Acumulación de las causas:
+                   "N. E. D. L. s/ Violación del deber de cuidado" y "R. A. F. I. s/ Coacción sexual y
+                   violación.-
+
+                           En un primer estadio, esta judicatura debe examinar si el recurso interpuesto
+                   reviste las condiciones de impugnación objetiva y subjetiva que limitan su estudio, las
+                   cuales necesariamente deben cumplirse, a contrario sensu, este órgano revisor se
+                   encontraría vedado de expedirse sobre la cuestión de fondo que se pretende resolver.-
+
+                          En ese contexto, el Art. 39 del Código Procesal Penal, establece: “CORTE
+                   SUPREMA DE JUSTICIA. Además de los casos previstos en la Constitución y en las
+                   leyes, la Corte Suprema de Justicia será competente para conocer: 1) de la
+                   sustanciación y resolución del recurso extraordinario de casación; 2) de la
+                   sustanciación y resolución del recurso de revisión; 3) del procedimiento relativo a las
+                   contiendas de competencia, y de la recusación de los miembros del tribunal de
+                   apelación; 4) de las quejas por retardo de justicia contra el tribunal de apelación; y 5)
+                   las demás que le asignen las leyes.”-
+
+                          Asimismo, dispone el Art. 28 del Código de Organización Judicial: “LA
+                   CORTE SUPREMA DE JUSTICIA…2. Entenderá por vía de apelación y nulidad… b)
+                   las resoluciones originarias de los Tribunales de Apelación en lo Civil, Comercial y
+                   Criminal y, de Cuentas:…”. -
+
+                          Ahora bien, de la lectura de las constancias de autos surge que, la impugnante
+                   interpone recurso de apelación contra el fallo mencionado ut supra; obviando que este
+                   órgano se encuentra vedado a examinar decisorios que no revisten calidad de
+                   “originaria” del tribunal de apelaciones -primer órgano en recibir, estudiar y resolver
+                   una disputa que se origina ante el mismo- situación que no se coteja en el caso de
+                   marras.-
+
+
+
+
+Para conocer la
+     validez del
+    documento,
+ verifique aquí.
+
+
+                                                             EXPEDIENTE: APELACION: “R. A. F. I. S/
+                                                             COACCION SEXUAL Y VIOLACIÓN. UF Nº 2 SAN
+                                                             ANTONIO”.
+
+
+
+
+                          En efecto, el Tribunal de Apelación resolvió en este caso revocar el A.I. N° X de
+                   fecha X de X de 20X dictado por el Tribunal de Sentencia de la ciudad de Luque, a
+                   cargo de la Juez Abg. Liz María Ramírez, que hizo lugar a la Acumulación de las
+                   causas: "N. E. D. L. s/ Violación del deber de cuidado" y "R. A. F. I. s/ Coacción sexual
+                   y violación; por tanto, esta Sala Penal, no tiene competencia para entender en este
+                   recurso planteado. Consecuentemente, corresponde declarar inadmisible el recurso
+                   planteado.-
+
+                          Bajo las consideraciones expuestas precedentemente, la Excelentísima;
+
+
+
+                                            CORTE SUPREMA DE JUSTICIA
+
+                                                        SALA PENAL
+
+                                                      RESUELVE
+
+                          1) DECLARAR INADMISIBLE el recurso de apelación general interpuesto
+                             por la Abg. Jessica Escobar, contra el A.I. Nº X de fecha X de X de 20X,
+                             dictado por el Tribunal de Apelación en lo Penal, Segunda Sala, de la
+                             Circunscripción Judicial de Central, por los fundamentos expuestos en el
+                             exordio de la presente resolución.-
+
+                          2) REMITIR de manera inmediata estos autos al órgano jurisdiccional
+                             competente.-
+
+                          3) ANOTAR, registrar y notificar. -
+
+
+
+
+Para conocer la                            Firmado digitalmente       Firmado digitalmente         Firmado digitalmente por:
+     validez del                           por: MARIA CAROLINA        por: LUIS MARIA              MANUEL DEJESUS RAMIREZ
+    documento,                                                                                     CANDIA (MINISTRO/A)
+                                           LLANES OCAMPOS             BENITEZ RIERA                Asunción, 25 de agosto de
+ verifique aquí.                           (MINISTRO/A)               (MINISTRO/A)                 2025 con Nro. A.I.: 513 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

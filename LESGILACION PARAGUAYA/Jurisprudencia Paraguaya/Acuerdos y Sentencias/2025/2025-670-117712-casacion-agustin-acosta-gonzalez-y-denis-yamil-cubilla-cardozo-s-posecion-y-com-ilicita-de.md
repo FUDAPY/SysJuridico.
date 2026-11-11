@@ -1,0 +1,143 @@
+# Acuerdo y Sentencia N.º 670/2025
+
+**Carátula:** CASACION: AGUSTIN ACOSTA GONZALEZ Y DENIS YAMIL CUBILLA CARDOZO S/ POSECION Y COM. ILICITA DE ESTUPEFACIENTES Y PROD. DE RIESGOS COMUNES; JUAN C. MEDINA BRIZUELA S/ FRUSTRACION DE LA PERS. PENAL. 439-2021.
+
+- **Código CSJ:** 117712
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 670/2025
+- **Fecha:** 2025-12-23
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=117712)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=117712)
+
+## Texto de la resolución
+
+CASACION: AGUSTIN ACOSTA GONZALEZ Y
+                                                         DENIS YAMIL CUBILLA CARDOZO S/ POSECION
+                                                         Y COM. ILICITA DE ESTUPEFACIENTES Y
+                                                         PROD. DE RIESGOS COMUNES; JUAN C.
+                                                         MEDINA BRIZUELA S/ FRUSTRACION DE LA
+                                                         PERS. PENAL. 439-2021.------------------------------------
+            ACUERDOYSENTENCIA
+
+
+            En la ciudad de Asunción, capital de la República del Paraguay, estando presentes en la Sala de
+            Acuerdos de la Excma. Corte Suprema de Justicia, Sala Penal, la ministra Dra. MARÍA
+            CAROLINA LLANES y los ministros Dres. LUIS MARÍA BENÍTEZ RIERA y MANUEL
+            RAMÍREZ CANDIA, ante mí, la secretaria autorizante, se trajo a estudio el expediente
+            caratulado: “CASACION: AGUSTIN ACOSTA GONZALEZ Y DENIS YAMIL CUBILLA
+            CARDOZO S/ POSECION Y COM. ILICITA DE ESTUPEFACIENTES Y PROD. DE
+            RIESGOS COMUNES; JUAN C. MEDINA BRIZUELA S/ FRUSTRACION DE LA PERS.
+            PENAL”, para resolver el recurso interpuesto contra la Sentencia Definitiva Nº 658 de fecha 06
+            de septiembre de 2024, dictado por el Tribunal Colegiado de Sentencia de Luque, en la presente
+            causa. -----------------------------------------------------------------------------------------------------------
+            Previo estudio de los antecedentes del caso, la Excma. Corte Suprema de Justicia, resolvió
+            plantear las siguientes: --------------------------------------------------------------------------------------
+                                                       C U E S T I O N E S:
+            ¿Es admisible el recurso de casación interpuesto? ------------------------------------------------------
+            En su caso ¿resulta procedente? --------------------------------------------------------------------------
+                        Practicado el sorteo de ley para determinar el orden de votación, arrojó el siguiente
+            resultado: Benítez Riera, Llanes Ocampos y Ramírez Candia. -----------------------------------------
+                         A la primera cuestión planteada, el Ministro LUIS MARÍA BENÍTEZ RIERA, dijo:
+            el régimen recursivo vigente impone a este alto tribunal, verificar si el planteamiento escrito
+            obedece íntegramente los requerimientos formales - condicionan la viabilidad- previstos en los
+            arts. 449, 477, 478, 479, 480 y 468 del CPP[1]. ----------------------------------------------------------
+                        Que, en cuanto a la casación el Art. 477 del C.P.P. indica: OBJETO. Sólo podrá
+            deducirse el recurso extraordinario de casación contra las sentencias definitivas del tribunal de
+            apelaciones o contra aquéllas decisiones de ese tribunal que pongan fin al procedimiento, extingan
+            la acción o la pena, o denieguen la extinción, conmutación o suspensión de la pena anterior, se
+            podrá interponer directamente el recurso extraordinario de casación. Así también el Artículo 479
+            del mismo cuerpo legal dice: CASACIÓN DIRECTA. Cuando una sentencia de primera
+            instancia pueda ser impugnada por algunos de los motivos establecidos en el artículo anterior, se
+            podrá interponer directamente el recurso extraordinario de casación. Si la Sala Penal de la Corte
+            Suprema de Justicia no acepta la casación directa, enviará las actuaciones al tribunal de
+            apelaciones competente para que lo resuelva conforme a lo establecido para la apelación especial.
+            Si en un mismo caso se plantean apelaciones y casaciones directas, primero se enviarán las
+            actuaciones a la Sala Penal de la Corte Suprema para que resuelva lo que corresponda. Por su
+            parte el Artículo 478 refiere: Motivos. El recurso extraordinario de casación procederá,
+            exclusivamente: 1) cuando en la sentencia de condena se imponga una pena privativa de libertad
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+            mayor a diez años, y se alegue la inobservancia o errónea aplicación de un precepto
+            constitucional; 2) cuando la sentencia o el auto impugnado sea contradictorio con un fallo anterior
+            de un Tribunal de Apelaciones o de la Corte Suprema de Justicia; o, 3) cuando la sentencia o el
+            auto sean manifiestamente infundados.---------------------------------------------------------------------
+                        Que, en realidad, luego de un análisis pormenorizado del escrito señalado
+            precedentemente, de los antecedentes y de las normativas igualmente transcritas se puede afirmar
+            que no se dan los supuestos previstos en el ritual para la atención de lo sustancial de la
+            presentación, debiendo, a mi criterio, declararse inadmisible el recurso interpuesto por dos
+            motivos, en primer lugar, la “casación directa” debe presentarse contra la Sentencia Definitiva de
+            primera instancia, ante la Corte Suprema de Justicia –Sala Penal-, para lo cual el plazo se computa
+            desde la notificación de dicha Sentencia. El recurrente no presenta con su escrito, la notificación
+            de la resolución del tribunal de sentencia para acreditar con dicho acto el plazo para la casación
+            directa, y en segundo término, al haberse resuelto ante Cámara la apelación especial contra la
+            sentencia definitiva hoy objetada. ---------------------------------------------------------------------------
+                       Por lo tanto el recurso fue planteado en forma incorrecta y extemporánea.- Por lo
+            expuesto precedentemente, corresponde la INADMISIBILIDAD del recurso de casación directa.
+            ES MI VOTO.--------------------------------------------------------------------------------------------------
+                        En cuanto a las costas, estas deben ser impuestas en el orden causado, en virtud a los
+            artículos 261 y 269, ambos del Código Procesal Penal y a la forma que se ha resuelto el presente
+            conflicto en esta instancia. ES MI VOTO. --------------------------------------------------------------
+                        A su turno, la ministra María Carolina Llanes, dijo: Me adhiero al Voto del
+            Ministro Preopinante, por sus mismos fundamentos.-----------------------------------------------------
+                         VOTO DEL MINISTRO RAMÍREZ CANDIA
+                       A LA PRIMERA CUESTIÓN, EL DOCTOR RAMÍREZ CANDIA DIJO: Me
+            adhiero al voto de inadmisibilidad del Dr. LUIS MARÍA BENÍTEZ RIERA por el siguiente
+            motivo:
+                        El Abg. Alfredo Ramón Martínez Villalba en representación del señor Denis Yamil
+            Cubilla Cardozo plantea recurso de casación directa contra la Sentencia Definitiva N° 658, de
+            fecha 06 de septiembre de 2024, dictada por el Tribunal Colegiado de Sentencia, sin embargo la
+            misma ya fue objeto de Recurso de Apelación Especial resuelto por el Acuerdo y Sentencia N°60
+            de fecha 06 de mayo de 2025, por lo tanto la interposición del citado recurso de apelación excluye
+            la presentación de la Casación Directa según lo dispuesto en el Art. 479 del CPP. ES MI VOTO.-
+                        Con lo que se dio por terminado el acto firmando S.S.E.E., quedando acordada la
+            sentencia que inmediatamente sigue. -----------------------------------------------------------------------
+
+
+                         ACUERDOYSENTENCIA
+
+
+                         VISTO: El mérito que ofrece el acuerdo que antecede y sus fundamentos, ------------
+                                                 LA CORTE SUPREMA DE JUSTICIA,
+                                                                SALA PENAL,
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                                                                 R E S U E L V E:
+                         DECLARAR INADMISIBLE el recurso extraordinario de casación interpuesto por
+            el abogado Alfredo Ramon Martinez Villalba contra la Sentencia Definitiva Nº 658 de fecha 06
+            de septiembre de 2024, de conformidad a los fundamentos expuestos, en el exordio de la presente
+            resolución. ------------------------------------------------------------------------------------------------------
+                         IMPONER las costas en el orden causado. -------------------------------------------------
+                         REMITIR estos autos al Juzgado competente. ---------------------------------------------
+                         ANOTAR, notificar y registrar. --------------------------------------------------------------
+
+
+
+
+Para conocer la                               Firmado digitalmente            Firmado digitalmente              Firmado digitalmente por:
+                                                                                                                MARIA CAROLINA LLANES
+     validez del                              por: LUIS MARIA                 por: MANUEL DEJESUS               OCAMPOS (MINISTRO/A)
+   documento,                                 BENITEZ RIERA                   RAMIREZ CANDIA
+ verifique aquí.                                                                                                Asunción, 23 de diciembre de
+                                              (MINISTRO/A)                    (MINISTRO/A)                      2025 con Nro. AyS: 670 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

@@ -1,0 +1,24 @@
+# Acuerdo y Sentencia N.º 265/2007
+
+**Carátula:** ACCION DE INCONSTITUCIONA-LIDAD EN EL JUICIO: “TRANSCORP BANK C/ JANIO PEREIRA CORREA S/ ACCIÓN PREPARATORIA DE JUICIO EJECUTIVO CON GARANTÍA HIPOTECARIA”. AÑO: 2004 – Nº 206.-----
+
+- **Código CSJ:** 13740
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 265/2007
+- **Fecha:** 2007-05-02
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** sin texto ni PDF informado por la CSJ
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=13740)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=13740)
+
+## Texto de la resolución
+
+_La ficha de la CSJ no ofrece texto extraíble para esta resolución._
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

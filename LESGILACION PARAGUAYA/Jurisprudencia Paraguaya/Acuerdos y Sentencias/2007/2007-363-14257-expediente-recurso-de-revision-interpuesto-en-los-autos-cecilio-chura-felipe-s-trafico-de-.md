@@ -1,0 +1,295 @@
+# Acuerdo y Sentencia N.º 363/2007
+
+**Carátula:** EXPEDIENTE: "RECURSO DE REVISIÓN INTERPUESTO EN LOS AUTOS: CECILIO CHURA FELIPE S/ TRÁFICO DE ESTUPEFACIENTES"
+
+- **Código CSJ:** 14257
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 363/2007
+- **Fecha:** 2007-05-17
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Hace Lugar; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Normas de referencia:** Constitución, art. 17 inc. 4, 14; Pacto de San José de Costa Rica, art. 9, Código Penal, arts. 1, 4, art. 5 inc. 3; Código Procesal Penal, art. 500; Ley Nº 1340/88 de Drogas, art. 27
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=14257)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=14257)
+
+## Texto de la resolución
+
+Expediente:  “RECURSO  DE  REVISIÓN  interpuesto  en  los
+                  autos:   “CECILIO   CHURA   FELIPE    S/    TRÁFICO    DE
+                  ESTUPEFACIENTES”
+
+
+            ACUERDO Y SENTENCIA NUMERO TRESCIENTOS SESENTA Y TRES
+
+       En   la   Ciudad   de   Asunción,   Capital   de  la  República   del
+Paraguay, a los   diecisiete días, del mes de Mayo del año  dos  mil  siete,
+estando reunidos en  la  Sala  de  Acuerdos  los  Señores  Ministros  de  la
+Excelentísima Corte Suprema  de  Justicia,  Sala  Penal,  los  Dres.  ALICIA
+BEATRIZ PUCHETA DE CORREA, WILDO RIENZI GALEANO y SINDULFO BLANCO, por  ante
+mí el Secretario autorizante, se trajo el  expediente  caratulado:  “RECURSO
+DE REVISIÓN INTERPUESTO EN LOS AUTOS: “CECILIO CHURA  FELIPE  S/  TRAFICO  O
+TENENCIA DE ESTUPEFACIENTES”, a objeto de resolver el  recurso  de  revisión
+por aplicación de la ley  Penal  más  benigna,  planteado  por  el  Juez  de
+Ejecución Penal N° 2, Abog. Carlos Alfredo Escobar, contra la S.D.  N°  454,
+de fecha 06 de Setiembre de 2004, dictado por el Juez Penal de Garantías  de
+la Etapa Intermedia de la Circunscripción Judicial de la Capital.-----
+      Previo el estudio de los antecedentes del caso, la  Corte  Suprema  de
+Justicia, Sala Penal, resolvió plantear y votar las siguientes; ------------
+------
+                            C U E S T I O N E S :
+      ¿Es admisible el recurso de revisión planteado?.----------------------
+---
+      En su caso, ¿es o no procedente?.-------------------------------------
+------
+      Practicado el sorteo de ley para determinar el orden de  votación  dio
+el siguiente resultado: RIENZI GALEANO, PUCHETA DE CORREA y BLANCO.---------
+--------------------------------------------------------------------       A
+LA PRIMERA CUESTION PLANTEADA, el Señor Ministro RIENZI  GALEANO  dijo:  Que
+la  interposición  del  Recurso  de  Revisión,  se  halla  regulada  en  las
+disposiciones del Art. 483 del Código Procesal Penal y en  concordancia  con
+el Art. 484 del mismo cuerpo legal, debiendo dirigirse contra una  Sentencia
+firme en todo tiempo y únicamente a  favor  del  imputado,  para  los  cinco
+casos taxativamente enumerados en el Art. 481 del Código Procesal Penal.  En
+ese  orden  el  recurso  de  revisión  interpuesto,  se  dirige  contra  una
+sentencia ejecutoriada, habiéndose puntualizado los motivos en que se  funda
+y citado las  disposiciones  legales,  por  lo  que  el  recurso  en  sí  es
+admisible para su estudio.----
+      A SU  TURNO,  los  señores  Ministros  PUCHETA  DE  CORREA  y  BLANCO,
+manifiestan  que  se  adhieren  al  voto  que  antecede   por   los   mismos
+fundamentos.----------------------------------------------------------------
+
+      A LA SEGUNDA CUESTION PLANTEADA,  el  Señor  Ministro  RIENZI  GALEANO
+prosiguió diciendo: Por A.I. Nº 1.548, de fecha 12 de octubre del  2005,  el
+Juez de Ejecución Penal  Nº  2,  Abog.  Carlos  Alfredo  Escobar   Espínola,
+dispuso: “PROMOVER, ante la Corte Suprema de Justicia,  LA  REVISIÓN  de  la
+S.D. Nº 454, de fecha 06 de setiembre de 2004, dictada  por  el  Juzgado  de
+Etapa Intermedia, que resolvió  condenar a… CECILIO CHURA  FELIPE  …,  a  la
+pena privativa de libertad de  CINCO  (05)  AÑOS,  y  a  la  pena  de  Multa
+consistente en la suma de 16.500.000 gs., de conformidad al  exordio  de  la
+presente resolución. 2) ANOTAR, registrar,  notificar  y  remitir  copia  de
+esta resolución a la Excelentísima Corte Suprema  de  Justicia.  (sic)”.  El
+referido magistrado funda su resolución en lo dispuesto por el Art. 500  del
+C.P.P. y en las disposiciones del Libro Primero  del  Código  Penal,  además
+señala: “… esta Magistratura considera por  los  argumentos  esgrimidos  sin
+necesidad de un nuevo juicio (Art. 485 del C.P.P.), y al no estar  facultado
+para cambiar penas por una menos gravosa, y siendo  la  misma  de  exclusiva
+competencia de la Corte Suprema de Justicia, de  conformidad  a  las  leyes,
+corresponde elevar la presente causa a dicha instancia para LA  REVISIÓN  DE
+LA SENTENCIA, con respecto al numeral CINCO 5° de la sentencia  mencionada.”
+(fs. 6/7).------------------------
+      Efectivamente el art.  500  del  C.P.P.  señala:  “…LEY  MAS  BENIGNA.
+AMNISTIA. Cuando el Juez de ejecución advierta que deberá quedar sin  efecto
+o ser modificada la pena impuesta, o las  condiciones  de  su  cumplimiento,
+por haber entrado en vigencia una ley más benigna o una amnistía,  promoverá
+de oficio, la revisión de la sentencia ante la Corte Suprema  de  Justicia”,
+la norma citada no hace más que desarrollar  la  disposición  constitucional
+del art. 14: “…De la irretroactividad de la ley. Ninguna ley  tendrá  efecto
+retroactivo, salvo que sea más favorable al encausado o  al  condenado”,  en
+concordancia con lo dispuesto por el art. 9 de la  Convención  Americana  de
+Derechos Humanos (Pacto de San José de  Costa  Rica):  “…  Nadie  puede  ser
+condenado por acciones u omisiones que en el momento de cometerse no  fueran
+delictivas según el derecho aplicable. Tampoco se  puede  imponer  pena  más
+grave que la aplicable en el momento de  la  comisión  del  delito.  Si  con
+posterioridad de la comisión del delito la ley dispone la imposición de  una
+pena más leve, el delincuente se beneficiará de ello”. Asimismo,  el  Código
+Penal dispone: “art. 4. Aplicación del Libro  Primero  a  leyes  especiales.
+Las disposiciones del Libro Primero de este Código se aplicarán a todos  los
+hechos punibles  previstos  por  las  leyes  especiales…  art.  5.  inc.  3.
+Aplicación de la  ley  en  el  tiempo.  Cuando  antes  de  la  sentencia  se
+modificara la ley vigente al tiempo de la realización del hecho punible,  se
+aplicará la ley más favorable al encausado.--------------------------------
+      Interpretado el  ordenamiento  jurídico  en  su  conjunto,  de  manera
+sistemática, encontramos respecto a  la  aplicación  de  la  ley  penal  con
+respecto al tiempo: 1) La ley no tiene efecto retroactivo,  salvo  excepción
+expresa (REGLA – art. 14 C.N.);  2)  La  ley  es  susceptible  de  aplicarse
+retroactivamente cuando beneficie al  procesado  o  condenado  (EXCEPCION  –
+Art. 14 C.N., art. 9   C.A.D.D.H.H.); 3) Las normas de las leyes  especiales
+pueden ser modificadas por las disposiciones penales del Código de fondo,  y
+aplicada la normativa  del  Libro  1,  en  cuanto  beneficie  al  acusado  o
+condenado; 4) La aplicación retroactiva de  la  ley  penal  más  benigna  es
+respecto a los procesados (art. 14 de la C.N.; art. 4  del  C.P.)  y  a  los
+condenados (art. 14 C.N., art. 4 del C.P. y 500 del C.P.P.); 5)  Corresponde
+a la Corte Suprema de Justicia la aplicación de la ley  penal  más  benigna,
+cuando se encuentra en etapa de ejecución  la  condena  que  fuera  impuesta
+(art. 500 del C.P.P.).------------------------------------------------
+      Entrando en estudio  del  caso  concreto,  el  Tribunal  de  Sentencia
+colegiado, integrado a los fines del entendimiento  de  la  presente  causa,
+por S.D. N° 454, de fecha 6 de  setiembre  de  2004,  resolvió  entre  otras
+cosas: “…  V)  CONDENAR,…  al   acusado  CECILIO  CHURA  FELIPE  a  la  pena
+privativa de  libertad  de  CINCO  (05)  AÑOS…  VI)  IMPONER  la  multa  del
+cuádruplo del valor de la mercancía transportada… con relación al  condenado
+CECILIO  CHURA  FELIPE,  multa  de  Gs.   16.500.000   (dieciséis   millones
+quinientos mil guaraníes)... (sic)”. El Juez de Ejecución Penal, en  uso  de
+sus atribuciones y en cumplimiento a la norma  procesal  citada,  de  oficio
+plantea la revisión de dicha condena ante la Corte Suprema de Justicia,  por
+entender que la norma penal de fondo es de aplicación más  benigna  para  el
+condenado. En efecto, de la lectura de la sentencia  se  desprende,  que  el
+órgano jurisdiccional condenó al acusado CECILIO CHURA FELIPE  a  dos  penas
+principales: PRIVATIVA DE LIBERTAD Y MULTA,  teniendo  como  base  para  tal
+imposición lo dispuesto por la ley 1340/88, que en su art. 27 dispone:  “…El
+que tuviere en  su  poder,  sin  autorización,  sustancias  estupefacientes,
+drogas peligrosa o productos que las contengan, serán castigados  con  cinco
+a quince años de penitenciaría, comiso de mercadería y multa  del  cuádruplo
+de su valor”.---------------------
+      Tanto el Código Penal como la Ley Nº 1340/88 regulan materias  penales
+y la primera, por el citado Art. 4º, le remite  expresamente  la  aplicación
+de su Parte General a la segunda, por lo tanto, cualquier disposición  legal
+de la última, contraria o incompatible a  las  prescripciones  de  la  parte
+remitida, quedan sin efecto implícitamente.-------------------------
+      En la medida en que la Ley 1340 no sea afectada por la  Parte  general
+del Código Penal – que abarca desde el Art. 1 al 104  –  sus  normativas  se
+hallan plenamente vigentes. Desde  luego,  no  podía  ser  de  otra  manera,
+porque ninguna ley penal por Especial que sea, puede prescindir de la  Parte
+General en la que se estipulan los principios básicos  y  fundamentales  del
+derecho punitivo. Si se hubiera omitido la remisión,  la  Ley  1340  hubiera
+sido inaplicable, pues al incorporarse al Código Penal anterior  por  virtud
+de su Art. 82, también se servia de  su  Parte  General,  más  aquel  Código
+Penal que lo complementaba ha sido  derogado  por  el  Art.  323  del  nuevo
+Código Penal.-------------------------------------
+      La ley penal más benigna subyace en el  Art.  14  de  la  Constitución
+Nacional, el cual adquiere positividad reforzada en virtud del  Art.  9  del
+Pacto de San José de Costa Rica en concordancia con el Art.  5  inc.  3  del
+Código  Penal.  En  el   caso   particular,   el   Tribunal   para   imponer
+acumulativamente dos penas principales, ha escogido la  parte  de  la  norma
+penal  subordinada  –Ley  1340-  desechando  la  subordinante  que  era   la
+aplicable –Ley 1160-; más para determinar la autoría del condenado (Art.  29
+del C.P.), paradójicamente reconoce la vigencia de esta  última  recurriendo
+a  su  parte  general,  lo  cual  implica  la  fragmentaria  integración   e
+interpretación de la nueva ley penal, soslayando la observancia del Art.  37
+inc. 1º del Código Penal de Fondo, que dispone: “…CLASES DE  PENAS.  Inc.  1
+Son penas principales: a) la pena privativa  de  libertad;  b)  la  pena  de
+multa”, puesto que crea una tercera ley penal, en total contravención  a  lo
+dispuesto por el principio de legalidad penal (art. 1 del  C.P.),  en  otras
+palabras: 1) Determinó la PARTICIPACIÓN conforme a la ley  penal  de  fondo;
+2) impuso la SANCION conforme a la ley penal especial.-------------
+       Doctrinariamente,  se  explica  el  fundamento   del   principio   de
+retroactividad  de  la  ley  penal  más  benigna:   “…   El   principio   de
+retroactividad de la ley  penal  más  benigna  halla  su  fundamento  en  la
+naturaleza misma del  derecho  penal.  Si  el  derecho  penal  legisla  solo
+situaciones excepcionales, en el que  el  Estado  debe  intervenir  para  la
+reeducación  social  del  autor,  la  sucesión  de  leyes  que  alteran   la
+incidencia del Estado en el círculo de bienes  jurídicos  del  autor  denota
+una modificación en la desvaloración de su  conducta.”  (MANUAL  DE  DERECHO
+PENAL. Parte General. Por el Prof. Dr.  Eugenio  Raúl  Zaffaroni.  Editorial
+Ediar, pag. 175, Bs. As. Argentina, año 2003).-----------
+      El proceder del Tribunal de mérito ha  puesto  en  entredicho  a  otro
+elemental e indiscutible principio del derecho penal denominado Non  Bis  In
+Idem –dada la triple identidad de sujeto, objeto y causa- cuya  consagración
+constitucional se halla patentizada en el Art. 17 num. 4) de  nuestra  Carta
+Suprema, sin perder de vista la conculcación del principio de  la  legalidad
+establecido en el Art. 1º) del Código Penal, que ha sido avasallada  por  la
+desnaturalización del referido principio penal básico, al imponer  una  pena
+de multa que de permanecer subsistente, implicaría una doble condena  debido
+a su carácter de pena principal. Conforme a  los  doctrinarios:  “…  Con  la
+implementación de la pena de multa como una pena principal, se construye  un
+mecanismo que pretende buscar un sustitutivo  de  las  penas  privativas  de
+libertad de  corta  duración,  buscando  evitar  los  efectos  adversos  que
+constituye   la   institucionalización   del   condenado   en   un    centro
+penitenciario” (Los Jueces de Ejecución de Sentencia. En la  reforma  de  la
+Justicia  Penal  del  Paraguay,  por  Rodolfo  Fabián  Centurión,  Editorial
+Marben, As. Py., año 2003), por lo que huelga decir que la doble  aplicación
+de pena privativa de libertad con pena de multa, no solo  se  violentan  los
+principios de legalidad y non bis in idem,  sino  también  el  principio  de
+humanidad de las penas, así como las disposiciones del art. 20 del C.N.-----
+----------------------------------------------
+      Por otro lado, conviene tener presente que la  resolución  en  estudio
+constituye  una  Sentencia  definitiva,  que  se  encuentra  en   etapa   de
+ejecución, efectivamente existe una Ley más benigna  que  aplicar,  ignorada
+debido a una  deficiencia  interpretativa  e  integrativa  del  derecho  del
+Tribunal Colegiado de  Sentencia.  La  sentencia  está  firme,  adquirió  la
+calidad de cosa juzgada, por lo  que  la  revocación  de  una  parte  de  su
+decisión se hace por motivos expresos y estrictos,  los  que  se  encuentran
+presentes en este caso, pues deficiente.  De  este  modo,  el  planteamiento
+objetivo del caso resulta atendible, puesto que su motivación  se  encuentra
+prevista en el ordenamiento procesal y que autorizan su estudio.------------
+-------------------
+      Por ello, y al encontrarse el caso en estudio, dentro de lo  dispuesto
+por la normativa que rige la materia, soy de la opinión que se  debe  anular
+el apartado VI) de la S.D. N° N° 454, de fecha  06  de  Setiembre  de  2004,
+dictado por el Juez  Penal  de  Garantías  de  la  Etapa  Intermedia  de  la
+Circunscripción Judicial de la Capital, en  lo  relativo  a  la  condena  de
+Multa, manteniendo firme la pena privativa de libertad de CINCO  (05)  años.
+Asimismo, teniendo presente que la Sala Penal, en otras resoluciones  ya  ha
+sentado la postura de la  inaplicabilidad  de  la  doble  penalidad  en  los
+procesos como en el estudio (Acuerdo y Sentencia  Nº  953  de  fecha  30  de
+junio del 2004), anulando las disposiciones de las  sentencias  que  imponen
+conjuntamente la pena de multa con la privativa  de  libertad,  no  obstante
+los Tribunales de Sentencia continúan dicha  práctica,  corresponde,  a  los
+efectos  de  preservar  la  legitimidad  y  legalidad  de  las  resoluciones
+dictadas por los órganos jurisdiccionales, evitando además el  dispendio  de
+recursos  y  actividades  jurisdiccionales  innecesarias,  puesto  que   son
+cuestiones legales de interpretación,  por  demás  aclaradas,  notificar  la
+presente resolución a todos los  Jueces  Penales  con  competencia  para  el
+pronunciamiento de Sentencias definitivas a los fines de su adopción. Es  mi
+Voto.-------------------------------------
+      A su turno, la Dra. PUCHETA DE CORREA, dijo: me adhiero a la  solución
+propuesta por el ilustre colega preopinante, pero a fin de contemplar  todas
+las  circunstancias  que  hacen  a  la  interpretación  tema,   me   permito
+mencionar que, si bien el Art. 53 del código Penal prevé la  posibilidad  de
+imponer una combinación de pena privativa de libertad y  multa  (en  calidad
+de pena complementaria) excepcional y facultativamente cuando  el  autor  se
+enriqueciera mediante el hecho o lo intentara, no es aplicable  el  caso  en
+estudio, conforme la explicación que a continuación expongo: ---------------
+-----------------
+      El Art. 53 debe ser interpretado en concordancia con el  art.  57  del
+mismo cuerpo legal que  regular  la  “pena  patrimonial  complementaria”,  y
+demanda para su procedencia dos requisitos: a)  que  la  pena  privativa  de
+libertad sea mayor de dos años; b) que la obligación  de  “pago  de  dinero”
+esté  prevista  expresamente  por  la  ley  penal   en   calidad   de   pena
+complementaria. El art. 53 (pena multa  complementaria)  es  inaplicable  al
+hecho punible en estudio (tenencia y tráfico de droga) porque  no  se  halla
+verificado  el  segundo  presupuesto  requerido  por  la   norma   para   su
+procedencia.----------------------------------------------------------------
+
+      Para una mayor comprensión de lo expuesto, y  a  modo  ejemplificativo
+de los casos en los cuales procede la aplicación de  la  pena  privativa  de
+libertad y la pena  patrimonial  complementaria,  se  puede  citar  el  tipo
+punible de “reducción”, previsto en el art. 92 del Código Penal,  porque  la
+norma que regula el delito realiza una expresa remisión al art. 57.  En  tal
+sentido establece: “…4º. Cuando el autor actuara 1) comercialmente  2)  como
+miembro de una banda formada  para  la  realización  continuada  de  hurtos,
+robos o reducciones, la pena  privativa  de  libertad  podrá  ser  aumentada
+hasta diez (10) años. Se aplicará además lo dispuesto en los artículos 57  y
+94”.-------------------------------------------------------
+      A SU TURNO, el señor Ministro BLANCO, manifiesta que  se  adhiere  los
+votos que anteceden por los mismos fundamentos.----------------
+      Con lo que se dio por terminado el acto firmando  S.S.E.E.,  todo  por
+ante mí de que certifico quedando acordada la sentencia  que  inmediatamente
+sigue:---
+
+                       ACUERDO Y SENTENCIA NÚMERO 363
+                       Asunción,  17 de  Mayo de 2007
+
+              VISTOS: Los méritos del acuerdo que anteceden, la
+
+                          CORTE SUPREMA DE JUSTICIA
+
+                                 SALA PENAL
+                              R E S U E L V E:
+      DECLARAR ADMISIBLE el recurso de revisión interpuesto en estos autos.-
+----------------------------------------------------------------------------
+      HACER LUGAR a la revisión por aplicación de la Ley Penal  más  benigna
+planteado por el  Juez  de  Ejecución  Penal  N°  2,  Abog.  Carlos  Alfredo
+Escobar, respecto  al  condenado  CECILIO  CHURA  FELIPE,  en  base  a   los
+fundamentos expuesto en el exordio de la presente resolución.---
+      ANULAR el apartado VI) de la S.D. N° 454, de fecha 06 de Setiembre  de
+2004, dictado por el Juez Penal de Garantías de la Etapa  Intermedia  de  la
+Circunscripción Judicial de la Capital, en  lo  relativo  a  la  condena  de
+Multa, manteniendo firme la pena privativa de liberta de CINCO (05) AÑOS.---
+----------
+      NOTIFICAR el contenido y alcance de la presente sentencia  a  todos  y
+cada uno de los Jueces Penales de Liquidación y Sentencia de la República.--
+-----
+      REMITIR estos autos al Juzgado Penal competente.-------------------
+      ANOTAR, registrar y notificar.----------------------------------------
+-----
+Ministros: Alicia Pucheta de Correa, Wildo Rienzi Galeano, Sindulfo Blanco.
+Ante mí: Karinna Penoni de Bellassai, Secretaria Judicial.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

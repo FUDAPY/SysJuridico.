@@ -1,0 +1,142 @@
+# Acuerdo y Sentencia N.º 245/2025
+
+**Carátula:** Causa: “Fredy Giménez Patiño s/Homicidio Culposo y otros” N°8099/2018.-
+
+- **Código CSJ:** 111977
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 245/2025
+- **Fecha:** 2025-05-07
+- **Sala:** SALA PENAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; Declarar Inadmisible; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=111977)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=111977)
+
+## Texto de la resolución
+
+Causa: “Fredy Giménez Patiño
+                                                   s/Homicidio Culposo y otros”
+                                                   N°8099/2018.-
+
+                                        ACUERDO Y SENTENCIA
+
+
+                           En la ciudad de Asunción, Capital de la República del
+                   Paraguay, estando reunidos en la Sala de Acuerdos
+                   los Excelentísimos Señores Ministros de la Corte Suprema de
+                   Justicia, Sala Penal, Doctores MANUEL DEJESUS RAMIREZ
+                   CANDIA, MARIA CAROLINA LLANES OCAMPOS Y LUIS
+                   MARIA BENITEZ RIERA, se trajo el expediente arriba
+                   individualizado, a fin de resolver el recurso extraordinario de
+                   casación interpuesto por el Abg. John Alexis Cáceres Sánchez
+                   por la defensa técnica del procesado en autos contra el Acuerdo y
+                   Sentencia N° 04 de fecha 25 de febrero de 2025, dictado por el
+                   Tribunal de Apelación Penal, Segunda Sala de la
+                   Circunscripción Judicial de Itapuá.-
+
+                         Previo el estudio de los antecedentes del caso, la Corte
+                   Suprema de Justicia, Sala Penal, resolvió plantear las
+                   siguientes.-
+
+                                             CUESTIONES:
+                          ¿Admisibilidad del Recurso Extraordinario de Casación
+                   interpuesto?-
+
+                         Y en su caso, ¿procedencia?.-
+
+                         A los efectos de establecer el orden de votación se realizó
+                   el sorteo de ley que arrojó el siguiente resultado: RAMIREZ
+                   CANDIA, LLANES OCAMPOS, BENITEZ RIERA.-
+
+
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                       A LA PRIMERA CUESTIÓN PLANTEADA, EL DOCTOR
+                   RAMIREZ CANDIA DIJO: -
+                         El Tribunal de Apelación Penal, Segunda Sala de la
+                   Circunscripción Judicial de Itapuá, resolvió Modificar por
+                   decisión directa el apartado N° 4 de la S.D. N° 235 de fecha 17
+                   de setiembre de 2024, imponiendo la pena privativa de libertad
+                   de tres años y cinco meses al condenado Fredy Giménez Patiño
+                   que deberá cumplir en el Centro de Rehabilitación Social de
+                   Itapuá.-
+                        El Abg. John Alexis Cáceres Sánchez interpone Recurso
+                   Extraordinario de Casación contra la referida resolución del
+                   Tribunal de Apelaciones.-
+                                                     ADMISIBILIDAD
+                        1. En primer lugar, en cuanto a la temporalidad de la
+                   presentación, surge que el Abg. John Alexis Cáceres Sánchez,
+                   fue notificado de la resolución dictada por el Tribunal de
+                   Apelaciones, en fecha 19 de marzo de 2025, según constancia
+                   adjuntada por el recurrente con el escrito de presentación.-
+                         2. El Recurso de Casación fue planteado en fecha 10 de
+                   abril de 2025.-
+                         3. En efecto, se observa que a la fecha de la presentación
+                   del recurso ha transcurrido más de 10 días hábiles desde la
+                   notificación de la resolución impugnada, ya que ha sido
+                   planteado a los dieciséis días hábiles por lo que el plazo de
+                   interposición no se adecua a las exigencias procesales previstas
+                   en los arts. 480 y 468 del C.P.P.1, y por ello el recurso de
+                   casación debe ser declarado inadmisible. ES MI VOTO.
+                      4. A su turno, los Ministros MARÍA CAROLINA LLANES
+                   OCAMPOS y LUIS MARÍA BENÍTEZ RIERA manifiestan que se
+
+                   1 El art. 480 segunda oración CPP “El recurso extraordinario de casación se interpondrá ante la Sala Penal
+
+                   de la Corte Suprema de Justicia. Para el trámite y la resolución de este recurso serán aplicables,
+                   analógicamente, las disposiciones relativas al recurso de apelación de la sentencia […].El art. 468 primer
+                   párrafo CPP dispone: “El recurso de apelación se interpondrá ante el juez o tribunal que dictó la sentencia,
+                   en el término de diez días luego de notificada, y por escrito fundado […]”.
+
+
+Para conocer la
+     validez del
+   documento,
+ verifique aquí.
+
+
+                   adhieren al voto del Ministro MANUEL DEJESUS RAMÍREZ
+                   CANDIA, por los mismos fundamentos.-
+                        Con lo que se dio por terminado el acto firmando S.S.E.E.,
+                   todo por ante mí que lo certifico, quedando acordada la
+                   sentencia que inmediatamente sigue: -
+
+                         VISTOS: Los méritos del acuerdo que antecede, la
+                   Excelentísima;-
+
+                                    CORTE SUPREMA DE JUSTICIA
+                                           SALA PENAL
+
+                                               R E S U E L V E:
+                        1.      DECLARAR         INADMISIBLE        el    recurso
+                   extraordinario de casación interpuesto por el Abg. John Alexis
+                   Cáceres Sánchez por la defensa técnica del procesado en autos,
+                   en contra del Acuerdo y Sentencia N° 04 de fecha 25 de
+                   febrero de 2025, dictado por el Tribunal de Apelación Penal,
+                   Segunda Sala de la Circunscripción Judicial de Itapuá, por los
+                   fundamentos expuestos en el exordio de la presente resolución.-
+
+                        2. ANOTAR, registrar y notificar.-
+
+
+
+
+Para conocer la                     Firmado digitalmente   Firmado digitalmente   Firmado digitalmente por: LUIS
+                                                                                  MARIA BENITEZ RIERA
+     validez del                    por: MANUEL DEJESUS    por: MARIA CAROLINA    (MINISTRO/A) Asunción, 07
+   documento,                       RAMIREZ CANDIA         LLANES OCAMPOS
+ verifique aquí.                                                                  de mayo de 2025 con Nro. A.I.:
+                                    (MINISTRO/A)           (MINISTRO/A)           245 D.
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

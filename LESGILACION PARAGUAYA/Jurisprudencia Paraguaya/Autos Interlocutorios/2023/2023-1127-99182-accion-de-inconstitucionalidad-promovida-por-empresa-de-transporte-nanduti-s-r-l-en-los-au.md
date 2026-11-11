@@ -1,0 +1,151 @@
+# Auto Interlocutorio N.º 1127/2023
+
+**Carátula:** ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA POR EMPRESA DE TRANSPORTE ÑANDUTI S.R.L. EN LOS AUTOS CARATULADOS: "RECONSTITUCIÓN DEL EXPEDIENTE: GERÓNIMO ORTEGA RUIZ C/ EMPRESA DE TRANSPORTE ÑANDUTI S.R.L. SI DESPIDO INJUSTIFICADO Y COBRO DE GUARANÍES EN DIVERSOS CONCEPTOS LABORALES". AÑO 2022 Nº 808.-
+
+- **Código CSJ:** 99182
+- **Tipo:** Auto Interlocutorio
+- **Número:** 1127/2023
+- **Fecha:** 2023-07-26
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Constitucional
+- **Acción:** 0
+- **Resultado:** 0; Rechazo in limine; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=99182)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=99182)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALIDAD PROMOVIDA
+                                                                          POR EMPRESA DE TRANSPORTE ÑANDUTI S.R.L. EN
+                                                                          LOS AUTOS CARATULADOS: "RECONSTITUCIÓN
+                                                                          DEL EXPEDIENTE: GERONIMO ORTEGA RUIZ C/
+                                                                          EMPRESA DE TRANSPORTE ÑANDUTI S.R.L. SI
+                                                                          DESPIDO INJUSTIFICADO Y COBRO DE GUARANIES
+                                                                          EN DIVERSOS CONCEPTOS LABORALES". AÑO 2022
+                                                                          Nº 808.------------------------------------------------------------------
+
+
+
+
+                                                                                      A.I. Nº ....      1J.::-J-
+                               ?                      Asunción, 'll,de                                       de '1.:> '2- 3
+                                ....
+           .. iii~
+1..1 '      VISTA: · ' a acción de inconstitucionalidad presentada por los abogados N~lson Cárdenas
+   Ayala y Jorge · ray Lenguaza, en representación de la Empresa de Transporte Nanduti S.R.L.,
+   contra el Acuej o y Sentencia Nº 24, de fecha 03 de marzo de 2022, así como contra su Aclaratoria,
+ ,;~l,f,.cue_r10 t,Sentencia Nº 46, de fecha 29 de marzo de 2022, dictados por el Tribunal de Apelación
+ si mlb:~<S:.f~, Comercial y Laboral, Segunda Sala, de la Circunscripción Judicial de Central,
+   (fs.04/11), y;--------------------------------------------------------------------------------------------------------
+
+                                                            C O N S I D E R A N D O:
+
+               QUE, la resolución tildada de inconstitucional declaró nula en forma oficiosa la S.D. Nº 232,
+   de fecha 16 de abril de 2019, dictada por el Juzgado de Primera Instancia en lo Civil, Comercial y
+   Laboral del Primer Turno de la ciudad de Capiatá, y en consecuencia, hizo lugar a la demanda
+   planteada por Gerónimo Ortega Ruiz contra la firma Empresa de Transporte Ñanduti S.R.L.,
+   condenando a ésta última al pago de las indemnizaciones correspondientes. Los accionantes aducen
+   que los fallos en cuestión han violado todos los derechos procesales.--------------------------------------
+               QUE, el Art. 557 del C.P.C. dispone: "Al presentar su demanda el actor constituirá
+   domicilio e individualizará claramente la resolución impugnada, así como el juicio en que hubiese
+   recaído. Citará además la norma, derecho, exención, garantía o principio constitucional que
+   sostenga haberse infringido, fundando en términos claros y concretos su petición ... En todos los
+   casos, la Corte examinará previamente si se hallan satisfechos estos requisitos. En caso contrario,
+   desestimará sin más trámite la acción. ". -----------------------------------------------------------------------
+               QUE, el artículo 12 de la Ley N.9. 609/95 establece: "No se dará trámite a la demanda que no
+   precise la norma constitucional afectada, ni justifique la lesión concreta que le ocasiona la ley, acto
+   normativo,  .   sentencia  . de,.r.initiva
+                                         . .         .
+                                                  o inter    l ocutoria     . " . -------------------------------------------------------------
+                                    1
+               QUE, analizada la presentación realizada por los recurrentes se puede notar claramente que se
+   han limitado a efectuar un relato de los antecedentes del caso en instancias inferiores y en ninguna
+   parte de su exposición se colige la existencia de conculcación de normas de carácter constitucional.
+   Además en la impugnación efectuada, se halla ausente el requisito que exige el Art. 557 del Código
+   de forma que dispone: "Citará (el actor) además la norma, derecho, exención, garantía o principio
+   constitucional que sostenga haberse infringido, fundado en términos claros y concretos su petición.
+   ... En todos los casos, la Corte examinará previamente si se hallan satisfechos estos requisitos. En
+   caso contrario, desestimará sin más trámite la acción. ", circunstancia que impide el trámite de la
+   pre sen te acción.------ - -- -- --- - -- -- - -- - -- - -- - -- - -- - - - -- - - -- -- -- -- --- - -- - --- - -- -- - --- --- - --- -- -- - -- -- - -- -- --- --- - -- - -- -
+                 QUE, la mera disconformidad con el criterio de los órganos judiciales, no constituye motivo
+   suficiente para dar trámite a una proposición constitucional. Es imprescindible citar la norma,
+   garantía o principio constitucional infringido acompañado de una adecuada fundamentación,
+   mediante términos específicos e inequívocos, de manera que se puedan apreciar las supuestas
+   vi o 1 ac ion es co nsti tuc i o nal es. - -- - --- ---- - -- - ------ -- - -- ---- ------- -- - - --- --- -- - --- --- - ---- --- - --- ----- - --- --- - -- -
+               QUE, al no darse cumplimiento a los requisitos exigidos por el Código de forma y la
+   jurisprudencia de esta Sala, corresponde el rechazo de la presente acción.-
+
+
+        A su turn o, el Doctor Víctor Ríos Ojeda dijo:----------------------------------------------
+
+        1. El artículo 557 del Código Procesal Civil, dispone cuáles son los requisitos para la
+promoción de la acción, y establece cuanto sigue: "Requisitos de la demanda y plazo para
+deducirla. Al presentar su escrito de demanda el actor constituirá domicilio e individualizará
+claramente la resolución impugnada, así como el juicio en que hubiese recaído. Citará
+además la norma, derecho, exención, garantía o principio constitucional que sostenga
+haberse infringido, fundado en términos claros y concretos su petición. El plazo para deducir
+la acción será de nueve dias, contados a partir de la notificación de la resolución impugnada,
+sin perjuicio de la ampliación por razón de la distancia. En todos los casos, la Corte
+examinará previamente si se hallan satisfechos estos requisitos. En caso contrario,
+desestimará sin más trámite la acción".-----------------------------------------------------------------
+        2. En efecto, la disposición legal norma que debe admitirse la acción de
+inconstitucionalidad cuando se verifica el cumplimiento de los siguientes requisitos: 1) que el
+accionante constituya domicilio; 2) que individualice la resolución impugnada; 3) que
+identifique el juicio donde recayó la resolución impugnada; 4) que funde la petición en
+términos claros y determine el derecho, exención, garantía o principio constitucional que
+considera infringido y; 5) que presente la acción en el plazo de 9 días.-----------------------------
+        3. De la lectura del escrito por el que se promueve la acción de inconstitucionalidad
+vemos que afirma la vulneración de derechos procesales, sin embargo, no indica cuales
+derechos han sido violados y en qué circunstancias. El solo relato de lo sucedido en el
+desarrollo del juicio laboral, no constituye agravio que pueda ser considerado en el análisis de
+la acción de inconstitucionalidad. Por lo manifestado precedentemente, pienso que la acción
+no se encuentra fundada y que no se ha cumplido con el cuarto requisito.--------------------------
+        4. En la presentación de inconstitucionalidad no se ha cumplido con los requisitos
+establecidos en el art. 557 del Código Procesal Civil y en el art. 12 de la ley Nº 609/95, en
+consecuencia, corresponde su rechazo liminar. ES MI VOTO.---------------------------------------
+        POR TANTO, la
+                              CORTE SUPREMA DE JUSTICIA
+                                  SALA CONSTITUCIONAL
+                                        RESUELVE:
+
+        RECONOCER la personería a los recurrentes en el carácter invocado y por
+constituido su domicilio en el lugar señalado.-----------------------------------------------------------
+
+       ORDENAR la agregación de las instrumentales presentadas y autorizar el desglose y
+devolución de los documentos originales presentados, previa agregación de sus fotocopias
+debidamente autenticadas por el Secretario.-------------------------------------------------------------
+
+       RECHAZAR "in limine" la acción de inconstitucionalidad presentada por los
+abogados Nelson Cárdenas Ayala y Jorge Garay Lenguaza, en representación de la Empresa
+de Transporte Ñanduti S.R.L., contra el Acuerdo y Sentencia Nº 24, de fecha 03 de marzo de
+2022, así como contra su Aclaratoria, el Acuerdo y Sentencia Nº 46, de fecha 29 de marzo de
+2022, dictados por el Tribunal de Apelación en lo Civil, Comercial y Laboral, Segunda Sala,
+~~e~~ ;~r~~~n; ~~ri~~n-Judicial de_ Central, por los_ fundamentos expuestos en el exo~t                                      la
+     1        1
+
+         ANOTAR y notificar por cédula. -
+
+
+
+                                                      r M. Diesel .Junghan.ns
+                                                                                                     Dr. Yfctor Ríos Ojeda
+                                                         1Ylin·i.v9 ~§J,                                    ¡Y\i)li.f.tl'O
+
+
+
+                                                              ~       .•.
+                                                              ¡
+                                                               \• I
+
+                                                                  \ •                            f
+                                                                  '                ·<>           /
+                                                                   '\                       ·/
+
+                                                                            ~~     .  ..•//
+                                                                                 -----•··
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

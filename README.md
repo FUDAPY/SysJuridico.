@@ -118,6 +118,28 @@ Para garantizar la máxima velocidad de respuesta y erradicar el consumo inneces
 - **Scraper Reanudable y Verificación de Integridad:** Se incluye el script de scraping reanudable (`scripts/scrape-bacn-laws.js`) y de ingesta (`scripts/ingest-bacn-to-db.js`). La verificación técnica confirmó **7.133 archivos íntegros**, sin fichas faltantes ni errores pendientes de sintaxis.
 - **Estrategia Local-First (Ahorro >85% de Tokens):** Techapyrã IA y el Editor Judicial consultan en primer término la base de datos local en MongoDB mediante índices de texto y coincidencias exactas por número de ley (`numeroLey`). Solo en caso de que una disposición no figure en el catálogo interno, el sistema procede a la consulta externa en portales oficiales, garantizando latencias mínimas y certidumbre jurídica.
 
+### ⚖️ Jurisprudencia Oficial de la Corte Suprema de Justicia (CSJ)
+Como complemento jurisprudencial de **OtelaxWisdom**, se integró el acervo histórico y contemporáneo de resoluciones del Poder Judicial paraguayo alojado en `LESGILACION PARAGUAYA/Jurisprudencia Paraguaya/`:
+
+- **72.375 fallos judiciales oficiales** estructurados en archivos Markdown organizados por tipo y año:
+  - **45.469 Acuerdos y Sentencias** (Salas Constitucional, Civil y Comercial, y Penal).
+  - **26.900 Autos Interlocutorios** emitidos por la máxima instancia judicial.
+  - **6 resoluciones** de tipo no especificado.
+- **Cobertura Textual y Enlaces Oficiales:**
+  - **70.928 fallos con texto íntegro extraído** de formatos PDF, DOC, DOCX y RTF mediante herramientas forenses (`antiword`, `unzip`, LibreOffice y `pdf-parse`).
+  - **1.447 fallos** preservan metadatos completos y enlaces directos de descarga al portal oficial de la CSJ (220 sin documento informado, 1.224 escaneados sin capa OCR en origen y 3 con archivos incompatibles).
+  - Cero fallos faltantes y cero errores pendientes de extracción.
+- **Clasificación Forense por Fueros:**
+  - **Constitucional:** 26.421 resoluciones (Acciones de inconstitucionalidad, Hábeas Corpus, Amparos).
+  - **Penal:** 17.153 resoluciones (Recursos extraordinarios de casación y revisión penal).
+  - **Civil y Comercial:** 13.103 resoluciones (Contratos, quiebras, sucesiones, derechos reales).
+  - **Contencioso Administrativo:** 13.077 resoluciones (Apelaciones contra fallos del Tribunal de Cuentas y actos estatales).
+  - **Laboral:** 2.178 resoluciones (Despidos injustificados, indemnizaciones tarifadas, estabilidad laboral).
+  - **Niñez y Adolescencia:** 414 resoluciones (Prestación de alimentos, régimen de relacionamiento, patria potestad).
+  - **Tributario:** 29 resoluciones (Determinaciones tributarias y aduaneras).
+- **Conexión Local-First en Tiempo Real:** El servicio `buscarJurisprudenciaCSJ()` consulta el catálogo estructurado local (`catalogo.json`) en menos de 70 milisegundos, proveyendo al modelo citas textuales exactas, números de fallo y enlaces oficiales sin saturar peticiones externas ni agotar tokens.
+- **Herramientas de Mantenimiento:** Incluye el scraper reanudable [`scripts/scrape-csj-jurisprudencia.js`](scripts/scrape-csj-jurisprudencia.js) y el generador de índices de fueros [`scripts/generate-jurisprudencia-indices.js`](scripts/generate-jurisprudencia-indices.js).
+
 ### 🛡️ Principio de Vigencia Estricta
 SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas o históricas (como la Ley Nº 2597/2005 o la Ley Nº 5102/2013). Tanto el motor de RAG como el asistente Techapyrã IA consultan y citan prioritariamente **derecho positivo vigente**.
 

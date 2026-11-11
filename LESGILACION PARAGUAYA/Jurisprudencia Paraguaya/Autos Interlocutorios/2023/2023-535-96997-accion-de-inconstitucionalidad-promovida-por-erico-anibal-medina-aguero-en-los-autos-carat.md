@@ -1,0 +1,84 @@
+# Auto Interlocutorio N.º 535/2023
+
+**Carátula:** ACCION DE INCONSTITUCIONALIDAD PROMOVIDA POR ERICO ANIBAL MEDINA AGÜERO EN LOS AUTOS CARATULADOS: "DELFINA DAMASIA MEDINA PEDROZO C/ ERICO MEDINA AGÜERO S/ REIVINDICACION DE INMUEBLE". N° 787. AÑO: 2019
+
+- **Código CSJ:** 96997
+- **Tipo:** Auto Interlocutorio
+- **Número:** 535/2023
+- **Fecha:** 2023-03-09
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Civil y Comercial
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0;
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=96997)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=96997)
+
+## Texto de la resolución
+
+ACCION DE INCONSTITUCIONALIDAD PROMOVIDA POR
+                                                ERICO ANIBAL MEDINA AGÜERO EN LOS AUTOS
+                                                CARA TULADOS: "DELFINA DAMASIA MEDINA PEDROZO
+                                                C/ ERICO MEDINA AGÜERO S/ REIVINDICACION DE
+                                                INMUEBLE". N!'._ 787. AÑ O: 2019 .--------------------------------------
+
+
+
+
+                                                          Asunción,       9        de     mor 7..o de 20'Z~-
+
+                          escrito presentado por Evelin Teresa Medina Figari, por derecho propio y bajo patrocinio de
+
+              \\    1$-
+         1'    \\                                  C O N S ID E R A N D O:
+--......~~:-,1 e, en el mencionado escrito, la recurrente interpone recurso de aclaratoria
+                                                                                      contra el A.I. N.9. 741 de
+fecha 20 de junio de 2022, dictado por la Sala Constitucional, que resolvió entre otras cosas: " ... Rechazar in
+limine la Acción de inconstitucionalidad presentada por el señor Erico Anibal Medina contra la Sentencia
+Definitiva NE 210 de fecha 05 de junio de 2018, dictada por el Juzgado de Primera Instancia en lo Civil y
+Comercial de la Cordillera del Segundo Turno y contra el Acuerdo y Sentencia NE 18 de fecha 02 de abril de
+2019, dictado por la Cámara de Apelación en lo Civil y Comercial de la circunscripción Judicial de Cordillera.
+ANOTAR y notificar (. .. ) ''. --------- -------- --------------------- ------------------------------------------------------------------
+
+       El Art. 17 de la Ley N~ 609/95 establece: " ... Las resoluciones de las Salas o del Pleno de la Corte
+solamente son susceptibles del recurso de aclaratoria y, tratándose de providencias de mero trámite o
+resolución de regulación de honorarios originados en dicha instancia, del recurso de reposición. No se admite
+impugnación de ningún género, incluso las fundadas en la inconstitucionalidad. .. ".----------------------------------
+
+          En relación al recurso de aclaratoria interpuesto, el Art. 387 del C.P.C. dispone: "... Las partes podrán
+sin embargo, pedir aclaratoria de la resolución al mismo Juez o Tribunal que la hubiere dictado con el objeto
+de que: a) corrija cualquier error material; b) aclare alguna expresión oscura, sin alterar lo sustancial de la
+decisión; y c) supla cualquier omisión en que hubiere incurrido sobre algunas de las pretensiones deducidas y
+discutidas en el litigio ... ''. ------------ ----------- -------------------------------------------------------------------- ---------
+
+        Que, los presupuestos establecidos en la disposición legal ut-supra transcripta no se dan en la resolución
+cuya aclaratoria se solicita, pues no existe error material, expresión oscura u omisión en la que podría haber
+incurrido esta Coite Suprema de Justicia - Sala Constitucional-, al momento de dictar el Auto Interlocutorio N.9.
+741 de fecha 20 de junio de 2022, razón por la cual este recurso es rechazado. En reiterados fallos, esta Corte
+Suprema de Justicia, Sala Constitucional viene sosteniendo el rechazo de todo recurso de aclaratoria contra
+resoluciones de la Sala o del Pleno, que no reúnan los requisitos legales establecidos.---------------------------------
+
+        Que, además, estudiados los fundamentos del recurso planteado, surge que la pretensión final de la
+recurrente es que la Corte realice un nuevo pronunciamiento sobre una cuestión que ya fue objeto de estudio, lo
+cual deviene improcedente. En efecto, la Corte ha obrado dentro de las facultades ordenadoras establecidas por
+la Constitución, al haber hecho un análisis íntegro de la resolución impugnada.----------------------------------------
+
+        En atención a las consideraciones que anteceden y a los requerimientos exigidos por las normas legales,
+corresponde no hacer lugar a los recursos de aclaratoria, interpuesto por la señora Evelin Teresa Medina Figari.-
+
+
+                                             CORTE SUPREMA DE JUSTICIA
+                                               SALA CONSTITUCIONAL
+                                                   RESUELVE:
+
+                              LUGAR al
+
+
+
+
+                                                                                                                                             \
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).

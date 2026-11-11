@@ -1,0 +1,76 @@
+# Acuerdo y Sentencia N.º 773/2007
+
+**Carátula:** ACCION DE INCOSTITUCIONALIDAD EN EL JUICIO: "INCIDENTE DE DEVOLUCION DE MERCADERIAS EN LOS AUTOS: MARIA NANCY CARDOZO Y OTRA S/ SUPUESTO HECHO PUNIBLE CONTRA LA PROPIEDAD". AÑO: 2006 - Nº 960.-
+
+- **Código CSJ:** 14102
+- **Tipo:** Acuerdo y Sentencia
+- **Número:** 773/2007
+- **Fecha:** 2007-08-14
+- **Sala:** SALA CONSTITUCIONAL
+- **Materia:** 0; Penal
+- **Acción:** 0
+- **Resultado:** 0; ; 0
+- **Tribunal o juzgado de origen:** 0; CORTE SUPREMA DE JUSTICIA
+- **Estado de extracción:** texto extraído del documento oficial
+- **Fuente oficial:** [Ficha en la CSJ](https://www.csj.gov.py/jurisprudencia/home/detalle?codigo=14102)
+- **Documento oficial:** [Descargar archivo original](https://www.csj.gov.py/jurisprudencia/home/DocumentoJurisprudencia?codigo=14102)
+
+## Texto de la resolución
+
+ACCIÓN DE INCONSTITUCIONALIDAD EN EL JUICIO: “INCIDENTE DE DEVOLUCIÓN DE MERCADERÍAS EN LOS AUTOS: MARÍA NANCY CARDOZO Y OTRA S/ SUPUESTO HECHO PUNIBLE CONTRA LA PROPIEDAD”. AÑO: 2006 – N° 960. -----------------------------------------------------
+
+	ACUERDO Y SENTENCIA NÚMERO: Setecientos setenta y tres.-
+	
+	En la ciudad de Asunción, Capital de la República del Paraguay, a los catorce días del mes de agosto del año dos mil siete, estando en la Sala de Acuerdos de la Corte Suprema de Justicia, los Excmos. Señores Ministros de la Sala Constitucional, Doctor ANTONIO FRETES, Presidente y Doctores VÍCTOR MANUEL NÚÑEZ RODRÍGUEZ y JOSÉ V. ALTAMIRANO AQUINO, Miembros, ante mí, el Secretario autorizante se trajo al acuerdo el expediente caratulado: ACCIÓN DE INCONSTITUCIONALIDAD EN EL JUICIO: “INCIDENTE DE DEVOLUCIÓN DE MERCADERÍAS EN LOS AUTOS: MARÍA NANCY CARDOZO Y OTRA S/ SUPUESTO HECHO PUNIBLE CONTRA LA PROPIEDAD”, a fin de resolver la acción de inconstitucionalidad promovida por la Sra. Ana Stella Villalba Guecique, por derecho propio y bajo patrocinio del Abog. Walter Isasi Cortázar y el Abogado Walter Isasi Cortázar ejerciendo la representación de la Sra. Nancy Cardozo Martínez.----------------------------------------
+	Previo estudio de los antecedentes del caso, la Corte Suprema de Justicia, Sala Constitucional, resolvió plantear y votar la siguiente:--------------------------------
+
+C U E S T I Ó N:
+	¿Es procedente la acción de inconstitucionalidad deducida?.---------------------
+	A la cuestión planteada el Doctor ALTAMIRANO  dijo: La Acción de Inconstitucionalidad presentada en la causa individualizada cono “Incidente de devolución de mercaderías en los autos: María Nancy Cardozo y otra s/ supuesto hecho punible contra la propiedad” la promovió la Sra. Ana Stella Villalba Guecique, por derecho propio y bajo patrocinio del Abog. Walter Isasi Cortázar, y el Abogado Walter Isasi Cortázar ejerciendo la representación de la Sra. Nancy Cardozo Martínez, contra el A.I.Nº 274 de fecha 18 de agosto de 2006, dictado por el Tribunal de Apelación en lo Criminal, Tercera Sala Penal de la Circunscripción Judicial de Alto Paraná y Canindeyu, por el cual el Ad-quem resolvió: “…Admitir el recurso de Apelación General planteado por la representante del Ministerio Público Abogada Emilce Ovelar y los representantes de la querella adhesiva Abogados Heriberto Ramón Sosa y Rubén Darío Irala contra el A.I.Nº 713 de fecha 13 de junio de 2006, dictado por el Juez Penal de Garantías Nº 3…; Revocar la resolución apelada en los términos del considerando de este fallo…” y por supuesta conculcación de los arts. 1, 16, 17 inc. 1), 256 y 109 de la Constitución Nacional.------------------------------------------------------------------------------------------
+	La accionante manifiesta: “…con la revocación pretendida se estaría dejando a las verdaderas dueñas de las mercaderías, quienes fueron objeto de una maquiavélica conspiración para ser despojadas de sus pertenencias, a pesar de haber ellas pagado por las mercaderías, no solamente el precio que acordaron con el vendedor Samir Hassan Daré, hoy querellante adhesivo, sino un montón de tributos aduaneros, municipales, y otras tasas de depósito y guarda de la mercadería, conforme fuera acreditado en el expediente…”; “…La realidad procesal de autos nos muestra las omisiones en que incurrieron los miembros de la Cámara de Apelaciones en lo Criminal. Las simples menciones que realizaron para decir que la entrega fue apresurada y que el impresionante volumen de mercaderías no debió ser entregado, fue parcialista por su parca visión daltonista – entiéndase no pudo claramente, pues, no consideraron el contenido de varias presentaciones, como por ejemplo las presentaciones de todas las documentaciones que acreditaron el derecho de propiedad de los televisores perteneciente a las procesadas. Los opinantes concentran a lo largo y ancho del A.I.Nº 274 en lo apresurado de la decisión del Juez y brillaron por la falta de fundamentación jurídica. Todos omitieron raramente referir que la entrega se realizó con la carga de depositario judicial y que esta figura está prevista en el Art. 197 del C.P.P., para los casos en que, de acuerdo a las constancias de autos, proceda la devolución provisoria en esa calidad e imponerse al poseedor la obligación de exhibirlos. Asimismo, omitieron valoración alguna al acta agregada por el Escribano Público, y a sus declaraciones vertidas en el proceso, a la decisión adoptada por el Juez del fuero civil que decidió entregar las mercaderías a las hoy procesadas, entrega en la que intervino inclusive la Actuaria Judicial del Juzgado. También omitieron hacer mención al principio fundamental del derecho penal que las procesadas, hasta que no haya sentencia dictada en un juicio oral y público que decida lo contrario, son inocentes, y que son las propietarias de las cosas que poseen, en especial cuando son cosas muebles, en las que la posesión presume la propiedad…”; “…siendo así…JAMÁS PUDIERON HABER RAZONABLEMENTE CONCLUIDO LOS MAGISTRADOS EN LA POSIBILIDAD DE REVOCAR EL A.I.Nº 713 de fecha 13 de junio del 2006, dictado por el Juez de Garantías…”.----------------------------------------------------------
+	1.- Pues bien, el A.I.Nº 274 del 18/08/2006, resultó del recurso de Apelación General interpuesto por la representante del Ministerio Público y el querellante adhesivo contra el A.I.Nº 713 del 13/06/2006.----------------------------------------------
+	Por A.I.Nº 713 el Ad-quo resolvió hacer lugar al incidente de devolución de las mercaderías a favor de la Sra. María Nancy Cardozo.----------------------------------
+	2.- La Acción de Inconstitucionalidad debe ser rechazada.------------------------
+	3.- En fecha 18 de agosto de 2006, el Tribunal de Apelación 3era. Sala de la Circunscripción Judicial de Alto Paraná y Canindeyú, integrado por los miembros: Guido Ramón Melgarejo, María Del Rocío Gossen y Miguel Oscar López Cabral, dispuso por A.I.Nº 274; anular el A.I.Nº 713 de fecha 13 de junio del 2006, dictado por el Juez Penal de Garantías del Tercer Turno de la misma circunscripción judicial.--------------------------------------------------------------------------------------------
+	Fundamento del fallo de Alzada (A.I.Nº 274 del 18/08/2006): “Miguel López Cabral… Conforme al considerando de la resolución, el A quo decidió la entrega de las mercaderías basándose en los dictámenes periciales de autos que dieron como conclusión que las firmas peritadas son auténticas y pertenecen al señor Samir Hassan Daher; actitud que es, por donde se la mire, adelantada. En primer lugar la decisión es apresurada al no quedar aún…///…
+…///…firme la resolución pertinente y al no tratarse de medidas cautelares, pues ellas fueron incautadas como presuntas evidencias y no en calidad de secuestro. En segundo lugar que los dictámenes que sustentaron la decisión judicial también son pasibles de recurso, amen de que ellos no otorgan seguridad alguna de lo que afirman en el dictamen con mayor razón cuando éstos aún no se encuentran firmes; por lo que mal pueden respaldar una decisión tan grave…”; “…con el fin de preservar el derecho de las partes, hasta tanto hayan dictámenes que ofrezcan dudas tan patentes como los anteriores, el fallo apelado debe ser revocado, debiendo las mercaderías volver al cuidado de la Fiscalía…”; “Guido Ramón Melgarejo… Verdaderamente se asiste en este caso, a un acto manifiestamente arbitrario y completamente carente de motivación jurídica y fáctica…”; “María del Rocío Gossen… comparto la opinión del colega preopinante, aclarando, que el ad-quo ha fundamentado su decisión permitiéndonos conocer los motivos fácticos jurídicos que la sustentaron. Analizados estos, tenemos que en su proceso intelectivo, el mismo ha ordenado la entrega de las mercaderías a las imputadas basándose en el peritaje agregado a estos autos. Peritaje este cuya impugnación también fuera objeto de recurso, puesto que el ad-quo a considerado que dicha prueba es irreproducible, postura esta que no se aparta de lo establecido en el Art. 224 del C.P.P., no pudiéndose por lo tanto tomar como parámetro dicho estudio para la entrega de las mercaderías, máxime aún que los mismos no son contundentes y en especial por lo que las mercaderías fueron incautadas como presuntas evidencias…”.-----------------------------------------------------------------------
+	4.- Antes de dar inicio al análisis en si mismo quiero manifestar lo que de manera evidente se trasluce en la causa de referencia, es decir, los intereses económicos que se hallan en juego, al respecto quiero aclarar y recordar a los operadores de justicia que uno de los pilares fundamentales en sus decisorios debe ser siempre la imparcialidad, la objetividad, la sana crítica, por encima de las mezquindades o las bondades de los favores bien recibidos.------------------------------
+	Las constancias de autos revelan que las constantes contradicciones a la hora de juzgar de los magistrados, para lo cual considero prudente la búsqueda permanente de la armonía mediante la claridad y la constancia de criterios y no el revuelo jurídico desvaneciendo por completo el sentido del “proceso penal” y peor aún de la justicia.---------------------------------------------------------------------------------
+	5.- Pues bien, ante esta Sala Constitucional han sido planteadas dos “acciones” la primera contra la resolución de alzada que había resuelto revocar el decisorio de primera instancia, por el cual el A quo resolvió suspender la entrega de las “mercaderías” al denunciante, la que fuera ordenada por la Agente Fiscal interviniente en la causa. La otra, que es la presente, refiere a la resolución de alzada por la cual, nuevamente el Tribunal de Apelaciones resolvió revocar la resolución del A-quo, por la cual, éste último dispuso la entrega de las mercaderías a las presuntas propietarias y de las que fueron incautadas las mismas en oportunidad del inicio de la investigación penal. Los jueces Ad quem, consideraron que la cosa siguiera bajo la custodia de la Fiscalía, hasta la resolución definitiva por la cual se ponga fin al conflicto penal.--------------------------------------------------------------------
+	6.- En el caso particular no hallo razones para un análisis sobre lo resuelto, pero sí me permito exhortar a los “Iudex” a perseverar en el control objetivo, ecuánime y racional de la búsqueda de la verdad, mediante la protección de las garantías constitucionales y legales previstas, para lo cual resulta emergente “reencausar la causa” que fuera objeto de Acción de Inconstitucionalidad, y por sobre todo disponer de los medios necesarios para la custodia judicial efectiva de la cosa objeto de investigación y de considerable valor económico.--------------
+	7.- Por otro lado, en reiterados fallos de esta Corte se ha dicho, y esto es que la Sala Constitucional, no es una tercera vía de revisión de sentencias; por ello, la admisión de la “Acción” sólo procede cuando la misma es promovida contra resoluciones judiciales y se funda en la conculcación de lo dispuesto en el art. 256 de la Constitución Nacional, la que verificada y confirmada genera la nulidad de lo resuelto por los Juzgadores (art. 560 del C.P.C.). Demás está decir, que esta Sala no puede impugnar fallos por discrepancias con los criterios jurídicos y legales sostenidos por los juzgadores, sólo es hábil para verificar la razonable aplicación del derecho a la casuística sometida a resolución por el órgano jurisdiccional competente.---------------------------------------------------------------------------------------
+	Asimismo es dable destacar que el hecho de interpretar la ley para aplicarla al caso concreto es materia opinable, y a acción de inconstitucionalidad no puede ser la vía para interponer un criterio de interpretación distinto al sostenido por los Juzgadores, siempre que el dado por los mismos se encuentre dentro de las opciones interpretativas, pues en tal caso a través de ella se daría lugar a una indebida tercera instancia con la consiguiente desnaturalización de la misma. Cabe recalcar que lo sostenido por los magistrados intervinientes en la resolución atacada, se halla ajustada a  las disposiciones legales que rigen la materia.---------------------------------
+	La lectura de las constancias procesales traídas a la vista, permite apreciar que las resoluciones cuestionadas están basadas en las constancias de autos y en la ley vigente en la materia.-----------------------------------------------------------------------
+	Finalmente, en estas condiciones no es posible hablare de arbitrariedad. Las consideraciones vertidas en el escrito de promoción, revelan la pretensión del accionante de que esta Sala Constitucional actúe como tribunal de tercera instancia para la revisión del caso, y como ya lo dijera anteriormente,  tal intervención resultara indebida, pues, según la doctrina y la jurisprudencia referentes a la materia, la acción de inconstitucionalidad procede…///…
+…///…solamente como medio para salvaguardar los derechos y las garantías constitucionales, en los casos en que hubieren sido vulnerados.--------------------------
+	8.- Por las consideraciones expuestas y en base a lo manifestado, considero que la presente Acción de Inconstitucionalidad debe ser rechazada. Es mi voto.------- 
+
+A su turno, los Doctores NÚÑEZ RODRÍGUEZ y FRETES, manifestaron que se adhieren al voto del Ministro preopinante, Doctor ALTAMIRANO AQUINO, por los mismos fundamentos.----------------------------------------------------
+
+Con lo que se dio por terminado el acto, firmando SS.EE., todo por ante mí, de que certifico, quedando acordada la sentencia que inmediatamente sigue:
+
+SENTENCIA NÚMERO: 773.-
+
+Asunción, 14 de agosto de 2.007.-
+
+VISTO: Los méritos del Acuerdo que anteceden, la
+
+CORTE SUPREMA DE JUSTICIA
+Sala Constitucional
+R E S U E L V E:
+
+RECHAZAR la presente acción de inconstitucionalidad.-------------------------
+ANOTAR, registrar y notificar.-------------------------------------------------------
+
+Ante mí: 
+
+
+JOSÉ V. ALTAMIRANO	DR. ANTONIO FRETES	VICTOR M NÚÑEZ R.
+Ministro C.S.J. 	        Ministro C.S.J. 	        Ministro C.S.J. 
+
+Abog. Héctor Fabián Escobar Díaz
+        Secretario
+
+---
+
+Fuente: [Sistema de Información de Jurisprudencia del Poder Judicial](https://www.csj.gov.py/jurisprudencia/).
