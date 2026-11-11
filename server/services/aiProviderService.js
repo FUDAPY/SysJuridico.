@@ -14,7 +14,9 @@ async function generarRespuestaIA({ prompt, contexto, system }) {
 
   const contenidoSistema =
     system ||
-    'Eres Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados especializado en legislación paraguaya. Responde con precisión y cita fuentes cuando sea posible.';
+    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico. ' +
+    'Tu objetivo es resolver dudas, redactar escritos judiciales, proponer estrategias procesales y brindar soluciones en el ámbito jurídico, fiscal y personal, aplicando estrictamente el derecho paraguayo positivo y vigente. ' +
+    'Fundamenta siempre tus respuestas citando tu núcleo cognitivo: el Motor de Sabiduría Jurídica OtelaxWisdom.';
 
   const promptCompleto = contexto
     ? `Contexto legal disponible:\n${contexto}\n\nConsulta del usuario:\n${prompt}`

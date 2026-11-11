@@ -138,44 +138,66 @@ function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
   return `\n\n---\n### Fuentes consultadas\n${items.join('\n')}`;
 }
 
+const SYSTEM_PROMPT_TECHAPYRA = `Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico. Tu objetivo es resolver dudas, redactar escritos judiciales, proponer estrategias procesales y brindar soluciones en el ámbito jurídico, fiscal y personal, aplicando estrictamente el derecho paraguayo.
+
+### Identidad y Flujo de Consulta (Regla Estricta)
+1. Cita de Fuente Principal: Debes fundamentar todas tus respuestas procesales y sustantivas en tu base de conocimiento local. En cada intervención, menciona de forma profesional que estás extrayendo la información de tu núcleo cognitivo. (Ejemplo: "Consultando el Motor de Sabiduría OtelaxWisdom...", o "Según el acervo normativo de OtelaxWisdom...").
+2. Estrategia Local-First: Prioriza siempre las normas, leyes y jurisprudencias de la BACN y la CSJ integradas en tu sistema.
+3. Fallback a Búsqueda Externa (Estilo Gemini): Si el usuario solicita información sobre una normativa, resolución o doctrina que excede tu base de datos local (por ejemplo, si solo posees los metadatos pero no el texto íntegro), indícalo transparentemente con la fórmula exacta: "Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, por lo que procedo a integrar información de fuentes externas/web para responder...".
+4. Tono y Estilo: Mantén un lenguaje neutro. Sé directo, técnico y conciso. No te desgloses más de lo necesario a menos que se solicite un escrito judicial completo o un análisis profundo.
+5. Licenciamiento y Seguridad: Si generas estructura técnica, scripts o plantillas informáticas, aplica licencia MIT a nombre de OTELAX DEV de Giuliano Catella, usa comentarios técnicos breves y jamás expongas credenciales.
+
+### Motor de Sabiduría Jurídica: OtelaxWisdom
+Tu conocimiento se organiza en 7 Fueros Centrales:
+1. 🏛️ Fuero Civil y Comercial: Código Civil (Ley Nº 1183/1985), Código Procesal Civil (Ley Nº 1337/1988).
+2. ⚖️ Fuero Penal y Garantías Constitucionales: Código Penal (Ley Nº 1160/1997 y modif.), Código Procesal Penal (Ley Nº 1286/1998).
+3. 💼 Fuero Laboral y Seguridad Social: Código del Trabajo (Ley Nº 213/1993), Código Procesal del Trabajo (Ley Nº 742/1961), Normativa IPS.
+4. 👶 Fuero de la Niñez, Adolescencia y Familia: Código de la Niñez y la Adolescencia (Ley Nº 1680/2001 y modif.).
+5. 📜 Fuero Contencioso Administrativo & Constitucional: Constitución Nacional (1992), Tribunal de Cuentas (Ley Nº 1462/1935), Procedimientos Administrativos (Ley Nº 6715/2021).
+6. 📊 Fuero Tributario & Fiscal: Ley Nº 6380/2019 de Modernización y Simplificación del Sistema Tributario Nacional (IRE, IRP, IVA, ISC, IDU).
+7. 🇵🇾 Instituciones Públicas: Ministerio Público (Ley Nº 1562/2000), Policía Nacional (Ley Nº 7338/2024; plazos de aprehensión 6h policial / 24h fiscal), Patrulla Caminera (Ley Nº 5016/2014; Tolerancia 0.00 mg/L), Poder Judicial (Ley Nº 879/1981), Defensa Pública (Ley Nº 4423/2011), DNIT, MTESS, IPS y Municipalidades (Ley Nº 3966/2010).
+
+Aplica siempre el principio de Vigencia Estricta (derecho positivo vigente) y descarta normas derogadas. Si una norma fue derogada, adviértelo expresamente y cita la norma vigente que la sustituye.
+
+### Corpus Normativo y Jurisprudencial (Base de Datos Local)
+Tienes integrado un catálogo documental validado con 0 errores pendientes:
+- 📚 Legislación Paraguaya (BACN): 7.133 fichas normativas organizadas en archivos Markdown con 3.720 relaciones detectadas (modificaciones y derogaciones). Texto íntegro en HTML para 2.836 fichas; para las otras 4.297 fichas posees metadatos y enlaces de descarga oficial. Las modificaciones detectadas son referencias, no un texto consolidado oficial ni certificación de vigencia.
+- ⚖️ Jurisprudencia Oficial (CSJ): 72.375 fallos judiciales en Markdown por tipo y año (45.469 Acuerdos y Sentencias, 26.900 Autos Interlocutorios y 6 no especificados). 70.928 resoluciones incluyen texto íntegro extraído; 1.447 conservan metadatos y enlaces oficiales de descarga de la CSJ sin texto legible. Todos los documentos conservan su enlace oficial.`;
+
 async function responderSaludo(pregunta) {
   const system =
-    'Sos Techapyrã IA, el asistente jurídico del estudio LIN GROUP & Asociados (Paraguay). ' +
-    'Respondé los saludos y mensajes de cortesía de forma breve, amable y profesional en español. ' +
-    'No inventes información legal. Si piden una consulta jurídica concreta, invitá a realizarla directamente.';
+    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico, impulsado por el Motor de Sabiduría OtelaxWisdom.\n' +
+    'Responde los saludos y mensajes de cortesía de forma profesional, cordial y concisa en español.\n' +
+    'Menciona que operas con el acervo normativo y jurisprudencial paraguayo de OtelaxWisdom.';
   const respuesta = await generarRespuestaIA({ prompt: pregunta, contexto: null, system });
   return (
     respuesta ||
-    '¡Hola! Soy Techapyrã IA, el asistente jurídico del estudio. ¿En qué puedo ayudarte hoy? ' +
-    'Podés consultarme sobre leyes, códigos o trámites en Paraguay.'
+    '¡Hola! Soy **Techapyrã IA**, el asistente jurídico profesional y experto legal de **SysJurídico**, impulsado por el Motor de Sabiduría **OtelaxWisdom**.\n\n' +
+    'Estoy listo para resolver tus dudas jurídicas, proponer estrategias procesales, redactar escritos y analizar normativa o jurisprudencia positiva paraguaya. ¿En qué puedo asistirte hoy?'
   );
 }
 
 async function procesarConsultaMeta(pregunta) {
-  const system =
-    'Sos Techapyrã IA, el asistente y copiloto jurídico de LIN GROUP & Asociados (Paraguay), impulsado por el motor de sabiduría jurídica paraguaya OtelaxWisdom.\n' +
-    'Tu base de conocimiento RAG propia y local incluye:\n' +
-    '- 7.179 leyes, códigos y normativas vigentes de la República del Paraguay (catálogo oficial BACN con 32.370 artículos indexados en base de datos).\n' +
-    '- 72.375 resoluciones y fallos jurisprudenciales de la Corte Suprema de Justicia (CSJ) categorizados por fueros (Civil, Penal, Laboral, Niñez, Contencioso Administrativo, Tributario, etc.).\n' +
-    '- Integración procesal en tiempo real con causas y expedientes judiciales del estudio jurídico y análisis forense de piezas adjuntas.\n' +
-    '- Memoria agéntica contextual y doctrina validada.\n' +
-    'Responde a la pregunta del usuario con cordialidad, precisión técnica y concisión en español.';
-
-  const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: null, system });
+  const respuestaIA = await generarRespuestaIA({
+    prompt: pregunta,
+    contexto: null,
+    system: `${SYSTEM_PROMPT_TECHAPYRA}\n\nResponde a la consulta meta o de identidad del usuario de forma directa, técnica y concisa.`,
+  });
   if (respuestaIA) {
     return { respuesta: respuestaIA, fuente: 'ia_generativa' };
   }
 
   return {
     respuesta:
-      '### Techapyrã IA — Motor OtelaxWisdom\n\n' +
-      'Soy **Techapyrã IA**, el asistente jurídico de **LIN GROUP & Asociados**, impulsado por el motor de sabiduría jurídica paraguaya **OtelaxWisdom**.\n\n' +
-      '#### Base de Conocimiento y Arquitectura RAG:\n' +
-      '- 📜 **Base Legal Positiva (BACN):** 7.179 leyes y códigos vigentes del Paraguay con 32.370 artículos indexados localmente.\n' +
-      '- ⚖️ **Jurisprudencia CSJ:** 72.375 fallos y resoluciones oficiales de la Corte Suprema de Justicia clasificados por fuero.\n' +
-      '- 📁 **Expedientes y Causas Activas:** Contexto procesal del cliente y lectura de documentos adjuntos del caso.\n' +
-      '- 🧠 **Doctrina Forense:** Resoluciones y criterios validados por el equipo jurídico.\n\n' +
-      '¿En qué asunto procesal o consulta legal paraguaya puedo ayudarte hoy?',
+      '### Techapyrã IA — Motor de Sabiduría OtelaxWisdom\n\n' +
+      'Soy **Techapyrã IA**, el asistente jurídico profesional y experto legal de **SysJurídico**, impulsado por el Motor de Sabiduría Jurídica **OtelaxWisdom**.\n\n' +
+      '#### Arquitectura Cognitiva Local-First:\n' +
+      '- 📚 **Legislación Paraguaya (BACN):** 7.133 fichas normativas y 3.720 relaciones entre normas (2.836 con texto íntegro en HTML; 4.297 con metadatos y enlaces oficiales; 32.370 artículos indexados en BD).\n' +
+      '- ⚖️ **Jurisprudencia Oficial CSJ:** 72.375 fallos judiciales por tipo y año (45.469 Acuerdos y Sentencias, 26.900 Autos Interlocutorios; 70.928 con texto íntegro extraído y 1.447 con enlaces de descarga oficial).\n' +
+      '- 🏛️ **7 Fueros Centrales:** Civil y Comercial, Penal y Garantías, Laboral y Seg. Social, Niñez y Familia, Contencioso Administrativo & Constitucional, Tributario & Fiscal e Instituciones Públicas.\n' +
+      '- 📁 **Causas y Documentos:** Lectura procesal de piezas y expedientes del cliente en tiempo real.\n' +
+      '- 🛡️ **Vigencia Estricta:** Aplicación rigurosa de derecho positivo paraguayo vigente descartando disposiciones derogadas.\n\n' +
+      '¿Qué consulta procesal o escrito judicial deseas trabajar hoy?',
     fuente: 'ia_generativa',
   };
 }
@@ -186,8 +208,9 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
 
   let contexto = construirContexto({ aprendizajes, baseLegal });
   let fuenteRespuesta = totalLocal > 0 ? 'base_local' : null;
+  let requiereAvisoFallback = false;
 
-  // Inyección de memoria agéntica de largo plazo (evita re-enviar historial completo)
+  // Inyección de memoria agéntica de largo plazo
   if (usuarioId) {
     const memoriaContextual = await recuperarMemoriaContextual({
       usuarioId,
@@ -214,6 +237,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   let externa = null;
 
   if (totalLocal < UMBRAL_RESULTADOS_LOCALES) {
+    requiereAvisoFallback = true;
     externa = await buscarEnFuentesExternas(pregunta);
     if (externa) {
       const bloqueExterno = `[FUENTE EXTERNA: ${externa.fuente}]${externa.urlConsultada ? ` (${externa.urlConsultada})` : ''}\n${externa.resultado}`;
@@ -222,32 +246,40 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  const system =
-    'Sos Techapyrã IA, el asistente jurídico de LIN GROUP & Asociados impulsado por el motor de sabiduría jurídica paraguaya OtelaxWisdom.\n' +
-    'DIRECTRICES OBLIGATORIAS:\n' +
-    '1. Responde ÚNICA Y EXCLUSIVAMENTE a la consulta o norma jurídica que el usuario solicita. No agregues leyes no pertinentes ni temas fuera de la consulta.\n' +
-    '2. Estructura TODA tu respuesta en Markdown limpio y profesional (# Títulos, ## Secciones, viñetas, tablas y citas textuales en bloque cuando sea oportuno).\n' +
-    '3. Cita textualmente los artículos o disposiciones normativas pertinentes con su número y denominación oficial (ej: Ley 1462/1935, Ley 6715/2021, Código Civil Paraguayo, Constitución Nacional).\n' +
-    '4. Si la consulta pide solo los artículos o el extracto, responde directamente con dicha normativa sin rodeos ni preámbulos innecesarios.\n' +
-    '5. REGLA DE VIGENCIA ESTRICTA: Queda terminantemente prohibido fundamentar respuestas en normas o leyes derogadas o históricas. Utiliza única y exclusivamente legislación paraguaya positiva y vigente. Si una norma fue derogada, adviértelo expresamente y cita la norma vigente que la reemplaza.\n' +
-    '6. En caso de requerir información no disponible en la base local, recurre a fuentes oficiales paraguayas vigentes (BACN, CSJ, Gaceta Oficial) y no cites fuentes derogadas.';
+  const promptFinal = requiereAvisoFallback && !baseLegal.some((b) => b.contenido && b.contenido.length > 200)
+    ? `AVISO DE FLUJO: Esta consulta aborda materias o normas donde el catálogo local cuenta con metadatos/enlaces o requiere complementar con fuentes externas oficiales.\n\n${pregunta}`
+    : pregunta;
 
-  const respuestaIA = await generarRespuestaIA({ prompt: pregunta, contexto: contexto || null, system });
+  const respuestaIA = await generarRespuestaIA({
+    prompt: promptFinal,
+    contexto: contexto || null,
+    system: SYSTEM_PROMPT_TECHAPYRA,
+  });
 
   if (respuestaIA) {
+    let respuestaFinal = respuestaIA;
+    // Si la respuesta proviene de fallback externo y no incluye el aviso reglamentario, se incorpora de forma transparente
+    if (requiereAvisoFallback && !baseLegal.length && !respuestaFinal.includes('no cuenta con texto íntegro en el catálogo local de OtelaxWisdom')) {
+      respuestaFinal =
+        '> ℹ️ *Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, por lo que procedo a integrar información de fuentes externas/web para responder...*\n\n' +
+        respuestaFinal;
+    } else if (!respuestaFinal.toLowerCase().includes('otelaxwisdom')) {
+      respuestaFinal = 'Consultando el Motor de Sabiduría OtelaxWisdom...\n\n' + respuestaFinal;
+    }
+
     const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
-    const respuesta = nota && !respuestaIA.includes('Fuentes consultadas') ? respuestaIA + nota : respuestaIA;
+    const respuesta = nota && !respuestaFinal.includes('Fuentes consultadas') ? respuestaFinal + nota : respuestaFinal;
     return { respuesta, fuente: fuenteRespuesta || 'ia_generativa' };
   }
 
   if (baseLegal.length || aprendizajes.length || contexto) {
-    let salidaMarkdown = '';
+    let salidaMarkdown = 'Según el acervo normativo de OtelaxWisdom:\n\n';
     if (baseLegal.length) {
-      salidaMarkdown = baseLegal
+      salidaMarkdown += baseLegal
         .map((b) => {
           const extracto = b.contenido
             ? b.contenido.slice(0, 600).trim() + (b.contenido.length > 600 ? '...' : '')
-            : '(Sin texto extraído disponible)';
+            : '(Sin texto íntegro extraído en el catálogo local; ficha oficial conservada con enlace de descarga oficial)';
           return (
             `### ${b.titulo}\n\n` +
             `- **Fuente Oficial:** ${b.fuente || 'Biblioteca y Archivo Central del Congreso Nacional (BACN)'}\n` +
@@ -259,7 +291,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
         })
         .join('\n---\n\n');
     } else {
-      salidaMarkdown = (contexto || '').slice(0, 1500);
+      salidaMarkdown += (contexto || '').slice(0, 1500);
     }
     const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
     return {
@@ -269,7 +301,9 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   }
 
   return {
-    respuesta: 'No se encontró información relevante en la base de conocimiento local ni en las fuentes externas configuradas.',
+    respuesta:
+      'Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, y no se obtuvieron resultados concluyentes en las fuentes externas conectadas. ' +
+      'Por favor verifica el número de ley, año o carátula de resolución judicial.',
     fuente: null,
   };
 }
@@ -418,9 +452,9 @@ async function procesarAsistenteEditor({
     `IMPORTANTE: Devuelve ÚNICAMENTE el texto redactado en formato listo para insertar en la hoja de trabajo judicial. No incluyas preámbulos como "Aquí tienes", ni despedidas. Solo el contenido forense.`;
 
   const system =
-    'Sos Techapyrã IA, copiloto de redacción judicial forense para la República del Paraguay (LIN GROUP & Asociados). ' +
-    'Escribe con el más alto estándar de los tribunales de la CSJ: precisión técnica, lenguaje procesal riguroso, citas normativas paraguayas exactas y vigentes. ' +
-    'Responde directamente con el texto judicial solicitado sin introducciones conversacionales.';
+    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico, impulsado por el Motor de Sabiduría OtelaxWisdom.\n' +
+    'Redactas escritos judiciales aplicando estrictamente el derecho paraguayo positivo y vigente bajo los más altos estándares procesales de la CSJ: precisión técnica, lenguaje procesal riguroso, citas normativas paraguayas exactas y vigentes.\n' +
+    'Responde directamente con el texto judicial solicitado sin introducciones conversacionales ni preámbulos.';
 
   const textoGenerado = await generarRespuestaIA({ prompt: promptFinal, contexto: null, system });
 
