@@ -1,51 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&display=swap');
 
 :root {
-  /* Paleta Oficial SysJuridico - Esencia Judicial y Legal */
-  --azul-primary: #122338;
-  --azul-sidebar: #0d1b2a;
-  --azul-sidebar-end: #16283f;
-  --azul-accent: #2563eb;
-  --azul-accent-hover: #1d4ed8;
-  --azul-light: #eff6ff;
-  --dorado: #c9a227;
+  /* Paleta Oficial SysJuridico — Tema Blanco Institucional & Forense */
+  --azul-primary: #0F2342;
+  --azul-sidebar: #FFFFFF;
+  --azul-sidebar-end: #FFFFFF;
+  --azul-accent: #1D4ED8;
+  --azul-accent-hover: #1E40AF;
+  --azul-light: #EFF6FF;
+  --dorado: #C9A227;
   --dorado-glow: rgba(201, 162, 39, 0.25);
-  --dorado-hover: #dfb638;
+  --dorado-hover: #DFB638;
 
-  /* Estados semánticos */
-  --verde: #10b981;
-  --verde-bg: #ecfdf5;
-  --verde-texto: #065f46;
-  --rojo: #ef4444;
-  --rojo-bg: #fef2f2;
-  --rojo-texto: #991b1b;
-  --amber: #f59e0b;
-  --amber-bg: #fffbeb;
-  --amber-texto: #92400e;
-  --azul-tag-bg: #e0f2fe;
-  --azul-tag-texto: #0369a1;
+  /* Estados semánticos institucionales */
+  --verde: #10B981;
+  --verde-bg: #ECFDF5;
+  --verde-texto: #065F46;
+  --rojo: #EF4444;
+  --rojo-bg: #FEF2F2;
+  --rojo-texto: #991B1B;
+  --amber: #F59E0B;
+  --amber-bg: #FFFBEB;
+  --amber-texto: #92400E;
+  --azul-tag-bg: #E0F2FE;
+  --azul-tag-texto: #0369A1;
 
-  /* Superficies (Modo Claro) */
-  --bg-app: #f4f7fb;
-  --bg-card: #ffffff;
-  --bg-card-hover: #ffffff;
-  --bg-input: #ffffff;
-  --bg-subtle: #f8fafc;
-  --borde: #e2e8f0;
-  --borde-focus: #2563eb;
+  /* Superficies 100% Claras */
+  --bg-app: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --borde: #E2E8F0;
+  --borde-focus: #1D4ED8;
 
-  /* Tipografía */
-  --texto: #0f172a;
-  --texto-secundario: #475569;
-  --texto-muted: #64748b;
+  /* Tipografía de alto contraste */
+  --texto: #0F172A;
+  --texto-secundario: #334155;
+  --texto-muted: #64748B;
   --fuente-titulos: 'Poppins', sans-serif;
   --fuente-cuerpo: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Sombras y Elevaciones estilo expedientes.click */
+  /* Sombras y Elevaciones suaves */
   --sombra-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-  --sombra: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
-  --sombra-lg: 0 20px 45px -15px rgba(15, 23, 42, 0.12), 0 4px 16px -4px rgba(15, 23, 42, 0.06);
-  --sombra-modal: 0 25px 60px -15px rgba(15, 23, 42, 0.35);
+  --sombra: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --sombra-lg: 0 10px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+  --sombra-modal: 0 20px 45px -10px rgba(15, 23, 42, 0.25);
 
   /* Radios de bordes */
   --radius-sm: 8px;
@@ -57,42 +57,35 @@
   --azul: var(--azul-primary);
   --azul-claro: var(--azul-accent);
   --gris: var(--bg-app);
+  --trans: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-[data-theme="dark"], html.dark {
-  /* Modo Oscuro: Navy Judicial Profundo */
-  --bg-app: #0a131e;
-  --bg-card: #111e2e;
-  --bg-card-hover: #152438;
-  --bg-input: #0d1724;
-  --bg-subtle: #142234;
-  --borde: rgba(255, 255, 255, 0.1);
-  --borde-focus: #3b82f6;
-
-  --texto: #f8fafc;
-  --texto-secundario: #cbd5e1;
-  --texto-muted: #94a3b8;
-
-  --azul-sidebar: #070e17;
-  --azul-sidebar-end: #0c1724;
-  --sombra: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
-  --sombra-lg: 0 20px 50px -15px rgba(0, 0, 0, 0.6);
-  --sombra-modal: 0 25px 70px -15px rgba(0, 0, 0, 0.8);
-
-  --verde-bg: rgba(16, 185, 129, 0.15);
-  --verde-texto: #34d399;
-  --rojo-bg: rgba(239, 68, 68, 0.15);
-  --rojo-texto: #f87171;
-  --amber-bg: rgba(245, 158, 11, 0.15);
-  --amber-texto: #fbbf24;
-  --azul-tag-bg: rgba(59, 130, 246, 0.15);
-  --azul-tag-texto: #60a5fa;
-}
-
-* {
+/* ========================================================
+   SCROLLBARS COMPLETAMENTE INVISIBLES (CERO BARRAS GRISES/BLANCAS)
+   Mantiene el desplazamiento 100% funcional con rueda y trackpad
+   ======================================================== */
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE / Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome / Safari / Opera */
+  width: 0 !important;
+  height: 0 !important;
+}
+
+aside, nav, .sidebar, .barra-lateral, .editor-toolbar, .editor-panel, .lo-toolbars, .lo-sidebar, .lo-canvas-scroller {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+aside::-webkit-scrollbar, nav::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .barra-lateral::-webkit-scrollbar,
+.editor-toolbar::-webkit-scrollbar, .editor-panel::-webkit-scrollbar, .lo-toolbars::-webkit-scrollbar,
+.lo-sidebar::-webkit-scrollbar, .lo-canvas-scroller::-webkit-scrollbar {
+  display: none !important;
 }
 
 body {
@@ -124,12 +117,12 @@ h2 { font-size: 1.45rem; }
 h3 { font-size: 1.15rem; }
 
 /* ========================================================
-   BARRA LATERAL / SIDEBAR (Inspirada en expedientes.click)
+   BARRA LATERAL / SIDEBAR (100% Blanco Institucional)
    ======================================================== */
 .barra-lateral {
   width: 260px;
-  background: linear-gradient(180deg, var(--azul-sidebar) 0%, var(--azul-sidebar-end) 100%);
-  color: #fff;
+  background: #FFFFFF;
+  color: #0F172A;
   padding: 24px 16px;
   flex-shrink: 0;
   min-height: 100vh;
@@ -139,9 +132,10 @@ h3 { font-size: 1.15rem; }
   top: 0;
   height: 100vh;
   overflow-y: auto;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+  border-right: 1px solid #E2E8F0;
+  box-shadow: 2px 0 10px rgba(15, 23, 42, 0.04);
   z-index: 40;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .barra-lateral .logo-marca {
@@ -150,7 +144,7 @@ h3 { font-size: 1.15rem; }
   gap: 12px;
   padding: 4px 8px 20px;
   margin-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid #E2E8F0;
 }
 
 .barra-lateral .logo-marca img {
@@ -158,8 +152,8 @@ h3 { font-size: 1.15rem; }
   height: 44px;
   border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  border: 1px solid #E2E8F0;
 }
 
 .barra-lateral .logo-marca .marca-nombre {
@@ -168,6 +162,7 @@ h3 { font-size: 1.15rem; }
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.15;
+  color: #0F172A;
 }
 
 .barra-lateral .logo-marca .marca-nombre small {
@@ -192,20 +187,21 @@ h3 { font-size: 1.15rem; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.45);
+  color: #64748B;
   padding: 12px 10px 4px;
 }
 
-.barra-lateral nav a {
+.barra-lateral nav a, .nav-item, .module-card {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #cbd5e1;
-  transition: var(--trans);
+  color: #334155;
+  transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1), background-color 200ms ease, box-shadow 200ms ease, color 200ms ease;
+  transform-origin: left center;
   position: relative;
 }
 
@@ -217,37 +213,39 @@ h3 { font-size: 1.15rem; }
   width: 24px;
 }
 
-.barra-lateral nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  transform: translateX(3px);
+.barra-lateral nav a:hover, .nav-item:hover, .module-card:hover {
+  transform: scale(1.05);
+  background-color: #EFF6FF !important;
+  color: #1D4ED8 !important;
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.08);
+  border-radius: 10px;
 }
 
 .barra-lateral nav a.activo {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(30, 58, 95, 0.95));
-  color: #fff;
+  background: #EFF6FF;
+  color: #1D4ED8;
   font-weight: 600;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.08);
+  border: 1px solid #DBEAFE;
 }
 
 .barra-lateral nav a.activo::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 20%;
-  bottom: 20%;
+  top: 15%;
+  bottom: 15%;
   width: 3.5px;
   border-radius: 0 4px 4px 0;
-  background: var(--dorado);
+  background: #1D4ED8;
 }
 
 .barra-lateral .usuario-actual {
   margin-top: auto;
   padding-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid #E2E8F0;
   font-size: 0.82rem;
-  color: #94a3b8;
+  color: #64748B;
 }
 
 .barra-lateral .usuario-actual .user-card {
@@ -261,8 +259,9 @@ h3 { font-size: 1.15rem; }
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: linear-gradient(135deg, var(--azul-accent), var(--dorado));
-  color: #fff;
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #DBEAFE;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,17 +270,17 @@ h3 { font-size: 1.15rem; }
 }
 
 .barra-lateral .usuario-actual strong {
-  color: #fff;
+  color: #0F172A;
   font-weight: 600;
   display: block;
 }
 
 .barra-lateral button.salir {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f1f5f9;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  color: #64748B;
   padding: 8px 12px;
-  border-radius: 10px;
+  border-radius: 8px;
   width: 100%;
   cursor: pointer;
   font-weight: 600;
@@ -290,13 +289,13 @@ h3 { font-size: 1.15rem; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  transition: var(--trans);
+  transition: all 150ms ease;
 }
 
 .barra-lateral button.salir:hover {
-  background: rgba(239, 68, 68, 0.18);
-  border-color: rgba(239, 68, 68, 0.4);
-  color: #fca5a5;
+  background: #FEE2E2;
+  border-color: #FECACA;
+  color: #DC2626;
 }
 
 /* ========================================================
@@ -338,25 +337,6 @@ h3 { font-size: 1.15rem; }
   gap: 12px;
 }
 
-.toggle-tema-btn {
-  background: var(--bg-card);
-  border: 1px solid var(--borde);
-  color: var(--texto);
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--trans);
-  font-size: 1.1rem;
-}
-
-.toggle-tema-btn:hover {
-  background: var(--bg-subtle);
-  border-color: var(--azul-accent);
-}
 
 /* ========================================================
    TARJETAS Y BENTO GRID (Estilo expedientes.click)
@@ -463,21 +443,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 select option {
-  background-color: var(--bg-card, #ffffff);
-  color: var(--texto, #0f172a);
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
   padding: 8px 12px;
-}
-
-[data-theme="dark"] select option,
-html.dark select option {
-  background-color: #111e2e !important;
-  color: #f8fafc !important;
-}
-
-[data-theme="light"] select option,
-html:not(.dark) select option {
-  background-color: #ffffff !important;
-  color: #0f172a !important;
 }
 
 textarea {
@@ -798,7 +766,7 @@ tbody tr:hover {
 }
 
 /* ========================================================
-   FASE 1 — TEMA BLANCO INSTITUCIONAL & MARCA DE AGUA JUDICIAL
+   TEMA BLANCO INSTITUCIONAL & MARCA DE AGUA JUDICIAL
    ======================================================== */
 body {
   position: relative;
@@ -814,7 +782,7 @@ body::before {
   height: 100vh;
   background: url('/img/poder_judicial.jpg') no-repeat center center;
   background-size: min(580px, 55vw);
-  opacity: 0.045;
+  opacity: 0.035;
   pointer-events: none;
   z-index: 0;
 }
@@ -826,7 +794,7 @@ body::before {
 
 /* Sidebar Colapsable con Transición Fluida */
 .barra-lateral {
-  transition: width 260ms cubic-bezier(0.4, 0, 0.2, 1), transform 260ms cubic-bezier(0.4, 0, 0.2, 1), padding 260ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.sidebar-colapsado .barra-lateral {
@@ -848,25 +816,25 @@ body.sidebar-colapsado .grafo-wrapper {
   flex: 1 1 100% !important;
 }
 
-/* Botón Hamburguesa Flotante */
+/* Botón Hamburguesa Flotante — Siempre ☰, elegante e integrado */
 .btn-hamburguesa-flotante {
   position: fixed;
   top: 14px;
   left: 274px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 8px;
-  background: var(--bg-card);
-  border: 1px solid var(--borde);
-  color: var(--texto);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  color: #0F172A;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   cursor: pointer;
   z-index: 999;
-  transition: left 260ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms ease, background-color 150ms ease;
+  transition: left 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
 }
 
 body.sidebar-colapsado .btn-hamburguesa-flotante {
@@ -874,8 +842,9 @@ body.sidebar-colapsado .btn-hamburguesa-flotante {
 }
 
 .btn-hamburguesa-flotante:hover {
-  background: var(--azul-primary);
-  color: #fff;
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border-color: #DBEAFE;
   transform: scale(1.05);
 }
 

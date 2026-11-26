@@ -67,35 +67,27 @@ function formatoFecha(fecha) {
   return new Date(fecha).toLocaleDateString('es-PY');
 }
 
-// Gestión de tema (Modo Oscuro / Claro) estilo expedientes.click
+// Tema Único Blanco Institucional Forense — Limpieza activa de modo oscuro
+(function () {
+  try {
+    localStorage.removeItem('sysjuridico_theme');
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.remove('dark');
+  } catch {}
+})();
+
 function obtenerTemaActual() {
-  return localStorage.getItem('sysjuridico_theme') || 'light';
+  return 'light';
 }
 
-function aplicarTema(tema) {
-  document.documentElement.setAttribute('data-theme', tema);
-  if (tema === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  localStorage.setItem('sysjuridico_theme', tema);
-  const btn = document.getElementById('btnToggleTema');
-  if (btn) btn.innerHTML = tema === 'dark' ? '☀️' : '🌙';
+function aplicarTema() {
+  document.documentElement.setAttribute('data-theme', 'light');
+  document.documentElement.classList.remove('dark');
 }
 
 function alternarTema() {
-  const actual = obtenerTemaActual();
-  aplicarTema(actual === 'dark' ? 'light' : 'dark');
+  // Tema oscuro permanentemente deshabilitado
 }
-
-// Inicializar tema inmediatamente
-(function () {
-  try {
-    const temaGuardado = localStorage.getItem('sysjuridico_theme') || 'light';
-    aplicarTema(temaGuardado);
-  } catch {}
-})();
 
 function formatoGs(numero) {
   return new Intl.NumberFormat('es-PY').format(Math.round(numero || 0)) + ' Gs.';
@@ -106,7 +98,7 @@ function formatoFecha(fecha) {
   return new Date(fecha).toLocaleDateString('es-PY');
 }
 
-// Construye la barra lateral de navegación según el rol del usuario estilo expedientes.click
+// Construye la barra lateral de navegación según el rol del usuario (100% Blanco Institucional)
 function renderBarraLateral(paginaActiva) {
   const { usuario } = obtenerSesion();
   if (!usuario) return;
@@ -151,8 +143,6 @@ function renderBarraLateral(paginaActiva) {
     .slice(0, 2)
     .toUpperCase();
 
-  const temaActual = obtenerTemaActual();
-
   contenedor.innerHTML = `
     <div class="logo-marca">
       <img src="/img/logo.jpg" alt="Logo LIN GROUP & Asociados" onerror="this.src='/877114.jpg'" />
@@ -183,9 +173,6 @@ function renderBarraLateral(paginaActiva) {
           <strong style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">${usuario.nombre}</strong>
           <span style="font-size:0.75rem; color:var(--dorado); text-transform:uppercase; font-weight:700">${usuario.rol}</span>
         </div>
-        <button id="btnToggleTema" class="toggle-tema-btn" onclick="alternarTema()" title="Cambiar modo oscuro/claro" style="width:32px; height:32px; font-size:0.9rem">
-          ${temaActual === 'dark' ? '☀️' : '🌙'}
-        </button>
       </div>
       <button class="salir" onclick="cerrarSesion()">
         <span>🚪</span> Cerrar sesión
@@ -223,7 +210,7 @@ function actualizarIconoHamburguesa() {
   const btn = document.getElementById('btnHamburguesaGlobal');
   if (btn) {
     const colapsado = document.body.classList.contains('sidebar-colapsado');
-    btn.innerHTML = colapsado ? '☰' : '✕';
+    btn.innerHTML = '☰';
     btn.title = colapsado ? 'Expandir barra lateral' : 'Colapsar barra lateral (100% pantalla)';
   }
 }

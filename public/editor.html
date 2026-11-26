@@ -1,89 +1,56 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="dark" class="dark">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Editor Forense Judicial | SysJuridico &mdash; Estilo LibreOffice Writer</title>
+  <title>Editor Forense Judicial | SysJuridico &mdash; Redactor Legal Forense</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&family=Tinos:ital,wght@0,400;0,700;1,400&family=Liberation+Serif&display=swap" rel="stylesheet">
   <style>
     :root {
-      --text-primary: var(--texto, #0f172a);
-      --text-secondary: var(--texto-secundario, #475569);
-      --text-muted: var(--texto-muted, #64748b);
-      --border-color: var(--borde, #e2e8f0);
-      --bg-main: var(--bg-app, #f4f7fb);
-      --bg-card: var(--bg-card, #ffffff);
-      --bg-hover: var(--bg-card-hover, #f8fafc);
-      --primary: var(--azul-accent, #2563eb);
-      --lo-chrome-bg: #2b313a;
-      --lo-chrome-border: #3c4452;
-      --lo-toolbar-bg: #222730;
-      --lo-btn-hover: #3a4352;
-      --lo-text: #e2e8f0;
-      --lo-ruler-bg: #1e232b;
-      --lo-workspace: #181c24;
-    }
-
-    [data-theme="dark"], html.dark {
-      --text-primary: #f8fafc;
-      --text-secondary: #cbd5e1;
-      --text-muted: #94a3b8;
-      --border-color: rgba(255, 255, 255, 0.12);
-      --bg-main: #0a131e;
-      --bg-card: #111e2e;
-      --bg-hover: #152438;
-      --lo-chrome-bg: #1a2230;
-      --lo-chrome-border: #283548;
-      --lo-toolbar-bg: #131a24;
-      --lo-btn-hover: #233044;
-      --lo-text: #f1f5f9;
-      --lo-ruler-bg: #0f1622;
-      --lo-workspace: #0b1018;
-    }
-
-    [data-theme="light"], html:not(.dark) {
-      --text-primary: #0f172a;
+      --text-primary: #0F172A;
       --text-secondary: #334155;
-      --text-muted: #64748b;
-      --border-color: #cbd5e1;
-      --bg-main: #f1f5f9;
-      --bg-card: #ffffff;
-      --bg-hover: #f8fafc;
-      --lo-chrome-bg: #e2e8f0;
-      --lo-chrome-border: #cbd5e1;
-      --lo-toolbar-bg: #f8fafc;
-      --lo-btn-hover: #e2e8f0;
-      --lo-text: #0f172a;
-      --lo-ruler-bg: #e2e8f0;
-      --lo-workspace: #cbd5e1;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --bg-main: #F9FBFD;
+      --bg-card: #FFFFFF;
+      --bg-hover: #F1F5F9;
+      --primary: #1D4ED8;
+      --lo-chrome-bg: #F9FBFD;
+      --lo-chrome-border: #E2E8F0;
+      --lo-toolbar-bg: #EDF2FA;
+      --lo-btn-hover: #EFF6FF;
+      --lo-text: #0F172A;
+      --lo-ruler-bg: #FFFFFF;
+      --lo-workspace: #F9FBFD;
     }
 
-    /* Reglas universales para opciones en modo claro y oscuro */
+    /* Scrollbars completamente invisibles */
+    *, *::before, *::after {
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+    }
+    *::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    /* Reglas universales para opciones en modo claro institucional */
     select, .tool-select, .form-input, .lo-select {
-      background-color: var(--bg-card) !important;
-      color: var(--text-primary) !important;
+      background-color: #FFFFFF !important;
+      color: #0F172A !important;
       border: 1px solid var(--border-color);
       font-size: 0.82rem;
-      border-radius: 4px;
+      border-radius: 6px;
       outline: none;
     }
     select option, .tool-select option, .form-input option, .lo-select option {
-      background-color: var(--bg-card) !important;
-      color: var(--text-primary) !important;
+      background-color: #FFFFFF !important;
+      color: #0F172A !important;
       padding: 6px 10px;
-    }
-    [data-theme="dark"] select option,
-    html.dark select option {
-      background-color: #111e2e !important;
-      color: #f8fafc !important;
-    }
-    [data-theme="light"] select option,
-    html:not(.dark) select option {
-      background-color: #ffffff !important;
-      color: #0f172a !important;
     }
 
     html, body.app-body {
@@ -93,7 +60,8 @@
       margin: 0 !important;
       padding: 0 !important;
       overflow: hidden !important;
-      display: block !important; /* Desactiva el display:flex del body de styles.css que restringía el ancho a la mitad */
+      display: block !important;
+      background: var(--bg-main) !important;
     }
 
     /* Layout Completo del Editor */
@@ -109,42 +77,75 @@
       font-family: var(--fuente-cuerpo);
     }
 
-    /* 1. Barra de Título Superior */
+    /* 1. Barra de Título Superior Estilo Google Docs */
     .lo-titlebar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.35rem 1rem;
-      background: var(--lo-chrome-bg);
-      border-bottom: 1px solid var(--lo-chrome-border);
-      color: var(--lo-text);
+      padding: 0.5rem 1.25rem 0.25rem;
+      background: #F9FBFD;
+      border-bottom: 1px solid #E2E8F0;
+      color: #0F172A;
       z-index: 30;
       flex-shrink: 0;
+      gap: 12px;
     }
     .lo-title-input {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--lo-text);
+      color: #0F172A;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 4px;
-      padding: 2px 6px;
+      border-radius: 6px;
+      padding: 3px 8px;
       outline: none;
       min-width: 250px;
+      transition: all 150ms ease;
     }
     .lo-title-input:hover, .lo-title-input:focus {
-      background: var(--lo-btn-hover);
-      border-color: var(--lo-chrome-border);
+      background: #FFFFFF;
+      border-color: #CBD5E1;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
     }
 
-    /* 2. Barra de Menú LibreOffice (Archivo, Editar, Ver...) */
+    .header-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+      cursor: pointer;
+      transition: all 150ms ease;
+      text-decoration: none;
+    }
+    .header-action-btn:hover {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: #1D4ED8;
+      box-shadow: 0 2px 6px rgba(29, 78, 216, 0.08);
+    }
+    .header-action-btn.btn-primary {
+      background: #1D4ED8;
+      border-color: #1D4ED8;
+      color: #FFFFFF;
+    }
+    .header-action-btn.btn-primary:hover {
+      background: #1E40AF;
+      border-color: #1E40AF;
+    }
+
+    /* 2. Barra de Menús Google Docs */
     .lo-menubar {
       display: flex;
       align-items: center;
-      padding: 0.15rem 0.5rem;
-      background: var(--lo-chrome-bg);
-      border-bottom: 1px solid var(--lo-chrome-border);
-      gap: 0.1rem;
+      padding: 0.2rem 1rem;
+      background: #F9FBFD;
+      gap: 0.2rem;
       z-index: 25;
       flex-shrink: 0;
     }
@@ -152,31 +153,31 @@
       position: relative;
     }
     .lo-menu-btn {
-      padding: 3px 8px;
-      font-size: 0.8rem;
+      padding: 4px 10px;
+      font-size: 0.82rem;
       font-weight: 500;
-      color: var(--lo-text);
+      color: #334155;
       background: transparent;
       border: 1px solid transparent;
-      border-radius: 3px;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background 0.1s;
+      transition: all 120ms ease;
     }
     .lo-menu-btn:hover, .lo-menu-btn.active {
-      background: var(--lo-btn-hover);
-      border-color: var(--lo-chrome-border);
+      background: #EDF2FA;
+      color: #0F172A;
     }
     .lo-dropdown-menu {
       display: none;
       position: absolute;
       top: 100%;
       left: 0;
-      min-width: 200px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      border-radius: 4px;
-      padding: 4px 0;
+      min-width: 220px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+      border-radius: 8px;
+      padding: 6px 0;
       z-index: 100;
     }
     .lo-dropdown-menu.show {
@@ -186,9 +187,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      color: var(--text-primary);
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      color: #334155;
       text-decoration: none;
       cursor: pointer;
       border: none;
@@ -197,146 +198,164 @@
       text-align: left;
     }
     .lo-dropdown-item:hover {
-      background: var(--primary);
-      color: #fff;
+      background: #EFF6FF;
+      color: #1D4ED8;
     }
     .lo-dropdown-divider {
       height: 1px;
-      background: var(--border-color);
+      background: #E2E8F0;
       margin: 4px 0;
     }
     .lo-shortcut {
-      color: var(--text-muted);
+      color: #94A3B8;
       font-size: 0.72rem;
       margin-left: 12px;
     }
     .lo-dropdown-item:hover .lo-shortcut {
-      color: #e2e8f0;
+      color: #1D4ED8;
     }
 
-    /* 3. Barras de Herramientas Estándar & Formato */
+    /* 3. Barra de Herramientas Estilo Píldora Google Docs */
     .lo-toolbars {
       display: flex;
       flex-direction: column;
-      background: var(--lo-toolbar-bg);
-      border-bottom: 1px solid var(--lo-chrome-border);
+      background: #F9FBFD;
+      padding: 2px 16px 8px;
       flex-shrink: 0;
       z-index: 20;
     }
     .lo-toolbar-row {
       display: flex;
       align-items: center;
-      padding: 2px 8px;
-      gap: 3px;
-      overflow-x: auto;
-      scrollbar-width: thin;
-      white-space: nowrap;
+      padding: 6px 16px;
+      gap: 4px;
+      background: #EDF2FA;
+      border-radius: 9999px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      flex-wrap: wrap;
+      overflow-x: visible;
     }
     .lo-toolbar-row:not(:last-child) {
-      border-bottom: 1px solid rgba(128,128,128,0.15);
+      margin-bottom: 6px;
     }
     .lo-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 26px;
-      height: 26px;
-      padding: 0 5px;
-      border-radius: 3px;
+      min-width: 28px;
+      height: 28px;
+      padding: 0 6px;
+      border-radius: 6px;
       background: transparent;
       border: 1px solid transparent;
-      color: var(--lo-text);
-      font-size: 0.8rem;
+      color: #334155;
+      font-size: 0.82rem;
       cursor: pointer;
       flex-shrink: 0;
-      transition: background 0.1s, border-color 0.1s;
+      transition: all 120ms ease;
     }
     .lo-btn:hover {
-      background: var(--lo-btn-hover);
-      border-color: var(--lo-chrome-border);
+      background: #FFFFFF;
+      color: #1D4ED8;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
     }
     .lo-btn.active {
-      background: rgba(37, 99, 235, 0.25);
-      border-color: var(--primary);
-      color: #60a5fa;
+      background: #DBEAFE;
+      color: #1D4ED8;
+      border-color: #BFDBFE;
     }
     .lo-sep {
       width: 1px;
       height: 18px;
-      background: var(--lo-chrome-border);
-      margin: 0 4px;
+      background: #CBD5E1;
+      margin: 0 6px;
       flex-shrink: 0;
     }
     .lo-select {
-      height: 26px;
-      padding: 0 4px;
-      font-size: 0.78rem;
+      height: 28px;
+      padding: 0 8px;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      background: #FFFFFF !important;
+      border: 1px solid #CBD5E1;
+      color: #0F172A !important;
       flex-shrink: 0;
+      outline: none;
+      font-weight: 500;
+    }
+    .lo-select:hover, .lo-select:focus {
+      border-color: #1D4ED8;
     }
 
-    /* 4. Regla Horizontal Graduada Forense CSJ */
+    /* 4. Regla Horizontal Graduada Forense CSJ (Tema Claro) */
     .lo-ruler-container {
       display: flex;
       justify-content: center;
       width: 100%;
       max-width: 816px;
       margin: 0 auto 1.5rem auto;
-      background: var(--lo-ruler-bg);
-      border: 1px solid var(--lo-chrome-border);
-      border-radius: 4px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
       padding: 0;
       flex-shrink: 0;
       user-select: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
     }
     .lo-ruler {
       width: 100%;
-      height: 20px;
+      height: 22px;
       display: flex;
       position: relative;
       font-size: 9px;
-      color: var(--lo-text);
-      opacity: 0.9;
-      background: #111822;
-      border-radius: 3px;
+      color: #475569;
+      background: #FFFFFF;
+      border-radius: 6px;
       overflow: hidden;
     }
     .lo-ruler-margin-left {
       width: 155px; /* 4.0 cm en escala */
       height: 100%;
-      background: rgba(37, 99, 235, 0.15);
-      border-right: 1.5px solid #3b82f6;
+      background: #E0E7FF;
+      border-right: 1.5px solid #6366F1;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 8px;
-      color: #93c5fd;
-      font-weight: 600;
+      color: #4338CA;
+      font-weight: 700;
     }
     .lo-ruler-body {
       flex: 1;
       height: 100%;
       position: relative;
-      background: rgba(255,255,255,0.04);
+      background: #FFFFFF;
       display: flex;
       justify-content: space-between;
       padding: 0 6px;
       align-items: center;
+      color: #64748B;
+    }
+    .lo-ruler-body span {
+      border-left: 1px solid #94A3B8;
+      padding-left: 2px;
+      font-size: 8px;
     }
     .lo-ruler-margin-right {
       width: 78px; /* 2.0 cm en escala */
       height: 100%;
-      background: rgba(37, 99, 235, 0.15);
-      border-left: 1.5px solid #3b82f6;
+      background: #E0E7FF;
+      border-left: 1.5px solid #6366F1;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 8px;
-      color: #93c5fd;
-      font-weight: 600;
+      color: #4338CA;
+      font-weight: 700;
     }
 
-    /* 5. Área de Trabajo y Lienzo LibreOffice Writer */
+    /* 5. Área de Trabajo y Lienzo A4 Centrado */
     .editor-body {
       display: flex;
       flex: 1;
@@ -345,7 +364,7 @@
       min-height: 0;
       overflow: hidden;
       position: relative;
-      background: var(--lo-workspace);
+      background: #F9FBFD;
     }
     .lo-canvas-scroller {
       flex: 1;
@@ -360,12 +379,13 @@
       align-items: center;
       cursor: default;
       box-sizing: border-box;
+      background: #F9FBFD;
     }
     .lo-document-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 24px; /* Separación visual entre fojas como en LibreOffice */
+      gap: 24px;
       width: 100%;
       max-width: 816px;
       margin: 0 auto;
@@ -373,25 +393,26 @@
       transition: transform 0.15s ease;
     }
 
-    /* Foja A4 Forense CSJ con Marcas de Corte de LibreOffice */
+    /* Foja A4 Forense CSJ con Marcas de Corte */
     .hoja-pagina-lo {
       width: 100%;
       max-width: 816px;
       min-height: 1120px;
       box-sizing: border-box;
-      background: #ffffff;
-      color: #0f172a;
-      /* Margen Judicial CSJ: Sup 35mm, Der 20mm, Inf 25mm, Izq 40mm (para cosido de expediente) */
+      background: #FFFFFF;
+      color: #0F172A;
+      /* Margen Judicial CSJ: Sup 35mm, Der 20mm, Inf 25mm, Izq 40mm */
       padding: 35mm 20mm 25mm 40mm;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
-      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+      border: 1px solid #E2E8F0;
+      border-radius: 4px;
       outline: none;
       font-family: 'Liberation Mono', 'Courier New', 'Courier Prime', monospace;
       font-size: 12pt;
       line-height: 1.5;
       text-align: justify;
       position: relative;
-      caret-color: #000000;
+      caret-color: #0F172A;
       cursor: text;
       user-select: text !important;
       -webkit-user-select: text !important;
@@ -404,10 +425,10 @@
     }
     .hoja-pagina-lo:focus {
       outline: none;
-      box-shadow: 0 10px 40px rgba(37, 99, 235, 0.28), 0 0 0 1px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 20px rgba(29, 78, 216, 0.15), 0 0 0 1px rgba(29, 78, 216, 0.3);
     }
 
-    /* Marcas de corte / esquina de LibreOffice Writer (┌ ┐ └ ┘) */
+    /* Marcas de corte / esquina */
     .hoja-pagina-lo::before, .hoja-pagina-lo::after {
       content: '';
       position: absolute;
@@ -417,13 +438,11 @@
       width: 14px;
       height: 14px;
     }
-    /* Esquina superior izquierda */
     .hoja-pagina-lo::before {
       top: 35mm;
       left: 40mm;
       border-width: 1px 0 0 1px;
     }
-    /* Esquina superior derecha */
     .hoja-pagina-lo::after {
       top: 35mm;
       right: 20mm;
@@ -463,7 +482,7 @@
       right: 20mm;
       bottom: 25mm;
       left: 40mm;
-      border: 1px dashed rgba(59, 130, 246, 0.35);
+      border: 1px dashed rgba(29, 78, 216, 0.35);
       pointer-events: none;
       border-radius: 2px;
     }
@@ -478,19 +497,20 @@
     }
     .hoja-pagina-lo h1, .hoja-pagina-lo h2, .hoja-pagina-lo h3 {
       font-family: 'Poppins', 'Inter', sans-serif;
-      color: #0f172a;
+      color: #0F172A;
       margin-top: 1.1em;
       margin-bottom: 0.5em;
     }
 
-    /* 6. Panel Lateral de LibreOffice (Propiedades / Techapyrã IA) */
+    /* 6. Panel Lateral (Techapyrã IA Forense) */
     .lo-sidebar {
       width: 380px;
-      background: var(--bg-card);
-      border-left: 1px solid var(--border-color);
+      background: #FFFFFF;
+      border-left: 1px solid #E2E8F0;
       display: flex;
       flex-direction: column;
       z-index: 20;
+      box-shadow: -2px 0 10px rgba(15, 23, 42, 0.03);
       transition: width 0.25s, transform 0.25s;
     }
     .lo-sidebar.collapsed {
@@ -501,39 +521,40 @@
       height: 100%;
     }
     .lo-sidebar-header {
-      padding: 0.6rem 0.8rem;
-      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #E2E8F0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--lo-toolbar-bg);
+      background: #F8FAFC;
     }
     .lo-sidebar-tabs {
       display: flex;
-      border-bottom: 1px solid var(--border-color);
-      background: var(--bg-card);
+      border-bottom: 1px solid #E2E8F0;
+      background: #FFFFFF;
     }
     .lo-tab-btn {
       flex: 1;
-      padding: 8px 4px;
-      font-size: 0.76rem;
+      padding: 9px 4px;
+      font-size: 0.78rem;
       font-weight: 600;
-      color: var(--text-muted);
+      color: #64748B;
       background: transparent;
       border: none;
       border-bottom: 2px solid transparent;
       cursor: pointer;
       text-align: center;
       white-space: nowrap;
+      transition: all 150ms ease;
     }
     .lo-tab-btn:hover {
-      color: var(--text-primary);
-      background: var(--bg-hover);
+      color: #1D4ED8;
+      background: #EFF6FF;
     }
     .lo-tab-btn.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-      background: rgba(37, 99, 235, 0.08);
+      color: #1D4ED8;
+      border-bottom-color: #1D4ED8;
+      background: #EFF6FF;
     }
     .lo-sidebar-content {
       flex: 1;
@@ -542,17 +563,18 @@
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
+      background: #FFFFFF;
     }
 
-    /* 7. Barra de Búsqueda y Reemplazo (LibreOffice Find Bar) */
+    /* 7. Barra de Búsqueda y Reemplazo */
     .lo-findbar {
       display: none;
       align-items: center;
       gap: 6px;
-      padding: 4px 12px;
-      background: var(--lo-chrome-bg);
-      border-top: 1px solid var(--lo-chrome-border);
-      color: var(--lo-text);
+      padding: 6px 12px;
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      color: #0F172A;
       font-size: 0.8rem;
       z-index: 25;
       flex-shrink: 0;
@@ -561,25 +583,25 @@
       display: flex;
     }
     .lo-find-input {
-      padding: 3px 8px;
+      padding: 4px 8px;
       font-size: 0.8rem;
-      border-radius: 3px;
-      border: 1px solid var(--lo-chrome-border);
-      background: var(--bg-card);
-      color: var(--text-primary);
+      border-radius: 4px;
+      border: 1px solid #CBD5E1;
+      background: #FFFFFF;
+      color: #0F172A;
       outline: none;
       max-width: 180px;
     }
 
-    /* 8. Barra de Estado Inferior LibreOffice Writer */
+    /* 8. Barra de Estado Inferior */
     .lo-statusbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3px 12px;
-      background: var(--lo-chrome-bg);
-      border-top: 1px solid var(--lo-chrome-border);
-      color: var(--lo-text);
+      padding: 4px 14px;
+      background: #F8FAFC;
+      border-top: 1px solid #E2E8F0;
+      color: #64748B;
       font-size: 0.75rem;
       z-index: 25;
       flex-shrink: 0;
@@ -588,20 +610,39 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-      padding: 1px 8px;
-      border-radius: 3px;
-      background: rgba(0,0,0,0.15);
-      border: 1px solid rgba(255,255,255,0.06);
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #EDF2FA;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+    }
+
+    /* Chips y Botones del Asistente */
+    .btn-chip {
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      color: #334155;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 0.76rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 150ms ease;
+    }
+    .btn-chip:hover {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: #1D4ED8;
     }
 
     /* Botón Flotante de IA al seleccionar texto */
     .floating-ai-bubble {
       display: none;
       position: absolute;
-      background: #111e2e;
-      border: 1px solid #3b82f6;
-      border-radius: 6px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      background: #FFFFFF;
+      border: 1px solid #BFDBFE;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
       padding: 4px 6px;
       gap: 4px;
       z-index: 1000;
@@ -620,7 +661,7 @@
         height: auto !important;
         overflow: visible !important;
       }
-      .lo-titlebar, .lo-menubar, .lo-toolbars, .lo-ruler-container, .lo-sidebar, .lo-findbar, .lo-statusbar, .floating-ai-bubble {
+      .lo-titlebar, .lo-menubar, .lo-toolbars, .lo-ruler-container, .lo-sidebar, .lo-findbar, .lo-statusbar, .floating-ai-bubble, .lo-outline-panel {
         display: none !important;
       }
       .lo-document-container {
@@ -642,29 +683,31 @@
 </head>
 <body class="app-body">
   <div class="editor-layout">
-    <!-- 1. Barra de Título Superior LibreOffice -->
+    <!-- 1. Barra de Título Superior Estilo Google Docs -->
     <header class="lo-titlebar">
-      <div style="display: flex; align-items: center; gap: 0.6rem;">
-        <a href="/expedientes.html" class="lo-btn" title="Volver al Gestor de Expedientes">←</a>
-        <input type="text" id="tituloDocumento" class="lo-title-input" value="Escrito Judicial Sin Título" title="Haga clic para editar el nombre del escrito">
-        <span class="badge badge-info" id="badgeExpediente" style="font-size: 0.72rem;">Sin expediente vinculado</span>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="/expedientes.html" class="header-action-btn" title="Volver al Gestor de Expedientes" style="padding: 6px 10px;">
+          <span>←</span>
+        </a>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.4rem; color: #1D4ED8;">📄</span>
+          <input type="text" id="tituloDocumento" class="lo-title-input" value="Escrito Judicial Sin Título" title="Haga clic para editar el nombre del escrito">
+        </div>
+        <span class="badge badge-info" id="badgeExpediente" style="font-size: 0.72rem; background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE;">Sin expediente vinculado</span>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 0.4rem;">
-        <button class="lo-btn" id="btnGuardarEnExpediente" title="Guardar escrito en causa judicial (Ctrl+S)">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button class="header-action-btn btn-primary" id="btnGuardarEnExpediente" title="Guardar escrito en causa judicial (Ctrl+S)">
           <span>💾 Guardar</span>
         </button>
-        <button class="lo-btn" id="btnDescargarDocx" title="Exportar a Microsoft Word (.docx / .doc)">
-          <span>📥 .DOC</span>
+        <button class="header-action-btn" id="btnDescargarDocx" title="Exportar a Microsoft Word (.docx / .doc)">
+          <span>📥 .DOCX</span>
         </button>
-        <button class="lo-btn" onclick="window.print()" title="Imprimir o exportar PDF forense">
+        <button class="header-action-btn" onclick="window.print()" title="Imprimir o exportar PDF forense">
           <span>🖨️ PDF</span>
         </button>
-        <button class="lo-btn" id="btnToggleSidebar" title="Mostrar/ocultar panel lateral">
-          <span>📑 Panel</span>
-        </button>
-        <button class="lo-btn" id="btnToggleTema" title="Cambiar tema claro / oscuro" onclick="alternarTema()">
-          <span>🌙</span>
+        <button class="header-action-btn" id="btnToggleSidebar" title="Mostrar/ocultar panel lateral de Techapyrã IA">
+          <span>📑 Panel IA</span>
         </button>
       </div>
     </header>

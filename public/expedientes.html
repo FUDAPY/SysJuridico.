@@ -120,48 +120,48 @@
     </div>
   </div>
 
-  <!-- Modal Crear Nuevo Expediente (Exacto a Image 4) -->
+  <!-- Modal Crear Nuevo Expediente (100% Tema Blanco Institucional) -->
   <div class="modal-fondo oculto" id="modalExpediente">
-    <div class="modal" style="max-width:620px; background:#162032; border:1px solid #22324b; border-radius:14px; padding:24px; color:#fff;">
+    <div class="modal" style="max-width:620px; background:var(--bg-card); border:1px solid var(--borde); border-radius:14px; padding:24px; color:var(--texto); box-shadow:var(--sombra-modal);">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <h3 style="margin:0; font-size:1.25rem; font-weight:700;">Crear Nuevo Expediente</h3>
+        <h3 style="margin:0; font-size:1.25rem; font-weight:700; color:var(--texto);">Crear Nuevo Expediente</h3>
         <button onclick="cerrarModalExpediente()" style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:14px;">
         <!-- Carátula del Expediente -->
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Carátula del Expediente</label>
-          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Carátula del Expediente</label>
+          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <!-- Número y Año -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Número</label>
-            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Número</label>
+            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Año</label>
-            <input id="eAno" type="number" value="2026" placeholder="2026" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Año</label>
+            <input id="eAno" type="number" value="2026" placeholder="2026" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
         </div>
 
         <!-- Juzgado / Despacho -->
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Juzgado / Despacho</label>
-          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Juzgado / Despacho</label>
+          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <!-- Circunscripción y Materia -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Circunscripción</label>
-            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Circunscripción</label>
+            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Materia</label>
-            <select id="eMateria" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;">
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Materia</label>
+            <select id="eMateria" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;">
               <option value="">Seleccionar...</option>
               <option value="Civil y Comercial" selected>Civil y Comercial</option>
               <option value="Laboral">Laboral</option>
@@ -176,27 +176,27 @@
         <!-- Tipo de Proceso y Fase -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Tipo de Proceso</label>
-            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Tipo de Proceso</label>
+            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Fase</label>
-            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Fase</label>
+            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
         </div>
 
         <!-- Monto / Cuantía -->
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Monto / Cuantía (Gs.)</label>
-          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Monto / Cuantía (Gs.)</label>
+          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <!-- Cliente Titular y Abogado Asignado -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div style="position:relative;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <label style="font-size:0.85rem; color:#cbd5e1;">Cliente Titular (CRM)</label>
-              <span id="badgeClienteSeleccionado" style="font-size:0.75rem; color:#10b981; font-weight:600; display:none;">✓ Seleccionado</span>
+              <label style="font-size:0.85rem; color:var(--texto-secundario); font-weight:600;">Cliente Titular (CRM)</label>
+              <span id="badgeClienteSeleccionado" style="font-size:0.75rem; color:var(--verde); font-weight:600; display:none;">✓ Seleccionado</span>
             </div>
             <div style="position:relative; display:flex; align-items:center;">
               <input 
@@ -204,52 +204,52 @@
                 type="text" 
                 autocomplete="off"
                 placeholder="Escribí nombre o C.I. del cliente..." 
-                style="width:100%; padding:10px 36px 10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" 
+                style="width:100%; padding:10px 36px 10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" 
               />
-              <button type="button" id="btnLimpiarCliente" title="Limpiar cliente" style="position:absolute; right:10px; background:transparent; border:none; color:#94a3b8; font-size:1rem; cursor:pointer; display:none;">✕</button>
+              <button type="button" id="btnLimpiarCliente" title="Limpiar cliente" style="position:absolute; right:10px; background:transparent; border:none; color:var(--texto-muted); font-size:1rem; cursor:pointer; display:none;">✕</button>
             </div>
             <input type="hidden" id="eCliente" />
-            <div id="dropdownSugerenciasClientes" style="display:none; position:absolute; top:100%; left:0; right:0; max-height:220px; overflow-y:auto; background:#1e293b; border:1px solid #334155; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.5); z-index:100; margin-top:4px;"></div>
+            <div id="dropdownSugerenciasClientes" style="display:none; position:absolute; top:100%; left:0; right:0; max-height:220px; overflow-y:auto; background:var(--bg-card); border:1px solid var(--borde); border-radius:8px; box-shadow:var(--sombra-lg); z-index:100; margin-top:4px;"></div>
           </div>
           <div id="contenedorAbogadoAsignado">
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Abogado Asignado</label>
-            <select id="eAbogado" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;"></select>
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Abogado Asignado</label>
+            <select id="eAbogado" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;"></select>
           </div>
         </div>
 
         <!-- Sección de Crédito Automático Normal -->
-        <div style="background:#0f172a; border:1px solid #22324b; border-radius:8px; padding:12px; margin-top:4px;">
-          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:#60a5fa; font-weight:600;">
+        <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:8px; padding:12px; margin-top:4px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:var(--azul-accent); font-weight:600;">
             <input type="checkbox" id="eCreditoAutomatico" checked onchange="alternarCamposCredito()" style="width:16px; height:16px;" />
             <span>Generar crédito y plan de cuotas automático</span>
           </label>
           
           <div id="grupoCredito" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:10px;">
             <div>
-              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Cuotas</label>
-              <input id="eCantidadCuotas" type="number" min="1" value="3" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;" />
+              <label style="display:block; font-size:0.75rem; color:var(--texto-muted); margin-bottom:4px;">Cuotas</label>
+              <input id="eCantidadCuotas" type="number" min="1" value="3" style="width:100%; padding:8px 10px; background:var(--bg-input); border:1px solid var(--borde); border-radius:6px; color:var(--texto); font-size:0.85rem;" />
             </div>
             <div>
-              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Frecuencia</label>
-              <select id="eFrecuenciaCuotas" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;">
+              <label style="display:block; font-size:0.75rem; color:var(--texto-muted); margin-bottom:4px;">Frecuencia</label>
+              <select id="eFrecuenciaCuotas" style="width:100%; padding:8px 10px; background:var(--bg-input); border:1px solid var(--borde); border-radius:6px; color:var(--texto); font-size:0.85rem;">
                 <option value="mensual" selected>Mensual</option>
                 <option value="quincenal">Quincenal</option>
                 <option value="semanal">Semanal</option>
               </select>
             </div>
             <div>
-              <label style="display:block; font-size:0.75rem; color:#94a3b8; margin-bottom:4px;">Entrega inicial</label>
-              <input id="eEntregaInicial" type="number" min="0" value="0" style="width:100%; padding:8px 10px; background:#162032; border:1px solid #22324b; border-radius:6px; color:#fff; font-size:0.85rem;" />
+              <label style="display:block; font-size:0.75rem; color:var(--texto-muted); margin-bottom:4px;">Entrega inicial</label>
+              <input id="eEntregaInicial" type="number" min="0" value="0" style="width:100%; padding:8px 10px; background:var(--bg-input); border:1px solid var(--borde); border-radius:6px; color:var(--texto); font-size:0.85rem;" />
             </div>
           </div>
         </div>
       </div>
 
       <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:22px;">
-        <button class="btn-secundario" onclick="cerrarModalExpediente()" style="padding:10px 20px; border-radius:8px; background:transparent; border:1px solid #22324b; color:#cbd5e1;">
+        <button class="btn-secundario" onclick="cerrarModalExpediente()" style="padding:10px 20px; border-radius:8px; background:#FFFFFF; border:1px solid var(--borde); color:var(--texto-secundario); font-weight:600; cursor:pointer;">
           Cancelar
         </button>
-        <button class="btn-primario" onclick="guardarExpediente()" style="padding:10px 24px; border-radius:8px; background:#2563eb; color:#fff; font-weight:600; border:none;">
+        <button class="boton btn-primario" onclick="guardarExpediente()" style="padding:10px 24px; border-radius:8px; font-weight:600; cursor:pointer;">
           Crear Expediente
         </button>
       </div>

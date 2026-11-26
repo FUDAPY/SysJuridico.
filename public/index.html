@@ -75,28 +75,29 @@
   .search-container-ai input {
     width: 100%;
     padding: 10px 14px 10px 38px;
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 8px;
-    color: #fff;
+    color: var(--texto);
     font-size: 0.9rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   }
   .search-container-ai .search-icon {
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: #94a3b8;
+    color: var(--texto-muted);
   }
   .search-results-dropdown {
     position: absolute;
     top: 105%;
     left: 0;
     right: 0;
-    background: #0f172a;
-    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: var(--sombra-lg);
     z-index: 50;
     max-height: 320px;
     overflow-y: auto;
@@ -104,12 +105,14 @@
   }
   .search-result-item {
     padding: 10px 14px;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid var(--borde);
     cursor: pointer;
     font-size: 0.85rem;
+    color: var(--texto);
   }
   .search-result-item:hover {
-    background: #1e293b;
+    background: var(--bg-subtle);
+    color: var(--azul-accent);
   }
 
   .badges-grupo-superior {
@@ -119,31 +122,34 @@
     flex-wrap: wrap;
   }
   .badge-pill-csj {
-    background: #7f1d1d;
-    color: #fecaca;
+    background: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #FECACA;
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
   }
   .badge-pill-ai {
-    background: #4c1d95;
-    color: #ddd6fe;
+    background: #EDE9FE;
+    color: #5B21B6;
+    border: 1px solid #DDD6FE;
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
   }
   .badge-pill-hora {
-    background: #0f172a;
-    border: 1px solid #1e293b;
-    color: #94a3b8;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
+    color: var(--texto-secundario);
     padding: 5px 10px;
     border-radius: 6px;
     font-size: 0.78rem;
     display: flex;
     align-items: center;
     gap: 6px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
   }
 
   .subtitulo-asistente {
@@ -162,7 +168,9 @@
   .subtitulo-icono {
     width: 38px;
     height: 38px;
-    background: #1e3a8a;
+    background: #EFF6FF;
+    color: #1D4ED8;
+    border: 1px solid #DBEAFE;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -171,12 +179,13 @@
   }
 
   .briefing-card {
-    background: #111927;
-    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--texto);
+    box-shadow: var(--sombra);
   }
   .briefing-header {
     display: flex;
@@ -188,21 +197,22 @@
     margin: 0;
     font-size: 1.15rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--texto);
   }
   .briefing-texto {
     font-size: 0.92rem;
-    color: #cbd5e1;
+    color: var(--texto-secundario);
     line-height: 1.5;
     margin-bottom: 16px;
   }
 
   .jurisprudencia-box {
-    background: #0b1324;
-    border: 1px solid #1e293b;
+    background: var(--bg-subtle);
+    border: 1px solid var(--borde);
     border-radius: 10px;
     padding: 16px;
-    border-left: 4px solid #10b981;
+    border-left: 4px solid var(--verde);
+    color: var(--texto);
   }
   .juris-header {
     display: flex;
@@ -210,7 +220,7 @@
     align-items: center;
     margin-bottom: 8px;
     font-size: 0.8rem;
-    color: #10b981;
+    color: var(--verde-texto);
     font-weight: 700;
   }
 
@@ -221,20 +231,22 @@
     margin-bottom: 24px;
   }
   .kpi-card {
-    background: #111927;
-    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 10px;
     padding: 16px;
-    color: #fff;
-    transition: transform 0.2s;
+    color: var(--texto);
+    box-shadow: var(--sombra);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   .kpi-card:hover {
     transform: translateY(-2px);
+    box-shadow: var(--sombra-lg);
   }
-  .kpi-card.novedades { border-top: 3px solid #3b82f6; }
-  .kpi-card.caducidad { border-top: 3px solid #ef4444; background: #1c141a; }
-  .kpi-card.plazos { border-top: 3px solid #10b981; }
-  .kpi-card.impulsar { border-top: 3px solid #a855f7; background: #191428; }
+  .kpi-card.novedades { border-top: 3px solid #1D4ED8; }
+  .kpi-card.caducidad { border-top: 3px solid #EF4444; background: #FEF2F2; }
+  .kpi-card.plazos { border-top: 3px solid #10B981; }
+  .kpi-card.impulsar { border-top: 3px solid #8B5CF6; background: #F5F3FF; }
   .kpi-titulo {
     font-size: 0.75rem;
     font-weight: 700;
@@ -244,17 +256,18 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 8px;
-    color: #94a3b8;
+    color: var(--texto-muted);
   }
   .kpi-valor {
     font-size: 2.1rem;
     font-weight: 800;
     line-height: 1;
     margin-bottom: 6px;
+    color: var(--texto);
   }
   .kpi-sub {
     font-size: 0.8rem;
-    color: #94a3b8;
+    color: var(--texto-muted);
   }
 
   .prioridades-layout {
@@ -270,20 +283,23 @@
   }
 
   .prioridad-card {
-    background: #111927;
-    border: 1px solid #1e293b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 14px;
-    color: #fff;
+    color: var(--texto);
+    box-shadow: var(--sombra);
   }
   .prioridad-card.alerta-novedad {
-    background: #1e1914;
-    border: 1px solid #78350f;
+    background: #FFFBEB;
+    border: 1px solid #FCD34D;
+    color: #92400E;
   }
   .prioridad-card.alerta-inactivo {
-    background: #181615;
-    border: 1px solid #451a03;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
   }
 
   /* Barra inferior persistente de consulta IA con @ expediente */
@@ -292,16 +308,15 @@
     bottom: 14px;
     left: calc(260px + 20px);
     right: 24px;
-    background: #111927;
-    border: 1px solid #22324b;
+    background: #FFFFFF;
+    border: 1px solid var(--borde);
     border-radius: 12px;
     padding: 8px 12px;
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--sombra-modal);
     z-index: 100;
-    backdrop-filter: blur(14px);
   }
   @media (max-width: 768px) {
     .prompt-bar-flotante {
@@ -314,7 +329,7 @@
     flex: 1;
     background: transparent;
     border: none;
-    color: #fff;
+    color: var(--texto);
     font-size: 0.92rem;
     outline: none;
     padding: 6px 0;
@@ -322,13 +337,13 @@
   .prompt-bar-flotante .btn-adjuntar {
     background: transparent;
     border: none;
-    color: #94a3b8;
+    color: var(--texto-muted);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 4px;
   }
   .prompt-bar-flotante .btn-enviar-ai {
-    background: #2563eb;
+    background: var(--azul-accent);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -342,7 +357,7 @@
     transition: background 0.2s;
   }
   .prompt-bar-flotante .btn-enviar-ai:hover {
-    background: #1d4ed8;
+    background: var(--azul-accent-hover);
   }
 </style>
 </head>
@@ -395,8 +410,8 @@
       <div class="subtitulo-left">
         <div class="subtitulo-icono">📂</div>
         <div>
-          <h2 style="font-size:1.25rem; margin:0; font-weight:700; color:#fff;">
-            Centro operativo / <span style="color:#60a5fa;">Asistente Juridico</span>
+          <h2 style="font-size:1.25rem; margin:0; font-weight:700; color:var(--texto);">
+            Centro operativo / <span style="color:var(--azul-accent);">Asistente Jurídico</span>
           </h2>
           <div style="font-size:0.82rem; color:var(--texto-muted);" id="subtituloConexionCSJ">
             Conectado a <span id="cantCausasActivas">0</span> causas y doctrina CSJ
@@ -405,7 +420,7 @@
       </div>
 
       <div style="display:flex; align-items:center; gap:10px;">
-        <span class="badge" style="background:#1e293b; color:#cbd5e1; padding:6px 12px; border-radius:20px; font-size:0.82rem;">
+        <span class="badge" style="background:#EFF6FF; color:#1D4ED8; border:1px solid #BFDBFE; padding:6px 12px; border-radius:20px; font-size:0.82rem; font-weight:600;">
           Seguimiento (<span id="cantSeguimiento">0</span>)
         </span>
         <button class="boton btn-secundario btn-sm" onclick="alternarVistaFinanciera()" title="Ver métricas de recaudación y movimientos financieros">
@@ -417,37 +432,37 @@
     <!-- VISTA PRINCIPAL: ASISTENTE JURÍDICO (Images 2 & 3) -->
     <div id="vistaAsistenteJuridico">
       <!-- Widget: Pensamiento Forense & Motivación del Abogado -->
-      <div class="briefing-card" style="border: 1px solid #1e3a5f; background: linear-gradient(135deg, #0b1526 0%, #10213d 100%); margin-bottom: 20px;">
+      <div class="briefing-card" style="border: 1px solid var(--borde); background: #FFFFFF; margin-bottom: 20px; box-shadow: var(--sombra);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
           <div style="display:flex; align-items:center; gap:10px;">
             <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #1d4ed8, #3b82f6); display:flex; align-items:center; justify-content:center; font-size:1.15rem; color:#fff;">
               ⚖️
             </div>
             <div>
-              <h3 style="margin:0; font-size:1.05rem; font-weight:700; color:#fff;">Pensamiento Jurídico &amp; Motivación Forense</h3>
-              <small style="color:#93c5fd; font-size:0.75rem;">Inspiración doctrinaria, ética profesional y vocación de justicia</small>
+              <h3 style="margin:0; font-size:1.05rem; font-weight:700; color:var(--texto);">Pensamiento Jurídico &amp; Motivación Forense</h3>
+              <small style="color:var(--texto-muted); font-size:0.75rem;">Inspiración doctrinaria, ética profesional y vocación de justicia</small>
             </div>
           </div>
           <div style="display:flex; align-items:center; gap:8px;">
-            <button class="boton btn-sm" id="btnEscucharBriefing" onclick="leerBriefingEnVozAlta()" style="background:#1e293b; color:#38bdf8; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;" title="Escuchar en voz alta">
+            <button class="boton btn-sm" id="btnEscucharBriefing" onclick="leerBriefingEnVozAlta()" style="background:#EFF6FF; color:#1D4ED8; border:1px solid #BFDBFE; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;" title="Escuchar en voz alta">
               <span id="iconoVozBriefing">🔊</span> Escuchar
             </button>
-            <button class="boton btn-sm" onclick="siguienteFraseMotivacional()" style="background:#1e293b; color:#60a5fa; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+            <button class="boton btn-sm" onclick="siguienteFraseMotivacional()" style="background:#F8FAFC; color:var(--texto); border:1px solid var(--borde); padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
               <span>🎲</span> Otra reflexión
             </button>
           </div>
         </div>
 
-        <div style="background:rgba(15, 23, 42, 0.7); border:1px solid rgba(59, 130, 246, 0.2); border-radius:10px; padding:18px 22px; position:relative; overflow:hidden;">
-          <div style="position:absolute; right:15px; bottom:-10px; font-size:5rem; color:rgba(59,130,246,0.06); font-family:serif; pointer-events:none; user-select:none;">“</div>
-          <p id="citaTexto" style="font-size:0.96rem; line-height:1.6; color:#e2e8f0; font-style:italic; margin:0 0 10px; font-family:'Inter', sans-serif;">
+        <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:10px; padding:18px 22px; position:relative; overflow:hidden;">
+          <div style="position:absolute; right:15px; bottom:-10px; font-size:5rem; color:rgba(29,78,216,0.06); font-family:serif; pointer-events:none; user-select:none;">“</div>
+          <p id="citaTexto" style="font-size:0.96rem; line-height:1.6; color:var(--texto); font-style:italic; margin:0 0 10px; font-family:'Inter', sans-serif;">
             "Estudia: el derecho se transforma constantemente. Si no sigues sus pasos, serás cada día un poco menos abogado. Piensa: el derecho se aprende estudiando, pero se ejerce pensando. Lucha: tu deber es luchar por el derecho; pero el día en que encuentres en conflicto el derecho con la justicia, lucha por la justicia."
           </p>
           <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-            <span id="citaAutor" style="font-weight:700; color:#fbbf24; font-size:0.85rem; letter-spacing:0.02em;">
+            <span id="citaAutor" style="font-weight:700; color:var(--dorado); font-size:0.85rem; letter-spacing:0.02em;">
               &mdash; Eduardo J. Couture, Los Mandamientos del Abogado
             </span>
-            <span id="citaTema" class="badge" style="background:#1e3a5f; color:#93c5fd; padding:3px 10px; border-radius:12px; font-size:0.72rem; font-weight:600;">
+            <span id="citaTema" class="badge" style="background:#EFF6FF; color:#1D4ED8; border:1px solid #BFDBFE; padding:3px 10px; border-radius:12px; font-size:0.72rem; font-weight:600;">
               Ética &amp; Ejercicio Profesional
             </span>
           </div>
@@ -459,7 +474,7 @@
         <div class="kpi-card novedades" onclick="window.location.href='/expedientes.html?filtro=novedades'" style="cursor:pointer;" title="Haga clic para ver las actuaciones de hoy en Expedientes">
           <div class="kpi-titulo">
             <span>NOVEDADES</span>
-            <span style="color:#3b82f6;">&bull;</span>
+            <span style="color:#1D4ED8;">&bull;</span>
           </div>
           <div class="kpi-valor" id="kpiNovedades">0</div>
           <div class="kpi-sub">actuaciones de hoy &rarr;</div>
@@ -467,73 +482,73 @@
 
         <div class="kpi-card caducidad" onclick="window.location.href='/expedientes.html?filtro=caducidad'" style="cursor:pointer;" title="Haga clic para ver los expedientes en riesgo de caducidad (Art. 172 CPC)">
           <div class="kpi-titulo">
-            <span style="color:#f87171;">CADUCIDAD</span>
+            <span style="color:#DC2626;">CADUCIDAD</span>
             <span>⚠️</span>
           </div>
-          <div class="kpi-valor" id="kpiCaducidad" style="color:#f87171;">0</div>
-          <div class="kpi-sub" style="color:#fca5a5;">en riesgo Art. 172 &rarr;</div>
+          <div class="kpi-valor" id="kpiCaducidad" style="color:#DC2626;">0</div>
+          <div class="kpi-sub" style="color:#DC2626;">en riesgo Art. 172 &rarr;</div>
         </div>
 
         <div class="kpi-card plazos" onclick="window.location.href='/agenda.html'" style="cursor:pointer;" title="Haga clic para ir a la Agenda y Plazos Judiciales">
           <div class="kpi-titulo">
-            <span style="color:#34d399;">PLAZOS</span>
+            <span style="color:#059669;">PLAZOS</span>
             <span>⏰</span>
           </div>
-          <div class="kpi-valor" id="kpiPlazos" style="color:#34d399;">0</div>
+          <div class="kpi-valor" id="kpiPlazos" style="color:#059669;">0</div>
           <div class="kpi-sub">ver calendario judicial &rarr;</div>
         </div>
 
         <div class="kpi-card impulsar" onclick="window.location.href='/expedientes.html?filtro=impulsar'" style="cursor:pointer;" title="Haga clic para ver los procesos para impulsar en Expedientes">
           <div class="kpi-titulo">
-            <span style="color:#c084fc;">PARA IMPULSAR</span>
+            <span style="color:#7C3AED;">PARA IMPULSAR</span>
             <span>🔄</span>
           </div>
-          <div class="kpi-valor" id="kpiImpulsar" style="color:#c084fc;">0</div>
+          <div class="kpi-valor" id="kpiImpulsar" style="color:#7C3AED;">0</div>
           <div class="kpi-sub">para impulsar &rarr;</div>
         </div>
       </div>
  
       <!-- Galería de Plantillas Forenses de Rápida Acción -->
       <div style="margin-bottom: 24px;">
-        <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+        <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--texto-muted); margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
           <span>⚡ ACCESO RÁPIDO A PLANTILLAS JUDICIALES &amp; ESCRITOS FORENSES</span>
-          <a href="/editor.html" style="color:#60a5fa; text-decoration:none; font-size:0.78rem;">Abrir Editor Completo &rarr;</a>
+          <a href="/editor.html" style="color:var(--azul-accent); text-decoration:none; font-size:0.78rem; font-weight:600;">Abrir Editor Completo &rarr;</a>
         </div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px;">
-          <a href="/editor.html" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">📄</div>
-            <strong style="font-size:0.85rem; color:#fff;">Escrito en Blanco</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Formato oficial CSJ con márgenes 4cm/2cm</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Escrito en Blanco</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Formato oficial CSJ con márgenes 4cm/2cm</span>
           </a>
 
-          <a href="/editor.html?plantilla=contestacion" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html?plantilla=contestacion" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">🛡️</div>
-            <strong style="font-size:0.85rem; color:#fff;">Contestación / In Limine</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Excepciones previas y rechazo liminar</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Contestación / In Limine</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Excepciones previas y rechazo liminar</span>
           </a>
 
-          <a href="/editor.html?plantilla=laboral" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html?plantilla=laboral" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">💼</div>
-            <strong style="font-size:0.85rem; color:#fff;">Demanda Laboral</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Despido injustificado y cobro de guaraníes</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Demanda Laboral</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Despido injustificado y cobro de guaraníes</span>
           </a>
 
-          <a href="/editor.html?plantilla=penal" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html?plantilla=penal" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">⚖️</div>
-            <strong style="font-size:0.85rem; color:#fff;">Escrito Penal</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Revisión de medidas cautelares y fianza</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Escrito Penal</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Revisión de medidas cautelares y fianza</span>
           </a>
 
-          <a href="/editor.html?plantilla=urgimiento" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html?plantilla=urgimiento" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">⏰</div>
-            <strong style="font-size:0.85rem; color:#fff;">Urgimiento Procesal</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Impulso de autos contra caducidad Art. 172</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Urgimiento Procesal</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Impulso de autos contra caducidad Art. 172</span>
           </a>
 
-          <a href="/editor.html?plantilla=telegrama" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+          <a href="/editor.html?plantilla=telegrama" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#FFFFFF; border:1px solid var(--borde); border-radius:10px; display:flex; flex-direction:column; gap:4px; box-shadow:var(--sombra);">
             <div style="font-size:1.3rem;">📜</div>
-            <strong style="font-size:0.85rem; color:#fff;">Telegrama Colacionado</strong>
-            <span style="font-size:0.73rem; color:#94a3b8;">Intimación prejudicial formal</span>
+            <strong style="font-size:0.85rem; color:var(--texto);">Telegrama Colacionado</strong>
+            <span style="font-size:0.73rem; color:var(--texto-muted);">Intimación prejudicial formal</span>
           </a>
         </div>
       </div>
@@ -679,44 +694,44 @@
     </button>
   </div>
 
-  <!-- Modal Modal Crear Nuevo Expediente (Image 4) -->
+  <!-- Modal Modal Crear Nuevo Expediente (100% Tema Blanco Institucional) -->
   <div class="modal-fondo oculto" id="modalExpediente">
-    <div class="modal" style="max-width:620px; background:#162032; border:1px solid #22324b; border-radius:14px; padding:24px; color:#fff;">
+    <div class="modal" style="max-width:620px; background:var(--bg-card); border:1px solid var(--borde); border-radius:14px; padding:24px; color:var(--texto); box-shadow:var(--sombra-modal);">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
-        <h3 style="margin:0; font-size:1.25rem; font-weight:700;">Crear Nuevo Expediente</h3>
+        <h3 style="margin:0; font-size:1.25rem; font-weight:700; color:var(--texto);">Crear Nuevo Expediente</h3>
         <button onclick="cerrarModalNuevoExpediente()" style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
       </div>
 
       <div style="display:flex; flex-direction:column; gap:14px;">
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Carátula del Expediente</label>
-          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Carátula del Expediente</label>
+          <input id="eCaratula" placeholder="Ej: Banco XX c/ Juan Perez s/ Ejecución" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Número</label>
-            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Número</label>
+            <input id="eNumero" placeholder="Ej: 123" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Año</label>
-            <input id="eAno" type="number" value="2026" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Año</label>
+            <input id="eAno" type="number" value="2026" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
         </div>
 
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Juzgado / Despacho</label>
-          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Juzgado / Despacho</label>
+          <input id="eJuzgado" placeholder="Ej: Juzgado de Paz del Primer Turno..." style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Circunscripción</label>
-            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Circunscripción</label>
+            <input id="eCircunscripcion" placeholder="Ej: Capital" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Materia</label>
-            <select id="eMateria" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;">
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Materia</label>
+            <select id="eMateria" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;">
               <option value="Civil y Comercial" selected>Civil y Comercial</option>
               <option value="Laboral">Laboral</option>
               <option value="Penal">Penal</option>
@@ -728,23 +743,23 @@
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Tipo de Proceso</label>
-            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Tipo de Proceso</label>
+            <input id="eTipoProceso" placeholder="Ej: Juicio Ejecutivo" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
           <div>
-            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Fase</label>
-            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+            <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Fase</label>
+            <input id="eFase" placeholder="Ej: Inicio / Sentencia" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
           </div>
         </div>
 
         <div>
-          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:#cbd5e1;">Monto / Cuantía (Gs.)</label>
-          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #22324b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+          <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--texto-secundario); font-weight:600;">Monto / Cuantía (Gs.)</label>
+          <input id="eMontoCuantia" type="number" min="0" placeholder="Ej: Gs. 10.000.000" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
         </div>
 
         <!-- Crédito automático activo por defecto -->
-        <div style="background:#0f172a; border:1px solid #22324b; border-radius:8px; padding:12px;">
-          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:#60a5fa; font-weight:600;">
+        <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:8px; padding:12px;">
+          <label style="display:flex; align-items:center; gap:8px; font-size:0.88rem; cursor:pointer; color:var(--azul-accent); font-weight:600;">
             <input type="checkbox" id="eCreditoAutomatico" checked style="width:16px; height:16px;" />
             <span>Generar crédito y plan de cuotas automático</span>
           </label>
@@ -752,8 +767,8 @@
       </div>
 
       <div style="display:flex; justify-content:flex-end; gap:12px; margin-top:22px;">
-        <button class="btn-secundario" onclick="cerrarModalNuevoExpediente()" style="padding:10px 20px; border-radius:8px;">Cancelar</button>
-        <button class="btn-primario" onclick="guardarExpedienteDesdeInicio()" style="padding:10px 24px; border-radius:8px; background:#2563eb; color:#fff; font-weight:600; border:none;">Crear Expediente</button>
+        <button class="btn-secundario" onclick="cerrarModalNuevoExpediente()" style="padding:10px 20px; border-radius:8px; background:#FFFFFF; border:1px solid var(--borde); color:var(--texto-secundario); font-weight:600; cursor:pointer;">Cancelar</button>
+        <button class="boton btn-primario" onclick="guardarExpedienteDesdeInicio()" style="padding:10px 24px; border-radius:8px; font-weight:600; cursor:pointer;">Crear Expediente</button>
       </div>
     </div>
   </div>
