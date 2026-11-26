@@ -11,7 +11,7 @@ const router = express.Router();
 const editorService = require('../services/editorService');
 const Expediente = require('../models/Expediente');
 const Usuario = require('../models/Usuario');
-const { verificarToken } = require('../middlewares/authMiddleware');
+const { protect } = require('../middleware/auth');
 
 // Exportación nativa a .docx
 router.post('/export-docx', async (req, res, next) => {
@@ -43,7 +43,7 @@ router.post('/export-docx', async (req, res, next) => {
 });
 
 // Razonamiento dividido (Split-Brain)
-router.post('/razonamiento', verificarToken, async (req, res, next) => {
+router.post('/razonamiento', protect, async (req, res, next) => {
   try {
     const { instruccion, expedienteId } = req.body;
     if (!instruccion) {
@@ -67,7 +67,7 @@ router.post('/razonamiento', verificarToken, async (req, res, next) => {
     }
 
     // Datos del abogado en sesión
-    const usuario = await Usuario.findById(req.usuario.id);
+    const usuario = req.usuario || (await Usuario.findById(req.usuario?._id || req.usuario?.id));
     const usuarioForense = {
       nombreCompleto: usuario?.nombreCompleto || usuario?.nombre,
       matriculaCSJ: usuario?.matriculaCSJ,
@@ -90,7 +90,7 @@ router.post('/razonamiento', verificarToken, async (req, res, next) => {
 });
 
 // Análisis multimodal de PDF de expediente
-router.post('/analizar-pdf', verificarToken, async (req, res, next) => {
+router.post('/analizar-pdf', protect, async (req, res, next) => {
   try {
     const { textoExtraido, expedienteId } = req.body;
 
