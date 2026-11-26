@@ -210,9 +210,10 @@
   <!-- PASO 4: Cálculo y resultado -->
   <div class="tarjeta no-print paso" id="paso4">
     <h3 style="margin-top:0">Paso 4 &mdash; Liquidación y Dictamen Final</h3>
-    <div style="display:flex; gap:12px; margin-bottom:14px">
+    <div style="display:flex; gap:12px; margin-bottom:14px; flex-wrap:wrap;">
       <button class="btn-primario" onclick="calcular()">🧮 Calcular Liquidación</button>
       <button class="btn-secundario" id="btnGuardar" style="display:none" onclick="guardar()">💾 Guardar en Sistema</button>
+      <button class="btn-primario" id="btnGenerarEscritoEditor" style="display:none; background:#059669; color:#fff;" onclick="transferirAEditorJudicial()">📝 Redactar Demanda en Editor Forense &rarr;</button>
     </div>
     <div id="cajaResultado" style="margin-top:16px"></div>
     <div class="nav-pasos">

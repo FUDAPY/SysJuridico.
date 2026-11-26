@@ -275,22 +275,37 @@ document.addEventListener('DOMContentLoaded', async () => {
       `;
       petitorioTexto = `<p>1. Tenerme por presentado y por constituido el domicilio procesal.</p><p>2. Tener por opuestas las excepciones previas y por contestada la demanda en tiempo y forma oportunos.</p><p>3. En su hora, dictar resolución rechazando la demanda en todos sus términos, con expresa imposición de costas a la actora.</p>`;
     } else if (plantilla === 'laboral') {
+      const qp = new URLSearchParams(window.location.search);
+      const trab = qp.get('trabajador') || clienteNom;
+      const emp = qp.get('empleador') || '[PATRONAL DEMANDADA]';
+      const tot = qp.get('total') ? formatoGs(qp.get('total')) : '...';
+      const pre = qp.get('preaviso') ? formatoGs(qp.get('preaviso')) : '...';
+      const ind = qp.get('indemnizacion') ? formatoGs(qp.get('indemnizacion')) : '...';
+      const agui = qp.get('aguinaldo') ? formatoGs(qp.get('aguinaldo')) : '...';
+      const vac = qp.get('vacaciones') ? formatoGs(qp.get('vacaciones')) : '...';
+      const cargoTrab = qp.get('cargo') || '[CARGO]';
+      const fi = qp.get('ingreso') || '[FECHA INGRESO]';
+      const fs = qp.get('salida') || '[FECHA DESPIDO]';
+
       objetoTexto = `OBJETO: PROMOVER DEMANDA LABORAL POR DESPIDO INJUSTIFICADO Y COBRO DE GUARANÍES.-`;
       cuerpoTexto = `
-        <p><strong>I. RELACIÓN LABORAL Y HECHOS:</strong></p>
-        <p>El trabajador ingresó a prestar servicios subordinados en fecha [FECHA DE INGRESO], desempeñando funciones de [CARGO] con un salario mensual de Gs. [SALARIO]. En fecha [FECHA DE DESPIDO], fue despedido injustificadamente sin mediar preaviso ni liquidación legal correspondiente...</p>
+        <p><strong>I. RELACIÓN LABORAL Y ANTECEDENTES FÁCTICOS:</strong></p>
+        <p>El trabajador <strong>${escapeHtml(trab)}</strong> ingresó a prestar servicios bajo subordinación de la patronal <strong>${escapeHtml(emp)}</strong> en fecha ${escapeHtml(fi)}, desempeñándose como ${escapeHtml(cargoTrab)}. En fecha ${escapeHtml(fs)}, se produjo el despido injustificado sin que mediara preaviso legal ni el pago de las indemnizaciones establecidas de orden público en el Código del Trabajo...</p>
         <p>&nbsp;</p>
-        <p><strong>II. LIQUIDACIÓN DE RUBROS RECLAMADOS:</strong></p>
-        <p>1. Indemnización por despido injustificado (Art. 91 Código del Trabajo): Gs. ...</p>
-        <p>2. Falta de Preaviso (Art. 92 Código del Trabajo): Gs. ...</p>
-        <p>3. Aguinaldo proporcional (Art. 243 Código del Trabajo): Gs. ...</p>
-        <p>4. Vacaciones proporcionales causadas (Art. 218 Código del Trabajo): Gs. ...</p>
-        <p>5. Salarios caídos e indemnización complementaria de ley.</p>
+        <p><strong>II. LIQUIDACIÓN DE RUBROS DEMANDADOS (CÁLCULO OFICIAL MTESS):</strong></p>
+        <p>1. Indemnización por despido injustificado (Art. 91 CT): Gs. <strong>${escapeHtml(ind)}</strong></p>
+        <p>2. Falta de Preaviso legal (Art. 92 CT): Gs. <strong>${escapeHtml(pre)}</strong></p>
+        <p>3. Aguinaldo proporcional devengado (Art. 243 CT): Gs. <strong>${escapeHtml(agui)}</strong></p>
+        <p>4. Vacaciones proporcionales causadas (Art. 218 CT): Gs. <strong>${escapeHtml(vac)}</strong></p>
+        <p><strong>MONTO TOTAL RECLAMADO: GS. ${escapeHtml(tot)}.-</strong> (más intereses moratorios y costas)</p>
         <p>&nbsp;</p>
         <p><strong>III. DERECHO:</strong></p>
-        <p>Fundo esta demanda en los Arts. 86 a 100 de la Constitución Nacional de 1992, Código del Trabajo (Ley 213/93 y modif. Ley 496/95), y el Código Procesal del Trabajo.</p>
+        <p>Fundo esta acción en los Arts. 86 a 100 de la Constitución Nacional de 1992, Arts. 79, 91, 92, 218, 243 y concs. del Código del Trabajo (Ley 213/93 y modif. Ley 496/95), y el Código Procesal del Trabajo.</p>
+        <p>&nbsp;</p>
+        <p><strong>IV. PRUEBAS:</strong></p>
+        <p>Se adjuntan liquidación pericial oficial MTESS, comprobantes y constancias laborales.</p>
       `;
-      petitorioTexto = `<p>1. Tenerme por presentado en el carácter invocado y por constituido el domicilio procesal.</p><p>2. Tener por promovida la demanda laboral y correr traslado a la patronal demandada.</p><p>3. Oportunamente, hacer lugar a la demanda condenando al pago íntegro de los rubros reclamados con costas.</p>`;
+      petitorioTexto = `<p>1. Tenerme por presentado y por constituido el domicilio procesal indicado.</p><p>2. Tener por promovida la demanda laboral en contra de ${escapeHtml(emp)} y correr traslado por el plazo de ley.</p><p>3. Oportunamente, dictar Sentencia condenando a la demandada al pago íntegro de la suma de Gs. ${escapeHtml(tot)} con más intereses y costas.</p>`;
     } else if (plantilla === 'penal') {
       objetoTexto = `OBJETO: SOLICITAR REVISIÓN DE MEDIDAS CAUTELARES Y SUSTITUCIÓN POR MEDIDAS ALTERNATIVAS A LA PRISIÓN.-`;
       cuerpoTexto = `
@@ -1133,5 +1148,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   const plantillaUrl = urlParams.get('plantilla');
   if (plantillaUrl) {
     autocompletarComparecencia(plantillaUrl);
+  }
+
+  const fuenteUrl = urlParams.get('fuente');
+  if (fuenteUrl) {
+    if (selPromptRapido) selPromptRapido.value = 'fundamentar';
+    if (inputPromptAi) {
+      inputPromptAi.value = `Fundamentar jurídicamente aplicando la doctrina y jurisprudencia de: ${fuenteUrl}`;
+    }
+  }
+
+  const insertarTipo = urlParams.get('insertar');
+  if (insertarTipo === 'articulo') {
+    const artText = localStorage.getItem('sysjuridico_editor_insert_text');
+    if (artText && hoja) {
+      localStorage.removeItem('sysjuridico_editor_insert_text');
+      const p = document.createElement('p');
+      p.className = 'parrafo-forense';
+      p.style.fontStyle = 'italic';
+      p.textContent = `[Transcripción Legal / OtelaxWisdom]:\n${artText}`;
+      hoja.appendChild(p);
+      actualizarEstructuraOutline();
+    }
   }
 });

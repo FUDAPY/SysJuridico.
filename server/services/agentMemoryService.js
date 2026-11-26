@@ -316,6 +316,22 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
       tipo: 'hub',
       peso: 14,
     },
+    {
+      id: 'hub_internacional',
+      fuero: 'Internacional',
+      etiqueta: '🌐 Fuero Internacional & DD.HH.',
+      detalle: 'Corte Interamericana de Derechos Humanos (Corte IDH), Pacto de San José de Costa Rica (Ley 1/89), tratados ratificados y control de convencionalidad.',
+      tipo: 'hub',
+      peso: 14,
+    },
+    {
+      id: 'hub_general',
+      fuero: 'General',
+      etiqueta: '📜 Fuero General & Materias Mixtas',
+      detalle: 'Catálogo de 2.811 leyes generales, ordenanzas, leyes marco del acervo positivo paraguayo y disposiciones de aplicación supletoria.',
+      tipo: 'hub',
+      peso: 14,
+    },
   ];
 
   HUBS_TEMATICOS.forEach((hub) => {
@@ -415,6 +431,17 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
       targetHub: 'hub_administrativo',
     },
     {
+      id: 'normas_internacional',
+      fuero: 'Internacional',
+      etiqueta: '🌐 Tratados & Jurisprudencia Corte IDH',
+      detalle: 'Convención Americana sobre Derechos Humanos, Opiniones Consultivas de la Corte IDH, sentencias obligatorias contra el Estado paraguayo y jurisprudencia supranacional.',
+      tipo: 'jurisprudencia',
+      totalLeyes: 85,
+      articulos: 1250,
+      peso: 12,
+      targetHub: 'hub_internacional',
+    },
+    {
       id: 'normas_general',
       fuero: 'General',
       etiqueta: '📜 Legislación General & Tratados (2.811 normas)',
@@ -423,7 +450,7 @@ async function obtenerRedDeConocimiento({ usuarioId } = {}) {
       totalLeyes: 2811,
       articulos: 2600,
       peso: 12,
-      targetHub: 'hub_civil',
+      targetHub: 'hub_general',
     },
   ];
 

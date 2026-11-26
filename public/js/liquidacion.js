@@ -202,12 +202,60 @@ function pintarResultado(data) {
       <p>CONSTE: La presente liquidación fue elaborada por la Calculadora Laboral de la Página Web Oficial del LINGROUP &amp; ASOCIADOS, según datos proporcionados por el usuario. Los cálculos son estimativos. Para más información acérquese al Ministerio.</p>
       <p>Que bajo ningún concepto la presente liquidación es documento válido para reclamaciones administrativas o judiciales.</p>
       <p class="pie-tecnico">CALCULADORA LABORAL DE LA WEB LINGROUP &amp; ASOCIADOS<br />POWERED BY: DEV. GIULIANO CATELLA</p>
-    </div>`;
+    </div>
+  `;
   document.getElementById('reporteTexto').textContent = data.reporte;
   doc.classList.remove('oculto');
+  ultimoResultado = data;
   document.getElementById('btnGuardar').style.display = '';
   document.getElementById('btnImprimir').style.display = '';
+  const btnEditor = document.getElementById('btnGenerarEscritoEditor');
+  if (btnEditor) btnEditor.style.display = '';
   doc.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function transferirAEditorJudicial() {
+  if (!ultimoResultado) return alert('Por favor calcule primero la liquidación.');
+  const trabajador = document.getElementById('liNombre')?.value.trim() || 'Trabajador';
+  const empresa = document.getElementById('laEmpresa')?.value.trim() || 'Patronal Demandada';
+  const cedula = document.getElementById('liCedula')?.value.trim() || '';
+  const cargo = document.getElementById('laCargo')?.value.trim() || 'Empleado/a';
+  const ingreso = document.getElementById('laFechaIngreso')?.value || '';
+  const salida = document.getElementById('laFechaSalida')?.value || '';
+  const total = ultimoResultado.totalGeneral || 0;
+
+  // Extraer desglose de conceptos
+  let preaviso = 0;
+  let indemnizacion = 0;
+  let aguinaldo = 0;
+  let vacaciones = 0;
+
+  if (Array.isArray(ultimoResultado.conceptos)) {
+    for (const c of ultimoResultado.conceptos) {
+      const nom = (c.concepto || '').toLowerCase();
+      if (nom.includes('preaviso')) preaviso = c.monto;
+      else if (nom.includes('indemniza')) indemnizacion = c.monto;
+      else if (nom.includes('aguinaldo')) aguinaldo = c.monto;
+      else if (nom.includes('vacaci')) vacaciones = c.monto;
+    }
+  }
+
+  const query = new URLSearchParams({
+    plantilla: 'laboral',
+    trabajador,
+    cedula,
+    empleador: empresa,
+    cargo,
+    ingreso,
+    salida,
+    total: String(total),
+    preaviso: String(preaviso),
+    indemnizacion: String(indemnizacion),
+    aguinaldo: String(aguinaldo),
+    vacaciones: String(vacaciones),
+  });
+
+  window.location.href = `/editor.html?${query.toString()}`;
 }
 
 async function calcular() {

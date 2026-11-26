@@ -105,16 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
     default: '#94a3b8',
   };
 
-  // Coordenadas fijas orbitales de los 7 Hubs principales por Fuero
+  // Coordenadas fijas orbitales de los 10 Hubs principales por Fuero
   const COORDENADAS_HUBS = {
-    'hub_constitucional': { x: 0, y: -340 },
-    'hub_penal': { x: 380, y: -190 },
-    'hub_civil': { x: 420, y: 160 },
-    'hub_laboral': { x: 230, y: 400 },
-    'hub_ninez': { x: -230, y: 400 },
-    'hub_administrativo': { x: -420, y: 160 },
-    'hub_tributario': { x: -380, y: -190 },
-    'hub_instituciones': { x: 0, y: 320 },
+    'hub_constitucional': { x: 0, y: -380 },
+    'hub_penal': { x: 380, y: -240 },
+    'hub_civil': { x: 440, y: 100 },
+    'hub_laboral': { x: 260, y: 380 },
+    'hub_ninez': { x: -260, y: 380 },
+    'hub_administrativo': { x: -440, y: 100 },
+    'hub_tributario': { x: -380, y: -240 },
+    'hub_instituciones': { x: 0, y: 300 },
+    'hub_internacional': { x: 200, y: -420 },
+    'hub_general': { x: -200, y: -420 },
   };
 
   function determinarHubPertenencia(nodo) {
@@ -126,10 +128,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const fuero = (nodo.fuero || '').toLowerCase();
     if (fuero.includes('penal')) return 'hub_penal';
     if (fuero.includes('laboral')) return 'hub_laboral';
-    if (fuero.includes('niñez') || fuero.includes('menor')) return 'hub_ninez';
+    if (fuero.includes('niñez') || fuero.includes('menor') || fuero.includes('familia')) return 'hub_ninez';
     if (fuero.includes('tribut')) return 'hub_tributario';
     if (fuero.includes('administrativ')) return 'hub_administrativo';
     if (fuero.includes('constitucional')) return 'hub_constitucional';
+    if (fuero.includes('internacional') || fuero.includes('idh')) return 'hub_internacional';
+    if (fuero.includes('general')) return 'hub_general';
     return 'hub_civil';
   }
 
@@ -293,10 +297,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Simulación física con amortiguación y detección de colisiones suaves
   function pasoFisica(factorEnfriamiento = 1.0) {
-    const kRepulsion = 1400 * factorEnfriamiento;
-    const kAtraccion = 0.028 * factorEnfriamiento;
-    const amortiguacion = 0.82;
-    const gravedadCentro = 0.003 * factorEnfriamiento;
+    const kRepulsion = 800 * factorEnfriamiento;
+    const kAtraccion = 0.024 * factorEnfriamiento;
+    const amortiguacion = 0.70;
+    const gravedadCentro = 0.002 * factorEnfriamiento;
 
     let energiaCinetica = 0;
 
@@ -318,18 +322,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (dist < minSeparacion) {
           const overlap = minSeparacion - dist;
-          const push = overlap * 0.45;
+          const push = overlap * 0.12;
           const pushX = (dx / (dist || 1)) * push;
           const pushY = (dy / (dist || 1)) * push;
           if (!esAnclado && n1 !== nodoArrastrado) {
-            n1.vx -= pushX;
-            n1.vy -= pushY;
+            n1.vx = (n1.vx - pushX) * 0.5;
+            n1.vy = (n1.vy - pushY) * 0.5;
           }
           if (n2.tipo !== 'hub' && n2 !== nodoArrastrado) {
-            n2.vx += pushX;
-            n2.vy += pushY;
+            n2.vx = (n2.vx + pushX) * 0.5;
+            n2.vy = (n2.vy + pushY) * 0.5;
           }
-        } else if (dist < 320) {
+        } else if (dist < 300) {
           const f = kRepulsion / distSq;
           const fx = (dx / dist) * f;
           const fy = (dy / dist) * f;
@@ -815,9 +819,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="articulo-card">
           <div class="articulo-card-header">
             <span class="articulo-card-num">${escapeHtml(art.numero)}</span>
-            <button class="btn-copiar-art" onclick="window.copiarTextoArticulo('${art.id}', this)" title="Copiar artículo">
-              <span>📋</span> Copiar
-            </button>
+            <div style="display:flex; gap:4px;">
+              <button class="btn-copiar-art" onclick="window.copiarTextoArticulo('${art.id}', this)" title="Copiar artículo">
+                <span>📋</span> Copiar
+              </button>
+              <button class="btn-copiar-art" onclick="window.insertarEnEditor('${art.id}')" title="Insertar en Editor Forense" style="background:rgba(37,99,235,0.12); border-color:#93c5fd; color:var(--azul-accent);">
+                <span>📝</span> Editor
+              </button>
+            </div>
           </div>
           <div class="articulo-card-body">${escapeHtml(art.cuerpo)}</div>
         </div>
@@ -852,15 +861,28 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:10px; padding:14px 18px;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.06); padding-bottom:6px;">
             <div style="font-weight:700; color:var(--azul-accent); font-size:0.95rem;">${escapeHtml(art.numero)}</div>
-            <button class="boton btn-secundario btn-sm" onclick="window.copiarTextoArticulo('${art.id}', this)" style="padding:2px 8px; font-size:0.75rem; gap:4px;">
-              <span>📋</span> Copiar
-            </button>
+            <div style="display:flex; gap:6px;">
+              <button class="boton btn-secundario btn-sm" onclick="window.copiarTextoArticulo('${art.id}', this)" style="padding:2px 8px; font-size:0.75rem; gap:4px;">
+                <span>📋</span> Copiar
+              </button>
+              <button class="boton btn-secundario btn-sm" onclick="window.insertarEnEditor('${art.id}')" style="padding:2px 8px; font-size:0.75rem; gap:4px; color:var(--azul-accent);">
+                <span>📝</span> En Editor Forense
+              </button>
+            </div>
           </div>
           <div style="font-size:0.88rem; line-height:1.65; color:var(--texto-principal); white-space:pre-wrap;">${escapeHtml(art.cuerpo)}</div>
         </div>
       `)
       .join('');
   }
+
+  window.insertarEnEditor = function(artId) {
+    const art = articulosActuales.find((a) => a.id === artId);
+    if (!art) return;
+    const texto = `${art.numero} - ${art.titulo}\n${art.cuerpo}`;
+    localStorage.setItem('sysjuridico_editor_insert_text', texto);
+    window.location.href = '/editor.html?insertar=articulo';
+  };
 
   window.copiarTextoArticulo = function(artId, btnEl) {
     const art = articulosActuales.find((a) => a.id === artId);
@@ -960,6 +982,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnAccionNodo) {
       btnAccionNodo.onclick = () => {
         window.location.href = `/lexpy.html?consulta=${encodeURIComponent('Analizar norma y artículos de: ' + n.etiqueta)}`;
+      };
+    }
+
+    const btnRedactarEnEditor = document.getElementById('btnRedactarEnEditor');
+    if (btnRedactarEnEditor) {
+      btnRedactarEnEditor.onclick = () => {
+        window.location.href = `/editor.html?fuente=${encodeURIComponent(n.etiqueta)}`;
       };
     }
   }
