@@ -12,7 +12,7 @@
     "seed:wisdom": "node scripts/seed-otelax-wisdom.js"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@google/genai": "^3.6.1",

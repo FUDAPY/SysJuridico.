@@ -1,7 +1,34 @@
+# Dependencias y entorno local
 node_modules
 .env
 .env.*
 !.env.example
+
+# Control de versiones e IDE
 .git
+.github
+.gitignore
+.vscode
+
+# Corpus legal estático y archivos pesados (ya indexados en MongoDB)
+LESGILACION PARAGUAYA
+uploads
+877114.jpg
+poder.jpg
+
+# Credenciales y secretos
 *firebase-adminsdk*.json
 firebase-key.json
+
+# Logs y volcados temporales
+*.log
+_srv*.log
+_srv*err.log
+*.tmp
+*.bak
+*.dump
+.npm
+
+# Documentación interna y tareas
+tasks
+SPEC.md
