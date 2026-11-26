@@ -664,22 +664,26 @@ async function eliminarDocumentoExpediente(docId) {
 /* ---------- Sincronización con Portal CSJ (Judisoft) ---------- */
 async function verificarEstadoCSJ() {
   try {
-    const res = await apiFetch('/expedientes/csj/estado');
-    if (!res.success) return;
-    const est = res.data;
+    const res = await apiFetch('/expedientes/csj/credenciales');
+    const est = res?.data || res || {};
+    const usuarioVal = est?.credenciales?.usuario || est?.usuarioCSJ || est?.usuario || '';
+    const conectado = Boolean(est?.conectado || est?.tieneCredenciales || usuarioVal);
+
     const badge = document.getElementById('csjBadgeEstado');
     const txt = document.getElementById('txtEstadoCSJ');
 
-    if (est.conectado) {
+    if (conectado) {
       if (badge) {
-        badge.textContent = `Conectado (${est.usuarioCSJ})`;
+        badge.textContent = `Conectado (${usuarioVal})`;
         badge.className = 'badge badge-success';
       }
-      if (txt) txt.textContent = `CSJ Conectado (${est.totalExpedientesCSJ})`;
+      if (txt) txt.textContent = `CSJ Conectado (${est?.totalExpedientesCSJ || 0})`;
       const u = document.getElementById('csjUsuario');
       const m = document.getElementById('csjMatricula');
-      if (u) u.value = est.usuarioCSJ;
-      if (m) m.value = est.matriculaCSJ || '';
+      if (u && usuarioVal) u.value = usuarioVal;
+      if (m && (est?.matriculaCSJ || est?.credenciales?.matricula)) {
+        m.value = est.matriculaCSJ || est.credenciales.matricula;
+      }
     } else {
       if (badge) {
         badge.textContent = 'No vinculado';
@@ -688,7 +692,7 @@ async function verificarEstadoCSJ() {
       if (txt) txt.textContent = 'Vincular CSJ';
     }
   } catch (err) {
-    console.warn('[CSJ] Error consultando estado:', err.message);
+    console.warn('[CSJ] Error consultando estado:', err?.message || err);
   }
 }
 
@@ -702,9 +706,9 @@ function cerrarModalCSJ() {
 }
 
 async function guardarCredencialesCSJ() {
-  const usuarioCSJ = document.getElementById('csjUsuario')?.value;
+  const usuarioCSJ = document.getElementById('csjUsuario')?.value?.trim();
   const passwordCSJ = document.getElementById('csjPassword')?.value;
-  const matriculaCSJ = document.getElementById('csjMatricula')?.value;
+  const matriculaCSJ = document.getElementById('csjMatricula')?.value?.trim();
 
   if (!usuarioCSJ || !passwordCSJ) {
     alert('Ingresa el usuario y la contraseña del portal CSJ.');
@@ -712,14 +716,14 @@ async function guardarCredencialesCSJ() {
   }
 
   try {
-    await apiFetch('/expedientes/csj/vincular', {
+    await apiFetch('/expedientes/csj/credenciales', {
       method: 'POST',
       body: { usuarioCSJ, passwordCSJ, matriculaCSJ },
     });
     alert('¡Credenciales de la CSJ vinculadas exitosamente con cifrado AES-256!');
     verificarEstadoCSJ();
   } catch (err) {
-    alert(`Error: ${err.message}`);
+    alert(`Error: ${err?.message || err}`);
   }
 }
 

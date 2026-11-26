@@ -412,8 +412,8 @@ function cerrarModalCSJ() {
 }
 
 async function sincronizarCSJInicio() {
-  const u = document.getElementById('csjUsuario').value.trim();
-  const p = document.getElementById('csjPassword').value;
+  const u = document.getElementById('csjUsuario')?.value?.trim();
+  const p = document.getElementById('csjPassword')?.value;
   if (!u || !p) return alert('Por favor ingresá tu usuario y contraseña del Portal CSJ.');
 
   try {
@@ -423,18 +423,22 @@ async function sincronizarCSJInicio() {
       body: { usuarioCSJ: u, passwordCSJ: p },
     });
     const resSync = await apiFetch('/expedientes/csj/sincronizar', { method: 'POST' });
-    alert(`Sincronización completada exitosamente. Causas actualizadas: ${resSync.totalExpedientesSincronizados || 0}`);
+    const total = resSync?.totalExpedientesSincronizados || resSync?.data?.totalExpedientesSincronizados || 0;
+    alert(`Sincronización completada exitosamente. Causas actualizadas: ${total}`);
     cerrarModalCSJ();
     inicializarInicio();
   } catch (err) {
-    alert('Error al sincronizar con CSJ: ' + err.message);
+    alert('Error al sincronizar con CSJ: ' + (err?.message || err));
   }
 }
 
 async function verificarEstadoCSJ() {
   try {
     const res = await apiFetch('/expedientes/csj/credenciales');
-    if (res.tieneCredenciales) {
+    const usuarioValido = res?.credenciales?.usuario || res?.usuario || res?.usuarioCSJ || '';
+    const conectado = Boolean(res?.conectado || res?.tieneCredenciales || usuarioValido);
+
+    if (conectado) {
       const banner = document.getElementById('bannerCSJ');
       if (banner) {
         banner.style.background = 'linear-gradient(90deg, #065f46 0%, #047857 100%)';
@@ -442,7 +446,7 @@ async function verificarEstadoCSJ() {
           <div style="display:flex; align-items:center; gap:12px;">
             <span style="font-size:1.5rem;">✅</span>
             <div>
-              <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#a7f3d0; font-weight:700;">PORTAL CSJ VINCULADO</div>
+              <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#a7f3d0; font-weight:700;">PORTAL CSJ VINCULADO${usuarioValido ? ` (${usuarioValido})` : ''}</div>
               <div style="font-size:0.95rem; font-weight:600; color:#fff;">Sincronización automática de causas y notificaciones activa</div>
             </div>
           </div>
@@ -451,9 +455,11 @@ async function verificarEstadoCSJ() {
           </button>
         `;
       }
+      const uInput = document.getElementById('csjUsuario');
+      if (uInput && usuarioValido) uInput.value = usuarioValido;
     }
-  } catch {
-    // Si no hay credenciales, se mantiene el banner por defecto
+  } catch (err) {
+    console.warn('[CSJ] Sin credenciales configuradas o error consultando estado:', err?.message || err);
   }
 }
 

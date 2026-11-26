@@ -55,7 +55,7 @@ async function apiFetch(ruta, { method = 'GET', body } = {}) {
   if (!respuesta.ok) {
     throw new Error(json.message || 'Error en la solicitud.');
   }
-  return json.data;
+  return json.data !== undefined ? json.data : json;
 }
 
 function formatoGs(numero) {
