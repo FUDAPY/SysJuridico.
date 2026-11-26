@@ -238,21 +238,111 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  function autocompletarComparecencia() {
-    if (!expedienteActivo) return;
-    const clienteNom = expedienteActivo.cliente?.nombreCompleto || '[PARTE ACTORA]';
-    const clienteCI = expedienteActivo.cliente?.cedula || expedienteActivo.cliente?.ruc || '[C.I.]';
-    const juzgado = expedienteActivo.juzgado || 'PRIMERA INSTANCIA EN LO CIVIL Y COMERCIAL';
+  function autocompletarComparecencia(plantilla = null) {
+    const sesion = obtenerSesion();
+    const u = sesion?.usuario || {};
+    const abgNombre = u.nombreCompleto || u.nombre || 'Abg. del Estudio';
+    const matricula = u.matriculaCSJ || '[MATRÍCULA CSJ]';
+    const cedula = u.cedula || '[CÉDULA]';
+    const domicilioFijo = 'Edificio BIJ, Av. Camilo Recalde c/ Capitán Miranda, Microcentro, Ciudad del Este';
 
-    const textoEncabezado = `
-      <p style="text-align: right; margin-bottom: 2rem;"><strong>OBJETO: ${escapeHtml(expedienteActivo.caratula.toUpperCase())}.-</strong></p>
-      <p><strong>SEÑOR JUEZ DE ${escapeHtml(juzgado.toUpperCase())}:</strong></p>
+    const caratula = expedienteActivo?.caratula || 'CAUSA JUDICIAL';
+    const juzgado = expedienteActivo?.juzgado || 'PRIMERA INSTANCIA EN LO CIVIL Y COMERCIAL';
+    const turno = expedienteActivo?.turno ? ` DEL ${expedienteActivo.turno.toUpperCase()}` : '';
+    const juezGenero = expedienteActivo?.juezGenero === 'F' ? 'SEÑORA JUEZA' : 'SEÑOR JUEZ';
+    const juezNombreStr = expedienteActivo?.juezNombre ? `, DRA./DR. ${expedienteActivo.juezNombre.toUpperCase()}` : '';
+    const clienteNom = expedienteActivo?.cliente?.nombreCompleto || '[PARTE PATROCINADA]';
+    const clienteCI = expedienteActivo?.cliente?.cedula || expedienteActivo?.cliente?.ruc || '[C.I.]';
+
+    let objetoTexto = `OBJETO: PROMOVER ACCIÓN JUDICIAL.-`;
+    let petitorioTexto = `<p>1. Tenerme por presentado en el carácter invocado y por constituido el domicilio procesal en el lugar indicado.</p><p>2. Tener por deducida la presente acción judicial y correr traslado a la contraria en los términos de ley.</p><p>3. Oportunamente, dictar Sentencia Definitiva haciendo lugar a la pretensión con costas.</p>`;
+    let cuerpoTexto = `<p><strong>I. HECHOS:</strong></p><p>Que, vengo por el presente escrito a deducir la acción de referencia, fundada en los siguientes antecedentes fácticos que paso a exponer detalladamente a V.S.: ...</p><p>&nbsp;</p><p><strong>II. DERECHO:</strong></p><p>Fundo la presente acción en las disposiciones de la Constitución Nacional de 1992, el Código Civil Paraguayo (Ley N° 1183/85) y las reglas adjetivas del Código Procesal Civil (Ley N° 1337/88).-</p><p>&nbsp;</p><p><strong>III. PRUEBAS:</strong></p><p>A los efectos de acreditar los extremos invocados, ofrezco los siguientes medios probatorios: Documental, Testimonial y Pericial.-</p>`;
+
+    if (plantilla === 'contestacion') {
+      objetoTexto = `OBJETO: OPONER EXCEPCIONES PREVIAS Y CONTESTAR DEMANDA.-`;
+      cuerpoTexto = `
+        <p><strong>I. EXCEPCIÓN PREVIA DE DEFECTO LEGAL / FALTA DE PERSONERÍA / PRESCRIPCIÓN:</strong></p>
+        <p>En forma previa y de especial pronunciamiento, conforme al Art. 224 del Código Procesal Civil, vengo a oponer formal excepción en contra de las pretensiones de la parte actora, por concurrir causa extintiva e inhabilidad manifiesta del título accionado...</p>
+        <p>&nbsp;</p>
+        <p><strong>II. CONTESTACIÓN DE DEMANDA EN SUBSIDIO:</strong></p>
+        <p>Negativa de los hechos: Niego categóricamente todos y cada uno de los hechos que no sean expresamente reconocidos en este responde. En particular niego que mi representado adeude suma alguna a la actora...</p>
+        <p>&nbsp;</p>
+        <p><strong>III. DERECHO:</strong></p>
+        <p>Fundo la defensa en los Arts. 224, 235 y concordantes del Código Procesal Civil y Código Civil Paraguayo.</p>
+        <p>&nbsp;</p>
+        <p><strong>IV. PRUEBAS:</strong></p>
+        <p>Ofrezco constancias documentales adjuntas y pericial contable en caso de desconocimiento.</p>
+      `;
+      petitorioTexto = `<p>1. Tenerme por presentado y por constituido el domicilio procesal.</p><p>2. Tener por opuestas las excepciones previas y por contestada la demanda en tiempo y forma oportunos.</p><p>3. En su hora, dictar resolución rechazando la demanda en todos sus términos, con expresa imposición de costas a la actora.</p>`;
+    } else if (plantilla === 'laboral') {
+      objetoTexto = `OBJETO: PROMOVER DEMANDA LABORAL POR DESPIDO INJUSTIFICADO Y COBRO DE GUARANÍES.-`;
+      cuerpoTexto = `
+        <p><strong>I. RELACIÓN LABORAL Y HECHOS:</strong></p>
+        <p>El trabajador ingresó a prestar servicios subordinados en fecha [FECHA DE INGRESO], desempeñando funciones de [CARGO] con un salario mensual de Gs. [SALARIO]. En fecha [FECHA DE DESPIDO], fue despedido injustificadamente sin mediar preaviso ni liquidación legal correspondiente...</p>
+        <p>&nbsp;</p>
+        <p><strong>II. LIQUIDACIÓN DE RUBROS RECLAMADOS:</strong></p>
+        <p>1. Indemnización por despido injustificado (Art. 91 Código del Trabajo): Gs. ...</p>
+        <p>2. Falta de Preaviso (Art. 92 Código del Trabajo): Gs. ...</p>
+        <p>3. Aguinaldo proporcional (Art. 243 Código del Trabajo): Gs. ...</p>
+        <p>4. Vacaciones proporcionales causadas (Art. 218 Código del Trabajo): Gs. ...</p>
+        <p>5. Salarios caídos e indemnización complementaria de ley.</p>
+        <p>&nbsp;</p>
+        <p><strong>III. DERECHO:</strong></p>
+        <p>Fundo esta demanda en los Arts. 86 a 100 de la Constitución Nacional de 1992, Código del Trabajo (Ley 213/93 y modif. Ley 496/95), y el Código Procesal del Trabajo.</p>
+      `;
+      petitorioTexto = `<p>1. Tenerme por presentado en el carácter invocado y por constituido el domicilio procesal.</p><p>2. Tener por promovida la demanda laboral y correr traslado a la patronal demandada.</p><p>3. Oportunamente, hacer lugar a la demanda condenando al pago íntegro de los rubros reclamados con costas.</p>`;
+    } else if (plantilla === 'penal') {
+      objetoTexto = `OBJETO: SOLICITAR REVISIÓN DE MEDIDAS CAUTELARES Y SUSTITUCIÓN POR MEDIDAS ALTERNATIVAS A LA PRISIÓN.-`;
+      cuerpoTexto = `
+        <p><strong>I. PROCEDENCIA DE LA REVISIÓN (ART. 250 CPP):</strong></p>
+        <p>Que habiendo variado las circunstancias fácticas tenidas en cuenta al momento de decretar la medida cautelar privativa de libertad, concurren los presupuestos legales para ordenar su sustitución o revocación, habida cuenta de que el peligro de fuga y de obstrucción han quedado desvirtuados fehacientemente...</p>
+        <p>&nbsp;</p>
+        <p><strong>II. ACREDITACIÓN DE ARRAIGO Y FIANZA:</strong></p>
+        <p>Se adjunta constancia de domicilio real fehaciente (arraigo domiciliario), contrato laboral vigente (arraigo laboral) y fianza personal y real prestada por fiador de solvencia acreditada...</p>
+        <p>&nbsp;</p>
+        <p><strong>III. DERECHO:</strong></p>
+        <p>Fundo esta petición en los Arts. 19 de la Constitución Nacional, Arts. 245, 246, 250, 252 y concs. del Código Procesal Penal (Ley 1286/98 y modif.).</p>
+      `;
+      petitorioTexto = `<p>1. Tenerme por presentado y por constituido el domicilio procesal.</p><p>2. Fijar fecha de audiencia de revisión de medidas cautelares a la mayor brevedad.</p><p>3. Disponer la libertad del imputado bajo las reglas de conducta y medidas alternativas solicitadas.</p>`;
+    } else if (plantilla === 'urgimiento') {
+      objetoTexto = `OBJETO: URGIR DESPACHO Y PROVIDENCIA JUDICIAL - IMPULSO DE AUTOS (EVITAR CADUCIDAD ART. 172 CPC).-`;
+      cuerpoTexto = `
+        <p><strong>I. MANIFESTACIONES:</strong></p>
+        <p>Que encontrándose pendientes de proveimiento las presentaciones y traslados de autos, vengo muy respetuosamente a urgir el dictado de la resolución correspondiente que impulse el procedimiento hacia su culminación natural, manifestando expreso e inequívoco interés de esta parte en la prosecución del juicio, interrumpiendo cualquier eventual cómputo de inactividad a los términos del Art. 172 del Código Procesal Civil...</p>
+        <p>&nbsp;</p>
+        <p><strong>II. DERECHO:</strong></p>
+        <p>Art. 172 y concordantes de la Ley N° 1337/88 (Código Procesal Civil Paraguayo).</p>
+      `;
+      petitorioTexto = `<p>1. Tener por urgida la causa y por manifestado el formal impulso procesal de autos.</p><p>2. Dictar la providencia de trámite de rigor.</p>`;
+    } else if (plantilla === 'telegrama') {
+      objetoTexto = `TELEGRAMA COLACIONADO JUDICIAL - INTIMACIÓN FORMAL PREJUDICIAL.-`;
+      cuerpoTexto = `
+        <p>POR EL PRESENTE MEDIO INTIMO A USTED EN SU CARÁCTER DE [DEUDOR/PATRONAL] A QUE EN EL PLAZO PERENTORIO DE 48 HORAS DE RECIBIDO ESTE TELEGRAMA PROCEDA AL PAGO ÍNTEGRO DE LA SUMA DE GS. [MONTO] EN CONCEPTO DE [CONCEPTO RECLAMADO], BAJO EXPRESO APERCIBIMIENTO DE INICIAR EN CASO DE INCUMPLIMIENTO LAS ACCIONES LEGALES ANTE LOS TRIBUNALES COMPETENTES, CON MÁS INTERESES, DAÑOS Y COSTAS JUDICIALES.- QUEDA USTED DEBIDAMENTE NOTIFICADO.-</p>
+      `;
+      petitorioTexto = `<p>REMITENTE: ABG. ${escapeHtml(abgNombre)} - DOMICILIO: ${escapeHtml(domicilioFijo)}</p>`;
+    }
+
+    const textoCompleto = `
+      <p style="text-align: right; margin-bottom: 2rem;"><strong>${objetoTexto}</strong></p>
+      <p><strong>${juezGenero} DE ${escapeHtml(juzgado.toUpperCase())}${escapeHtml(turno)}${escapeHtml(juezNombreStr)}:</strong></p>
       <p>&nbsp;</p>
-      <p><strong>ABG. [NOMBRE DEL PROFESIONAL]</strong>, con Matrícula CSJ N° [MATRÍCULA], en nombre y representación de <strong>${escapeHtml(clienteNom)}</strong>, con Cédula de Identidad N° ${escapeHtml(clienteCI)}, fijando domicilio procesal en la calle [DIRECCIÓN], a V.S. respetuosamente digo:</p>
+      <p><strong>ABG. ${escapeHtml(abgNombre.toUpperCase())}</strong>, con Matrícula CSJ N° ${escapeHtml(matricula)}, C.I. N° ${escapeHtml(cedula)}, en representación de <strong>${escapeHtml(clienteNom)}</strong> (C.I./RUC: ${escapeHtml(clienteCI)}), constituyendo domicilio procesal en <strong>${escapeHtml(domicilioFijo)}</strong>, en los autos caratulados: <em>"${escapeHtml(caratula)}"</em>, a V.S. respetuosamente digo:</p>
       <p>&nbsp;</p>
+      ${cuerpoTexto}
+      <p>&nbsp;</p>
+      <p><strong>PETITORIO:</strong></p>
+      ${petitorioTexto}
+      <p>&nbsp;</p>
+      <p style="text-align: right; margin-top: 3.5rem;"><strong>PROVEER DE CONFORMIDAD Y SERÁ JUSTICIA.-</strong></p>
+      <p>&nbsp;</p>
+      <p style="text-align: center; margin-top: 2rem;">
+        __________________________________<br>
+        <strong>ABG. ${escapeHtml(abgNombre.toUpperCase())}</strong><br>
+        Matrícula CSJ N° ${escapeHtml(matricula)}
+      </p>
     `;
 
-    document.execCommand('insertHTML', false, textoEncabezado);
+    hoja.innerHTML = textoCompleto;
     hoja.focus();
     actualizarMetricas();
   }
@@ -553,35 +643,58 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function ejecutarAsistenteIA(accion) {
     const instrucciones = promptInput ? promptInput.value.trim() : '';
     const expId = expedienteActivo?._id || selectExpediente?.value || null;
-    const usarExpediente = checkUsarExpediente ? checkUsarExpediente.checked : true;
-    const usarCSJ = checkUsarCSJ ? checkUsarCSJ.checked : true;
 
     btnGenerarCopilot.disabled = true;
-    btnGenerarCopilot.textContent = '⚡ Techapyrã IA redactando...';
+    btnGenerarCopilot.textContent = '⚡ Techapyrã IA razonando...';
     if (resultadoBox) resultadoBox.style.display = 'block';
-    if (textoGeneradoDiv) textoGeneradoDiv.textContent = 'Analizando leyes positivas paraguayas, expediente y jurisprudencia CSJ...';
+    if (textoGeneradoDiv) textoGeneradoDiv.textContent = 'Consultando acervo normativo de OtelaxWisdom y estructurando razonamiento dividido...';
 
     try {
-      const payload = {
-        accion,
-        textoSeleccionado: ultimaSeleccionTexto,
-        instrucciones,
-        expedienteId: usarExpediente ? expId : null,
-        incluirCSJ: usarCSJ,
-      };
-
-      const res = await apiFetch('/lexpy/editor-ai', {
+      const res = await apiFetch('/api/v1/editor/razonamiento', {
         method: 'POST',
-        body: payload,
+        body: {
+          instruccion: `${accion}: ${instrucciones} ${ultimaSeleccionTexto ? `(Texto foja: ${ultimaSeleccionTexto})` : ''}`,
+          expedienteId: expId,
+        },
       });
 
-      const generado = res.data?.textoGenerado || 'No se obtuvo respuesta del motor.';
-      if (textoGeneradoDiv) textoGeneradoDiv.textContent = generado;
+      const datos = res.datos || {};
+
+      // PARTE A: Texto limpio del escrito judicial
+      if (textoGeneradoDiv) {
+        textoGeneradoDiv.textContent = datos.textoEscrito || 'Escrito judicial estructurado.';
+      }
+
+      // PARTE B: Estrategia, Bases Normativas y Checklist de Riesgos
+      const elEstrategia = document.getElementById('copilotEstrategiaTexto');
+      if (elEstrategia) {
+        elEstrategia.innerHTML = `<p style="margin:0 0 6px;"><strong>Estrategia Procesal:</strong> ${escapeHtml(datos.estrategia || 'Estrategia forense basada en derecho positivo.')}</p>`;
+      }
+
+      const elBases = document.getElementById('copilotBasesNormativas');
+      if (elBases && Array.isArray(datos.basesNormativas)) {
+        elBases.innerHTML = datos.basesNormativas.map((b) => `
+          <div style="background:var(--bg-hover); padding:4px 8px; border-radius:4px; font-size:0.72rem; border-left:2px solid #3b82f6;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>${escapeHtml(b.fuente || 'Ley')} ${escapeHtml(b.articulo || '')}</strong>
+              <span class="badge" style="font-size:0.65rem; background:#1e3a5f; color:#93c5fd;">${escapeHtml(b.procedencia || '[OTELAXWISDOM LOCAL]')}</span>
+            </div>
+            <div style="color:var(--texto-muted); margin-top:2px;">${escapeHtml(b.resumen || '')}</div>
+          </div>
+        `).join('');
+      }
+
+      const elRiesgos = document.getElementById('copilotChecklistRiesgos');
+      if (elRiesgos && Array.isArray(datos.checklistRiesgos)) {
+        elRiesgos.innerHTML = datos.checklistRiesgos.map((r) => `
+          <li style="margin-bottom:3px;">${escapeHtml(r)}</li>
+        `).join('');
+      }
     } catch (err) {
-      if (textoGeneradoDiv) textoGeneradoDiv.textContent = `Error al generar: ${err.message}`;
+      if (textoGeneradoDiv) textoGeneradoDiv.textContent = `Error generando escrito: ${err.message}`;
     } finally {
       btnGenerarCopilot.disabled = false;
-      btnGenerarCopilot.textContent = '⚡ Generar con Techapyrã IA';
+      btnGenerarCopilot.textContent = '⚡ Generar con Techapyrã IA (Split-Brain)';
     }
   }
 
@@ -834,52 +947,174 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  // Exportar .DOCX (Formato HTML descargable como .doc compatible con Microsoft Word y LibreOffice)
-  function descargarComoDocx() {
+  // Exportación Nativa a .DOCX con librería docx y fallback
+  async function descargarComoDocx() {
     const titulo = (tituloDocInput?.value.trim() || 'Escrito_Judicial').replace(/[^a-zA-Z0-9_\-]/g, '_');
     const contenidoHTML = hoja.innerHTML;
 
-    const plantillaDoc = `
-      <!DOCTYPE html>
-      <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
-      <head>
-        <meta charset='utf-8'>
-        <title>${titulo}</title>
-        <style>
-          @page {
-            size: 21cm 29.7cm;
-            margin: 3.5cm 2.0cm 2.5cm 4.0cm; /* Margen Judicial CSJ */
-            mso-page-orientation: portrait;
-          }
-          body {
-            font-family: 'Times New Roman', 'Liberation Serif', serif;
-            font-size: 12pt;
-            line-height: 1.65;
-            text-align: justify;
-          }
-          p { margin-bottom: 0.9em; }
-        </style>
-      </head>
-      <body>
-        ${contenidoHTML}
-      </body>
-      </html>
-    `;
+    try {
+      if (btnDescargarDocx) {
+        btnDescargarDocx.disabled = true;
+        btnDescargarDocx.textContent = '⏳ Generando DOCX...';
+      }
 
-    const blob = new Blob(['\ufeff', plantillaDoc], { type: 'application/msword' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${titulo}.doc`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+      const response = await fetch('/api/v1/editor/export-docx', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token') || ''}`,
+        },
+        body: JSON.stringify({
+          titulo,
+          html: contenidoHTML,
+          caratula: expedienteActivo?.caratula || '',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Servidor no pudo procesar binario DOCX, ejecutando fallback local.');
+      }
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${titulo}.docx`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.warn('[DOCX] Fallback:', err.message);
+      // Fallback a HTML DOC compatible
+      const blob = new Blob(['\ufeff', contenidoHTML], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${titulo}.doc`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } finally {
+      if (btnDescargarDocx) {
+        btnDescargarDocx.disabled = false;
+        btnDescargarDocx.textContent = '📥 .DOC';
+      }
+    }
   }
 
   btnDescargarDocx?.addEventListener('click', descargarComoDocx);
   document.getElementById('menuItemDocx')?.addEventListener('click', descargarComoDocx);
   document.getElementById('btnToolbarDocx')?.addEventListener('click', descargarComoDocx);
+
+  // Navegación por Secciones Forenses del Esquema
+  window.desplazarASeccion = function(seccion) {
+    if (!hoja) return;
+    const textos = Array.from(hoja.querySelectorAll('p, h1, h2, h3, strong, em'));
+    const target = textos.find((el) => el.textContent.toUpperCase().includes(seccion.toUpperCase()));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.style.transition = 'background 0.3s';
+      const origBg = target.style.background;
+      target.style.background = 'rgba(59, 130, 246, 0.25)';
+      setTimeout(() => { target.style.background = origBg; }, 1200);
+    }
+  };
+
+  window.alternarOutline = function() {
+    const p = document.getElementById('loOutlinePanel');
+    if (p) {
+      p.style.display = p.style.display === 'none' ? 'flex' : 'none';
+    }
+  };
+
+  // Dictado por voz en Copiloto IA
+  let dictandoCopilot = false;
+  window.alternarMicrofonoCopilot = function() {
+    const btn = document.getElementById('btnMicCopilot');
+    const input = document.getElementById('copilotPrompt');
+    if (!window.voiceAssistant || !window.voiceAssistant.soportaReconocimiento()) {
+      alert('Tu navegador no admite reconocimiento de voz por micrófono.');
+      return;
+    }
+
+    if (!dictandoCopilot) {
+      dictandoCopilot = true;
+      if (btn) btn.style.color = '#ef4444';
+      window.voiceAssistant.iniciarDictado({
+        alRecibirTexto: (txt, esFinal) => {
+          if (input && esFinal) {
+            input.value = (input.value ? input.value + ' ' : '') + txt;
+          }
+        },
+        alTerminar: () => {
+          dictandoCopilot = false;
+          if (btn) btn.style.color = '#60a5fa';
+        },
+        alError: () => {
+          dictandoCopilot = false;
+          if (btn) btn.style.color = '#60a5fa';
+        },
+      });
+    } else {
+      window.voiceAssistant.detenerDictado();
+      dictandoCopilot = false;
+      if (btn) btn.style.color = '#60a5fa';
+    }
+  };
+
+  // Lectura de Archivo PDF de Expediente
+  let textoPdfCargado = '';
+  window.leerArchivoExpedienteLocal = function(input) {
+    const file = input.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      textoPdfCargado = e.target.result || '';
+      alert(`Archivo "${file.name}" cargado (${Math.round(file.size / 1024)} KB). Presiona "Analizar Causa con Gemini 2.5 Pro".`);
+    };
+    reader.readAsText(file);
+  };
+
+  window.analizarExpedienteConGemini = async function() {
+    const resDiv = document.getElementById('resultadoAnalisisPdf');
+    const btn = document.getElementById('btnAnalizarPdfGemini');
+    if (!textoPdfCargado && !expedienteActivo) {
+      alert('Por favor selecciona un archivo PDF o vincula un expediente.');
+      return;
+    }
+
+    try {
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = '⚡ Analizando con Gemini 2.5 Pro...';
+      }
+      if (resDiv) {
+        resDiv.style.display = 'block';
+        resDiv.textContent = 'Procesando expediente judicial con Gemini 2.5 Pro...';
+      }
+
+      const res = await apiFetch('/api/v1/editor/analizar-pdf', {
+        method: 'POST',
+        body: {
+          textoExtraido: textoPdfCargado || `Expediente: ${expedienteActivo?.caratula}. Juzgado: ${expedienteActivo?.juzgado}. Última actuación: ${expedienteActivo?.ultimaActuacionTexto || ''}`,
+          expedienteId: expedienteActivo?._id,
+        },
+      });
+
+      if (resDiv) {
+        resDiv.textContent = res.datos?.analisis || 'Análisis completado sin observaciones.';
+      }
+    } catch (err) {
+      if (resDiv) resDiv.textContent = `Error en análisis: ${err.message}`;
+    } finally {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = '⚡ Analizar Causa con Gemini 2.5 Pro';
+      }
+    }
+  };
 
   function escapeHtml(str) {
     if (!str) return '';
@@ -891,6 +1126,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       .replace(/'/g, '&#039;');
   }
 
-  // Inicialización
+  // Inicialización y carga de plantilla desde URL
   await cargarExpedientes();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const plantillaUrl = urlParams.get('plantilla');
+  if (plantillaUrl) {
+    autocompletarComparecencia(plantillaUrl);
+  }
 });

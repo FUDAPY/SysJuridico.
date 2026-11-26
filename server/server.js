@@ -21,6 +21,7 @@ const lexpyRoutes = require('./routes/lexpy.routes');
 const liquidacionRoutes = require('./routes/liquidacion.routes');
 const { creditosRouter, requisitosRouter, archivosRouter } = require('./routes/legados.routes');
 const obsidianRoutes = require('./routes/obsidian.routes');
+const editorRoutes = require('./routes/editor.routes');
 
 const app = express();
 
@@ -48,6 +49,8 @@ app.use('/api/requisitos', requisitosRouter);
 app.use('/api/archivos', archivosRouter);
 app.use('/api/v1', obsidianRoutes);
 app.use('/api/obsidian', obsidianRoutes);
+app.use('/api/v1/editor', editorRoutes);
+app.use('/api/editor', editorRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
