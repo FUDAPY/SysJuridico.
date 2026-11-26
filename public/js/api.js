@@ -193,7 +193,7 @@ function renderBarraLateral(paginaActiva) {
     </div>
     <div style="padding: 12px 14px 16px; font-size: 0.7rem; color: var(--texto-muted); text-align: center; border-top: 1px solid var(--borde); line-height: 1.4;">
       Todos los derechos reservados.<br>
-      Hecho por <a href="https://zetti.grupooh.online" target="_blank" rel="noopener noreferrer" style="color: var(--azul-accent); font-weight: 700; text-decoration: none;">ZETTI DIGITAL PY</a> &bull; <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="color: var(--dorado); font-weight: 600; text-decoration: none;">Otelax Dev</a>
+      Hecho por <a href="https://zetti.grupooh.online" target="_blank" rel="noopener noreferrer" style="color: var(--azul-accent); font-weight: 700; text-decoration: none;">ZETTI DIGITAL PY</a>
     </div>
   `;
 
@@ -363,23 +363,20 @@ function inyectarWidgetLexpyFlotante(paginaActiva) {
   document.body.appendChild(btn);
 }
 
-// Inyecta pie de página institucional de Otelax Dev al final de las vistas
+// Inyecta pie de página institucional de ZETTI DIGITAL PY al final de las vistas
 function inyectarPieDePaginaGlobal() {
-  if (document.getElementById('piePaginaOtelax')) return;
+  if (document.getElementById('piePaginaZetti') || document.getElementById('piePaginaOtelax')) return;
   const target = document.querySelector('.contenido') || document.querySelector('.app-main') || document.querySelector('main');
   if (!target) return;
 
   const footer = document.createElement('footer');
-  footer.id = 'piePaginaOtelax';
+  footer.id = 'piePaginaZetti';
   footer.className = 'pie-pagina-sistema';
   footer.innerHTML = `
     <div>© ${new Date().getFullYear()} SysJurídico &bull; Todos los derechos reservados.</div>
     <div style="margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
       <span>Sistema hecho por</span>
       <a href="https://zetti.grupooh.online" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--azul-accent);">ZETTI DIGITAL PY</a>
-      <span>&bull;</span>
-      <span>Impulsado por</span>
-      <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--dorado);">Otelax Dev</a>
     </div>
   `;
   target.appendChild(footer);

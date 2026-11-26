@@ -98,7 +98,7 @@ async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', cara
   }
 
   const doc = new Document({
-    creator: 'SysJurídico Forense (Otelax Dev)',
+    creator: 'SysJurídico Forense (ZETTI DIGITAL PY)',
     title: titulo,
     description: `Escrito Forense CSJ - ${caratula || 'Tribunales de la República del Paraguay'}`,
     sections: [

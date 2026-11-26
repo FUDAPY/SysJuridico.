@@ -6,7 +6,7 @@
 
 Diseñado bajo una arquitectura modular de alto rendimiento, optimizada para despachos jurídicos y despliegues en servidores VPS con Dokploy, Traefik y MongoDB.
 
-[![Version](https://img.shields.io/badge/versión-3.0.0-0a3d62?style=for-the-badge)](https://dev.grupooh.online/)
+[![Version](https://img.shields.io/badge/versión-3.0.0-0a3d62?style=for-the-badge)](https://zetti.grupooh.online)
 [![Node](https://img.shields.io/badge/node.js-%3E%3D20.0-339933?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/express-4.21-000000?logo=express&logoColor=white&style=for-the-badge)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/mongodb-8.0-47A248?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
@@ -405,9 +405,9 @@ Distribuido bajo la Licencia **MIT**. Consulte el archivo [LICENSE](LICENSE) par
 
 ```
 Todos los derechos reservados.
-Sistema creado e impulsado por Otelax Dev (www.dev.grupooh.online)
+Sistema creado e impulsado por ZETTI DIGITAL PY (https://zetti.grupooh.online)
 Autor: Giuliano Emanuel Maria Catella Riveros
 ```
 
-- **Sitio Web Oficial:** [https://dev.grupooh.online/](https://dev.grupooh.online/)
+- **Sitio Web Oficial:** [https://zetti.grupooh.online](https://zetti.grupooh.online)
 - **Repositorio Oficial:** [https://github.com/FUDAPY/SysJuridico](https://github.com/FUDAPY/SysJuridico)

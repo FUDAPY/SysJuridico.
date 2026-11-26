@@ -1,8 +1,7 @@
 # SYSJURÍDICO & OTELAXWISDOM — MANUAL Y RESUMEN INTEGRAL DEL SISTEMA
 
-> **Desarrollado por:** ZETTI DIGITAL PY ([https://zetti.grupooh.online](https://zetti.grupooh.online))  
-> **Impulsado por:** OTELAX DEV ([https://dev.grupooh.online/](https://dev.grupooh.online/))  
-> **Licencia:** MIT &copy; OTELAX DEV de Giuliano Catella  
+> **Desarrollado e Impulsado por:** ZETTI DIGITAL PY ([https://zetti.grupooh.online](https://zetti.grupooh.online))  
+> **Licencia:** MIT &copy; ZETTI DIGITAL PY de Giuliano Catella  
 > **Versión del Sistema:** 2.5.0-PRO (Edición Institucional Paraguay)
 
 ---
@@ -170,6 +169,5 @@ Al iniciar sesión, el sistema analiza en tiempo real el estado de todos los exp
 
 <p align="center">
   <strong>SysJurídico &mdash; Sistema de Gestión Jurídica Integral</strong><br />
-  Hecho por <strong><a href="https://zetti.grupooh.online" target="_blank">ZETTI DIGITAL PY</a></strong> &bull; 
-  Impulsado por <strong><a href="https://dev.grupooh.online/" target="_blank">Otelax Dev</a></strong>
+  Hecho por <strong><a href="https://zetti.grupooh.online" target="_blank">ZETTI DIGITAL PY</a></strong>
 </p>
