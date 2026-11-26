@@ -16,7 +16,7 @@ const {
   convertMillimetersToTwip,
   LineRuleType,
 } = require('docx');
-const { JSDOM } = require('jsdom');
+const cheerio = require('cheerio');
 const aiProviderService = require('./aiProviderService');
 const lexpyService = require('./lexpyService');
 const fs = require('fs');
@@ -33,9 +33,9 @@ const DOMICILIO_PROCESAL_GLOBAL = 'Edificio BIJ, Av. Camilo Recalde c/ Capitán 
  * @returns {Promise<Buffer>}
  */
 async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', caratula = '' }) {
-  // Limpiar HTML y parsear a párrafos
-  const dom = new JSDOM(`<!DOCTYPE html><body>${html}</body>`);
-  const body = dom.window.document.body;
+  // Limpiar HTML y parsear a párrafos usando cheerio (sin depender de jsdom)
+  const $ = cheerio.load(`<body>${html || ''}</body>`);
+  const body = $('body');
 
   // Recorrer nodos hijos para construir párrafos de docx
   const parrafosDocx = [];
@@ -46,13 +46,11 @@ async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', cara
   const marginSuperior = convertMillimetersToTwip(35);
   const marginInferior = convertMillimetersToTwip(25);
 
-  const elementos = Array.from(body.children).filter(
-    (el) => !el.classList.contains('lo-corner-bl') && !el.classList.contains('lo-corner-br') && !el.classList.contains('lo-guide-box')
-  );
+  const elementos = body.children().not('.lo-corner-bl, .lo-corner-br, .lo-guide-box').toArray();
 
   if (elementos.length === 0) {
     // Si no hay hijos en bloque, usar el texto plano
-    const texto = body.textContent || '';
+    const texto = body.text() || '';
     const lineas = texto.split('\n');
     for (const linea of lineas) {
       parrafosDocx.push(
@@ -71,10 +69,14 @@ async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', cara
     }
   } else {
     for (const elem of elementos) {
-      const texto = elem.textContent || '';
-      const esNegrita = elem.tagName === 'B' || elem.tagName === 'STRONG' || elem.querySelector('strong, b') !== null;
-      const esAlineadoDerecha = elem.style?.textAlign === 'right' || elem.getAttribute('align') === 'right';
-      const esCentrado = elem.style?.textAlign === 'center' || elem.getAttribute('align') === 'center';
+      const $el = $(elem);
+      const texto = $el.text().trim();
+      const tagName = (elem.tagName || '').toLowerCase();
+      const esNegrita = tagName === 'b' || tagName === 'strong' || $el.find('strong, b').length > 0;
+      const styleAttr = $el.attr('style') || '';
+      const alignAttr = $el.attr('align') || '';
+      const esAlineadoDerecha = styleAttr.includes('text-align: right') || alignAttr === 'right';
+      const esCentrado = styleAttr.includes('text-align: center') || alignAttr === 'center';
 
       let alineacion = AlignmentType.JUSTIFIED;
       if (esAlineadoDerecha) alineacion = AlignmentType.RIGHT;
