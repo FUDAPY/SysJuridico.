@@ -24,11 +24,32 @@ const usuarioSchema = new mongoose.Schema(
     rol: {
       type: String,
       enum: {
-        values: ['admin', 'abogado'],
-        message: 'El rol debe ser "admin" o "abogado"',
+        values: ['admin', 'abogado', 'asistente'],
+        message: 'El rol debe ser "admin", "abogado" o "asistente"',
       },
       required: true,
       default: 'abogado',
+    },
+    nombreCompleto: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    matriculaCSJ: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    cedula: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    csjCredentialsEncrypted: {
+      iv: { type: String, default: '' },
+      tag: { type: String, default: '' },
+      encryptedData: { type: String, default: '', select: false },
+      updatedAt: { type: Date, default: null },
     },
     activo: {
       type: Boolean,

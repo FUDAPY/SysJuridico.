@@ -29,7 +29,12 @@ app.use(cors());
 app.use(express.json({ limit: '20mb' }));
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
+const { obtenerConfigEstudio } = require('./controllers/authController');
+
 app.use('/api/auth', authRoutes);
+app.use('/api/v1/auth', authRoutes);
+app.get('/api/v1/config/estudio', obtenerConfigEstudio);
+app.get('/api/config/estudio', obtenerConfigEstudio);
 app.use('/api/clientes', clientesRoutes);
 app.use('/api/expedientes', expedientesRoutes);
 app.use('/api/movimientos', movimientosRoutes);

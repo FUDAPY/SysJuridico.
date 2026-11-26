@@ -1,4 +1,5 @@
 const BaseLegal = require('../models/BaseLegal');
+const Jurisprudencia = require('../models/Jurisprudencia');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { buscarEnFuentesExternas } = require('./scraperService');
 const { generarRespuestaIA } = require('./aiProviderService');
@@ -43,14 +44,21 @@ function esConsultaMetaOtelax(pregunta) {
 async function buscarEnBaseLocal(consulta) {
   const q = String(consulta || '').trim();
   if (esConsultaMetaOtelax(q)) {
-    return { aprendizajes: [], baseLegal: [] };
+    return { aprendizajes: [], baseLegal: [], jurisprudencia: [] };
   }
 
   // Detección de número de ley específica (ej: 1462, 6715, 213, 1183, 1626, 834)
   const numLeyMatch = q.match(/\b(?:ley\s*(?:n[º°]?\s*)?|n[º°]?\s*)(\d+)(?:\/(\d{2,4}))?\b/i);
   let baseLegal = [];
 
-  const filtroVigencia = { estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] } };
+  const filtroVigencia = {
+    $or: [
+      { estado: 'VIGENTE' },
+      { estado: 'MODIFICADA' },
+      { estadoNormativo: { $nin: ['Derogada', 'Histórica', 'derogada', 'historica'] } },
+      { estado: { $exists: false }, estadoNormativo: { $exists: false } },
+    ],
+  };
 
   if (numLeyMatch) {
     const num = numLeyMatch[1];
@@ -61,7 +69,7 @@ async function buscarEnBaseLocal(consulta) {
     }).limit(2);
   }
 
-  // Si no hubo match específico o no se encontraron, búsqueda por texto completo
+  // Búsqueda por texto completo en base legal
   if (!baseLegal.length) {
     try {
       baseLegal = await BaseLegal.find(
@@ -71,7 +79,6 @@ async function buscarEnBaseLocal(consulta) {
         .sort({ score: { $meta: 'textScore' } })
         .limit(3);
     } catch {
-      // Fallback si no hay índice de texto activo
       baseLegal = await BaseLegal.find({
         ...filtroVigencia,
         $or: [
@@ -80,6 +87,19 @@ async function buscarEnBaseLocal(consulta) {
         ],
       }).limit(2);
     }
+  }
+
+  // Búsqueda en jurisprudencia CSJ y tribunales internacionales
+  let jurisprudencia = [];
+  try {
+    jurisprudencia = await Jurisprudencia.find(
+      { $text: { $search: consulta } },
+      { score: { $meta: 'textScore' } }
+    )
+      .sort({ score: { $meta: 'textScore' } })
+      .limit(2);
+  } catch {
+    jurisprudencia = [];
   }
 
   let aprendizajes = [];
@@ -94,15 +114,22 @@ async function buscarEnBaseLocal(consulta) {
     aprendizajes = [];
   }
 
-  return { aprendizajes, baseLegal };
+  return { aprendizajes, baseLegal, jurisprudencia };
 }
 
-function construirContexto({ aprendizajes, baseLegal }) {
+function construirContexto({ aprendizajes, baseLegal, jurisprudencia = [] }) {
   const partes = [];
 
   baseLegal.forEach((b) => {
-    const ref = b.url ? ` (${b.url})` : '';
-    partes.push(`[${b.titulo}${ref}]\nFUENTE: ${b.fuente || 'Oficial Paraguay'}\n${b.contenido.slice(0, 1200)}`);
+    const ref = b.fuenteOficialUrl || b.url ? ` (${b.fuenteOficialUrl || b.url})` : '';
+    const fuero = b.fuero ? ` [FUERO ${b.fuero}]` : '';
+    partes.push(`[${b.titulo}${fuero}${ref}]\nFUENTE: ${b.fuente || 'Oficial Paraguay'}\n${(b.contenido || '').slice(0, 1400)}`);
+  });
+
+  jurisprudencia.forEach((j) => {
+    const num = j.numeroResolucion ? ` N° ${j.numeroResolucion}` : '';
+    const sala = j.sala ? ` - ${j.sala}` : '';
+    partes.push(`[PRECEDENTE CSJ: ${j.tipoResolucion}${num} / ${j.ano || ''}${sala}]\nCARÁTULA: ${j.caratula}\nDOCTRINA:\n${(j.contenido || j.doctrinaSumario || '').slice(0, 1200)}`);
   });
 
   aprendizajes.forEach((a) => {
@@ -203,10 +230,10 @@ async function procesarConsultaMeta(pregunta) {
 }
 
 async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId }) {
-  const { aprendizajes, baseLegal } = await buscarEnBaseLocal(pregunta);
-  const totalLocal = aprendizajes.length + baseLegal.length;
+  const { aprendizajes, baseLegal, jurisprudencia } = await buscarEnBaseLocal(pregunta);
+  const totalLocal = aprendizajes.length + baseLegal.length + (jurisprudencia ? jurisprudencia.length : 0);
 
-  let contexto = construirContexto({ aprendizajes, baseLegal });
+  let contexto = construirContexto({ aprendizajes, baseLegal, jurisprudencia });
   let fuenteRespuesta = totalLocal > 0 ? 'base_local' : null;
   let requiereAvisoFallback = false;
 
@@ -254,6 +281,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     prompt: promptFinal,
     contexto: contexto || null,
     system: SYSTEM_PROMPT_TECHAPYRA,
+    activarGrounding: requiereAvisoFallback,
   });
 
   if (respuestaIA) {

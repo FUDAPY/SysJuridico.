@@ -193,12 +193,160 @@ function renderBarraLateral(paginaActiva) {
     </div>
     <div style="padding: 12px 14px 16px; font-size: 0.7rem; color: var(--texto-muted); text-align: center; border-top: 1px solid var(--borde); line-height: 1.4;">
       Todos los derechos reservados.<br>
-      Sistema creado e impulsado por <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="color: var(--azul-claro); font-weight: 600; text-decoration: none;">Otelax Dev</a>
+      Hecho por <a href="https://zetti.grupooh.online" target="_blank" rel="noopener noreferrer" style="color: var(--azul-accent); font-weight: 700; text-decoration: none;">ZETTI DIGITAL PY</a> &bull; <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="color: var(--dorado); font-weight: 600; text-decoration: none;">Otelax Dev</a>
     </div>
   `;
 
   inyectarWidgetLexpyFlotante(paginaActiva);
   inyectarPieDePaginaGlobal();
+}
+
+const DOMICILIO_PROCESAL_INSTITUCIONAL = 'Edificio BIJ, Av. Camilo Recalde c/ Capitán Miranda, Microcentro, Ciudad del Este';
+
+function alternarSidebar() {
+  const colapsado = document.body.classList.toggle('sidebar-colapsado');
+  localStorage.setItem('sysjuridico_sidebar_colapsado', colapsado ? 'true' : 'false');
+  actualizarIconoHamburguesa();
+}
+
+function inicializarSidebarColapsable() {
+  const guardado = localStorage.getItem('sysjuridico_sidebar_colapsado');
+  if (guardado === 'true') {
+    document.body.classList.add('sidebar-colapsado');
+  } else {
+    document.body.classList.remove('sidebar-colapsado');
+  }
+  actualizarIconoHamburguesa();
+}
+
+function actualizarIconoHamburguesa() {
+  const btn = document.getElementById('btnHamburguesaGlobal');
+  if (btn) {
+    const colapsado = document.body.classList.contains('sidebar-colapsado');
+    btn.innerHTML = colapsado ? '☰' : '✕';
+    btn.title = colapsado ? 'Expandir barra lateral' : 'Colapsar barra lateral (100% pantalla)';
+  }
+}
+
+// Modal Bloqueante: Identidad Forense Obligatoria
+function verificarPerfilForenseObligatorio() {
+  if (window.location.pathname.endsWith('login.html')) return;
+  const { usuario } = obtenerSesion();
+  if (!usuario) return;
+
+  const nombreCompleto = usuario.nombreCompleto || usuario.nombre || '';
+  const matriculaCSJ = usuario.matriculaCSJ || '';
+  const cedula = usuario.cedula || '';
+
+  const perfilCompleto = Boolean(nombreCompleto.trim() && matriculaCSJ.trim() && cedula.trim());
+  if (perfilCompleto) return;
+
+  mostrarModalPerfilForense(usuario);
+}
+
+function mostrarModalPerfilForense(usuario) {
+  if (document.getElementById('modalPerfilForenseBloqueante')) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'modalPerfilForenseBloqueante';
+  modal.className = 'modal-forense-overlay';
+  modal.innerHTML = `
+    <div class="modal-forense-card">
+      <div class="modal-forense-header">
+        <div style="font-size: 2rem; margin-bottom: 8px;">⚖️</div>
+        <h2>Identidad Forense Obligatoria</h2>
+        <p>Conforme a la normativa procesal paraguaya, SysJurídico requiere tu identificación profesional completa para la confección y validez de escritos judiciales.</p>
+      </div>
+      <form id="formPerfilForense" class="modal-forense-form">
+        <div class="campo-grupo">
+          <label>Nombre y Apellido Completo *</label>
+          <input type="text" id="inpPerfilNombre" required placeholder="Ej: Abg. Giuliano Catella" value="${escapeHtml(usuario.nombreCompleto || usuario.nombre || '')}">
+        </div>
+        <div class="campo-grid-2">
+          <div class="campo-grupo">
+            <label>N° Matrícula C.S.J. *</label>
+            <input type="text" id="inpPerfilMatricula" required placeholder="Ej: 45892" value="${escapeHtml(usuario.matriculaCSJ || '')}">
+          </div>
+          <div class="campo-grupo">
+            <label>Cédula de Identidad *</label>
+            <input type="text" id="inpPerfilCedula" required placeholder="Ej: 4.892.103" value="${escapeHtml(usuario.cedula || '')}">
+          </div>
+        </div>
+        <div class="campo-info-fijo">
+          <span>📍 Domicilio Procesal Fijo Institucional:</span>
+          <strong>${DOMICILIO_PROCESAL_INSTITUCIONAL}</strong>
+        </div>
+        <div id="errorPerfilForense" class="error-msg" style="display:none; color: var(--rojo); font-size: 0.85rem; margin-bottom: 12px;"></div>
+        <button type="submit" class="boton btn-dorado w-full" id="btnGuardarPerfilForense">
+          <span>✓</span> Habilitar y Acceder al Sistema
+        </button>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  const form = document.getElementById('formPerfilForense');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('btnGuardarPerfilForense');
+    const errDiv = document.getElementById('errorPerfilForense');
+    errDiv.style.display = 'none';
+
+    const nombreCompleto = document.getElementById('inpPerfilNombre').value.trim();
+    const matriculaCSJ = document.getElementById('inpPerfilMatricula').value.trim();
+    const cedula = document.getElementById('inpPerfilCedula').value.trim();
+
+    if (!nombreCompleto || !matriculaCSJ || !cedula) {
+      errDiv.textContent = 'Todos los campos marcados con (*) son obligatorios.';
+      errDiv.style.display = 'block';
+      return;
+    }
+
+    try {
+      btn.disabled = true;
+      btn.innerHTML = '<span>⏳</span> Validando y registrando...';
+
+      const res = await apiFetch('/auth/perfil-forense', {
+        method: 'PUT',
+        body: { nombreCompleto, matriculaCSJ, cedula },
+      });
+
+      // Actualizar localStorage
+      const { usuario: uActual } = obtenerSesion();
+      const uNuevo = { ...uActual, ...res.usuario, perfilForenseCompleto: true };
+      localStorage.setItem('usuario', JSON.stringify(uNuevo));
+
+      modal.remove();
+      window.location.reload();
+    } catch (err) {
+      btn.disabled = false;
+      btn.innerHTML = '<span>✓</span> Habilitar y Acceder al Sistema';
+      errDiv.textContent = err.message || 'Error al guardar perfil forense.';
+      errDiv.style.display = 'block';
+    }
+  });
+}
+
+function escapeHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+// Inyecta el botón hamburguesa global en la barra o pantalla
+function inyectarBotonHamburguesa() {
+  if (document.getElementById('btnHamburguesaGlobal')) return;
+  const btn = document.createElement('button');
+  btn.id = 'btnHamburguesaGlobal';
+  btn.className = 'btn-hamburguesa-flotante';
+  btn.title = 'Colapsar/Expandir barra lateral';
+  btn.innerHTML = '☰';
+  btn.onclick = alternarSidebar;
+  document.body.appendChild(btn);
+  inicializarSidebarColapsable();
 }
 
 // Inyecta el botón de acceso rápido de Techapyrã si no estamos en la página del chat
@@ -225,17 +373,23 @@ function inyectarPieDePaginaGlobal() {
   footer.id = 'piePaginaOtelax';
   footer.className = 'pie-pagina-sistema';
   footer.innerHTML = `
-    <div>© ${new Date().getFullYear()} Todos los derechos reservados.</div>
-    <div style="margin-top: 4px;">
-      Sistema creado e impulsado por 
-      <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer">Otelax Dev</a> 
-      (<em><a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer">www.dev.grupooh.online</a></em>)
+    <div>© ${new Date().getFullYear()} SysJurídico &bull; Todos los derechos reservados.</div>
+    <div style="margin-top: 4px; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
+      <span>Sistema hecho por</span>
+      <a href="https://zetti.grupooh.online" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--azul-accent);">ZETTI DIGITAL PY</a>
+      <span>&bull;</span>
+      <span>Impulsado por</span>
+      <a href="https://dev.grupooh.online/" target="_blank" rel="noopener noreferrer" style="font-weight: 600; color: var(--dorado);">Otelax Dev</a>
     </div>
   `;
   target.appendChild(footer);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(inyectarPieDePaginaGlobal, 100);
+  inyectarBotonHamburguesa();
+  setTimeout(() => {
+    inyectarPieDePaginaGlobal();
+    verificarPerfilForenseObligatorio();
+  }, 100);
 });
 

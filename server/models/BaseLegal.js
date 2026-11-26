@@ -1,36 +1,60 @@
 const mongoose = require('mongoose');
 
-// Conocimiento base legal (leyes, códigos, jurisprudencia) usado como fuente RAG local
+const FUEROS_VALIDOS = [
+  'CIVIL',
+  'PENAL',
+  'LABORAL',
+  'FAMILIA',
+  'NINEZ',
+  'TRIBUTARIO',
+  'CONTENCIOSO',
+  'CONSTITUCIONAL',
+  'ORG_JUDICIAL',
+  'INTERNACIONAL',
+];
+
+const articuloSchema = new mongoose.Schema(
+  {
+    numero: { type: String, required: true, trim: true },
+    texto: { type: String, required: true, trim: true },
+  },
+  { _id: false }
+);
+
 const baseLegalSchema = new mongoose.Schema(
   {
     titulo: { type: String, required: true, trim: true },
     categoria: {
       type: String,
-      enum: ['ley', 'codigo', 'jurisprudencia', 'doctrina', 'resolucion', 'otro'],
-      default: 'otro',
+      enum: ['ley', 'codigo', 'jurisprudencia', 'doctrina', 'resolucion', 'tratado', 'otro'],
+      default: 'ley',
     },
-    contenido: { type: String, required: true },
-    fuente: { type: String, default: '' }, // ej: csj.gov.py, baselegal.com.py, bacn.gov.py
-    url: { type: String, default: '' },
     fuero: {
       type: String,
-      enum: ['Civil y Comercial', 'Penal', 'Laboral', 'Niñez y Adolescencia', 'Contencioso Administrativo', 'Constitucional', 'Tributario', 'Organización Judicial', 'General'],
-      default: 'General',
+      enum: FUEROS_VALIDOS,
+      required: true,
       index: true,
     },
-    estadoNormativo: {
+    estado: {
       type: String,
-      enum: ['Vigente', 'Derogada', 'Histórica', 'Modificada'],
-      default: 'Vigente',
+      enum: ['VIGENTE', 'MODIFICADA', 'DEROGADA'],
+      default: 'VIGENTE',
       index: true,
     },
     numeroLey: { type: String, default: '', index: true },
+    contenido: { type: String, required: true },
+    articulos: { type: [articuloSchema], default: [] },
+    fuenteOficialUrl: { type: String, default: '' },
+    fuente: { type: String, default: 'BACN' },
+    modificaA: { type: [String], default: [] },
+    derogaA: { type: [String], default: [] },
     tags: { type: [String], default: [] },
-    firestoreId: { type: String, default: null, index: true }, // referencia al doc original migrado
   },
   { timestamps: true }
 );
 
 baseLegalSchema.index({ titulo: 'text', contenido: 'text', tags: 'text' });
+baseLegalSchema.index({ fuero: 1, estado: 1 });
 
 module.exports = mongoose.model('BaseLegal', baseLegalSchema, 'base_legal');
+module.exports.FUEROS_VALIDOS = FUEROS_VALIDOS;
