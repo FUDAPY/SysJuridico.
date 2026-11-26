@@ -428,9 +428,14 @@
               <small style="color:#93c5fd; font-size:0.75rem;">Inspiración doctrinaria, ética profesional y vocación de justicia</small>
             </div>
           </div>
-          <button class="boton btn-sm" onclick="siguienteFraseMotivacional()" style="background:#1e293b; color:#60a5fa; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
-            <span>🎲</span> Otra reflexión
-          </button>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <button class="boton btn-sm" id="btnEscucharBriefing" onclick="leerBriefingEnVozAlta()" style="background:#1e293b; color:#38bdf8; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;" title="Escuchar en voz alta">
+              <span id="iconoVozBriefing">🔊</span> Escuchar
+            </button>
+            <button class="boton btn-sm" onclick="siguienteFraseMotivacional()" style="background:#1e293b; color:#60a5fa; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+              <span>🎲</span> Otra reflexión
+            </button>
+          </div>
         </div>
 
         <div style="background:rgba(15, 23, 42, 0.7); border:1px solid rgba(59, 130, 246, 0.2); border-radius:10px; padding:18px 22px; position:relative; overflow:hidden;">
@@ -485,6 +490,51 @@
           </div>
           <div class="kpi-valor" id="kpiImpulsar" style="color:#c084fc;">0</div>
           <div class="kpi-sub">para impulsar &rarr;</div>
+        </div>
+      </div>
+ 
+      <!-- Galería de Plantillas Forenses de Rápida Acción -->
+      <div style="margin-bottom: 24px;">
+        <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
+          <span>⚡ ACCESO RÁPIDO A PLANTILLAS JUDICIALES &amp; ESCRITOS FORENSES</span>
+          <a href="/editor.html" style="color:#60a5fa; text-decoration:none; font-size:0.78rem;">Abrir Editor Completo &rarr;</a>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px;">
+          <a href="/editor.html" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">📄</div>
+            <strong style="font-size:0.85rem; color:#fff;">Escrito en Blanco</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Formato oficial CSJ con márgenes 4cm/2cm</span>
+          </a>
+
+          <a href="/editor.html?plantilla=contestacion" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">🛡️</div>
+            <strong style="font-size:0.85rem; color:#fff;">Contestación / In Limine</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Excepciones previas y rechazo liminar</span>
+          </a>
+
+          <a href="/editor.html?plantilla=laboral" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">💼</div>
+            <strong style="font-size:0.85rem; color:#fff;">Demanda Laboral</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Despido injustificado y cobro de guaraníes</span>
+          </a>
+
+          <a href="/editor.html?plantilla=penal" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">⚖️</div>
+            <strong style="font-size:0.85rem; color:#fff;">Escrito Penal</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Revisión de medidas cautelares y fianza</span>
+          </a>
+
+          <a href="/editor.html?plantilla=urgimiento" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">⏰</div>
+            <strong style="font-size:0.85rem; color:#fff;">Urgimiento Procesal</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Impulso de autos contra caducidad Art. 172</span>
+          </a>
+
+          <a href="/editor.html?plantilla=telegrama" class="tarjeta" style="text-decoration:none; color:inherit; padding:12px 14px; background:#111927; border:1px solid #1e293b; border-radius:10px; display:flex; flex-direction:column; gap:4px; transition:transform 0.15s, border-color 0.15s;" onmouseover="this.style.borderColor='#3b82f6'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1e293b'; this.style.transform='none'">
+            <div style="font-size:1.3rem;">📜</div>
+            <strong style="font-size:0.85rem; color:#fff;">Telegrama Colacionado</strong>
+            <span style="font-size:0.73rem; color:#94a3b8;">Intimación prejudicial formal</span>
+          </a>
         </div>
       </div>
 
@@ -618,12 +668,14 @@
     </div>
   </div>
 
-  <!-- Barra Inferior Persistente de Consulta IA (Images 2 & 3) -->
-  <div class="prompt-bar-flotante">
-    <button class="btn-adjuntar" title="Adjuntar documento o expediente" onclick="alert('Selecciona un expediente usando @ en el texto o adjunta desde la causa.')">📎</button>
-    <input type="text" id="inputPromptInicio" placeholder="Escribí tu consulta. Usá @ para mencionar un expediente..." onkeydown="if(event.key==='Enter') enviarConsultaPromptInicio()" />
+  <!-- Barra Inferior Persistente de Consulta IA con Micrófono y @ Mención de Expediente -->
+  <div class="prompt-bar-flotante" style="position:fixed; z-index:100;">
+    <div class="search-results-dropdown" id="dropdownMencionesExpediente" style="bottom:100%; top:auto; margin-bottom:8px; display:none;"></div>
+    <button class="btn-adjuntar" title="Mencionar expediente (usá @)" onclick="insertarArrobaPrompt()">@</button>
+    <input type="text" id="inputPromptInicio" placeholder="Consultá a Techapyrã IA o escribí @ para vincular un expediente..." oninput="manejarInputPromptInicio(this.value)" onkeydown="if(event.key==='Enter') enviarConsultaPromptInicio()" />
+    <button class="btn-adjuntar" id="btnMicPrompt" title="Dictar consulta por voz (Speech-to-Text)" onclick="alternarMicrofonoPrompt()" style="font-size:1.15rem; color:#60a5fa;">🎤</button>
     <button class="btn-enviar-ai" onclick="enviarConsultaPromptInicio()">
-      <span>Enviar</span> ✈
+      <span>Consultar</span> ✈
     </button>
   </div>
 
@@ -752,6 +804,7 @@
   </div>
 
   <script src="/js/api.js"></script>
+  <script src="/js/voiceAssistant.js"></script>
   <script src="/js/dashboard.js"></script>
 </body>
 </html>

@@ -222,6 +222,141 @@ function renderFraseMotivacional() {
 // Inicializar la primera frase al cargar
 setTimeout(renderFraseMotivacional, 100);
 
+// Escuchar briefing/pensamiento en voz alta (Text-to-Speech)
+function leerBriefingEnVozAlta() {
+  const f = FRASES_MOTIVACIONALES[fraseActualIndex];
+  const btn = document.getElementById('btnEscucharBriefing');
+  const icono = document.getElementById('iconoVozBriefing');
+
+  if (!window.voiceAssistant) {
+    alert('Asistente de voz no disponible en este navegador.');
+    return;
+  }
+
+  const textoALeer = `Pensamiento jurídico del día. ${f.texto}. Autor: ${f.autor}.`;
+  
+  if (icono) icono.textContent = '⏸️';
+  window.voiceAssistant.reproducirTexto(textoALeer, {
+    alFinalizar: () => {
+      if (icono) icono.textContent = '🔊';
+    },
+  });
+}
+
+// Dictado por voz (Speech-to-Text) en la barra de consulta
+let dictandoPrompt = false;
+function alternarMicrofonoPrompt() {
+  const btnMic = document.getElementById('btnMicPrompt');
+  const input = document.getElementById('inputPromptInicio');
+
+  if (!window.voiceAssistant || !window.voiceAssistant.soportaReconocimiento()) {
+    alert('Tu navegador no admite reconocimiento de voz por micrófono.');
+    return;
+  }
+
+  if (!dictandoPrompt) {
+    dictandoPrompt = true;
+    if (btnMic) {
+      btnMic.style.color = '#ef4444';
+      btnMic.title = 'Escuchando... Haz clic para detener';
+    }
+
+    window.voiceAssistant.iniciarDictado({
+      alRecibirTexto: (texto, esFinal) => {
+        if (input) {
+          if (esFinal) {
+            input.value = (input.value ? input.value + ' ' : '') + texto;
+            manejarInputPromptInicio(input.value);
+          }
+        }
+      },
+      alTerminar: () => {
+        dictandoPrompt = false;
+        if (btnMic) {
+          btnMic.style.color = '#60a5fa';
+          btnMic.title = 'Dictar consulta por voz (Speech-to-Text)';
+        }
+      },
+      alError: (err) => {
+        console.warn('[Voz] Error:', err);
+        dictandoPrompt = false;
+        if (btnMic) {
+          btnMic.style.color = '#60a5fa';
+        }
+      },
+    });
+  } else {
+    window.voiceAssistant.detenerDictado();
+    dictandoPrompt = false;
+    if (btnMic) {
+      btnMic.style.color = '#60a5fa';
+    }
+  }
+}
+
+// Manejo de autocompletado con @ para mencionar expedientes
+let expedienteMencionadoId = null;
+
+function insertarArrobaPrompt() {
+  const input = document.getElementById('inputPromptInicio');
+  if (input) {
+    input.value += '@';
+    input.focus();
+    manejarInputPromptInicio(input.value);
+  }
+}
+
+function manejarInputPromptInicio(valor) {
+  const dropdown = document.getElementById('dropdownMencionesExpediente');
+  if (!dropdown) return;
+
+  const ultimoArroba = valor.lastIndexOf('@');
+  if (ultimoArroba === -1) {
+    dropdown.style.display = 'none';
+    return;
+  }
+
+  const filtro = valor.substring(ultimoArroba + 1).toLowerCase().trim();
+  const coincidencias = todosLosExpedientes.filter((e) =>
+    `${e.caratula} ${e.numero || ''}`.toLowerCase().includes(filtro)
+  );
+
+  if (!coincidencias.length) {
+    dropdown.style.display = 'none';
+    return;
+  }
+
+  dropdown.innerHTML = coincidencias
+    .slice(0, 5)
+    .map(
+      (e) => `
+      <div class="search-result-item" onclick="seleccionarMencionExpediente('${e._id}', '${escapeHtml(e.caratula)}')">
+        <strong style="color:#60a5fa;">📁 ${escapeHtml(e.caratula)}</strong>
+        <div style="font-size:0.75rem; color:#94a3b8;">${e.numero ? `Exp. N° ${e.numero}/${e.ano || '2026'}` : 'S/N'} &bull; ${e.juzgado || 'Juzgado'}</div>
+      </div>
+    `
+    )
+    .join('');
+  dropdown.style.display = 'block';
+}
+
+function seleccionarMencionExpediente(expId, caratula) {
+  const input = document.getElementById('inputPromptInicio');
+  const dropdown = document.getElementById('dropdownMencionesExpediente');
+  expedienteMencionadoId = expId;
+
+  if (input) {
+    const ultimoArroba = input.value.lastIndexOf('@');
+    if (ultimoArroba !== -1) {
+      input.value = input.value.substring(0, ultimoArroba) + `@${caratula} `;
+    } else {
+      input.value = `@${caratula} `;
+    }
+    input.focus();
+  }
+  if (dropdown) dropdown.style.display = 'none';
+}
+
 // Acción de click en prioridades para enfocar en el prompt
 function enfocarPromptEnAccion(tema) {
   const input = document.getElementById('inputPromptInicio');
@@ -237,8 +372,11 @@ async function enviarConsultaPromptInicio() {
   const pregunta = input?.value.trim();
   if (!pregunta) return;
 
-  // Redirigir a Techapyrã IA con la consulta preparada
-  window.location.href = `/lexpy.html?consulta=${encodeURIComponent(pregunta)}`;
+  let url = `/lexpy.html?consulta=${encodeURIComponent(pregunta)}`;
+  if (expedienteMencionadoId) {
+    url += `&expedienteId=${encodeURIComponent(expedienteMencionadoId)}`;
+  }
+  window.location.href = url;
 }
 
 // Alternar entre Asistente Jurídico y Centro Financiero

@@ -82,9 +82,19 @@ const expedienteSchema = new mongoose.Schema(
     // ---- Campos de Sincronización CSJ (Portal Jurisdiccional) ----
     numeroCSJ: { type: String, trim: true, default: '' },
     anoCSJ: { type: Number, default: null },
+    turno: { type: String, trim: true, default: '' },
+    juezNombre: { type: String, trim: true, default: '' },
+    juezGenero: { type: String, enum: ['M', 'F', ''], default: '' },
+    actuarioNombre: { type: String, trim: true, default: '' },
     secretaria: { type: String, trim: true, default: '' },
     origenCSJ: { type: Boolean, default: false },
     ultimaSincronizacionCSJ: { type: Date, default: null },
+    cargoElectronico: {
+      numeroCargo: { type: String, default: '' },
+      fechaPresentacion: { type: Date, default: null },
+      hashPresentacion: { type: String, default: '' },
+      estado: { type: String, default: '' },
+    },
     actuacionesCSJ: [
       {
         fecha: { type: Date, default: Date.now },
