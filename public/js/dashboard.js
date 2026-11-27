@@ -59,12 +59,12 @@ async function inicializarInicio() {
       zonaAct.innerHTML = recientes
         .map(
           (e) => `
-          <div onclick="window.location.href='/agenda.html'" style="background:#0f172a; padding:10px 14px; border-radius:8px; margin-bottom:8px; text-align:left; border:1px solid #1e293b; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'" title="Haga clic para ver en el Calendario Judicial">
-            <div style="font-weight:600; font-size:0.86rem; color:#fff; display:flex; justify-content:space-between; align-items:center;">
+          <div onclick="window.location.href='/agenda.html'" style="background:#F8FAFC; padding:10px 14px; border-radius:8px; margin-bottom:8px; text-align:left; border:1px solid #E2E8F0; cursor:pointer; transition:background 0.2s;" onmouseover="this.style.background='#F1F5F9'" onmouseout="this.style.background='#F8FAFC'" title="Haga clic para ver en el Calendario Judicial">
+            <div style="font-weight:600; font-size:0.86rem; color:#0F172A; display:flex; justify-content:space-between; align-items:center;">
               <span style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:80%;">${e.caratula}</span>
-              <span style="font-size:0.75rem; color:#60a5fa; font-weight:600;">📅 Ver &rarr;</span>
+              <span style="font-size:0.75rem; color:#2563EB; font-weight:600;">📅 Ver &rarr;</span>
             </div>
-            <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:3px;">${e.ultimaActuacionTexto || 'Actuación procesal'} &bull; ${formatoFecha(e.updatedAt || e.createdAt)}</div>
+            <div style="font-size:0.75rem; color:#64748B; margin-top:3px;">${e.ultimaActuacionTexto || 'Actuación procesal'} &bull; ${formatoFecha(e.updatedAt || e.createdAt)}</div>
           </div>
         `
         )

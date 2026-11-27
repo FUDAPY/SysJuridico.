@@ -553,8 +553,8 @@
         </div>
       </div>
 
-      <!-- Sección de Prioridades del Día (2 Columnas - Images 2 & 3) -->
-      <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#94a3b8; margin-bottom:12px;">
+      <!-- Sección de Prioridades del Día (2 Columnas) -->
+      <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#475569; margin-bottom:12px;">
         PRIORIDADES DEL DÍA (HAGA CLIC PARA ENFOCAR Y REDACTAR EN EL CHAT):
       </div>
 
@@ -566,11 +566,11 @@
             <div style="display:inline-block; background:#b45309; color:#fef3c7; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; margin-bottom:8px;">
               NOVEDAD CSJ
             </div>
-            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#fff;">Actuaciones Procesales del Día</h4>
-            <p style="margin:0 0 10px; font-size:0.82rem; color:#fde68a; line-height:1.4;">
+            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#78350F;">Actuaciones Procesales del Día</h4>
+            <p style="margin:0 0 10px; font-size:0.82rem; color:#92400E; line-height:1.4;">
               Se registraron providencias notificadas para su examen y eventual deducción de recursos o incidentes.
             </p>
-            <a href="javascript:void(0)" onclick="enfocarPromptEnAccion('Analizar Providencias Notificadas del Día')" style="color:#fbbf24; font-weight:600; font-size:0.82rem; text-decoration:none;">
+            <a href="javascript:void(0)" onclick="enfocarPromptEnAccion('Analizar Providencias Notificadas del Día')" style="color:#B45309; font-weight:600; font-size:0.82rem; text-decoration:none;" onmouseover="this.style.color='#78350F'" onmouseout="this.style.color='#B45309'">
               Analizar Providencia &rarr;
             </a>
           </div>
@@ -578,23 +578,23 @@
           <!-- Tarjeta Vencimientos y Caducidad -->
           <div class="prioridad-card">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
-              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#fff;">Vencimientos y caducidad</h4>
-              <span style="font-size:0.75rem; color:#94a3b8;">Ver todo (0)</span>
+              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#0F172A;">Vencimientos y caducidad</h4>
+              <span style="font-size:0.75rem; color:#475569;">Ver todo (0)</span>
             </div>
-            <div style="font-size:0.82rem; color:#f87171; margin-bottom:6px;">
+            <div style="font-size:0.82rem; color:#DC2626; font-weight:600; margin-bottom:6px;">
               &bull; Sin alertas de caducidad
             </div>
-            <div style="font-size:0.82rem; color:#34d399;">
+            <div style="font-size:0.82rem; color:#059669; font-weight:600;">
               &bull; Sin plazos registrados próximos
             </div>
           </div>
 
           <!-- Tarjeta Inactivo + Tiempo -->
           <div class="prioridad-card alerta-inactivo">
-            <div style="display:flex; align-items:center; gap:6px; font-size:0.8rem; font-weight:700; color:#fbbf24; margin-bottom:6px;">
+            <div style="display:flex; align-items:center; gap:6px; font-size:0.8rem; font-weight:700; color:#991B1B; margin-bottom:6px;">
               <span>&bull;</span> INACTIVO (+ TIEMPO)
             </div>
-            <div style="font-size:0.82rem; color:#cbd5e1; text-align:center; padding:10px 0;">
+            <div style="font-size:0.82rem; color:#7F1D1D; text-align:center; padding:10px 0; font-weight:500;">
               No hay causas con inactividad prolongada.
             </div>
           </div>
@@ -605,31 +605,31 @@
           <!-- Tarjeta Últimas Actuaciones (Lleva directo al Calendario) -->
           <div class="prioridad-card" onclick="window.location.href='/agenda.html'" style="cursor:pointer;" title="Haga clic para ver el Calendario Forense y Actuaciones">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#fff; display:flex; align-items:center; gap:6px;">
-                <span style="color:#3b82f6;">&bull;</span> Últimas actuaciones (<span id="cantUltActuaciones">0</span>)
+              <h4 style="margin:0; font-size:0.9rem; font-weight:700; color:#0F172A; display:flex; align-items:center; gap:6px;">
+                <span style="color:#2563EB;">&bull;</span> Últimas actuaciones (<span id="cantUltActuaciones">0</span>)
               </h4>
-              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="font-size:0.75rem; color:#60a5fa; text-decoration:none; font-weight:600;">📅 Ver Calendario &rarr;</a>
+              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="font-size:0.75rem; color:#2563EB; text-decoration:none; font-weight:600;">📅 Ver Calendario &rarr;</a>
             </div>
-            <div style="text-align:center; padding:24px 0; color:#94a3b8; font-size:0.85rem;" id="zonaUltimasActuaciones">
+            <div style="text-align:center; padding:24px 0; color:#475569; font-size:0.85rem;" id="zonaUltimasActuaciones">
               No hay actuaciones nuevas de hoy.<br />
-              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="color:#60a5fa; text-decoration:none; display:inline-block; margin-top:8px; font-size:0.82rem; font-weight:600;">
+              <a href="/agenda.html" onclick="event.stopPropagation(); window.location.href='/agenda.html'" style="color:#2563EB; text-decoration:none; display:inline-block; margin-top:8px; font-size:0.82rem; font-weight:600;">
                 📅 Abrir Calendario de Audiencias y Vencimientos &gt;
               </a>
             </div>
           </div>
 
           <!-- Tarjeta Procesos para Impulsar -->
-          <div class="prioridad-card" style="background:#191428; border:1px solid #4c1d95;">
-            <div style="display:inline-block; background:#6b21a8; color:#f3e8ff; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; margin-bottom:8px;">
+          <div class="prioridad-card" style="background:#F5F3FF; border:1px solid #DDD6FE;">
+            <div style="display:inline-block; background:#6D28D9; color:#F5F3FF; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; margin-bottom:8px;">
               PROCESOS PARA IMPULSAR
             </div>
-            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#fff;">Sin presentaciones pendientes para urgir</h4>
-            <p style="margin:0 0 10px; font-size:0.82rem; color:#e9d5ff; line-height:1.4;">
+            <h4 style="margin:0 0 6px; font-size:0.95rem; font-weight:700; color:#0F172A;">Sin presentaciones pendientes para urgir</h4>
+            <p style="margin:0 0 10px; font-size:0.82rem; color:#475569; line-height:1.4;">
               No hay presentaciones electrónicas con 11 días completos transcurridos sin providencia judicial.
             </p>
             <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
-              <span style="color:#c084fc;">Sin pendientes &rarr;</span>
-              <span style="color:#94a3b8; font-size:0.75rem;">Ver todo (0)</span>
+              <span style="color:#6D28D9; font-weight:600;">Sin pendientes &rarr;</span>
+              <span style="color:#64748B; font-size:0.75rem;">Ver todo (0)</span>
             </div>
           </div>
         </div>
