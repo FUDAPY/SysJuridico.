@@ -77,18 +77,38 @@
       font-family: var(--fuente-cuerpo);
     }
 
-    /* 1. Barra de Título Superior Estilo Google Docs */
-    .lo-titlebar {
+    /* Ocultar botón hamburguesa flotante en el editor */
+    #btnHamburguesaGlobal {
+      display: none !important;
+    }
+
+    /* 1. Header Superior Estilo Google Docs */
+    .lo-header-wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem 1.25rem 0.25rem;
+      padding: 6px 16px 4px 16px;
       background: #F9FBFD;
       border-bottom: 1px solid #E2E8F0;
       color: #0F172A;
       z-index: 30;
       flex-shrink: 0;
       gap: 12px;
+    }
+    .lo-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lo-header-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .lo-header-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .lo-title-input {
       font-size: 1.05rem;
@@ -97,7 +117,7 @@
       background: transparent;
       border: 1px solid transparent;
       border-radius: 6px;
-      padding: 3px 8px;
+      padding: 2px 6px;
       outline: none;
       min-width: 250px;
       transition: all 150ms ease;
@@ -143,9 +163,10 @@
     .lo-menubar {
       display: flex;
       align-items: center;
-      padding: 0.2rem 1rem;
-      background: #F9FBFD;
-      gap: 0.2rem;
+      padding: 0;
+      margin-left: -4px;
+      background: transparent;
+      gap: 2px;
       z-index: 25;
       flex-shrink: 0;
     }
@@ -153,8 +174,8 @@
       position: relative;
     }
     .lo-menu-btn {
-      padding: 4px 10px;
-      font-size: 0.82rem;
+      padding: 2px 8px;
+      font-size: 13px;
       font-weight: 500;
       color: #334155;
       background: transparent;
@@ -215,77 +236,108 @@
       color: #1D4ED8;
     }
 
-    /* 3. Barra de Herramientas Estilo Píldora Google Docs */
-    .lo-toolbars {
-      display: flex;
-      flex-direction: column;
-      background: #F9FBFD;
-      padding: 2px 16px 8px;
-      flex-shrink: 0;
-      z-index: 20;
-    }
-    .lo-toolbar-row {
+    /* 3. Barra de Herramientas Estilo Píldora Google Docs (UNA SOLA FILA) */
+    .docs-toolbar {
       display: flex;
       align-items: center;
-      padding: 6px 16px;
-      gap: 4px;
+      flex-wrap: nowrap !important;
+      gap: 2px;
       background: #EDF2FA;
       border-radius: 9999px;
+      padding: 4px 12px;
+      margin: 4px 16px 8px;
+      height: 40px;
+      overflow-x: auto;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
       border: 1px solid #E2E8F0;
-      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-      flex-wrap: wrap;
-      overflow-x: visible;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+      flex-shrink: 0;
     }
-    .lo-toolbar-row:not(:last-child) {
-      margin-bottom: 6px;
+    .docs-toolbar::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
     }
-    .lo-btn {
+
+    /* Anular el width: 100% global en los <select> del editor */
+    .docs-toolbar select, .docs-toolbar .lo-select {
+      width: auto !important;
+      min-width: unset !important;
+      max-width: 145px;
+      height: 28px;
+      padding: 0 22px 0 8px;
+      border: none;
+      background: transparent !important;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #1F2937 !important;
+      cursor: pointer;
+      outline: none;
+      box-shadow: none !important;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .docs-toolbar select:hover, .docs-toolbar .lo-select:hover {
+      background: rgba(15, 23, 42, 0.06) !important;
+    }
+
+    .docs-toolbar .lo-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 28px;
+      width: 28px;
       height: 28px;
-      padding: 0 6px;
+      min-width: 28px;
+      padding: 0;
       border-radius: 6px;
       background: transparent;
-      border: 1px solid transparent;
-      color: #334155;
-      font-size: 0.82rem;
+      border: none;
+      color: #374151;
       cursor: pointer;
       flex-shrink: 0;
       transition: all 120ms ease;
+      font-size: 13px;
     }
-    .lo-btn:hover {
-      background: #FFFFFF;
-      color: #1D4ED8;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    .docs-toolbar .lo-btn:hover {
+      background: rgba(15, 23, 42, 0.08);
+      color: #111827;
     }
-    .lo-btn.active {
+    .docs-toolbar .lo-btn.active {
       background: #DBEAFE;
       color: #1D4ED8;
-      border-color: #BFDBFE;
     }
-    .lo-sep {
+
+    .docs-toolbar .lo-sep {
       width: 1px;
-      height: 18px;
+      height: 20px;
       background: #CBD5E1;
       margin: 0 6px;
       flex-shrink: 0;
     }
-    .lo-select {
-      height: 28px;
-      padding: 0 8px;
-      font-size: 0.8rem;
-      border-radius: 6px;
-      background: #FFFFFF !important;
-      border: 1px solid #CBD5E1;
-      color: #0F172A !important;
-      flex-shrink: 0;
-      outline: none;
+
+    .lo-font-size-input {
+      width: 34px !important;
+      height: 26px !important;
+      text-align: center;
+      font-size: 13px;
       font-weight: 500;
+      border: 1px solid #CBD5E1 !important;
+      border-radius: 4px;
+      background: #FFFFFF !important;
+      color: #1F2937 !important;
+      padding: 0 !important;
+      outline: none;
+      box-sizing: border-box;
     }
-    .lo-select:hover, .lo-select:focus {
-      border-color: #1D4ED8;
+    .lo-font-size-input::-webkit-inner-spin-button, 
+    .lo-font-size-input::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    .lo-font-size-input {
+      -moz-appearance: textfield;
     }
 
     /* 4. Regla Horizontal Graduada Forense CSJ (Tema Claro) */
@@ -360,6 +412,7 @@
       display: flex;
       flex: 1;
       width: 100%;
+      height: calc(100vh - 110px);
       min-width: 0;
       min-height: 0;
       overflow: hidden;
@@ -661,7 +714,7 @@
         height: auto !important;
         overflow: visible !important;
       }
-      .lo-titlebar, .lo-menubar, .lo-toolbars, .lo-ruler-container, .lo-sidebar, .lo-findbar, .lo-statusbar, .floating-ai-bubble, .lo-outline-panel {
+      .lo-header-wrapper, .lo-titlebar, .lo-menubar, .lo-toolbars, .docs-toolbar, .lo-ruler-container, .lo-sidebar, .lo-findbar, .lo-statusbar, .floating-ai-bubble, .lo-outline-panel {
         display: none !important;
       }
       .lo-document-container {
@@ -683,227 +736,287 @@
 </head>
 <body class="app-body">
   <div class="editor-layout">
-    <!-- 1. Barra de Título Superior Estilo Google Docs -->
-    <header class="lo-titlebar">
-      <div style="display: flex; align-items: center; gap: 0.75rem;">
-        <a href="/expedientes.html" class="header-action-btn" title="Volver al Gestor de Expedientes" style="padding: 6px 10px;">
-          <span>←</span>
+    <!-- 1. Header Superior Estilo Google Docs (Menú dentro del flujo flex bajo el título) -->
+    <header class="lo-header-wrapper">
+      <div class="lo-header-left">
+        <a href="/expedientes.html" class="header-action-btn" title="Volver al Gestor de Expedientes" style="width: 32px; height: 32px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#334155" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         </a>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-size: 1.4rem; color: #1D4ED8;">📄</span>
-          <input type="text" id="tituloDocumento" class="lo-title-input" value="Escrito Judicial Sin Título" title="Haga clic para editar el nombre del escrito">
+        <div class="lo-header-info">
+          <div class="lo-header-title-row">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <input type="text" id="tituloDocumento" class="lo-title-input" value="Escrito Judicial Sin Título" title="Haga clic para editar el nombre del escrito">
+            <span class="badge" id="badgeExpediente" style="font-size: 11px; font-weight: 500; background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; border-radius: 9999px; padding: 2px 8px; white-space: nowrap;">Sin expediente vinculado</span>
+          </div>
+
+          <!-- Barra de Menús en el Header bajo el Título -->
+          <nav class="lo-menubar">
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="archivo">Archivo</button>
+              <div class="lo-dropdown-menu" id="menuArchivo">
+                <button class="lo-dropdown-item" id="menuItemNuevo">Nuevo Escrito <span class="lo-shortcut">Ctrl+N</span></button>
+                <button class="lo-dropdown-item" id="menuItemGuardar">Guardar en Causa <span class="lo-shortcut">Ctrl+S</span></button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuItemDocx">Exportar DOCX / Word</button>
+                <button class="lo-dropdown-item" onclick="window.print()">Imprimir / Exportar PDF <span class="lo-shortcut">Ctrl+P</span></button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="editar">Editar</button>
+              <div class="lo-dropdown-menu" id="menuEditar">
+                <button class="lo-dropdown-item" data-cmd="undo">Deshacer <span class="lo-shortcut">Ctrl+Z</span></button>
+                <button class="lo-dropdown-item" data-cmd="redo">Rehacer <span class="lo-shortcut">Ctrl+Y</span></button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" data-cmd="cut">Cortar <span class="lo-shortcut">Ctrl+X</span></button>
+                <button class="lo-dropdown-item" data-cmd="copy">Copiar <span class="lo-shortcut">Ctrl+C</span></button>
+                <button class="lo-dropdown-item" data-cmd="selectAll">Seleccionar Todo <span class="lo-shortcut">Ctrl+A</span></button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuItemBuscar">Buscar y Reemplazar <span class="lo-shortcut">Ctrl+F</span></button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="ver">Ver</button>
+              <div class="lo-dropdown-menu" id="menuVer">
+                <button class="lo-dropdown-item" id="menuItemToggleRegla">✓ Regla Horizontal</button>
+                <button class="lo-dropdown-item" id="menuItemToggleGuias">Guías de Márgenes Forenses</button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuItemZoom100">Zoom Normal (100%)</button>
+                <button class="lo-dropdown-item" id="menuItemZoomAuto">Ajustar al Ancho</button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="insertar">Insertar</button>
+              <div class="lo-dropdown-menu" id="menuInsertar">
+                <button class="lo-dropdown-item" id="menuItemSaltoPagina">Salto de Página <span class="lo-shortcut">Ctrl+Enter</span></button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuInsertObjeto">Fórmula: OBJETO PROMOVER</button>
+                <button class="lo-dropdown-item" id="menuInsertJuez">Fórmula: SEÑOR JUEZ</button>
+                <button class="lo-dropdown-item" id="menuInsertDerecho">Fórmula: DERECHO (CC y CPC)</button>
+                <button class="lo-dropdown-item" id="menuInsertPetitorio">Fórmula: PETITORIO</button>
+                <button class="lo-dropdown-item" id="menuInsertJusticia">Fórmula: SERÁ JUSTICIA.-</button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuInsertFirma">Pie de Firma Forense y Matrícula</button>
+                <button class="lo-dropdown-item" id="menuInsertFecha">Lugar y Fecha Actual (Asunción)</button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="formato">Formato</button>
+              <div class="lo-dropdown-menu" id="menuFormato">
+                <button class="lo-dropdown-item" data-cmd="bold">Negrita <span class="lo-shortcut">Ctrl+B</span></button>
+                <button class="lo-dropdown-item" data-cmd="italic">Cursiva <span class="lo-shortcut">Ctrl+I</span></button>
+                <button class="lo-dropdown-item" data-cmd="underline">Subrayado <span class="lo-shortcut">Ctrl+U</span></button>
+                <button class="lo-dropdown-item" data-cmd="justifyFull">Justificar (Forense CSJ)</button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" data-cmd="removeFormat">Limpiar Formato Directo</button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="herramientas">Herramientas</button>
+              <div class="lo-dropdown-menu" id="menuHerramientas">
+                <button class="lo-dropdown-item" onclick="contarPalabrasYFojas()">Contar Palabras y Fojas</button>
+                <button class="lo-dropdown-item" id="btnHerramientasOrtografia" onclick="document.getElementById('menuIAPolir')?.click()">Ortografía Forense</button>
+                <button class="lo-dropdown-item" onclick="insertarSaltoDePagina()">Salto de Foja Judicial</button>
+                <button class="lo-dropdown-item" onclick="alternarOutline()">Mostrar/Ocultar Esquema</button>
+              </div>
+            </div>
+
+            <div class="lo-menu-item">
+              <button class="lo-menu-btn" data-menu="ia" style="color: #1D4ED8; font-weight: 700;">✨ Techapyrã IA</button>
+              <div class="lo-dropdown-menu" id="menuIA">
+                <button class="lo-dropdown-item" id="menuIAMejorar">Mejorar Texto Seleccionado</button>
+                <button class="lo-dropdown-item" id="menuIAFundamentar">Fundamentar con CSJ & Códigos</button>
+                <button class="lo-dropdown-item" id="menuIAPolir">Polir Estilo y Ortografía Forense</button>
+                <div class="lo-dropdown-divider"></div>
+                <button class="lo-dropdown-item" id="menuIACargarCausa">Incorporar Hechos del Expediente</button>
+              </div>
+            </div>
+          </nav>
         </div>
-        <span class="badge badge-info" id="badgeExpediente" style="font-size: 0.72rem; background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE;">Sin expediente vinculado</span>
       </div>
 
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 8px;">
         <button class="header-action-btn btn-primary" id="btnGuardarEnExpediente" title="Guardar escrito en causa judicial (Ctrl+S)">
-          <span>💾 Guardar</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          <span>Guardar</span>
         </button>
         <button class="header-action-btn" id="btnDescargarDocx" title="Exportar a Microsoft Word (.docx / .doc)">
-          <span>📥 .DOCX</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>.DOCX</span>
         </button>
         <button class="header-action-btn" onclick="window.print()" title="Imprimir o exportar PDF forense">
-          <span>🖨️ PDF</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span>PDF</span>
         </button>
         <button class="header-action-btn" id="btnToggleSidebar" title="Mostrar/ocultar panel lateral de Techapyrã IA">
-          <span>📑 Panel IA</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          <span>Panel IA</span>
         </button>
       </div>
     </header>
 
-    <!-- 2. Barra de Menús Clásica LibreOffice Writer -->
-    <nav class="lo-menubar">
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="archivo">Archivo</button>
-        <div class="lo-dropdown-menu" id="menuArchivo">
-          <button class="lo-dropdown-item" id="menuItemNuevo">Nuevo Escrito <span class="lo-shortcut">Ctrl+N</span></button>
-          <button class="lo-dropdown-item" id="menuItemGuardar">Guardar en Causa <span class="lo-shortcut">Ctrl+S</span></button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuItemDocx">Exportar DOCX / Word</button>
-          <button class="lo-dropdown-item" onclick="window.print()">Imprimir / Exportar PDF <span class="lo-shortcut">Ctrl+P</span></button>
-        </div>
-      </div>
+    <!-- 2. Barra de Herramientas Estilo Píldora Google Docs (Una sola fila) -->
+    <div class="docs-toolbar" id="docsToolbar">
+      <!-- 1. Acciones rápidas: Buscar, Deshacer, Rehacer, Imprimir -->
+      <button type="button" class="lo-btn" id="btnToolbarBuscar" title="Buscar y reemplazar (Ctrl+F)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="undo" title="Deshacer (Ctrl+Z)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 0 0-4-4H4"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="redo" title="Rehacer (Ctrl+Y)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 14 20 9 15 4"/><path d="M4 20v-7a4 4 0 0 1 4-4h12"/></svg>
+      </button>
+      <button type="button" class="lo-btn" onclick="window.print()" title="Imprimir / Exportar PDF (Ctrl+P)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      </button>
 
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="editar">Editar</button>
-        <div class="lo-dropdown-menu" id="menuEditar">
-          <button class="lo-dropdown-item" data-cmd="undo">Deshacer <span class="lo-shortcut">Ctrl+Z</span></button>
-          <button class="lo-dropdown-item" data-cmd="redo">Rehacer <span class="lo-shortcut">Ctrl+Y</span></button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" data-cmd="cut">Cortar <span class="lo-shortcut">Ctrl+X</span></button>
-          <button class="lo-dropdown-item" data-cmd="copy">Copiar <span class="lo-shortcut">Ctrl+C</span></button>
-          <button class="lo-dropdown-item" data-cmd="selectAll">Seleccionar Todo <span class="lo-shortcut">Ctrl+A</span></button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuItemBuscar">Buscar y Reemplazar <span class="lo-shortcut">Ctrl+F</span></button>
-        </div>
-      </div>
+      <!-- 2. Zoom: <select> compacto (100%, width: 68px) -->
+      <select class="lo-select" id="selectZoomHoja" title="Zoom de foja" style="width: 68px !important; max-width: 68px;">
+        <option value="1">100%</option>
+        <option value="0.95">95%</option>
+        <option value="0.9">90%</option>
+        <option value="0.85">85%</option>
+        <option value="auto">Ajustar</option>
+      </select>
 
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="ver">Ver</button>
-        <div class="lo-dropdown-menu" id="menuVer">
-          <button class="lo-dropdown-item" id="menuItemToggleRegla">✓ Regla Horizontal</button>
-          <button class="lo-dropdown-item" id="menuItemToggleGuias">Guías de Márgenes Forenses</button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuItemZoom100">Zoom Normal (100%)</button>
-          <button class="lo-dropdown-item" id="menuItemZoomAuto">Ajustar al Ancho</button>
-        </div>
-      </div>
+      <!-- Separador | -->
+      <div class="lo-sep"></div>
 
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="insertar">Insertar</button>
-        <div class="lo-dropdown-menu" id="menuInsertar">
-          <button class="lo-dropdown-item" id="menuItemSaltoPagina">Salto de Página <span class="lo-shortcut">Ctrl+Enter</span></button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuInsertObjeto">Fórmula: OBJETO PROMOVER</button>
-          <button class="lo-dropdown-item" id="menuInsertJuez">Fórmula: SEÑOR JUEZ</button>
-          <button class="lo-dropdown-item" id="menuInsertDerecho">Fórmula: DERECHO (CC y CPC)</button>
-          <button class="lo-dropdown-item" id="menuInsertPetitorio">Fórmula: PETITORIO</button>
-          <button class="lo-dropdown-item" id="menuInsertJusticia">Fórmula: SERÁ JUSTICIA.-</button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuInsertFirma">Pie de Firma Forense y Matrícula</button>
-          <button class="lo-dropdown-item" id="menuInsertFecha">Lugar y Fecha Actual (Asunción)</button>
-        </div>
-      </div>
+      <!-- 3. Estilos y Fuente: <select> de Estilo (max-width: 115px) + <select> de Fuente (max-width: 135px) -->
+      <select class="lo-select" id="selectEstiloTexto" title="Estilos de texto" style="max-width: 115px;">
+        <option value="p">Texto normal</option>
+        <option value="h1">Título 1</option>
+        <option value="h2">Título 2</option>
+        <option value="h3">Título 3</option>
+      </select>
 
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="formato">Formato</button>
-        <div class="lo-dropdown-menu" id="menuFormato">
-          <button class="lo-dropdown-item" data-cmd="bold">Negrita <span class="lo-shortcut">Ctrl+B</span></button>
-          <button class="lo-dropdown-item" data-cmd="italic">Cursiva <span class="lo-shortcut">Ctrl+I</span></button>
-          <button class="lo-dropdown-item" data-cmd="underline">Subrayado <span class="lo-shortcut">Ctrl+U</span></button>
-          <button class="lo-dropdown-item" data-cmd="justifyFull">Justificar (Forense CSJ)</button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" data-cmd="removeFormat">Limpiar Formato Directo</button>
-        </div>
-      </div>
+      <select class="lo-select" id="selectFuente" title="Familia tipográfica" style="max-width: 135px;">
+        <option value="Liberation Mono" selected>Liberation Mono</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Liberation Serif">Liberation Serif</option>
+        <option value="Arial">Arial</option>
+      </select>
 
-      <div class="lo-menu-item">
-        <button class="lo-menu-btn" data-menu="ia" style="color: #60a5fa; font-weight: 700;">✨ Techapyrã IA</button>
-        <div class="lo-dropdown-menu" id="menuIA">
-          <button class="lo-dropdown-item" id="menuIAMejorar">Mejorar Texto Seleccionado</button>
-          <button class="lo-dropdown-item" id="menuIAFundamentar">Fundamentar con CSJ & Códigos</button>
-          <button class="lo-dropdown-item" id="menuIAPolir">Polir Estilo y Ortografía Forense</button>
-          <div class="lo-dropdown-divider"></div>
-          <button class="lo-dropdown-item" id="menuIACargarCausa">Incorporar Hechos del Expediente</button>
-        </div>
-      </div>
-    </nav>
+      <!-- Separador | -->
+      <div class="lo-sep"></div>
 
-    <!-- 3. Barras de Herramientas Estilo LibreOffice Writer -->
-    <div class="lo-toolbars">
-      <!-- Fila 1: Herramientas Estándar -->
-      <div class="lo-toolbar-row">
-        <button class="lo-btn" id="btnToolbarNuevo" title="Nuevo documento (Ctrl+N)">📄</button>
-        <button class="lo-btn" id="btnToolbarGuardar" title="Guardar escrito en expediente (Ctrl+S)">💾</button>
-        <button class="lo-btn" id="btnToolbarDocx" title="Exportar a Word (.doc)">📥</button>
-        <button class="lo-btn" onclick="window.print()" title="Imprimir / Guardar como PDF">🖨️</button>
-        <div class="lo-sep"></div>
-        <button class="lo-btn" data-cmd="cut" title="Cortar (Ctrl+X)">✂️</button>
-        <button class="lo-btn" data-cmd="copy" title="Copiar (Ctrl+C)">📋</button>
-        <button class="lo-btn" id="btnToolbarPegar" title="Pegar texto (Ctrl+V)">📄📋</button>
-        <div class="lo-sep"></div>
-        <button class="lo-btn" data-cmd="undo" title="Deshacer (Ctrl+Z)">↺</button>
-        <button class="lo-btn" data-cmd="redo" title="Rehacer (Ctrl+Y)">↻</button>
-        <div class="lo-sep"></div>
-        <button class="lo-btn" id="btnToolbarBuscar" title="Buscar y reemplazar (Ctrl+F)">🔍</button>
-        <div class="lo-sep"></div>
-
-        <!-- Fórmulas CSJ -->
-        <select class="lo-select" id="selectFormulasCSJ" title="Insertar fórmula judicial paraguaya">
-          <option value="">📜 Fórmulas CSJ ▾</option>
-          <option value="objeto">OBJETO: Promover Demanda</option>
-          <option value="juez">SEÑOR JUEZ DE 1RA INSTANCIA</option>
-          <option value="abogado">ABG. [MATRÍCULA CSJ]</option>
-          <option value="derecho">DERECHO: Ley 1183 CC / Ley 1337 CPC</option>
-          <option value="petitorio">PETITORIO FORMAL</option>
-          <option value="justicia">SERÁ JUSTICIA.-</option>
-          <option value="otrosi">OTROSÍ DIGO: Reserva de Acciones</option>
-        </select>
-
-        <!-- Márgenes de Foja CSJ -->
-        <select class="lo-select" id="selectMargenes" title="Configuración de márgenes forenses CSJ">
-          <option value="judicial">🏛️ Margen CSJ (4cm Izq / 3.5cm Sup / 2cm Der)</option>
-          <option value="estandar">📄 Margen Estándar (2.5cm uniforme)</option>
-          <option value="estrecho">📑 Margen Estrecho (1.5cm uniforme)</option>
-          <option value="amplio">📚 Margen Amplio Forense (4.5cm Izq)</option>
-        </select>
-
-        <button class="lo-btn" id="btnToggleGuias" title="Mostrar/ocultar líneas guía de margen de foja">📏 Guías</button>
-        <button class="lo-btn" id="btnToggleRegla" title="Mostrar/ocultar regla horizontal graduada">📐 Regla</button>
-
-        <div class="lo-sep"></div>
-        <select class="lo-select" id="selectZoomHoja" title="Nivel de zoom de foja">
-          <option value="1">100%</option>
-          <option value="0.95">95%</option>
-          <option value="0.9">90%</option>
-          <option value="0.85">85%</option>
-          <option value="auto">↔️ Ajustar Ancho</option>
+      <!-- 4. Tamaño de fuente estilo Google Docs: Stepper compacto [-] [12] [+] -->
+      <div class="font-size-stepper" style="display: inline-flex; align-items: center; gap: 2px;">
+        <button type="button" class="lo-btn" id="btnDisminuirTamano" title="Disminuir tamaño" style="width: 22px; height: 26px; font-weight: bold; font-size: 14px; line-height: 1;">−</button>
+        <input type="number" id="inputTamanoFuente" class="lo-font-size-input" value="12" min="6" max="72" title="Tamaño de fuente">
+        <button type="button" class="lo-btn" id="btnAumentarTamano" title="Aumentar tamaño" style="width: 22px; height: 26px; font-weight: bold; font-size: 14px; line-height: 1;">+</button>
+        <!-- Compatibilidad ID selectTamano -->
+        <select id="selectTamano" style="display: none;">
+          <option value="2">10</option>
+          <option value="3" selected>12</option>
+          <option value="4">14</option>
+          <option value="5">16</option>
         </select>
       </div>
 
-      <!-- Fila 2: Formato de Texto LibreOffice Writer -->
-      <div class="lo-toolbar-row">
-        <!-- Estilo de Párrafo -->
-        <select class="lo-select" id="selectEstiloTexto" title="Estilo de párrafo" style="min-width: 130px;">
-          <option value="p">Cuerpo de texto</option>
-          <option value="h1">Título 1 (Sección)</option>
-          <option value="h2">Título 2 (Subsección)</option>
-          <option value="h3">Título 3 (Capítulo)</option>
-        </select>
+      <!-- Separador | -->
+      <div class="lo-sep"></div>
 
-        <!-- Tipografía Forense Oficial CSJ -->
-        <select class="lo-select" id="selectFuente" title="Familia tipográfica" style="min-width: 160px;">
-          <option value="Liberation Mono" selected>Liberation Mono (CSJ Oficial)</option>
-          <option value="Courier New">Courier New (Mecanografiado)</option>
-          <option value="Times New Roman">Times New Roman (Clásico)</option>
-          <option value="Liberation Serif">Liberation Serif (LibreOffice)</option>
-          <option value="Arial">Arial (Moderno)</option>
-        </select>
+      <!-- 5. Formato de texto: B, I, U, Color de texto (A), Resaltado -->
+      <button type="button" class="lo-btn" data-cmd="bold" title="Negrita (Ctrl+B)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h8a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/><path d="M6 12h9a4 4 0 0 1 4 4 4 4 0 0 1-4 4H6z"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="italic" title="Cursiva (Ctrl+I)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="4" x2="10" y2="4"/><line x1="14" y1="20" x2="5" y2="20"/><line x1="15" y1="4" x2="9" y2="20"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="underline" title="Subrayado (Ctrl+U)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a6 6 0 0 0 12 0V3"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+      </button>
+      <label class="lo-btn" title="Color de texto" style="position: relative; cursor: pointer;">
+        <span style="font-weight: 700; font-size: 13px; line-height: 1; border-bottom: 3px solid #1D4ED8; padding-bottom: 1px; color: #374151;">A</span>
+        <input type="color" id="inputColorTexto" value="#0F172A" style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+      </label>
+      <label class="lo-btn" title="Color de resaltado" style="position: relative; cursor: pointer;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M18 10l-4-4"/><path d="m15 3 6 6-9 9H6v-6l9-9Z"/></svg>
+        <input type="color" id="inputColorResaltado" value="#FEF08A" style="position: absolute; opacity: 0; width: 100%; height: 100%; top: 0; left: 0; cursor: pointer;">
+      </label>
 
-        <!-- Tamaño de Fuente -->
-        <select class="lo-select" id="selectTamano" title="Tamaño de letra" style="min-width: 60px;">
-          <option value="3">12 pt</option>
-          <option value="4">14 pt</option>
-          <option value="5">16 pt</option>
-          <option value="2">10 pt</option>
-        </select>
+      <!-- Separador | -->
+      <div class="lo-sep"></div>
 
-        <div class="lo-sep"></div>
+      <!-- 6. Párrafo: Alineación, Interlineado, Viñetas, Numeración, Sangrías, Limpiar formato -->
+      <button type="button" class="lo-btn" data-cmd="justifyLeft" title="Alinear a la izquierda">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="justifyCenter" title="Centrar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="6"/><line x1="21" y1="12" x2="3" y2="12"/><line x1="18" y1="18" x2="6" y2="18"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="justifyRight" title="Alinear a la derecha">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="9" y2="12"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
+      </button>
+      <button type="button" class="lo-btn active" data-cmd="justifyFull" title="Justificar (Forense CSJ)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="3" y2="12"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+      </button>
 
-        <!-- Negrita, Cursiva, Subrayado, Tachado -->
-        <button class="lo-btn" data-cmd="bold" title="Negrita (Ctrl+B)"><b>B</b></button>
-        <button class="lo-btn" data-cmd="italic" title="Cursiva (Ctrl+I)"><i>I</i></button>
-        <button class="lo-btn" data-cmd="underline" title="Subrayado (Ctrl+U)"><u>U</u></button>
-        <button class="lo-btn" data-cmd="strikeThrough" title="Tachado"><s>S</s></button>
-        <button class="lo-btn" data-cmd="removeFormat" title="Limpiar formato directo">🧹</button>
+      <select class="lo-select" id="selectInterlineado" title="Interlineado procesal" style="max-width: 90px;">
+        <option value="1.65" selected>1.5 líns</option>
+        <option value="1.15">1.15 líns</option>
+        <option value="1.0">1.0 senc.</option>
+        <option value="2.0">2.0 doble</option>
+      </select>
 
-        <div class="lo-sep"></div>
+      <button type="button" class="lo-btn" data-cmd="insertUnorderedList" title="Lista con viñetas">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="6" x2="20" y2="6"/><line x1="9" y1="12" x2="20" y2="12"/><line x1="9" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1.5" fill="#374151"/><circle cx="4" cy="12" r="1.5" fill="#374151"/><circle cx="4" cy="18" r="1.5" fill="#374151"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="insertOrderedList" title="Lista numerada">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4"/><path d="M4 10h2"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="outdent" title="Disminuir sangría">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 8 3 12 7 16"/><line x1="21" y1="12" x2="11" y2="12"/><line x1="21" y1="6" x2="11" y2="6"/><line x1="21" y1="18" x2="11" y2="18"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="indent" title="Aumentar sangría">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="7 16 11 12 7 8"/><line x1="3" y1="12" x2="11" y2="12"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+      </button>
+      <button type="button" class="lo-btn" data-cmd="removeFormat" title="Limpiar formato">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/><line x1="3" y1="21" x2="21" y2="3"/></svg>
+      </button>
 
-        <!-- Alineación -->
-        <button class="lo-btn" data-cmd="justifyLeft" title="Alinear a la izquierda">⇠</button>
-        <button class="lo-btn" data-cmd="justifyCenter" title="Centrar">≡</button>
-        <button class="lo-btn" data-cmd="justifyRight" title="Alinear a la derecha">⇢</button>
-        <button class="lo-btn active" data-cmd="justifyFull" title="Justificar texto (Oficial CSJ)">⇥</button>
+      <!-- Separador | -->
+      <div class="lo-sep"></div>
 
-        <div class="lo-sep"></div>
+      <!-- 7. Botones forenses compactos: Dropdown discreto Fórmulas CSJ y Márgenes CSJ / Regla -->
+      <select class="lo-select" id="selectFormulasCSJ" title="Insertar fórmula judicial paraguaya" style="max-width: 125px;">
+        <option value="">Fórmulas CSJ ▾</option>
+        <option value="objeto">OBJETO: Promover</option>
+        <option value="juez">SEÑOR JUEZ</option>
+        <option value="abogado">ABG. [Matrícula]</option>
+        <option value="derecho">DERECHO: CC/CPC</option>
+        <option value="petitorio">PETITORIO</option>
+        <option value="justicia">SERÁ JUSTICIA.-</option>
+        <option value="otrosi">OTROSÍ DIGO</option>
+        <option value="firma">Pie de Firma</option>
+        <option value="fecha">Lugar y Fecha</option>
+      </select>
 
-        <!-- Viñetas y Numeración -->
-        <button class="lo-btn" data-cmd="insertUnorderedList" title="Lista con viñetas">• Viñetas</button>
-        <button class="lo-btn" data-cmd="insertOrderedList" title="Lista numerada">1. Números</button>
-        <button class="lo-btn" data-cmd="indent" title="Aumentar sangría forense">→|</button>
-        <button class="lo-btn" data-cmd="outdent" title="Reducir sangría">|←</button>
+      <select class="lo-select" id="selectMargenes" title="Márgenes Forenses CSJ" style="max-width: 125px;">
+        <option value="judicial">🏛️ CSJ (4cm Izq)</option>
+        <option value="estandar">📄 Normal (2.5cm)</option>
+        <option value="estrecho">📑 Estrecho (1.5cm)</option>
+        <option value="amplio">📚 Amplio (4.5cm)</option>
+      </select>
 
-        <div class="lo-sep"></div>
+      <button type="button" class="lo-btn" id="btnToggleRegla" title="Mostrar/ocultar regla horizontal graduada">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.3 8.7 8.7 21.3c-1 1-2.5 1-3.4 0l-2.6-2.6c-1-1-1-2.5 0-3.4L15.3 2.7c1-1 2.5-1 3.4 0l2.6 2.6c1 1 1 2.5 0 3.4Z"/><path d="m14.5 3.5 2 2"/><path d="m11.5 6.5 2 2"/><path d="m8.5 9.5 2 2"/><path d="m5.5 12.5 2 2"/></svg>
+      </button>
+      <button type="button" class="lo-btn" id="btnToggleGuias" title="Mostrar/ocultar líneas guía de margen forense">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="2 2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+      </button>
 
-        <!-- Interlineado Forense -->
-        <select class="lo-select" id="selectInterlineado" title="Interlineado procesal">
-          <option value="1.65">1.5 líneas (Forense CSJ)</option>
-          <option value="1.15">1.15 líneas</option>
-          <option value="1.0">Sencillo (1.0)</option>
-          <option value="2.0">Doble espacio</option>
-        </select>
-      </div>
+      <!-- Botones auxiliares ocultos para preservar compatibilidad si algún listener los busca -->
+      <button type="button" id="btnToolbarNuevo" style="display: none;"></button>
+      <button type="button" id="btnToolbarGuardar" style="display: none;"></button>
+      <button type="button" id="btnToolbarDocx" style="display: none;"></button>
     </div>
 
     <!-- 5. Área de Trabajo (Lienzo Central + Panel Lateral) -->

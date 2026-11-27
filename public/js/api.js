@@ -325,6 +325,8 @@ function escapeHtml(str) {
 
 // Inyecta el botón hamburguesa global en la barra o pantalla
 function inyectarBotonHamburguesa() {
+  if (window.location.pathname.includes('editor.html')) return;
+  if (!document.getElementById('barra-lateral')) return;
   if (document.getElementById('btnHamburguesaGlobal')) return;
   const btn = document.createElement('button');
   btn.id = 'btnHamburguesaGlobal';

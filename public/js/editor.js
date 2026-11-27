@@ -454,9 +454,60 @@ document.addEventListener('DOMContentLoaded', async () => {
     hoja.focus();
   });
 
-  // Tamaño de Fuente
-  document.getElementById('selectTamano')?.addEventListener('change', (e) => {
+  // Tamaño de Fuente (Stepper estilo Google Docs e input numérico)
+  const inputTamano = document.getElementById('inputTamanoFuente');
+  const btnDisminuir = document.getElementById('btnDisminuirTamano');
+  const btnAumentar = document.getElementById('btnAumentarTamano');
+  const selectTamano = document.getElementById('selectTamano');
+
+  function aplicarTamanoFuente(pt) {
+    let numPt = parseInt(pt, 10);
+    if (isNaN(numPt) || numPt < 6) numPt = 6;
+    if (numPt > 72) numPt = 72;
+    if (inputTamano) inputTamano.value = numPt;
+
+    let fontSizeLevel = 3;
+    if (numPt <= 10) fontSizeLevel = 2;
+    else if (numPt <= 12) fontSizeLevel = 3;
+    else if (numPt <= 14) fontSizeLevel = 4;
+    else if (numPt <= 16) fontSizeLevel = 5;
+    else if (numPt <= 20) fontSizeLevel = 6;
+    else fontSizeLevel = 7;
+
+    document.execCommand('fontSize', false, fontSizeLevel);
+    if (selectTamano) selectTamano.value = String(fontSizeLevel);
+    hoja.focus();
+    actualizarMetricas();
+  }
+
+  btnDisminuir?.addEventListener('click', (e) => {
+    e.preventDefault();
+    let cur = parseInt(inputTamano?.value || '12', 10);
+    aplicarTamanoFuente(cur - 1);
+  });
+
+  btnAumentar?.addEventListener('click', (e) => {
+    e.preventDefault();
+    let cur = parseInt(inputTamano?.value || '12', 10);
+    aplicarTamanoFuente(cur + 1);
+  });
+
+  inputTamano?.addEventListener('change', (e) => {
+    aplicarTamanoFuente(e.target.value);
+  });
+
+  selectTamano?.addEventListener('change', (e) => {
     document.execCommand('fontSize', false, e.target.value);
+    hoja.focus();
+  });
+
+  // Color de texto y Resaltado
+  document.getElementById('inputColorTexto')?.addEventListener('input', (e) => {
+    document.execCommand('foreColor', false, e.target.value);
+    hoja.focus();
+  });
+  document.getElementById('inputColorResaltado')?.addEventListener('input', (e) => {
+    document.execCommand('hiliteColor', false, e.target.value);
     hoja.focus();
   });
 

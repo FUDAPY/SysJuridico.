@@ -448,6 +448,25 @@ select option {
   padding: 8px 12px;
 }
 
+/* Anular el width: 100% global en los <select> del editor */
+.docs-toolbar select, .docs-toolbar .lo-select {
+  width: auto !important;
+  min-width: unset !important;
+  max-width: 145px;
+  height: 28px;
+  padding: 0 22px 0 8px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1F2937;
+  cursor: pointer;
+}
+.docs-toolbar select:hover, .docs-toolbar .lo-select:hover {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+
 textarea {
   resize: vertical;
 }
