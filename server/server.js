@@ -22,6 +22,7 @@ const liquidacionRoutes = require('./routes/liquidacion.routes');
 const { creditosRouter, requisitosRouter, archivosRouter } = require('./routes/legados.routes');
 const obsidianRoutes = require('./routes/obsidian.routes');
 const editorRoutes = require('./routes/editor.routes');
+const otelaxWisdomRoutes = require('./routes/otelaxWisdom.routes');
 
 const app = express();
 
@@ -51,6 +52,7 @@ app.use('/api/v1', obsidianRoutes);
 app.use('/api/obsidian', obsidianRoutes);
 app.use('/api/v1/editor', editorRoutes);
 app.use('/api/editor', editorRoutes);
+app.use('/api/otelaxwisdom', otelaxWisdomRoutes);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 

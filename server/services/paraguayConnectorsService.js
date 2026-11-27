@@ -62,16 +62,7 @@ async function conectorConCache(nombreFuente, consulta, fetcherFn) {
 let catalogoLocalCSJCache = null;
 
 function obtenerCatalogoLocalCSJ() {
-  if (catalogoLocalCSJCache) return catalogoLocalCSJCache;
-  const p = path.resolve(__dirname, '../../LESGILACION PARAGUAYA/Jurisprudencia Paraguaya/catalogo.json');
-  if (fs.existsSync(p)) {
-    try {
-      catalogoLocalCSJCache = JSON.parse(fs.readFileSync(p, 'utf8'));
-    } catch (e) {
-      console.warn('[CSJ Local] Error leyendo catalogo.json:', e.message);
-    }
-  }
-  return catalogoLocalCSJCache;
+  return null;
 }
 
 /**

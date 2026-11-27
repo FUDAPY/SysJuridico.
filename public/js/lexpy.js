@@ -115,10 +115,11 @@ function renderMarkdown(md) {
 }
 
 const NOMBRES_FUENTE = {
-  base_local: 'Base de conocimiento (RAG local)',
+  base_local: 'Techapyrã IA · Motor OtelaxWisdom',
+  otelaxwisdom: 'Techapyrã IA · Motor OtelaxWisdom',
   externo_csj: 'CSJ Paraguay (Scraping oficial)',
   externo_baselegal: 'BaseLegal Paraguay (Scraping)',
-  ia_generativa: 'DeepSeek AI Generativo',
+  ia_generativa: 'Techapyrã IA',
 };
 
 function agregarBurbuja(texto, esUsuario, fuente) {
@@ -154,7 +155,7 @@ async function enviarPregunta() {
   const tempMsg = document.createElement('div');
   tempMsg.className = 'chat-burbuja chat-asistente';
   tempMsg.id = 'tempThinking';
-  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando legislación y analizando con DeepSeek...</span>';
+  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando legislación y analizando con Techapyrã IA...</span>';
   contenedor.appendChild(tempMsg);
   contenedor.scrollTop = contenedor.scrollHeight;
 
@@ -179,7 +180,7 @@ async function redactarBorrador() {
   const resultado = document.getElementById('resultadoBorrador');
 
   caja.classList.remove('oculto');
-  resultado.textContent = '⚡ Analizando hechos y redactando documento con DeepSeek...';
+  resultado.textContent = '⚡ Analizando hechos y redactando documento con Techapyrã IA...';
   btn.disabled = true;
 
   try {

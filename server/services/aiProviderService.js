@@ -29,27 +29,56 @@ async function generarRespuestaIA({ prompt, contexto, system, activarGrounding =
   try {
     // Proveedor: FreeLLMAPI (Instancia Dokploy / OpenAI-compatible)
     if (proveedor === 'freellmapi') {
-      const modelo = process.env.LEXPY_AI_MODEL || 'auto';
+      const modeloPrincipal = process.env.LEXPY_AI_MODEL || 'auto';
       const baseUrl = (process.env.LEXPY_AI_BASE_URL || 'http://freellmapi:3001/v1').replace(/\/+$/, '');
-      const respuesta = await axios.post(
-        `${baseUrl}/chat/completions`,
-        {
-          model: modelo,
-          messages: [
-            { role: 'system', content: contenidoSistema },
-            { role: 'user', content: promptCompleto },
-          ],
-          temperature: 0.2,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${process.env.LEXPY_AI_API_KEY || ''}`,
-            'Content-Type': 'application/json',
-          },
+      const headers = {
+        Authorization: `Bearer ${process.env.LEXPY_AI_API_KEY || ''}`,
+        'Content-Type': 'application/json',
+      };
+      const payload = {
+        model: modeloPrincipal,
+        messages: [
+          { role: 'system', content: contenidoSistema },
+          { role: 'user', content: promptCompleto },
+        ],
+        temperature: 0.2,
+      };
+
+      try {
+        const respuesta = await axios.post(`${baseUrl}/chat/completions`, payload, {
+          headers,
           timeout: 90000,
+        });
+        return respuesta.data?.choices?.[0]?.message?.content || null;
+      } catch (error) {
+        const status = error.response?.status;
+        const esErrorTransitorio =
+          status === 429 ||
+          status === 502 ||
+          status === 503 ||
+          status === 504 ||
+          error.code === 'ECONNRESET' ||
+          error.code === 'ETIMEDOUT';
+
+        if (esErrorTransitorio) {
+          console.warn(`[Techapyrã IA - FreeLLMAPI] Error transitorio (${status || error.code}). Reintentando tras 1.5s con model auto:fast...`);
+          await new Promise((resolve) => setTimeout(resolve, 1500));
+          payload.model = 'auto:fast';
+
+          try {
+            const respuestaReintento = await axios.post(`${baseUrl}/chat/completions`, payload, {
+              headers,
+              timeout: 90000,
+            });
+            return respuestaReintento.data?.choices?.[0]?.message?.content || null;
+          } catch (reintentoError) {
+            console.error('[Techapyrã IA - FreeLLMAPI] Falló reintento con auto:fast:', reintentoError.response?.data?.error?.message || reintentoError.message);
+            return 'En este momento el servicio inteligente de Techapyrã IA se encuentra con alta demanda. Por favor, reintenta tu consulta en unos segundos.';
+          }
         }
-      );
-      return respuesta.data?.choices?.[0]?.message?.content || null;
+
+        throw error;
+      }
     }
 
     // Motor Principal: Gemini 2.5 Pro vía @google/genai

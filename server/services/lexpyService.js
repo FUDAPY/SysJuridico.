@@ -4,6 +4,7 @@ const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { buscarEnFuentesExternas } = require('./scraperService');
 const { generarRespuestaIA } = require('./aiProviderService');
 const { recuperarMemoriaContextual } = require('./agentMemoryService');
+const { buscarEnOtelaxWisdom } = require('./otelaxWisdomService');
 
 const UMBRAL_RESULTADOS_LOCALES = 1;
 
@@ -139,8 +140,12 @@ function construirContexto({ aprendizajes, baseLegal, jurisprudencia = [] }) {
   return partes.join('\n\n---\n\n');
 }
 
-function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
+function notaDeFuentes({ aprendizajes = [], baseLegal = [], externa = null, docsOtelax = [] }) {
   const items = [];
+
+  docsOtelax.forEach((d) => {
+    items.push(`- **${d.titulo}** (${d.tipo}) — *OtelaxWisdom*`);
+  });
 
   baseLegal.forEach((b) => {
     const origen = b.fuente || 'Base Legal interna';
@@ -165,31 +170,15 @@ function notaDeFuentes({ aprendizajes, baseLegal, externa }) {
   return `\n\n---\n### Fuentes consultadas\n${items.join('\n')}`;
 }
 
-const SYSTEM_PROMPT_TECHAPYRA = `Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico. Tu objetivo es resolver dudas, redactar escritos judiciales, proponer estrategias procesales y brindar soluciones en el ámbito jurídico, fiscal y personal, aplicando estrictamente el derecho paraguayo.
+const SYSTEM_PROMPT_TECHAPYRA = `Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico, impulsado por el Motor de Sabiduría OtelaxWisdom. Tu cometido es brindar asesoramiento técnico-jurídico, elaborar escritos forenses y fundamentar estrategias procesales bajo el derecho positivo vigente de la República del Paraguay.
 
-### Identidad y Flujo de Consulta (Regla Estricta)
-1. Cita de Fuente Principal: Debes fundamentar todas tus respuestas procesales y sustantivas en tu base de conocimiento local. En cada intervención, menciona de forma profesional que estás extrayendo la información de tu núcleo cognitivo. (Ejemplo: "Consultando el Motor de Sabiduría OtelaxWisdom...", o "Según el acervo normativo de OtelaxWisdom...").
-2. Estrategia Local-First: Prioriza siempre las normas, leyes y jurisprudencias de la BACN y la CSJ integradas en tu sistema.
-3. Fallback a Búsqueda Externa (Estilo Gemini): Si el usuario solicita información sobre una normativa, resolución o doctrina que excede tu base de datos local (por ejemplo, si solo posees los metadatos pero no el texto íntegro), indícalo transparentemente con la fórmula exacta: "Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, por lo que procedo a integrar información de fuentes externas/web para responder...".
-4. Tono y Estilo: Mantén un lenguaje neutro. Sé directo, técnico y conciso. No te desgloses más de lo necesario a menos que se solicite un escrito judicial completo o un análisis profundo.
-5. Licenciamiento y Seguridad: Si generas estructura técnica, scripts o plantillas informáticas, aplica licencia MIT a nombre de ZETTI DIGITAL PY de Giuliano Catella, usa comentarios técnicos breves y jamás expongas credenciales.
-
-### Motor de Sabiduría Jurídica: OtelaxWisdom
-Tu conocimiento se organiza en 7 Fueros Centrales:
-1. 🏛️ Fuero Civil y Comercial: Código Civil (Ley Nº 1183/1985), Código Procesal Civil (Ley Nº 1337/1988).
-2. ⚖️ Fuero Penal y Garantías Constitucionales: Código Penal (Ley Nº 1160/1997 y modif.), Código Procesal Penal (Ley Nº 1286/1998).
-3. 💼 Fuero Laboral y Seguridad Social: Código del Trabajo (Ley Nº 213/1993), Código Procesal del Trabajo (Ley Nº 742/1961), Normativa IPS.
-4. 👶 Fuero de la Niñez, Adolescencia y Familia: Código de la Niñez y la Adolescencia (Ley Nº 1680/2001 y modif.).
-5. 📜 Fuero Contencioso Administrativo & Constitucional: Constitución Nacional (1992), Tribunal de Cuentas (Ley Nº 1462/1935), Procedimientos Administrativos (Ley Nº 6715/2021).
-6. 📊 Fuero Tributario & Fiscal: Ley Nº 6380/2019 de Modernización y Simplificación del Sistema Tributario Nacional (IRE, IRP, IVA, ISC, IDU).
-7. 🇵🇾 Instituciones Públicas: Ministerio Público (Ley Nº 1562/2000), Policía Nacional (Ley Nº 7338/2024; plazos de aprehensión 6h policial / 24h fiscal), Patrulla Caminera (Ley Nº 5016/2014; Tolerancia 0.00 mg/L), Poder Judicial (Ley Nº 879/1981), Defensa Pública (Ley Nº 4423/2011), DNIT, MTESS, IPS y Municipalidades (Ley Nº 3966/2010).
-
-Aplica siempre el principio de Vigencia Estricta (derecho positivo vigente) y descarta normas derogadas. Si una norma fue derogada, adviértelo expresamente y cita la norma vigente que la sustituye.
-
-### Corpus Normativo y Jurisprudencial (Base de Datos Local)
-Tienes integrado un catálogo documental validado con 0 errores pendientes:
-- 📚 Legislación Paraguaya (BACN): 7.133 fichas normativas organizadas en archivos Markdown con 3.720 relaciones detectadas (modificaciones y derogaciones). Texto íntegro en HTML para 2.836 fichas; para las otras 4.297 fichas posees metadatos y enlaces de descarga oficial. Las modificaciones detectadas son referencias, no un texto consolidado oficial ni certificación de vigencia.
-- ⚖️ Jurisprudencia Oficial (CSJ): 72.375 fallos judiciales en Markdown por tipo y año (45.469 Acuerdos y Sentencias, 26.900 Autos Interlocutorios y 6 no especificados). 70.928 resoluciones incluyen texto íntegro extraído; 1.447 conservan metadatos y enlaces oficiales de descarga de la CSJ sin texto legible. Todos los documentos conservan su enlace oficial.`;
+### Principios Operativos y Criterio Jurídico:
+1. Razonamiento Forense Directo: Ofrece análisis sustantivo y procesal riguroso, claro y fundamentado. Evita respuestas vacías o meras transcripciones mecánicas de artículos; explica con criterio práctico cómo se aplica la norma al caso y sugiere los pasos procesales concretos.
+2. Motor OtelaxWisdom: Tu acervo de conocimiento curado abarca la Constitución Nacional de 1992, tratados internacionales vigentes, códigos procesales y de fondo, leyes especiales, acordadas y jurisprudencia paraguaya. Si en el contexto se te suministran extractos identificados como [DOCUMENTO OTELAXWISDOM: ...], fundaméntate de manera prioritaria en ellos citando sus preceptos aplicables.
+3. Cobertura Normativa: Cuando un documento local específico no se encuentre adjunto en el contexto inmediato, fundamenta tu respuesta con base en la legislación positiva vigente, doctrina nacional consolidada y principios generales del derecho paraguayo sin inventar disposiciones ni alucinar fuentes inexistentes.
+4. Tono y Rigor Procesal: Mantén un lenguaje forense sobrio, técnico, conciso y de alto nivel.
+5. Principio de Vigencia Estricta: Aplica exclusivamente disposiciones vigentes. En caso de normas modificadas o derogadas, adviértelo explícitamente e invoca el texto vigente aplicable.
+6. Licenciamiento y Seguridad: Todo código, script o plantilla generada se licencia bajo MIT para ZETTI DIGITAL PY de Giuliano Catella, manteniendo estricta confidencialidad de secretos y credenciales.`;
 
 async function responderSaludo(pregunta) {
   const system =
@@ -219,8 +208,8 @@ async function procesarConsultaMeta(pregunta) {
       '### Techapyrã IA — Motor de Sabiduría OtelaxWisdom\n\n' +
       'Soy **Techapyrã IA**, el asistente jurídico profesional y experto legal de **SysJurídico**, impulsado por el Motor de Sabiduría Jurídica **OtelaxWisdom**.\n\n' +
       '#### Arquitectura Cognitiva Local-First:\n' +
-      '- 📚 **Legislación Paraguaya (BACN):** 7.133 fichas normativas y 3.720 relaciones entre normas (2.836 con texto íntegro en HTML; 4.297 con metadatos y enlaces oficiales; 32.370 artículos indexados en BD).\n' +
-      '- ⚖️ **Jurisprudencia Oficial CSJ:** 72.375 fallos judiciales por tipo y año (45.469 Acuerdos y Sentencias, 26.900 Autos Interlocutorios; 70.928 con texto íntegro extraído y 1.447 con enlaces de descarga oficial).\n' +
+      '- 📚 **Acervo OtelaxWisdom:** Normas, tratados, códigos y doctrina paraguaya en documentos `.md` curados manualmente.\n' +
+      '- ⚖️ **Jurisprudencia Oficial CSJ:** Acuerdos, Sentencias y Autos Interlocutorios indexados.\n' +
       '- 🏛️ **7 Fueros Centrales:** Civil y Comercial, Penal y Garantías, Laboral y Seg. Social, Niñez y Familia, Contencioso Administrativo & Constitucional, Tributario & Fiscal e Instituciones Públicas.\n' +
       '- 📁 **Causas y Documentos:** Lectura procesal de piezas y expedientes del cliente en tiempo real.\n' +
       '- 🛡️ **Vigencia Estricta:** Aplicación rigurosa de derecho positivo paraguayo vigente descartando disposiciones derogadas.\n\n' +
@@ -230,11 +219,38 @@ async function procesarConsultaMeta(pregunta) {
 }
 
 async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId }) {
+  // 1. Búsqueda en OtelaxWisdom (documentos curados .md)
+  let docsOtelax = [];
+  try {
+    const resOtelax = await buscarEnOtelaxWisdom(pregunta, { maxDocs: 3, minScore: 2 });
+    docsOtelax = Array.isArray(resOtelax) ? resOtelax : (resOtelax?.resultados || []);
+  } catch (err) {
+    console.warn('[LexPY] Error al buscar en OtelaxWisdom:', err.message);
+  }
+
+  // 2. Búsqueda en base local MongoDB
   const { aprendizajes, baseLegal, jurisprudencia } = await buscarEnBaseLocal(pregunta);
   const totalLocal = aprendizajes.length + baseLegal.length + (jurisprudencia ? jurisprudencia.length : 0);
 
-  let contexto = construirContexto({ aprendizajes, baseLegal, jurisprudencia });
-  let fuenteRespuesta = totalLocal > 0 ? 'base_local' : null;
+  const partesContexto = [];
+
+  // Inyección de documentos OtelaxWisdom
+  if (docsOtelax.length > 0) {
+    docsOtelax.forEach((d) => {
+      const fragmentos =
+        d.fragmento ||
+        (d.parrafosRelevantes && d.parrafosRelevantes.length ? d.parrafosRelevantes.join('\n\n') : '') ||
+        (d.contenido || '').slice(0, 1500);
+      partesContexto.push(`[DOCUMENTO OTELAXWISDOM: ${d.titulo} (${d.tipo})]\n${fragmentos}`);
+    });
+  }
+
+  // Inyección de Base Legal interna
+  const contextoBase = construirContexto({ aprendizajes, baseLegal, jurisprudencia });
+  if (contextoBase) partesContexto.push(contextoBase);
+
+  let contexto = partesContexto.join('\n\n---\n\n');
+  let fuenteRespuesta = docsOtelax.length > 0 ? 'otelaxwisdom' : (totalLocal > 0 ? 'base_local' : null);
   let requiereAvisoFallback = false;
 
   // Inyección de memoria agéntica de largo plazo
@@ -251,7 +267,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  // Inyección de Documentos Oficiales del Expediente (RAG de causa: PDFs, escaneados, contratos)
+  // Inyección de Documentos Oficiales del Expediente (RAG de causa)
   if (expedienteId) {
     const { obtenerContextoDocumentosExpediente } = require('./documentProcessorService');
     const docsContexto = await obtenerContextoDocumentosExpediente(expedienteId);
@@ -263,7 +279,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
 
   let externa = null;
 
-  if (totalLocal < UMBRAL_RESULTADOS_LOCALES) {
+  if (totalLocal + docsOtelax.length < UMBRAL_RESULTADOS_LOCALES) {
     requiereAvisoFallback = true;
     externa = await buscarEnFuentesExternas(pregunta);
     if (externa) {
@@ -273,9 +289,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  const promptFinal = requiereAvisoFallback && !baseLegal.some((b) => b.contenido && b.contenido.length > 200)
-    ? `AVISO DE FLUJO: Esta consulta aborda materias o normas donde el catálogo local cuenta con metadatos/enlaces o requiere complementar con fuentes externas oficiales.\n\n${pregunta}`
-    : pregunta;
+  const promptFinal = pregunta;
 
   const respuestaIA = await generarRespuestaIA({
     prompt: promptFinal,
@@ -285,54 +299,15 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   });
 
   if (respuestaIA) {
-    let respuestaFinal = respuestaIA;
-    // Si la respuesta proviene de fallback externo y no incluye el aviso reglamentario, se incorpora de forma transparente
-    if (requiereAvisoFallback && !baseLegal.length && !respuestaFinal.includes('no cuenta con texto íntegro en el catálogo local de OtelaxWisdom')) {
-      respuestaFinal =
-        '> ℹ️ *Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, por lo que procedo a integrar información de fuentes externas/web para responder...*\n\n' +
-        respuestaFinal;
-    } else if (!respuestaFinal.toLowerCase().includes('otelaxwisdom')) {
-      respuestaFinal = 'Consultando el Motor de Sabiduría OtelaxWisdom...\n\n' + respuestaFinal;
-    }
-
-    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
-    const respuesta = nota && !respuestaFinal.includes('Fuentes consultadas') ? respuestaFinal + nota : respuestaFinal;
+    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa, docsOtelax });
+    const respuesta = nota && !respuestaIA.includes('Fuentes consultadas') ? respuestaIA + nota : respuestaIA;
     return { respuesta, fuente: fuenteRespuesta || 'ia_generativa' };
-  }
-
-  if (baseLegal.length || aprendizajes.length || contexto) {
-    let salidaMarkdown = 'Según el acervo normativo de OtelaxWisdom:\n\n';
-    if (baseLegal.length) {
-      salidaMarkdown += baseLegal
-        .map((b) => {
-          const extracto = b.contenido
-            ? b.contenido.slice(0, 600).trim() + (b.contenido.length > 600 ? '...' : '')
-            : '(Sin texto íntegro extraído en el catálogo local; ficha oficial conservada con enlace de descarga oficial)';
-          return (
-            `### ${b.titulo}\n\n` +
-            `- **Fuente Oficial:** ${b.fuente || 'Biblioteca y Archivo Central del Congreso Nacional (BACN)'}\n` +
-            (b.url ? `- **Ficha Oficial:** [Ver en BACN](${b.url})\n` : '') +
-            `- **Estado:** Vigente en la República del Paraguay\n\n` +
-            `> ℹ️ *Extracto normativo referencial indexado en OtelaxWisdom:*\n\n` +
-            `${extracto}\n`
-          );
-        })
-        .join('\n---\n\n');
-    } else {
-      salidaMarkdown += (contexto || '').slice(0, 1500);
-    }
-    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa });
-    return {
-      respuesta: salidaMarkdown + (nota || ''),
-      fuente: fuenteRespuesta || 'base_local',
-    };
   }
 
   return {
     respuesta:
-      'Esta disposición específica no cuenta con texto íntegro en el catálogo local de OtelaxWisdom, y no se obtuvieron resultados concluyentes en las fuentes externas conectadas. ' +
-      'Por favor verifica el número de ley, año o carátula de resolución judicial.',
-    fuente: null,
+      'En este momento el servicio de inferencia jurídica de **Techapyrã IA** se encuentra con alta demanda o procesando solicitudes previas. Por favor, reintenta tu consulta en unos instantes.',
+    fuente: 'temporalmente_no_disponible',
   };
 }
 
