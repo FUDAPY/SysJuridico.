@@ -115,50 +115,122 @@ function escanearMd(dir, baseDir = dir) {
 }
 
 /**
- * Clona o actualiza el repositorio Git oficial de legislación paraguaya
+ * Descarga y descomprime el tarball oficial de GitHub directamente vía HTTPS sin requerir git CLI
  */
-function asegurarRepositorioLocal(cacheDir, repoUrl, branch = 'main') {
-  fs.mkdirSync(path.dirname(cacheDir), { recursive: true });
+async function descargarTarballGithub(destinoDir) {
+  const tarballUrl =
+    process.env.REPO_LEGISLACION_TARBALL_URL ||
+    'https://codeload.github.com/FUDAPY/LESGILACION_PARAGUAYA_ZETTI/tar.gz/refs/heads/main';
 
-  const tempPreclonado = '/tmp/test-repo-audit';
-  const bundledAcervo = path.resolve(__dirname, '../../data/otelaxwisdom/acervo');
+  console.log(`[OtelaxWisdom Sync] Descargando tarball oficial de GitHub desde ${tarballUrl}...`);
+  const tmpTarball = '/tmp/legislacion-py-zetti.tar.gz';
+
+  const res = await fetch(tarballUrl, {
+    headers: { 'User-Agent': 'SysJuridico-SyncEngine/1.0' },
+    signal: AbortSignal.timeout(60000),
+  });
+
+  if (!res.ok) {
+    throw new Error(`Error HTTP al descargar tarball desde GitHub: ${res.status} ${res.statusText}`);
+  }
+
+  const arrayBuffer = await res.arrayBuffer();
+  fs.writeFileSync(tmpTarball, Buffer.from(arrayBuffer));
+
+  fs.mkdirSync(destinoDir, { recursive: true });
+  execSync(`tar -xzf "${tmpTarball}" -C "${destinoDir}" --strip-components=1`, {
+    stdio: 'pipe',
+    timeout: 30000,
+  });
 
   try {
-    if (!fs.existsSync(cacheDir)) {
-      // Si ya fue clonado temporalmente en /tmp/test-repo-audit, usarlo para máxima velocidad
-      if (fs.existsSync(path.join(tempPreclonado, '.git'))) {
-        console.log(`[OtelaxWisdom Sync] Copiando repositorio cacheado desde ${tempPreclonado}...`);
-        execSync(`cp -r "${tempPreclonado}" "${cacheDir}"`, { stdio: 'pipe' });
-      } else {
-        console.log(`[OtelaxWisdom Sync] Clonando repositorio ${repoUrl} en ${cacheDir}...`);
-        execSync(`git clone --depth 1 "${repoUrl}" "${cacheDir}"`, {
-          stdio: 'pipe',
-          timeout: 120000,
-        });
-      }
-    } else if (fs.existsSync(path.join(cacheDir, '.git'))) {
+    fs.unlinkSync(tmpTarball);
+  } catch (_) {}
+
+  const archivos = escanearMd(destinoDir);
+  console.log(`[OtelaxWisdom Sync] Tarball descomprimido en ${destinoDir}: ${archivos.length} archivos .md.`);
+  return archivos.length;
+}
+
+/**
+ * Obtiene el contenido del repositorio mediante Git, Tarball oficial o Acervo preempaquetado
+ */
+async function asegurarRepositorioLocal(cacheDir, repoUrl, branch = 'main') {
+  fs.mkdirSync(cacheDir, { recursive: true });
+  const errores = [];
+  let metodoExitoso = null;
+
+  // 1. Intentar clonar o actualizar vía Git si está disponible
+  try {
+    if (!fs.existsSync(path.join(cacheDir, '.git'))) {
+      console.log(`[OtelaxWisdom Sync] Intentando clonar ${repoUrl} en ${cacheDir}...`);
+      execSync(`git clone --depth 1 "${repoUrl}" "${cacheDir}"`, {
+        stdio: 'pipe',
+        timeout: 90000,
+      });
+    } else {
       console.log(`[OtelaxWisdom Sync] Actualizando repositorio local vía git pull...`);
-      try {
-        execSync(`git pull origin ${branch}`, {
-          cwd: cacheDir,
-          stdio: 'pipe',
-          timeout: 60000,
-        });
-      } catch (pullErr) {
-        console.warn(`[OtelaxWisdom Sync] Advertencia en git pull: ${pullErr.message}. Continuando con caché local.`);
-      }
+      execSync(`git pull origin ${branch}`, {
+        cwd: cacheDir,
+        stdio: 'pipe',
+        timeout: 45000,
+      });
+    }
+
+    const archivosGit = escanearMd(cacheDir);
+    if (archivosGit.length > 0) {
+      metodoExitoso = 'GIT';
+      return { ok: true, metodo: metodoExitoso, errores };
     }
   } catch (gitErr) {
-    console.warn(`[OtelaxWisdom Sync] Git no disponible o error de red (${gitErr.message}). Utilizando acervo empaquetado como fallback...`);
-    if (fs.existsSync(bundledAcervo)) {
-      fs.mkdirSync(cacheDir, { recursive: true });
-      try {
-        execSync(`cp -r "${bundledAcervo}"/* "${cacheDir}/" 2>/dev/null || true`, { stdio: 'pipe' });
-      } catch (cpErr) {
-        console.warn('[OtelaxWisdom Sync] Error copiando acervo empaquetado a caché:', cpErr.message);
+    const detalleGit = gitErr.stderr ? gitErr.stderr.toString().trim() : gitErr.message;
+    console.error(`[OtelaxWisdom Sync] Falló sincronización vía Git (${repoUrl}):`, detalleGit);
+    errores.push({ etapa: 'GIT_CLONE_PULL', error: gitErr.message, detalle: detalleGit });
+  }
+
+  // 2. Fallback primario: Descarga directa de Tarball oficial de GitHub (sin requerir Git)
+  try {
+    console.log('[OtelaxWisdom Sync] Iniciando fallback: descarga directa de tarball oficial GitHub...');
+    const totalTarball = await descargarTarballGithub(cacheDir);
+    if (totalTarball > 0) {
+      metodoExitoso = 'TARBALL_GITHUB';
+      return { ok: true, metodo: metodoExitoso, errores };
+    }
+  } catch (tarballErr) {
+    console.error('[OtelaxWisdom Sync] Falló descarga de tarball GitHub:', tarballErr.message);
+    errores.push({ etapa: 'TARBALL_GITHUB', error: tarballErr.message });
+  }
+
+  // 3. Fallback secundario: Copiar desde el acervo preempaquetado local (/app/bundled/acervo)
+  try {
+    const bundledCandidates = [
+      process.env.OTELAX_BUNDLED_DIR,
+      '/app/bundled/acervo',
+      path.resolve(__dirname, '../../bundled/acervo'),
+      path.resolve(__dirname, '../../data/otelaxwisdom/acervo'),
+    ].filter(Boolean);
+
+    for (const bDir of bundledCandidates) {
+      if (fs.existsSync(bDir)) {
+        const archivosBundled = escanearMd(bDir);
+        if (archivosBundled.length > 0) {
+          console.log(`[OtelaxWisdom Sync] Copiando acervo preempaquetado desde ${bDir} a ${cacheDir} (${archivosBundled.length} archivos)...`);
+          for (const item of archivosBundled) {
+            const dest = path.join(cacheDir, item.relPath);
+            fs.mkdirSync(path.dirname(dest), { recursive: true });
+            fs.copyFileSync(item.rutaCompleta, dest);
+          }
+          metodoExitoso = 'BUNDLED_LOCAL';
+          return { ok: true, metodo: metodoExitoso, errores };
+        }
       }
     }
+  } catch (bundledErr) {
+    console.error('[OtelaxWisdom Sync] Falló copia desde acervo preempaquetado:', bundledErr.message);
+    errores.push({ etapa: 'BUNDLED_LOCAL', error: bundledErr.message });
   }
+
+  return { ok: false, metodo: 'FALLO_TOTAL', errores };
 }
 
 /**
@@ -170,20 +242,38 @@ async function sincronizarRepoZetti({
   forzar = false,
 } = {}) {
   const inicio = Date.now();
-  const cacheDir = path.join(OTELAX_DATA_DIR, '.cache_repo_zetti');
+  const cacheDir = '/tmp/legislacion-py-zetti';
   const acervoDir = path.join(OTELAX_DATA_DIR, 'acervo');
 
   fs.mkdirSync(acervoDir, { recursive: true });
 
-  asegurarRepositorioLocal(cacheDir, repoUrl, branch);
+  const descResult = await asegurarRepositorioLocal(cacheDir, repoUrl, branch);
+  const errores = [...(descResult.errores || [])];
 
   const archivosRepo = escanearMd(cacheDir);
-  console.log(`[OtelaxWisdom Sync] Encontrados ${archivosRepo.length} archivos .md en el repositorio.`);
+  console.log(`[OtelaxWisdom Sync] Encontrados ${archivosRepo.length} archivos .md en el repositorio (${descResult.metodo}).`);
+
+  if (archivosRepo.length === 0) {
+    const errorCero = 'No se encontraron archivos .md en el repositorio tras intentar Git, Tarball y Acervo Local.';
+    errores.push({ etapa: 'VALIDACION_ARCHIVOS', error: errorCero });
+    console.error('[OtelaxWisdom Sync] Error crítico:', errorCero);
+    return {
+      ok: false,
+      totalEscaneados: 0,
+      insertados: 0,
+      actualizados: 0,
+      omitidos: 0,
+      errores,
+      porFuero: {},
+      porTipo: {},
+      duracionMs: Date.now() - inicio,
+      metodo: descResult.metodo,
+    };
+  }
 
   let insertados = 0;
   let actualizados = 0;
   let omitidos = 0;
-  const errores = [];
   const porFuero = {};
   const porTipo = {};
 
@@ -293,7 +383,7 @@ async function sincronizarRepoZetti({
   const duracionMs = Date.now() - inicio;
 
   const resultado = {
-    ok: errores.length === 0,
+    ok: errores.length === 0 && (insertados > 0 || actualizados > 0 || omitidos > 0),
     totalEscaneados: archivosRepo.length,
     insertados,
     actualizados,
@@ -302,10 +392,11 @@ async function sincronizarRepoZetti({
     porFuero,
     porTipo,
     duracionMs,
+    metodo: descResult.metodo,
   };
 
   console.log(
-    `[OtelaxWisdom Sync] Sincronización completada en ${duracionMs}ms. Escaneados: ${resultado.totalEscaneados}, Insertados: ${insertados}, Actualizados: ${actualizados}, Omitidos: ${omitidos}, Errores: ${errores.length}`
+    `[OtelaxWisdom Sync] Sincronización finalizada en ${duracionMs}ms (${descResult.metodo}). Escaneados: ${resultado.totalEscaneados}, Insertados: ${insertados}, Actualizados: ${actualizados}, Omitidos: ${omitidos}, Errores: ${errores.length}`
   );
 
   return resultado;
@@ -313,5 +404,6 @@ async function sincronizarRepoZetti({
 
 module.exports = {
   sincronizarRepoZetti,
+  descargarTarballGithub,
   DEFAULT_REPO_URL,
 };

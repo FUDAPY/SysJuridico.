@@ -218,34 +218,85 @@ function escanearArchivosMdRecursivo(directorio) {
 }
 
 /**
- * Asegura que los archivos del acervo preempaquetado estén presentes en OTELAX_DATA_DIR
- * (especialmente cuando se utiliza un volumen montado persistente en Dokploy)
+ * Localiza la ruta absoluta del acervo preempaquetado fuera del volumen persistente de Dokploy (/app/data)
+ */
+function obtenerDirectorioBundledAcervo() {
+  const candidatos = [
+    process.env.OTELAX_BUNDLED_DIR,
+    '/app/bundled/acervo',
+    path.resolve(__dirname, '../../bundled/acervo'),
+    path.resolve(__dirname, '../../data/otelaxwisdom/acervo'),
+  ].filter(Boolean);
+
+  for (const dir of candidatos) {
+    if (fs.existsSync(dir)) {
+      const archivos = escanearArchivosMdRecursivo(dir);
+      if (archivos.length > 0) {
+        return { dir, archivos };
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Asegura que los 215+ archivos del acervo preempaquetado estén presentes en OTELAX_DATA_DIR/acervo,
+ * copiando archivo por archivo recursivamente si falta o difiere su tamaño.
+ * No aborta aunque ya existan archivos previos (ej. constitucion-nacional.md).
  */
 function asegurarAcervoBundled() {
-  const bundledDir = path.resolve(__dirname, '../../data/otelaxwisdom/acervo');
   const targetDir = path.join(OTELAX_DATA_DIR, 'acervo');
+  fs.mkdirSync(targetDir, { recursive: true });
 
-  if (bundledDir === targetDir) return;
-  if (!fs.existsSync(bundledDir)) return;
+  const bundledInfo = obtenerDirectorioBundledAcervo();
+  if (!bundledInfo) {
+    const targetArchivos = escanearArchivosMdRecursivo(targetDir);
+    console.warn(`[OtelaxWisdom] Advertencia: No se encontró directorio bundled. Destino: ${targetDir} (${targetArchivos.length} archivos .md activos).`);
+    return;
+  }
+
+  const { dir: bundledDir, archivos: bundledArchivos } = bundledInfo;
+
+  // Si físicamente son el mismo directorio (ej. en desarrollo local si apunta a data/otelaxwisdom/acervo)
+  if (path.resolve(bundledDir) === path.resolve(targetDir)) {
+    const targetArchivos = escanearArchivosMdRecursivo(targetDir);
+    console.log(`[OtelaxWisdom] Bundled path: ${bundledDir} (${bundledArchivos.length} archivos .md encontrados) -> Destino: ${targetDir} (${targetArchivos.length} archivos .md activos)`);
+    return;
+  }
+
+  let copiados = 0;
+  let omitidos = 0;
 
   try {
-    fs.mkdirSync(targetDir, { recursive: true });
-    const bundledArchivos = escanearArchivosMdRecursivo(bundledDir);
-    const targetArchivos = escanearArchivosMdRecursivo(targetDir);
+    for (const src of bundledArchivos) {
+      const rel = path.relative(bundledDir, src);
+      const dest = path.join(targetDir, rel);
+      fs.mkdirSync(path.dirname(dest), { recursive: true });
 
-    if (targetArchivos.length < bundledArchivos.length) {
-      console.log(`[OtelaxWisdom] Asegurando ${bundledArchivos.length} archivos del acervo preempaquetado en ${targetDir}...`);
-      for (const src of bundledArchivos) {
-        const rel = path.relative(bundledDir, src);
-        const dest = path.join(targetDir, rel);
-        fs.mkdirSync(path.dirname(dest), { recursive: true });
-        if (!fs.existsSync(dest) || fs.statSync(dest).size !== fs.statSync(src).size) {
-          fs.copyFileSync(src, dest);
+      let necesitaCopia = true;
+      if (fs.existsSync(dest)) {
+        const statSrc = fs.statSync(src);
+        const statDest = fs.statSync(dest);
+        if (statSrc.size === statDest.size) {
+          necesitaCopia = false;
         }
+      }
+
+      if (necesitaCopia) {
+        fs.copyFileSync(src, dest);
+        copiados++;
+      } else {
+        omitidos++;
       }
     }
   } catch (err) {
-    console.warn('[OtelaxWisdom] Advertencia asegurando acervo preempaquetado:', err.message);
+    console.error('[OtelaxWisdom] Error asegurando acervo preempaquetado:', err.message);
+  }
+
+  const targetArchivos = escanearArchivosMdRecursivo(targetDir);
+  console.log(`[OtelaxWisdom] Bundled path: ${bundledDir} (${bundledArchivos.length} archivos .md encontrados) -> Destino: ${targetDir} (${targetArchivos.length} archivos .md activos)`);
+  if (copiados > 0) {
+    console.log(`[OtelaxWisdom] ${copiados} archivos .md copiados desde bundled hacia ${targetDir}.`);
   }
 }
 
@@ -325,6 +376,7 @@ function recargarIndice() {
   docs.sort((a, b) => new Date(b.actualizado) - new Date(a.actualizado));
   indiceMemoria = docs;
   ultimaCarga = Date.now();
+  console.log(`[OtelaxWisdom] ${docs.length} documentos cargados en ${path.join(OTELAX_DATA_DIR, 'acervo')}`);
   return indiceMemoria;
 }
 

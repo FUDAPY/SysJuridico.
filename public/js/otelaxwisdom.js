@@ -178,14 +178,28 @@ async function sincronizarConGithub() {
     });
 
     const r = res.resultado;
-    alert(
-      `✅ Sincronización Oficial Completada:\n` +
-      `- Total escaneados: ${r.totalEscaneados}\n` +
-      `- Nuevos insertados: ${r.insertados}\n` +
-      `- Actualizados: ${r.actualizados}\n` +
-      `- Omitidos (sin cambios): ${r.omitidos}\n` +
-      `- Duración: ${(r.duracionMs / 1000).toFixed(2)}s`
-    );
+    if (!res.ok || !r || !r.ok || r.totalEscaneados === 0 || (r.errores && r.errores.length > 0)) {
+      const listaErr = (r && r.errores && r.errores.length > 0)
+        ? r.errores.map((e) => (typeof e === 'string' ? e : `[${e.etapa || 'ERROR'}] ${e.error || e.mensaje || JSON.stringify(e)}`)).slice(0, 4).join('\n')
+        : (res.mensaje || 'No se pudieron escanear documentos del repositorio.');
+
+      alert(
+        `⚠️ Resultado de Sincronización con Observaciones:\n\n` +
+        `• Método: ${r ? r.metodo || 'DESCONOCIDO' : 'FALLO'}\n` +
+        `• Total escaneados: ${r ? r.totalEscaneados : 0}\n` +
+        `• Nuevos insertados: ${r ? r.insertados : 0}\n` +
+        `• Errores reportados:\n${listaErr}`
+      );
+    } else {
+      alert(
+        `✅ Sincronización Oficial Completada (${r.metodo || 'GITHUB'}):\n` +
+        `• Total escaneados: ${r.totalEscaneados}\n` +
+        `• Nuevos insertados: ${r.insertados}\n` +
+        `• Actualizados: ${r.actualizados}\n` +
+        `• Omitidos (sin cambios): ${r.omitidos}\n` +
+        `• Duración: ${(r.duracionMs / 1000).toFixed(2)}s`
+      );
+    }
 
     await cargarDocumentos();
   } catch (err) {
