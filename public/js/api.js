@@ -144,9 +144,14 @@ function renderBarraLateral(paginaActiva) {
     .toUpperCase();
 
   contenedor.innerHTML = `
-    <div class="logo-marca">
-      <img src="/img/logo.jpg" alt="Logo LIN GROUP & Asociados" onerror="this.src='/877114.jpg'" />
-      <div class="marca-nombre">LIN GROUP<small>Asociados • SysJurídico</small></div>
+    <div class="logo-marca" style="display:flex; align-items:center; justify-content:space-between">
+      <div style="display:flex; align-items:center; gap:10px; overflow:hidden">
+        <img src="/img/logo.jpg" alt="Logo LIN GROUP & Asociados" onerror="this.src='/877114.jpg'" />
+        <div class="marca-nombre" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">LIN GROUP<small>Asociados • SysJurídico</small></div>
+      </div>
+      <button onclick="alternarSidebar()" title="Ocultar barra lateral" style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; color:#64748B; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:0.8rem; flex-shrink:0" onmouseover="this.style.background='#EFF6FF'; this.style.color='#1D4ED8'" onmouseout="this.style.background='#F8FAFC'; this.style.color='#64748B'">
+        ◀
+      </button>
     </div>
     <nav>
       ${grupos

@@ -8,6 +8,36 @@
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
 <style>
+  .pestanas-wisdom {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid var(--borde);
+    margin-bottom: 18px;
+    padding-bottom: 2px;
+  }
+  .btn-pestana {
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--texto-secundario);
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: var(--trans);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-pestana:hover {
+    color: var(--azul-primary);
+    background: rgba(30, 64, 175, 0.04);
+  }
+  .btn-pestana.activa {
+    color: var(--azul-primary);
+    border-bottom: 3px solid var(--azul-primary);
+    background: #EFF6FF;
+  }
   .drop-zone {
     border: 2px dashed #CBD5E1;
     background: var(--bg-subtle);
@@ -34,7 +64,7 @@
     margin-bottom: 14px;
   }
   .modal-ancho {
-    max-width: 820px;
+    max-width: 860px;
     width: 95%;
   }
   .editor-md-area {
@@ -64,6 +94,16 @@
     overflow-y: auto;
     color: var(--texto);
   }
+  .badge-fuero {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    background: #F1F5F9;
+    color: #334155;
+    border: 1px solid #E2E8F0;
+  }
 </style>
 </head>
 <body>
@@ -73,64 +113,179 @@
     <div class="topbar-operativa">
       <div class="topbar-titulo">
         <h2>OtelaxWisdom &mdash; Acervo de Sabiduría Jurídica (.md)</h2>
-        <div class="topbar-subtitulo">Corpus documental estructurado para el razonamiento forense de Techapyrã IA</div>
+        <div class="topbar-subtitulo">Corpus documental oficial de Paraguay, Memoria Privada del Estudio y Fallback Institucional</div>
       </div>
-      <div class="topbar-acciones" style="display:flex; gap:10px; align-items:center">
+      <div class="topbar-acciones" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap">
         <span class="badge badge-dorado" id="badgeTotalDocs">Cargando...</span>
+        <button class="btn-secundario" id="btnSyncGithub" onclick="sincronizarConGithub()">
+          <span>🔄</span> Sincronizar Acervo (GitHub)
+        </button>
         <button class="btn-primario" onclick="abrirModalNuevo()">
           <span>+</span> Agregar / Importar .md
         </button>
       </div>
     </div>
 
-    <!-- Barra de Búsqueda y Filtros -->
-    <div class="tarjeta" style="padding:14px 20px">
-      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center">
-        <div style="flex:1; min-width:280px">
-          <input id="buscadorDoc" placeholder="🔍 Buscar por título, norma, tipo o palabra clave..." oninput="filtrarDocumentos()" />
+    <!-- Pestañas de Navegación -->
+    <div class="pestanas-wisdom">
+      <button class="btn-pestana activa" id="tabAcervo" onclick="cambiarPestana('acervo')">
+        <span>🏛️</span> Acervo Nacional (ZETTI)
+      </button>
+      <button class="btn-pestana" id="tabMemoria" onclick="cambiarPestana('memoria')">
+        <span>🔒</span> Memoria Privada del Estudio
+      </button>
+      <button class="btn-pestana" id="tabAutoAprendido" onclick="cambiarPestana('auto')">
+        <span>🌐</span> Auto-Aprendido Web Oficial (.gov.py)
+      </button>
+    </div>
+
+    <!-- SECCIÓN 1: ACERVO NACIONAL -->
+    <div id="seccionAcervo">
+      <!-- Filtros y Búsqueda -->
+      <div class="tarjeta" style="padding:14px 20px; margin-bottom:14px">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center">
+          <div style="flex:1; min-width:260px">
+            <input id="buscadorDoc" placeholder="🔍 Buscar por título, norma, artículo, fuero..." oninput="filtrarDocumentos()" />
+          </div>
+          <div style="width:230px">
+            <select id="filtroFuero" onchange="filtrarDocumentos()">
+              <option value="TODOS">Todos los fueros (9)</option>
+              <option value="CIVIL Y COMERCIAL">Civil y Comercial</option>
+              <option value="CONTENCIOSO ADMINISTRATIVO">Contencioso Administrativo</option>
+              <option value="JUSTICIA DE PAZ">Justicia de Paz</option>
+              <option value="LABORAL">Laboral</option>
+              <option value="NIÑEZ Y ADOLESCENCIA">Niñez y Adolescencia</option>
+              <option value="PENAL">Penal</option>
+              <option value="SALA CONSTITUCIONAL">Sala Constitucional</option>
+              <option value="TRIBUNAL DE CUENTAS">Tribunal de Cuentas</option>
+              <option value="LEYES ESPECIALES Y TRANSVERSALES">Leyes Especiales</option>
+            </select>
+          </div>
+          <div style="width:200px">
+            <select id="filtroTipo" onchange="filtrarDocumentos()">
+              <option value="TODOS">Todos los tipos (10)</option>
+              <option value="CONSTITUCION NACIONAL">Constitución Nacional</option>
+              <option value="CODIGO">Código</option>
+              <option value="LEY">Ley</option>
+              <option value="ACORDADA">Acordada</option>
+              <option value="JURISPRUDENCIA">Jurisprudencia CSJ</option>
+              <option value="DOCTRINA">Doctrina</option>
+              <option value="TRATADO INTERNACIONAL">Tratado Internacional</option>
+              <option value="RESOLUCION">Resolución</option>
+              <option value="PROTOCOLO">Protocolo</option>
+              <option value="OTRO">Otro</option>
+            </select>
+          </div>
         </div>
-        <div style="width:240px">
-          <select id="filtroTipo" onchange="filtrarDocumentos()">
-            <option value="TODOS">Todos los tipos</option>
-            <option value="CONSTITUCION NACIONAL">Constitución Nacional</option>
-            <option value="TRATADO INTERNACIONAL">Tratado Internacional</option>
-            <option value="CODIGO">Código</option>
-            <option value="LEY">Ley</option>
-            <option value="JURISPRUDENCIA">Jurisprudencia CSJ</option>
-            <option value="ACORDADA">Acordada</option>
-            <option value="DOCTRINA">Doctrina</option>
-            <option value="OTRO">Otro / Misceláneo</option>
-          </select>
+      </div>
+
+      <!-- Tabla de Documentos Curados -->
+      <div class="tarjeta">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+          <div>
+            <h3 style="margin:0">Documentos del Acervo Legislativo</h3>
+            <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">
+              Normas, códigos y jurisprudencia paraguaya indexados localmente en <code>data/otelaxwisdom/acervo/</code>
+            </p>
+          </div>
+          <a href="/lexpy.html" class="boton btn-secundario btn-sm" style="text-decoration:none">
+            <span>🤖</span> Consultar en Techapyrã IA &rarr;
+          </a>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Título / Norma</th>
+                <th>Fuero</th>
+                <th>Tipo</th>
+                <th>Tamaño</th>
+                <th>Fecha</th>
+                <th style="text-align:right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaOtelaxDocs"></tbody>
+          </table>
         </div>
       </div>
     </div>
 
-    <!-- Tabla de Documentos Curados -->
-    <div class="tarjeta">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
-        <div>
-          <h3 style="margin:0">Documentos del Acervo</h3>
-          <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">
-            Archivos <code>.md</code> indexados localmente para inferencia RAG sin saturación de contexto
-          </p>
+    <!-- SECCIÓN 2: MEMORIA PRIVADA DEL ESTUDIO -->
+    <div id="seccionMemoria" style="display:none">
+      <!-- Editor Maestro de Estilo Forense -->
+      <div class="tarjeta" style="margin-bottom:16px">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px">
+          <div>
+            <h3 style="margin:0; display:flex; align-items:center; gap:8px">
+              <span>✍️</span> Estilo Forense Institucional del Estudio
+              <span class="badge badge-dorado" style="font-size:0.7rem">Inyección Automática en Redacción</span>
+            </h3>
+            <p style="margin:4px 0 0; font-size:0.83rem; color:var(--texto-muted)">
+              Define la identidad, encabezados, fórmulas sacramentales y petitorios que Techapyrã IA utilizará al redactar escritos en el Editor.
+            </p>
+          </div>
+          <button class="btn-primario btn-sm" id="btnGuardarEstilo" onclick="guardarEstiloEstudio()">
+            💾 Guardar Estilo Forense
+          </button>
         </div>
-        <a href="/lexpy.html" class="boton btn-secundario btn-sm" style="text-decoration:none">
-          <span>🤖</span> Probar en Techapyrã IA &rarr;
-        </a>
+        <textarea id="editorEstiloForense" class="editor-md-area" style="min-height:220px" placeholder="Cargando manual de estilo forense..."></textarea>
       </div>
-      <div style="overflow-x:auto">
-        <table>
-          <thead>
-            <tr>
-              <th>Título / Archivo</th>
-              <th>Tipo de Norma</th>
-              <th>Tamaño</th>
-              <th>Actualizado</th>
-              <th style="text-align:right">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="tablaOtelaxDocs"></tbody>
-        </table>
+
+      <!-- Escritos Modelo y Fichas de Expedientes -->
+      <div class="tarjeta">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+          <div>
+            <h3 style="margin:0">Escritos Modelo y Fichas de Expedientes Propios</h3>
+            <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">
+              Documentos privados almacenados en <code>data/otelaxwisdom/memoria-estudio/</code> (Estrictamente fuera del repositorio público).
+            </p>
+          </div>
+          <button class="btn-secundario btn-sm" onclick="abrirModalNuevo('PRIVADO_ESTUDIO')">
+            + Nuevo Modelo / Ficha
+          </button>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Título / Ficha</th>
+                <th>Subtipo</th>
+                <th>Fuero</th>
+                <th>Tamaño</th>
+                <th style="text-align:right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaMemoriaEstudio"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECCIÓN 3: AUTO-APRENDIDO WEB OFICIAL -->
+    <div id="seccionAutoAprendido" style="display:none">
+      <div class="tarjeta">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px">
+          <div>
+            <h3 style="margin:0">Conocimiento Adquirido desde Portales Oficiales (.gov.py)</h3>
+            <p style="margin:2px 0 0; font-size:0.82rem; color:var(--texto-muted)">
+              Respuestas oficiales captadas automáticamente de BACN, CSJ, Gaceta Oficial y Ministerios al consultar normas no indexadas previamente.
+            </p>
+          </div>
+        </div>
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Norma / Título Oficial</th>
+                <th>Portal Fuente</th>
+                <th>Estado de Revisión</th>
+                <th>Fecha de Ingesta</th>
+                <th style="text-align:right">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaAutoAprendido"></tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -149,30 +304,54 @@
         <div style="font-size:1.6rem; margin-bottom:4px">📂</div>
         <strong style="color:var(--azul-primary); font-size:0.92rem">Haz clic aquí o arrastra un archivo .md desde tu computadora</strong>
         <div style="font-size:0.8rem; color:var(--texto-muted); margin-top:2px">
-          Detecta automáticamente el título, el contenido y preselecciona el tipo
+          Detecta automáticamente el título, el contenido y preselecciona tipo y fuero
         </div>
       </div>
 
       <div id="avisoSubida" class="aviso-subida-ok"></div>
 
-      <div class="grid" style="grid-template-columns: 2fr 1fr; gap:12px">
+      <div class="grid" style="grid-template-columns: 2fr 1fr 1fr; gap:12px">
         <div>
           <label>Título del Documento *</label>
-          <input id="docTitulo" placeholder="Ej: Constitución Nacional de la República del Paraguay de 1992" required />
+          <input id="docTitulo" placeholder="Ej: Ley Nº 6715/2021 de Procedimientos Administrativos" required />
         </div>
         <div>
-          <label>Tipo de Documento / Fuente *</label>
+          <label>Fuero *</label>
+          <select id="docFuero" required>
+            <option value="CIVIL Y COMERCIAL">Civil y Comercial</option>
+            <option value="CONTENCIOSO ADMINISTRATIVO">Contencioso Administrativo</option>
+            <option value="JUSTICIA DE PAZ">Justicia de Paz</option>
+            <option value="LABORAL">Laboral</option>
+            <option value="NIÑEZ Y ADOLESCENCIA">Niñez y Adolescencia</option>
+            <option value="PENAL">Penal</option>
+            <option value="SALA CONSTITUCIONAL">Sala Constitucional</option>
+            <option value="TRIBUNAL DE CUENTAS">Tribunal de Cuentas</option>
+            <option value="LEYES ESPECIALES Y TRANSVERSALES">Leyes Especiales</option>
+          </select>
+        </div>
+        <div>
+          <label>Tipo de Documento *</label>
           <select id="docTipo" required>
             <option value="CONSTITUCION NACIONAL">Constitución Nacional</option>
-            <option value="TRATADO INTERNACIONAL">Tratado Internacional</option>
             <option value="CODIGO">Código</option>
             <option value="LEY">Ley</option>
-            <option value="JURISPRUDENCIA">Jurisprudencia CSJ</option>
             <option value="ACORDADA">Acordada</option>
+            <option value="JURISPRUDENCIA">Jurisprudencia CSJ</option>
             <option value="DOCTRINA">Doctrina</option>
+            <option value="TRATADO INTERNACIONAL">Tratado Internacional</option>
+            <option value="RESOLUCION">Resolución</option>
+            <option value="PROTOCOLO">Protocolo</option>
             <option value="OTRO">Otro</option>
           </select>
         </div>
+      </div>
+
+      <div id="grupoVisibilidad" style="display:none; margin-top:10px">
+        <label>Destino de Almacenamiento</label>
+        <select id="docVisibilidad">
+          <option value="PUBLICO_ACERVO">Acervo Legislativo Común</option>
+          <option value="PRIVADO_ESTUDIO">Memoria Privada del Estudio (Confidencial)</option>
+        </select>
       </div>
 
       <div id="grupoFilename" style="display:none; margin-top:10px">
@@ -198,8 +377,9 @@
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px">
         <div>
           <h3 id="verDocTitulo" style="margin:0 0 4px"></h3>
-          <div style="display:flex; gap:8px; align-items:center; font-size:0.8rem">
+          <div style="display:flex; gap:8px; align-items:center; font-size:0.8rem; flex-wrap:wrap">
             <span id="verDocTipo" class="badge badge-dorado"></span>
+            <span id="verDocFuero" class="badge-fuero"></span>
             <span id="verDocTamano" style="color:var(--texto-muted); font-family:monospace"></span>
             <span id="verDocFilename" style="color:var(--texto-muted); font-family:monospace"></span>
           </div>

@@ -1,6 +1,7 @@
 const Cliente = require('../models/Cliente');
 const Expediente = require('../models/Expediente');
 const { generarRespuestaIA } = require('./aiProviderService');
+const { obtenerEstiloForense } = require('./otelaxWisdomService');
 
 const PLANTILLAS = {
   contrato: 'Redacta un contrato de prestación de servicios profesionales jurídicos según las normas del Código Civil Paraguayo',
@@ -32,11 +33,16 @@ async function redactarBorrador({ tipoDocumento, clienteId, expedienteId, instru
     .filter(Boolean)
     .join('\n');
 
-  const system =
+  const estiloForense = obtenerEstiloForense();
+  let system =
     'Eres un redactor jurídico senior experto en legislación y práctica procesal de la República del Paraguay. ' +
     'Redacta escritos judiciales, demandas, contratos y dictámenes con formato formal, elegante, preciso y profesional. ' +
     'Usa encabezados judiciales clásicos de Paraguay (OBJETO: ..., SEÑOR JUEZ:, HECHOS, DERECHO, PETITORIO) cuando corresponda. ' +
     'Mantén el lenguaje técnico adecuado y las fórmulas procesales vigentes.';
+
+  if (estiloForense) {
+    system += `\n\nESTILO FORENSE INSTITUCIONAL DEL ESTUDIO:\nSigue rigurosamente estas directrices de estilo y fórmulas procesales:\n${estiloForense}`;
+  }
 
   const prompt = `${base}.\n\nContexto e información disponible para el documento:\n${datosContexto}\n\nPor favor genera el texto completo del documento listo para revisión y presentación, en formato Markdown limpio.`;
 

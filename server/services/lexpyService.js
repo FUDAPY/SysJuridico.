@@ -4,7 +4,8 @@ const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { buscarEnFuentesExternas } = require('./scraperService');
 const { generarRespuestaIA } = require('./aiProviderService');
 const { recuperarMemoriaContextual } = require('./agentMemoryService');
-const { buscarEnOtelaxWisdom } = require('./otelaxWisdomService');
+const { buscarEnOtelaxWisdom, obtenerEstiloForense } = require('./otelaxWisdomService');
+const { ejecutarFallbackInstitucional } = require('./institutionalWebFallback');
 
 const UMBRAL_RESULTADOS_LOCALES = 1;
 
@@ -140,12 +141,16 @@ function construirContexto({ aprendizajes, baseLegal, jurisprudencia = [] }) {
   return partes.join('\n\n---\n\n');
 }
 
-function notaDeFuentes({ aprendizajes = [], baseLegal = [], externa = null, docsOtelax = [] }) {
+function notaDeFuentes({ aprendizajes = [], baseLegal = [], externa = null, docsOtelax = [], fallbackWeb = null }) {
   const items = [];
 
   docsOtelax.forEach((d) => {
     items.push(`- **${d.titulo}** (${d.tipo}) — *OtelaxWisdom*`);
   });
+
+  if (fallbackWeb && fallbackWeb.encontrado) {
+    items.push(`- **${fallbackWeb.titulo}** — [${fallbackWeb.fuente}](${fallbackWeb.url_fuente}) *(Auto-aprendido en OtelaxWisdom)*`);
+  }
 
   baseLegal.forEach((b) => {
     const origen = b.fuente || 'Base Legal interna';
@@ -278,8 +283,24 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   }
 
   let externa = null;
+  let fallbackWeb = null;
 
-  if (totalLocal + docsOtelax.length < UMBRAL_RESULTADOS_LOCALES) {
+  // Fallback Web Institucional Auto-Aprendible si hay menos de 2 documentos locales relevantes
+  if (docsOtelax.length < 2) {
+    try {
+      const resWeb = await ejecutarFallbackInstitucional(pregunta);
+      if (resWeb && resWeb.encontrado) {
+        fallbackWeb = resWeb;
+        const bloqueWeb = `[DOCUMENTO OFICIAL DEL ESTADO PARAGUAYO (AUTO-APRENDIDO EN OTELAXWISDOM): ${resWeb.titulo} (${resWeb.tipo} - ${resWeb.fuero})]\nFuente Oficial: ${resWeb.fuente} (${resWeb.url_fuente})\n${resWeb.fragmento}`;
+        contexto = contexto ? `${contexto}\n---\n${bloqueWeb}` : bloqueWeb;
+        fuenteRespuesta = 'web_institucional_oficial';
+      }
+    } catch (fbErr) {
+      console.warn('[LexPY] Error en fallback web institucional:', fbErr.message);
+    }
+  }
+
+  if (totalLocal + docsOtelax.length < UMBRAL_RESULTADOS_LOCALES && !fallbackWeb) {
     requiereAvisoFallback = true;
     externa = await buscarEnFuentesExternas(pregunta);
     if (externa) {
@@ -299,7 +320,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   });
 
   if (respuestaIA) {
-    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa, docsOtelax });
+    const nota = notaDeFuentes({ aprendizajes, baseLegal, externa, docsOtelax, fallbackWeb });
     const respuesta = nota && !respuestaIA.includes('Fuentes consultadas') ? respuestaIA + nota : respuestaIA;
     return { respuesta, fuente: fuenteRespuesta || 'ia_generativa' };
   }
@@ -449,8 +470,13 @@ async function procesarAsistenteEditor({
           : `REDACTA un fragmento o escrito judicial formal según las siguientes instrucciones: "${instrucciones}"`;
   }
 
+  const estiloForense = obtenerEstiloForense();
+  const bloqueEstilo = estiloForense
+    ? `\n\nESTILO FORENSE INSTITUCIONAL DEL ESTUDIO:\n${estiloForense.slice(0, 1500)}`
+    : '';
+
   const promptFinal =
-    `${datosCausa}${jurisprudenciaCSJ}\n\n` +
+    `${datosCausa}${jurisprudenciaCSJ}${bloqueEstilo}\n\n` +
     `INSTRUCCIÓN DE REDACCIÓN:\n${instruccionForense}\n\n` +
     `IMPORTANTE: Devuelve ÚNICAMENTE el texto redactado en formato listo para insertar en la hoja de trabajo judicial. No incluyas preámbulos como "Aquí tienes", ni despedidas. Solo el contenido forense.`;
 

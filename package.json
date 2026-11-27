@@ -9,7 +9,9 @@
     "dev": "nodemon server/server.js",
     "migrate:firestore": "node scripts/migrate-firestore-to-mongo.js",
     "seed:admin": "node scripts/seed-admin.js",
-    "seed:wisdom": "node scripts/seed-otelax-wisdom.js"
+    "seed:wisdom": "node scripts/seed-otelax-wisdom.js",
+    "seed:mongo-wisdom": "node scripts/ingest-otelaxwisdom-to-mongo.js",
+    "sync:legislacion": "node scripts/sync-legislacion-py.js"
   },
   "engines": {
     "node": ">=22.0.0"

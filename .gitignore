@@ -33,3 +33,15 @@ SPEC.md
 tasks/
 *.plan
 TODO.md
+
+# OtelaxWisdom local cache y memoria privada confidencial
+data/otelaxwisdom/.cache_repo_zetti/
+data/otelaxwisdom/memoria-estudio/**
+!data/otelaxwisdom/memoria-estudio/
+!data/otelaxwisdom/memoria-estudio/**/.gitkeep
+data/otelaxwisdom/auto-aprendido/**
+!data/otelaxwisdom/auto-aprendido/
+!data/otelaxwisdom/auto-aprendido/**/.gitkeep
+
+
+
