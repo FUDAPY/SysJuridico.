@@ -8,7 +8,8 @@ const { GoogleGenAI } = require('@google/genai');
  */
 async function generarRespuestaIA({ prompt, contexto, system, activarGrounding = false }) {
   const geminiKey = process.env.GEMINI_API_KEY || (process.env.LEXPY_AI_PROVIDER === 'gemini' ? process.env.LEXPY_AI_API_KEY : null);
-  const proveedor = (process.env.LEXPY_AI_PROVIDER || (geminiKey ? 'gemini' : 'none')).toLowerCase();
+  const defaultProvider = process.env.LEXPY_AI_BASE_URL ? 'freellmapi' : (geminiKey ? 'gemini' : 'none');
+  const proveedor = (process.env.LEXPY_AI_PROVIDER || defaultProvider).toLowerCase();
   const apiKey = geminiKey || process.env.LEXPY_AI_API_KEY;
 
   if (!apiKey && proveedor === 'none') {
@@ -17,7 +18,7 @@ async function generarRespuestaIA({ prompt, contexto, system, activarGrounding =
 
   const contenidoSistema =
     system ||
-    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico, impulsado por el Motor de Sabiduría OtelaxWisdom.\n' +
+    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJuridico, impulsado por el Motor de Sabiduría OtelaxWisdom.\n' +
     'Tu objetivo es resolver dudas, redactar escritos judiciales, proponer estrategias procesales y brindar soluciones en el ámbito jurídico, fiscal y personal, aplicando estrictamente el derecho paraguayo positivo y vigente.\n' +
     'Aplica la regla de CERO ALUCINACIONES: si no encuentras respaldo en tu base local ni en fuentes web oficiales paraguayas, decláralo explícitamente.';
 
@@ -26,8 +27,33 @@ async function generarRespuestaIA({ prompt, contexto, system, activarGrounding =
     : prompt;
 
   try {
+    // Proveedor: FreeLLMAPI (Instancia Dokploy / OpenAI-compatible)
+    if (proveedor === 'freellmapi') {
+      const modelo = process.env.LEXPY_AI_MODEL || 'auto';
+      const baseUrl = (process.env.LEXPY_AI_BASE_URL || 'http://freellmapi:3001/v1').replace(/\/+$/, '');
+      const respuesta = await axios.post(
+        `${baseUrl}/chat/completions`,
+        {
+          model: modelo,
+          messages: [
+            { role: 'system', content: contenidoSistema },
+            { role: 'user', content: promptCompleto },
+          ],
+          temperature: 0.2,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.LEXPY_AI_API_KEY || ''}`,
+            'Content-Type': 'application/json',
+          },
+          timeout: 90000,
+        }
+      );
+      return respuesta.data?.choices?.[0]?.message?.content || null;
+    }
+
     // Motor Principal: Gemini 2.5 Pro vía @google/genai
-    if (geminiKey || proveedor === 'gemini') {
+    if (proveedor === 'gemini' || (geminiKey && proveedor === 'none')) {
       const keyUsar = geminiKey || apiKey;
       const modelo = process.env.GEMINI_MODEL || process.env.LEXPY_AI_MODEL || 'gemini-2.5-pro';
       const ai = new GoogleGenAI({ apiKey: keyUsar });
