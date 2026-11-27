@@ -395,9 +395,9 @@ function alternarVistaFinanciera() {
 }
 
 function alternarMenuHerramientas() {
-  const opcion = prompt('Herramientas Rápidas:\n1. Editor Judicial (Google Docs)\n2. Red de Conocimiento (Obsidian Graph)\n3. Liquidación Laboral MTESS\n4. Cartera de Créditos\n5. Ver Centro Financiero\n\nIngresá el número de opción:');
+  const opcion = prompt('Herramientas Rápidas:\n1. Editor Judicial (Google Docs)\n2. OtelaxWisdom (.md)\n3. Liquidación Laboral MTESS\n4. Cartera de Créditos\n5. Ver Centro Financiero\n\nIngresá el número de opción:');
   if (opcion === '1') window.location.href = '/editor.html';
-  else if (opcion === '2') window.location.href = '/grafo.html';
+  else if (opcion === '2') window.location.href = '/otelaxwisdom.html';
   else if (opcion === '3') window.location.href = '/liquidacion.html';
   else if (opcion === '4') window.location.href = '/creditos.html';
   else if (opcion === '5') alternarVistaFinanciera();

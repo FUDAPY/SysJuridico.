@@ -4,7 +4,7 @@ const SesionChat = require('../models/SesionChat');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
 const { procesarConsultaLexPY, procesarAsistenteEditor } = require('../services/lexpyService');
 const { redactarBorrador } = require('../services/draftService');
-const { destilarYGuardarMemoria, obtenerRedDeConocimiento, obtenerNormaPorId, buscarNormas } = require('../services/agentMemoryService');
+const { destilarYGuardarMemoria, obtenerNormaPorId, buscarNormas } = require('../services/agentMemoryService');
 
 // POST /api/lexpy/chat  { pregunta, sesionId?, cliente?, expediente? }
 const chat = asyncHandler(async (req, res) => {
@@ -95,12 +95,6 @@ const asistenteEditor = asyncHandler(async (req, res) => {
   res.json({ success: true, data: resultado });
 });
 
-// GET /api/lexpy/grafo -> Devuelve la red de conocimiento tipo Obsidian (nodos y aristas)
-const obtenerGrafo = asyncHandler(async (req, res) => {
-  const red = await obtenerRedDeConocimiento({ usuarioId: req.usuario._id });
-  res.json({ success: true, data: red });
-});
-
 // GET /api/lexpy/norma/:id -> Devuelve el texto y articulado completo de una norma
 const obtenerNorma = asyncHandler(async (req, res) => {
   const norma = await obtenerNormaPorId(req.params.id);
@@ -114,7 +108,6 @@ module.exports = {
   obtenerSesion,
   validarAprendizaje,
   redactar,
-  obtenerGrafo,
   asistenteEditor,
   obtenerNorma,
 };

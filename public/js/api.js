@@ -128,7 +128,6 @@ function renderBarraLateral(paginaActiva) {
         { href: '/editor.html', texto: 'Editor Judicial', id: 'editor', icono: '📝' },
         { href: '/lexpy.html', texto: 'Techapyrã IA', id: 'lexpy', icono: '🤖' },
         { href: '/otelaxwisdom.html', texto: 'OtelaxWisdom', id: 'otelaxwisdom', icono: '📚' },
-        { href: '/grafo.html', texto: 'Red de Conocimiento', id: 'grafo', icono: '🕸️' },
         ...(usuario.rol === 'admin' ? [{ href: '/usuarios.html', texto: 'Usuarios & Equipo', id: 'usuarios', icono: '⚙️' }] : []),
       ],
     },
