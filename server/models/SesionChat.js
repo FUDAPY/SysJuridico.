@@ -6,8 +6,7 @@ const mensajeSchema = new mongoose.Schema(
     contenido: { type: String, required: true },
     fuenteRespuesta: {
       type: String,
-      enum: ['base_local', 'externo_csj', 'externo_baselegal', 'ia_generativa', null],
-      default: null,
+      default: 'otelaxwisdom',
     },
     fecha: { type: Date, default: Date.now },
   },
