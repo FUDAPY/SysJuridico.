@@ -218,15 +218,47 @@ function escanearArchivosMdRecursivo(directorio) {
 }
 
 /**
+ * Asegura que los archivos del acervo preempaquetado estén presentes en OTELAX_DATA_DIR
+ * (especialmente cuando se utiliza un volumen montado persistente en Dokploy)
+ */
+function asegurarAcervoBundled() {
+  const bundledDir = path.resolve(__dirname, '../../data/otelaxwisdom/acervo');
+  const targetDir = path.join(OTELAX_DATA_DIR, 'acervo');
+
+  if (bundledDir === targetDir) return;
+  if (!fs.existsSync(bundledDir)) return;
+
+  try {
+    fs.mkdirSync(targetDir, { recursive: true });
+    const bundledArchivos = escanearArchivosMdRecursivo(bundledDir);
+    const targetArchivos = escanearArchivosMdRecursivo(targetDir);
+
+    if (targetArchivos.length < bundledArchivos.length) {
+      console.log(`[OtelaxWisdom] Asegurando ${bundledArchivos.length} archivos del acervo preempaquetado en ${targetDir}...`);
+      for (const src of bundledArchivos) {
+        const rel = path.relative(bundledDir, src);
+        const dest = path.join(targetDir, rel);
+        fs.mkdirSync(path.dirname(dest), { recursive: true });
+        if (!fs.existsSync(dest) || fs.statSync(dest).size !== fs.statSync(src).size) {
+          fs.copyFileSync(src, dest);
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('[OtelaxWisdom] Advertencia asegurando acervo preempaquetado:', err.message);
+  }
+}
+
+/**
  * Carga o refresca el índice en memoria de todos los documentos .md en OtelaxWisdom
  */
 function recargarIndice() {
   if (!fs.existsSync(OTELAX_DATA_DIR)) {
-    indiceMemoria = [];
-    return indiceMemoria;
+    fs.mkdirSync(OTELAX_DATA_DIR, { recursive: true });
   }
 
-  // Asegurar plantilla por defecto de estilo forense si no existe
+  // Asegurar acervo preempaquetado y plantilla por defecto
+  asegurarAcervoBundled();
   asegurarEstiloForenseDefault();
 
   const archivos = escanearArchivosMdRecursivo(OTELAX_DATA_DIR);

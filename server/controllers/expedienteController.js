@@ -218,9 +218,23 @@ const actualizarExpediente = asyncHandler(async (req, res) => {
 
 // DELETE /api/expedientes/:id
 const eliminarExpediente = asyncHandler(async (req, res) => {
-  const expediente = await Expediente.findByIdAndDelete(req.params.id);
+  const expediente = await Expediente.findById(req.params.id);
   if (!expediente) throw new ApiError(404, 'Expediente no encontrado.');
-  res.json({ success: true, message: 'Expediente eliminado correctamente.' });
+
+  const esAdmin = req.usuario.rol === 'admin';
+  const esTitular =
+    String(expediente.abogadoAsignado) === String(req.usuario._id) ||
+    String(expediente.creadoPor) === String(req.usuario._id);
+
+  if (!esAdmin && !esTitular) {
+    throw new ApiError(403, 'No tienes permisos para eliminar este expediente.');
+  }
+
+  // Eliminar documentos adjuntos del expediente
+  await DocumentoExpediente.deleteMany({ expediente: expediente._id });
+  await expediente.deleteOne();
+
+  res.json({ success: true, message: 'Expediente y sus documentos eliminados correctamente.' });
 });
 
 // POST /api/expedientes/:id/documentos  { nombre, tipo, datos/base64 }

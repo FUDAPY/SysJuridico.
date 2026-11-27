@@ -13,12 +13,7 @@ if (contFiltro) contFiltro.classList.toggle('oculto', !esAdmin);
 const contAsignado = document.getElementById('contenedorAbogadoAsignado');
 if (contAsignado) contAsignado.classList.toggle('oculto', !esAdmin);
 
-if (!esAdmin) {
-  const btnNuevo = document.getElementById('btnNuevoExpediente');
-  const zonaDocs = document.getElementById('zonaSubirDoc');
-  if (btnNuevo) btnNuevo.style.display = 'none';
-  if (zonaDocs) zonaDocs.style.display = 'none';
-}
+// Los botones de nuevo expediente y subida de documentos están disponibles para todos los operadores autenticados
 
 async function cargarSelects() {
   try {
@@ -299,6 +294,9 @@ async function cargarExpedientes() {
               <button class="boton btn-secundario btn-sm" onclick='verDetalleExpediente(${JSON.stringify(e)})' title="Ver detalles y documentación">
                 👁️ Ver
               </button>
+              <button class="boton btn-secundario btn-sm" onclick='abrirModalGestionPDF("${e._id}", "${(e.caratula || '').replace(/'/g, "\\'")}")' title="Subir y gestionar PDFs">
+                📎 PDFs / Docs
+              </button>
               ${
                 esAdmin || (usuario && String(e.abogadoAsignado?._id || e.abogadoAsignado) === String(usuario._id))
                   ? `<button class="boton btn-secundario btn-sm" onclick='abrirModalCompartir("${e._id}", "${(e.caratula || '').replace(/'/g, "\\'")}")' title="Compartir causa con abogados">🔗 Compartir</button>`
@@ -558,13 +556,53 @@ async function guardarExpediente() {
     entregaInicial: Number(document.getElementById('eEntregaInicial')?.value) || 0,
   };
 
+  const btn = document.getElementById('btnCrearExpedienteModal');
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = 'Guardando expediente...';
+  }
+
   try {
-    await apiFetch('/expedientes', { method: 'POST', body: datos });
-    alert('Expediente y plan de crédito creados exitosamente.');
+    const resExp = await apiFetch('/expedientes', { method: 'POST', body: datos });
+    const expId = resExp?.data?._id || resExp?._id;
+
+    // Subir PDF o documento inicial si fue seleccionado
+    const fileInput = document.getElementById('eArchivoInicial');
+    const archivoInicial = fileInput?.files?.[0];
+    if (archivoInicial && expId) {
+      if (btn) btn.textContent = 'Indexando documento PDF con IA...';
+      try {
+        const base64 = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(String(reader.result).split(',')[1]);
+          reader.onerror = reject;
+          reader.readAsDataURL(archivoInicial);
+        });
+
+        await apiFetch(`/expedientes/${expId}/documentos`, {
+          method: 'POST',
+          body: {
+            nombre: archivoInicial.name,
+            tipo: archivoInicial.type || '',
+            datos: base64,
+          },
+        });
+      } catch (uploadErr) {
+        console.warn('Error subiendo PDF inicial:', uploadErr.message);
+      }
+    }
+
+    alert('Expediente creado y documentación registrada exitosamente.');
+    if (fileInput) fileInput.value = '';
     cerrarModalExpediente();
     cargarExpedientes();
   } catch (err) {
     alert('Error al guardar expediente: ' + err.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = 'Crear Expediente';
+    }
   }
 }
 
@@ -658,6 +696,154 @@ async function eliminarDocumentoExpediente(docId) {
     cargarDocumentosExpediente(expedienteActual._id);
   } catch (err) {
     alert(err.message);
+  }
+}
+
+/* ---------- Gestor Dedicado de PDFs de Expediente ---------- */
+let modalPDFExpedienteId = null;
+
+async function abrirModalGestionPDF(expId, caratula) {
+  modalPDFExpedienteId = expId;
+  const titulo = document.getElementById('tituloModalPDF');
+  const sub = document.getElementById('subtituloModalPDF');
+  const modal = document.getElementById('modalGestionPDF');
+  const input = document.getElementById('archivoPDFDirecto');
+  if (input) input.value = '';
+
+  if (titulo) titulo.textContent = 'Documentos y PDFs del Expediente';
+  if (sub) sub.textContent = caratula || 'Causa seleccionada';
+  if (modal) modal.classList.remove('oculto');
+
+  await cargarPDFsModal(expId);
+}
+
+function cerrarModalGestionPDF() {
+  const modal = document.getElementById('modalGestionPDF');
+  if (modal) modal.classList.add('oculto');
+  modalPDFExpedienteId = null;
+}
+
+async function cargarPDFsModal(expId) {
+  const contenedor = document.getElementById('listaPDFsExpediente');
+  if (!contenedor) return;
+  contenedor.innerHTML = '<div style="padding:16px; text-align:center; color:var(--texto-muted)">⏳ Cargando archivos...</div>';
+
+  try {
+    const docs = await apiFetch(`/expedientes/${expId}/documentos`);
+    if (!docs || !docs.length) {
+      contenedor.innerHTML = `
+        <div style="padding:24px; text-align:center; color:var(--texto-muted); background:var(--bg-subtle); border-radius:8px">
+          <div style="font-size:1.8rem; margin-bottom:4px">📂</div>
+          <strong>No hay archivos PDF o documentos adjuntos en este expediente.</strong>
+          <p style="margin:4px 0 0; font-size:0.8rem">Haz clic en el cuadro superior para adjuntar el primer archivo.</p>
+        </div>
+      `;
+      return;
+    }
+
+    contenedor.innerHTML = docs
+      .map(
+        (d) => `
+        <div style="display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--borde); border-radius:8px; margin-bottom:8px; background:#FFFFFF; flex-wrap:wrap">
+          <span style="font-size:1.4rem">${iconoDocumento(d.nombre)}</span>
+          <div style="flex:1; min-width:180px">
+            <strong style="color:var(--texto); font-size:0.88rem; display:block; word-break:break-all">${d.nombre}</strong>
+            <small style="color:var(--texto-muted); font-size:0.75rem">${tamanoArchivo(d.tamano)} &bull; ${formatoFecha(d.createdAt)}</small>
+            ${d.resumenIA ? `<p style="margin:4px 0 0; font-size:0.75rem; color:var(--azul-primary); line-height:1.3">💡 ${d.resumenIA.slice(0, 160)}...</p>` : ''}
+          </div>
+          <div style="display:flex; gap:6px; align-items:center">
+            <button class="boton btn-secundario btn-sm" onclick="descargarDocumentoExpedienteDirecto('${expId}', '${d._id}', '${d.nombre.replace(/'/g, "\\'")}')">
+              ⬇ Descargar
+            </button>
+            <button class="boton btn-sm" style="background:#dc2626; color:#fff; border:none; padding:5px 8px; border-radius:6px; cursor:pointer;" onclick="eliminarPDFModal('${expId}', '${d._id}')">
+              🗑️
+            </button>
+          </div>
+        </div>
+      `
+      )
+      .join('');
+  } catch (err) {
+    contenedor.innerHTML = `<div style="padding:16px; color:#DC2626; text-align:center">Error al cargar documentos: ${err.message}</div>`;
+  }
+}
+
+async function subirPDFSeleccionado() {
+  if (!modalPDFExpedienteId) return;
+  const input = document.getElementById('archivoPDFDirecto');
+  const archivo = input?.files?.[0];
+  if (!archivo) return;
+
+  if (!/\.(pdf|doc|docx|txt|jpg|png)$/i.test(archivo.name)) {
+    return alert('Formato de archivo no soportado. Seleccione un archivo .pdf, .doc o .docx.');
+  }
+
+  if (archivo.size > 25 * 1024 * 1024) {
+    return alert('El archivo supera el límite máximo de 25 MB.');
+  }
+
+  const contenedor = document.getElementById('listaPDFsExpediente');
+  if (contenedor) {
+    contenedor.insertAdjacentHTML(
+      'afterbegin',
+      '<div id="avisoSubiendo" style="padding:10px 14px; background:#EFF6FF; border:1px solid #DBEAFE; color:#1D4ED8; border-radius:8px; margin-bottom:8px; font-size:0.83rem">⏳ Subiendo y procesando "' +
+        archivo.name +
+        '"...</div>'
+    );
+  }
+
+  try {
+    const base64 = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result).split(',')[1]);
+      reader.onerror = reject;
+      reader.readAsDataURL(archivo);
+    });
+
+    await apiFetch(`/expedientes/${modalPDFExpedienteId}/documentos`, {
+      method: 'POST',
+      body: { nombre: archivo.name, tipo: archivo.type || '', datos: base64 },
+    });
+
+    input.value = '';
+    await cargarPDFsModal(modalPDFExpedienteId);
+    cargarExpedientes();
+  } catch (err) {
+    alert('Error al subir documento: ' + err.message);
+    await cargarPDFsModal(modalPDFExpedienteId);
+  }
+}
+
+async function descargarDocumentoExpedienteDirecto(expId, docId, nombre) {
+  try {
+    const res = await apiFetch(`/expedientes/${expId}/documentos/${docId}/descargar`);
+    const data = res?.data || res;
+    if (!data || !data.base64) throw new Error('No se pudo obtener el archivo.');
+
+    const binario = atob(data.base64);
+    const arreglo = new Uint8Array(binario.length);
+    for (let i = 0; i < binario.length; i++) arreglo[i] = binario.charCodeAt(i);
+    const blob = new Blob([arreglo], { type: data.tipo || 'application/pdf' });
+    const enlace = document.createElement('a');
+    enlace.href = URL.createObjectURL(blob);
+    enlace.download = data.nombre || nombre || 'documento.pdf';
+    document.body.appendChild(enlace);
+    enlace.click();
+    enlace.remove();
+    setTimeout(() => URL.revokeObjectURL(enlace.href), 4000);
+  } catch (err) {
+    alert('Error descargando documento: ' + err.message);
+  }
+}
+
+async function eliminarPDFModal(expId, docId) {
+  if (!confirm('¿Deseas eliminar este documento del expediente?')) return;
+  try {
+    await apiFetch(`/expedientes/${expId}/documentos/${docId}`, { method: 'DELETE' });
+    await cargarPDFsModal(expId);
+    cargarExpedientes();
+  } catch (err) {
+    alert('Error al eliminar: ' + err.message);
   }
 }
 

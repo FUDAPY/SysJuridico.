@@ -242,6 +242,15 @@
               <input id="eEntregaInicial" type="number" min="0" value="0" style="width:100%; padding:8px 10px; background:var(--bg-input); border:1px solid var(--borde); border-radius:6px; color:var(--texto); font-size:0.85rem;" />
             </div>
           </div>
+        <!-- Adjuntar PDF / Documento inicial (opcional) -->
+        <div style="background:var(--bg-subtle); border:1px dashed var(--borde); border-radius:8px; padding:12px; margin-top:6px;">
+          <label style="display:block; font-size:0.85rem; margin-bottom:4px; color:var(--texto-secundario); font-weight:600;">
+            📄 Adjuntar PDF o Documento Inicial (Opcional)
+          </label>
+          <input type="file" id="eArchivoInicial" accept=".pdf,.doc,.docx" style="width:100%; font-size:0.85rem; padding:6px; background:#fff; border:1px solid var(--borde); border-radius:6px;" />
+          <small style="color:var(--texto-muted); font-size:0.75rem; display:block; margin-top:3px;">
+            El archivo PDF será almacenado y analizado por IA automáticamente una vez creado el expediente.
+          </small>
         </div>
       </div>
 
@@ -249,9 +258,44 @@
         <button class="btn-secundario" onclick="cerrarModalExpediente()" style="padding:10px 20px; border-radius:8px; background:#FFFFFF; border:1px solid var(--borde); color:var(--texto-secundario); font-weight:600; cursor:pointer;">
           Cancelar
         </button>
-        <button class="boton btn-primario" onclick="guardarExpediente()" style="padding:10px 24px; border-radius:8px; font-weight:600; cursor:pointer;">
+        <button class="boton btn-primario" id="btnCrearExpedienteModal" onclick="guardarExpediente()" style="padding:10px 24px; border-radius:8px; font-weight:600; cursor:pointer;">
           Crear Expediente
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Gestión y Subida de PDFs de Expediente -->
+  <div class="modal-fondo oculto" id="modalGestionPDF">
+    <div class="modal" style="max-width:720px; width:95%; background:var(--bg-card); border:1px solid var(--borde); border-radius:14px; padding:24px; color:var(--texto); box-shadow:var(--sombra-modal);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px">
+        <div>
+          <h3 id="tituloModalPDF" style="margin:0; font-size:1.2rem; color:var(--texto)">Documentos y PDFs del Expediente</h3>
+          <p id="subtituloModalPDF" style="margin:4px 0 0; font-size:0.83rem; color:var(--texto-muted)"></p>
+        </div>
+        <button onclick="cerrarModalGestionPDF()" style="background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--texto-muted)">&times;</button>
+      </div>
+
+      <!-- Zona de subida Drag & Drop de PDF -->
+      <div style="border:2px dashed #CBD5E1; background:var(--bg-subtle); border-radius:10px; padding:18px; text-align:center; margin-bottom:16px;">
+        <input type="file" id="archivoPDFDirecto" accept=".pdf,.doc,.docx" style="display:none;" onchange="subirPDFSeleccionado()" />
+        <div style="font-size:1.6rem; margin-bottom:4px">📄</div>
+        <strong style="color:var(--azul-primary); font-size:0.92rem; cursor:pointer" onclick="document.getElementById('archivoPDFDirecto').click()">
+          Haz clic aquí para seleccionar o arrastrar un archivo PDF (.pdf, .doc, .docx)
+        </strong>
+        <p style="margin:4px 0 0; font-size:0.8rem; color:var(--texto-muted)">
+          Soporta hasta 25 MB. El sistema extrae el texto para indexación y análisis inteligente en Techapyrã IA.
+        </p>
+      </div>
+
+      <!-- Lista de PDFs del expediente -->
+      <div>
+        <h4 style="margin:0 0 10px; font-size:0.92rem; color:var(--texto-secundario)">Archivos y Documentos en esta Causa:</h4>
+        <div id="listaPDFsExpediente" style="max-height:300px; overflow-y:auto;"></div>
+      </div>
+
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+        <button class="btn-secundario" onclick="cerrarModalGestionPDF()">Cerrar Ventana</button>
       </div>
     </div>
   </div>

@@ -46,13 +46,24 @@ router.get(
 router.post(
   '/sync-github',
   asyncHandler(async (req, res) => {
-    const { forzar } = req.body || {};
-    const resultado = await sincronizarRepoZetti({ forzar: !!forzar });
-    res.json({
-      ok: resultado.ok,
-      mensaje: 'Sincronización oficial de legislación paraguaya completada.',
-      resultado,
-    });
+    try {
+      const { forzar } = req.body || {};
+      const resultado = await sincronizarRepoZetti({ forzar: !!forzar });
+      res.json({
+        ok: resultado.ok,
+        mensaje: resultado.ok
+          ? 'Sincronización oficial de legislación paraguaya completada.'
+          : 'Sincronización completada con advertencias.',
+        resultado,
+      });
+    } catch (err) {
+      console.error('[OtelaxWisdom Sync Route] Error al sincronizar:', err);
+      res.status(500).json({
+        ok: false,
+        mensaje: `Error al sincronizar con GitHub: ${err.message}`,
+        error: err.message,
+      });
+    }
   })
 );
 

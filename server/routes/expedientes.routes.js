@@ -128,16 +128,17 @@ router.post('/csj/sincronizar', async (req, res, next) => {
 router.get('/', listarExpedientes);
 router.post('/', crearExpediente);
 router.get('/:id', obtenerExpediente);
-// Editar/eliminar expedientes: exclusivo de 'admin'
-router.put('/:id', authorize('admin'), actualizarExpediente);
+router.put('/:id', actualizarExpediente);
+router.delete('/:id', eliminarExpediente);
+
 // Compartir expedientes (Administrador o titular de causa)
 router.post('/:id/compartir', compartirExpediente);
 router.delete('/:id/compartir/:usuarioId', desasociarExpedienteCompartido);
 
-// Documentos adjuntos del expediente (ver/descargar: todos; subir/eliminar: solo admin)
+// Documentos y PDFs adjuntos del expediente (ver/descargar/subir/eliminar para abogados y admin)
 router.get('/:id/documentos', listarDocumentos);
-router.post('/:id/documentos', authorize('admin'), subirDocumento);
+router.post('/:id/documentos', subirDocumento);
 router.get('/:id/documentos/:docId/descargar', descargarDocumento);
-router.delete('/:id/documentos/:docId', authorize('admin'), eliminarDocumento);
+router.delete('/:id/documentos/:docId', eliminarDocumento);
 
 module.exports = router;

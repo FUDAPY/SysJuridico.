@@ -121,29 +121,42 @@ function asegurarRepositorioLocal(cacheDir, repoUrl, branch = 'main') {
   fs.mkdirSync(path.dirname(cacheDir), { recursive: true });
 
   const tempPreclonado = '/tmp/test-repo-audit';
+  const bundledAcervo = path.resolve(__dirname, '../../data/otelaxwisdom/acervo');
 
-  if (!fs.existsSync(cacheDir)) {
-    // Si ya fue clonado temporalmente en /tmp/test-repo-audit, usarlo para máxima velocidad
-    if (fs.existsSync(path.join(tempPreclonado, '.git'))) {
-      console.log(`[OtelaxWisdom Sync] Copiando repositorio cacheado desde ${tempPreclonado}...`);
-      execSync(`cp -r "${tempPreclonado}" "${cacheDir}"`, { stdio: 'pipe' });
-    } else {
-      console.log(`[OtelaxWisdom Sync] Clonando repositorio ${repoUrl} en ${cacheDir}...`);
-      execSync(`git clone --depth 1 "${repoUrl}" "${cacheDir}"`, {
-        stdio: 'pipe',
-        timeout: 120000,
-      });
+  try {
+    if (!fs.existsSync(cacheDir)) {
+      // Si ya fue clonado temporalmente en /tmp/test-repo-audit, usarlo para máxima velocidad
+      if (fs.existsSync(path.join(tempPreclonado, '.git'))) {
+        console.log(`[OtelaxWisdom Sync] Copiando repositorio cacheado desde ${tempPreclonado}...`);
+        execSync(`cp -r "${tempPreclonado}" "${cacheDir}"`, { stdio: 'pipe' });
+      } else {
+        console.log(`[OtelaxWisdom Sync] Clonando repositorio ${repoUrl} en ${cacheDir}...`);
+        execSync(`git clone --depth 1 "${repoUrl}" "${cacheDir}"`, {
+          stdio: 'pipe',
+          timeout: 120000,
+        });
+      }
+    } else if (fs.existsSync(path.join(cacheDir, '.git'))) {
+      console.log(`[OtelaxWisdom Sync] Actualizando repositorio local vía git pull...`);
+      try {
+        execSync(`git pull origin ${branch}`, {
+          cwd: cacheDir,
+          stdio: 'pipe',
+          timeout: 60000,
+        });
+      } catch (pullErr) {
+        console.warn(`[OtelaxWisdom Sync] Advertencia en git pull: ${pullErr.message}. Continuando con caché local.`);
+      }
     }
-  } else if (fs.existsSync(path.join(cacheDir, '.git'))) {
-    console.log(`[OtelaxWisdom Sync] Actualizando repositorio local vía git pull...`);
-    try {
-      execSync(`git pull origin ${branch}`, {
-        cwd: cacheDir,
-        stdio: 'pipe',
-        timeout: 60000,
-      });
-    } catch (pullErr) {
-      console.warn(`[OtelaxWisdom Sync] Advertencia en git pull: ${pullErr.message}. Continuando con caché local.`);
+  } catch (gitErr) {
+    console.warn(`[OtelaxWisdom Sync] Git no disponible o error de red (${gitErr.message}). Utilizando acervo empaquetado como fallback...`);
+    if (fs.existsSync(bundledAcervo)) {
+      fs.mkdirSync(cacheDir, { recursive: true });
+      try {
+        execSync(`cp -r "${bundledAcervo}"/* "${cacheDir}/" 2>/dev/null || true`, { stdio: 'pipe' });
+      } catch (cpErr) {
+        console.warn('[OtelaxWisdom Sync] Error copiando acervo empaquetado a caché:', cpErr.message);
+      }
     }
   }
 }

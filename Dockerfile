@@ -1,5 +1,8 @@
-# Node 22 LTS (node:20 quedó EOL)
 FROM node:22-alpine
+
+# Instalar git para soporte de clonación y sincronización de acervo legislativo
+RUN apk add --no-cache git
+
 
 ENV NODE_ENV=production
 ENV PORT=4000
