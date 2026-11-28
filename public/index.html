@@ -325,10 +325,22 @@
     z-index: 100;
   }
   @media (max-width: 768px) {
+    .contenido {
+      padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+    .prioridad-card,
+    .prioridad-card h4,
+    .prioridad-card div,
+    .alerta-inactivo,
+    #zonaUltimasActuaciones {
+      overflow-wrap: anywhere !important;
+      word-break: break-word !important;
+      white-space: normal !important;
+    }
     .prompt-bar-flotante {
       left: 14px;
       right: 14px;
-      bottom: 8px;
+      bottom: calc(66px + env(safe-area-inset-bottom, 0px));
     }
   }
   .prompt-bar-flotante input {

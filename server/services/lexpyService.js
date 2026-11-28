@@ -578,17 +578,19 @@ async function procesarAsistenteEditor({
   // Ensamblado de prompt quirúrgico (bajo en tokens, directo al punto)
   let instruccionForense = '';
   switch (accion) {
+    case 'mejorar_todo':
     case 'mejorar':
       instruccionForense =
-        `MEJORA Y PERFECCIONA el siguiente texto judicial manteniendo el sentido sustantivo pero elevando el rigor forense, la claridad y la elegancia estilística según la práctica de los tribunales paraguayos:\n\n"${textoSeleccionado}"`;
+        `Mejora la redacción jurídica, ortografía, cohesión y técnica procesal paraguaya del escrito entregado. Respeta íntegros los nombres, cédulas, RUC, números de expediente, juzgado y hechos reales del texto. Devuelve ÚNICAMENTE el escrito mejorado listo para usar, sin repetir la instrucción del usuario ni agregar plantillas genéricas.\n\nTexto entregado a mejorar:\n"""\n${textoSeleccionado || instrucciones}\n"""${instrucciones && textoSeleccionado ? `\n\nInstrucciones adicionales: ${instrucciones}` : ''}`;
       break;
     case 'fundamentar_csj':
       instruccionForense =
         `INCORPORA FUNDAMENTOS DE DERECHO Y CRITERIOS DE LA CSJ DE PARAGUAY al siguiente fragmento, citando artículos específicos de la legislación paraguaya vigente:\n\n"${textoSeleccionado || instrucciones}"`;
       break;
+    case 'pulir':
     case 'polir':
       instruccionForense =
-        `CORRIGE Y PULE la ortografía, puntuación, conectores lógicos y estilo formal forense del siguiente texto sin alterar su pretensión:\n\n"${textoSeleccionado}"`;
+        `Corrige y pule la ortografía, puntuación, conectores lógicos y estilo formal forense del siguiente texto sin alterar su pretensión ni los datos fácticos o procesales:\n\n"""\n${textoSeleccionado || instrucciones}\n"""`;
       break;
     case 'hechos':
       instruccionForense =
@@ -613,7 +615,7 @@ async function procesarAsistenteEditor({
           : `REDACTA un fragmento o escrito judicial formal según las siguientes instrucciones: "${instrucciones}"`;
   }
 
-  const estiloForense = obtenerEstiloForense();
+  const estiloForense = typeof obtenerEstiloForense === 'function' ? obtenerEstiloForense() : '';
   const promptFinal =
     `${jurisprudenciaCSJ}\n\n` +
     `INSTRUCCIÓN DE REDACCIÓN:\n${instruccionForense}\n\n` +
@@ -643,8 +645,12 @@ async function procesarAsistenteEditor({
     usuarioId,
   });
 
+  if (!textoGenerado || !textoGenerado.trim()) {
+    throw new Error('El motor de IA no pudo generar la redacción solicitada.');
+  }
+
   return {
-    textoGenerado: textoGenerado || 'No se pudo generar la redacción solicitada con el motor de IA.',
+    textoGenerado: textoGenerado.trim(),
     accion,
     expediente: expedienteData
       ? {

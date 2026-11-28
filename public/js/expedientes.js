@@ -269,12 +269,12 @@ async function cargarExpedientes() {
     tabla.innerHTML = expedientes
       .map(
         (e) => `
-        <tr style="border-bottom:1px solid var(--borde); transition:background 0.2s;" onmouseover="this.style.background='var(--bg-subtle)'" onmouseout="this.style.background='transparent'">
-          <td style="padding:16px 18px; font-weight:700; color:var(--azul-accent); font-size:0.9rem;">
+        <tr class="exp-fila-tarjeta" style="border-bottom:1px solid var(--borde); transition:background 0.2s;" onmouseover="this.style.background='var(--bg-subtle)'" onmouseout="this.style.background='transparent'">
+          <td class="exp-col-nro" style="padding:16px 18px; font-weight:700; color:var(--azul-accent); font-size:0.9rem;">
             ${e.numero || 'S/N'}/${e.ano || '2026'}
           </td>
-          <td style="padding:16px 18px;">
-            <div style="font-weight:600; color:var(--texto); font-size:0.92rem; margin-bottom:4px;">${e.caratula}</div>
+          <td class="exp-col-caratula" style="padding:16px 18px;">
+            <div style="font-weight:600; color:var(--texto); font-size:0.92rem; margin-bottom:4px; word-break:break-word; overflow-wrap:anywhere; white-space:normal;">${e.caratula}</div>
             <div style="font-size:0.78rem; color:var(--texto-muted); display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
               <span class="badge" style="background:var(--azul-tag-bg); color:var(--azul-tag-texto); padding:2px 8px; border-radius:4px; font-size:0.75rem;">${e.materia || e.fuero || 'Civil y Comercial'}</span>
               <span>🏛️ ${e.juzgado || 'Juzgado s/d'}</span>
@@ -286,17 +286,17 @@ async function cargarExpedientes() {
               }
             </div>
           </td>
-          <td style="padding:16px 18px;">
+          <td class="exp-col-visto" style="padding:16px 18px;">
             <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.82rem; color:${e.visto ? 'var(--verde)' : 'var(--texto-muted)'};">
               <span>${e.visto ? '👁️' : '⚪'}</span> ${e.visto ? 'Visto' : 'Sin ver'}
             </span>
           </td>
-          <td style="padding:16px 18px;">
-            <div style="font-size:0.85rem; color:var(--texto-secundario);">${e.ultimaActuacionTexto || 'Actuación en trámite'}</div>
+          <td class="exp-col-actuacion" style="padding:16px 18px;">
+            <div style="font-size:0.85rem; color:var(--texto-secundario); word-break:break-word;">${e.ultimaActuacionTexto || 'Actuación en trámite'}</div>
             <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:2px;">${formatoFecha(e.updatedAt || e.createdAt)}</div>
           </td>
-          <td style="padding:16px 18px; text-align:right;">
-            <div style="display:inline-flex; gap:6px; align-items:center;">
+          <td class="exp-col-acciones" style="padding:16px 18px; text-align:right;">
+            <div class="exp-acciones-btns" style="display:inline-flex; gap:6px; align-items:center; flex-wrap:wrap;">
               <button class="boton btn-secundario btn-sm" onclick='verDetalleExpediente(${JSON.stringify(e)})' title="Ver detalles y documentación">
                 👁️ Ver
               </button>

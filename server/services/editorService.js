@@ -128,87 +128,173 @@ async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', cara
  * - Parte A: Texto limpio del escrito judicial
  * - Parte B: Fundamento estratégico, citas verificadas y checklist de riesgos procesales
  */
-async function generarRazonamientoSplitBrain({ instruccion, contextoCausa = {}, usuarioForense = {} }) {
-  const { caratula, numero, ano, juzgado, turno, juezNombre, juezGenero } = contextoCausa;
-  const { nombreCompleto, matriculaCSJ, cedula } = usuarioForense;
+async function generarRazonamientoSplitBrain({
+  instruccion = '',
+  accion = 'redactar',
+  textoExistente = '',
+  textoSeleccionado = '',
+  contextoCausa = {},
+  usuarioForense = {},
+  usuarioId = null,
+}) {
+  const { caratula, numero, ano, juzgado, turno, juezNombre, juezGenero } = contextoCausa || {};
+  const { nombreCompleto, matriculaCSJ, cedula } = usuarioForense || {};
+
+  const textoObjetivo = (textoExistente || textoSeleccionado || '').trim();
+  const esMejora =
+    accion === 'mejorar' ||
+    accion === 'mejorar_todo' ||
+    accion === 'pulir' ||
+    accion === 'polir' ||
+    accion === 'corregir' ||
+    Boolean(textoObjetivo) ||
+    /mejora|mejorar|pulir|polir|corregir/i.test(instruccion);
 
   const vocativoJuez = juezGenero === 'F' ? 'SEÑORA JUEZA' : 'SEÑOR JUEZ';
   const nombreJuezStr = juezNombre ? `, ${juezNombre.toUpperCase()}` : '';
 
-  const promptEstrategico = `
-Eres Techapyrã IA, el copiloto forense de élite de SysJurídico.
-Debes estructurar un razonamiento procesal judicial paraguayo dividido (Split-Brain) para el siguiente requerimiento:
-
-INSTRUCCIÓN: ${instruccion}
-
+  let seccionCausa = '';
+  if (caratula) {
+    seccionCausa = `
 CONTEXTO DE LA CAUSA:
-- Carátula: ${caratula || 'A determinar'}
+- Carátula: ${caratula}
 - Número/Año: ${numero || 'S/N'}/${ano || '2026'}
 - Juzgado: ${juzgado || 'Juzgado de Primera Instancia en lo Civil y Comercial'}
 - Turno: ${turno || 'A sortear'}
 - Magistrado/a: ${vocativoJuez}${nombreJuezStr}
+`;
+  } else {
+    seccionCausa = `
+CONTEXTO DE LA CAUSA:
+- Sin expediente vinculado.
+- REGLA ESTRICTA: No asocies esta causa con causas penales ni de otros expedientes. Respeta los datos de las partes, carátula o juzgado que ya figuren en el texto entregado.
+`;
+  }
 
-DATOS FORENSES DEL PROFESIONAL:
+  let seccionProfesional = '';
+  if (nombreCompleto || matriculaCSJ) {
+    seccionProfesional = `
+DATOS DEL PROFESIONAL:
 - Abogado/a: ${nombreCompleto || 'Abg. del Estudio'}
-- Matrícula CSJ: ${matriculaCSJ || 'A completar'}
-- C.I. N°: ${cedula || 'A completar'}
+- Matrícula CSJ: ${matriculaCSJ || ''}
+- C.I. N°: ${cedula || ''}
 - Domicilio Procesal Fijo: ${DOMICILIO_PROCESAL_GLOBAL}
+`;
+  }
+
+  let promptEstrategico = '';
+  if (esMejora && textoObjetivo) {
+    promptEstrategico = `
+Mejora la redacción jurídica, ortografía, cohesión y técnica procesal paraguaya del escrito entregado. Respeta íntegros los nombres, cédulas, RUC, números de expediente, juzgado y hechos reales del texto. Devuelve ÚNICAMENTE el escrito mejorado listo para usar, sin repetir la instrucción del usuario ni agregar plantillas genéricas.
+
+${seccionCausa}
+${seccionProfesional}
+
+INSTRUCCIÓN ESPECÍFICA DEL USUARIO:
+${instruccion || 'Mejorar y perfeccionar la técnica forense y procesal del escrito.'}
+
+TEXTO ORIGINAL DEL ESCRITO A MEJORAR:
+"""
+${textoObjetivo}
+"""
 
 REGLAS DE SALIDA EN FORMATO JSON ESTRICTO:
-Responde ÚNICAMENTE con un objeto JSON válido con los siguientes campos:
+Responde con un objeto JSON válido con los siguientes campos:
+{
+  "textoEscrito": "Texto íntegro del escrito judicial mejorado, preservando todos los datos reales (partes, números, juzgado) y con la máxima solidez procesal según el CPC/Código Civil paraguayo.",
+  "estrategia": "Breve explicación táctica de las mejoras de técnica jurídica y procesal aplicadas.",
+  "basesNormativas": [
+    {
+      "fuente": "Norma o Código paraguayo aplicable",
+      "articulo": "Art. XXX",
+      "procedencia": "[OTELAXWISDOM LOCAL]",
+      "resumen": "Aplicación de la norma al caso"
+    }
+  ],
+  "checklistRiesgos": [
+    "Riesgos procesales, cómputo de plazos hábiles o excepciones a prever"
+  ]
+}
+`;
+  } else {
+    promptEstrategico = `
+Redacta un escrito judicial formal conforme a las reglas del Código Procesal Civil y Código Civil de la República del Paraguay.
+
+${seccionCausa}
+${seccionProfesional}
+
+INSTRUCCIÓN DE REDACCIÓN:
+${instruccion || 'Redacta el escrito judicial correspondiente.'}
+
+REGLAS DE SALIDA EN FORMATO JSON ESTRICTO:
+Responde con un objeto JSON válido con los siguientes campos:
 {
   "textoEscrito": "Texto completo y oficial del escrito judicial en formato forense paraguayo con OBJETO, ${vocativoJuez}, personería completa con domicilio procesal fijo en Edificio BIJ, HECHOS, DERECHO, PETITORIO y cierre PROVEER DE CONFORMIDAD Y SERÁ JUSTICIA.-",
   "estrategia": "Explicación táctica profunda de por qué se plantea de esta forma la acción y qué beneficios procesales otorga al cliente.",
   "basesNormativas": [
     {
-      "fuente": "Código Civil / CPC / Ley / Acordada CSJ",
+      "fuente": "Código Procesal Civil / Código Civil Paraguayo",
       "articulo": "Art. XXX",
-      "procedencia": "[OTELAXWISDOM LOCAL]" o "[WEB OFICIAL VERIFICADA]",
+      "procedencia": "[OTELAXWISDOM LOCAL]",
       "resumen": "Qué establece la norma y su aplicación concreta"
     }
   ],
   "checklistRiesgos": [
-    "Riesgo de caducidad según Art. 172 CPC",
-    "Excepciones previas que podría oponer la contraparte",
-    "Plazos perentorios a considerar en días hábiles procesales"
+    "Riesgo de caducidad según Art. 172 CPC / Excepciones / Plazos perentorios"
   ]
 }
 `;
+  }
+
+  const { buildTechapyraPrompt } = require('../config/techapyraSystemPrompt');
+  const { obtenerEstiloForense } = require('./otelaxWisdomService');
+  const estiloForense = typeof obtenerEstiloForense === 'function' ? obtenerEstiloForense() : '';
+  const system = buildTechapyraPrompt({
+    modo: 'MODO_EDITOR',
+    estiloForense,
+    contextoExpedientes: caratula ? `EXPEDIENTE: ${caratula}` : '',
+  });
+
+  const textoRespuesta = await aiProviderService.generarRespuestaIA({
+    prompt: promptEstrategico,
+    contexto: '',
+    system,
+    usuarioId,
+  });
+
+  if (!textoRespuesta || !textoRespuesta.trim()) {
+    throw new Error('El motor de IA (FreeLLMAPI/Gemini) no devolvió una respuesta válida.');
+  }
+
+  let jsonLimpio = textoRespuesta.trim();
+  if (jsonLimpio.startsWith('```json')) {
+    jsonLimpio = jsonLimpio.replace(/^```json\s*/, '').replace(/\s*```$/, '');
+  } else if (jsonLimpio.startsWith('```')) {
+    jsonLimpio = jsonLimpio.replace(/^```\s*/, '').replace(/\s*```$/, '');
+  }
 
   try {
-    const respuesta = await aiProviderService.ejecutarInferencia({
-      prompt: promptEstrategico,
-      temperatura: 0.2,
-      maxTokens: 3500,
-      preferirJson: true,
-    });
-
-    let jsonLimpio = respuesta.texto.trim();
-    if (jsonLimpio.startsWith('```json')) {
-      jsonLimpio = jsonLimpio.replace(/^```json\s*/, '').replace(/\s*```$/, '');
-    } else if (jsonLimpio.startsWith('```')) {
-      jsonLimpio = jsonLimpio.replace(/^```\s*/, '').replace(/\s*```$/, '');
-    }
-
     const data = JSON.parse(jsonLimpio);
+    if (!data.textoEscrito) {
+      data.textoEscrito = jsonLimpio;
+    }
     return data;
-  } catch (err) {
-    console.error('[editorService] Error generando Split-Brain JSON:', err.message);
-    // Fallback estructurado en caso de error de parseo JSON
+  } catch (parseErr) {
+    // Si el LLM devolvió texto plano o markdown directamente en vez de JSON
     return {
-      textoEscrito: `OBJETO: PROMOVER ACCIÓN JUDICIAL.-\n\n${vocativoJuez}:\n\nABG. ${nombreCompleto || '[NOMBRE]'}, con Matrícula CSJ N° ${matriculaCSJ || '[MATRÍCULA]'}, fijando domicilio procesal en ${DOMICILIO_PROCESAL_GLOBAL}, en los autos caratulados "${caratula || 'CAUSA JUDICIAL'}", digo:\n\nI. HECHOS:\n${instruccion}\n\nII. DERECHO:\nFundo la presente en las disposiciones del Código Procesal Civil y Código Civil Paraguayo.\n\nIII. PETITORIO:\n1. Tenerme por presentado y por constituido el domicilio procesal.\n2. Proveer de conformidad.\n\nPROVEER DE CONFORMIDAD Y SERÁ JUSTICIA.-`,
-      estrategia: 'Estrategia procesal basada en impulso de autos y preservación del derecho del actor conforme a la legislación paraguaya vigente.',
+      textoEscrito: jsonLimpio,
+      estrategia: 'Escrito mejorado aplicando rigor procesal y técnica forense paraguaya.',
       basesNormativas: [
         {
-          fuente: 'Código Procesal Civil Paraguayo (Ley 1337/88)',
-          articulo: 'Art. 172 / 215',
+          fuente: 'Legislación Paraguaya Vigente',
+          articulo: 'Normativa aplicable',
           procedencia: '[OTELAXWISDOM LOCAL]',
-          resumen: 'Plazos de caducidad y deberes de impulso procesal de las partes.',
+          resumen: 'Fundamentación adecuada a derecho positivo.',
         },
       ],
       checklistRiesgos: [
-        'Verificar notificación por cédula o electrónica a la contraparte.',
-        'Computar plazos en días hábiles procesales según Código Procesal Civil.',
+        'Verificar notificación procesal en plazo hábil.',
+        'Computar términos conforme a las reglas del CPC.',
       ],
     };
   }

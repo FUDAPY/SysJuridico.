@@ -136,6 +136,63 @@
     max-height: 600px;
     overflow-y: auto;
   }
+
+  @media (max-width: 768px) {
+    .tabs-lexpy {
+      display: flex !important;
+      gap: 6px !important;
+      overflow-x: auto !important;
+      scrollbar-width: none !important;
+      -webkit-overflow-scrolling: touch !important;
+      padding-bottom: 6px !important;
+      margin-bottom: 12px !important;
+      flex-wrap: nowrap !important;
+    }
+    .tabs-lexpy::-webkit-scrollbar {
+      display: none !important;
+    }
+    .tab-btn {
+      padding: 8px 12px !important;
+      font-size: 0.78rem !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      border-radius: 8px !important;
+      gap: 5px !important;
+    }
+    .chat-caja {
+      height: calc(100vh - 180px) !important;
+      min-height: 480px !important;
+    }
+    .chat-header {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 10px !important;
+      padding: 12px 14px !important;
+    }
+    .chat-header-fila1 {
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+    .chat-header-fila2 {
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 8px !important;
+      min-width: 0 !important;
+    }
+    #selectExpedienteChat {
+      max-width: 100% !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .chat-header-fila2 button {
+      width: 100% !important;
+      justify-content: center !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -155,13 +212,13 @@
     <!-- Pestañas: Chat Consultor / Redactor de Escritos / Acervo OtelaxWisdom -->
     <div class="tabs-lexpy">
       <button class="tab-btn activo" id="tabChat" onclick="seleccionarTab('chat')">
-        <span>💬</span> Consultas Jurídicas &amp; Leyes
+        <span>💬</span> Consultas Jurídicas
       </button>
       <button class="tab-btn" id="tabRedactor" onclick="seleccionarTab('redactor')">
-        <span>✍️</span> Redactor de Demandas &amp; Contratos
+        <span>✍️</span> Redactor Forense
       </button>
       <a class="tab-btn" href="/otelaxwisdom.html" style="text-decoration:none;">
-        <span>📚</span> Gestor OtelaxWisdom (.md)
+        <span>📚</span> OtelaxWisdom
       </a>
     </div>
 
@@ -169,14 +226,14 @@
     <div class="contenedor-tab activo" id="panelChat">
       <div class="chat-caja">
         <div class="chat-header">
-          <div style="display:flex; align-items:center; gap:10px">
+          <div class="chat-header-fila1">
             <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, var(--azul-primary), var(--azul-accent)); color:#fff; display:flex; align-items:center; justify-content:center; font-size:1.1rem">⚖️</div>
             <div>
               <strong style="display:block; font-size:0.95rem">Techapyrã &bull; Asistente Jurídico</strong>
               <small style="color:var(--texto-muted)">Legislación Paraguaya &bull; Consulta en tiempo real</small>
             </div>
           </div>
-          <div style="display:flex; align-items:center; gap:8px; flex: 1; justify-content: flex-end; min-width: 0;">
+          <div class="chat-header-fila2" style="display:flex; align-items:center; gap:8px; flex: 1; justify-content: flex-end; min-width: 0;">
             <select id="selectExpedienteChat" style="max-width:280px; width:100%; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; font-size:0.8rem; padding:6px 10px; border-radius:8px; border:1px solid var(--borde); background:var(--bg-input); color:var(--texto);" title="Vincular a una causa judicial">
               <option value="">📁 Vincular a Expediente (Opcional)</option>
             </select>

@@ -667,17 +667,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   // =========================================================================
   // 8. ASISTENTE IA ULTRARRÁPIDO Y OPTIMIZADO (Bajo Consumo de Tokens)
   // =========================================================================
+  let isGenerating = false;
+  let isApplying = false;
+  let modoAplicacionPendiente = null;
+  let rangoSeleccionPendiente = null;
+
+  function obtenerTextoLimpioEditor() {
+    if (!hoja) return '';
+    const clone = hoja.cloneNode(true);
+    clone.querySelectorAll('.lo-corner-bl, .lo-corner-br, .lo-guide-box').forEach((el) => el.remove());
+    return clone.innerText.trim();
+  }
+
   // Chips de acción rápida
   document.querySelectorAll('.btn-chip[data-action]').forEach((chip) => {
     chip.addEventListener('click', () => {
+      if (isGenerating) return;
       document.querySelectorAll('.btn-chip[data-action]').forEach((c) => c.classList.remove('active'));
       chip.classList.add('active');
       accionIAPendiente = chip.dataset.action;
 
-      if (accionIAPendiente === 'mejorar' || accionIAPendiente === 'pulir' || accionIAPendiente === 'polir' || accionIAPendiente === 'fundamentar_csj') {
-        if (!ultimaSeleccionTexto) {
-          alert('Por favor selecciona primero un texto en la foja de trabajo para realizar esta acción.');
-          return;
+      if (accionIAPendiente === 'mejorar' || accionIAPendiente === 'pulir' || accionIAPendiente === 'polir') {
+        if (!ultimaSeleccionTexto || ultimaSeleccionTexto.length < 4) {
+          accionIAPendiente = 'mejorar_todo';
         }
       }
       ejecutarAsistenteIA(accionIAPendiente);
@@ -703,32 +715,69 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Botón Principal de Generación
   btnGenerarCopilot?.addEventListener('click', () => {
+    if (isGenerating) return;
     ejecutarAsistenteIA(accionIAPendiente || 'redactar');
   });
 
   async function ejecutarAsistenteIA(accion) {
+    if (isGenerating) return;
     const instrucciones = promptInput ? promptInput.value.trim() : '';
-    const expId = expedienteActivo?._id || selectExpediente?.value || null;
 
+    // No inyectar expediente si el selector está en "Sin expediente vinculado"
+    const expId = (selectExpediente && selectExpediente.value && selectExpediente.value !== 'sin_vincular')
+      ? selectExpediente.value
+      : null;
+
+    const textoEditorCompleto = obtenerTextoLimpioEditor();
+    const esMejoraTodo =
+      accion === 'mejorar_todo' ||
+      (!ultimaSeleccionTexto && (accion === 'mejorar' || accion === 'pulir' || accion === 'polir' || accion === 'redactar')) ||
+      /todo\s+el\s+(texto|escrito)|completo/i.test(instrucciones);
+
+    if (esMejoraTodo && (!textoEditorCompleto || textoEditorCompleto.length < 15)) {
+      alert('La foja de trabajo no contiene suficiente texto para mejorar. Escribe o pega tu escrito primero.');
+      return;
+    }
+
+    isGenerating = true;
     btnGenerarCopilot.disabled = true;
     btnGenerarCopilot.textContent = '⚡ Techapyrã IA razonando...';
     if (resultadoBox) resultadoBox.style.display = 'block';
     if (textoGeneradoDiv) textoGeneradoDiv.textContent = 'Consultando acervo normativo de OtelaxWisdom y estructurando razonamiento dividido...';
 
+    // Determinar modo de aplicación previo a la llamada
+    modoAplicacionPendiente = esMejoraTodo ? 'todo' : (ultimaSeleccionTexto ? 'seleccion' : 'cursor');
+    rangoSeleccionPendiente = (modoAplicacionPendiente === 'seleccion') ? ultimoRange : null;
+
     try {
       const res = await apiFetch('/api/v1/editor/razonamiento', {
         method: 'POST',
         body: {
-          instruccion: `${accion}: ${instrucciones} ${ultimaSeleccionTexto ? `(Texto foja: ${ultimaSeleccionTexto})` : ''}`,
+          instruccion: instrucciones,
+          accion: accion,
+          textoCompleto: esMejoraTodo ? textoEditorCompleto : '',
+          textoSeleccionado: esMejoraTodo ? '' : (ultimaSeleccionTexto || ''),
           expedienteId: expId,
         },
       });
 
       const datos = res.datos || {};
+      const textoLimpio = datos.textoEscrito || '';
 
       // PARTE A: Texto limpio del escrito judicial
       if (textoGeneradoDiv) {
-        textoGeneradoDiv.textContent = datos.textoEscrito || 'Escrito judicial estructurado.';
+        textoGeneradoDiv.textContent = textoLimpio || 'No se pudo generar el texto judicial.';
+      }
+
+      // Actualizar texto del botón de inserción
+      if (btnInsertarEnCursor) {
+        if (modoAplicacionPendiente === 'todo') {
+          btnInsertarEnCursor.textContent = '✓ Reemplazar Todo el Escrito en Foja';
+        } else if (modoAplicacionPendiente === 'seleccion') {
+          btnInsertarEnCursor.textContent = '✓ Reemplazar Selección en Foja';
+        } else {
+          btnInsertarEnCursor.textContent = '✓ Insertar en Foja';
+        }
       }
 
       // PARTE B: Estrategia, Bases Normativas y Checklist de Riesgos
@@ -738,7 +787,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       const elBases = document.getElementById('copilotBasesNormativas');
-      if (elBases && Array.isArray(datos.basesNormativas)) {
+      if (elBases && Array.isArray(datos.basesNormativas) && datos.basesNormativas.length > 0) {
         elBases.innerHTML = datos.basesNormativas.map((b) => `
           <div style="background:var(--bg-hover); padding:4px 8px; border-radius:4px; font-size:0.72rem; border-left:2px solid #3b82f6;">
             <div style="display:flex; justify-content:space-between; align-items:center;">
@@ -748,55 +797,104 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div style="color:var(--texto-muted); margin-top:2px;">${escapeHtml(b.resumen || '')}</div>
           </div>
         `).join('');
+      } else if (elBases) {
+        elBases.innerHTML = '<span style="font-size:0.72rem; color:var(--texto-muted);">Normativa de fondo y procesal aplicable.</span>';
       }
 
       const elRiesgos = document.getElementById('copilotChecklistRiesgos');
-      if (elRiesgos && Array.isArray(datos.checklistRiesgos)) {
+      if (elRiesgos && Array.isArray(datos.checklistRiesgos) && datos.checklistRiesgos.length > 0) {
         elRiesgos.innerHTML = datos.checklistRiesgos.map((r) => `
           <li style="margin-bottom:3px;">${escapeHtml(r)}</li>
         `).join('');
+      } else if (elRiesgos) {
+        elRiesgos.innerHTML = '<li style="margin-bottom:3px;">Verificar plazos procesales en días hábiles.</li>';
       }
     } catch (err) {
       if (textoGeneradoDiv) textoGeneradoDiv.textContent = `Error generando escrito: ${err.message}`;
     } finally {
+      isGenerating = false;
       btnGenerarCopilot.disabled = false;
       btnGenerarCopilot.textContent = '⚡ Generar con Techapyrã IA (Split-Brain)';
     }
   }
 
-  // Insertar resultado de IA en la foja
+  // Insertar/Reemplazar resultado de IA en la foja
   btnInsertarEnCursor?.addEventListener('click', () => {
+    if (isApplying) return;
     if (!textoGeneradoDiv) return;
     const texto = textoGeneradoDiv.textContent;
-    if (!texto) return;
+    if (!texto || texto.startsWith('Error generando')) return;
 
-    hoja.focus();
-    if (ultimoRange) {
-      const sel = window.getSelection();
-      sel.removeAllRanges();
-      sel.addRange(ultimoRange);
+    isApplying = true;
+    btnInsertarEnCursor.disabled = true;
+
+    try {
+      // Convertir saltos de línea en párrafos limpios
+      const parrafosHtml = texto
+        .split(/\n\s*\n/)
+        .filter((p) => p.trim())
+        .map((p) => `<p>${escapeHtml(p.trim()).replace(/\n/g, '<br>')}</p>`)
+        .join('');
+
+      if (modoAplicacionPendiente === 'todo') {
+        // REEMPLAZAR COMPLETAMENTE EL CONTENIDO DE LA FOJA
+        // Conservar marcas de esquina de LibreOffice
+        hoja.innerHTML = `
+          <div class="lo-corner-bl" contenteditable="false"></div>
+          <div class="lo-corner-br" contenteditable="false"></div>
+          <div class="lo-guide-box" contenteditable="false"></div>
+          ${parrafosHtml || '<p>&nbsp;</p>'}
+        `;
+      } else if (modoAplicacionPendiente === 'seleccion' && rangoSeleccionPendiente) {
+        // Reemplazar únicamente el fragmento seleccionado
+        hoja.focus();
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(rangoSeleccionPendiente);
+        document.execCommand('insertHTML', false, parrafosHtml);
+      } else {
+        // En cursor o reemplazar si solo quedaba la plantilla de muestra
+        const actual = obtenerTextoLimpioEditor();
+        if (actual.includes('[NOMBRE DEL PROFESIONAL]') || actual.length < 50) {
+          hoja.innerHTML = `
+            <div class="lo-corner-bl" contenteditable="false"></div>
+            <div class="lo-corner-br" contenteditable="false"></div>
+            <div class="lo-guide-box" contenteditable="false"></div>
+            ${parrafosHtml || '<p>&nbsp;</p>'}
+          `;
+        } else {
+          hoja.focus();
+          document.execCommand('insertHTML', false, parrafosHtml);
+        }
+      }
+
+      // Resetear estado de selección
+      ultimaSeleccionTexto = '';
+      ultimoRange = null;
+      modoAplicacionPendiente = null;
+      rangoSeleccionPendiente = null;
+
+      if (resultadoBox) resultadoBox.style.display = 'none';
+      if (boxTextoSeleccionado) boxTextoSeleccionado.style.display = 'none';
+      ocultarBurbujaFlotante();
+      actualizarMetricas();
+    } finally {
+      isApplying = false;
+      btnInsertarEnCursor.disabled = false;
     }
-
-    // Convertir saltos de línea en párrafos limpios
-    const parrafos = texto
-      .split(/\n\s*\n/)
-      .map((p) => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`)
-      .join('');
-
-    document.execCommand('insertHTML', false, parrafos);
-    if (resultadoBox) resultadoBox.style.display = 'none';
-    actualizarMetricas();
   });
 
   btnCopiarBorrador?.addEventListener('click', () => {
     if (!textoGeneradoDiv) return;
     navigator.clipboard.writeText(textoGeneradoDiv.textContent).then(() => {
       btnCopiarBorrador.textContent = '✓ Copiado';
-      setTimeout(() => { btnCopiarBorrador.textContent = '📋'; }, 1500);
+      setTimeout(() => { btnCopiarBorrador.textContent = '📋 Copiar'; }, 1500);
     });
   });
 
   btnDescartarBorrador?.addEventListener('click', () => {
+    modoAplicacionPendiente = null;
+    rangoSeleccionPendiente = null;
     if (resultadoBox) resultadoBox.style.display = 'none';
   });
 
@@ -1379,11 +1477,32 @@ window.restaurarVersion = async function (versionNum) {
   }
 };
 
-// Alternar Copiloto en dispositivos móviles (< 768px)
+// Control de paneles laterales (Drawer y Bottom Sheet) en dispositivos móviles (< 768px)
 window.alternarCopilotoMovil = function () {
   const sidebar = document.getElementById('loSidebar');
+  const outline = document.getElementById('loOutlinePanel');
+  const backdrop = document.getElementById('editorDrawerBackdrop');
+  if (outline) outline.classList.remove('movil-abierto');
   if (sidebar) {
-    sidebar.classList.toggle('movil-abierto');
+    const abierto = sidebar.classList.toggle('movil-abierto');
+    if (backdrop) backdrop.classList.toggle('activo', abierto);
   }
+};
+
+window.alternarEsquemaMovil = function () {
+  const outline = document.getElementById('loOutlinePanel');
+  const sidebar = document.getElementById('loSidebar');
+  const backdrop = document.getElementById('editorDrawerBackdrop');
+  if (sidebar) sidebar.classList.remove('movil-abierto');
+  if (outline) {
+    const abierto = outline.classList.toggle('movil-abierto');
+    if (backdrop) backdrop.classList.toggle('activo', abierto);
+  }
+};
+
+window.cerrarDrawersMovil = function () {
+  document.getElementById('loSidebar')?.classList.remove('movil-abierto');
+  document.getElementById('loOutlinePanel')?.classList.remove('movil-abierto');
+  document.getElementById('editorDrawerBackdrop')?.classList.remove('activo');
 };
 

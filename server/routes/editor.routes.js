@@ -45,13 +45,13 @@ router.post('/export-docx', async (req, res, next) => {
 // Razonamiento dividido (Split-Brain)
 router.post('/razonamiento', protect, async (req, res, next) => {
   try {
-    const { instruccion, expedienteId } = req.body;
-    if (!instruccion) {
-      return res.status(400).json({ error: 'Instrucción procesal requerida' });
+    const { instruccion, expedienteId, textoCompleto, textoSeleccionado, accion } = req.body;
+    if (!instruccion && !textoCompleto && !textoSeleccionado) {
+      return res.status(400).json({ ok: false, error: 'Instrucción o texto requerido para procesar con IA.' });
     }
 
     let contextoCausa = {};
-    if (expedienteId) {
+    if (expedienteId && expedienteId !== 'sin_vincular' && expedienteId !== 'null' && String(expedienteId).trim() !== '') {
       const exp = await Expediente.findById(expedienteId);
       if (exp) {
         contextoCausa = {
@@ -69,23 +69,34 @@ router.post('/razonamiento', protect, async (req, res, next) => {
     // Datos del abogado en sesión
     const usuario = req.usuario || (await Usuario.findById(req.usuario?._id || req.usuario?.id));
     const usuarioForense = {
+      id: usuario?._id || usuario?.id,
       nombreCompleto: usuario?.nombreCompleto || usuario?.nombre,
       matriculaCSJ: usuario?.matriculaCSJ,
       cedula: usuario?.cedula,
     };
 
     const resultado = await editorService.generarRazonamientoSplitBrain({
-      instruccion,
+      instruccion: instruccion || '',
+      accion: accion || 'redactar',
+      textoExistente: textoCompleto || '',
+      textoSeleccionado: textoSeleccionado || '',
       contextoCausa,
       usuarioForense,
+      usuarioId: usuario?._id || usuario?.id,
     });
 
     res.json({
+      ok: true,
       success: true,
       datos: resultado,
     });
   } catch (err) {
-    next(err);
+    console.error('[editor.routes] Error en /razonamiento:', err.message);
+    res.status(502).json({
+      ok: false,
+      success: false,
+      error: err.message || 'Error al procesar el razonamiento con IA.',
+    });
   }
 });
 

@@ -151,13 +151,28 @@ const validarAprendizaje = asyncHandler(async (req, res) => {
   res.json({ success: true, data: aprendizaje });
 });
 
-// POST /api/lexpy/redactar  { tipoDocumento, clienteId?, expedienteId?, instrucciones? }
+// POST /api/lexpy/redactar  { tipoDocumento, clienteId?, expedienteId?, instrucciones?, textoExistente?, accion? }
 const redactar = asyncHandler(async (req, res) => {
-  const { tipoDocumento, clienteId, expedienteId, instrucciones } = req.body;
-  if (!tipoDocumento) throw new ApiError(400, 'El tipo de documento es obligatorio.');
+  const { tipoDocumento, clienteId, expedienteId, instrucciones, textoExistente, textoSeleccionado, accion } = req.body;
+  if (!tipoDocumento && !instrucciones && !textoExistente && !textoSeleccionado) {
+    throw new ApiError(400, 'El tipo de documento o las instrucciones/texto son obligatorios.');
+  }
 
-  const resultado = await redactarBorrador({ tipoDocumento, clienteId, expedienteId, instrucciones });
-  res.json({ success: true, data: resultado });
+  const resultado = await redactarBorrador({
+    tipoDocumento: tipoDocumento || 'escrito_judicial',
+    clienteId,
+    expedienteId,
+    instrucciones,
+    textoExistente: textoExistente || textoSeleccionado,
+    accion,
+    usuarioId: req.usuario?._id || req.usuario?.id,
+  });
+
+  if (!resultado || !resultado.borrador) {
+    throw new ApiError(502, 'El motor de IA no pudo generar el borrador.');
+  }
+
+  res.json({ ok: true, success: true, data: resultado });
 });
 
 // POST /api/lexpy/editor-ai -> Asistente de redacción rápida para el Editor Judicial
