@@ -124,9 +124,24 @@ async function generarDocxForense({ titulo = 'Escrito_Judicial', html = '', cara
 }
 
 /**
- * Genera el razonamiento judicial dividido (Split-Brain) para un escrito
- * - Parte A: Texto limpio del escrito judicial
- * - Parte B: Fundamento estratégico, citas verificadas y checklist de riesgos procesales
+ * Determina si una matrícula CSJ es un placeholder o valor de prueba.
+ */
+function esMatriculaPlaceholder(matricula) {
+  if (!matricula) return true;
+  const limpia = String(matricula).replace(/[\s\.\-_]/g, '').trim();
+  if (!limpia) return true;
+  if (/^(9{3,}|0+|12345+|1234)$/i.test(limpia)) return true;
+  if (/^(test|demo|placeholder|ficticia|ninguna|null|undefined)$/i.test(limpia)) return true;
+  return false;
+}
+
+/**
+ * Genera el razonamiento legal dividido (Split-Brain) para el Editor Judicial.
+ * Devuelve un JSON estructurado con:
+ * - textoEscrito: Escrito judicial paraguayo sin etiquetas de razonamiento ni plantillas fijas.
+ * - estrategia: Explicación de la estrategia jurídica empleada.
+ * - basesNormativas: Artículos y códigos paraguayos sustentantes.
+ * - checklistRiesgos: Riesgos y plazos procesales.
  */
 async function generarRazonamientoSplitBrain({
   instruccion = '',
@@ -147,8 +162,10 @@ async function generarRazonamientoSplitBrain({
     accion === 'pulir' ||
     accion === 'polir' ||
     accion === 'corregir' ||
-    Boolean(textoObjetivo) ||
+    (Boolean(textoObjetivo) && accion !== 'redactar' && accion !== 'generar') ||
     /mejora|mejorar|pulir|polir|corregir/i.test(instruccion);
+
+  const matriculaValida = esMatriculaPlaceholder(matriculaCSJ) ? null : String(matriculaCSJ).trim();
 
   const vocativoJuez = juezGenero === 'F' ? 'SEÑORA JUEZA' : 'SEÑOR JUEZ';
   const nombreJuezStr = juezNombre ? `, ${juezNombre.toUpperCase()}` : '';
@@ -172,14 +189,15 @@ CONTEXTO DE LA CAUSA:
   }
 
   let seccionProfesional = '';
-  if (nombreCompleto || matriculaCSJ) {
-    seccionProfesional = `
-DATOS DEL PROFESIONAL:
-- Abogado/a: ${nombreCompleto || 'Abg. del Estudio'}
-- Matrícula CSJ: ${matriculaCSJ || ''}
-- C.I. N°: ${cedula || ''}
-- Domicilio Procesal Fijo: ${DOMICILIO_PROCESAL_GLOBAL}
-`;
+  if (nombreCompleto || matriculaValida) {
+    const lineas = ['DATOS DEL PROFESIONAL:'];
+    if (nombreCompleto) lineas.push(`- Abogado/a: ${nombreCompleto}`);
+    if (matriculaValida) lineas.push(`- Matrícula CSJ: ${matriculaValida}`);
+    if (cedula && !/^(0+|9+|12345+)$/.test(String(cedula).replace(/[\s\.\-_]/g, ''))) {
+      lineas.push(`- C.I. N°: ${cedula}`);
+    }
+    lineas.push(`- Domicilio Procesal Fijo: ${DOMICILIO_PROCESAL_GLOBAL}`);
+    seccionProfesional = `\n${lineas.join('\n')}\n`;
   }
 
   let promptEstrategico = '';
@@ -188,7 +206,11 @@ DATOS DEL PROFESIONAL:
 Mejora la redacción jurídica, ortografía, cohesión y técnica procesal paraguaya del escrito entregado. Respeta íntegros los nombres, cédulas, RUC, números de expediente, juzgado y hechos reales del texto. Devuelve ÚNICAMENTE el escrito mejorado listo para usar, sin repetir la instrucción del usuario ni agregar plantillas genéricas.
 
 ${seccionCausa}
-${seccionProfesional}
+
+REGLA ESTRICTA DE PATROCINIO Y FIRMAS:
+- Respeta estrictamente los profesionales, firmas, personerías y patrocinios que ya figuren en el escrito del usuario.
+- NO agregues nuevos abogados patrocinantes, firmas ficticias ni co-patrocinantes que no figuren en el texto original.
+- Si en el texto original no figura matrícula o figura una personería existente, consérvala tal cual sin inventar números ficticios (como 99999 o 99.999).
 
 INSTRUCCIÓN ESPECÍFICA DEL USUARIO:
 ${instruccion || 'Mejorar y perfeccionar la técnica forense y procesal del escrito.'}
@@ -201,7 +223,7 @@ ${textoObjetivo}
 REGLAS DE SALIDA EN FORMATO JSON ESTRICTO:
 Responde con un objeto JSON válido con los siguientes campos:
 {
-  "textoEscrito": "Texto íntegro del escrito judicial mejorado, preservando todos los datos reales (partes, números, juzgado) y con la máxima solidez procesal según el CPC/Código Civil paraguayo.",
+  "textoEscrito": "Texto íntegro del escrito judicial mejorado, preservando todos los datos reales (partes, números, juzgado, patrocinios y firmas originales) y con la máxima solidez procesal según el CPC/Código Civil paraguayo.",
   "estrategia": "Breve explicación táctica de las mejoras de técnica jurídica y procesal aplicadas.",
   "basesNormativas": [
     {
@@ -222,14 +244,14 @@ Redacta un escrito judicial formal conforme a las reglas del Código Procesal Ci
 
 ${seccionCausa}
 ${seccionProfesional}
-
+${!matriculaValida ? 'REGLA DE MATRÍCULA: No utilices números de matrícula ficticios (como 99999 o 99.999). Si no hay una matrícula CSJ real válida en los datos del profesional, omite el número o indica [MATRÍCULA CSJ] sin inventar valores falsos.\n' : ''}
 INSTRUCCIÓN DE REDACCIÓN:
 ${instruccion || 'Redacta el escrito judicial correspondiente.'}
 
 REGLAS DE SALIDA EN FORMATO JSON ESTRICTO:
 Responde con un objeto JSON válido con los siguientes campos:
 {
-  "textoEscrito": "Texto completo y oficial del escrito judicial en formato forense paraguayo con OBJETO, ${vocativoJuez}, personería completa con domicilio procesal fijo en Edificio BIJ, HECHOS, DERECHO, PETITORIO y cierre PROVEER DE CONFORMIDAD Y SERÁ JUSTICIA.-",
+  "textoEscrito": "Texto completo y oficial del escrito judicial en formato forense paraguayo con OBJETO, ${vocativoJuez}, personería formal, HECHOS, DERECHO, PETITORIO y cierre PROVEER DE CONFORMIDAD Y SERÁ JUSTICIA.-",
   "estrategia": "Explicación táctica profunda de por qué se plantea de esta forma la acción y qué beneficios procesales otorga al cliente.",
   "basesNormativas": [
     {

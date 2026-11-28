@@ -66,12 +66,18 @@ router.post('/razonamiento', protect, async (req, res, next) => {
       }
     }
 
-    // Datos del abogado en sesión
+    // Datos del abogado en sesión (omitiendo matrículas placeholder de prueba)
     const usuario = req.usuario || (await Usuario.findById(req.usuario?._id || req.usuario?.id));
+    const rawMatricula = usuario?.matriculaCSJ || '';
+    const limpiaMatricula = String(rawMatricula).replace(/[\s\.\-_]/g, '').trim();
+    const esPlaceholder = !limpiaMatricula ||
+      /^(9{3,}|0+|12345+|1234)$/i.test(limpiaMatricula) ||
+      /^(test|demo|placeholder|ficticia|ninguna|null|undefined)$/i.test(limpiaMatricula);
+
     const usuarioForense = {
       id: usuario?._id || usuario?.id,
       nombreCompleto: usuario?.nombreCompleto || usuario?.nombre,
-      matriculaCSJ: usuario?.matriculaCSJ,
+      matriculaCSJ: esPlaceholder ? '' : String(rawMatricula).trim(),
       cedula: usuario?.cedula,
     };
 

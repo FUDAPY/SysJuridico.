@@ -238,11 +238,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  function esMatriculaPlaceholder(m) {
+    if (!m) return true;
+    const limpia = String(m).replace(/[\s\.\-_]/g, '').trim();
+    if (!limpia) return true;
+    if (/^(9{3,}|0+|12345+|1234)$/i.test(limpia)) return true;
+    if (/^(test|demo|placeholder|ficticia|ninguna|null|undefined)$/i.test(limpia)) return true;
+    return false;
+  }
+
   function autocompletarComparecencia(plantilla = null) {
     const sesion = obtenerSesion();
     const u = sesion?.usuario || {};
     const abgNombre = u.nombreCompleto || u.nombre || 'Abg. del Estudio';
-    const matricula = u.matriculaCSJ || '[MATRÍCULA CSJ]';
+    const matricula = esMatriculaPlaceholder(u.matriculaCSJ) ? '[MATRÍCULA CSJ]' : u.matriculaCSJ;
     const cedula = u.cedula || '[CÉDULA]';
     const domicilioFijo = 'Edificio BIJ, Av. Camilo Recalde c/ Capitán Miranda, Microcentro, Ciudad del Este';
 
@@ -679,6 +688,69 @@ document.addEventListener('DOMContentLoaded', async () => {
     return clone.innerText.trim();
   }
 
+  function esPlantillaInicial(texto) {
+    if (!texto) return true;
+    const t = texto.toLowerCase();
+    return (
+      t.includes('[nombre del profesional]') ||
+      t.includes('[matricula]') ||
+      t.includes('[describe aquí los hechos') ||
+      t.includes('describe aqui los hechos') ||
+      t.includes('[parte demandada]')
+    );
+  }
+
+  /**
+   * Reemplaza de forma atómica y completa el escrito de la foja,
+   * eliminando cualquier plantilla inicial residual, texto previo o párrafos viejos,
+   * preservando únicamente los marcadores visuales (.lo-corner-*, .lo-guide-box).
+   */
+  function aplicarEscritoCompletoAFoja(parrafosHtml) {
+    const elFoja = document.getElementById('hojaEditor') ||
+                   document.getElementById('editor-content') ||
+                   document.querySelector('.hoja-pagina-lo') ||
+                   document.querySelector('.lo-page');
+    if (!elFoja) return;
+
+    // 1. Identificar y resguardar marcadores visuales (.lo-corner-*, .lo-guide-box)
+    const marcadores = Array.from(
+      elFoja.querySelectorAll('.lo-corner-bl, .lo-corner-br, .lo-guide-box')
+    );
+
+    // 2. Eliminar de raíz todos los nodos hijos previos (párrafos, textos, plantillas residuales)
+    while (elFoja.firstChild) {
+      elFoja.removeChild(elFoja.firstChild);
+    }
+
+    // 3. Reinsertar los marcadores visuales limpios de LibreOffice
+    if (marcadores.length > 0) {
+      marcadores.forEach((m) => elFoja.appendChild(m));
+    } else {
+      const cbl = document.createElement('div');
+      cbl.className = 'lo-corner-bl';
+      cbl.contentEditable = 'false';
+      const cbr = document.createElement('div');
+      cbr.className = 'lo-corner-br';
+      cbr.contentEditable = 'false';
+      const gbox = document.createElement('div');
+      gbox.className = 'lo-guide-box';
+      gbox.contentEditable = 'false';
+      elFoja.appendChild(cbl);
+      elFoja.appendChild(cbr);
+      elFoja.appendChild(gbox);
+    }
+
+    // 4. Insertar los nuevos párrafos limpios generados (sin append ni prepend sobre texto previo)
+    const contenedor = document.createElement('div');
+    contenedor.innerHTML = parrafosHtml || '<p>&nbsp;</p>';
+    while (contenedor.firstChild) {
+      elFoja.appendChild(contenedor.firstChild);
+    }
+
+    elFoja.focus();
+    actualizarMetricas();
+  }
+
   // Chips de acción rápida
   document.querySelectorAll('.btn-chip[data-action]').forEach((chip) => {
     chip.addEventListener('click', () => {
@@ -729,13 +801,25 @@ document.addEventListener('DOMContentLoaded', async () => {
       : null;
 
     const textoEditorCompleto = obtenerTextoLimpioEditor();
+    const esPlantillaMuestra = esPlantillaInicial(textoEditorCompleto);
+
+    const esAccionMejora =
+      accion === 'mejorar_todo' ||
+      accion === 'mejorar' ||
+      accion === 'pulir' ||
+      accion === 'polir' ||
+      accion === 'corregir' ||
+      /mejora|mejorar|pulir|polir|corregir/i.test(instrucciones);
+
+    // Solo se considera mejora de todo el documento si hay texto real del usuario y no es solo la plantilla inicial
+    const tieneTextoReal = Boolean(textoEditorCompleto) && !esPlantillaMuestra;
     const esMejoraTodo =
       accion === 'mejorar_todo' ||
-      (!ultimaSeleccionTexto && (accion === 'mejorar' || accion === 'pulir' || accion === 'polir' || accion === 'redactar')) ||
-      /todo\s+el\s+(texto|escrito)|completo/i.test(instrucciones);
+      (esAccionMejora && !ultimaSeleccionTexto && tieneTextoReal) ||
+      (/todo\s+el\s+(texto|escrito)|completo/i.test(instrucciones) && tieneTextoReal);
 
-    if (esMejoraTodo && (!textoEditorCompleto || textoEditorCompleto.length < 15)) {
-      alert('La foja de trabajo no contiene suficiente texto para mejorar. Escribe o pega tu escrito primero.');
+    if (accion === 'mejorar_todo' && !tieneTextoReal) {
+      alert('La foja de trabajo contiene la plantilla inicial de muestra. Escribe o pega tu escrito antes de usar "Mejorar Todo", o ingresa una instrucción para redactar un escrito nuevo.');
       return;
     }
 
@@ -746,7 +830,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (textoGeneradoDiv) textoGeneradoDiv.textContent = 'Consultando acervo normativo de OtelaxWisdom y estructurando razonamiento dividido...';
 
     // Determinar modo de aplicación previo a la llamada
-    modoAplicacionPendiente = esMejoraTodo ? 'todo' : (ultimaSeleccionTexto ? 'seleccion' : 'cursor');
+    modoAplicacionPendiente = (ultimaSeleccionTexto && !esMejoraTodo) ? 'seleccion' : 'todo';
     rangoSeleccionPendiente = (modoAplicacionPendiente === 'seleccion') ? ultimoRange : null;
 
     try {
@@ -756,7 +840,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           instruccion: instrucciones,
           accion: accion,
           textoCompleto: esMejoraTodo ? textoEditorCompleto : '',
-          textoSeleccionado: esMejoraTodo ? '' : (ultimaSeleccionTexto || ''),
+          textoSeleccionado: (modoAplicacionPendiente === 'seleccion') ? (ultimaSeleccionTexto || '') : '',
           expedienteId: expId,
         },
       });
@@ -771,12 +855,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       // Actualizar texto del botón de inserción
       if (btnInsertarEnCursor) {
-        if (modoAplicacionPendiente === 'todo') {
-          btnInsertarEnCursor.textContent = '✓ Reemplazar Todo el Escrito en Foja';
-        } else if (modoAplicacionPendiente === 'seleccion') {
+        if (modoAplicacionPendiente === 'seleccion') {
           btnInsertarEnCursor.textContent = '✓ Reemplazar Selección en Foja';
         } else {
-          btnInsertarEnCursor.textContent = '✓ Insertar en Foja';
+          btnInsertarEnCursor.textContent = '✓ Reemplazar Todo el Escrito en Foja';
         }
       }
 
@@ -836,16 +918,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         .map((p) => `<p>${escapeHtml(p.trim()).replace(/\n/g, '<br>')}</p>`)
         .join('');
 
-      if (modoAplicacionPendiente === 'todo') {
-        // REEMPLAZAR COMPLETAMENTE EL CONTENIDO DE LA FOJA
-        // Conservar marcas de esquina de LibreOffice
-        hoja.innerHTML = `
-          <div class="lo-corner-bl" contenteditable="false"></div>
-          <div class="lo-corner-br" contenteditable="false"></div>
-          <div class="lo-guide-box" contenteditable="false"></div>
-          ${parrafosHtml || '<p>&nbsp;</p>'}
-        `;
-      } else if (modoAplicacionPendiente === 'seleccion' && rangoSeleccionPendiente) {
+      if (modoAplicacionPendiente === 'seleccion' && rangoSeleccionPendiente) {
         // Reemplazar únicamente el fragmento seleccionado
         hoja.focus();
         const sel = window.getSelection();
@@ -853,19 +926,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         sel.addRange(rangoSeleccionPendiente);
         document.execCommand('insertHTML', false, parrafosHtml);
       } else {
-        // En cursor o reemplazar si solo quedaba la plantilla de muestra
-        const actual = obtenerTextoLimpioEditor();
-        if (actual.includes('[NOMBRE DEL PROFESIONAL]') || actual.length < 50) {
-          hoja.innerHTML = `
-            <div class="lo-corner-bl" contenteditable="false"></div>
-            <div class="lo-corner-br" contenteditable="false"></div>
-            <div class="lo-guide-box" contenteditable="false"></div>
-            ${parrafosHtml || '<p>&nbsp;</p>'}
-          `;
-        } else {
-          hoja.focus();
-          document.execCommand('insertHTML', false, parrafosHtml);
-        }
+        // Para cualquier escrito completo ('todo', 'generar', 'mejorar_todo' o sin selección puntual):
+        // Reemplazar la foja completa eliminando cualquier plantilla inicial o texto residual
+        aplicarEscritoCompletoAFoja(parrafosHtml);
       }
 
       // Resetear estado de selección
