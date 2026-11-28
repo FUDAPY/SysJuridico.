@@ -21,6 +21,7 @@ const lexpyRoutes = require('./routes/lexpy.routes');
 const liquidacionRoutes = require('./routes/liquidacion.routes');
 const { creditosRouter, requisitosRouter, archivosRouter } = require('./routes/legados.routes');
 const obsidianRoutes = require('./routes/obsidian.routes');
+const editorRoutes = require('./routes/editor.routes');
 const compression = require('compression');
 const otelaxWisdomRoutes = require('./routes/otelaxWisdom.routes');
 const tokenRoutes = require('./routes/token.routes');
