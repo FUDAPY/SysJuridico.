@@ -141,4 +141,57 @@ router.post('/:id/documentos', subirDocumento);
 router.get('/:id/documentos/:docId/descargar', descargarDocumento);
 router.delete('/:id/documentos/:docId', eliminarDocumento);
 
+// Actuaciones y memoria procesal del expediente (soporte para el Editor y cronología viva)
+router.post('/:id/actuaciones', async (req, res, next) => {
+  try {
+    const { tipo, descripcion, contenido, titulo } = req.body;
+    const Expediente = require('../models/Expediente');
+    const DocumentoExpediente = require('../models/DocumentoExpediente');
+    const { actualizarRespaldoMdExpediente } = require('../services/memoriaRouterService');
+
+    const exp = await Expediente.findById(req.params.id);
+    if (!exp) return res.status(404).json({ success: false, error: 'Expediente no encontrado' });
+
+    const tituloHito = (titulo || descripcion || 'Actuación Procesal').slice(0, 100);
+    const textoLimpio = (contenido || descripcion || '').replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim();
+
+    let docExpId = null;
+    if (contenido) {
+      const bufferHtml = Buffer.from(contenido, 'utf8');
+      const nombreArchivo = `${tituloHito.replace(/[^a-zA-Z0-9_\-\s]/g, '')}_${Date.now().toString().slice(-4)}.html`;
+      const doc = await DocumentoExpediente.create({
+        expediente: exp._id,
+        nombre: nombreArchivo,
+        tipo: 'text/html',
+        tamano: bufferHtml.length,
+        datos: bufferHtml,
+        subidoPor: req.usuario._id,
+        textoExtraido: textoLimpio,
+        textoExtraidoAt: new Date(),
+        resumenIA: `Actuación / Escrito: ${tituloHito}`,
+        esEscritoEditor: true,
+      });
+      docExpId = doc._id;
+    }
+
+    exp.memoriaPersistente.push({
+      fecha: new Date(),
+      tipo: 'ESCRITO_EDITOR',
+      titulo: tituloHito,
+      resumenHechosYDecisiones: textoLimpio.slice(0, 350),
+      documentoId: docExpId,
+      autor: req.usuario._id,
+      autorNombre: req.usuario.nombre || req.usuario.nombreCompleto || 'Abogado',
+    });
+
+    exp.ultimaActuacionTexto = tituloHito;
+    await exp.save();
+    await actualizarRespaldoMdExpediente(exp);
+
+    res.status(201).json({ success: true, message: 'Actuación registrada en la memoria de la causa' });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

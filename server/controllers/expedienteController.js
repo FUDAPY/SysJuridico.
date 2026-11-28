@@ -276,6 +276,7 @@ const subirDocumento = asyncHandler(async (req, res) => {
     datos: buffer,
     subidoPor: req.usuario._id,
     textoExtraido: texto,
+    textoExtraidoAt: new Date(),
     resumenIA,
     entidadesClave,
     esEscaneado,

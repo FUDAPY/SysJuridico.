@@ -722,28 +722,53 @@ function guardarEstiloForense(nuevoContenido) {
 /**
  * RAG Inteligente sobre el acervo curado de OtelaxWisdom
  */
-function buscarEnOtelaxWisdom(consulta, { maxDocs = 3, minScore = 2, fuero = null, tipo = null, visibilidad = null } = {}) {
+/**
+ * RAG Inteligente sobre el acervo curado de OtelaxWisdom con umbral de relevancia elevado
+ */
+function buscarEnOtelaxWisdom(consulta, { maxDocs = 3, minScore = 25, fuero = null, tipo = null, visibilidad = null } = {}) {
   if (!indiceMemoria.length) {
     recargarIndice();
   }
 
   const consultaLimpia = normalizarTexto(consulta);
   if (!consultaLimpia) {
-    return { resultados: [], totalEncontrados: 0 };
+    return { resultados: [], totalEncontrados: 0, maxScore: 0, esAltaRelevancia: false };
   }
 
   const stopWords = new Set([
     'para', 'como', 'sobre', 'este', 'esta', 'estos', 'estas', 'entre',
     'desde', 'hasta', 'hacia', 'segun', 'donde', 'cuando', 'quien', 'cual',
     'cuales', 'tiene', 'tienen', 'haber', 'hacer', 'puede', 'pueden',
+    'que', 'los', 'las', 'del', 'por', 'con', 'sin', 'mas', 'pero', 'sus',
+    'nos', 'ese', 'eso', 'esa', 'aqui', 'alli', 'alla', 'cada', 'tanto',
+    'todo', 'toda', 'todos', 'todas', 'otro', 'otra', 'otros', 'otras',
+    'mismo', 'misma', 'mismos', 'mismas', 'cualquier', 'cualesquiera',
+    'unos', 'unas', 'ser', 'sido', 'siendo', 'son', 'era', 'eran', 'fue', 'fueron',
   ]);
 
-  const palabras = consultaLimpia
+  // Términos omnipresentes en el acervo paraguayo que no discriminan materia sustantiva
+  const terminosGenericos = new Set([
+    'paraguay', 'paraguayo', 'paraguaya', 'republica', 'nacional',
+    'articulo', 'articulos', 'ley', 'leyes', 'codigo', 'codigos', 'norma', 'normas',
+    'general', 'vigente', 'oficial', 'disposicion', 'disposiciones'
+  ]);
+
+  const todasLasPalabras = consultaLimpia
     .split(/\s+/)
     .filter((w) => w.length >= 3 && !stopWords.has(w));
 
-  if (!palabras.length) {
-    return { resultados: [], totalEncontrados: 0 };
+  if (!todasLasPalabras.length) {
+    return { resultados: [], totalEncontrados: 0, maxScore: 0, esAltaRelevancia: false };
+  }
+
+  // Palabras sustantivas específicas (las que realmente definen la materia)
+  const palabrasSustantivas = todasLasPalabras.filter((w) => !terminosGenericos.has(w));
+  const palabrasAUsar = palabrasSustantivas.length > 0 ? palabrasSustantivas : todasLasPalabras;
+
+  // Generar bigramas de la consulta (ej. "ministerio salud", "salud publica", "bienestar social")
+  const bigramas = [];
+  for (let i = 0; i < todasLasPalabras.length - 1; i++) {
+    bigramas.push(`${todasLasPalabras[i]} ${todasLasPalabras[i + 1]}`);
   }
 
   let poolDocs = indiceMemoria;
@@ -761,49 +786,78 @@ function buscarEnOtelaxWisdom(consulta, { maxDocs = 3, minScore = 2, fuero = nul
     const normaNorm = normalizarTexto(doc.numero_norma);
     const textoDoc = doc.textoNormalizado;
 
-    // Coincidencia exacta de frase
+    // Coincidencia exacta de norma o título
     if (normaNorm && consultaLimpia.includes(normaNorm)) {
-      score += 35;
+      score += 50;
     }
     if (tituloNorm.includes(consultaLimpia)) {
-      score += 25;
+      score += 40;
     } else if (textoDoc.includes(consultaLimpia)) {
-      score += 15;
+      score += 20;
     }
 
-    // Coincidencia de palabras clave
-    palabras.forEach((p) => {
-      if (normaNorm.includes(p)) score += 10;
-      if (tituloNorm.includes(p)) score += 6;
-      if (fueroNorm.includes(p)) score += 5;
-      if (tipoNorm.includes(p)) score += 4;
+    // Coincidencia de bigramas clave en título o norma
+    bigramas.forEach((bg) => {
+      if (tituloNorm.includes(bg)) score += 25;
+      else if (normaNorm.includes(bg)) score += 15;
+    });
+
+    // Coincidencia de palabras sustantivas en metadatos
+    let sustantivasEnTitulo = 0;
+    palabrasAUsar.forEach((p) => {
+      if (normaNorm.includes(p)) score += 12;
+      if (tituloNorm.includes(p)) {
+        score += 10;
+        sustantivasEnTitulo++;
+      }
+      if (fueroNorm.includes(p)) score += 3;
+      if (tipoNorm.includes(p)) score += 2;
     });
 
     // Búsqueda en chunks preservados
     let mejorChunk = '';
     let mejorScoreChunk = 0;
+    let sustantivasEnMejorChunk = 0;
 
     for (const chunk of doc.chunks) {
       const chunkNorm = normalizarTexto(chunk);
       let cScore = 0;
+      let sCount = 0;
 
       if (chunkNorm.includes(consultaLimpia)) {
-        cScore += 12;
+        cScore += 20;
       }
 
-      palabras.forEach((p) => {
+      bigramas.forEach((bg) => {
+        if (chunkNorm.includes(bg)) {
+          cScore += 10;
+        }
+      });
+
+      palabrasAUsar.forEach((p) => {
         if (chunkNorm.includes(p)) {
-          cScore += 3;
+          cScore += 4;
+          sCount++;
         }
       });
 
       if (cScore > mejorScoreChunk) {
         mejorScoreChunk = cScore;
         mejorChunk = chunk.trim();
+        sustantivasEnMejorChunk = sCount;
       }
     }
 
-    score += mejorScoreChunk;
+    // Regla de Alineación Temática:
+    // Si el título del documento NO tiene relación directa con las palabras sustantivas
+    // de la consulta, la coincidencia en el chunk es meramente TANGENCIAL (ej. una ley
+    // de tránsito o penal que cita al Ministerio de Salud como entidad homologadora).
+    // Las menciones tangenciales se limitan a máximo 12 puntos para evitar que superen el minScore.
+    if (sustantivasEnTitulo > 0 || (normaNorm && consultaLimpia.includes(normaNorm))) {
+      score += mejorScoreChunk;
+    } else {
+      score += Math.min(mejorScoreChunk, 12);
+    }
 
     if (score >= minScore) {
       let fragmento = mejorChunk || doc.contenido.slice(0, 1800);
@@ -832,10 +886,14 @@ function buscarEnOtelaxWisdom(consulta, { maxDocs = 3, minScore = 2, fuero = nul
 
   candidatos.sort((a, b) => b.score - a.score);
   const seleccionados = candidatos.slice(0, maxDocs);
+  const maxScore = seleccionados.length > 0 ? seleccionados[0].score : 0;
+  const esAltaRelevancia = maxScore >= 35;
 
   return {
     resultados: seleccionados,
     totalEncontrados: candidatos.length,
+    maxScore,
+    esAltaRelevancia,
   };
 }
 

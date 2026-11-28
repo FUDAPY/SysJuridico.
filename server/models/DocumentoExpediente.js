@@ -17,10 +17,23 @@ const documentoSchema = new mongoose.Schema(
 
     // ---- Campos de Inteligencia Documental & RAG ----
     textoExtraido: { type: String, default: '', trim: true },
+    textoExtraidoAt: { type: Date, default: null },
     resumenIA: { type: String, default: '', trim: true },
     entidadesClave: [{ type: String, trim: true }],
     esEscaneado: { type: Boolean, default: false },
     paginas: { type: Number, default: 1 },
+    esEscritoEditor: { type: Boolean, default: false },
+    version: { type: Number, default: 1 },
+    versiones: [
+      {
+        version: { type: Number, default: 1 },
+        fecha: { type: Date, default: Date.now },
+        autor: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario' },
+        autorNombre: { type: String, default: '' },
+        texto: { type: String, default: '' },
+        titulo: { type: String, default: '' },
+      },
+    ],
   },
   { timestamps: true }
 );

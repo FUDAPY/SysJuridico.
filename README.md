@@ -1,317 +1,255 @@
 <div align="center">
 
-# ⚖️ SysJurídico &mdash; Legal Management & AI Intelligence Suite
+# ⚖️ SysJurídico &mdash; Legal Management & AI Forensics Suite
 
-**Sistema integral de gestión judicial, control financiero, cálculo laboral y asistencia jurídica inteligente adaptada a la Legislación de la República del Paraguay.**
+**Plataforma Integral de Gestión Procesal, Cartera Judicial, Control Financiero, Cálculo Laboral y Asistencia Jurídica Inteligente adaptada al Derecho Positivo de la República del Paraguay.**
 
-Diseñado bajo una arquitectura modular de alto rendimiento, optimizada para despachos jurídicos y despliegues en servidores VPS con Dokploy, Traefik y MongoDB.
+Potenciado por **Techapyrã IA** y el Motor de Sabiduría Jurídica **OtelaxWisdom**.
 
-[![Version](https://img.shields.io/badge/versión-3.0.0-0a3d62?style=for-the-badge)](https://zetti.grupooh.online)
-[![Node](https://img.shields.io/badge/node.js-%3E%3D20.0-339933?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
+[![Versión](https://img.shields.io/badge/versión-3.6.0--PRO--SECURE-0a3d62?style=for-the-badge)](https://zetti.grupooh.online)
+[![Node](https://img.shields.io/badge/node.js-%3E%3D22.0-339933?logo=node.js&logoColor=white&style=for-the-badge)](https://nodejs.org/)
 [![Express](https://img.shields.io/badge/express-4.21-000000?logo=express&logoColor=white&style=for-the-badge)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/mongodb-8.0-47A248?logo=mongodb&logoColor=white&style=for-the-badge)](https://www.mongodb.com/)
-[![Dokploy](https://img.shields.io/badge/deployment-Dokploy%20%7C%20Traefik-0284c7?style=for-the-badge)](https://dokploy.com/)
-[![License](https://img.shields.io/badge/licencia-MIT-f59e0b?style=for-the-badge)](LICENSE)
+[![Despliegue](https://img.shields.io/badge/despliegue-Dokploy%20%7C%20Traefik-0284c7?style=for-the-badge)](https://dokploy.com/)
+[![Licencia](https://img.shields.io/badge/licencia-MIT-f59e0b?style=for-the-badge)](LICENSE)
 
 </div>
 
 ---
 
-## 📑 Tabla de Contenidos
+## 📑 Índice de Contenido
 
-1. [Descripción General](#-descripción-general)
-2. [Stack Tecnológico y Herramientas](#-stack-tecnológico-y-herramientas)
-3. [Motor de Sabiduría Jurídica: OtelaxWisdom](#-motor-de-sabiduría-jurídica-otelaxwisdom)
-4. [Módulos y Capacidades del Sistema](#-módulos-y-capacidades-del-sistema)
-5. [Arquitectura de Inteligencia Artificial & RAG Local](#-arquitectura-de-inteligencia-artificial--rag-local)
-6. [Red de Conocimiento Forense (Obsidian Graph View)](#-red-de-conocimiento-forense-obsidian-graph-view)
-7. [Estructura del Proyecto](#-estructura-del-proyecto)
-8. [Instalación y Configuración](#-instalación-y-configuración)
-9. [Variables de Entorno](#-variables-de-entorno)
-10. [API REST & Endpoints Clave](#-api-rest--endpoints-clave)
-11. [Seguridad y Políticas de Despliegue](#-seguridad-y-políticas-de-despliegue)
-12. [Licencia y Créditos Institucionales](#-licencia-y-créditos-institucionales)
+1. [Descripción General](#1-descripción-general)
+2. [Stack Tecnológico](#2-stack-tecnológico)
+3. [Estructura del Proyecto](#3-estructura-del-proyecto)
+4. [Módulos Funcionales](#4-módulos-funcionales)
+5. [Arquitectura RAG y Flujo de Conocimiento (OtelaxWisdom)](#5-arquitectura-rag-y-flujo-de-conocimiento-otelaxwisdom)
+6. [Modelos de Base de Datos y Endpoints API Principales](#6-modelos-de-base-de-datos-y-endpoints-api-principales)
+7. [Variables de Entorno (.env)](#7-variables-de-entorno-env)
+8. [Instalación Local y Despliegue en Producción (Dokploy)](#8-instalación-local-y-despliegue-en-producción-dokploy)
 
 ---
 
-## 📖 Descripción General
+## 1. Descripción General
 
-**SysJurídico** es una plataforma profesional para despachos forenses y firmas jurídicas que consolida en un único entorno el seguimiento de litigios, la facturación de honorarios mediante créditos y cobranzas, la agenda de audiencias y plazos perentorios, el cálculo automatizado de liquidaciones laborales bajo normativas del MTESS y la asistencia legal en tiempo real con **Techapyrã IA** potenciada por el motor de conocimiento **OtelaxWisdom**.
+**SysJurídico** es una solución integral orientada a firmas de abogados, departamentos legales corporativos y litigantes de la República del Paraguay. Su diseño combina el control operativo integral de causas judiciales con un motor cognitivo especializado en derecho positivo paraguayo:
 
-El sistema combina un backend RESTful en Node.js de alta concurrencia con una interfaz web en JavaScript vanilla ultraliviana, libre del sobrecosto de frameworks pesados, e integra un motor RAG (*Retrieval-Augmented Generation*) local con base de datos propia en MongoDB que valida la vigencia positiva de las leyes antes de emitir cualquier dictamen o sugerencia procesal.
+- **SysJurídico (Core Procesal y Financiero):** Gestiona la cartera de litigios, clientes, control de vencimientos, cuenta corriente por honorarios (cuotas y liquidaciones), expedición de tickets de cobro e historial forense.
+- **Techapyrã IA:** Asistente jurídico y procesal senior que actúa en tres modos especializados (`MODO_INICIO`, `MODO_CHAT` y `MODO_EDITOR`). Interpreta expedientes reales de MongoDB, lee fojas y escritos adjuntos en formatos Word, PDF e imágenes con OCR, efectúa cómputo de plazos perentorios y redacta piezas judiciales bajo la técnica procesal paraguaya.
+- **Motor OtelaxWisdom:** Arquitectura de Recuperación y Generación Aumentada (RAG) de tres capas basada en un acervo curado en Markdown con más de 200 documentos de legislación, acordadas de la Corte Suprema de Justicia (CSJ), códigos de fondo y adjetivos, memoria privada del estudio jurídico y auto-aprendizaje institucional desde portales oficiales `.gov.py`.
 
 ---
 
-## 🛠️ Stack Tecnológico y Herramientas
+## 2. Stack Tecnológico
 
-SysJurídico implementa tecnologías probadas y de alta eficiencia para garantizar disponibilidad ininterrumpida y tiempos de respuesta inferiores a 100 ms:
-
-| Capa | Componente | Descripción y Uso |
+| Capa / Componente | Tecnología | Justificación y Función en SysJurídico |
 |---|---|---|
-| **Backend Core** | Node.js (≥ v20 LTS) + Express 4.x | Servidor HTTP RESTful, middlewares de validación, compresión y enrutamiento modular. |
-| **Persistencia** | MongoDB 8.x + Mongoose 8.x | Esquemas estructurados, índices de texto compuesto para RAG y transacciones ACID. |
-| **Autenticación** | JWT (`jsonwebtoken`) + `bcryptjs` | Tokens con caducidad configurable, cifrado robusto de contraseñas y control de acceso por roles (`admin`, `abogado`). |
-| **Seguridad HTTP** | `helmet`, `cors`, `express-rate-limit` | Protección contra XSS, sanitización de cabeceras, limitador de peticiones contra ataques DDoS. |
-| **Frontend** | HTML5 Semántico + CSS3 Variables + JS Vanilla | Interfaz responsiva inspirada en plataformas SaaS de alta gama, con modo oscuro/claro nativo, Bento cards y componentes modales. |
-| **Visualización** | Canvas 2D + Simulación Física (Force-Directed) | Renderizado de la Red de Conocimiento en canvas interactivo tipo Obsidian Graph View con clustering temático. |
-| **Motor de IA (Techapyrã IA)** | DeepSeek V3 (`deepseek-chat`) / OpenAI / Gemini / Groq | Motor analítico jurídico para dictámenes, síntesis de doctrina CSJ y redacción forense. |
-| **Motor Normativo (OtelaxWisdom)** | Corpus Legal Positivo del Paraguay | Base de datos indexada con más de 50 normas, códigos sustantivos/adjetivos, leyes orgánicas y doctrina de la República del Paraguay. |
-| **RAG & Procesamiento** | RAG Híbrido (MongoDB + Text Index) + `pdf-parse` | Extracción de texto de fojas y documentos procesales, búsqueda por similitud y coincidencia exacta de normas vigentes. |
-| **Web Scraping Forense** | `axios` + `cheerio` | Conectores HTTP para extracción en tiempo real de resoluciones, acuerdos y leyes desde portales oficiales (BACN, CSJ, SILpy, Gaceta Oficial). |
-| **Impresión Térmica** | CSS Paged Media `@media print` (80mm) | Formateo e impresión directa de tickets de pago para impresoras térmicas de punto de venta. |
-| **Infraestructura** | Docker + Docker Compose + Traefik + Dokploy | Contenedorización, certificados SSL automáticos vía Let's Encrypt y despliegue continuo en VPS. |
+| **Backend Core** | Node.js (≥ 22.x LTS) + Express 4.x | API REST modular de baja latencia con manejo asíncrono y streaming de respuestas. |
+| **Persistencia Primaria** | MongoDB 8.x + Mongoose 8.x | Base de datos documental con índices de texto compuesto para expedientes y RAG local. |
+| **Procesamiento de Documentos** | `pdf-parse` | Extracción de capa de texto nativo en resoluciones y sentencias judiciales PDF. |
+| **Procesamiento de Escritos Word** | `mammoth` | Extracción de texto plano y jerarquía de documentos `.docx` procesales. |
+| **Visión e Inteligencia OCR** | `tesseract.js` | Extracción de texto en español (`spa`) vía WebAssembly para imágenes judiciales (.png, .jpg, .webp). |
+| **Exportación Forense Nativa** | `docx` | Generación dinámica de escritos descargables con márgenes reglamentarios (4 cm izquierdo, 2 cm derecho). |
+| **Frontend de Alto Rendimiento** | JavaScript Vanilla + HTML5 + CSS3 | Interfaz sin sobrecarga de frameworks, reactiva, tema blanco institucional y consumo mínimo de memoria. |
+| **Seguridad de Red y Sesión** | `jsonwebtoken`, `bcryptjs`, `helmet`, `cors`, `express-rate-limit` | Cifrado de contraseñas, tokens JWT, protección DDoS, sanitización de encabezados y CORS estricto. |
+| **Inferencia de IA Principal** | Google GenAI SDK (`@google/genai`) / Gemini 2.5 Pro | Motor analítico jurídico con grounding de fuentes y razonamiento legal riguroso. |
+| **Contenedorización** | Docker (Node.js 22 Alpine) | Imagen liviana con dependencias nativas de sincronización (`git`, `tar`, `curl`). |
+| **Despliegue y Orquestación** | Dokploy + Traefik | Despliegue continuo en VPS, proxy inverso, balanceo y SSL automático Let's Encrypt. |
 
 ---
 
-## 🏛️ Motor de Sabiduría Jurídica: OtelaxWisdom
+## 3. Estructura del Proyecto
 
-**OtelaxWisdom** es el corazón cognitivo y documental de SysJurídico. Representa una estructura de datos relacional y semántica que organiza el derecho paraguayo en **siete centros de gravedad o Fueros Centrales**:
-
-1. **🏛️ Fuero Civil y Comercial:**
-   - Código Civil Paraguayo (Ley Nº 1183/1985): Contratos, obligaciones, derechos reales, sucesiones, responsabilidad civil.
-   - Código Procesal Civil (Ley Nº 1337/1988): Caducidad de instancia (Art. 172: 3 meses en primera instancia, 6 meses en segunda), excepciones dilatorias/perentorias, medidas cautelares, juicio ejecutivo y recursos.
-   - Leyes complementarias de cheques, marcas y régimen concursal.
-
-2. **⚖️ Fuero Penal y Garantías Constitucionales:**
-   - Código Penal (Ley Nº 1160/1997 y modif. Ley Nº 3440/2008): Tipificación de hechos punibles, autoría y participación, antijuridicidad y culpabilidad.
-   - Código Procesal Penal (Ley Nº 1286/1998): Principio de inocencia, etapas del procedimiento (preparatoria, intermedia, juicio oral), plazos máximos, medidas sustitutivas y querella adhesiva.
-
-3. **💼 Fuero Laboral y Seguridad Social:**
-   - Código del Trabajo (Ley Nº 213/1993 y modif. Ley Nº 496/1995): Orden público laboral, estabilidad especial (+10 años), despido injustificado, preaviso e indemnizaciones tarifadas.
-   - Código Procesal del Trabajo (Ley Nº 742/1961): Inversión de la carga probatoria, conciliación obligatoria y ejecución de sentencias laborales.
-   - Normativa previsional del Instituto de Previsión Social (IPS).
-
-4. **👶 Fuero de la Niñez, Adolescencia y Familia:**
-   - Código de la Niñez y la Adolescencia (Ley Nº 1680/2001 y modif. Ley Nº 6083/2018): Interés superior del niño, prestación alimentaria perentoria, régimen de relacionamiento, patria potestad y adopciones.
-
-5. **📜 Fuero Contencioso Administrativo & Constitucional:**
-   - Constitución Nacional de la República del Paraguay (1992): Supremacía constitucional (Art. 137), garantías constitucionales (Habeas Corpus, Habeas Data, Amparo).
-   - Ley Nº 1462/1935: Procedimiento para lo Contencioso Administrativo ante el Tribunal de Cuentas (plazo perentorio de 18 días hábiles).
-   - Ley Nº 6715/2021: Procedimientos Administrativos, validez y eficacia de los actos administrativos y recursos de reconsideración/jerárquico.
-
-6. **📊 Fuero Tributario & Fiscal:**
-   - Ley Nº 6380/2019 de Modernización y Simplificación del Sistema Tributario Nacional: Impuesto a la Renta Empresarial (IRE), Impuesto a la Renta Personal (IRP), Impuesto al Valor Agregado (IVA).
-   - Prescripción tributaria a los 5 años y competencias de recaudación.
-
-7. **🇵🇾 Instituciones Públicas de la República del Paraguay (Leyes Orgánicas y Atribuciones):**
-   - **Ministerio Público / Fiscalía General del Estado (Ley Nº 1562/2000):** Titularidad exclusiva de la acción penal pública, dirección funcional de la Policía Judicial y criterio de objetividad.
-   - **Policía Nacional (Ley Nº 7338/2024 y Ley Nº 5757/2016):** Preservación del orden público, flagrancia y límites estrictos de aprehensión (6 horas para comunicar al fiscal, 24 horas para poner a disposición del juez penal de garantías).
-   - **Dirección Nacional de la Patrulla Caminera (Ley Nº 5016/2014):** Competencia exclusiva en la Red Vial Nacional (rutas nacionales y departamentales). Control de alcotest con tolerancia 0.00 mg/L y obligatoriedad de alcoholímetros calibrados por el INTN. Remisión fiscal obligatoria si supera 0.20 mg/L (Art. 217 CP). Prohibición expresa de retener registros como fianza de pago.
-   - **Ministerio de Justicia (Ley Nº 1652/2000):** Administración del sistema penitenciario y de la Dirección General del Registro del Estado Civil.
-   - **Poder Judicial y Corte Suprema de Justicia (Ley Nº 879/1981):** Organización de tribunales, superintendencia judicial y control de la Dirección General de los Registros Públicos (DGRP).
-   - **Ministerio de la Defensa Pública (Ley Nº 4423/2011):** Asistencia técnica a personas en estado de vulnerabilidad y defensa penal pública.
-   - **Dirección Nacional de Ingresos Tributarios - DNIT (Ley Nº 7143/2023):** Fusión operativa de la SET y la Dirección Nacional de Aduanas.
-   - **Ministerio de Trabajo, Empleo y Seguridad Social - MTESS (Ley Nº 5115/2013):** Autoridad administrativa del trabajo, homologación de acuerdos e inspección laboral.
-   - **Instituto de Previsión Social - IPS (Decreto-Ley Nº 1860/1950):** Cobertura del seguro social obligatorio de salud y jubilación.
-   - **Municipalidades y Policía Municipal de Tránsito - PMT (Ley Nº 3966/2010):** Jurisdicción estricta en el ejido urbano municipal.
-
-### 📚 Corpus Normativo del BACN & Arquitectura Local-First
-Para garantizar la máxima velocidad de respuesta y erradicar el consumo innecesario de tokens de IA, **OtelaxWisdom** incorpora el catálogo normativo completo de la **Biblioteca y Archivo Central del Congreso Nacional (BACN)**:
-
-- **7.133 fichas normativas** organizadas en archivos Markdown en la carpeta `LESGILACION PARAGUAYA/BACN/normas/` y sincronizadas en la base de datos MongoDB (`base_legal`).
-- **Constitución Nacional de la República del Paraguay (1992):** Documento íntegro con su preámbulo y los 291 artículos en `LESGILACION PARAGUAYA/constitucion_nacional.md`.
-- **Estructura de Índices y Relaciones:** El índice principal enlaza los índices de [códigos](LESGILACION%20PARAGUAYA/BACN/indices/codigos.md), [leyes](LESGILACION%20PARAGUAYA/BACN/indices/leyes.md), [instituciones públicas](LESGILACION%20PARAGUAYA/BACN/indices/instituciones.md) y [modificaciones y derogaciones detectadas](LESGILACION%20PARAGUAYA/BACN/indices/modificaciones-derogaciones.md). Cada ficha conserva los metadatos y enlaces de BACN, detectando **3.720 relaciones entre normas**.
-- **Alcance y Límites Jurídicos del Catálogo:**
-  - *Texto íntegro visible en HTML:* **2.836 fichas** exponen el articulado completo en texto estructurado.
-  - *Fichas con enlace a archivo oficial:* En **4.297 fichas** donde BACN no expuso texto legible en HTML, se preservaron todos los metadatos y el enlace directo de descarga al PDF oficial del BACN.
-  - *Vigencia y Modificaciones:* Las modificaciones y derogaciones son referencias analíticas detectadas en los textos, no una certificación oficial de vigencia ni un texto consolidado.
-- **Scraper Reanudable y Verificación de Integridad:** Se incluye el script de scraping reanudable (`scripts/scrape-bacn-laws.js`) y de ingesta (`scripts/ingest-bacn-to-db.js`). La verificación técnica confirmó **7.133 archivos íntegros**, sin fichas faltantes ni errores pendientes de sintaxis.
-- **Estrategia Local-First (Ahorro >85% de Tokens):** Techapyrã IA y el Editor Judicial consultan en primer término la base de datos local en MongoDB mediante índices de texto y coincidencias exactas por número de ley (`numeroLey`). Solo en caso de que una disposición no figure en el catálogo interno, el sistema procede a la consulta externa en portales oficiales, garantizando latencias mínimas y certidumbre jurídica.
-
-### ⚖️ Jurisprudencia Oficial de la Corte Suprema de Justicia (CSJ)
-Como complemento jurisprudencial de **OtelaxWisdom**, se integró el acervo histórico y contemporáneo de resoluciones del Poder Judicial paraguayo alojado en `LESGILACION PARAGUAYA/Jurisprudencia Paraguaya/`:
-
-- **72.375 fallos judiciales oficiales** estructurados en archivos Markdown organizados por tipo y año:
-  - **45.469 Acuerdos y Sentencias** (Salas Constitucional, Civil y Comercial, y Penal).
-  - **26.900 Autos Interlocutorios** emitidos por la máxima instancia judicial.
-  - **6 resoluciones** de tipo no especificado.
-- **Cobertura Textual y Enlaces Oficiales:**
-  - **70.928 fallos con texto íntegro extraído** de formatos PDF, DOC, DOCX y RTF mediante herramientas forenses (`antiword`, `unzip`, LibreOffice y `pdf-parse`).
-  - **1.447 fallos** preservan metadatos completos y enlaces directos de descarga al portal oficial de la CSJ (220 sin documento informado, 1.224 escaneados sin capa OCR en origen y 3 con archivos incompatibles).
-  - Cero fallos faltantes y cero errores pendientes de extracción.
-- **Clasificación Forense por Fueros:**
-  - **Constitucional:** 26.421 resoluciones (Acciones de inconstitucionalidad, Hábeas Corpus, Amparos).
-  - **Penal:** 17.153 resoluciones (Recursos extraordinarios de casación y revisión penal).
-  - **Civil y Comercial:** 13.103 resoluciones (Contratos, quiebras, sucesiones, derechos reales).
-  - **Contencioso Administrativo:** 13.077 resoluciones (Apelaciones contra fallos del Tribunal de Cuentas y actos estatales).
-  - **Laboral:** 2.178 resoluciones (Despidos injustificados, indemnizaciones tarifadas, estabilidad laboral).
-  - **Niñez y Adolescencia:** 414 resoluciones (Prestación de alimentos, régimen de relacionamiento, patria potestad).
-  - **Tributario:** 29 resoluciones (Determinaciones tributarias y aduaneras).
-- **Conexión Local-First en Tiempo Real:** El servicio `buscarJurisprudenciaCSJ()` consulta el catálogo estructurado local (`catalogo.json`) en menos de 70 milisegundos, proveyendo al modelo citas textuales exactas, números de fallo y enlaces oficiales sin saturar peticiones externas ni agotar tokens.
-- **Herramientas de Mantenimiento:** Incluye el scraper reanudable [`scripts/scrape-csj-jurisprudencia.js`](scripts/scrape-csj-jurisprudencia.js) y el generador de índices de fueros [`scripts/generate-jurisprudencia-indices.js`](scripts/generate-jurisprudencia-indices.js).
-
-### 🛡️ Principio de Vigencia Estricta
-SysJuridico aplica un filtro algorítmico continuo para aislar normas derogadas o históricas (como la Ley Nº 2597/2005 o la Ley Nº 5102/2013). Tanto el motor de RAG como el asistente Techapyrã IA consultan y citan prioritariamente **derecho positivo vigente**.
-
----
-
-## 🚀 Módulos y Capacidades del Sistema
-
-### 1. Centro Operativo Forense (Dashboard Inteligente)
-- **Pensamiento Jurídico & Motivación Forense:** Widget de reflexión deontológica con citas de juristas insignes (Eduardo J. Couture, Piero Calamandrei, Ulpiano, Ángel Ossorio y Gallardo) y botón interactivo `🎲 Otra reflexión`.
-- **4 Bento Cards Interactivos con Enlace Directo:**
-  - `NOVEDADES HOY` &rarr; Acceso directo a expedientes con novedades (`/expedientes.html?filtro=novedades`).
-  - `CADUCIDAD EN RIESGO` &rarr; Acceso directo filtrado a causas sin impulso procesal por más de 90 días conforme al Art. 172 del CPC (`/expedientes.html?filtro=caducidad`).
-  - `PLAZOS FATALES (7D)` &rarr; Navegación directa a la agenda judicial de vencimientos (`/agenda.html`).
-  - `PARA IMPULSAR` &rarr; Listado inmediato de causas activas en trámite (`/expedientes.html?filtro=impulsar`).
-- **Últimas Actuaciones:** Tarjeta con enlace directo al calendario y agenda forense.
-
-### 2. Gestión de Expedientes Judiciales & Honorarios
-- **Ficha Integral de Causa:** Carátula, número, año, juzgado/despacho, circunscripción judicial, materia, tipo de proceso y fase procesal.
-- **Autocompletado en Vivo de Cliente Titular:** Búsqueda predictiva conectada en tiempo real al CRM de Clientes por nombre, cédula de identidad y teléfono con autoselección y reseteo ágil.
-- **Banner de Filtro Activo:** Al ingresar por un KPI del dashboard, muestra una alerta explicativa con la cantidad de causas encontradas y un botón rápido `✕ Ver todos los expedientes`.
-- **Generación Automática de Créditos:** Vinculación directa con el plan de pagos y cuotas de honorarios al crear la causa.
-- **Exportación Forense:** Exportación a formato CSV para auditorías del despacho.
-
-### 3. Créditos, Cobranzas & Comprobantes POS de 80 mm
-- **Control Financiero:** Seguimiento de capital pactado, cobros acumulados y saldo pendiente por cliente y causa.
-- **Emisión de Tickets Térmicos:** Formato de 80 mm para impresoras térmicas de recibos con membrete formal, desglose de cuota y firma.
-- **Historial y Reimpresión:** Consulta instantánea de pagos anteriores.
-
-### 4. Agenda Jurídica & Audiencias
-- **Calendario Forense:** Visualización mensual y semanal de audiencias preliminares, juicios orales, traslados y reuniones.
-- **Alertas Procesales:** Código de colores por urgencia y asignación de abogado responsable.
-
-### 5. Calculadora Laboral MTESS (Ley 213/93)
-- **Asistente en 4 Pasos:** Liquidación precisa por despido injustificado, retiro justificado o renuncia voluntaria.
-- **Cálculo Exacto:** Preaviso, indemnización legal tarifada, aguinaldo proporcional, vacaciones causadas/fraccionadas y retención obrera IPS (9%).
-- **Exportación A4:** Documento imprimible listo para homologación en el MTESS.
-
-### 6. Editor Forense Judicial Estilo LibreOffice Writer
-- **Entorno de Redacción Forense Profesional:** Procesador de texto avanzado diseñado bajo la ergonomía de LibreOffice Writer y la fluidez de escritura de Google Docs, con soporte nativo de clic inmediato en foja y atajos de teclado (`Ctrl+B`, `Ctrl+I`, `Ctrl+U`, `Ctrl+S`, `Ctrl+F`, `Ctrl+Enter`).
-- **Barra de Menús y Doble Barra de Herramientas:**
-  - *Menú Superior:* Archivo, Editar, Ver, Insertar, Formato y Techapyrã IA.
-  - *Barra Estándar:* Nuevo escrito, Guardar en causa judicial, Descargar .DOCX/Word, Imprimir/PDF, Cortar, Copiar, Pegar, Deshacer/Rehacer, Búsqueda, Fórmulas CSJ y Márgenes.
-  - *Barra de Formato:* Selector de estilos de párrafo (Cuerpo, Títulos 1-3), tipografía forense (`Liberation Serif`, `Times New Roman CSJ`, `Arial`, etc.), tamaño en pt, negrita, cursiva, subrayado, tachado, alineaciones (izquierda, centro, derecha y justificado forense), viñetas, numeración, sangrías e interlineado procesal (1.5 líneas CSJ).
-- **Regla Horizontal Graduada Forense (0 a 18 cm):** Delimita visualmente en escala real la zona sombreada del margen izquierdo para cosido de expediente (4.0 cm), el área central útil de escritura y el margen derecho (2.0 cm).
-- **Marcas de Corte y Salto de Foja:** Marcas de esquina judiciales (`┌ ┐ └ ┘`) y soporte de saltos de página con cálculo dinámico de fojas (~250 palabras por carilla).
-- **Copiloto Techapyrã IA Optimizado (`/api/lexpy/editor-ai`):**
-  - Motor de baja latencia (<3s) y mínimo consumo de tokens enfocado en redacción quirúrgica.
-  - *Acciones rápidas con 1 clic:* Mejorar selección, Fundamentar con CSJ, Hechos cronológicos, Articulado de derecho, Petitorio formal, Excepción procesal previa y Polido de estilo.
-  - *Integración con Expediente y Documentos:* Inyecta automáticamente los antecedentes de la causa, carátula, demandante, demandado y resúmenes de documentos adjuntos (PDFs/escaneados).
-  - *Jurisprudencia CSJ:* Consulta e inserción directa de acordadas y fallos de la Corte Suprema de Justicia del Paraguay.
-- **Barra de Búsqueda y Reemplazo Integrada (Ctrl+F):** Navegación ágil y reemplazo unitario o masivo de términos.
-- **Contraste de Alta Legibilidad en Modos Claro y Oscuro:** Soporte universal garantizado en todas las listas desplegables, opciones `<select>`, lienzos y paletas de interfaz.
-
----
-
-## 🧠 Arquitectura de Inteligencia Artificial & RAG Local
-
-SysJurídico implementa un pipeline cognitivo estructurado en tres niveles:
-
-```
-                  ┌──────────────────────────────────────────────┐
-                  │              Abogado / Litigante             │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                                         ▼
-                  ┌──────────────────────────────────────────────┐
-                  │            Techapyrã IA Engine               │
-                  │       (Orquestador Semántico / RAG)          │
-                  └──────────────────────┬───────────────────────┘
-                                         │
-                    ┌────────────────────┴────────────────────┐
-                    ▼                                         ▼
-     ┌─────────────────────────────┐           ┌─────────────────────────────┐
-     │  NIVEL 1: MOTOR OTELAXWISDOM│           │ NIVEL 2: CONECTORES EN VIVO │
-     ├─────────────────────────────┤           ├─────────────────────────────┤
-     │ • BaseLegal (50+ Normas PY) │           │ • CSJ Jurisprudencia oficial│
-     │ • Aprendizaje Doctrinal RAG │           │ • BACN (Congreso Nacional)  │
-     │ • Filtro de Vigencia Positiva│          │ • SILpy / Gaceta Oficial    │
-     │ • Memoria Contextual Agente │           │ • Scraping determinista     │
-     └──────────────┬──────────────┘           └──────────────┬──────────────┘
-                    │                                         │
-                    └────────────────────┬────────────────────┘
-                                         │
-                                         ▼
-                  ┌──────────────────────────────────────────────┐
-                  │             SÍNTESIS Y GENERACIÓN            │
-                  │   DeepSeek V3 / OpenAI / Gemini / Groq       │
-                  │   Formateo estricto en Markdown forense      │
-                  └──────────────────────────────────────────────┘
-```
-
-1. **Recuperación Determinista:** Ante la mención de una norma (ej. Ley 1462, Ley 6715, Art. 172 CPC), el sistema recupera el registro exacto validando su vigencia.
-2. **Cero Alucinación Normativa:** Si una ley fue derogada, el motor lo advierte explícitamente y remite a la normativa vigente que la sustituye.
-3. **Respuesta en Markdown Profesional:** Respuestas organizadas con títulos `#`, citas textuales en bloque, listas de artículos y enlaces oficiales.
-
----
-
-## 🕸️ Red de Conocimiento Forense (Obsidian Graph View)
-
-Disponible en `/grafo.html`, este módulo transforma toda la base de datos jurídica en un grafo topológico interactivo impulsado por física de fuerzas:
-
-- **Hubs de Gravedad Temática:** 7 grandes nodos centrales correspondientes a los fueros jurídicos.
-- **Interconexión Dinámica:**
-  - Los códigos procesales se vinculan bilateralmente a los códigos sustantivos (CPC &harr; CC, CPP &harr; CP, CPL &harr; CL).
-  - La Constitución Nacional de 1992 actúa como vértice supremo conectado a todos los fueros.
-  - Las instituciones públicas se conectan tanto a su fuero orgánico como a sus competencias procesales.
-  - Cada expediente judicial se enlaza automáticamente con su cliente y con el código o fuero que rige su materia.
-- **Filtros por Chip:** Filtrado en tiempo real por Fueros, Leyes/Códigos, Instituciones, Enseñanzas RAG, Expedientes o Clientes.
-- **Visor Interactivo y Desglose de Artículos:** Al tocar cualquier norma legal o institución pública, se despliega el panel inspector lateral de 520 px con desglose artículo por artículo, buscador interno en vivo y botón individual de copiado.
-- **Modo Lectura Forense en Pantalla Completa:** Modal de alta legibilidad para lectura continua y búsqueda profunda dentro del articulado completo de la ley seleccionada.
-- **Compatibilidad con Obsidian:** Compatible con clientes de notas tipo Obsidian (mediante endpoints OpenAI-compatible en `/api/v1`).
-
----
-
-## 📂 Estructura del Proyecto
-
-```
+```text
 SysJuridico/
-├── .env.example              # Plantilla de variables de entorno (sin secretos)
-├── .gitignore                # Reglas estrictas de exclusión de credenciales
-├── docker-compose.yml        # Configuración de servicios (App + Traefik)
-├── Dockerfile                # Imagen optimizada en Node.js 20 Alpine
-├── package.json              # Dependencias y scripts de ejecución
-├── LICENSE                   # Licencia MIT de libre distribución
-├── public/                   # Frontend estático servido por Express
-│   ├── css/
-│   │   └── styles.css        # Sistema de diseño, temas dark/light y estilos de impresión
-│   ├── js/
-│   │   ├── api.js            # Cliente HTTP, navegación lateral y pie de página institucional
-│   │   ├── dashboard.js      # Lógica del Centro Operativo, pensamiento forense y KPIs
-│   │   ├── expedientes.js    # CRUD de causas, modal de carga, filtros y URL params
-│   │   ├── creditos.js       # Cobranzas y generación de tickets 80mm
-│   │   ├── editor.js         # Procesador de texto judicial y exportador
-│   │   ├── grafo.js          # Simulación física para la Red de Conocimiento OtelaxWisdom
-│   │   ├── lexpy.js          # Chat forense y redactor de escritos con Techapyrã
-│   │   └── liquidacion.js    # Motor de cálculo laboral MTESS
-│   ├── index.html            # Centro Operativo / Asistente Jurídico
-│   ├── expedientes.html      # Módulo de causas judiciales
-│   ├── creditos.html         # Módulo de créditos y cobranzas
-│   ├── editor.html           # Módulo de redacción forense
-│   ├── grafo.html            # Red de Conocimiento Obsidian Graph
-│   ├── lexpy.html            # Módulo de chat y redactor legal
-│   ├── liquidacion.html      # Módulo de liquidación laboral MTESS
-│   ├── agenda.html           # Calendario judicial
-│   └── login.html            # Portal de autenticación
-├── scripts/
-│   ├── seed-admin.js         # Creación del usuario administrador inicial
-│   ├── seed-otelax-wisdom.js # Ingesta masiva del corpus OtelaxWisdom (leyes e instituciones)
-│   ├── migrate-firestore.js  # Migración histórica desde Firebase Firestore
-│   └── inspect-firestore.js  # Diagnóstico de colecciones legadas
-└── server/
-    ├── server.js             # Punto de entrada de la aplicación Express
-    ├── config/
-    │   └── db.js             # Conexión persistente a MongoDB con Mongoose
-    ├── controllers/          # Controladores de negocio por módulo
-    ├── middleware/           # Autenticación JWT y manejador global de errores
-    ├── models/               # Modelos de datos (Expediente, Credito, BaseLegal, etc.)
-    ├── routes/               # Enrutadores RESTful versionados
-    ├── services/             # Lógica pesada (IA, Scraping, RAG, Liquidación, CSJ Sync, Memoria)
-    └── utils/                # Utilidades de respuesta HTTP y errores tipados
+├── Dockerfile                     # Imagen de producción en Node 22 Alpine con herramientas de sincronización
+├── package.json                   # Dependencias de producción y scripts de mantenimiento
+├── README.md                      # Mapa técnico y documentación maestra del sistema
+├── bundled/
+│   └── acervo/                    # Acervo normativo base empaquetado (fuera de volúmenes persistentes)
+├── data/
+│   └── otelaxwisdom/              # Volumen persistente (/app/data en producción)
+│       ├── acervo/                # Normas activas curadas (.md) sincronizadas
+│       ├── auto-aprendido/        # Aprendizajes indexados automáticamente desde .gov.py
+│       └── memoria-estudio/       # Memoria privada, estilo forense y cronologías por causa
+├── public/                        # Frontend institucional en JavaScript Vanilla
+│   ├── index.html                 # Tablero ejecutivo de mando y consulta rápida
+│   ├── expedientes.html           # Gestión de expedientes, cronología viva y fojas
+│   ├── editor.html                # Editor Judicial forense con guardado automático y versionado
+│   ├── lexpy.html                 # Chat Jurídico Techapyrã IA con carga de archivos y vinculación
+│   ├── otelaxwisdom.html          # Panel de administración y sincronización del acervo legal
+│   ├── liquidacion.html           # Calculadora de indemnizaciones laborales Ley 213/93
+│   ├── css/                       # Estilos institucionales y diseño forense profesional
+│   └── js/                        # Controladores frontend (dashboard, editor, expedientes, etc.)
+├── server/
+│   ├── config/
+│   │   ├── db.js                  # Conexión resiliente a MongoDB con Mongoose
+│   │   └── techapyraSystemPrompt.js # System Prompt Maestro unificado (Inicio, Chat, Editor)
+│   ├── controllers/               # Controladores HTTP de cada dominio procesal
+│   ├── middleware/                # Autenticación JWT, control de roles y manejo global de errores
+│   ├── models/                    # Esquemas Mongoose (Expediente, DocumentoExpediente, BorradorEditor, etc.)
+│   ├── routes/                    # Declaración modular de rutas REST
+│   ├── services/                  # Lógica de negocio, RAG, sincronización, OCR y enrutamiento de memoria
+│   └── server.js                  # Entrada principal del servidor HTTP y bootstrap
+└── scripts/                       # Scripts auxiliares de ingesta, seed y utilidades
 ```
 
 ---
 
-## ⚡ Instalación y Configuración
+## 4. Módulos Funcionales
 
-### Requisitos del Sistema
-- **Node.js**: v20.x LTS o superior
-- **MongoDB**: v7.0 o v8.0 (instancia local, réplica o servicio gestionado)
-- **Gestor de paquetes**: `npm` v10+
+### A. Inicio (Dashboard Ejecutivo)
+- **Supervisión de Cartera:** Monitorea en tiempo real expedientes activos, novedades del día, plazos en riesgo de caducidad de instancia (Art. 172 CPC: 3 meses en primera instancia, 6 meses en segunda) y finanzas del estudio.
+- **Asistente `MODO_INICIO`:** Integra una barra de consulta que responde sobre el estado global de causas, audiencias y documentos cargados con resúmenes claros.
 
-### Paso a Paso
+### B. Expedientes y Cronología Viva
+- **Gestión Integral de Causas:** Registro de carátula, número/año, juzgado, circunscripción, partes, cuantía, radicación judicial y fojas.
+- **Eliminación Segura en Cascada:** Al eliminar un expediente, se borran automáticamente sus documentos asociados (`DocumentoExpediente`), créditos, movimientos financieros y citas en agenda.
+- **Gestión Documental Multiformato:** Subida y almacenamiento seguro de resoluciones, providencias y escritos en `.pdf`, `.docx`, `.png`, `.jpg` y `.txt`. Extracción de texto y detección de fojas escaneadas sin OCR.
+- **Cronología y Memoria IA:** Historial cronológico de actuaciones procesales, consultas de chat vinculadas y borradores generados desde el Editor, respaldados en MongoDB y en disco Markdown.
+
+### C. Chat Jurídico (Techapyrã IA)
+- **Modo `MODO_CHAT`:** Conduce análisis jurídicos profundos, cómputo estricto de plazos procesales (días hábiles vs. corridos según CPC y CPP) y formulación de estrategias procesales.
+- **Análisis de Archivos en Línea:** Admite adjuntar escritos Word (`.docx`), documentos PDF e imágenes de cédulas o notificaciones procesales mediante botón 📎 o arrastrar y soltar (*drag & drop*).
+- **Enrutamiento Inteligente de Memoria:** Clasifica cada respuesta para nutrir la memoria de la causa, archivar conocimiento nuevo o descartar consultas generales sin generar ruido.
+
+### D. Editor Jurídico Forense
+- **Modo `MODO_EDITOR`:** Diseñado con parámetros de formato judicial de Paraguay: encabezado formal (`OBJETO:`, `SEÑOR JUEZ:`), personería procesal, hechos cronológicos, derecho positivo, petitorio numerado y cierre de estilo (*"PROVEER DE CONFORMIDAD Y SERÁ JUSTICIA"*).
+- **Persistencia y Versionado Automático:** Guarda automáticamente borradores en MongoDB (`BorradorEditor`), manteniendo versiones históricas (`v1`, `v2`, `v3`...), autoría y fecha.
+- **Vinculación a la Causa:** Si el escrito está asociado a un expediente, se sincroniza como documento oficial y genera un hito en la cronología viva de la causa.
+- **Exportación a `.docx` Nativo:** Genera documentos Word con márgenes judiciales regulados (4 cm izquierdo, 2 cm derecho) y tipografía formal.
+
+### E. OtelaxWisdom (Motor de Conocimiento)
+- **Tres Pestañas de Sabiduría:**
+  1. *Acervo Nacional (ZETTI):* 8 fueros jurídicos paraguayos y leyes especiales curadas en archivos `.md`.
+  2. *Memoria Privada del Estudio:* Directrices forenses internas (`estilo-forense-estudio.md`), modelos de escritos y fichas de clientes.
+  3. *Auto-Aprendido (.gov.py):* Conocimiento oficial descargado, validado e indexado dinámicamente desde portales del Estado paraguayo.
+- **Sincronización Idempotente:** Sincroniza contra el repositorio oficial `FUDAPY/LESGILACION_PARAGUAYA_ZETTI` mediante Git o descarga directa por tarball HTTPS.
+
+---
+
+## 5. Arquitectura RAG y Flujo de Conocimiento (OtelaxWisdom)
+
+```mermaid
+flowchart TD
+    User([Consulta / Redacción del Abogado]) --> ContextRouter{¿Tiene Expediente o Archivo?}
+    
+    ContextRouter -- Sí --> Capa1[Capa 1: Expedientes, PDFs, Word, OCR y Memoria de Causa]
+    ContextRouter -- No / Complemento --> Capa2[Capa 2: Acervo OtelaxWisdom Local - minScore >= 25]
+    
+    Capa1 --> Evaluador{¿Información suficiente y relevante?}
+    Capa2 --> Evaluador
+    
+    Evaluador -- Cobertura Alta --> PromptMaster[System Prompt Maestro: techapyraSystemPrompt.js]
+    Evaluador -- Insuficiente / Sin norma orgánica --> Capa3[Capa 3: Fallback Web Institucional .gov.py]
+    
+    Capa3 --> Scraping[Descarga oficial BACN / CSJ / Portales Ministeriales]
+    Scraping --> AutoLearn[Guardado en /app/data/otelaxwisdom/auto-aprendido/]
+    AutoLearn --> PromptMaster
+    
+    PromptMaster --> LLM[Inferencia IA: Gemini 2.5 Pro / DeepSeek]
+    LLM --> MemoriaRouter[server/services/memoriaRouterService.js]
+    
+    MemoriaRouter -->|Causa identificada| DestinoA[(Destino A: Memoria Expediente MongoDB + .md)]
+    MemoriaRouter -->|Doctrina / Modelo nuevo| DestinoB[(Destino B: Auto-Aprendido OtelaxWisdom)]
+    MemoriaRouter -->|Consulta general| DestinoC[(Destino C: Solo SesionChat - Anti-Ruido)]
+```
+
+### Las 3 Capas de Prioridad Normativa
+1. **Capa 1 (Expedientes, Documentos y Memoria Privada):** Datos estructurados del caso en MongoDB, texto extraído de fojas adjuntas (PDF, DOCX, imágenes OCR) y directrices de estilo del estudio.
+2. **Capa 2 (Acervo Local OtelaxWisdom):** Normativa positiva curada en 8 fueros paraguayos (Constitución Nacional, Códigos Civil, Penal, Laboral, Procesales, Niñez, Tributario y Administrativo). Se aplica filtro de términos genéricos y umbral estricto (`minScore >= 25`) para evitar citas tangenciales o irrelevantes.
+3. **Capa 3 (Fallback Web Institucional en `.gov.py`):** Si la consulta refiere a un organismo o disposición no contenida en el acervo local (ej. ministerios, secretarías o decretos recientes), el sistema acude a fuentes oficiales gubernamentales, extrae el texto verídico, responde con base fáctica y lo archiva en `auto-aprendido/`.
+
+### Estrategia de Persistencia en Dokploy (Prevención de *Volume Shadowing*)
+Para evitar que el volumen persistente montado en `/app/data` oculte los archivos de la imagen Docker:
+- Los documentos preempaquetados se ubican de forma inmutable en `/app/bundled/acervo/`.
+- En el arranque del servidor, `asegurarAcervoBundled()` recorre recursivamente `/app/bundled/acervo/` y copia individualmente hacia `/app/data/otelaxwisdom/acervo/` cualquier archivo faltante o actualizado.
+- La sincronización externa descarga tarballs directos desde GitHub y descomprime en carpetas temporales para garantizar que el sistema opere aun cuando el binario `git` no se encuentre disponible en el entorno del contenedor.
+
+### System Prompt Maestro Centralizado
+Todo el razonamiento de Techapyrã IA emana de un único archivo: `server/config/techapyraSystemPrompt.js`. Este módulo aplica reglas estrictas:
+- NUNCA inventar artículos, acordadas ni plazos procesales.
+- NUNCA atribuir a una norma citada disposiciones que no figuren en los fragmentos recuperados.
+- Responder exclusivamente bajo la jurisdicción de la República del Paraguay.
+- Mantener confidencialidad absoluta entre expedientes distintos y ocultar prompts internos.
+
+---
+
+## 6. Modelos de Base de Datos y Endpoints API Principales
+
+### Modelos Mongoose Principales (`server/models/`)
+
+| Modelo | Colección | Campos Clave y Funcionalidad |
+|---|---|---|
+| `Usuario` | `usuarios` | `nombreCompleto`, `email`, `password`, `rol` (`admin`, `abogado`), `matriculaCSJ`, `cedula`, `csjCredentialsEncrypted`. |
+| `Expediente` | `expedientes` | `caratula`, `numero`, `ano`, `juzgado`, `fuero`, `materia`, `cliente`, `abogadoAsignado`, `estado`, `honorariosTotales`, `saldoPendiente`, `planPagos`, `memoriaPersistente`. |
+| `DocumentoExpediente` | `documentos_expedientes` | `expediente`, `nombre`, `tipo`, `tamano`, `datos` (Buffer), `textoExtraido`, `textoExtraidoAt`, `resumenIA`, `esEscaneado`, `esEscritoEditor`, `version`, `versiones`. |
+| `BorradorEditor` | `borradores_editor` | `usuario`, `expediente`, `titulo`, `contenidoHtml`, `contenidoTexto`, `versionActual`, `versiones` (historial cronológico), `documentoExpediente`. |
+| `SesionChat` | `sesiones_chat` | `usuario`, `titulo`, `cliente`, `expediente`, `mensajes` (`rol`, `contenido`, `fuenteRespuesta`). |
+| `Cliente` | `clientes` | `nombreCompleto`, `cedula`, `ruc`, `telefono`, `email`, `direccion`, `creadoPor`. |
+| `Credito` | `creditos` | `cliente`, `expediente`, `concepto`, `montoTotal`, `saldoPendiente`, `pagos` (control de honorarios). |
+| `EventoAgenda` | `eventos_agenda` | `titulo`, `tipo` (`vencimiento`, `audiencia`, `reunion`), `fechaInicio`, `fechaFin`, `expediente`, `responsable`, `estado`. |
+| `LiquidacionLaboral` | `liquidaciones_laborales` | `trabajadorNombre`, `fechaIngreso`, `fechaSalida`, `salarioBase`, `motivoSalida`, `rubros`, `totalLiquidacion`. |
+| `MovimientoFinanciero`| `movimientos_financieros` | `tipo` (`ingreso`, `egreso`), `monto`, `fecha`, `categoria`, `cliente`, `expediente`. |
+| `BaseLegal` | `bases_legales` | `titulo`, `numeroLey`, `tipoNorma`, `fuero`, `estadoNormativo` (`VIGENTE`, `MODIFICADA`, `DEROGADA`), `articulos`. |
+
+### Endpoints API Principales (`server/routes/`)
+
+| Método | Endpoint | Middleware | Descripción y Propósito |
+|---|---|---|---|
+| `POST` | `/api/auth/login` | Público | Autenticación de usuarios y generación de token JWT. |
+| `GET` | `/api/auth/perfil` | `protect` | Obtiene el perfil forense y credenciales del usuario autenticado. |
+| `GET` | `/api/dashboard` | `protect`, `admin` | Métricas ejecutivas globales, flujo de caja y resumen procesal. |
+| `GET` | `/api/dashboard/mi-dia`| `protect` | Resumen de audiencias, vencimientos y causas del abogado logueado. |
+| `GET` | `/api/expedientes` | `protect` | Lista expedientes con control de acceso (admin: todos; abogado: asignados/compartidos). |
+| `POST` | `/api/expedientes` | `protect` | Registra nueva causa judicial con generación automática de plan de honorarios. |
+| `GET` | `/api/expedientes/:id` | `protect` | Detalle exhaustivo de una causa, partes intervinientes y saldo. |
+| `DELETE` | `/api/expedientes/:id` | `protect` | Eliminación en cascada de expediente y todas sus entidades dependientes. |
+| `POST` | `/api/expedientes/:id/actuaciones` | `protect` | Registra un hito en la memoria viva y cronología persistente de la causa. |
+| `GET` | `/api/expedientes/:id/documentos` | `protect` | Lista los metadatos de archivos adjuntos a un expediente. |
+| `POST` | `/api/expedientes/:id/documentos` | `protect` | Sube archivo (.pdf, .docx, .png), extrae texto y genera resumen analítico. |
+| `POST` | `/api/lexpy/chat` | `protect` | Consulta técnica a Techapyrã IA con soporte de adjuntos, memoria viva y enrutamiento. |
+| `POST` | `/api/lexpy/redactar` | `protect` | Genera borradores completos de demandas, contestaciones y contratos. |
+| `POST` | `/api/v1/editor/guardar` | `protect` | Guarda y versiona automáticamente escritos judiciales vinculados o independientes. |
+| `GET` | `/api/v1/editor/borradores` | `protect` | Lista borradores guardados del usuario en el Editor Forense. |
+| `POST` | `/api/v1/editor/export-docx` | `protect` | Genera y descarga archivo binario `.docx` con formato judicial paraguayo. |
+| `GET` | `/api/otelaxwisdom` | `protect` | Consulta el catálogo completo de normas curadas en el acervo local. |
+| `POST` | `/api/otelaxwisdom/sync-github` | `protect`, `admin` | Dispara sincronización oficial contra el repositorio de legislación paraguaya. |
+| `POST` | `/api/liquidacion/calcular` | `protect` | Calcula liquidación laboral conforme a los artículos 79 a 92 del Código del Trabajo. |
+
+---
+
+## 7. Variables de Entorno (.env)
+
+El sistema requiere las siguientes variables de configuración en su entorno de ejecución:
+
+| Variable | Obligatoria | Descripción y Uso |
+|---|---|---|
+| `NODE_ENV` | Sí | Entorno de ejecución (`development` o `production`). |
+| `PORT` | Sí | Puerto TCP de escucha para el servidor HTTP (por defecto `4000`). |
+| `HOST` | No | Dirección IP de enlace de red (por defecto `0.0.0.0`). |
+| `DATABASE_URL` | Sí | Cadena de conexión completa a la base de datos MongoDB. |
+| `JWT_SECRET` | Sí | Frase secreta criptográfica utilizada para firmar los tokens de sesión JWT. |
+| `JWT_EXPIRES_IN` | No | Tiempo de vigencia del token JWT emitido (ej. `7d`, `24h`). |
+| `ADMIN_SEED_EMAIL` | No | Correo electrónico inicial para la creación del usuario administrador predeterminado. |
+| `ADMIN_SEED_PASSWORD`| No | Contraseña inicial para el usuario administrador predeterminado. |
+| `GEMINI_API_KEY` | Sí | Clave de acceso a la API oficial de Google Gemini (`@google/genai`). |
+| `GEMINI_MODEL` | No | Identificador del modelo Gemini a utilizar (por defecto `gemini-2.5-pro`). |
+| `CSJ_ENCRYPTION_KEY` | No | Clave simétrica AES-256 para el almacenamiento cifrado de credenciales del portal CSJ. |
+| `OTELAX_BUNDLED_DIR` | No | Ruta del acervo preempaquetado fuera del volumen montado (por defecto `/app/bundled/acervo`). |
+| `OTELAXWISDOM_DATA_DIR` | No | Directorio destino para los archivos activos de legislación (por defecto `/app/data/otelaxwisdom/acervo`). |
+| `REPO_LEGISLACION_URL` | No | URL del repositorio Git oficial para sincronización legislativa. |
+| `REPO_LEGISLACION_TARBALL_URL` | No | URL pública para la descarga directa del tarball de legislación en GitHub. |
+| `LEXPY_AI_PROVIDER` | No | Proveedor de IA alternativo para entornos compatibles (`gemini`, `deepseek`, `openai`). |
+| `LEXPY_AI_API_KEY` | No | Clave de API para proveedores alternativos de IA. |
+| `LEXPY_AI_BASE_URL` | No | URL base de la API de IA alternativa (ej. `https://api.deepseek.com/v1`). |
+| `LEXPY_AI_MODEL` | No | Modelo a emplear en el proveedor alternativo (ej. `deepseek-chat`). |
+
+---
+
+## 8. Instalación Local y Despliegue en Producción (Dokploy)
+
+### A. Ejecución en Entorno Local (Desarrollo)
 
 1. **Clonar el repositorio:**
    ```bash
@@ -319,95 +257,67 @@ SysJuridico/
    cd SysJuridico
    ```
 
-2. **Instalar dependencias de producción:**
+2. **Instalar dependencias:**
    ```bash
    npm install
    ```
 
 3. **Configurar variables de entorno:**
+   Cree un archivo `.env` en la raíz del proyecto tomando como referencia las variables descritas en la sección anterior:
    ```bash
-   cp .env.example .env
-   # Configurar credenciales seguras en el archivo .env
+   NODE_ENV=development
+   PORT=4000
+   DATABASE_URL=mongodb://localhost:27017/sysjuridico
+   JWT_SECRET=clave_secreta_de_desarrollo_insegura_cambiar_en_produccion
+   GEMINI_API_KEY=tu_api_key_de_gemini
    ```
 
-4. **Inicializar la cuenta administradora:**
+4. **Inicializar datos y acervo:**
    ```bash
    npm run seed:admin
-   ```
-
-5. **Cargar la base de conocimiento OtelaxWisdom (leyes vigentes e instituciones):**
-   ```bash
    npm run seed:wisdom
    ```
 
-6. **Iniciar el servidor:**
+5. **Iniciar en modo desarrollo:**
    ```bash
-   # Modo desarrollo:
    npm run dev
-
-   # Modo producción:
-   npm start
    ```
+   Acceda a través del navegador en `http://localhost:4000`.
 
 ---
 
-## 🔐 Variables de Entorno
+### B. Despliegue en Producción con Dokploy
 
-Configuradas mediante el archivo `.env` en la raíz (nunca versionado en git):
+1. **Configuración de Aplicación en Dokploy:**
+   - Tipo de proyecto: **Application**.
+   - Origen: Repositorio GitHub vinculado (`main` branch).
+   - Build Type: **Dockerfile**.
+   - Puerto de contenedor expuesto: `4000`.
 
-| Clave | Obligatoria | Valor por Defecto | Descripción |
-|---|---|---|---|
-| `PORT` | No | `4000` | Puerto en el que escucha el servidor Express. |
-| `DATABASE_URL` | **Sí** | &mdash; | Cadena de conexión MongoDB (`mongodb://user:pass@host:27017/db?authSource=admin`). |
-| `JWT_SECRET` | **Sí** | &mdash; | Cadena criptográfica de alta entropía para firmar tokens de sesión. |
-| `JWT_EXPIRES_IN` | No | `8h` | Período de vigencia del token de autenticación. |
-| `ADMIN_SEED_EMAIL` | **Sí** | &mdash; | Correo electrónico para el administrador creado por `seed-admin`. |
-| `ADMIN_SEED_PASSWORD` | **Sí** | &mdash; | Contraseña segura para el administrador inicial. |
-| `LEXPY_AI_PROVIDER` | No | `deepseek` | Proveedor del motor inteligente: `deepseek`, `openai`, `gemini`, `openrouter`, `groq` o `none`. |
-| `LEXPY_AI_API_KEY` | Condicional | &mdash; | Clave de API del proveedor seleccionado. |
-| `LEXPY_AI_MODEL` | No | `deepseek-chat` | Modelo específico a consumir por Techapyrã IA. |
+2. **Volumen Persistente Obligatorio:**
+   Configure un volumen persistente para resguardar los archivos generados y los aprendizajes de la IA:
+   - **Host Path:** `/var/lib/dokploy/data/sysjuridico-data` (o ruta asignada por el panel).
+   - **Mount Path:** `/app/data`
 
----
+3. **Variables de Entorno en el Panel de Dokploy:**
+   Cargue obligatoriamente en la sección **Environment**:
+   - `NODE_ENV=production`
+   - `PORT=4000`
+   - `DATABASE_URL=mongodb://usuario:contraseña@servidor_mongo:27017/sysjuridico?authSource=admin`
+   - `JWT_SECRET=super_secret_jwt_key_produccion`
+   - `GEMINI_API_KEY=tu_api_key_de_gemini_produccion`
 
-## 📡 API REST & Endpoints Clave
-
-Todos los endpoints (excepto `/api/auth/login` y `/api/health`) requieren la cabecera `Authorization: Bearer <TOKEN_JWT>`.
-
-| Método | Endpoint | Descripción |
-|---|---|---|
-| `POST` | `/api/auth/login` | Autentica credenciales y entrega el token JWT. |
-| `GET` | `/api/dashboard` | Retorna métricas de ingresos, causas y saldos pendientes. |
-| `GET` | `/api/dashboard/mi-dia` | Entrega el briefing de plazos, vencimientos y caducidades. |
-| `GET/POST` | `/api/expedientes` | Lista causas judiciales con filtros o registra una nueva. |
-| `GET/PUT/DELETE`| `/api/expedientes/:id` | Consulta, actualiza o elimina un expediente del sistema. |
-| `POST` | `/api/expedientes/csj/sincronizar` | Sincroniza actuaciones directamente desde el portal de la CSJ. |
-| `GET/POST` | `/api/creditos` | Lista créditos o registra cobros con cálculo de saldo remanente. |
-| `POST` | `/api/liquidaciones/calcular` | Ejecuta el cálculo laboral bajo Ley 213/93 (sin persistir). |
-| `POST` | `/api/liquidaciones` | Calcula y almacena el registro formal de liquidación. |
-| `POST` | `/api/lexpy/chat` | Consulta al motor Techapyrã IA con resolución RAG local y oficial. |
-| `GET` | `/api/obsidian/grafo` | Entrega los nodos y enlaces para el visor interactivo OtelaxWisdom. |
-| `GET` | `/api/health` | Verificación de estado del servidor y conexión a base de datos. |
+4. **Verificación de Logs tras el Despliegue:**
+   Al iniciar el contenedor, compruebe en los registros de consola que el acervo empaquetado sea detectado y copiado al volumen persistente:
+   ```text
+   [OtelaxWisdom] Bundled path: /app/bundled/acervo (215 archivos .md encontrados) -> Destino: /app/data/otelaxwisdom/acervo (215 archivos .md activos)
+   [MongoDB] Conectado exitosamente
+   [SysJurídico] Servidor ejecutándose en el puerto 4000
+   ```
+   Si se requiere una actualización inmediata de leyes, acceda al panel **Gestor OtelaxWisdom** (`/otelaxwisdom.html`) con credenciales de administrador y presione **Sincronizar Acervo**.
 
 ---
 
-## 🛡️ Seguridad y Políticas de Despliegue
+## 9. Licencia
 
-1. **Zero Secrets Policy:** Ninguna clave de API, contraseña ni archivo de credenciales (`.env`, certificados) se almacena en el control de versiones. Las variables se inyectan a nivel de entorno en Dokploy.
-2. **Cabeceras Seguras:** Integración de `helmet` para aplicar *Content Security Policy*, prevenir *clickjacking* (`X-Frame-Options`) y mitigar ataques MIME-sniffing.
-3. **Control de Flujo:** `express-rate-limit` restringe ráfagas de solicitudes en rutas de autenticación y endpoints de análisis.
-4. **Validación Estricta:** Todas las entradas se procesan mediante `express-validator` sanitizando entradas para prevenir inyecciones NoSQL y XSS.
-
----
-
-## ⚖️ Licencia y Créditos Institucionales
-
-Distribuido bajo la Licencia **MIT**. Consulte el archivo [LICENSE](LICENSE) para más detalles.
-
-```
-Todos los derechos reservados.
-Sistema creado e impulsado por ZETTI DIGITAL PY (https://zetti.grupooh.online)
-Autor: Giuliano Emanuel Maria Catella Riveros
-```
-
-- **Sitio Web Oficial:** [https://zetti.grupooh.online](https://zetti.grupooh.online)
-- **Repositorio Oficial:** [https://github.com/FUDAPY/SysJuridico](https://github.com/FUDAPY/SysJuridico)
+Este proyecto se distribuye bajo los términos de la **Licencia MIT**. Consulte el archivo [LICENSE](LICENSE) para más detalles.

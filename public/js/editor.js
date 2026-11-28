@@ -967,8 +967,50 @@ document.addEventListener('DOMContentLoaded', async () => {
   setTimeout(actualizarMetricas, 150);
 
   // =========================================================================
-  // 12. GUARDADO EN EXPEDIENTE Y DESCARGA DOCX
+  // 12. GUARDADO EN EXPEDIENTE, VERSIONADO Y DESCARGA DOCX
   // =========================================================================
+  let borradorActualId = null;
+
+  async function guardarEscritoEnBackend(forzarModal = false) {
+    const expId = expedienteActivo?._id || (selectGuardarExpediente?.value || null);
+    if (!expId && forzarModal) {
+      abrirModalGuardar();
+      return;
+    }
+
+    const titulo = (tituloDocInput?.value.trim() || 'Escrito Judicial');
+    const contenidoHTML = hoja.innerHTML;
+
+    try {
+      const resp = await apiFetch('/v1/editor/guardar', {
+        method: 'POST',
+        body: {
+          borradorId: borradorActualId,
+          expedienteId: expId,
+          titulo,
+          contenidoHtml: contenidoHTML,
+        },
+      });
+
+      if (resp?.data?.borradorId) {
+        borradorActualId = resp.data.borradorId;
+      }
+      return resp;
+    } catch (err) {
+      console.warn('[Editor] Error al persistir borrador en MongoDB:', err.message);
+    }
+  }
+
+  // Auto-guardado inteligente cada 5 segundos al escribir
+  let timerAutoGuardado = null;
+  hoja.addEventListener('input', () => {
+    actualizarMetricas();
+    clearTimeout(timerAutoGuardado);
+    timerAutoGuardado = setTimeout(() => {
+      guardarEscritoEnBackend(false);
+    }, 5000);
+  });
+
   function abrirModalGuardar() {
     if (!modalGuardarCaso) return;
     modalGuardarCaso.classList.remove('oculto');
@@ -994,16 +1036,23 @@ document.addEventListener('DOMContentLoaded', async () => {
       btnConfirmarGuardarCaso.textContent = 'Guardando...';
 
       const contenidoHTML = hoja.innerHTML;
-      await apiFetch(`/expedientes/${expId}/actuaciones`, {
+      const tituloFinal = tituloDocInput?.value.trim() || nombre;
+
+      const resp = await apiFetch('/v1/editor/guardar', {
         method: 'POST',
         body: {
-          tipo: 'Escrito Judicial',
-          descripcion: `Escrito: ${nombre} redactado en Editor Forense`,
-          contenido: contenidoHTML,
+          borradorId: borradorActualId,
+          expedienteId: expId,
+          titulo: tituloFinal,
+          contenidoHtml: contenidoHTML,
         },
       });
 
-      alert('¡Escrito judicial guardado con éxito en el expediente!');
+      if (resp?.data?.borradorId) {
+        borradorActualId = resp.data.borradorId;
+      }
+
+      alert(`¡Escrito judicial guardado con éxito en el expediente! (Versión v${resp?.data?.versionActual || 1})`);
       modalGuardarCaso?.classList.add('oculto');
     } catch (e) {
       alert('Error guardando en el expediente: ' + e.message);

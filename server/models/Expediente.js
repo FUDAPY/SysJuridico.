@@ -103,6 +103,25 @@ const expedienteSchema = new mongoose.Schema(
         foja: { type: String, default: '' },
       },
     ],
+
+    // ---- Memoria Persistente y Cronología Viva del Expediente ----
+    memoriaPersistente: [
+      {
+        fecha: { type: Date, default: Date.now },
+        tipo: {
+          type: String,
+          enum: ['CONSULTA_CHAT', 'ANALISIS_ARCHIVO', 'ESCRITO_EDITOR', 'ACTUACION_PROCESAL', 'OTRO'],
+          default: 'CONSULTA_CHAT',
+        },
+        titulo: { type: String, default: '' },
+        resumenHechosYDecisiones: { type: String, default: '' },
+        plazosDetectados: [{ type: String }],
+        archivosAsociados: [{ type: String }],
+        documentoId: { type: mongoose.Schema.Types.ObjectId, ref: 'DocumentoExpediente', default: null },
+        autor: { type: mongoose.Schema.Types.ObjectId, ref: 'Usuario', default: null },
+        autorNombre: { type: String, default: '' },
+      },
+    ],
   },
   { timestamps: true }
 );

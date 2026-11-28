@@ -6,11 +6,63 @@ const { procesarConsultaLexPY, procesarAsistenteEditor } = require('../services/
 const { redactarBorrador } = require('../services/draftService');
 const { destilarYGuardarMemoria, obtenerNormaPorId, buscarNormas } = require('../services/agentMemoryService');
 
-// POST /api/lexpy/chat  { pregunta, sesionId?, cliente?, expediente? }
+// POST /api/lexpy/chat  { pregunta, sesionId?, cliente?, expediente?, modo?, archivosAdjuntos? }
 const chat = asyncHandler(async (req, res) => {
-  const { pregunta, sesionId, cliente, expediente } = req.body;
+  const { pregunta, sesionId, cliente, expediente, modo, archivosAdjuntos } = req.body;
   if (!pregunta || !pregunta.trim()) {
     throw new ApiError(400, 'La pregunta es obligatoria.');
+  }
+
+  const { extraerTextoDeBuffer, analizarYResumirDocumento } = require('../services/documentProcessorService');
+  const DocumentoExpediente = require('../models/DocumentoExpediente');
+  const { enrutarMemoriaTurno } = require('../services/memoriaRouterService');
+
+  // Procesamiento previo de archivos adjuntos (.docx, .pdf, .png/.jpg con OCR)
+  const archivosProcesados = [];
+  if (Array.isArray(archivosAdjuntos) && archivosAdjuntos.length > 0) {
+    for (const arch of archivosAdjuntos) {
+      if (arch.bufferBase64) {
+        try {
+          const buffer = Buffer.from(arch.bufferBase64, 'base64');
+          const { texto, esEscaneado, paginas } = await extraerTextoDeBuffer({
+            buffer,
+            tipo: arch.tipo || '',
+            nombre: arch.nombre || 'archivo',
+          });
+
+          arch.textoExtraido = texto;
+          archivosProcesados.push({
+            nombre: arch.nombre || 'archivo',
+            tipo: arch.tipo || '',
+            textoExtraido: texto,
+          });
+
+          // Si la consulta está vinculada a un expediente, guardar el archivo físicamente en la causa
+          if (expediente) {
+            const { resumenIA } = await analizarYResumirDocumento({
+              texto,
+              nombre: arch.nombre,
+            }).catch(() => ({ resumenIA: `Archivo adjunto: ${arch.nombre}` }));
+
+            await DocumentoExpediente.create({
+              expediente,
+              nombre: arch.nombre,
+              tipo: arch.tipo || '',
+              tamano: buffer.length,
+              datos: buffer,
+              subidoPor: req.usuario._id,
+              textoExtraido: texto,
+              textoExtraidoAt: new Date(),
+              resumenIA,
+              esEscaneado: !!esEscaneado,
+              paginas: paginas || 1,
+            }).catch((errDoc) => console.warn('[LexPY] Error guardando archivo en expediente:', errDoc.message));
+          }
+        } catch (errP) {
+          console.warn(`[LexPY] Error procesando archivo "${arch.nombre}":`, errP.message);
+        }
+      }
+    }
   }
 
   const { respuesta, fuente } = await procesarConsultaLexPY({
@@ -18,6 +70,8 @@ const chat = asyncHandler(async (req, res) => {
     usuarioId: req.usuario._id,
     clienteId: cliente || null,
     expedienteId: expediente || null,
+    modo: modo || 'MODO_CHAT',
+    archivosAdjuntos: archivosProcesados,
   });
 
   let sesion = sesionId ? await SesionChat.findById(sesionId) : null;
@@ -35,14 +89,16 @@ const chat = asyncHandler(async (req, res) => {
   sesion.mensajes.push({ rol: 'asistente', contenido: respuesta, fuenteRespuesta: fuente });
   await sesion.save();
 
-  // Destilación asíncrona de memoria agéntica (no bloquea el response)
-  destilarYGuardarMemoria({
-    usuarioId: req.usuario._id,
-    expedienteId: expediente || sesion.expediente || null,
-    clienteId: cliente || sesion.cliente || null,
+  // Enrutamiento inteligente de memoria persistente (Destino A, B o C)
+  enrutarMemoriaTurno({
     pregunta,
     respuesta,
-  }).catch((err) => console.warn('[LexPY] Error destilando memoria:', err.message));
+    usuarioId: req.usuario._id,
+    expedienteId: expediente || sesion.expediente || null,
+    fuenteRespuesta: fuente,
+    archivosAdjuntos: archivosProcesados.map((a) => a.nombre),
+    tipoHito: archivosProcesados.length ? 'ANALISIS_ARCHIVO' : 'CONSULTA_CHAT',
+  }).catch((err) => console.warn('[LexPY] Error enrutando memoria:', err.message));
 
   res.json({ success: true, data: { respuesta, fuente, sesionId: sesion._id } });
 });

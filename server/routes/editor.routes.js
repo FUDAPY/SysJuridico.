@@ -107,4 +107,166 @@ router.post('/analizar-pdf', protect, async (req, res, next) => {
   }
 });
 
+// Guardado y versionado automático de escritos en MongoDB y Expedientes
+router.post('/guardar', protect, async (req, res, next) => {
+  try {
+    const { borradorId, expedienteId, titulo, contenidoHtml, contenidoTexto } = req.body;
+    const BorradorEditor = require('../models/BorradorEditor');
+    const DocumentoExpediente = require('../models/DocumentoExpediente');
+    const Expediente = require('../models/Expediente');
+    const { actualizarRespaldoMdExpediente } = require('../services/memoriaRouterService');
+
+    let borrador = null;
+    if (borradorId) {
+      borrador = await BorradorEditor.findOne({ _id: borradorId, usuario: req.usuario._id });
+    }
+
+    const tituloFinal = (titulo || 'Escrito Judicial').trim();
+    const textoLimpio = contenidoTexto || (contenidoHtml ? contenidoHtml.replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim() : '');
+
+    if (borrador) {
+      // Guardar versión anterior en historial
+      borrador.versiones.push({
+        version: borrador.versionActual,
+        fecha: new Date(),
+        titulo: borrador.titulo,
+        contenidoHtml: borrador.contenidoHtml,
+        contenidoTexto: borrador.contenidoTexto,
+        autor: req.usuario._id,
+        autorNombre: req.usuario.nombre || req.usuario.nombreCompleto || 'Abogado',
+      });
+      borrador.versionActual += 1;
+      borrador.titulo = tituloFinal;
+      borrador.contenidoHtml = contenidoHtml || '';
+      borrador.contenidoTexto = textoLimpio;
+      if (expedienteId) borrador.expediente = expedienteId;
+      await borrador.save();
+    } else {
+      borrador = await BorradorEditor.create({
+        usuario: req.usuario._id,
+        expediente: expedienteId || null,
+        titulo: tituloFinal,
+        contenidoHtml: contenidoHtml || '',
+        contenidoTexto: textoLimpio,
+        versionActual: 1,
+        versiones: [],
+      });
+    }
+
+    // Si está vinculado a un expediente, registrar en DocumentoExpediente y cronología de la causa
+    let documentoExpedienteId = null;
+    if (expedienteId) {
+      const exp = await Expediente.findById(expedienteId);
+      if (exp) {
+        const bufferHtml = Buffer.from(contenidoHtml || '', 'utf8');
+        const nombreArchivo = `${tituloFinal.replace(/[^a-zA-Z0-9_\-\s]/g, '')}_v${borrador.versionActual}.html`;
+
+        let docExp = null;
+        if (borrador.documentoExpediente) {
+          docExp = await DocumentoExpediente.findById(borrador.documentoExpediente);
+        }
+
+        if (docExp) {
+          docExp.versiones.push({
+            version: docExp.version,
+            fecha: new Date(),
+            autor: req.usuario._id,
+            autorNombre: req.usuario.nombre || req.usuario.nombreCompleto || 'Abogado',
+            texto: docExp.textoExtraido,
+            titulo: docExp.nombre,
+          });
+          docExp.version += 1;
+          docExp.nombre = nombreArchivo;
+          docExp.datos = bufferHtml;
+          docExp.tamano = bufferHtml.length;
+          docExp.textoExtraido = textoLimpio;
+          docExp.textoExtraidoAt = new Date();
+          await docExp.save();
+        } else {
+          docExp = await DocumentoExpediente.create({
+            expediente: exp._id,
+            nombre: nombreArchivo,
+            tipo: 'text/html',
+            tamano: bufferHtml.length,
+            datos: bufferHtml,
+            subidoPor: req.usuario._id,
+            textoExtraido: textoLimpio,
+            textoExtraidoAt: new Date(),
+            resumenIA: `Escrito judicial: ${tituloFinal} (v${borrador.versionActual})`,
+            esEscaneado: false,
+            esEscritoEditor: true,
+            version: borrador.versionActual,
+            paginas: 1,
+          });
+          borrador.documentoExpediente = docExp._id;
+          await borrador.save();
+        }
+
+        documentoExpedienteId = docExp._id;
+
+        // Registrar hito en cronología / memoria persistente
+        exp.memoriaPersistente.push({
+          fecha: new Date(),
+          tipo: 'ESCRITO_EDITOR',
+          titulo: `${tituloFinal} (v${borrador.versionActual})`,
+          resumenHechosYDecisiones: `Escrito redactado desde el Editor Forense (v${borrador.versionActual}): ${textoLimpio.slice(0, 300)}...`,
+          plazosDetectados: [],
+          archivosAsociados: [nombreArchivo],
+          documentoId: docExp._id,
+          autor: req.usuario._id,
+          autorNombre: req.usuario.nombre || req.usuario.nombreCompleto || 'Abogado',
+        });
+
+        exp.ultimaActuacionTexto = `Escrito: ${tituloFinal} (v${borrador.versionActual})`;
+        await exp.save();
+        await actualizarRespaldoMdExpediente(exp);
+      }
+    }
+
+    res.json({
+      success: true,
+      data: {
+        borradorId: borrador._id,
+        versionActual: borrador.versionActual,
+        titulo: borrador.titulo,
+        expedienteId: borrador.expediente,
+        documentoExpedienteId,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Listado de borradores del usuario
+router.get('/borradores', protect, async (req, res, next) => {
+  try {
+    const BorradorEditor = require('../models/BorradorEditor');
+    const filtro = { usuario: req.usuario._id };
+    if (req.query.expedienteId) {
+      filtro.expediente = req.query.expedienteId;
+    }
+    const borradores = await BorradorEditor.find(filtro)
+      .populate('expediente', 'caratula numero ano juzgado fuero')
+      .sort({ updatedAt: -1 })
+      .lean();
+    res.json({ success: true, data: borradores });
+  } catch (err) {
+    next(err);
+  }
+});
+
+// Obtener un borrador específico
+router.get('/borradores/:id', protect, async (req, res, next) => {
+  try {
+    const BorradorEditor = require('../models/BorradorEditor');
+    const borrador = await BorradorEditor.findOne({ _id: req.params.id, usuario: req.usuario._id })
+      .populate('expediente', 'caratula numero ano juzgado fuero');
+    if (!borrador) return res.status(404).json({ success: false, error: 'Borrador no encontrado' });
+    res.json({ success: true, data: borrador });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

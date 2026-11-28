@@ -22,33 +22,71 @@ async function extraerTextoDeBuffer({ buffer, tipo = '', nombre = '' }) {
       const textoLimpio = (data.text || '').replace(/\s+/g, ' ').trim();
       const paginas = data.numpages || 1;
 
-      // Si el texto es mínimo a pesar de tener páginas, es un PDF escaneado
-      const esEscaneado = textoLimpio.length < 50 && paginas >= 1;
+      // Si el texto es mínimo o vacío, es un PDF escaneado sin capa de texto seleccionable
+      const esEscaneado = textoLimpio.length < 20;
+      const textoFinal = esEscaneado
+        ? '[PDF sin capa de texto seleccionable — requiere OCR]'
+        : textoLimpio;
 
       return {
-        texto: textoLimpio,
+        texto: textoFinal,
         esEscaneado,
         paginas,
       };
     } catch (err) {
       console.warn('[DocProcessor] Error extrayendo texto de PDF:', err.message);
-      return { texto: '', esEscaneado: true, paginas: 1 };
+      return { texto: '[PDF sin capa de texto seleccionable — requiere OCR]', esEscaneado: true, paginas: 1 };
     }
   }
 
-  // 2. Archivo HTML o Texto Plano
+  // 2. Archivo Word / DOCX
+  if (tipoLower.includes('word') || tipoLower.includes('docx') || nombreLower.endsWith('.docx') || nombreLower.endsWith('.doc')) {
+    try {
+      const mammoth = require('mammoth');
+      const result = await mammoth.extractRawText({ buffer });
+      const textoLimpio = (result.value || '').replace(/\s+/g, ' ').trim();
+      return {
+        texto: textoLimpio || `[Documento Word "${nombre}" sin contenido de texto legible]`,
+        esEscaneado: false,
+        paginas: 1,
+      };
+    } catch (err) {
+      console.warn('[DocProcessor] Error extrayendo texto de Word (.docx):', err.message);
+      const fallback = buffer.toString('utf8').slice(0, 3000).replace(/[^\x20-\x7E\xA0-\xFF\n]/g, ' ').trim();
+      return { texto: fallback || `[Documento Word: ${nombre}]`, esEscaneado: false, paginas: 1 };
+    }
+  }
+
+  // 3. Imágenes (.png, .jpg, .jpeg, .webp) con OCR Tesseract en español
+  if (tipoLower.includes('image') || /\.(png|jpe?g|webp|bmp|tiff?)$/i.test(nombreLower)) {
+    try {
+      const { createWorker } = require('tesseract.js');
+      const worker = await createWorker('spa');
+      const ret = await worker.recognize(buffer);
+      await worker.terminate();
+      const textoOcr = (ret.data?.text || '').replace(/\s+/g, ' ').trim();
+      const esVacio = textoOcr.length < 10;
+      return {
+        texto: esVacio
+          ? `[IMAGEN JUDICIAL: ${nombre}] Imagen adjunta sin texto legible detectado por OCR.`
+          : `[TEXTO EXTRAÍDO POR OCR DE IMAGEN: ${nombre}]\n${textoOcr}`,
+        esEscaneado: true,
+        paginas: 1,
+      };
+    } catch (err) {
+      console.warn('[DocProcessor] Error ejecutando OCR de imagen:', err.message);
+      return {
+        texto: `[DOCUMENTO ESCANEADO: ${nombre}] Imagen judicial adjunta.`,
+        esEscaneado: true,
+        paginas: 1,
+      };
+    }
+  }
+
+  // 4. Archivo HTML o Texto Plano
   if (tipoLower.includes('text') || tipoLower.includes('html') || nombreLower.endsWith('.html') || nombreLower.endsWith('.txt')) {
     const texto = buffer.toString('utf8').replace(/<[^>]*>?/gm, ' ').replace(/\s+/g, ' ').trim();
     return { texto, esEscaneado: false, paginas: 1 };
-  }
-
-  // 3. Archivo Word / DOCX / Imagen escaneada
-  if (tipoLower.includes('image') || nombreLower.endsWith('.jpg') || nombreLower.endsWith('.png') || nombreLower.endsWith('.jpeg')) {
-    return {
-      texto: `[DOCUMENTO ESCANEADO: ${nombre}] Imagen judicial adjunta al expediente.`,
-      esEscaneado: true,
-      paginas: 1,
-    };
   }
 
   // Fallback genérico

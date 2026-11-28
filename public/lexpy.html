@@ -170,13 +170,18 @@
               <small style="color:var(--texto-muted)">Legislación Paraguaya &bull; Consulta en tiempo real</small>
             </div>
           </div>
-          <button class="btn-secundario btn-sm" onclick="limpiarChat()">Nueva Conversación</button>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <select id="selectExpedienteChat" style="max-width:240px; font-size:0.8rem; padding:6px 8px; border-radius:8px; border:1px solid var(--borde); background:var(--bg-input); color:var(--texto);" title="Vincular a una causa judicial">
+              <option value="">📁 Vincular a Expediente (Opcional)</option>
+            </select>
+            <button class="btn-secundario btn-sm" onclick="limpiarChat()">Nueva Conversación</button>
+          </div>
         </div>
 
         <div class="chat-mensajes" id="chatMensajes">
           <div class="chat-burbuja chat-asistente">
             <strong>¡Hola! Soy Techapyrã, el asistente jurídico de LIN GROUP &amp; Asociados.</strong>
-            <p style="margin-top:6px">Estoy conectado a la base jurídica local y fuentes de jurisprudencia de la República del Paraguay. ¿Qué consulta o análisis jurídico deseas realizar?</p>
+            <p style="margin-top:6px">Estoy conectado a la base jurídica local y fuentes de jurisprudencia de la República del Paraguay. Podés realizar consultas, adjuntar escritos (.docx), resoluciones (.pdf) o fotos de cédulas/notificaciones (.png/.jpg) para analizarlas en tiempo real.</p>
             
             <div class="sugerencias-grid">
               <div class="sugerencia-chip" onclick="usarSugerencia('¿Cuáles son los plazos perentorios para contestar una demanda ordinaria en Paraguay?')">
@@ -192,8 +197,13 @@
           </div>
         </div>
 
-        <div class="chat-footer">
-          <input class="chat-entrada-input" id="entradaChat" placeholder="Escriba su consulta legal o duda procesal..." />
+        <!-- Previsualizador de archivos listos para adjuntar -->
+        <div id="cajaArchivosAdjuntosChat" style="padding: 6px 14px; display: none; gap: 8px; flex-wrap: wrap; background: var(--bg-subtle); border-top: 1px solid var(--borde);"></div>
+
+        <div class="chat-footer" id="dropZoneChat">
+          <input type="file" id="inputArchivoChat" multiple accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.webp" style="display:none;" onchange="manejarSeleccionArchivosChat(event)" />
+          <button class="btn-secundario" type="button" style="padding: 8px 12px; font-size: 1.15rem;" onclick="document.getElementById('inputArchivoChat').click()" title="Adjuntar documento (.docx, .pdf) o imagen (.png, .jpg)">📎</button>
+          <input class="chat-entrada-input" id="entradaChat" placeholder="Escriba su consulta o arrastre archivos (.docx, .pdf, .png)..." />
           <button class="btn-primario" onclick="enviarPregunta()">
             <span>Enviar</span> &rarr;
           </button>

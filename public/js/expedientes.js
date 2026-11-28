@@ -407,6 +407,33 @@ function verDetalleExpediente(expediente) {
     : '<p style="color:var(--texto-suave)">Sin plan de pagos asociado.</p>';
 
   document.getElementById('detSaldo').textContent = `Saldo pendiente: ${formatoGs(expediente.saldoPendiente)}`;
+
+  // Renderizar Cronología & Memoria Viva IA del Expediente
+  const elCron = document.getElementById('detCronologiaIA');
+  if (elCron) {
+    const hitos = expediente.memoriaPersistente || [];
+    if (hitos.length) {
+      elCron.innerHTML = hitos
+        .slice()
+        .reverse()
+        .map(
+          (h) => `
+        <div style="padding:8px 12px; background:var(--bg-card); border-radius:8px; border:1px solid var(--borde);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <span style="font-weight:700; color:var(--texto); font-size:0.85rem;">[${h.tipo}] ${escaparHtml(h.titulo || 'Actuación')}</span>
+            <small style="color:var(--texto-muted); font-size:0.75rem;">${formatoFecha(h.fecha)}</small>
+          </div>
+          <p style="margin:0; color:var(--texto-secundario); font-size:0.8rem; line-height:1.4;">${escaparHtml(h.resumenHechosYDecisiones || '')}</p>
+          ${h.plazosDetectados?.length ? `<div style="margin-top:4px;"><span class="badge" style="background:#FEF2F2; color:#DC2626; border:1px solid #FECACA; font-size:0.7rem;">Plazos: ${h.plazosDetectados.join(', ')}</span></div>` : ''}
+          ${h.archivosAsociados?.length ? `<div style="margin-top:4px;"><span class="badge" style="background:#F0FDF4; color:#16A34A; border:1px solid #BBF7D0; font-size:0.7rem;">📎 ${h.archivosAsociados.join(', ')}</span></div>` : ''}
+        </div>`
+        )
+        .join('');
+    } else {
+      elCron.innerHTML = '<p style="color:var(--texto-muted); font-size:0.8rem; margin:0;">No hay actuaciones ni consultas registradas en la memoria de esta causa.</p>';
+    }
+  }
+
   cargarDocumentosExpediente(expediente._id);
 }
 

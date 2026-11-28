@@ -6,6 +6,8 @@ const { generarRespuestaIA } = require('./aiProviderService');
 const { recuperarMemoriaContextual } = require('./agentMemoryService');
 const { buscarEnOtelaxWisdom, obtenerEstiloForense } = require('./otelaxWisdomService');
 const { ejecutarFallbackInstitucional } = require('./institutionalWebFallback');
+const { buildTechapyraPrompt } = require('../config/techapyraSystemPrompt');
+const { buscarContextoExpedientesYPDFs } = require('./expedientesContextService');
 
 const UMBRAL_RESULTADOS_LOCALES = 1;
 
@@ -74,20 +76,16 @@ async function buscarEnBaseLocal(consulta) {
   // Búsqueda por texto completo en base legal
   if (!baseLegal.length) {
     try {
-      baseLegal = await BaseLegal.find(
+      const rawBase = await BaseLegal.find(
         { $text: { $search: consulta }, ...filtroVigencia },
         { score: { $meta: 'textScore' } }
       )
         .sort({ score: { $meta: 'textScore' } })
         .limit(3);
+      // Solo admitir si tiene una relevancia sustantiva real (textScore >= 2.5)
+      baseLegal = rawBase.filter((b) => (b._doc?.score || 0) >= 2.5);
     } catch {
-      baseLegal = await BaseLegal.find({
-        ...filtroVigencia,
-        $or: [
-          { titulo: { $regex: consulta.slice(0, 30), $options: 'i' } },
-          { contenido: { $regex: consulta.slice(0, 30), $options: 'i' } },
-        ],
-      }).limit(2);
+      baseLegal = [];
     }
   }
 
@@ -183,7 +181,8 @@ const SYSTEM_PROMPT_TECHAPYRA = `Eres Techapyrã IA, el asistente jurídico prof
 3. Cobertura Normativa: Cuando un documento local específico no se encuentre adjunto en el contexto inmediato, fundamenta tu respuesta con base en la legislación positiva vigente, doctrina nacional consolidada y principios generales del derecho paraguayo sin inventar disposiciones ni alucinar fuentes inexistentes.
 4. Tono y Rigor Procesal: Mantén un lenguaje forense sobrio, técnico, conciso y de alto nivel.
 5. Principio de Vigencia Estricta: Aplica exclusivamente disposiciones vigentes. En caso de normas modificadas o derogadas, adviértelo explícitamente e invoca el texto vigente aplicable.
-6. Licenciamiento y Seguridad: Todo código, script o plantilla generada se licencia bajo MIT para ZETTI DIGITAL PY de Giuliano Catella, manteniendo estricta confidencialidad de secretos y credenciales.`;
+6. Licenciamiento y Seguridad: Todo código, script o plantilla generada se licencia bajo MIT para ZETTI DIGITAL PY de Giuliano Catella, manteniendo estricta confidencialidad de secretos y credenciales.
+7. Regla Estricta Anti-Alucinación y Cobertura: NUNCA atribuyas a una ley citada contenido que no figure literalmente en el fragmento recuperado. Si las fuentes recuperadas solo mencionan el tema de forma tangencial, indícalo claramente en lugar de inferir artículos o requisitos. Si se activa un documento oficial auto-aprendido del Estado paraguayo (.gov.py), úsalo como fuente fidedigna primaria.`;
 
 async function responderSaludo(pregunta) {
   const system =
@@ -223,23 +222,88 @@ async function procesarConsultaMeta(pregunta) {
   };
 }
 
-async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId }) {
-  // 1. Búsqueda en OtelaxWisdom (documentos curados .md)
-  let docsOtelax = [];
+async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId, modo = 'MODO_CHAT', archivosAdjuntos = [] }) {
+  // 0. Búsqueda y Lectura Profunda de Expedientes, Memoria Persistente y Documentos PDF/Word/PNG
+  let contextoExpedientes = null;
   try {
-    const resOtelax = await buscarEnOtelaxWisdom(pregunta, { maxDocs: 3, minScore: 2 });
+    contextoExpedientes = await buscarContextoExpedientesYPDFs({
+      consulta: pregunta,
+      usuarioId,
+      expedienteId,
+    });
+  } catch (errExp) {
+    console.warn('[LexPY] Error al buscar contexto de expedientes/PDFs:', errExp.message);
+  }
+
+  // Si vienen archivos adjuntos al turno actual de chat, extraer e inyectar su contenido
+  let textoArchivosAdjuntos = '';
+  if (Array.isArray(archivosAdjuntos) && archivosAdjuntos.length > 0) {
+    const bloquesArchivos = archivosAdjuntos.map((arch) => {
+      const nombre = arch.nombre || 'Archivo';
+      const texto = arch.textoExtraido || arch.texto || '';
+      return `[ARCHIVO ADJUNTO DIRECTAMENTE AL CHAT: "${nombre}"]\n${texto}`;
+    });
+    textoArchivosAdjuntos = `\n\n=== ARCHIVOS ADJUNTOS AL MENSAJE ACTUAL ===\n${bloquesArchivos.join('\n\n---\n\n')}`;
+  }
+
+  // 1. Búsqueda en OtelaxWisdom (documentos curados .md) con umbral minScore = 25
+  let docsOtelax = [];
+  let esAltaRelevanciaOtelax = false;
+  let maxScoreOtelax = 0;
+
+  try {
+    const resOtelax = await buscarEnOtelaxWisdom(pregunta, { maxDocs: 3, minScore: 25 });
     docsOtelax = Array.isArray(resOtelax) ? resOtelax : (resOtelax?.resultados || []);
+    maxScoreOtelax = resOtelax?.maxScore || (docsOtelax[0] ? docsOtelax[0].score : 0);
+    esAltaRelevanciaOtelax = !!resOtelax?.esAltaRelevancia;
   } catch (err) {
     console.warn('[LexPY] Error al buscar en OtelaxWisdom:', err.message);
   }
 
   // 2. Búsqueda en base local MongoDB
-  const { aprendizajes, baseLegal, jurisprudencia } = await buscarEnBaseLocal(pregunta);
+  let { aprendizajes, baseLegal, jurisprudencia } = await buscarEnBaseLocal(pregunta);
   const totalLocal = aprendizajes.length + baseLegal.length + (jurisprudencia ? jurisprudencia.length : 0);
+
+  let externa = null;
+  let fallbackWeb = null;
+  let fuenteRespuesta = docsOtelax.length > 0 ? 'otelaxwisdom' : (totalLocal > 0 ? 'base_local' : null);
+  if (contextoExpedientes) fuenteRespuesta = 'expedientes_y_documentos';
+  if (archivosAdjuntos.length) fuenteRespuesta = 'archivo_adjunto_chat';
+
+  // 3. Fallback Web Institucional Auto-Aprendible:
+  // Se activa automáticamente si el RAG local NO tiene un documento de alta relevancia (maxScore < 35)
+  // o si no se recuperaron documentos locales con score suficiente, y no es consulta puramente de causas.
+  const requiereFallbackWeb = (!esAltaRelevanciaOtelax || docsOtelax.length === 0) && !contextoExpedientes && !archivosAdjuntos.length;
+
+  if (requiereFallbackWeb) {
+    try {
+      console.log(`[LexPY] RAG local sin documento de alta relevancia (maxScore: ${maxScoreOtelax}). Disparando Fallback Web Institucional .gov.py...`);
+      const resWeb = await ejecutarFallbackInstitucional(pregunta);
+      if (resWeb && resWeb.encontrado) {
+        fallbackWeb = resWeb;
+        fuenteRespuesta = 'web_institucional_oficial';
+
+        // Si el RAG local solo tenía menciones tangenciales sin alta relevancia,
+        // descartarlas para no contaminar el razonamiento del LLM ni las fuentes consultadas
+        if (!esAltaRelevanciaOtelax) {
+          docsOtelax = [];
+          baseLegal = [];
+        }
+      }
+    } catch (fbErr) {
+      console.warn('[LexPY] Error en fallback web institucional:', fbErr.message);
+    }
+  }
 
   const partesContexto = [];
 
-  // Inyección de documentos OtelaxWisdom
+  // Inyección de documento oficial Web si fue disparado
+  if (fallbackWeb && fallbackWeb.encontrado) {
+    const bloqueWeb = `[DOCUMENTO OFICIAL DEL ESTADO PARAGUAYO (AUTO-APRENDIDO EN OTELAXWISDOM): ${fallbackWeb.titulo} (${fallbackWeb.tipo} - ${fallbackWeb.fuero})]\nFuente Oficial: ${fallbackWeb.fuente} (${fallbackWeb.url_fuente})\n${fallbackWeb.fragmento}`;
+    partesContexto.push(bloqueWeb);
+  }
+
+  // Inyección de documentos OtelaxWisdom (solo los que superaron el umbral de relevancia)
   if (docsOtelax.length > 0) {
     docsOtelax.forEach((d) => {
       const fragmentos =
@@ -255,7 +319,6 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   if (contextoBase) partesContexto.push(contextoBase);
 
   let contexto = partesContexto.join('\n\n---\n\n');
-  let fuenteRespuesta = docsOtelax.length > 0 ? 'otelaxwisdom' : (totalLocal > 0 ? 'base_local' : null);
   let requiereAvisoFallback = false;
 
   // Inyección de memoria agéntica de largo plazo
@@ -272,8 +335,8 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  // Inyección de Documentos Oficiales del Expediente (RAG de causa)
-  if (expedienteId) {
+  // Inyección de Documentos Oficiales del Expediente (RAG de causa si no vino por contextoExpedientes)
+  if (expedienteId && !contextoExpedientes) {
     const { obtenerContextoDocumentosExpediente } = require('./documentProcessorService');
     const docsContexto = await obtenerContextoDocumentosExpediente(expedienteId);
     if (docsContexto) {
@@ -282,25 +345,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  let externa = null;
-  let fallbackWeb = null;
-
-  // Fallback Web Institucional Auto-Aprendible si hay menos de 2 documentos locales relevantes
-  if (docsOtelax.length < 2) {
-    try {
-      const resWeb = await ejecutarFallbackInstitucional(pregunta);
-      if (resWeb && resWeb.encontrado) {
-        fallbackWeb = resWeb;
-        const bloqueWeb = `[DOCUMENTO OFICIAL DEL ESTADO PARAGUAYO (AUTO-APRENDIDO EN OTELAXWISDOM): ${resWeb.titulo} (${resWeb.tipo} - ${resWeb.fuero})]\nFuente Oficial: ${resWeb.fuente} (${resWeb.url_fuente})\n${resWeb.fragmento}`;
-        contexto = contexto ? `${contexto}\n---\n${bloqueWeb}` : bloqueWeb;
-        fuenteRespuesta = 'web_institucional_oficial';
-      }
-    } catch (fbErr) {
-      console.warn('[LexPY] Error en fallback web institucional:', fbErr.message);
-    }
-  }
-
-  if (totalLocal + docsOtelax.length < UMBRAL_RESULTADOS_LOCALES && !fallbackWeb) {
+  if (totalLocal + docsOtelax.length < UMBRAL_RESULTADOS_LOCALES && !fallbackWeb && !contextoExpedientes && !archivosAdjuntos.length) {
     requiereAvisoFallback = true;
     externa = await buscarEnFuentesExternas(pregunta);
     if (externa) {
@@ -310,12 +355,19 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     }
   }
 
-  const promptFinal = pregunta;
+  const promptFinal = pregunta + textoArchivosAdjuntos;
+
+  // Construcción del System Prompt Maestro Unificado
+  const systemPrompt = buildTechapyraPrompt({
+    modo,
+    estiloForense: obtenerEstiloForense(),
+    contextoExpedientes: contextoExpedientes || '',
+  });
 
   const respuestaIA = await generarRespuestaIA({
     prompt: promptFinal,
     contexto: contexto || null,
-    system: SYSTEM_PROMPT_TECHAPYRA,
+    system: systemPrompt,
     activarGrounding: requiereAvisoFallback,
   });
 
@@ -337,18 +389,27 @@ async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam,
   const usuarioId = typeof payload === 'object' && payload !== null ? payload.usuarioId : usuarioIdParam;
   const expedienteId = typeof payload === 'object' && payload !== null ? payload.expedienteId : expedienteIdParam;
   const clienteId = typeof payload === 'object' && payload !== null ? payload.clienteId : clienteIdParam;
+  const modo = typeof payload === 'object' && payload !== null ? payload.modo : 'MODO_CHAT';
+  const archivosAdjuntos = typeof payload === 'object' && payload !== null ? payload.archivosAdjuntos || [] : [];
 
-  if (esSaludo(pregunta)) {
+  if (esSaludo(pregunta) && (!archivosAdjuntos || !archivosAdjuntos.length)) {
     const respuesta = await responderSaludo(pregunta);
     return { respuesta, fuente: 'ia_generativa', aprendizaje: false };
   }
 
-  if (esConsultaMetaOtelax(pregunta)) {
+  if (esConsultaMetaOtelax(pregunta) && (!archivosAdjuntos || !archivosAdjuntos.length)) {
     const metaRes = await procesarConsultaMeta(pregunta);
     return { respuesta: metaRes.respuesta, fuente: 'ia_generativa', aprendizaje: false };
   }
 
-  const resultado = await procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clienteId });
+  const resultado = await procesarConsultaTecnica({
+    pregunta,
+    usuarioId,
+    expedienteId,
+    clienteId,
+    modo,
+    archivosAdjuntos,
+  });
 
   // Auto-aprendizaje para retroalimentar el RAG local (pendiente de validación humana).
   if (resultado.respuesta && resultado.fuente) {
@@ -471,19 +532,16 @@ async function procesarAsistenteEditor({
   }
 
   const estiloForense = obtenerEstiloForense();
-  const bloqueEstilo = estiloForense
-    ? `\n\nESTILO FORENSE INSTITUCIONAL DEL ESTUDIO:\n${estiloForense.slice(0, 1500)}`
-    : '';
-
   const promptFinal =
-    `${datosCausa}${jurisprudenciaCSJ}${bloqueEstilo}\n\n` +
+    `${jurisprudenciaCSJ}\n\n` +
     `INSTRUCCIÓN DE REDACCIÓN:\n${instruccionForense}\n\n` +
     `IMPORTANTE: Devuelve ÚNICAMENTE el texto redactado en formato listo para insertar en la hoja de trabajo judicial. No incluyas preámbulos como "Aquí tienes", ni despedidas. Solo el contenido forense.`;
 
-  const system =
-    'Eres Techapyrã IA, el asistente jurídico profesional y experto legal de SysJurídico, impulsado por el Motor de Sabiduría OtelaxWisdom.\n' +
-    'Redactas escritos judiciales aplicando estrictamente el derecho paraguayo positivo y vigente bajo los más altos estándares procesales de la CSJ: precisión técnica, lenguaje procesal riguroso, citas normativas paraguayas exactas y vigentes.\n' +
-    'Responde directamente con el texto judicial solicitado sin introducciones conversacionales ni preámbulos.';
+  const system = buildTechapyraPrompt({
+    modo: 'MODO_EDITOR',
+    estiloForense,
+    contextoExpedientes: datosCausa,
+  });
 
   const textoGenerado = await generarRespuestaIA({ prompt: promptFinal, contexto: null, system });
 

@@ -142,25 +142,151 @@ function agregarBurbuja(texto, esUsuario, fuente) {
   contenedor.scrollTop = contenedor.scrollHeight;
 }
 
+let archivosAdjuntosParaEnvio = [];
+
+function renderChipsArchivos() {
+  const caja = document.getElementById('cajaArchivosAdjuntosChat');
+  if (!caja) return;
+  if (!archivosAdjuntosParaEnvio.length) {
+    caja.style.display = 'none';
+    caja.innerHTML = '';
+    return;
+  }
+
+  caja.style.display = 'flex';
+  caja.innerHTML = archivosAdjuntosParaEnvio
+    .map(
+      (a, idx) => `
+    <div style="display:inline-flex; align-items:center; gap:6px; background:#EFF6FF; border:1px solid #BFDBFE; color:#1D4ED8; padding:3px 10px; border-radius:12px; font-size:0.78rem;">
+      <span>📎 ${escaparHtml(a.nombre)}</span>
+      <button type="button" onclick="quitarArchivoAdjunto(${idx})" style="background:transparent; border:none; cursor:pointer; font-weight:bold; color:#DC2626;">&times;</button>
+    </div>`
+    )
+    .join('');
+}
+
+function quitarArchivoAdjunto(index) {
+  archivosAdjuntosParaEnvio.splice(index, 1);
+  renderChipsArchivos();
+}
+
+async function procesarArchivosLocales(archivos) {
+  for (const file of archivos) {
+    if (file.size > 25 * 1024 * 1024) {
+      alert(`El archivo ${file.name} supera el límite de 25 MB.`);
+      continue;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const base64Completo = e.target.result;
+      const base64Pure = base64Completo.split(',')[1];
+      archivosAdjuntosParaEnvio.push({
+        nombre: file.name,
+        tipo: file.type,
+        bufferBase64: base64Pure,
+      });
+      renderChipsArchivos();
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function manejarSeleccionArchivosChat(event) {
+  const files = Array.from(event.target.files || []);
+  procesarArchivosLocales(files);
+  event.target.value = '';
+}
+
+// Soporte Drag & Drop en el panel de chat
+(function setupDragAndDrop() {
+  const dropZone = document.getElementById('panelChat');
+  if (!dropZone) return;
+
+  ['dragenter', 'dragover'].forEach((eventName) => {
+    dropZone.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.style.border = '2px dashed var(--azul-primary)';
+    });
+  });
+
+  ['dragleave', 'drop'].forEach((eventName) => {
+    dropZone.addEventListener(eventName, (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropZone.style.border = '';
+    });
+  });
+
+  dropZone.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = Array.from(dt.files || []);
+    if (files.length) {
+      procesarArchivosLocales(files);
+    }
+  });
+})();
+
+async function cargarSelectExpedientesChat() {
+  try {
+    const expedientes = await apiFetch('/expedientes').catch(() => []);
+    const el = document.getElementById('selectExpedienteChat');
+    if (el && Array.isArray(expedientes)) {
+      el.innerHTML =
+        '<option value="">📁 Vincular a Expediente (Opcional)</option>' +
+        expedientes.map((e) => `<option value="${e._id}">${escaparHtml(e.caratula)} (N° ${e.numero || 'S/N'})</option>`).join('');
+
+      // Si viene expedienteId en la URL, preseleccionarlo
+      const params = new URLSearchParams(window.location.search);
+      const expUrl = params.get('expedienteId');
+      if (expUrl) {
+        el.value = expUrl;
+      }
+    }
+  } catch (err) {
+    console.warn('Error cargando expedientes en chat:', err.message);
+  }
+}
+
 async function enviarPregunta() {
   const campo = document.getElementById('entradaChat');
   const pregunta = campo.value.trim();
-  if (!pregunta) return;
+  if (!pregunta && !archivosAdjuntosParaEnvio.length) return;
 
-  agregarBurbuja(pregunta, true);
+  const expSeleccionado = document.getElementById('selectExpedienteChat')?.value || null;
+  const archivosActuales = [...archivosAdjuntosParaEnvio];
+
+  let textoMostrado = pregunta;
+  if (archivosActuales.length) {
+    textoMostrado += `\n[Archivos adjuntos: ${archivosActuales.map((a) => a.nombre).join(', ')}]`;
+  }
+
+  agregarBurbuja(textoMostrado, true);
   campo.value = '';
+  archivosAdjuntosParaEnvio = [];
+  renderChipsArchivos();
 
   // Mensaje temporal de pensamiento
   const contenedor = document.getElementById('chatMensajes');
   const tempMsg = document.createElement('div');
   tempMsg.className = 'chat-burbuja chat-asistente';
   tempMsg.id = 'tempThinking';
-  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando legislación y analizando con Techapyrã IA...</span>';
+  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando acervo normativo, memoria de expedientes y analizando con Techapyrã IA...</span>';
   contenedor.appendChild(tempMsg);
   contenedor.scrollTop = contenedor.scrollHeight;
 
   try {
-    const data = await apiFetch('/lexpy/chat', { method: 'POST', body: { pregunta, sesionId } });
+    const data = await apiFetch('/lexpy/chat', {
+      method: 'POST',
+      body: {
+        pregunta: pregunta || 'Analiza los documentos adjuntos y realiza un informe procesal.',
+        sesionId,
+        expediente: expSeleccionado,
+        archivosAdjuntos: archivosActuales,
+        modo: 'MODO_CHAT',
+      },
+    });
     tempMsg.remove();
     sesionId = data.sesionId;
     agregarBurbuja(data.respuesta, false, data.fuente);
@@ -210,17 +336,19 @@ function copiarBorrador() {
 }
 
 cargarSelectsRedactor();
+cargarSelectExpedientesChat();
 
-// Si viene un parámetro ?q= en la URL (por ejemplo desde la Red de Conocimiento), ejecutar automáticamente
+// Si viene un parámetro ?q= o ?consulta= en la URL, ejecutar automáticamente
 (function () {
   const params = new URLSearchParams(window.location.search);
-  const q = params.get('q');
+  const q = params.get('q') || params.get('consulta');
   if (q && q.trim()) {
     const input = document.getElementById('entradaChat');
     if (input) {
       input.value = q;
-      setTimeout(() => enviarPregunta(), 300);
+      setTimeout(() => enviarPregunta(), 350);
     }
   }
 })();
+
 

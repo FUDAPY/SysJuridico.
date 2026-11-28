@@ -114,7 +114,13 @@ function extraerTextoLimpio(html, url) {
  * Ejecuta búsqueda web con restricción site:gov.py
  */
 async function buscarEnlacesOficiales(termino) {
-  const query = `site:gov.py ${termino.replace(/["']/g, '')}`;
+  // Limpiar caracteres especiales e interrogativos comunes para optimizar la búsqueda
+  const terminoLimpio = String(termino || '')
+    .replace(/[¿?¡!"']/g, '')
+    .replace(/\b(?:que es|que son|cuales son|cual es|definicion de|como funciona|donde se regula|que regula)\b/gi, '')
+    .trim();
+
+  const query = `site:gov.py ${terminoLimpio}`;
   const urlsEncontradas = [];
 
   try {

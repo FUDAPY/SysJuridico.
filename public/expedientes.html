@@ -102,11 +102,24 @@
         <div id="detPlan" style="margin-top:10px; overflow-x:auto"></div>
       </div>
 
+      <!-- Cronología de Actuaciones y Memoria Persistente IA -->
       <div class="tarjeta" style="background:var(--bg-subtle); padding:16px; margin-bottom:18px">
-        <h4 style="margin:0; font-size:1rem">Documentos Procesales (.doc / .docx / .pdf)</h4>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <h4 style="margin:0; font-size:1rem; display:flex; align-items:center; gap:6px;">
+            <span>🧠</span> Cronología &amp; Memoria Viva IA
+          </h4>
+          <span class="badge" style="background:#EFF6FF; color:#1D4ED8; border:1px solid #BFDBFE; font-size:0.75rem;">Techapyrã IA</span>
+        </div>
+        <div id="detCronologiaIA" style="max-height:220px; overflow-y:auto; font-size:0.85rem; display:flex; flex-direction:column; gap:8px;">
+          <p style="color:var(--texto-muted); font-size:0.8rem; margin:0;">Cargando cronología de la causa...</p>
+        </div>
+      </div>
+
+      <div class="tarjeta" style="background:var(--bg-subtle); padding:16px; margin-bottom:18px">
+        <h4 style="margin:0; font-size:1rem">Documentos Procesales (.doc / .docx / .pdf / .png)</h4>
         <div id="listaDocs" style="margin:10px 0; font-size:0.85rem"></div>
         <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:8px" id="zonaSubirDoc">
-          <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf" style="max-width:320px; flex:1" />
+          <input type="file" id="inputDocumento" accept=".doc,.docx,.pdf,.png,.jpg,.jpeg" style="max-width:320px; flex:1" />
           <button class="btn-secundario btn-sm" onclick="subirDocumentoExpediente()">+ Adjuntar Documento</button>
         </div>
       </div>
