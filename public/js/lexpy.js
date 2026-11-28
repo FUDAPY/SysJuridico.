@@ -122,7 +122,7 @@ const NOMBRES_FUENTE = {
   ia_generativa: 'Techapyrã IA',
 };
 
-function agregarBurbuja(texto, esUsuario, fuente) {
+function agregarBurbuja(texto, esUsuario, fuente, metadatos) {
   const contenedor = document.getElementById('chatMensajes');
   const burbuja = document.createElement('div');
   burbuja.className = `chat-burbuja ${esUsuario ? 'chat-usuario' : 'chat-asistente'}`;
@@ -130,16 +130,90 @@ function agregarBurbuja(texto, esUsuario, fuente) {
     burbuja.textContent = texto;
   } else {
     burbuja.innerHTML = renderMarkdown(texto);
+
+    // Botones de acción rápida para respuestas del asistente
+    const barraAcciones = document.createElement('div');
+    barraAcciones.style.cssText = 'display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; padding-top:8px; border-top:1px solid var(--borde);';
+    barraAcciones.innerHTML = `
+      <button type="button" class="btn-chip" style="font-size:0.75rem; padding:3px 8px; cursor:pointer;" onclick="copiarTextoRespuesta(this)" title="Copiar respuesta completa">
+        📋 Copiar
+      </button>
+      <button type="button" class="btn-chip" style="font-size:0.75rem; padding:3px 8px; cursor:pointer;" onclick="enviarRespuestaAlEditor(this)" title="Abrir y continuar redactando en el Editor Judicial">
+        ✍️ Enviar al Editor Judicial
+      </button>
+      <button type="button" class="btn-chip" style="font-size:0.75rem; padding:3px 8px; cursor:pointer;" onclick="guardarRespuestaEnCronologia(this)" title="Guardar informe en la memoria del expediente activo">
+        📌 Guardar en Cronología
+      </button>
+    `;
+    burbuja.appendChild(barraAcciones);
+    burbuja.dataset.rawText = texto;
   }
   contenedor.appendChild(burbuja);
 
   if (!esUsuario && fuente) {
     const etiqueta = document.createElement('div');
     etiqueta.className = 'fuente-tag';
-    etiqueta.innerHTML = `<span>📌</span> Fuente: ${NOMBRES_FUENTE[fuente] || fuente}`;
+    const docs = metadatos?.documentosConsultados?.length ? ` &bull; ${metadatos.documentosConsultados.length} norma(s)` : '';
+    const cacheInfo = metadatos?.desdeCache ? ' &bull; ⚡ Caché Normativo (0 tokens)' : '';
+    etiqueta.innerHTML = `<span>📌</span> Fuente: <strong>${NOMBRES_FUENTE[fuente] || fuente}</strong>${docs}${cacheInfo}`;
     contenedor.appendChild(etiqueta);
   }
   contenedor.scrollTop = contenedor.scrollHeight;
+}
+
+function copiarTextoRespuesta(btn) {
+  const burbuja = btn.closest('.chat-burbuja');
+  const texto = burbuja?.dataset?.rawText || burbuja?.innerText || '';
+  navigator.clipboard.writeText(texto).then(() => {
+    const original = btn.textContent;
+    btn.textContent = '✓ ¡Copiado!';
+    setTimeout(() => { btn.textContent = original; }, 1800);
+  });
+}
+
+function enviarRespuestaAlEditor(btn) {
+  const burbuja = btn.closest('.chat-burbuja');
+  const texto = burbuja?.dataset?.rawText || burbuja?.innerText || '';
+  const expId = document.getElementById('selectExpedienteChat')?.value || '';
+  localStorage.setItem('sysjuridico_editor_import_text', texto);
+  if (expId) localStorage.setItem('sysjuridico_editor_import_exp', expId);
+  window.location.href = `/editor.html?importar=1${expId ? `&expedienteId=${expId}` : ''}`;
+}
+
+async function guardarRespuestaEnCronologia(btn) {
+  const burbuja = btn.closest('.chat-burbuja');
+  const texto = burbuja?.dataset?.rawText || burbuja?.innerText || '';
+  const expId = document.getElementById('selectExpedienteChat')?.value;
+
+  if (!expId) {
+    alert('Por favor selecciona un expediente en la parte superior del chat para guardar esta respuesta en su cronología.');
+    document.getElementById('selectExpedienteChat')?.focus();
+    return;
+  }
+
+  const titulo = prompt('Título para asentar en la cronología del caso:', 'Informe Jurídico de Techapyrã IA');
+  if (!titulo) return;
+
+  try {
+    btn.disabled = true;
+    btn.textContent = '⏳ Guardando...';
+    await apiFetch('/v1/editor/guardar', {
+      method: 'POST',
+      body: {
+        expedienteId: expId,
+        titulo,
+        contenidoTexto: texto,
+        contenidoHtml: `<p>${texto.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p>`,
+      },
+    });
+    btn.textContent = '✓ Asentado en Causa';
+    setTimeout(() => { btn.textContent = '📌 Guardar en Cronología'; btn.disabled = false; }, 2500);
+    alert('¡Hito guardado con éxito en la memoria persistente del expediente!');
+  } catch (err) {
+    alert('Error al guardar en cronología: ' + err.message);
+    btn.disabled = false;
+    btn.textContent = '📌 Guardar en Cronología';
+  }
 }
 
 let archivosAdjuntosParaEnvio = [];
@@ -267,14 +341,29 @@ async function enviarPregunta() {
   archivosAdjuntosParaEnvio = [];
   renderChipsArchivos();
 
-  // Mensaje temporal de pensamiento
+  // Mensaje temporal con retroalimentación progresiva en tiempo real
   const contenedor = document.getElementById('chatMensajes');
   const tempMsg = document.createElement('div');
   tempMsg.className = 'chat-burbuja chat-asistente';
   tempMsg.id = 'tempThinking';
-  tempMsg.innerHTML = '<span style="color:var(--dorado)">⚡ Consultando acervo normativo, memoria de expedientes y analizando con Techapyrã IA...</span>';
+
+  const pasos = [
+    '🔍 Consultando antecedentes de la causa y memoria procesal...',
+    '📚 Buscando doctrina y normas en OtelaxWisdom (215 leyes)...',
+    '🌐 Verificando normativa actualizada en portales oficiales paraguayos...',
+    '⚖️ Redactando fundamentación forense con Techapyrã IA...',
+  ];
+  let pasoIdx = 0;
+  tempMsg.innerHTML = `<span style="color:var(--dorado)">${pasos[0]}</span>`;
   contenedor.appendChild(tempMsg);
   contenedor.scrollTop = contenedor.scrollHeight;
+
+  const timerPasos = setInterval(() => {
+    pasoIdx = (pasoIdx + 1) % pasos.length;
+    if (tempMsg && tempMsg.parentNode) {
+      tempMsg.innerHTML = `<span style="color:var(--dorado)">${pasos[pasoIdx]}</span>`;
+    }
+  }, 1400);
 
   try {
     const data = await apiFetch('/lexpy/chat', {
@@ -287,10 +376,12 @@ async function enviarPregunta() {
         modo: 'MODO_CHAT',
       },
     });
+    clearInterval(timerPasos);
     tempMsg.remove();
     sesionId = data.sesionId;
-    agregarBurbuja(data.respuesta, false, data.fuente);
+    agregarBurbuja(data.respuesta, false, data.fuente, data);
   } catch (err) {
+    clearInterval(timerPasos);
     tempMsg.remove();
     agregarBurbuja(`Error al consultar: ${err.message}`, false);
   }

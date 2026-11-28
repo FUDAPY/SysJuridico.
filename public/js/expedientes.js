@@ -174,13 +174,19 @@ function filtrarPorPestanaEstado(tab) {
   if (tabArch) tabArch.classList.toggle('activo', tab === 'archivado');
   
   if (tab === 'todos') {
-    if (tabTodos) { tabTodos.style.background = '#fff'; tabTodos.style.color = '#0f172a'; }
-    if (tabArch) { tabArch.style.background = 'transparent'; tabArch.style.color = 'var(--texto-muted)'; }
+    if (tabTodos) { tabTodos.style.background = '#fff'; tabTodos.style.color = 'var(--azul-accent)'; tabTodos.style.boxShadow = 'var(--sombra-sm)'; }
+    if (tabArch) { tabArch.style.background = 'transparent'; tabArch.style.color = 'var(--texto-muted)'; tabArch.style.boxShadow = 'none'; }
   } else {
-    if (tabArch) { tabArch.style.background = '#fff'; tabArch.style.color = '#0f172a'; }
-    if (tabTodos) { tabTodos.style.background = 'transparent'; tabTodos.style.color = 'var(--texto-muted)'; }
+    if (tabArch) { tabArch.style.background = '#fff'; tabArch.style.color = 'var(--azul-accent)'; tabArch.style.boxShadow = 'var(--sombra-sm)'; }
+    if (tabTodos) { tabTodos.style.background = 'transparent'; tabTodos.style.color = 'var(--texto-muted)'; tabTodos.style.boxShadow = 'none'; }
   }
   cargarExpedientes();
+}
+
+let timerDebounceExpedientes = null;
+function cargarExpedientesDebounced() {
+  clearTimeout(timerDebounceExpedientes);
+  timerDebounceExpedientes = setTimeout(cargarExpedientes, 300);
 }
 
 function quitarFiltroEspecial() {
@@ -263,30 +269,30 @@ async function cargarExpedientes() {
     tabla.innerHTML = expedientes
       .map(
         (e) => `
-        <tr style="border-bottom:1px solid #1e293b; transition:background 0.2s;" onmouseover="this.style.background='#131f33'" onmouseout="this.style.background='transparent'">
-          <td style="padding:16px 18px; font-weight:700; color:#60a5fa; font-size:0.9rem;">
+        <tr style="border-bottom:1px solid var(--borde); transition:background 0.2s;" onmouseover="this.style.background='var(--bg-subtle)'" onmouseout="this.style.background='transparent'">
+          <td style="padding:16px 18px; font-weight:700; color:var(--azul-accent); font-size:0.9rem;">
             ${e.numero || 'S/N'}/${e.ano || '2026'}
           </td>
           <td style="padding:16px 18px;">
-            <div style="font-weight:600; color:#fff; font-size:0.92rem; margin-bottom:4px;">${e.caratula}</div>
+            <div style="font-weight:600; color:var(--texto); font-size:0.92rem; margin-bottom:4px;">${e.caratula}</div>
             <div style="font-size:0.78rem; color:var(--texto-muted); display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-              <span class="badge" style="background:#1e293b; color:#93c5fd; padding:2px 8px; border-radius:4px; font-size:0.75rem;">${e.materia || e.fuero || 'Civil y Comercial'}</span>
+              <span class="badge" style="background:var(--azul-tag-bg); color:var(--azul-tag-texto); padding:2px 8px; border-radius:4px; font-size:0.75rem;">${e.materia || e.fuero || 'Civil y Comercial'}</span>
               <span>🏛️ ${e.juzgado || 'Juzgado s/d'}</span>
               <span>👤 ${e.cliente?.nombreCompleto || 'Cliente s/d'}</span>
               ${
                 Array.isArray(e.compartidoCon) && e.compartidoCon.length > 0
-                  ? `<span class="badge" style="background:rgba(147, 51, 234, 0.2); color:#c084fc; padding:2px 8px; border-radius:4px; font-size:0.75rem;" title="Compartido con ${e.compartidoCon.length} profesional(es)">👥 Compartido (${e.compartidoCon.length})</span>`
+                  ? `<span class="badge" style="background:rgba(147, 51, 234, 0.15); color:#7e22ce; padding:2px 8px; border-radius:4px; font-size:0.75rem;" title="Compartido con ${e.compartidoCon.length} profesional(es)">👥 Compartido (${e.compartidoCon.length})</span>`
                   : ''
               }
             </div>
           </td>
           <td style="padding:16px 18px;">
-            <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.82rem; color:${e.visto ? '#34d399' : '#94a3b8'};">
+            <span style="display:inline-flex; align-items:center; gap:5px; font-size:0.82rem; color:${e.visto ? 'var(--verde)' : 'var(--texto-muted)'};">
               <span>${e.visto ? '👁️' : '⚪'}</span> ${e.visto ? 'Visto' : 'Sin ver'}
             </span>
           </td>
           <td style="padding:16px 18px;">
-            <div style="font-size:0.85rem; color:#cbd5e1;">${e.ultimaActuacionTexto || 'Actuación en trámite'}</div>
+            <div style="font-size:0.85rem; color:var(--texto-secundario);">${e.ultimaActuacionTexto || 'Actuación en trámite'}</div>
             <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:2px;">${formatoFecha(e.updatedAt || e.createdAt)}</div>
           </td>
           <td style="padding:16px 18px; text-align:right;">

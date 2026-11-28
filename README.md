@@ -181,7 +181,9 @@ Todo el razonamiento de Techapyrã IA emana de un único archivo: `server/config
 
 | Modelo | Colección | Campos Clave y Funcionalidad |
 |---|---|---|
-| `Usuario` | `usuarios` | `nombreCompleto`, `email`, `password`, `rol` (`admin`, `abogado`), `matriculaCSJ`, `cedula`, `csjCredentialsEncrypted`. |
+| `Usuario` | `usuarios` | `nombreCompleto`, `email`, `password`, `rol` (`admin`, `abogado`), `matriculaCSJ`, `cedula`, `csjCredentialsEncrypted`, `cuotaUso` (límite y consumo de tokens y archivos mensual). |
+| `ConsumoGlobalIA` | `consumo_global_ia` | `periodo` (YYYY-MM), `tokensUsadosGlobal`, `limiteGlobalTokens` (9.5B default), `totalPeticiones`, `peticionesDesdeCache`. |
+| `NormativaCache` | `normativa_caches` | `hashPregunta`, `preguntaNormalizada`, `respuesta`, `fuente`, `docsOtelax`, TTL automático de 7 días (0 tokens consumidos). |
 | `Expediente` | `expedientes` | `caratula`, `numero`, `ano`, `juzgado`, `fuero`, `materia`, `cliente`, `abogadoAsignado`, `estado`, `honorariosTotales`, `saldoPendiente`, `planPagos`, `memoriaPersistente`. |
 | `DocumentoExpediente` | `documentos_expedientes` | `expediente`, `nombre`, `tipo`, `tamano`, `datos` (Buffer), `textoExtraido`, `textoExtraidoAt`, `resumenIA`, `esEscaneado`, `esEscritoEditor`, `version`, `versiones`. |
 | `BorradorEditor` | `borradores_editor` | `usuario`, `expediente`, `titulo`, `contenidoHtml`, `contenidoTexto`, `versionActual`, `versiones` (historial cronológico), `documentoExpediente`. |
@@ -199,6 +201,9 @@ Todo el razonamiento de Techapyrã IA emana de un único archivo: `server/config
 |---|---|---|---|
 | `POST` | `/api/auth/login` | Público | Autenticación de usuarios y generación de token JWT. |
 | `GET` | `/api/auth/perfil` | `protect` | Obtiene el perfil forense y credenciales del usuario autenticado. |
+| `GET` | `/api/tokens/estado` | `protect` | Estado de cuota mensual de tokens (global y personal) y alerta 80%/98%. |
+| `GET` | `/api/tokens/ranking` | `protect`, `admin` | Ranking de consumo de tokens y archivos procesados por profesional. |
+| `PUT` | `/api/tokens/cuota/:usuarioId` | `protect`, `admin` | Asigna límites mensuales individuales de tokens y archivos por abogado. |
 | `GET` | `/api/dashboard` | `protect`, `admin` | Métricas ejecutivas globales, flujo de caja y resumen procesal. |
 | `GET` | `/api/dashboard/mi-dia`| `protect` | Resumen de audiencias, vencimientos y causas del abogado logueado. |
 | `GET` | `/api/expedientes` | `protect` | Lista expedientes con control de acceso (admin: todos; abogado: asignados/compartidos). |
@@ -208,10 +213,11 @@ Todo el razonamiento de Techapyrã IA emana de un único archivo: `server/config
 | `POST` | `/api/expedientes/:id/actuaciones` | `protect` | Registra un hito en la memoria viva y cronología persistente de la causa. |
 | `GET` | `/api/expedientes/:id/documentos` | `protect` | Lista los metadatos de archivos adjuntos a un expediente. |
 | `POST` | `/api/expedientes/:id/documentos` | `protect` | Sube archivo (.pdf, .docx, .png), extrae texto y genera resumen analítico. |
-| `POST` | `/api/lexpy/chat` | `protect` | Consulta técnica a Techapyrã IA con soporte de adjuntos, memoria viva y enrutamiento. |
+| `POST` | `/api/lexpy/chat` | `protect` | Consulta a Techapyrã IA con verificación de tokens, RAG quirúrgico, caché de 7 días y DuckDuckGo backend search. |
 | `POST` | `/api/lexpy/redactar` | `protect` | Genera borradores completos de demandas, contestaciones y contratos. |
 | `POST` | `/api/v1/editor/guardar` | `protect` | Guarda y versiona automáticamente escritos judiciales vinculados o independientes. |
 | `GET` | `/api/v1/editor/borradores` | `protect` | Lista borradores guardados del usuario en el Editor Forense. |
+| `POST` | `/api/v1/editor/borradores/:id/restaurar/:v` | `protect` | Restaura una versión histórica previa del escrito resguardando la actual. |
 | `POST` | `/api/v1/editor/export-docx` | `protect` | Genera y descarga archivo binario `.docx` con formato judicial paraguayo. |
 | `GET` | `/api/otelaxwisdom` | `protect` | Consulta el catálogo completo de normas curadas en el acervo local. |
 | `POST` | `/api/otelaxwisdom/sync-github` | `protect`, `admin` | Dispara sincronización oficial contra el repositorio de legislación paraguaya. |

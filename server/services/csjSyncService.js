@@ -5,15 +5,28 @@ const Cliente = require('../models/Cliente');
 const { generarRespuestaIA } = require('./aiProviderService');
 
 const ALGORITHM = 'aes-256-gcm';
-const CLAVE_MAESTRA = crypto
-  .createHash('sha256')
-  .update(process.env.CSJ_ENCRYPTION_KEY || process.env.JWT_SECRET || 'sysjuridico-csj-encryption-key-paraguay')
-  .digest();
+
+function obtenerClaveMaestra() {
+  const claveBase = process.env.CSJ_ENCRYPTION_KEY || process.env.JWT_SECRET;
+  const esProduccion = process.env.NODE_ENV === 'production';
+
+  if (!claveBase) {
+    if (esProduccion) {
+      console.error('[SEGURIDAD CRÍTICA] CSJ_ENCRYPTION_KEY o JWT_SECRET no está configurada en producción. Operación de cifrado bloqueada.');
+      throw new Error('Configuración de seguridad incompleta: se requiere CSJ_ENCRYPTION_KEY en producción.');
+    }
+    console.warn('[SEGURIDAD AVISO] Usando clave de desarrollo para CSJ (no usar en producción).');
+    return crypto.createHash('sha256').update('sysjuridico-csj-encryption-key-paraguay').digest();
+  }
+
+  return crypto.createHash('sha256').update(claveBase).digest();
+}
 
 function encriptar(texto) {
   if (!texto) return '';
+  const clave = obtenerClaveMaestra();
   const iv = crypto.randomBytes(12);
-  const cipher = crypto.createCipheriv(ALGORITHM, CLAVE_MAESTRA, iv);
+  const cipher = crypto.createCipheriv(ALGORITHM, clave, iv);
   let encrypted = cipher.update(texto, 'utf8', 'hex');
   encrypted += cipher.final('hex');
   const tag = cipher.getAuthTag();
@@ -23,12 +36,13 @@ function encriptar(texto) {
 function desencriptar(textoCifrado) {
   if (!textoCifrado || !textoCifrado.includes(':')) return '';
   try {
+    const clave = obtenerClaveMaestra();
     const partes = textoCifrado.split(':');
     if (partes.length === 3) {
       const [ivHex, tagHex, encryptedHex] = partes;
       const iv = Buffer.from(ivHex, 'hex');
       const tag = Buffer.from(tagHex, 'hex');
-      const decipher = crypto.createDecipheriv(ALGORITHM, CLAVE_MAESTRA, iv);
+      const decipher = crypto.createDecipheriv(ALGORITHM, clave, iv);
       decipher.setAuthTag(tag);
       let decrypted = decipher.update(encryptedHex, 'hex', 'utf8');
       decrypted += decipher.final('utf8');
@@ -36,7 +50,7 @@ function desencriptar(textoCifrado) {
     }
     // Compatibilidad hacia atrás con CBC de 2 partes
     const [ivHex, encryptedHex] = partes;
-    const decipherLegacy = crypto.createDecipheriv('aes-256-cbc', CLAVE_MAESTRA, Buffer.from(ivHex, 'hex'));
+    const decipherLegacy = crypto.createDecipheriv('aes-256-cbc', clave, Buffer.from(ivHex, 'hex'));
     let dec = decipherLegacy.update(encryptedHex, 'hex', 'utf8');
     dec += decipherLegacy.final('utf8');
     return dec;

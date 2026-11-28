@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const floatingAiBubble = document.getElementById('floatingAiBubble');
   const btnBubbleMejorar = document.getElementById('btnBubbleMejorar');
   const btnBubbleFundamentar = document.getElementById('btnBubbleFundamentar');
-  const btnBubblePolir = document.getElementById('btnBubblePolir');
+  const btnBubblePulir = document.getElementById('btnBubblePulir') || document.getElementById('btnBubblePolir');
 
   // Modal Guardar
   const btnGuardarEnExpediente = document.getElementById('btnGuardarEnExpediente');
@@ -674,7 +674,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       chip.classList.add('active');
       accionIAPendiente = chip.dataset.action;
 
-      if (accionIAPendiente === 'mejorar' || accionIAPendiente === 'polir' || accionIAPendiente === 'fundamentar_csj') {
+      if (accionIAPendiente === 'mejorar' || accionIAPendiente === 'pulir' || accionIAPendiente === 'polir' || accionIAPendiente === 'fundamentar_csj') {
         if (!ultimaSeleccionTexto) {
           alert('Por favor selecciona primero un texto en la foja de trabajo para realizar esta acción.');
           return;
@@ -695,10 +695,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     abrirSidebarTab('tabCopilot');
     ejecutarAsistenteIA('fundamentar_csj');
   });
-  btnBubblePolir?.addEventListener('click', () => {
+  btnBubblePulir?.addEventListener('click', () => {
     ocultarBurbujaFlotante();
     abrirSidebarTab('tabCopilot');
-    ejecutarAsistenteIA('polir');
+    ejecutarAsistenteIA('pulir');
   });
 
   // Botón Principal de Generación
@@ -995,6 +995,10 @@ document.addEventListener('DOMContentLoaded', async () => {
       if (resp?.data?.borradorId) {
         borradorActualId = resp.data.borradorId;
       }
+      if (resp?.data?.versionActual) {
+        const elVer = document.getElementById('statusVersionDoc');
+        if (elVer) elVer.textContent = `v${resp.data.versionActual} · Guardado`;
+      }
       return resp;
     } catch (err) {
       console.warn('[Editor] Error al persistir borrador en MongoDB:', err.message);
@@ -1271,4 +1275,115 @@ document.addEventListener('DOMContentLoaded', async () => {
       actualizarEstructuraOutline();
     }
   }
+
+  // Importación de texto desde el Chat de Techapyrã IA
+  if (urlParams.get('importar') === '1') {
+    const textoImportado = localStorage.getItem('sysjuridico_editor_import_text');
+    if (textoImportado && hoja) {
+      localStorage.removeItem('sysjuridico_editor_import_text');
+      const parrafos = textoImportado
+        .split(/\n\s*\n/)
+        .map((p) => `<p class="parrafo-forense">${escapeHtml(p).replace(/\n/g, '<br>')}</p>`)
+        .join('');
+      hoja.innerHTML = parrafos;
+      actualizarMetricas();
+      guardarEscritoEnBackend(false);
+    }
+    const expIdImportado = localStorage.getItem('sysjuridico_editor_import_exp');
+    if (expIdImportado && selectExpediente) {
+      localStorage.removeItem('sysjuridico_editor_import_exp');
+      selectExpediente.value = expIdImportado;
+      selectExpediente.dispatchEvent(new Event('change'));
+    }
+  }
 });
+
+// Funciones de gestión de versiones y restauración
+window.abrirModalVersiones = async function () {
+  const modal = document.getElementById('modalVersionesBorrador');
+  const lista = document.getElementById('listaVersionesEscrito');
+  if (!modal || !lista) return;
+
+  modal.classList.remove('oculto');
+  lista.innerHTML = '<div style="text-align:center; padding:20px; color:var(--texto-muted);">Cargando historial de versiones...</div>';
+
+  if (!borradorActualId) {
+    lista.innerHTML = '<div style="text-align:center; padding:20px; color:var(--texto-muted);">Este escrito es nuevo y aún no tiene versiones previas archivadas. Escribe y guarda para comenzar a generar versiones.</div>';
+    return;
+  }
+
+  try {
+    const resp = await apiFetch(`/v1/editor/borradores/${borradorActualId}`);
+    const borrador = resp.data || resp;
+    const versiones = borrador.versiones || [];
+
+    if (!versiones.length) {
+      lista.innerHTML = `<div style="text-align:center; padding:20px; color:var(--texto-muted);">Versión actual: <strong>v${borrador.versionActual || 1}</strong>. Aún no se han guardado versiones previas.</div>`;
+      return;
+    }
+
+    // Ordenar de la más reciente a la más antigua
+    const ordenadas = [...versiones].reverse();
+    lista.innerHTML = ordenadas
+      .map(
+        (v) => `
+      <div style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:8px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center;">
+        <div>
+          <strong style="color:var(--azul-accent); font-size:0.9rem;">Versión v${v.version}</strong>
+          <div style="font-size:0.75rem; color:var(--texto-muted); margin-top:2px;">
+            ${new Date(v.fecha).toLocaleString('es-PY')} &bull; ${escapeHtml(v.autorNombre || 'Abogado')}
+          </div>
+          <div style="font-size:0.75rem; color:var(--texto); margin-top:2px;">
+            ${escapeHtml(v.titulo || 'Escrito')} &bull; ${(v.contenidoTexto || '').split(/\s+/).filter(Boolean).length} palabras
+          </div>
+        </div>
+        <button class="boton btn-primario btn-sm" onclick="restaurarVersion(${v.version})">
+          Restaurar
+        </button>
+      </div>`
+      )
+      .join('');
+  } catch (err) {
+    lista.innerHTML = `<div style="text-align:center; padding:20px; color:var(--rojo);">Error al obtener historial: ${err.message}</div>`;
+  }
+};
+
+window.cerrarModalVersiones = function () {
+  document.getElementById('modalVersionesBorrador')?.classList.add('oculto');
+};
+
+window.restaurarVersion = async function (versionNum) {
+  if (!borradorActualId) return;
+  if (!confirm(`¿Deseas restaurar la versión v${versionNum}? La versión actual se guardará como nuevo resguardo.`)) return;
+
+  try {
+    const resp = await apiFetch(`/v1/editor/borradores/${borradorActualId}/restaurar/${versionNum}`, {
+      method: 'POST',
+    });
+    const datos = resp.data || resp;
+    if (datos.contenidoHtml && hoja) {
+      hoja.innerHTML = datos.contenidoHtml;
+    }
+    if (datos.titulo && tituloDocInput) {
+      tituloDocInput.value = datos.titulo;
+    }
+    const elVer = document.getElementById('statusVersionDoc');
+    if (elVer && datos.versionActual) {
+      elVer.textContent = `v${datos.versionActual} · Guardado`;
+    }
+    actualizarMetricas();
+    cerrarModalVersiones();
+    alert(`¡Versión v${versionNum} restaurada con éxito! (Ahora activa como v${datos.versionActual})`);
+  } catch (err) {
+    alert('Error al restaurar versión: ' + err.message);
+  }
+};
+
+// Alternar Copiloto en dispositivos móviles (< 768px)
+window.alternarCopilotoMovil = function () {
+  const sidebar = document.getElementById('loSidebar');
+  if (sidebar) {
+    sidebar.classList.toggle('movil-abierto');
+  }
+};
+

@@ -123,8 +123,8 @@ async function buscarEnlacesOficiales(termino) {
   const query = `site:gov.py ${terminoLimpio}`;
   const urlsEncontradas = [];
 
+  // 1. Consulta prioritaria al motor DuckDuckGo HTML con filtro .gov.py
   try {
-    // 1. Consulta al motor DuckDuckGo HTML
     const searchUrl = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
     const response = await axios.get(searchUrl, {
       headers: {
@@ -138,7 +138,6 @@ async function buscarEnlacesOficiales(termino) {
     $('.result__url, .result__snippet, .result__title a').each((_, el) => {
       let href = $(el).attr('href');
       if (href) {
-        // Desempaquetar redirección de DDG: /l/?uddg=...
         if (href.includes('uddg=')) {
           const match = href.match(/uddg=([^&]+)/);
           if (match) href = decodeURIComponent(match[1]);
@@ -149,7 +148,38 @@ async function buscarEnlacesOficiales(termino) {
       }
     });
   } catch (err) {
-    console.warn('[InstitutionalFallback] Búsqueda externa no disponible:', err.message);
+    console.warn('[InstitutionalFallback] Búsqueda gov.py externa no disponible:', err.message);
+  }
+
+  // 2. Si no hubo resultados con site:gov.py, buscar fuentes oficiales/jurídicas paraguayas más amplias
+  if (!urlsEncontradas.length) {
+    try {
+      const fallbackQuery = `Paraguay ${terminoLimpio} ley decreto resolucion`;
+      const searchUrl2 = `https://html.duckduckgo.com/html/?q=${encodeURIComponent(fallbackQuery)}`;
+      const response2 = await axios.get(searchUrl2, {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        },
+        timeout: 7000,
+      });
+
+      const $2 = cheerio.load(response2.data);
+      $2('.result__url, .result__snippet, .result__title a').each((_, el) => {
+        let href = $2(el).attr('href');
+        if (href) {
+          if (href.includes('uddg=')) {
+            const match = href.match(/uddg=([^&]+)/);
+            if (match) href = decodeURIComponent(match[1]);
+          }
+          if (esUrlInstitucionalValida(href)) {
+            urlsEncontradas.push(href);
+          }
+        }
+      });
+    } catch (err2) {
+      console.warn('[InstitutionalFallback] Búsqueda secundaria externa falló:', err2.message);
+    }
   }
 
   return [...new Set(urlsEncontradas)].slice(0, 3);

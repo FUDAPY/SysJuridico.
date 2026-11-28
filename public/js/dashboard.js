@@ -96,8 +96,9 @@ async function inicializarInicio() {
       }
     }
 
-    // Comprobar estado de credenciales CSJ
+    // Comprobar estado de credenciales CSJ y métricas de tokens (admin)
     verificarEstadoCSJ();
+    cargarMetricasTokensAdmin();
   } catch (err) {
     console.error('[Inicio] Error al inicializar:', err);
   }
@@ -541,4 +542,88 @@ async function guardarMovimiento() {
   }
 }
 
+// Carga métricas de control de tokens en el Dashboard (solo administrador)
+async function cargarMetricasTokensAdmin() {
+  if (!esAdministrador()) return;
+  const card = document.getElementById('cardConsumoTokensAdmin');
+  if (card) card.style.display = 'block';
+
+  try {
+    const [estado, ranking] = await Promise.all([
+      apiFetch('/tokens/estado').catch(() => null),
+      apiFetch('/tokens/ranking').catch(() => null),
+    ]);
+
+    if (estado?.global) {
+      const { tokensUsados, limiteTokens, porcentaje, totalPeticiones, peticionesDesdeCache } = estado.global;
+      const formatNum = (num) => {
+        if (num >= 1000000000) return (num / 1000000000).toFixed(2) + 'B';
+        if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+        if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+        return String(num);
+      };
+
+      const elUsados = document.getElementById('kpiTokensUsadosAdmin');
+      const elBarra = document.getElementById('kpiBarraTokensAdmin');
+      const elCache = document.getElementById('kpiCacheAdmin');
+      const elPeticiones = document.getElementById('kpiPeticionesAdmin');
+      const elBadge = document.getElementById('badgeEstadoTokensAdmin');
+
+      if (elUsados) elUsados.textContent = `${formatNum(tokensUsados)} / ${formatNum(limiteTokens)} (${porcentaje}%)`;
+      if (elBarra) {
+        elBarra.style.width = `${Math.max(1, Math.min(100, porcentaje))}%`;
+        if (porcentaje >= 98) elBarra.style.background = 'var(--rojo)';
+        else if (porcentaje >= 80) elBarra.style.background = 'var(--amber)';
+        else elBarra.style.background = 'var(--azul-accent)';
+      }
+      if (elCache) elCache.textContent = `${peticionesDesdeCache || 0} peticiones`;
+      if (elPeticiones) elPeticiones.textContent = `${totalPeticiones || 0}`;
+
+      if (elBadge) {
+        if (porcentaje >= 98) {
+          elBadge.textContent = 'Bloqueo Crítico (98%)';
+          elBadge.className = 'badge badge-rojo';
+        } else if (porcentaje >= 80) {
+          elBadge.textContent = 'Alerta Consumo (80%)';
+          elBadge.className = 'badge badge-dorado';
+        } else {
+          elBadge.textContent = 'Operativo';
+          elBadge.className = 'badge badge-verde';
+        }
+      }
+    }
+
+    if (ranking && Array.isArray(ranking)) {
+      const tabla = document.getElementById('tablaRankingTokensAdmin');
+      if (tabla) {
+        if (!ranking.length) {
+          tabla.innerHTML = '<tr><td colspan="6" style="text-align:center; padding:12px; color:var(--texto-muted);">Sin registros de consumo aún.</td></tr>';
+        } else {
+          tabla.innerHTML = ranking.map((r) => {
+            const pct = r.limiteMensual > 0 ? Math.round((r.tokensUsadosMes / r.limiteMensual) * 100) : 0;
+            const formatShort = (n) => (n >= 1000000 ? (n / 1000000).toFixed(1) + 'M' : (n >= 1000 ? (n / 1000).toFixed(0) + 'k' : n));
+            return `
+              <tr>
+                <td><strong>${escapeHtml(r.nombre)}</strong><br><small style="color:var(--texto-muted);">${escapeHtml(r.email)}</small></td>
+                <td><span class="badge" style="background:var(--bg-subtle); color:var(--texto-muted); font-size:0.7rem;">${escapeHtml(r.rol)}</span></td>
+                <td style="font-weight:700; color:var(--azul-accent);">${formatShort(r.tokensUsadosMes)}</td>
+                <td>${formatShort(r.limiteMensual)} (${pct}%)</td>
+                <td>${r.archivosUsadosMes || 0} / ${r.limiteArchivosMensual || 100}</td>
+                <td>
+                  <span class="badge ${pct >= 98 ? 'badge-rojo' : pct >= 80 ? 'badge-dorado' : 'badge-verde'}">
+                    ${pct >= 98 ? 'Bloqueado' : pct >= 80 ? 'Alerta' : 'Normal'}
+                  </span>
+                </td>
+              </tr>
+            `;
+          }).join('');
+        }
+      }
+    }
+  } catch (err) {
+    console.debug('[Tokens] Error cargando métricas admin:', err.message);
+  }
+}
+
 inicializarInicio();
+

@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <title>Expedientes - SysJurídico</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a3d62" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SysJurídico" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/img/icon-192.png" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
@@ -33,19 +39,19 @@
       </div>
     </div>
 
-    <!-- Barra de Filtros estilo expedientes.click (Image 5) -->
-    <div class="tarjeta" style="background:#111927; border:1px solid #1e293b; border-radius:10px; padding:12px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
+    <!-- Barra de Filtros estilo institucional -->
+    <div class="tarjeta" style="background:var(--bg-card); border:1px solid var(--borde); border-radius:10px; padding:12px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;">
       <div style="flex:1; min-width:260px; position:relative;">
         <span style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--texto-muted); font-size:1rem;">🔍</span>
-        <input id="fBuscar" placeholder="Buscar expediente..." oninput="cargarExpedientes()" style="width:100%; padding:10px 14px 10px 38px; background:#0f172a; border:1px solid #1e293b; border-radius:8px; color:#fff; font-size:0.9rem;" />
+        <input id="fBuscar" placeholder="Buscar expediente..." oninput="cargarExpedientesDebounced()" style="width:100%; padding:10px 14px 10px 38px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;" />
       </div>
       <div style="min-width:220px;">
-        <select id="fJuzgado" onchange="cargarExpedientes()" style="width:100%; padding:10px 14px; background:#0f172a; border:1px solid #1e293b; border-radius:8px; color:#fff; font-size:0.9rem;">
+        <select id="fJuzgado" onchange="cargarExpedientes()" style="width:100%; padding:10px 14px; background:var(--bg-input); border:1px solid var(--borde); border-radius:8px; color:var(--texto); font-size:0.9rem;">
           <option value="">Todos los Juzgados</option>
         </select>
       </div>
-      <div style="display:flex; background:#0f172a; border:1px solid #1e293b; border-radius:8px; padding:3px;">
-        <button id="tabEstadoTodos" class="btn-tab-estado activo" onclick="filtrarPorPestanaEstado('todos')" style="padding:6px 16px; border-radius:6px; border:none; font-size:0.85rem; font-weight:600; cursor:pointer; background:#fff; color:#0f172a;">
+      <div style="display:flex; background:var(--bg-subtle); border:1px solid var(--borde); border-radius:8px; padding:3px;">
+        <button id="tabEstadoTodos" class="btn-tab-estado activo" onclick="filtrarPorPestanaEstado('todos')" style="padding:6px 16px; border-radius:6px; border:none; font-size:0.85rem; font-weight:600; cursor:pointer; background:#fff; color:var(--azul-accent); box-shadow:var(--sombra-sm);">
           Todos
         </button>
         <button id="tabEstadoArchivado" class="btn-tab-estado" onclick="filtrarPorPestanaEstado('archivado')" style="padding:6px 16px; border-radius:6px; border:none; font-size:0.85rem; font-weight:600; cursor:pointer; background:transparent; color:var(--texto-muted);">
@@ -55,18 +61,18 @@
     </div>
 
     <!-- Banner de filtro activo desde Inicio/Dashboard -->
-    <div id="bannerFiltroActivo" style="display:none; background:#1e293b; border-left:4px solid #3b82f6; border-radius:8px; padding:10px 18px; margin-bottom:14px; justify-content:space-between; align-items:center; color:#e2e8f0; font-size:0.88rem;">
+    <div id="bannerFiltroActivo" style="display:none; background:var(--azul-light); border-left:4px solid var(--azul-accent); border-radius:8px; padding:10px 18px; margin-bottom:14px; justify-content:space-between; align-items:center; color:var(--azul-primary); font-size:0.88rem;">
       <span id="txtFiltroActivo">⚠️ Filtro activo</span>
-      <button onclick="quitarFiltroEspecial()" style="background:#0f172a; border:1px solid #334155; color:#93c5fd; padding:4px 12px; border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;">
+      <button onclick="quitarFiltroEspecial()" style="background:var(--bg-card); border:1px solid var(--borde); color:var(--azul-accent); padding:4px 12px; border-radius:6px; font-size:0.8rem; font-weight:600; cursor:pointer;">
         ✕ Ver todos los expedientes
       </button>
     </div>
 
-    <!-- Tabla estilo expedientes.click (Image 5) -->
-    <div class="tarjeta" style="background:#111927; border:1px solid #1e293b; border-radius:10px; padding:0; overflow:hidden;">
+    <!-- Tabla estilo institucional -->
+    <div class="tarjeta" style="background:var(--bg-card); border:1px solid var(--borde); border-radius:10px; padding:0; overflow:hidden;">
       <div style="overflow-x:auto">
         <table style="width:100%; border-collapse:collapse; text-align:left;">
-          <thead style="background:#0b1120; border-bottom:1px solid #1e293b;">
+          <thead style="background:var(--bg-subtle); border-bottom:1px solid var(--borde);">
             <tr>
               <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">NRO/AÑO ⇅</th>
               <th style="padding:14px 18px; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--texto-muted); font-weight:600;">CARÁTULA DEL EXPEDIENTE <span id="cantExpedientes">(0)</span> ⇅</th>

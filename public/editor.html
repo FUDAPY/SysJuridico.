@@ -2,7 +2,13 @@
 <html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a3d62" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SysJurídico" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/img/icon-192.png" />
   <title>Editor Forense Judicial | SysJuridico &mdash; Redactor Legal Forense</title>
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -731,6 +737,70 @@
       .hoja-pagina-lo::before, .hoja-pagina-lo::after, .lo-corner-bl, .lo-corner-br, .lo-guide-box {
         display: none !important;
       }
+    @media (max-width: 768px) {
+      .editor-body {
+        height: calc(100vh - 110px) !important;
+      }
+      .lo-canvas-scroller {
+        padding: 0.5rem 0.5rem 5rem 0.5rem !important;
+      }
+      .hoja-pagina-lo {
+        max-width: 100% !important;
+        padding: 20px 14px !important;
+        min-height: 80vh !important;
+        border-radius: 6px !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.06) !important;
+      }
+      .lo-toolbars {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      .lo-sidebar {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: 82vh !important;
+        max-height: 82vh !important;
+        border-top-left-radius: 20px !important;
+        border-top-right-radius: 20px !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border-color) !important;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25) !important;
+        z-index: 1000 !important;
+        transform: translateY(100%);
+        transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      .lo-sidebar.movil-abierto {
+        transform: translateY(0) !important;
+        display: flex !important;
+      }
+      .btn-copiloto-flotante-movil {
+        display: flex !important;
+      }
+    }
+
+    .btn-copiloto-flotante-movil {
+      display: none;
+      position: fixed;
+      bottom: 74px;
+      right: 18px;
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--azul-primary), var(--azul-accent));
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: 2px solid var(--dorado);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+      z-index: 980;
+      cursor: pointer;
+      align-items: center;
+      gap: 6px;
     }
   </style>
 </head>
@@ -819,7 +889,7 @@
               <button class="lo-menu-btn" data-menu="herramientas">Herramientas</button>
               <div class="lo-dropdown-menu" id="menuHerramientas">
                 <button class="lo-dropdown-item" onclick="contarPalabrasYFojas()">Contar Palabras y Fojas</button>
-                <button class="lo-dropdown-item" id="btnHerramientasOrtografia" onclick="document.getElementById('menuIAPolir')?.click()">Ortografía Forense</button>
+                <button class="lo-dropdown-item" id="btnHerramientasOrtografia" onclick="document.getElementById('menuIAPulir')?.click()">Ortografía Forense</button>
                 <button class="lo-dropdown-item" onclick="insertarSaltoDePagina()">Salto de Foja Judicial</button>
                 <button class="lo-dropdown-item" onclick="alternarOutline()">Mostrar/Ocultar Esquema</button>
               </div>
@@ -830,7 +900,7 @@
               <div class="lo-dropdown-menu" id="menuIA">
                 <button class="lo-dropdown-item" id="menuIAMejorar">Mejorar Texto Seleccionado</button>
                 <button class="lo-dropdown-item" id="menuIAFundamentar">Fundamentar con CSJ & Códigos</button>
-                <button class="lo-dropdown-item" id="menuIAPolir">Polir Estilo y Ortografía Forense</button>
+                <button class="lo-dropdown-item" id="menuIAPulir">Pulir Estilo y Ortografía Forense</button>
                 <div class="lo-dropdown-divider"></div>
                 <button class="lo-dropdown-item" id="menuIACargarCausa">Incorporar Hechos del Expediente</button>
               </div>
@@ -1113,8 +1183,8 @@
         <button class="lo-btn" id="btnBubbleFundamentar" title="Añadir fundamentos de la CSJ y leyes vigentes">
           <span>⚖️ Fundamentar CSJ</span>
         </button>
-        <button class="lo-btn" id="btnBubblePolir" title="Corregir estilo y ortografía forense">
-          <span>✒️ Polir</span>
+        <button class="lo-btn" id="btnBubblePulir" title="Corregir estilo y ortografía forense">
+          <span>✒️ Pulir</span>
         </button>
       </div>
 
@@ -1159,7 +1229,7 @@
               <button class="btn-chip" data-action="derecho" title="Redacta fundamentación de derecho">📜 Derecho</button>
               <button class="btn-chip" data-action="petitorio" title="Redacta petitorio judicial">🎯 Petitorio</button>
               <button class="btn-chip" data-action="excepcion" title="Redacta excepción previa o de fondo">🏛️ Excepción</button>
-              <button class="btn-chip" data-action="polir" title="Pule estilo y ortografía">✒️ Polir Estilo</button>
+              <button class="btn-chip" data-action="pulir" title="Pule estilo y ortografía">✒️ Pulir Estilo</button>
             </div>
 
             <!-- Opciones RAG Avanzadas -->
@@ -1342,6 +1412,7 @@
         <span class="lo-status-pill" id="statusPalabras">0 palabras · 0 caracteres</span>
         <span class="lo-status-pill" id="statusIdioma">Español (Paraguay)</span>
         <span class="lo-status-pill" id="statusEstilo">Forense CSJ (A4)</span>
+        <span class="lo-status-pill" id="statusVersionDoc" style="cursor: pointer; color: var(--azul-accent); font-weight: 700; background: var(--azul-light); border: 1px solid #BFDBFE;" onclick="abrirModalVersiones()" title="Ver historial y restaurar versiones guardadas">v1 · Guardado</span>
       </div>
 
       <div style="display: flex; align-items: center; gap: 8px;">
@@ -1351,6 +1422,11 @@
       </div>
     </footer>
   </div>
+
+  <!-- Botón Copiloto Flotante Móvil (< 768px) -->
+  <button class="btn-copiloto-flotante-movil" id="btnCopilotoFlotanteMovil" onclick="alternarCopilotoMovil()" title="Abrir Copiloto Techapyrã IA">
+    🤖 Copiloto IA
+  </button>
 
   <!-- Modal Guardar en Expediente -->
   <div class="modal-fondo oculto" id="modalGuardarCaso">
@@ -1369,6 +1445,22 @@
       <div style="display: flex; justify-content: flex-end; gap: 8px;">
         <button class="boton btn-secundario" id="btnCancelarGuardar">Cancelar</button>
         <button class="boton btn-primario" id="btnConfirmarGuardarCaso">Guardar en Expediente</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Historial de Versiones -->
+  <div class="modal-fondo oculto" id="modalVersionesBorrador">
+    <div class="modal" style="max-width: 520px; width: 90vw;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid var(--borde); padding-bottom: 8px;">
+        <h3 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--texto);">📜 Historial de Versiones del Escrito</h3>
+        <button onclick="cerrarModalVersiones()" style="background: transparent; border: none; font-size: 1.3rem; cursor: pointer; color: var(--texto-muted);">&times;</button>
+      </div>
+      <p style="font-size: 0.82rem; color: var(--texto-muted); margin-bottom: 12px;">
+        Selecciona una versión anterior para restaurarla en el editor. La versión actual se preservará como nueva versión de resguardo.
+      </p>
+      <div id="listaVersionesEscrito" style="display: flex; flex-direction: column; gap: 8px; max-height: 360px; overflow-y: auto;">
+        <div style="text-align: center; color: var(--texto-muted); padding: 20px;">Cargando historial...</div>
       </div>
     </div>
   </div>

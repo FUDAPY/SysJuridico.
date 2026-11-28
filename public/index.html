@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <title>Inicio - Asistente Jurídico | SysJurídico</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a3d62" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SysJurídico" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/img/icon-192.png" />
 <link rel="icon" type="image/x-icon" href="/img/logo.ico" />
 <link rel="icon" type="image/jpeg" href="/img/logo.jpg" />
 <link rel="stylesheet" href="/css/styles.css" />
@@ -505,6 +511,68 @@
           </div>
           <div class="kpi-valor" id="kpiImpulsar" style="color:#7C3AED;">0</div>
           <div class="kpi-sub">para impulsar &rarr;</div>
+        </div>
+      </div>
+
+      <!-- Panel de Control de Tokens IA (Admin - FreeLLMAPI < 10B) -->
+      <div id="cardConsumoTokensAdmin" class="tarjeta" data-admin style="display:none; margin-bottom: 24px; padding: 18px 22px; border: 1px solid var(--borde); background: #FFFFFF; border-radius: 12px; box-shadow: var(--sombra);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:36px; height:36px; border-radius:10px; background:linear-gradient(135deg, #0f766e, #0d9488); display:flex; align-items:center; justify-content:center; font-size:1.15rem; color:#fff;">
+              ⚡
+            </div>
+            <div>
+              <h3 style="margin:0; font-size:1.05rem; font-weight:700; color:var(--texto);">Gobernanza de Tokens &amp; Inferencia IA (FreeLLMAPI &lt; 10B)</h3>
+              <small style="color:var(--texto-muted); font-size:0.75rem;">Consumo medido mensual con barrera de bloqueo al 98% y ahorro RAG quirúrgico</small>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span id="badgeEstadoTokensAdmin" class="badge badge-verde">Operativo</span>
+            <button class="boton btn-secundario btn-sm" onclick="cargarMetricasTokensAdmin()" title="Recargar métricas de tokens">↻ Actualizar</button>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:16px;">
+          <div style="background:var(--bg-subtle); padding:12px 14px; border-radius:10px; border:1px solid var(--borde);">
+            <div style="font-size:0.75rem; color:var(--texto-muted); font-weight:600; text-transform:uppercase;">Tokens Consumidos (Mes)</div>
+            <div id="kpiTokensUsadosAdmin" style="font-size:1.4rem; font-weight:700; color:var(--azul-accent); margin-top:2px;">0 / 9.5B</div>
+            <div style="width:100%; height:6px; background:#E2E8F0; border-radius:4px; margin-top:6px; overflow:hidden;">
+              <div id="kpiBarraTokensAdmin" style="width:1%; height:100%; background:var(--azul-accent); border-radius:4px;"></div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-subtle); padding:12px 14px; border-radius:10px; border:1px solid var(--borde);">
+            <div style="font-size:0.75rem; color:var(--texto-muted); font-weight:600; text-transform:uppercase;">Ahorro por Caché (7 días TTL)</div>
+            <div id="kpiCacheAdmin" style="font-size:1.4rem; font-weight:700; color:var(--verde); margin-top:2px;">0 peticiones</div>
+            <small style="color:var(--verde-texto); font-size:0.72rem;">0 tokens consumidos en consultas repetidas</small>
+          </div>
+
+          <div style="background:var(--bg-subtle); padding:12px 14px; border-radius:10px; border:1px solid var(--borde);">
+            <div style="font-size:0.75rem; color:var(--texto-muted); font-weight:600; text-transform:uppercase;">Total de Invocaciones</div>
+            <div id="kpiPeticionesAdmin" style="font-size:1.4rem; font-weight:700; color:var(--texto); margin-top:2px;">0</div>
+            <small style="color:var(--texto-muted); font-size:0.72rem;">RAG OtelaxWisdom + Web Oficial</small>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="margin:0 0 8px; font-size:0.85rem; color:var(--texto); text-transform:uppercase; letter-spacing:0.04em;">Ranking de Consumo por Abogado</h4>
+          <div style="overflow-x:auto;">
+            <table style="width:100%; font-size:0.82rem;">
+              <thead>
+                <tr>
+                  <th>Abogado</th>
+                  <th>Rol</th>
+                  <th>Tokens Mes</th>
+                  <th>Cuota Mensual</th>
+                  <th>Archivos</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody id="tablaRankingTokensAdmin">
+                <tr><td colspan="6" style="text-align:center; padding:12px; color:var(--texto-muted);">Cargando ranking de consumo...</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
  

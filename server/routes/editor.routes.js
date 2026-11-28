@@ -269,4 +269,47 @@ router.get('/borradores/:id', protect, async (req, res, next) => {
   }
 });
 
+// Restaurar versión específica de un borrador
+router.post('/borradores/:id/restaurar/:versionNum', protect, async (req, res, next) => {
+  try {
+    const BorradorEditor = require('../models/BorradorEditor');
+    const versionNum = parseInt(req.params.versionNum, 10);
+    const borrador = await BorradorEditor.findOne({ _id: req.params.id, usuario: req.usuario._id });
+    if (!borrador) return res.status(404).json({ success: false, error: 'Borrador no encontrado' });
+
+    const verDeseada = borrador.versiones.find((v) => v.version === versionNum);
+    if (!verDeseada) return res.status(404).json({ success: false, error: 'Versión no encontrada en el historial' });
+
+    // Guardar versión actual antes de restaurar
+    borrador.versiones.push({
+      version: borrador.versionActual,
+      fecha: new Date(),
+      titulo: borrador.titulo,
+      contenidoHtml: borrador.contenidoHtml,
+      contenidoTexto: borrador.contenidoTexto,
+      autor: req.usuario._id,
+      autorNombre: req.usuario.nombre || req.usuario.nombreCompleto || 'Abogado',
+    });
+
+    borrador.versionActual += 1;
+    borrador.contenidoHtml = verDeseada.contenidoHtml;
+    borrador.contenidoTexto = verDeseada.contenidoTexto;
+    if (verDeseada.titulo) borrador.titulo = verDeseada.titulo;
+    await borrador.save();
+
+    res.json({
+      success: true,
+      data: {
+        borradorId: borrador._id,
+        versionActual: borrador.versionActual,
+        titulo: borrador.titulo,
+        contenidoHtml: borrador.contenidoHtml,
+      },
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
+

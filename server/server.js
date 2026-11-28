@@ -21,11 +21,13 @@ const lexpyRoutes = require('./routes/lexpy.routes');
 const liquidacionRoutes = require('./routes/liquidacion.routes');
 const { creditosRouter, requisitosRouter, archivosRouter } = require('./routes/legados.routes');
 const obsidianRoutes = require('./routes/obsidian.routes');
-const editorRoutes = require('./routes/editor.routes');
+const compression = require('compression');
 const otelaxWisdomRoutes = require('./routes/otelaxWisdom.routes');
+const tokenRoutes = require('./routes/token.routes');
 
 const app = express();
 
+app.use(compression());
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cors());
 app.use(express.json({ limit: '20mb' }));
@@ -53,8 +55,31 @@ app.use('/api/obsidian', obsidianRoutes);
 app.use('/api/v1/editor', editorRoutes);
 app.use('/api/editor', editorRoutes);
 app.use('/api/otelaxwisdom', otelaxWisdomRoutes);
+app.use('/api/tokens', tokenRoutes);
+app.use('/api/v1/tokens', tokenRoutes);
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(
+  express.static(path.join(__dirname, '..', 'public'), {
+    maxAge: process.env.NODE_ENV === 'production' ? '1d' : 0,
+    setHeaders: (res, rutaArchivo) => {
+      if (
+        rutaArchivo.endsWith('.html') ||
+        rutaArchivo.endsWith('sw.js') ||
+        rutaArchivo.endsWith('manifest.json')
+      ) {
+        res.setHeader('Cache-Control', 'no-cache');
+      } else if (
+        rutaArchivo.endsWith('.css') ||
+        rutaArchivo.endsWith('.js') ||
+        rutaArchivo.endsWith('.png') ||
+        rutaArchivo.endsWith('.jpg') ||
+        rutaArchivo.endsWith('.ico')
+      ) {
+        res.setHeader('Cache-Control', 'public, max-age=86400');
+      }
+    },
+  })
+);
 
 // Estado de la conexión a MongoDB: readyState 1 = conectado (mongoose.STATES)
 app.get('/api/health', (req, res) => {

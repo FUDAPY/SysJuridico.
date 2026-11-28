@@ -23,16 +23,18 @@ if (!PASSWORD_DEFECTO) {
 }
 
 function inicializarFirebase() {
-  const jsonB64 = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  const jsonEnv = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
   let sa;
-  if (jsonB64) {
-    sa = JSON.parse(Buffer.from(jsonB64, 'base64').toString('utf8'));
+  if (jsonEnv) {
+    const raw = jsonEnv.trim();
+    const str = raw.startsWith('{') ? raw : Buffer.from(raw, 'base64').toString('utf8');
+    sa = JSON.parse(str);
   } else {
     const ruta = path.resolve(
-      process.env.FIREBASE_SERVICE_ACCOUNT_PATH || './sys-juridico-firebase-adminsdk-fbsvc-436ade3197.json'
+      process.env.FIREBASE_SERVICE_ACCOUNT_PATH || './firebase-key.json'
     );
     if (!fs.existsSync(ruta)) {
-      console.error('[MIGRACIÓN] No se encontró la credencial de Firebase en: ' + ruta);
+      console.error('[MIGRACIÓN] No se encontró la credencial de Firebase en: ' + ruta + '. Configure FIREBASE_SERVICE_ACCOUNT_JSON en variables de entorno.');
       process.exit(1);
     }
     sa = JSON.parse(fs.readFileSync(ruta, 'utf8'));

@@ -1,6 +1,8 @@
+const crypto = require('crypto');
 const BaseLegal = require('../models/BaseLegal');
 const Jurisprudencia = require('../models/Jurisprudencia');
 const AprendizajeSistema = require('../models/AprendizajeSistema');
+const NormativaCache = require('../models/NormativaCache');
 const { buscarEnFuentesExternas } = require('./scraperService');
 const { generarRespuestaIA } = require('./aiProviderService');
 const { recuperarMemoriaContextual } = require('./agentMemoryService');
@@ -8,6 +10,10 @@ const { buscarEnOtelaxWisdom, obtenerEstiloForense } = require('./otelaxWisdomSe
 const { ejecutarFallbackInstitucional } = require('./institutionalWebFallback');
 const { buildTechapyraPrompt } = require('../config/techapyraSystemPrompt');
 const { buscarContextoExpedientesYPDFs } = require('./expedientesContextService');
+const {
+  verificarDisponibilidadTokens,
+  registrarConsumoTokens,
+} = require('./tokenAccountingService');
 
 const UMBRAL_RESULTADOS_LOCALES = 1;
 
@@ -143,29 +149,30 @@ function notaDeFuentes({ aprendizajes = [], baseLegal = [], externa = null, docs
   const items = [];
 
   docsOtelax.forEach((d) => {
-    items.push(`- **${d.titulo}** (${d.tipo}) — *OtelaxWisdom*`);
+    const rutaParam = encodeURIComponent(d.relPath || d.filename || '');
+    items.push(`- 🏛️ **[${d.titulo}](/otelaxwisdom.html?ver=${rutaParam})** (${d.tipo}) — *OtelaxWisdom Local*`);
   });
 
   if (fallbackWeb && fallbackWeb.encontrado) {
-    items.push(`- **${fallbackWeb.titulo}** — [${fallbackWeb.fuente}](${fallbackWeb.url_fuente}) *(Auto-aprendido en OtelaxWisdom)*`);
+    items.push(`- 🌐 **[${fallbackWeb.titulo}](${fallbackWeb.url_fuente})** — *${fallbackWeb.fuente} (Consulta Web Oficial en Vivo &bull; Auto-aprendido)*`);
   }
 
   baseLegal.forEach((b) => {
     const origen = b.fuente || 'Base Legal interna';
-    items.push(b.url ? `- [${b.titulo}](${b.url}) - ${origen}` : `- ${b.titulo} - ${origen}`);
+    items.push(b.url ? `- 📜 [${b.titulo}](${b.url}) - ${origen}` : `- 📜 ${b.titulo} - ${origen}`);
   });
 
   aprendizajes.forEach((a) => {
-    items.push(`- Respuesta validada del sistema (sobre: ${a.pregunta.slice(0, 60)})`);
+    items.push(`- 💡 Respuesta validada del sistema (sobre: ${a.pregunta.slice(0, 60)})`);
   });
 
   if (externa) {
     if (externa.fuente === 'ecosistema_oficial_py') {
-      items.push(`- Red Oficial de Justicia y Legislación de la República del Paraguay (CSJ Jurisprudencia, BACN Leyes, SILpy Congreso, Gaceta Oficial)`);
+      items.push(`- 🔍 Red Oficial de Justicia y Legislación de la República del Paraguay (CSJ, BACN, SILpy, Gaceta Oficial)`);
     } else {
       const nombre =
         externa.fuente === 'csj' ? 'CSJ - Corte Suprema de Justicia (csj.gov.py)' : 'BaseLegal Paraguay (baselegal.com.py)';
-      items.push(`- ${nombre}${externa.urlConsultada ? ` - [resultado de búsqueda](${externa.urlConsultada})` : ''}`);
+      items.push(`- 🔍 ${nombre}${externa.urlConsultada ? ` - [resultado oficial](${externa.urlConsultada})` : ''}`);
     }
   }
 
@@ -270,14 +277,17 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
   if (contextoExpedientes) fuenteRespuesta = 'expedientes_y_documentos';
   if (archivosAdjuntos.length) fuenteRespuesta = 'archivo_adjunto_chat';
 
+  // Detección si el usuario pide expresamente buscar en internet o verificar en fuentes en vivo
+  const pideWebExpreso = forzarWeb || /\b(internet|en la web|en vivo|en linea|noticias|cotizacion|jornal|salario minimo|reciente|hoy dia)\b/i.test(pregunta);
+
   // 3. Fallback Web Institucional Auto-Aprendible:
-  // Se activa automáticamente si el RAG local NO tiene un documento de alta relevancia (maxScore < 35)
+  // Se activa si el usuario pide web expresamente, O si el RAG local NO tiene un documento de alta relevancia (maxScore < 35)
   // o si no se recuperaron documentos locales con score suficiente, y no es consulta puramente de causas.
-  const requiereFallbackWeb = (!esAltaRelevanciaOtelax || docsOtelax.length === 0) && !contextoExpedientes && !archivosAdjuntos.length;
+  const requiereFallbackWeb = pideWebExpreso || ((!esAltaRelevanciaOtelax || docsOtelax.length === 0) && !contextoExpedientes && !archivosAdjuntos.length);
 
   if (requiereFallbackWeb) {
     try {
-      console.log(`[LexPY] RAG local sin documento de alta relevancia (maxScore: ${maxScoreOtelax}). Disparando Fallback Web Institucional .gov.py...`);
+      console.log(`[LexPY] ${pideWebExpreso ? 'Petición expresa de búsqueda web.' : `RAG local sin documento de alta relevancia (maxScore: ${maxScoreOtelax}).`} Disparando Búsqueda Web Institucional...`);
       const resWeb = await ejecutarFallbackInstitucional(pregunta);
       if (resWeb && resWeb.encontrado) {
         fallbackWeb = resWeb;
@@ -285,7 +295,7 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
 
         // Si el RAG local solo tenía menciones tangenciales sin alta relevancia,
         // descartarlas para no contaminar el razonamiento del LLM ni las fuentes consultadas
-        if (!esAltaRelevanciaOtelax) {
+        if (!esAltaRelevanciaOtelax && !pideWebExpreso) {
           docsOtelax = [];
           baseLegal = [];
         }
@@ -297,19 +307,20 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
 
   const partesContexto = [];
 
-  // Inyección de documento oficial Web si fue disparado
+  // Inyección de documento oficial Web si fue disparado (limpio y compacto)
   if (fallbackWeb && fallbackWeb.encontrado) {
-    const bloqueWeb = `[DOCUMENTO OFICIAL DEL ESTADO PARAGUAYO (AUTO-APRENDIDO EN OTELAXWISDOM): ${fallbackWeb.titulo} (${fallbackWeb.tipo} - ${fallbackWeb.fuero})]\nFuente Oficial: ${fallbackWeb.fuente} (${fallbackWeb.url_fuente})\n${fallbackWeb.fragmento}`;
+    const bloqueWeb = `[DOCUMENTO OFICIAL DEL ESTADO PARAGUAYO (AUTO-APRENDIDO EN OTELAXWISDOM): ${fallbackWeb.titulo} (${fallbackWeb.tipo} - ${fallbackWeb.fuero})]\nFuente Oficial: ${fallbackWeb.fuente} (${fallbackWeb.url_fuente})\n${(fallbackWeb.fragmento || '').slice(0, 1500)}`;
     partesContexto.push(bloqueWeb);
   }
 
-  // Inyección de documentos OtelaxWisdom (solo los que superaron el umbral de relevancia)
+  // Inyección de documentos OtelaxWisdom quirúrgica (máx 3 chunks, ~1100 caracteres por chunk)
   if (docsOtelax.length > 0) {
-    docsOtelax.forEach((d) => {
-      const fragmentos =
+    docsOtelax.slice(0, 3).forEach((d) => {
+      let fragmentos =
         d.fragmento ||
         (d.parrafosRelevantes && d.parrafosRelevantes.length ? d.parrafosRelevantes.join('\n\n') : '') ||
-        (d.contenido || '').slice(0, 1500);
+        (d.contenido || '');
+      if (fragmentos.length > 1100) fragmentos = fragmentos.slice(0, 1100) + '...';
       partesContexto.push(`[DOCUMENTO OTELAXWISDOM: ${d.titulo} (${d.tipo})]\n${fragmentos}`);
     });
   }
@@ -369,12 +380,19 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
     contexto: contexto || null,
     system: systemPrompt,
     activarGrounding: requiereAvisoFallback,
+    usuarioId,
+    rol: usuarioRol,
   });
 
   if (respuestaIA) {
     const nota = notaDeFuentes({ aprendizajes, baseLegal, externa, docsOtelax, fallbackWeb });
     const respuesta = nota && !respuestaIA.includes('Fuentes consultadas') ? respuestaIA + nota : respuestaIA;
-    return { respuesta, fuente: fuenteRespuesta || 'ia_generativa' };
+    return {
+      respuesta,
+      fuente: fuenteRespuesta || 'ia_generativa',
+      docsOtelax: docsOtelax.map((d) => ({ titulo: d.titulo, tipo: d.tipo, relPath: d.relPath, url_fuente: d.url_fuente })),
+      fallbackWeb: fallbackWeb ? { titulo: fallbackWeb.titulo, url_fuente: fallbackWeb.url_fuente, fuente: fallbackWeb.fuente } : null,
+    };
   }
 
   return {
@@ -387,10 +405,29 @@ async function procesarConsultaTecnica({ pregunta, usuarioId, expedienteId, clie
 async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam, clienteIdParam) {
   const pregunta = typeof payload === 'object' && payload !== null ? payload.pregunta : String(payload || '');
   const usuarioId = typeof payload === 'object' && payload !== null ? payload.usuarioId : usuarioIdParam;
+  const usuarioRol = typeof payload === 'object' && payload !== null ? payload.usuarioRol : 'abogado';
   const expedienteId = typeof payload === 'object' && payload !== null ? payload.expedienteId : expedienteIdParam;
   const clienteId = typeof payload === 'object' && payload !== null ? payload.clienteId : clienteIdParam;
   const modo = typeof payload === 'object' && payload !== null ? payload.modo : 'MODO_CHAT';
   const archivosAdjuntos = typeof payload === 'object' && payload !== null ? payload.archivosAdjuntos || [] : [];
+  const forzarWeb = typeof payload === 'object' && payload !== null ? !!payload.forzarWeb : false;
+
+  // 1. Verificación de doble barrera de tokens (< 10B Global + Cuota Individual)
+  const checkTokens = await verificarDisponibilidadTokens({
+    usuarioId,
+    rol: usuarioRol,
+    tokensEstimados: 800,
+  });
+
+  if (!checkTokens.permitido) {
+    return {
+      respuesta: `⚠️ **Límite de Uso Medido:**\n\n${checkTokens.mensaje}`,
+      fuente: 'limite_tokens_excedido',
+      bloqueado: true,
+      codigo: checkTokens.codigo,
+      status: checkTokens.status || 429,
+    };
+  }
 
   if (esSaludo(pregunta) && (!archivosAdjuntos || !archivosAdjuntos.length)) {
     const respuesta = await responderSaludo(pregunta);
@@ -402,17 +439,62 @@ async function procesarConsultaLexPY(payload, usuarioIdParam, expedienteIdParam,
     return { respuesta: metaRes.respuesta, fuente: 'ia_generativa', aprendizaje: false };
   }
 
+  // 2. Caché de Respuestas Normativas (0 Tokens en Repeticiones de consultas puras)
+  const esConsultaNormativaPura = !expedienteId && (!archivosAdjuntos || !archivosAdjuntos.length) && !forzarWeb;
+  let hashPregunta = null;
+
+  if (esConsultaNormativaPura) {
+    hashPregunta = crypto.createHash('sha256').update(textoPlano(pregunta).trim()).digest('hex');
+    try {
+      const cacheado = await NormativaCache.findOne({ hashPregunta });
+      if (cacheado) {
+        await NormativaCache.updateOne({ _id: cacheado._id }, { $inc: { contadorAccesos: 1 } });
+        await registrarConsumoTokens({ usuarioId, desdeCache: true });
+        console.log(`[LexPY Cache] Consulta normativa recuperada de caché (0 tokens consumidos) para: "${pregunta.slice(0, 50)}"`);
+        return {
+          respuesta: cacheado.respuesta,
+          fuente: 'otelaxwisdom_cache',
+          desdeCache: true,
+          tokensConsumidos: 0,
+          docsOtelax: cacheado.docsOtelax || [],
+        };
+      }
+    } catch (errCache) {
+      console.warn('[LexPY Cache] Error consultando caché:', errCache.message);
+    }
+  }
+
   const resultado = await procesarConsultaTecnica({
     pregunta,
     usuarioId,
+    usuarioRol,
     expedienteId,
     clienteId,
     modo,
     archivosAdjuntos,
+    forzarWeb,
   });
 
+  // Guardar en caché normativa si fue exitosa y es normativa pura
+  if (
+    esConsultaNormativaPura &&
+    hashPregunta &&
+    resultado.respuesta &&
+    resultado.fuente !== 'limite_tokens_excedido' &&
+    resultado.fuente !== 'temporalmente_no_disponible'
+  ) {
+    NormativaCache.create({
+      hashPregunta,
+      preguntaNormalizada: textoPlano(pregunta).trim(),
+      respuesta: resultado.respuesta,
+      fuente: resultado.fuente,
+      docsOtelax: resultado.docsOtelax || [],
+      tokensAhorrados: 1200,
+    }).catch((errC) => console.debug('[LexPY Cache] Error guardando en caché:', errC.message));
+  }
+
   // Auto-aprendizaje para retroalimentar el RAG local (pendiente de validación humana).
-  if (resultado.respuesta && resultado.fuente) {
+  if (resultado.respuesta && resultado.fuente && !resultado.bloqueado) {
     await AprendizajeSistema.create({
       pregunta,
       respuesta: resultado.respuesta,
@@ -537,13 +619,29 @@ async function procesarAsistenteEditor({
     `INSTRUCCIÓN DE REDACCIÓN:\n${instruccionForense}\n\n` +
     `IMPORTANTE: Devuelve ÚNICAMENTE el texto redactado en formato listo para insertar en la hoja de trabajo judicial. No incluyas preámbulos como "Aquí tienes", ni despedidas. Solo el contenido forense.`;
 
+  // Verificación de disponibilidad de tokens
+  const checkTokens = await verificarDisponibilidadTokens({ usuarioId, rol: 'abogado', tokensEstimados: 400 });
+  if (!checkTokens.permitido) {
+    return {
+      textoGenerado: `⚠️ Límite de uso alcanzado: ${checkTokens.mensaje}`,
+      bloqueado: true,
+      codigo: checkTokens.codigo,
+      accion,
+    };
+  }
+
   const system = buildTechapyraPrompt({
     modo: 'MODO_EDITOR',
     estiloForense,
     contextoExpedientes: datosCausa,
   });
 
-  const textoGenerado = await generarRespuestaIA({ prompt: promptFinal, contexto: null, system });
+  const textoGenerado = await generarRespuestaIA({
+    prompt: promptFinal,
+    contexto: null,
+    system,
+    usuarioId,
+  });
 
   return {
     textoGenerado: textoGenerado || 'No se pudo generar la redacción solicitada con el motor de IA.',

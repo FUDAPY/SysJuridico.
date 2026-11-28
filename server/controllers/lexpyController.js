@@ -65,14 +65,26 @@ const chat = asyncHandler(async (req, res) => {
     }
   }
 
-  const { respuesta, fuente } = await procesarConsultaLexPY({
+  const resultado = await procesarConsultaLexPY({
     pregunta,
     usuarioId: req.usuario._id,
+    usuarioRol: req.usuario.rol || 'abogado',
     clienteId: cliente || null,
     expedienteId: expediente || null,
     modo: modo || 'MODO_CHAT',
     archivosAdjuntos: archivosProcesados,
   });
+
+  if (resultado.bloqueado) {
+    return res.status(429).json({
+      success: false,
+      message: resultado.respuesta,
+      codigo: resultado.codigo || 'LIMITE_EXCEDIDO',
+      data: { respuesta: resultado.respuesta, fuente: resultado.fuente, bloqueado: true },
+    });
+  }
+
+  const { respuesta, fuente } = resultado;
 
   let sesion = sesionId ? await SesionChat.findById(sesionId) : null;
   if (!sesion) {
@@ -100,7 +112,18 @@ const chat = asyncHandler(async (req, res) => {
     tipoHito: archivosProcesados.length ? 'ANALISIS_ARCHIVO' : 'CONSULTA_CHAT',
   }).catch((err) => console.warn('[LexPY] Error enrutando memoria:', err.message));
 
-  res.json({ success: true, data: { respuesta, fuente, sesionId: sesion._id } });
+  res.json({
+    success: true,
+    data: {
+      respuesta,
+      fuente,
+      sesionId: sesion._id,
+      desdeCache: !!resultado.desdeCache,
+      tokensConsumidos: resultado.tokensConsumidos !== undefined ? resultado.tokensConsumidos : null,
+      docsOtelax: resultado.docsOtelax || [],
+      fallbackWeb: resultado.fallbackWeb || null,
+    },
+  });
 });
 
 // GET /api/lexpy/sesiones  (historial del usuario autenticado)

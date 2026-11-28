@@ -36,9 +36,19 @@ function cerrarSesion() {
   window.location.href = '/login.html';
 }
 
+// Registro de Service Worker para soporte PWA
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch((err) => {
+      console.warn('[SW] Error al registrar service worker:', err);
+    });
+  });
+}
+
 async function apiFetch(ruta, { method = 'GET', body } = {}) {
   const { token } = obtenerSesion();
-  const respuesta = await fetch(`${API_BASE}${ruta}`, {
+  const urlFinal = ruta.startsWith('/api') ? ruta : `${API_BASE}${ruta.startsWith('/') ? ruta : '/' + ruta}`;
+  const respuesta = await fetch(urlFinal, {
     method,
     headers: {
       'Content-Type': 'application/json',
@@ -171,6 +181,16 @@ function renderBarraLateral(paginaActiva) {
         )
         .join('')}
     </nav>
+    <div id="chipTokensSidebar" style="margin: 8px 12px; padding: 8px 10px; background: var(--bg-subtle); border: 1px solid var(--borde); border-radius: 8px; font-size: 0.72rem; color: var(--texto-secundario);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+        <span style="font-weight:700; color:var(--azul-accent); font-size:0.68rem; text-transform:uppercase;">Inferencia IA</span>
+        <span id="badgeCuotaTokens" style="font-weight:600; color:var(--verde-texto); background:var(--verde-bg); padding:1px 6px; border-radius:10px;">Medido</span>
+      </div>
+      <div id="textoConsumoTokens" style="font-size:0.75rem; font-weight:600; color:var(--texto);">Cargando cuota...</div>
+      <div style="width:100%; height:4px; background:#E2E8F0; border-radius:4px; margin-top:5px; overflow:hidden;">
+        <div id="barraProgresoTokens" style="width:1%; height:100%; background:var(--azul-accent); border-radius:4px; transition:width 300ms ease;"></div>
+      </div>
+    </div>
     <div class="usuario-actual">
       <div class="user-card">
         <div class="user-avatar">${iniciales}</div>
@@ -191,6 +211,8 @@ function renderBarraLateral(paginaActiva) {
 
   inyectarWidgetLexpyFlotante(paginaActiva);
   inyectarPieDePaginaGlobal();
+  inyectarBarraNavegacionMovil(paginaActiva, grupos, usuario);
+  cargarEstadoTokens();
 }
 
 const DOMICILIO_PROCESAL_INSTITUCIONAL = 'Edificio BIJ, Av. Camilo Recalde c/ Capitán Miranda, Microcentro, Ciudad del Este';
@@ -376,6 +398,182 @@ function inyectarPieDePaginaGlobal() {
   target.appendChild(footer);
 }
 
+// Inyecta la barra inferior y menú drawer para dispositivos móviles (< 768px)
+function inyectarBarraNavegacionMovil(paginaActiva, grupos, usuario) {
+  if (document.getElementById('bottomNavBar')) return;
+
+  const nav = document.createElement('nav');
+  nav.className = 'bottom-nav-bar';
+  nav.id = 'bottomNavBar';
+  nav.innerHTML = `
+    <a href="/index.html" class="bottom-nav-item ${paginaActiva === 'resumen' ? 'activo' : ''}">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">Inicio</span>
+    </a>
+    <a href="/expedientes.html" class="bottom-nav-item ${paginaActiva === 'expedientes' ? 'activo' : ''}">
+      <span class="nav-icon">📁</span>
+      <span class="nav-label">Causas</span>
+    </a>
+    <a href="/lexpy.html" class="bottom-nav-item ${paginaActiva === 'lexpy' ? 'activo' : ''}">
+      <span class="nav-icon">🤖</span>
+      <span class="nav-label">Techapyrã</span>
+    </a>
+    <a href="/editor.html" class="bottom-nav-item ${paginaActiva === 'editor' ? 'activo' : ''}">
+      <span class="nav-icon">📝</span>
+      <span class="nav-label">Editor</span>
+    </a>
+    <button type="button" class="bottom-nav-item" onclick="alternarDrawerMenuMovil()" id="btnMenuDrawerMovil">
+      <span class="nav-icon">☰</span>
+      <span class="nav-label">Menú</span>
+    </button>
+  `;
+  document.body.appendChild(nav);
+
+  // Inyectar Drawer Móvil (Off-Canvas Sheet)
+  if (!document.getElementById('drawerMovilOverlay')) {
+    const drawer = document.createElement('div');
+    drawer.className = 'drawer-movil-overlay';
+    drawer.id = 'drawerMovilOverlay';
+    drawer.onclick = (e) => {
+      if (e.target === drawer) alternarDrawerMenuMovil();
+    };
+
+    const todosEnlaces = [];
+    grupos.forEach((g) => {
+      g.enlaces.forEach((e) => {
+        if (!['resumen', 'expedientes', 'lexpy', 'editor'].includes(e.id)) {
+          todosEnlaces.push(e);
+        }
+      });
+    });
+
+    drawer.innerHTML = `
+      <div class="drawer-movil-sheet">
+        <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--borde); padding-bottom:12px; margin-bottom:12px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div class="user-avatar" style="width:36px; height:36px; font-size:0.9rem;">${(usuario.nombre || 'U').slice(0, 2).toUpperCase()}</div>
+            <div>
+              <strong style="display:block; font-size:0.9rem; color:var(--texto);">${escapeHtml(usuario.nombre)}</strong>
+              <small style="color:var(--dorado); font-weight:700; text-transform:uppercase;">${usuario.rol}</small>
+            </div>
+          </div>
+          <button onclick="alternarDrawerMenuMovil()" style="background:var(--bg-subtle); border:1px solid var(--borde); border-radius:50%; width:32px; height:32px; font-size:1.1rem; cursor:pointer; color:var(--texto-muted);">&times;</button>
+        </div>
+
+        <div style="margin-bottom:12px; padding:10px 12px; background:var(--bg-subtle); border:1px solid var(--borde); border-radius:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+            <span style="font-weight:700; color:var(--azul-accent); font-size:0.75rem;">USO DE INFERENCIA IA</span>
+            <span id="drawerBadgeTokens" style="font-weight:600; font-size:0.7rem; color:var(--verde-texto); background:var(--verde-bg); padding:2px 8px; border-radius:10px;">Medido</span>
+          </div>
+          <div id="drawerTextoTokens" style="font-size:0.8rem; font-weight:600; color:var(--texto);">Cargando cuota...</div>
+          <div style="width:100%; height:5px; background:#E2E8F0; border-radius:4px; margin-top:6px; overflow:hidden;">
+            <div id="drawerBarraTokens" style="width:1%; height:100%; background:var(--azul-accent); border-radius:4px;"></div>
+          </div>
+        </div>
+
+        <div class="drawer-grid">
+          ${todosEnlaces
+            .map(
+              (e) => `
+            <a href="${e.href}" class="drawer-link ${e.id === paginaActiva ? 'activo' : ''}">
+              <span style="font-size:1.25rem;">${e.icono}</span>
+              <span>${e.texto}</span>
+            </a>`
+            )
+            .join('')}
+        </div>
+
+        <button onclick="cerrarSesion()" class="boton w-full" style="background:var(--rojo-bg); color:var(--rojo-texto); border:1px solid #FECACA; font-weight:600; padding:10px; border-radius:10px; margin-top:8px;">
+          🚪 Cerrar sesión
+        </button>
+      </div>
+    `;
+    document.body.appendChild(drawer);
+  }
+}
+
+function alternarDrawerMenuMovil() {
+  const drawer = document.getElementById('drawerMovilOverlay');
+  if (drawer) {
+    drawer.classList.toggle('abierto');
+  }
+}
+
+// Carga asíncrona del estado de cuota y consumo de tokens
+async function cargarEstadoTokens() {
+  try {
+    const estado = await apiFetch('/tokens/estado');
+    if (!estado) return;
+
+    const { global, personal } = estado;
+    const tokensUsados = personal?.tokensUsadosMes ?? global?.tokensUsados ?? 0;
+    const limiteTokens = personal?.limiteTokensMensual ?? global?.limiteTokens ?? 1;
+    const porcentaje = Math.min(100, personal?.porcentaje ?? global?.porcentaje ?? 0);
+
+    const formatNum = (num) => {
+      if (num >= 1000000000) return (num / 1000000000).toFixed(1) + 'B';
+      if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+      if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+      return String(num);
+    };
+
+    const texto = `${formatNum(tokensUsados)} / ${formatNum(limiteTokens)} (${porcentaje}%)`;
+
+    // Sidebar Desktop
+    const txtEl = document.getElementById('textoConsumoTokens');
+    const barEl = document.getElementById('barraProgresoTokens');
+    const badgeEl = document.getElementById('badgeCuotaTokens');
+
+    if (txtEl) txtEl.textContent = texto;
+    if (barEl) {
+      barEl.style.width = `${Math.max(2, porcentaje)}%`;
+      if (porcentaje >= 98) barEl.style.background = 'var(--rojo)';
+      else if (porcentaje >= 80) barEl.style.background = 'var(--amber)';
+      else barEl.style.background = 'var(--azul-accent)';
+    }
+    if (badgeEl) {
+      if (porcentaje >= 98) {
+        badgeEl.textContent = 'Límite Crítico';
+        badgeEl.style.background = 'var(--rojo-bg)';
+        badgeEl.style.color = 'var(--rojo-texto)';
+      } else if (porcentaje >= 80) {
+        badgeEl.textContent = 'Alerta 80%';
+        badgeEl.style.background = 'var(--amber-bg)';
+        badgeEl.style.color = 'var(--amber-texto)';
+      } else {
+        badgeEl.textContent = 'Activo';
+      }
+    }
+
+    // Drawer Mobile
+    const drawerTxt = document.getElementById('drawerTextoTokens');
+    const drawerBar = document.getElementById('drawerBarraTokens');
+    const drawerBadge = document.getElementById('drawerBadgeTokens');
+
+    if (drawerTxt) drawerTxt.textContent = texto;
+    if (drawerBar) {
+      drawerBar.style.width = `${Math.max(2, porcentaje)}%`;
+      if (porcentaje >= 98) drawerBar.style.background = 'var(--rojo)';
+      else if (porcentaje >= 80) drawerBar.style.background = 'var(--amber)';
+      else drawerBar.style.background = 'var(--azul-accent)';
+    }
+    if (drawerBadge) {
+      if (porcentaje >= 98) {
+        drawerBadge.textContent = '98% Límite';
+        drawerBadge.style.background = 'var(--rojo-bg)';
+        drawerBadge.style.color = 'var(--rojo-texto)';
+      } else if (porcentaje >= 80) {
+        drawerBadge.textContent = 'Alerta 80%';
+        drawerBadge.style.background = 'var(--amber-bg)';
+        drawerBadge.style.color = 'var(--amber-texto)';
+      }
+    }
+  } catch (err) {
+    // Si no tiene permisos o hay fallo silencioso, no romper la UI
+    console.debug('[Tokens] Estado de consumo no disponible:', err.message);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   inyectarBotonHamburguesa();
   setTimeout(() => {
@@ -383,4 +581,5 @@ document.addEventListener('DOMContentLoaded', () => {
     verificarPerfilForenseObligatorio();
   }, 100);
 });
+
 

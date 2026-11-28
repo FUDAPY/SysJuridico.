@@ -62,6 +62,28 @@ const usuarioSchema = new mongoose.Schema(
       conectado: { type: Boolean, default: false },
       ultimaSincronizacion: { type: Date, default: null },
     },
+    cuotaUso: {
+      limiteTokensMensual: {
+        type: Number,
+        default: 500000000, // 500M por defecto por abogado (0 = ilimitado solo para admin)
+      },
+      tokensUsadosMes: {
+        type: Number,
+        default: 0,
+      },
+      limiteArchivosMensual: {
+        type: Number,
+        default: 100,
+      },
+      archivosUsadosMes: {
+        type: Number,
+        default: 0,
+      },
+      periodoActual: {
+        type: String,
+        default: () => new Date().toISOString().slice(0, 7),
+      },
+    },
   },
   { timestamps: true }
 );
