@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { protect, restrictTo } = require('../middleware/auth');
+const { protect, authorize } = require('../middleware/auth');
 const {
   obtenerEstadoConsumo,
   obtenerRankingConsumo,
@@ -21,7 +21,7 @@ router.get('/estado', protect, async (req, res, next) => {
 });
 
 // GET /api/tokens/ranking: Ranking de consumo por abogado (solo admin)
-router.get('/ranking', protect, restrictTo('admin'), async (req, res, next) => {
+router.get('/ranking', protect, authorize('admin'), async (req, res, next) => {
   try {
     const ranking = await obtenerRankingConsumo();
     res.json({ success: true, data: ranking });
@@ -31,7 +31,7 @@ router.get('/ranking', protect, restrictTo('admin'), async (req, res, next) => {
 });
 
 // PUT /api/tokens/cuota/:usuarioId: Actualizar cuota individual de un abogado (solo admin)
-router.put('/cuota/:usuarioId', protect, restrictTo('admin'), async (req, res, next) => {
+router.put('/cuota/:usuarioId', protect, authorize('admin'), async (req, res, next) => {
   try {
     const { limiteTokensMensual, limiteArchivosMensual } = req.body;
     const actualizado = await actualizarCuotaAbogado({
